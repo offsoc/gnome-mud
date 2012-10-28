@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <glade-interface>
-  <!-- interface-requires gtk+ 2.10 -->
+  <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-naming-policy toplevel-contextual -->
   <widget class="GtkDialog" id="newprofile_dialog">
     <property name="visible">True</property>

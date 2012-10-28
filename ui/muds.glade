@@ -187,8 +187,10 @@
             <child>
               <widget class="GtkLabel" id="label1">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">&lt;b&gt;Custom Connection&lt;/b&gt;</property>
-                <property name="use_markup">True</property>
+                <property name="label" translatable="yes">Custom Connection</property>
+                 <attributes>
+                 <attribute name="weight" value="bold"/>
+                </attributes>
               </widget>
               <packing>
                 <property name="type">label_item</property>
@@ -272,8 +274,10 @@
                       <widget class="GtkLabel" id="label21">
                         <property name="visible">True</property>
                         <property name="xalign">0.0099999997764825821</property>
-                        <property name="label" translatable="yes">&lt;b&gt;Mud&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
+                        <property name="label" translatable="yes">MUD</property>
+                        <attributes>
+                         <attribute name="weight" value="bold"/>
+                        </attributes>
                       </widget>
                       <packing>
                         <property name="expand">False</property>
@@ -461,8 +465,10 @@
                       <widget class="GtkLabel" id="label22">
                         <property name="visible">True</property>
                         <property name="xalign">0.0099999997764825821</property>
-                        <property name="label" translatable="yes">&lt;b&gt;Profile&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
+                        <property name="label" translatable="yes">Profile</property>
+                         <attributes>
+                          <attribute name="weight" value="bold"/>
+                         </attributes>
                       </widget>
                       <packing>
                         <property name="expand">False</property>
@@ -542,8 +548,10 @@
                       <widget class="GtkLabel" id="label23">
                         <property name="visible">True</property>
                         <property name="xalign">0.0099999997764825821</property>
-                        <property name="label" translatable="yes">&lt;b&gt;Character&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
+                        <property name="label" translatable="yes">Character</property>
+                         <attributes>
+                          <attribute name="weight" value="bold"/>
+                         </attributes>
                       </widget>
                       <packing>
                         <property name="expand">False</property>

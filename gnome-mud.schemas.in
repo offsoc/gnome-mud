@@ -163,7 +163,7 @@
 			<locale name="C">
 				<short>Use Proxy</short>
 				<long>
-				Use a proxy server to connect to the mud.
+				Use a proxy server to connect to the MUD.
 				</long>
 			</locale>
 		</schema>

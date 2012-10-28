@@ -493,7 +493,7 @@ mud_connections_connect_cb(GtkWidget *widget, MudConnections *conn)
 	break;
 
     default:
-	g_warning("Malformed mud name passed to delete.");
+	g_warning("Malformed MUD name passed to delete.");
 	return;
     }
 
@@ -626,7 +626,7 @@ mud_connections_delete_cb(GtkWidget *widget, MudConnections *conn)
             break;
 
         default:
-            g_warning("Malformed mud name passed to delete.");
+            g_warning("Malformed MUD name passed to delete.");
             return;
     }
 
@@ -1270,7 +1270,7 @@ mud_connections_property_save(MudConnections *conn)
     if(strlen(name) == 0)
     {
 	utils_error_message(conn->priv->properties_window, _("Error"),
-			    "%s", _("No mud name specified."));
+			    "%s", _("No MUD name specified."));
 
 	if(logon)
 	    g_free(logon);

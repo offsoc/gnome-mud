@@ -2,16 +2,20 @@
 # Copyright (C) 2003, 2004, 2005, 2009 gnome-mud'S COPYRIGHT HOLDER.
 # Copyright (C) 2003, 2004, 2005 Miloslav Trmac <mitr@volny.cz>.
 # This file is distributed under the same license as the gnome-mud package.
+#
 # Miloslav Trmac <mitr@volny.cz>, 2003, 2004, 2005.
-# Marek Černocký <marek@manet.cz>, 2009.
+# Marek Černocký <marek@manet.cz>, 2009, 2012.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-mud VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-13 00:18+0100\n"
-"PO-Revision-Date: 2009-11-08 12:03+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"mud&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-10-28 20:01+0000\n"
+"PO-Revision-Date: 2012-11-06 09:50+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,34 +30,18 @@ msgid "The GNOME MUD Client"
 msgstr "Klient MUD pro GNOME"
 
 #: ../gnome-mud.schemas.in.h:1
+msgid "Font"
+msgstr "Písmo"
+
+#: ../gnome-mud.schemas.in.h:2
 msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
 msgstr "Název písma Pango. Například „Sans 12“ nebo „Monospace Bold 14“."
 
-#: ../gnome-mud.schemas.in.h:2
-msgid ""
-"A character that is used to split commands in a string like \"w;w;w;l\", "
-"which will be sent to the MUD as 4 separate commands."
-msgstr ""
-"Znak, který se používá pro oddělení příkazů v řetězci, např. „w;w;w;l“, což "
-"bude MUD odesláno jako 4 oddělené příkazy."
-
-#: ../gnome-mud.schemas.in.h:3 ../ui/prefs.glade.h:7
-msgid "Aliases"
-msgstr "Přezdívky"
-
-#: ../gnome-mud.schemas.in.h:4
-msgid "Color palette"
-msgstr "Paleta barev"
-
-#: ../gnome-mud.schemas.in.h:5
-msgid "Command Divider"
-msgstr "Oddělovač příkazů"
-
-#: ../gnome-mud.schemas.in.h:6
+#: ../gnome-mud.schemas.in.h:3
 msgid "Default color of the background"
 msgstr "Výchozí barva pozadí"
 
-#: ../gnome-mud.schemas.in.h:7
+#: ../gnome-mud.schemas.in.h:4
 msgid ""
 "Default color of the background, as a color specification (can be HTML-style "
 "hex digits, or a color name such as \"red\")."
@@ -61,11 +49,11 @@ msgstr ""
 "Výchozí barva pozadí zadaná jako barva (mohou to být šestnáctkové číslice ve "
 "stylu HTML nebo název barvy, např. „red“)."
 
-#: ../gnome-mud.schemas.in.h:8
+#: ../gnome-mud.schemas.in.h:5
 msgid "Default color of the text"
 msgstr "Výchozí barva textu"
 
-#: ../gnome-mud.schemas.in.h:9
+#: ../gnome-mud.schemas.in.h:6
 msgid ""
 "Default color of the text, as a color specification (can be HTML-style hex "
 "digits, or a color name such as \"red\")."
@@ -73,27 +61,11 @@ msgstr ""
 "Výchozí barva textu zadaná jako barva (mohou to být šestnáctkové číslice ve "
 "stylu HTML nebo název barvy, např. „red“)."
 
-#: ../gnome-mud.schemas.in.h:10
-msgid "Directional keybindings"
-msgstr "Klávesové zkratky směru"
+#: ../gnome-mud.schemas.in.h:7
+msgid "Color palette"
+msgstr "Paleta barev"
 
-#: ../gnome-mud.schemas.in.h:11
-msgid "Enable sound file downloading on MSP enabled MUDs"
-msgstr "Povolit stahování zvukového souboru v MUD se zapnutým MSP."
-
-#: ../gnome-mud.schemas.in.h:12
-msgid "Encoding"
-msgstr "Kódování"
-
-#: ../gnome-mud.schemas.in.h:13
-msgid "Encoding Index"
-msgstr "Index kódování"
-
-#: ../gnome-mud.schemas.in.h:14
-msgid "Font"
-msgstr "Písmo"
-
-#: ../gnome-mud.schemas.in.h:15
+#: ../gnome-mud.schemas.in.h:8
 msgid ""
 "GNOME-Mud has a 16-color palette that MUDs can use. It must be specified in "
 "the form of a colon-separated list of color names. Color names should be in "
@@ -103,11 +75,117 @@ msgstr ""
 "jako dvojtečkou oddělovaný seznamu názvů barev. Názvy barev by měly být v "
 "šestnáctkovém formátu, např. „#FF00FF“."
 
+#: ../gnome-mud.schemas.in.h:9
+msgid "Number of lines to keep in scrollback"
+msgstr "Počet odsunutých řádků, které se budou pamatovat"
+
+#: ../gnome-mud.schemas.in.h:10
+msgid ""
+"Number of scrollback lines to keep around. You can scroll back in the "
+"terminal by this number of lines; lines that don't fit in the scrollback are "
+"discarded."
+msgstr ""
+"Počet odsunutých řádků, které ponechat. V terminálu se můžete posunout zpět "
+"o tento počet řádků. Řádky, na které již není místo, jsou zahozeny."
+
+#: ../gnome-mud.schemas.in.h:11 ../ui/prefs.glade.h:13
+msgid "Encoding"
+msgstr "Kódování"
+
+#: ../gnome-mud.schemas.in.h:12
+msgid "The encoding for the terminal widget."
+msgstr "Kódování pro terminálový widget."
+
+#: ../gnome-mud.schemas.in.h:13
+msgid "Encoding Index"
+msgstr "Index kódování"
+
+#: ../gnome-mud.schemas.in.h:14
+msgid "The index of the currently selected encoding."
+msgstr "Index aktuálně vybraného kódování."
+
+#: ../gnome-mud.schemas.in.h:15
+msgid "Proxy Hostname"
+msgstr "Název hostitele proxy"
+
 #: ../gnome-mud.schemas.in.h:16
-msgid "How often in seconds gnome-mud should flush logfiles."
-msgstr "Jak často (v sekundách) by měl gnome-mud zapisovat soubory s evidencí."
+msgid "The hostname for the SOCKS proxy server."
+msgstr "Název hostitele pro server proxy SOCKS."
 
 #: ../gnome-mud.schemas.in.h:17
+msgid "Proxy Version"
+msgstr "Verze proxy"
+
+#: ../gnome-mud.schemas.in.h:18
+msgid "The SOCKS Version to be used."
+msgstr "Verze SOCKS, která se má použít."
+
+#: ../gnome-mud.schemas.in.h:19
+msgid "Remote Encoding"
+msgstr "Vzdálené kódování"
+
+#: ../gnome-mud.schemas.in.h:20
+msgid "Use Remote Encoding negotiation."
+msgstr "Použít vyjednávání o vzdáleném kódování."
+
+#: ../gnome-mud.schemas.in.h:21
+msgid "Use Proxy"
+msgstr "Použít proxy"
+
+#: ../gnome-mud.schemas.in.h:22
+msgid "Use a proxy server to connect to the MUD."
+msgstr "Pro připojení k MUD používat proxy server."
+
+#: ../gnome-mud.schemas.in.h:23
+msgid "Remote Download"
+msgstr "Vzdálené stahování"
+
+#: ../gnome-mud.schemas.in.h:24
+msgid "Enable sound file downloading on MSP enabled MUDs"
+msgstr "Povolit stahování zvukového souboru v MUD se zapnutým MSP."
+
+#: ../gnome-mud.schemas.in.h:25
+msgid "Command Divider"
+msgstr "Oddělovač příkazů"
+
+#: ../gnome-mud.schemas.in.h:26
+msgid ""
+"A character that is used to split commands in a string like \"w;w;w;l\", "
+"which will be sent to the MUD as 4 separate commands."
+msgstr ""
+"Znak, který se používá pro oddělení příkazů v řetězci, např. „w;w;w;l“, což "
+"bude MUD odesláno jako 4 oddělené příkazy."
+
+#: ../gnome-mud.schemas.in.h:27
+msgid "Whether to echo sent text to the connection"
+msgstr "Zda opakovat odeslaný text"
+
+#: ../gnome-mud.schemas.in.h:28
+msgid ""
+"If enabled, all the text typed in will be echoed in the terminal, making it "
+"easier to control what is sent."
+msgstr ""
+"Je-li zapnuto, bude veškerý napsaný text v terminálu zopakován, což "
+"usnadňuje kontrolu nad tím, co je odesíláno."
+
+#: ../gnome-mud.schemas.in.h:29
+msgid "Whether to keep text sent to the connection"
+msgstr "Zda ponechávat odeslaný text"
+
+#: ../gnome-mud.schemas.in.h:30
+msgid ""
+"If enabled, the text that is sent to the connection will be left as a "
+"selection in the entry box. Otherwise, the text entry box will be cleared "
+"after each text input."
+msgstr ""
+"Je-li zapnuto, bude odeslaný text ponechán jako výběr ve vstupním poli. V "
+"opačném případě bude vstupní pole po každém zadání textu vymazáno."
+
+#: ../gnome-mud.schemas.in.h:31
+msgid "Whether to enable or disable the system keys"
+msgstr "Zda povolit nebo zakázat systémové klávesy"
+
+#: ../gnome-mud.schemas.in.h:32
 msgid ""
 "If enabled, GNOME-Mud will offer a few built-in keybindings. They can be "
 "overridden by custom keybindings, or they can be disabled completely with "
@@ -117,43 +195,38 @@ msgstr ""
 "zkratek. Mohou být nahrazeny vlastními zkratkami nebo mohou být úplně "
 "zakázány tímto nastavením."
 
-#: ../gnome-mud.schemas.in.h:18
-msgid ""
-"If enabled, all the text typed in will be echoed in the terminal, making it "
-"easier to control what is sent."
-msgstr ""
-"Je-li zapnuto, bude veškerý napsaný text v terminálu zopakován, což "
-"usnadňuje kontrolu nad tím, co je odesíláno."
+#: ../gnome-mud.schemas.in.h:33
+msgid "Whether to scroll to the bottom when there's new output"
+msgstr "Zda se posunout dolů, když se objeví nový výstup"
 
-#: ../gnome-mud.schemas.in.h:19
-msgid ""
-"If enabled, the text that is sent to the connection will be left as a "
-"selection in the entry box. Otherwise, the text entry box will be cleared "
-"after each text input."
-msgstr ""
-"Je-li zapnuto, bude odeslaný text ponechán jako výběr ve vstupním poli. V "
-"opačném případě bude vstupní pole po každém zadání textu vymazáno."
-
-#: ../gnome-mud.schemas.in.h:20
+#: ../gnome-mud.schemas.in.h:34
 msgid ""
 "If enabled, whenever there's new output the terminal will be scrolled to the "
 "bottom."
 msgstr ""
 "Je-li zapnuto, bude terminál posunut dolů, kdykoli se objeví nový výstup."
 
-#: ../gnome-mud.schemas.in.h:21 ../ui/prefs.glade.h:16
-msgid "Keybindings"
-msgstr "Klávesové zkratky"
-
-#: ../gnome-mud.schemas.in.h:22
+#: ../gnome-mud.schemas.in.h:35
 msgid "Last log file"
 msgstr "Poslední soubor s evidencí"
 
-#: ../gnome-mud.schemas.in.h:23
+#: ../gnome-mud.schemas.in.h:36
+msgid "The file in which a mudlog was last saved."
+msgstr "Soubor, do kterého se naposledy ukládal mudlog."
+
+#: ../gnome-mud.schemas.in.h:37
+msgid "Log flush interval"
+msgstr "Interval zapisování evidence"
+
+#: ../gnome-mud.schemas.in.h:38
+msgid "How often in seconds gnome-mud should flush logfiles."
+msgstr "Jak často (v sekundách) by měl gnome-mud zapisovat soubory s evidencí."
+
+#: ../gnome-mud.schemas.in.h:39
 msgid "List of profiles"
 msgstr "Seznam profilů"
 
-#: ../gnome-mud.schemas.in.h:24
+#: ../gnome-mud.schemas.in.h:40
 msgid ""
 "List of profiles known to GNOME-Mud. The list contains strings naming "
 "subdirectories relative to /apps/gnome-mud/profiles."
@@ -161,94 +234,25 @@ msgstr ""
 "Seznam profilů známých v GNOME-Mud. Seznam obsahuje názvy podsložek "
 "relativně k /apps/gnome-mud/profiles."
 
-#: ../gnome-mud.schemas.in.h:25
-msgid "Log flush interval"
-msgstr "Interval zapisování evidence"
+#: ../gnome-mud.schemas.in.h:41 ../ui/prefs.glade.h:32
+msgid "Aliases"
+msgstr "Přezdívky"
 
-#: ../gnome-mud.schemas.in.h:26
-msgid "Number of lines to keep in scrollback"
-msgstr "Počet odsunutých řádků, které se budou pamatovat"
-
-#: ../gnome-mud.schemas.in.h:27
-msgid ""
-"Number of scrollback lines to keep around. You can scroll back in the "
-"terminal by this number of lines; lines that don't fit in the scrollback are "
-"discarded."
-msgstr ""
-"Počet odsunutých řádků, které ponechat. V terminálu se můžete posunout zpět "
-"o tento počet řádků. Řádky, na které již není místo, jsou zahozeny."
-
-#: ../gnome-mud.schemas.in.h:28
-msgid "Proxy Hostname"
-msgstr "Název hostitele proxy"
-
-#: ../gnome-mud.schemas.in.h:29
-msgid "Proxy Version"
-msgstr "Verze proxy"
-
-#: ../gnome-mud.schemas.in.h:30
-msgid "Remote Download"
-msgstr "Vzdálené stahování"
-
-#: ../gnome-mud.schemas.in.h:31
-msgid "Remote Encoding"
-msgstr "Vzdálené kódování"
-
-#: ../gnome-mud.schemas.in.h:32
-msgid "The SOCKS Version to be used."
-msgstr "Verze SOCKS, která se má použít."
-
-#: ../gnome-mud.schemas.in.h:33
-msgid "The encoding for the terminal widget."
-msgstr "Kódování pro terminálový widget."
-
-#: ../gnome-mud.schemas.in.h:34
-msgid "The file in which a mudlog was last saved."
-msgstr "Soubor, do kterého se naposledy ukládal mudlog."
-
-#: ../gnome-mud.schemas.in.h:35
-msgid "The hostname for the SOCKS proxy server."
-msgstr "Název hostitele pro server proxy SOCKS."
-
-#: ../gnome-mud.schemas.in.h:36
-msgid "The index of the currently selected encoding."
-msgstr "Index aktuálně vybraného kódování."
-
-#: ../gnome-mud.schemas.in.h:37 ../ui/prefs.glade.h:25
-msgid "Triggers"
-msgstr "Spouštěče"
-
-#: ../gnome-mud.schemas.in.h:38
-msgid "Use Proxy"
-msgstr "Použít proxy"
-
-#: ../gnome-mud.schemas.in.h:39
-msgid "Use Remote Encoding negotiation."
-msgstr "Použít vyjednávání o vzdáleném kódování."
-
-#: ../gnome-mud.schemas.in.h:40
-msgid "Use a proxy server to connect to the mud."
-msgstr "Pro připojení k MUD používat proxy server"
-
-#: ../gnome-mud.schemas.in.h:41 ../ui/prefs.glade.h:26
+#: ../gnome-mud.schemas.in.h:42 ../ui/prefs.glade.h:33
 msgid "Variables"
 msgstr "Proměnné"
 
-#: ../gnome-mud.schemas.in.h:42
-msgid "Whether to echo sent text to the connection"
-msgstr "Zda opakovat odeslaný text"
+#: ../gnome-mud.schemas.in.h:43 ../ui/prefs.glade.h:31
+msgid "Triggers"
+msgstr "Spouštěče"
 
-#: ../gnome-mud.schemas.in.h:43
-msgid "Whether to enable or disable the system keys"
-msgstr "Zda povolit nebo zakázat systémové klávesy"
-
-#: ../gnome-mud.schemas.in.h:44
-msgid "Whether to keep text sent to the connection"
-msgstr "Zda ponechávat odeslaný text"
+#: ../gnome-mud.schemas.in.h:44 ../ui/prefs.glade.h:35
+msgid "Keybindings"
+msgstr "Klávesové zkratky"
 
 #: ../gnome-mud.schemas.in.h:45
-msgid "Whether to scroll to the bottom when there's new output"
-msgstr "Zda se posunout dolů, když se objeví nový výstup"
+msgid "Directional keybindings"
+msgstr "Klávesové zkratky směru"
 
 #: ../src/debug-logger.c:827 ../src/mud-connections.c:1272
 msgid "Error"
@@ -313,7 +317,7 @@ msgid "Delete %s?"
 msgstr "Smazat %s?"
 
 #: ../src/mud-connections.c:1273
-msgid "No mud name specified."
+msgid "No MUD name specified."
 msgstr "Nebyl zadán žádný název MUD."
 
 #: ../src/mud-connection-view.c:575 ../src/mud-connection-view.c:1977
@@ -348,8 +352,8 @@ msgstr "*** Spojení uzavřeno.\n"
 #: ../src/mud-connection-view.c:1405
 #, c-format
 msgid ""
-"There was an error loading config value for whether to use image in menus. (%"
-"s)\n"
+"There was an error loading config value for whether to use image in menus. "
+"(%s)\n"
 msgstr ""
 "Vyskytla se chyba během načítání hodnoty nastavení určující, zda použít v "
 "nabídkách obrázky. (%s)\n"
@@ -458,329 +462,325 @@ msgstr ""
 "Poškozená data MCCP. Spojení se přerušuje.\n"
 
 #: ../ui/main.glade.h:1
-msgid "<b>Logging Options:</b>"
-msgstr "<b>Volby evidování:</b>"
+msgid "Gnome-Mud"
+msgstr "Gnome-Mud"
 
 #: ../ui/main.glade.h:2
-msgid "<b>_Log to File:</b>"
-msgstr "<b>_Evidovat do souboru:</b>"
+msgid "_File"
+msgstr "_Soubor"
 
 #: ../ui/main.glade.h:3
 msgid "C_onnection..."
 msgstr "_Připojení…"
 
 #: ../ui/main.glade.h:4
-msgid "Close _Window"
-msgstr "_Zavřít okno"
-
-#: ../ui/main.glade.h:5
-msgid "Connect"
-msgstr "Připojit"
-
-#: ../ui/main.glade.h:6
-msgid "Connect to MUD"
-msgstr "Připojit se k MUD"
-
-#: ../ui/main.glade.h:7
-msgid "Connect to host"
-msgstr "Připojit se k hostiteli"
-
-#: ../ui/main.glade.h:8
-msgid "Debug Log"
-msgstr "Evidence ladění"
-
-#: ../ui/main.glade.h:9
-msgid "Disconnect"
-msgstr "Odpojit"
-
-#: ../ui/main.glade.h:10
-msgid "Disconnect from current MUD"
-msgstr "Odpojit se od současného MUD"
-
-#: ../ui/main.glade.h:11
-msgid "Disconnect from current host"
-msgstr "Odpojit se od současného hostitele"
-
-#: ../ui/main.glade.h:12
-msgid "Gnome-Mud"
-msgstr "Gnome-Mud"
-
-#: ../ui/main.glade.h:13
-msgid "Include C_olor"
-msgstr "Zahrnout _barvu"
-
-#: ../ui/main.glade.h:14
-msgid "Log Inp_ut"
-msgstr "Evidovat vst_up"
-
-#: ../ui/main.glade.h:15
-msgid "Number of _previous lines to include:"
-msgstr "Počet _předchozích řádků, které zahrnout:"
-
-#: ../ui/main.glade.h:16
-msgid "P_rofiles"
-msgstr "P_rofily"
-
-#: ../ui/main.glade.h:17
-msgid "Reconnect"
-msgstr "Znovu připojit"
-
-#: ../ui/main.glade.h:18
-msgid "Reconnect to current MUD"
-msgstr "Znovu se připojit k současnému MUD"
-
-#: ../ui/main.glade.h:19
-msgid "Save buffer as..."
-msgstr "_Uložit vyrovnávací paměť jako…"
-
-#: ../ui/main.glade.h:20
-msgid "Start Logging..."
-msgstr "Z_ačít evidovat…"
-
-#: ../ui/main.glade.h:21
-msgid "Start _Logging..."
-msgstr "Z_ačít evidovat…"
-
-#: ../ui/main.glade.h:22
-msgid "Stop Lo_gging"
-msgstr "Př_estat evidovat…"
-
-#: ../ui/main.glade.h:23
-msgid "_Append to file"
-msgstr "Př_ipojit k souboru"
-
-#: ../ui/main.glade.h:24
 msgid "_Disconnect"
 msgstr "O_dpojit"
 
-#: ../ui/main.glade.h:25
-msgid "_File"
-msgstr "_Soubor"
-
-#: ../ui/main.glade.h:26
-msgid "_Help"
-msgstr "_Nápověda"
-
-#: ../ui/main.glade.h:27
-msgid "_Include entire buffer"
-msgstr "Z_ahrnou celou vyrovnávací paměť"
-
-#: ../ui/main.glade.h:28
-msgid "_Number of lines to log:"
-msgstr "_Počet řádků k evidování:"
-
-#: ../ui/main.glade.h:29
+#: ../ui/main.glade.h:5
 msgid "_Reconnect"
 msgstr "_Znovu připojit"
 
-#: ../ui/main.glade.h:30
+#: ../ui/main.glade.h:6
+msgid "Start _Logging..."
+msgstr "Z_ačít evidovat…"
+
+#: ../ui/main.glade.h:7
+msgid "Stop Lo_gging"
+msgstr "Př_estat evidovat…"
+
+#: ../ui/main.glade.h:8
 msgid "_Save Buffer..."
 msgstr "_Uložit vyrovnávací paměť…"
 
-#: ../ui/main.glade.h:31
-msgid "_Select File"
-msgstr "Vybrat _soubor"
+#: ../ui/main.glade.h:9
+msgid "Close _Window"
+msgstr "_Zavřít okno"
 
-#: ../ui/main.glade.h:32
+#: ../ui/main.glade.h:10
 msgid "_Settings"
 msgstr "Na_stavení"
 
+#: ../ui/main.glade.h:11
+msgid "P_rofiles"
+msgstr "P_rofily"
+
+#: ../ui/main.glade.h:12
+msgid "_Help"
+msgstr "_Nápověda"
+
+#: ../ui/main.glade.h:13
+msgid "Connect to MUD"
+msgstr "Připojit se k MUD"
+
+#: ../ui/main.glade.h:14
+msgid "Connect"
+msgstr "Připojit"
+
+#: ../ui/main.glade.h:15
+msgid "Connect to host"
+msgstr "Připojit se k hostiteli"
+
+#: ../ui/main.glade.h:16
+msgid "Disconnect from current MUD"
+msgstr "Odpojit se od současného MUD"
+
+#: ../ui/main.glade.h:17
+msgid "Disconnect"
+msgstr "Odpojit"
+
+#: ../ui/main.glade.h:18
+msgid "Disconnect from current host"
+msgstr "Odpojit se od současného hostitele"
+
+#: ../ui/main.glade.h:19
+msgid "Reconnect to current MUD"
+msgstr "Znovu se připojit k současnému MUD"
+
+#: ../ui/main.glade.h:20
+msgid "Reconnect"
+msgstr "Znovu připojit"
+
+#: ../ui/main.glade.h:21
+msgid "Save buffer as..."
+msgstr "_Uložit vyrovnávací paměť jako…"
+
+#: ../ui/main.glade.h:22
+msgid "Debug Log"
+msgstr "Evidence ladění"
+
+#: ../ui/main.glade.h:23
+msgid "Start Logging..."
+msgstr "Z_ačít evidovat…"
+
+#: ../ui/main.glade.h:24
+msgid "_Log to File:"
+msgstr "_Evidovat do souboru:"
+
+#: ../ui/main.glade.h:25
+msgid "_Select File"
+msgstr "Vybrat _soubor"
+
+#: ../ui/main.glade.h:26
+msgid "Logging Options"
+msgstr "Volby evidování"
+
+#: ../ui/main.glade.h:27
+msgid "_Number of lines to log:"
+msgstr "_Počet řádků k evidování:"
+
+#: ../ui/main.glade.h:28
+msgid "Number of _previous lines to include:"
+msgstr "Počet _předchozích řádků, které zahrnout:"
+
+#: ../ui/main.glade.h:29
+msgid "_Append to file"
+msgstr "Př_ipojit k souboru"
+
+#: ../ui/main.glade.h:30
+msgid "Log Inp_ut"
+msgstr "Evidovat vst_up"
+
+#: ../ui/main.glade.h:31
+msgid "_Include entire buffer"
+msgstr "Z_ahrnou celou vyrovnávací paměť"
+
+#: ../ui/main.glade.h:32
+msgid "Include C_olor"
+msgstr "Zahrnout _barvu"
+
 #: ../ui/muds.glade.h:1
-msgid " _Host: "
-msgstr "_Hostitel:"
-
-#: ../ui/muds.glade.h:2
-msgid " _Port: "
-msgstr " _Port: "
-
-#: ../ui/muds.glade.h:3
-msgid "<b>Character</b>"
-msgstr "<b>Postava</b>"
-
-#: ../ui/muds.glade.h:4
-msgid "<b>Custom Connection</b>"
-msgstr "<b>Vlastní připojení</b>"
-
-#: ../ui/muds.glade.h:5
-msgid "<b>Mud</b>"
-msgstr "<b>MUD</b>"
-
-#: ../ui/muds.glade.h:6
-msgid "<b>Profile</b>"
-msgstr "<b>Profil</b>"
-
-#: ../ui/muds.glade.h:7
-msgid "Are you sure you want to delete this mud?"
-msgstr "Opravdu chcete smazat tento MUD?"
-
-#: ../ui/muds.glade.h:8
-msgid "Close _without Saving"
-msgstr "Zavřít _bez uložení"
-
-#: ../ui/muds.glade.h:9
-msgid "Connection Properties"
-msgstr "Vlastnosti připojení"
-
-#: ../ui/muds.glade.h:10
 msgid "Connections"
 msgstr "Připojení"
 
-#: ../ui/muds.glade.h:11
-msgid "Delete Mud?"
-msgstr "Smazat MUD?"
+#: ../ui/muds.glade.h:2
+msgid " _Host: "
+msgstr "_Hostitel:"
 
-#: ../ui/muds.glade.h:12
-msgid "Host:"
-msgstr "Hostitel:"
+#: ../ui/muds.glade.h:3
+msgid " _Port: "
+msgstr " _Port: "
 
-#: ../ui/muds.glade.h:13
-msgid "Logon:"
-msgstr "Navázat:"
+#: ../ui/muds.glade.h:4
+msgid "Custom Connection"
+msgstr "Vlastní připojení"
 
-#: ../ui/muds.glade.h:14
+#: ../ui/muds.glade.h:5
+msgid "Connection Properties"
+msgstr "Vlastnosti připojení"
+
+#: ../ui/muds.glade.h:6
+msgid "MUD"
+msgstr "MUD"
+
+#: ../ui/muds.glade.h:7
 msgid "Name:"
 msgstr "Název:"
 
-#: ../ui/muds.glade.h:15
+#: ../ui/muds.glade.h:8
+msgid "Host:"
+msgstr "Hostitel:"
+
+#: ../ui/muds.glade.h:9
 msgid "Port:"
 msgstr "Port:"
 
-#: ../ui/muds.glade.h:16
-msgid "Select A Folder"
-msgstr "Výběr složky"
+#: ../ui/muds.glade.h:10
+msgid "Profile"
+msgstr "Profil"
 
-#: ../ui/muds.glade.h:17
-msgid "Select An Icon..."
-msgstr "Výběr ikony…"
+#: ../ui/muds.glade.h:11
+msgid "Character"
+msgstr "Postava"
 
-#: ../ui/muds.glade.h:18
+#: ../ui/muds.glade.h:12
+msgid "Logon:"
+msgstr "Přihlášení:"
+
+#: ../ui/muds.glade.h:13
 msgid "Unsaved Changes"
 msgstr "Neuložené změny"
 
-#: ../ui/muds.glade.h:19
+#: ../ui/muds.glade.h:14
 msgid "You have unsaved changes. Do you want to save before closing?"
 msgstr "Nemáte uložené změny. Chcete je před zavřením uložit?"
 
+#: ../ui/muds.glade.h:15
+msgid "Close _without Saving"
+msgstr "Zavřít _bez uložení"
+
+#: ../ui/muds.glade.h:16
+msgid "Delete MUD?"
+msgstr "Smazat MUD?"
+
+#: ../ui/muds.glade.h:17
+msgid "Are you sure you want to delete this MUD?"
+msgstr "Opravdu chcete smazat tento MUD?"
+
+#: ../ui/muds.glade.h:18
+msgid "Select An Icon..."
+msgstr "Výběr ikony…"
+
+#: ../ui/muds.glade.h:19
+msgid "Select A Folder"
+msgstr "Výběr složky"
+
 #: ../ui/prefs.glade.h:1
-msgid "<b>Encoding</b>"
-msgstr "<b>Kódování</b>"
-
-#: ../ui/prefs.glade.h:2
-msgid "<b>Input</b>"
-msgstr "<b>Vstup</b>"
-
-#: ../ui/prefs.glade.h:3
-msgid "<b>New Profile Name:</b>"
-msgstr "<b>Název nového profilu:</b>"
-
-#: ../ui/prefs.glade.h:4
-msgid "<b>Output</b>"
-msgstr "<b>Výstup</b>"
-
-#: ../ui/prefs.glade.h:5
-msgid "<b>Proxy</b>"
-msgstr "<b>Proxy</b>"
-
-#: ../ui/prefs.glade.h:6
-msgid "<b>Telnet Options</b>"
-msgstr "<b>Volby pro Telnet</b>"
-
-#: ../ui/prefs.glade.h:8
-msgid "Color Palette:"
-msgstr "Paleta barev:"
-
-#: ../ui/prefs.glade.h:9
-msgid "Command _Division Character:"
-msgstr "Znak o_ddělující příkazy:"
-
-#: ../ui/prefs.glade.h:10
-msgid "Enable Mud _Sound Protocol (MSP)"
-msgstr "Zapnout M_SP (Mud Sound Protocol -zvukový protokol MUD)"
-
-#: ../ui/prefs.glade.h:11
-msgid "Enable _Character Encoding Negotiation (CHARSET)"
-msgstr "Zapnout vyjednávání o kódování znaků (_CHARSET)"
-
-#: ../ui/prefs.glade.h:12
-msgid "Error At:"
-msgstr "Chyba v:"
-
-#: ../ui/prefs.glade.h:13
-msgid "Error Code:"
-msgstr "Kód chyby:"
-
-#: ../ui/prefs.glade.h:14
-msgid "Error String:"
-msgstr "Text chyby:"
-
-#: ../ui/prefs.glade.h:15
-msgid "Fon_t:"
-msgstr "Pí_smo:"
-
-#: ../ui/prefs.glade.h:17
-msgid "Network"
-msgstr "Síť"
-
-#: ../ui/prefs.glade.h:18
 msgid "New Profile"
 msgstr "Nový profil"
 
-#: ../ui/prefs.glade.h:19
-msgid "Preferences"
-msgstr "Předvolby"
+#: ../ui/prefs.glade.h:2
+msgid "New Profile Name:"
+msgstr "Název nového profilu:"
 
-#: ../ui/prefs.glade.h:20
-msgid "Profiles"
-msgstr "Profily"
-
-#: ../ui/prefs.glade.h:21
+#: ../ui/prefs.glade.h:3
 msgid "Regex Error"
 msgstr "Chyba regulárního výrazu"
 
-#: ../ui/prefs.glade.h:22
-msgid "Scroll on _Output"
-msgstr "P_osunout na výstupu"
+#: ../ui/prefs.glade.h:4
+msgid "Error Code:"
+msgstr "Kód chyby:"
 
-#: ../ui/prefs.glade.h:23
-msgid "Terminal"
-msgstr "Terminál"
+#: ../ui/prefs.glade.h:5
+msgid "Error String:"
+msgstr "Text chyby:"
 
-#: ../ui/prefs.glade.h:24
-msgid "Timers"
-msgstr "Časovače"
+#: ../ui/prefs.glade.h:6
+msgid "Error At:"
+msgstr "Chyba v:"
 
-#: ../ui/prefs.glade.h:27
-msgid "_Background Color:"
-msgstr "_Barva pozadí:"
+#: ../ui/prefs.glade.h:7
+msgid "Profiles"
+msgstr "Profily"
 
-#: ../ui/prefs.glade.h:28
-msgid "_Character Set:"
-msgstr "_Znaková sada:"
+#: ../ui/prefs.glade.h:8
+msgid "Preferences"
+msgstr "Předvolby"
 
-#: ../ui/prefs.glade.h:29
+#: ../ui/prefs.glade.h:9
+msgid "Input"
+msgstr "Vstup"
+
+#: ../ui/prefs.glade.h:10
 msgid "_Echo the Text Sent"
 msgstr "Opakovat od_eslaný text"
 
-#: ../ui/prefs.glade.h:30
-msgid "_Enable Proxy"
-msgstr "_Zapnout proxy:"
-
-#: ../ui/prefs.glade.h:31
-msgid "_Foreground Color:"
-msgstr "Barva _popředí:"
-
-#: ../ui/prefs.glade.h:32
-msgid "_Host:"
-msgstr "_Hostitel:"
-
-#: ../ui/prefs.glade.h:33
+#: ../ui/prefs.glade.h:11
 msgid "_Keep the Text Entered"
 msgstr "_Ponechat zadaný text"
 
-#: ../ui/prefs.glade.h:34
+#: ../ui/prefs.glade.h:12
+msgid "Command _Division Character:"
+msgstr "Znak o_ddělující příkazy:"
+
+#: ../ui/prefs.glade.h:14
+msgid "_Character Set:"
+msgstr "_Znaková sada:"
+
+#: ../ui/prefs.glade.h:15
+msgid "Output"
+msgstr "Výstup"
+
+#: ../ui/prefs.glade.h:16
+msgid "Scroll on _Output"
+msgstr "P_osunout na výstupu"
+
+#: ../ui/prefs.glade.h:17
 msgid "_Number of Scrollback Lines:"
 msgstr "Počet odsu_nutých řádků:"
 
-#: ../ui/prefs.glade.h:35
+#: ../ui/prefs.glade.h:18
+msgid "Fon_t:"
+msgstr "Pí_smo:"
+
+#: ../ui/prefs.glade.h:19
+msgid "_Foreground Color:"
+msgstr "Barva _popředí:"
+
+#: ../ui/prefs.glade.h:20
+msgid "_Background Color:"
+msgstr "_Barva pozadí:"
+
+#: ../ui/prefs.glade.h:21
+msgid "Color Palette:"
+msgstr "Paleta barev:"
+
+#: ../ui/prefs.glade.h:22
+msgid "Terminal"
+msgstr "Terminál"
+
+#: ../ui/prefs.glade.h:23
+msgid "Proxy"
+msgstr "Proxy"
+
+#: ../ui/prefs.glade.h:24
+msgid "_Enable Proxy"
+msgstr "_Zapnout proxy:"
+
+#: ../ui/prefs.glade.h:25
+msgid "_Host:"
+msgstr "_Hostitel:"
+
+#: ../ui/prefs.glade.h:26
 msgid "_Version:"
 msgstr "_Verze:"
+
+#: ../ui/prefs.glade.h:27
+msgid "Telnet Options"
+msgstr "Volby pro Telnet"
+
+#: ../ui/prefs.glade.h:28
+msgid "Enable Mud _Sound Protocol (MSP)"
+msgstr "Zapnout M_SP (Mud Sound Protocol -zvukový protokol MUD)"
+
+#: ../ui/prefs.glade.h:29
+msgid "Enable _Character Encoding Negotiation (CHARSET)"
+msgstr "Zapnout vyjednávání o kódování znaků (_CHARSET)"
+
+#: ../ui/prefs.glade.h:30
+msgid "Network"
+msgstr "Síť"
+
+#: ../ui/prefs.glade.h:34
+msgid "Timers"
+msgstr "Časovače"

@@ -1,0 +1,1444 @@
+# Serbian translation of gnome-mud
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003, 2004.
+# This file is distributed under the same license as the gnome-mud package.
+# Maintainer: Danilo Šegan <dsegan@gmx.net>
+# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-mud\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"mud&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-10-28 20:01+0000\n"
+"PO-Revision-Date: 2013-01-03 21:18+0200\n"
+"Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
+"Language-Team: Serbian <gnom@prevod.org>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
+
+#: ../gnome-mud.desktop.in.h:1
+msgid "GNOME-Mud"
+msgstr "Gnom VKT"
+
+#: ../gnome-mud.desktop.in.h:2
+msgid "The GNOME MUD Client"
+msgstr "Gnomov VKT klijent"
+
+#: ../gnome-mud.schemas.in.h:1
+msgid "Font"
+msgstr "Slovni lik"
+
+#: ../gnome-mud.schemas.in.h:2
+msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
+msgstr "Naziv Pango slovnog lika. Primeri su „Sans 12“ ili „Monospace Bold 14“."
+
+#: ../gnome-mud.schemas.in.h:3
+msgid "Default color of the background"
+msgstr "Osnovna boja pozadine"
+
+#: ../gnome-mud.schemas.in.h:4
+msgid ""
+"Default color of the background, as a color specification (can be HTML-style "
+"hex digits, or a color name such as \"red\")."
+msgstr ""
+"Osnovna boja pozadine, kao navod boje (može biti data kao HTML boja pomoću "
+"heksadekadnih cifara, ili naziv boje na engleskom jeziku kao što je „red“ za "
+"crvenu)."
+
+#: ../gnome-mud.schemas.in.h:5
+msgid "Default color of the text"
+msgstr "Osnovna boja teksta"
+
+#: ../gnome-mud.schemas.in.h:6
+msgid ""
+"Default color of the text, as a color specification (can be HTML-style hex "
+"digits, or a color name such as \"red\")."
+msgstr ""
+"Osnovna boja teksta, kao navod boje (može biti data kao HTML boja pomoću "
+"heksadekadnih cifara, ili naziv boje na engleskom jeziku kao što je „red“ za "
+"crvenu)."
+
+#: ../gnome-mud.schemas.in.h:7
+msgid "Color palette"
+msgstr "Paleta boja"
+
+#: ../gnome-mud.schemas.in.h:8
+msgid ""
+"GNOME-Mud has a 16-color palette that MUDs can use. It must be specified in "
+"the form of a colon-separated list of color names. Color names should be in "
+"hex format e.g. \"#FF00FF\"."
+msgstr ""
+"Gnom-VKT ima 16-bojnu paletu koju MUD-ovi mogu da koriste. Ona se mora uneti "
+"u obliku spiska boja razdvojenih dvotačkom. Nazivi boja treba da budu u "
+"heksadekadnom zapisu, npr. „#FF00FF“."
+
+#: ../gnome-mud.schemas.in.h:9
+msgid "Number of lines to keep in scrollback"
+msgstr "Broj redova koji se pamte"
+
+#: ../gnome-mud.schemas.in.h:10
+msgid ""
+"Number of scrollback lines to keep around. You can scroll back in the "
+"terminal by this number of lines; lines that don't fit in the scrollback are "
+"discarded."
+msgstr ""
+"Broj redova koji se pamte. Ovoliko redova možete ići unazad u terminalu; "
+"suvišni redovi se odbacuju."
+
+#: ../gnome-mud.schemas.in.h:11 ../ui/prefs.glade.h:13
+msgid "Encoding"
+msgstr "Kodiranje"
+
+#: ../gnome-mud.schemas.in.h:12
+msgid "The encoding for the terminal widget."
+msgstr "Kodiranje za element terminala."
+
+#: ../gnome-mud.schemas.in.h:13
+msgid "Encoding Index"
+msgstr "Popis kodiranja"
+
+#: ../gnome-mud.schemas.in.h:14
+msgid "The index of the currently selected encoding."
+msgstr "Popis trenutno izabranog kodiranja."
+
+#: ../gnome-mud.schemas.in.h:15
+msgid "Proxy Hostname"
+msgstr "Naziv domaćina posrednika"
+
+#: ../gnome-mud.schemas.in.h:16
+msgid "The hostname for the SOCKS proxy server."
+msgstr "Naziv domaćina za SOCKS posrednički server."
+
+#: ../gnome-mud.schemas.in.h:17
+#| msgid "Plugin Version:"
+msgid "Proxy Version"
+msgstr "Izdanje posrednika"
+
+#: ../gnome-mud.schemas.in.h:18
+msgid "The SOCKS Version to be used."
+msgstr "Izdanje SOCKS-a za korišćenje."
+
+#: ../gnome-mud.schemas.in.h:19
+msgid "Remote Encoding"
+msgstr "Udaljeno kodiranje"
+
+#: ../gnome-mud.schemas.in.h:20
+msgid "Use Remote Encoding negotiation."
+msgstr "Koristi dogovor o udaljenom kodiranju."
+
+#: ../gnome-mud.schemas.in.h:21
+msgid "Use Proxy"
+msgstr "Upotreba posrednika"
+
+#: ../gnome-mud.schemas.in.h:22
+msgid "Use a proxy server to connect to the MUD."
+msgstr "Koristi posrednički server za povezivanje sa VKT-om."
+
+#: ../gnome-mud.schemas.in.h:23
+msgid "Remote Download"
+msgstr "Preuzmi udaljeno"
+
+#: ../gnome-mud.schemas.in.h:24
+msgid "Enable sound file downloading on MSP enabled MUDs"
+msgstr "Uključuje preuzimanje zvučnih datoteka na MSP uključenim VKT-ovima"
+
+#: ../gnome-mud.schemas.in.h:25
+msgid "Command Divider"
+msgstr "Razdelnik naredbi"
+
+#: ../gnome-mud.schemas.in.h:26
+msgid ""
+"A character that is used to split commands in a string like \"w;w;w;l\", "
+"which will be sent to the MUD as 4 separate commands."
+msgstr ""
+"Znak koji se koristi za deljenje naredbi u nisku nalik na „w;w;w;l“, koja će "
+"biti poslata VKT-u kao 4 posebne naredbe."
+
+#: ../gnome-mud.schemas.in.h:27
+msgid "Whether to echo sent text to the connection"
+msgstr "Da li da ispisuje tekst koji se šalje preko veze"
+
+#: ../gnome-mud.schemas.in.h:28
+msgid ""
+"If enabled, all the text typed in will be echoed in the terminal, making it "
+"easier to control what is sent."
+msgstr ""
+"Ako je uključeno, sav uneti tekst će se ispisivati u terminal, time "
+"olakšavajući proveru onoga što je poslato."
+
+#: ../gnome-mud.schemas.in.h:29
+msgid "Whether to keep text sent to the connection"
+msgstr "Da li da čuva tekst koji se šalje preko veze"
+
+#: ../gnome-mud.schemas.in.h:30
+msgid ""
+"If enabled, the text that is sent to the connection will be left as a "
+"selection in the entry box. Otherwise, the text entry box will be cleared "
+"after each text input."
+msgstr ""
+"Ako je uključeno, tekst koji je poslat preko veze će ostati izabran u polju za "
+"unos. Inače, polje za unos će se očistiti posle svakog slanja."
+
+#: ../gnome-mud.schemas.in.h:31
+msgid "Whether to enable or disable the system keys"
+msgstr "Da li da uključi sistemske tastere"
+
+#: ../gnome-mud.schemas.in.h:32
+msgid ""
+"If enabled, GNOME-Mud will offer a few built-in keybindings. They can be "
+"overridden by custom keybindings, or they can be disabled completely with "
+"this option."
+msgstr ""
+"Ako je uključeno, Gnom-VKT će ponuditi nekoliko ugrađenih prečica sa "
+"tastature. Njih je moguće prevazići podešavanjem prečica po izboru ili se mogu "
+"potpuno isključiti pomoću ove opcije."
+
+#: ../gnome-mud.schemas.in.h:33
+msgid "Whether to scroll to the bottom when there's new output"
+msgstr "Da li da pomeri na dno kada ima novog izlaza"
+
+#: ../gnome-mud.schemas.in.h:34
+msgid ""
+"If enabled, whenever there's new output the terminal will be scrolled to the "
+"bottom."
+msgstr ""
+"Ako je uključeno, uvek kada ima novog izlaza, terminal će vas prebaciti na "
+"kraj."
+
+#: ../gnome-mud.schemas.in.h:35
+msgid "Last log file"
+msgstr "Datoteka poslednjeg dnevnika"
+
+#: ../gnome-mud.schemas.in.h:36
+#| msgid "The file that was last used to save a mudlog in."
+msgid "The file in which a mudlog was last saved."
+msgstr "Datoteka u kojoj je sačuvan poslednji VKT-ov dnevnik."
+
+#: ../gnome-mud.schemas.in.h:37
+msgid "Log flush interval"
+msgstr "Period osvežavanja dnevnika"
+
+#: ../gnome-mud.schemas.in.h:38
+msgid "How often in seconds gnome-mud should flush logfiles."
+msgstr "Na koliko sekundi će Gnom-VKT da osvežava datoteke dnevnika."
+
+#: ../gnome-mud.schemas.in.h:39
+msgid "List of profiles"
+msgstr "Spisak skupova podešavanja"
+
+#: ../gnome-mud.schemas.in.h:40
+msgid ""
+"List of profiles known to GNOME-Mud. The list contains strings naming "
+"subdirectories relative to /apps/gnome-mud/profiles."
+msgstr ""
+"Spisak skupova podešavanja koji su prisutni za Gnom-VKT. Spisak sadrži niske "
+"koje imenuju poddirektorijume u „/apps/gnome-mud/profiles“."
+
+#: ../gnome-mud.schemas.in.h:41 ../ui/prefs.glade.h:32
+msgid "Aliases"
+msgstr "Nadimci"
+
+#: ../gnome-mud.schemas.in.h:42 ../ui/prefs.glade.h:33
+msgid "Variables"
+msgstr "Promenljive"
+
+#: ../gnome-mud.schemas.in.h:43 ../ui/prefs.glade.h:31
+msgid "Triggers"
+msgstr "Okidači"
+
+#: ../gnome-mud.schemas.in.h:44 ../ui/prefs.glade.h:35
+msgid "Keybindings"
+msgstr "Prečice"
+
+#: ../gnome-mud.schemas.in.h:45
+#| msgid "Set keybindings"
+msgid "Directional keybindings"
+msgstr "Prečice usmerenja"
+
+#: ../src/debug-logger.c:827 ../src/mud-connections.c:1272
+msgid "Error"
+msgstr "Greška"
+
+#: ../src/debug-logger.c:830 ../src/debug-logger.c:913
+#, c-format
+msgid "ERROR: %s\n"
+msgstr "GREŠKA: %s\n"
+
+#: ../src/debug-logger.c:834
+msgid "Critical"
+msgstr "Kritično"
+
+#: ../src/debug-logger.c:841
+msgid "Warning"
+msgstr "Upozorenje"
+
+#: ../src/debug-logger.c:848 ../src/debug-logger.c:998
+msgid "Message"
+msgstr "Poruka"
+
+#: ../src/debug-logger.c:855
+msgid "Info"
+msgstr "Podaci"
+
+#: ../src/debug-logger.c:862
+msgid "Debug"
+msgstr "Uklanjanje grešaka"
+
+#: ../src/debug-logger.c:869
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: ../src/debug-logger.c:917
+#, c-format
+msgid "CRITICAL ERROR: %s\n"
+msgstr "KRITIČNA GREŠKA: %s\n"
+
+#: ../src/debug-logger.c:921
+#, c-format
+msgid "Warning: %s\n"
+msgstr "Upozorenje: %s\n"
+
+#: ../src/debug-logger.c:991
+msgid "Type"
+msgstr "Vrsta"
+
+#: ../src/gnome-mud.c:63
+#, c-format
+msgid "Failed to init GConf: %s"
+msgstr "Nisam uspeo da pokrenem GKonf: %s"
+
+#: ../src/mud-connections.c:933
+#, c-format
+#| msgid "Do you really want to quit?"
+msgid "Are you sure you want to delete %s?"
+msgstr "Da li ste sigurni da želite da izbrišete „%s“?"
+
+#: ../src/mud-connections.c:934
+#, c-format
+#| msgid "Delete"
+msgid "Delete %s?"
+msgstr "Da obrišem „%s“?"
+
+#: ../src/mud-connections.c:1273
+msgid "No MUD name specified."
+msgstr "Nije naveden VKT naziv."
+
+#: ../src/mud-connection-view.c:575 ../src/mud-connection-view.c:1977
+#, c-format
+#| msgid "*** Making connection to %s, port %s.\n"
+msgid "*** Making connection to %s, port %d.\n"
+msgstr "*** Uspostavlja vezu sa „%s“, preko priključnika %d.\n"
+
+#: ../src/mud-connection-view.c:1054
+msgid "Close"
+msgstr "Zatvori"
+
+#: ../src/mud-connection-view.c:1074
+#| msgid "Manage user profiles"
+msgid "Change P_rofile"
+msgstr "Izmeni _profil"
+
+#: ../src/mud-connection-view.c:1113
+msgid "_Input Methods"
+msgstr "_Načini unosa"
+
+#: ../src/mud-connection-view.c:1142
+#| msgid "*** Couldn't open %s.\n"
+msgid "*** Could not connect.\n"
+msgstr "*** Ne mogu da se povežem.\n"
+
+#: ../src/mud-connection-view.c:1147
+#| msgid "*** Connection closed.\n"
+msgid "*** Connected.\n"
+msgstr "*** Povezan sam.\n"
+
+#: ../src/mud-connection-view.c:1175
+msgid "*** Connection closed.\n"
+msgstr "*** Veza je prekinuta.\n"
+
+#: ../src/mud-connection-view.c:1405
+#, c-format
+msgid ""
+"There was an error loading config value for whether to use image in menus. "
+"(%s)\n"
+msgstr "Došlo je do greške učitavanja vrednosti podešavanja o korišćenju slike u "
+"izborniku. (%s)\n"
+
+#: ../src/mud-connection-view.c:1880 ../src/mud-connection-view.c:1924
+#| msgid "*** Connection closed.\n"
+msgid ""
+"\n"
+"*** Connection closed.\n"
+msgstr ""
+"\n"
+"*** Veza je prekinuta.\n"
+
+#: ../src/mud-connection-view.c:2027
+msgid "<password removed>"
+msgstr "<lozinka je uklonjena>"
+
+#: ../src/mud-connection-view.c:2223
+#| msgid "Connect..."
+msgid "Connecting..."
+msgstr "Povezujem se..."
+
+#: ../src/mud-connection-view.c:2346
+#| msgid "Connection _Wizard..."
+msgid "Connection timed out."
+msgstr "Isteklo je vreme za povezivanje."
+
+#: ../src/mud-connection-view.c:2362
+msgid "There was an internal http connection error."
+msgstr "Došlo je do unutrašnje greške http veze."
+
+#: ../src/mud-connection-view.c:2384
+msgid "Downloading"
+msgstr "Preuzimam"
+
+#: ../src/mud-log.c:395
+msgid "Save log as..."
+msgstr "Sačuvaj dnevnik kao..."
+
+#: ../src/mud-log.c:727
+msgid ""
+"\n"
+"*** Log starts *** %d/%m/%Y %H:%M:%S\n"
+msgstr ""
+"\n"
+"*** Dnevnik počinje *** %d.%m.%Y. u %H:%M:%S\n"
+
+#: ../src/mud-log.c:811
+msgid "Log Error"
+msgstr "Greška dnevnika"
+
+#: ../src/mud-log.c:812
+#, c-format
+#| msgid "*** Could not open file for writing.\n"
+msgid "Could not open \"%s\" for writing."
+msgstr "Ne mogu da otvorim „%s“ za upisivanje."
+
+#: ../src/mud-log.c:839
+msgid ""
+"\n"
+" *** Log stops *** %d/%m/%Y %H:%M:%S\n"
+msgstr ""
+"\n"
+" *** Dnevnik se završava *** %d.%m.%Y. u %H:%M:%S\n"
+
+#: ../src/mud-log.c:913
+msgid "Could not write data to log file!"
+msgstr "Ne mogu da upišem podatke u datoteku dnevnika!"
+
+#: ../src/mud-tray.c:271
+msgid "_Hide window"
+msgstr "_Sakrij prozor"
+
+#: ../src/mud-tray.c:273
+msgid "_Show window"
+msgstr "_Prikaži prozor"
+
+#: ../src/mud-tray.c:279
+msgid "_Quit"
+msgstr "_Izađi"
+
+#: ../src/mud-trigger.c:724
+msgid "#Submatch Out of Range#"
+msgstr "#Podpređenje je izvan opsega#"
+
+#: ../src/mud-window.c:847
+#| msgid "A Multi-User Dungeon (MUD) client for GNOME.\n"
+msgid "A Multi-User Dungeon (MUD) client for GNOME"
+msgstr "Gnomov program za višekorisničke tamnice (MUD)"
+
+#: ../src/mud-window.c:859
+#| msgid "translator_credits"
+msgid "translator-credits"
+msgstr ""
+"Danilo Šegan <dsegan@gmx.net>\n"
+"\n"
+"Prevod.org — prevod na srpski jezik."
+
+#: ../src/mud-window.c:968
+msgid "Error Saving Buffer"
+msgstr "Greška čuvanja međumemorije"
+
+#: ../src/mud-window.c:1279
+#| msgid "Profiles..."
+msgid "_Manage Profiles..."
+msgstr "_Upravljaj profilima..."
+
+#: ../src/handlers/mud-telnet-mccp.c:429
+msgid ""
+"\n"
+"MCCP data corrupted. Aborting connection.\n"
+msgstr ""
+"\n"
+"MCCP podaci su oštećeni. Prekidam povezivanje.\n"
+
+#: ../ui/main.glade.h:1
+msgid "Gnome-Mud"
+msgstr "Gnom-VKT"
+
+#: ../ui/main.glade.h:2
+msgid "_File"
+msgstr "_Datoteka"
+
+#: ../ui/main.glade.h:3
+#| msgid "C_onnect..."
+msgid "C_onnection..."
+msgstr "Povezujem se..."
+
+#: ../ui/main.glade.h:4
+msgid "_Disconnect"
+msgstr "_Prekini vezu"
+
+#: ../ui/main.glade.h:5
+msgid "_Reconnect"
+msgstr "Ponovo _se poveži"
+
+#: ../ui/main.glade.h:6
+#| msgid "S_tart Logging..."
+msgid "Start _Logging..."
+msgstr "_Započni beleženje..."
+
+#: ../ui/main.glade.h:7
+#| msgid "Sto_p Logging"
+msgid "Stop Lo_gging"
+msgstr "_Prekini beleženje"
+
+#: ../ui/main.glade.h:8
+msgid "_Save Buffer..."
+msgstr "_Sačuvaj međumemoriju..."
+
+#: ../ui/main.glade.h:9
+#| msgid "_Close Window"
+msgid "Close _Window"
+msgstr "Zatvori _prozor"
+
+#: ../ui/main.glade.h:10
+msgid "_Settings"
+msgstr "_Podešavanja"
+
+#: ../ui/main.glade.h:11
+#| msgid "Profiles"
+msgid "P_rofiles"
+msgstr "_Profili"
+
+#: ../ui/main.glade.h:12
+msgid "_Help"
+msgstr "Po_moć"
+
+#: ../ui/main.glade.h:13
+#| msgid "Connect to a mud"
+msgid "Connect to MUD"
+msgstr "Poveži se sa VKT-om"
+
+#: ../ui/main.glade.h:14
+msgid "Connect"
+msgstr "Poveži se"
+
+#: ../ui/main.glade.h:15
+#| msgid "Connect to the mud"
+msgid "Connect to host"
+msgstr "Poveži se sa domaćinom"
+
+#: ../ui/main.glade.h:16
+#| msgid "Disconnect from the mud"
+msgid "Disconnect from current MUD"
+msgstr "Prekini vezu sa tekućeg VKT-a"
+
+#: ../ui/main.glade.h:17
+msgid "Disconnect"
+msgstr "Prekini vezu"
+
+#: ../ui/main.glade.h:18
+#| msgid "Disconnect from the mud"
+msgid "Disconnect from current host"
+msgstr "Prekini vezu sa tekućim domaćinom"
+
+#: ../ui/main.glade.h:19
+#| msgid "Reconnect to the mud"
+msgid "Reconnect to current MUD"
+msgstr "Ponovo se poveži sa tekućim VKT-om"
+
+#: ../ui/main.glade.h:20
+msgid "Reconnect"
+msgstr "Ponovo se poveži"
+
+#: ../ui/main.glade.h:21
+#| msgid "_Save Buffer..."
+msgid "Save buffer as..."
+msgstr "_Sačuvaj međumemoriju kao..."
+
+#: ../ui/main.glade.h:22
+msgid "Debug Log"
+msgstr "Dnevnik ispravljača grešaka"
+
+#: ../ui/main.glade.h:23
+#| msgid "S_tart Logging..."
+msgid "Start Logging..."
+msgstr "Započni beleženje..."
+
+#: ../ui/main.glade.h:24
+msgid "_Log to File:"
+msgstr "_Beleži u datoteku:"
+
+#: ../ui/main.glade.h:25
+#| msgid "Select Profile"
+msgid "_Select File"
+msgstr "_Izaberi datoteku"
+
+#: ../ui/main.glade.h:26
+#| msgid "*** Logging to %s.\n"
+msgid "Logging Options"
+msgstr "Mogućnosti beleženja"
+
+#: ../ui/main.glade.h:27
+#| msgid "Number of lines to keep in scrollback"
+msgid "_Number of lines to log:"
+msgstr "_Broj redova za beleženje:"
+
+#: ../ui/main.glade.h:28
+#| msgid "Number of lines to keep in scrollback"
+msgid "Number of _previous lines to include:"
+msgstr "Broj _prethodnih redova za obuhvatanje:"
+
+#: ../ui/main.glade.h:29
+msgid "_Append to file"
+msgstr "_Dodaj u datoteku"
+
+#: ../ui/main.glade.h:30
+msgid "Log Inp_ut"
+msgstr "Zabeleži _ulaz"
+
+#: ../ui/main.glade.h:31
+msgid "_Include entire buffer"
+msgstr "_Obuhvati čitavu međumemoriju"
+
+#: ../ui/main.glade.h:32
+msgid "Include C_olor"
+msgstr "Obuhvati _boju"
+
+#: ../ui/muds.glade.h:1
+#| msgid "Connect"
+msgid "Connections"
+msgstr "Veze"
+
+#: ../ui/muds.glade.h:2
+#| msgid "Host:"
+msgid " _Host: "
+msgstr " _Domaćin: "
+
+#: ../ui/muds.glade.h:3
+#| msgid "Port:"
+msgid " _Port: "
+msgstr " _Priključnik: "
+
+#: ../ui/muds.glade.h:4
+#| msgid "List of connections"
+msgid "Custom Connection"
+msgstr "Proizvoljna veza"
+
+#: ../ui/muds.glade.h:5
+#| msgid "*** Connection established.\n"
+msgid "Connection Properties"
+msgstr "Svojstva veze"
+
+#: ../ui/muds.glade.h:6
+msgid "MUD"
+msgstr "VKT"
+
+#: ../ui/muds.glade.h:7
+msgid "Name:"
+msgstr "Naziv:"
+
+#: ../ui/muds.glade.h:8
+msgid "Host:"
+msgstr "Server:"
+
+#: ../ui/muds.glade.h:9
+msgid "Port:"
+msgstr "Priključnik:"
+
+#: ../ui/muds.glade.h:10
+#| msgid "Profiles"
+msgid "Profile"
+msgstr "Profil"
+
+#: ../ui/muds.glade.h:11
+msgid "Character"
+msgstr "Znak"
+
+#: ../ui/muds.glade.h:12
+msgid "Logon:"
+msgstr "Prijava:"
+
+#: ../ui/muds.glade.h:13
+msgid "Unsaved Changes"
+msgstr "Nesačuvane izmene"
+
+#: ../ui/muds.glade.h:14
+msgid "You have unsaved changes. Do you want to save before closing?"
+msgstr "Imate nesačuvanih izmena. Da li želite da ih sačuvate pre zatvaranja?"
+
+#: ../ui/muds.glade.h:15
+msgid "Close _without Saving"
+msgstr "Zatvori _bez čuvanja"
+
+#: ../ui/muds.glade.h:16
+#| msgid "Delete"
+msgid "Delete MUD?"
+msgstr "Da obrišem VKT?"
+
+#: ../ui/muds.glade.h:17
+msgid "Are you sure you want to delete this MUD?"
+msgstr "Da li ste sigurni da želite da obrišete ovaj VKT?"
+
+#: ../ui/muds.glade.h:18
+msgid "Select An Icon..."
+msgstr "Izaberi ikonicu..."
+
+#: ../ui/muds.glade.h:19
+#| msgid "Select Profile"
+msgid "Select A Folder"
+msgstr "Izaberi fasciklu"
+
+#: ../ui/prefs.glade.h:1
+#| msgid "New profile"
+msgid "New Profile"
+msgstr "Novi profil"
+
+#: ../ui/prefs.glade.h:2
+#| msgid "New profile"
+msgid "New Profile Name:"
+msgstr "Naziv novog profila:"
+
+#: ../ui/prefs.glade.h:3
+msgid "Regex Error"
+msgstr "Greška regularnog izraza"
+
+#: ../ui/prefs.glade.h:4
+msgid "Error Code:"
+msgstr "Kod greške:"
+
+#: ../ui/prefs.glade.h:5
+msgid "Error String:"
+msgstr "Niska greške:"
+
+#: ../ui/prefs.glade.h:6
+msgid "Error At:"
+msgstr "Greška na:"
+
+#: ../ui/prefs.glade.h:7
+msgid "Profiles"
+msgstr "Skup podešavanja"
+
+#: ../ui/prefs.glade.h:8
+#| msgid "GNOME-Mud Preferences"
+msgid "Preferences"
+msgstr "Postavke"
+
+#: ../ui/prefs.glade.h:9
+msgid "Input"
+msgstr "Ulaz"
+
+#: ../ui/prefs.glade.h:10
+#| msgid "_Echo the text sent"
+msgid "_Echo the Text Sent"
+msgstr "_Ispiši poslati tekst"
+
+#: ../ui/prefs.glade.h:11
+#| msgid "_Keep the text entered"
+msgid "_Keep the Text Entered"
+msgstr "_Čuvaj uneseni tekst"
+
+#: ../ui/prefs.glade.h:12
+#| msgid "Command division character:"
+msgid "Command _Division Character:"
+msgstr "Znak za _deljenje naredbi:"
+
+#: ../ui/prefs.glade.h:14
+#| msgid "Character:"
+msgid "_Character Set:"
+msgstr "_Kodni raspored:"
+
+#: ../ui/prefs.glade.h:15
+msgid "Output"
+msgstr "Izlaz"
+
+#: ../ui/prefs.glade.h:16
+#| msgid "S_croll on output"
+msgid "Scroll on _Output"
+msgstr "Pomeraj pri _izlazu"
+
+#: ../ui/prefs.glade.h:17
+msgid "_Number of Scrollback Lines:"
+msgstr "_Broj redova za pomeranje:"
+
+#: ../ui/prefs.glade.h:18
+msgid "Fon_t:"
+msgstr "Slovni _lik:"
+
+#: ../ui/prefs.glade.h:19
+#| msgid "Foreground color:"
+msgid "_Foreground Color:"
+msgstr "Boja _teksta:"
+
+#: ../ui/prefs.glade.h:20
+#| msgid "Background color:"
+msgid "_Background Color:"
+msgstr "Boja _pozadine:"
+
+#: ../ui/prefs.glade.h:21
+#| msgid "Color palette:"
+msgid "Color Palette:"
+msgstr "Paleta boja:"
+
+#: ../ui/prefs.glade.h:22
+#| msgid "Terminal type"
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../ui/prefs.glade.h:23
+msgid "Proxy"
+msgstr "Posrednik"
+
+#: ../ui/prefs.glade.h:24
+msgid "_Enable Proxy"
+msgstr "_Uključi posrednika"
+
+#: ../ui/prefs.glade.h:25
+#| msgid "Host:"
+msgid "_Host:"
+msgstr "_Server:"
+
+#: ../ui/prefs.glade.h:26
+#| msgid "Plugin Version:"
+msgid "_Version:"
+msgstr "_Izdanje:"
+
+#: ../ui/prefs.glade.h:27
+msgid "Telnet Options"
+msgstr "Mogućnosti telneta"
+
+#: ../ui/prefs.glade.h:28
+msgid "Enable Mud _Sound Protocol (MSP)"
+msgstr "Uključi VKT _zvučni protokol (MSP)"
+
+#: ../ui/prefs.glade.h:29
+msgid "Enable _Character Encoding Negotiation (CHARSET)"
+msgstr "Uključi _otkrivanje skupova znakova (CHARSET)"
+
+#: ../ui/prefs.glade.h:30
+msgid "Network"
+msgstr "Mreža"
+
+#: ../ui/prefs.glade.h:34
+msgid "Timers"
+msgstr "Odbrojavači"
+
+#~ msgid ""
+#~ "File where the mud list will be read from to be used in the MudList "
+#~ "dialog."
+#~ msgstr ""
+#~ "Datoteka iz koje se čita spisak koji će se koristiti u prozorčetu sa "
+#~ "spiskom tamnica."
+
+#~ msgid ""
+#~ "GNOME-Mud will attempt to transmit a terminal type (like ANSI or VT100) "
+#~ "if the MUD requests one. This option sets the terminal type that will be "
+#~ "sent."
+#~ msgstr ""
+#~ "Gnom-MUD će pokušati da pošalje vrstu terminala (npr. ANSI ili VT100) "
+#~ "ukoliko MUD to zahteva. Ova opcija postavlja vrstu terminala koja će biti "
+#~ "poslata."
+
+#~ msgid "How many entries to keep in the command history"
+#~ msgstr "Koliko unosa da drži u istorijatu naredbi"
+
+#~ msgid "How many entries to keep in the command history."
+#~ msgstr "Koliko unosa da drži u istorijatu naredbi."
+
+#~ msgid ""
+#~ "List of commands which will be treated as movement commands by the "
+#~ "automapper. A semicolon is used to separate each command."
+#~ msgstr ""
+#~ "Spisak naredbi koje će se smatrati naredbama kretanja u samomapiranju. "
+#~ "Naredbe se razdvajaju tačka-zarezom."
+
+#~ msgid ""
+#~ "List of connections known to GNOME-Mud. The list contains strings naming "
+#~ "subdirectories relative to /apps/gnome-mud/connections."
+#~ msgstr ""
+#~ "Spisak veza poznatih Gnom-MUD-u. Spisak sadrži niske koje označavaju "
+#~ "poddirektorijume u odnosu na /apps/gnome-mud/connections."
+
+#~ msgid "List of movement commands"
+#~ msgstr "Spisak naredbi kretanja"
+
+#~ msgid "Mudlist file"
+#~ msgstr "Mudlist datoteka"
+
+#~ msgid "Tab location"
+#~ msgstr "Raspored jezičaka"
+
+#~ msgid ""
+#~ "The location of the connection tabs. Valid options are \"left\", \"right"
+#~ "\", \"top\" and \"bottom\"."
+#~ msgstr ""
+#~ "Raspored jezičaka za veze. Dozvoljene mogućnosti su „left“, „right“, „top“ "
+#~ "i „bottom“."
+
+#~ msgid "No void characters allowed."
+#~ msgstr "Prazni znaci nisu dozvoljeni."
+
+#~ msgid "Actions"
+#~ msgstr "Radnje"
+
+#~ msgid "Character '%c' not allowed."
+#~ msgstr "Znak „%c“ nije dozvoljen."
+
+#~ msgid "%s too big."
+#~ msgstr "%s je preveliko."
+
+#~ msgid "Can't duplicate %s."
+#~ msgstr "Ne mogu da dupliram %s."
+
+#~ msgid "Alias"
+#~ msgstr "Nadimak"
+
+#~ msgid "Replacement"
+#~ msgstr "Zamena"
+
+#~ msgid "Values"
+#~ msgstr "Vrednosti"
+
+#~ msgid "%s: trying to access to undefined data range: %d"
+#~ msgstr "%s: pokušava da pristupi nedefinisanom opsegu podataka: %d"
+
+#~ msgid "GNOME-Mud Configuration Center"
+#~ msgstr "Centar za podešavanje Gnom-MUD-a"
+
+#~ msgid "Orientation"
+#~ msgstr "Usmerenje"
+
+#~ msgid "The orientation of the tray."
+#~ msgstr "Usmerenje fioke."
+
+#~ msgid "There was an error accessing GConf: %s"
+#~ msgstr "Došlo je do greške pri pristupu GKonfu: %s"
+
+#~ msgid "The default configuration values could not be retrieved correctly."
+#~ msgstr ""
+#~ "Nisam uspeo da ispravno pročitam podrazumevane vrednosti podešavanja."
+
+#~ msgid ""
+#~ "Please check your GConf configuration, specifically that the schemas have "
+#~ "been installed correctly."
+#~ msgstr ""
+#~ "Proverite podešavanja vašeg GKonfa, naročito da li su sheme ispravno "
+#~ "postavljene."
+
+#~ msgid "*** Internal error: no such connection.\n"
+#~ msgstr "*** Unutrašnja greška: nema takve veze.\n"
+
+#~ msgid "Artwork by:"
+#~ msgstr "Slike izradio:"
+
+# Domaća stranica?
+#~ msgid "GNOME-Mud home page"
+#~ msgstr "Početna stranica za Gnom-MUD"
+
+#~ msgid "There was an error displaying help: %s"
+#~ msgstr "Došlo je do greške pri prikazivanju pomoći: %s"
+
+# zašto lepo ne koristiti „vile“ umesto „čarobnjaka“ ;-)
+#~ msgid "Wizard..."
+#~ msgstr "Vila..."
+
+#~ msgid "Open the Connection Wizard"
+#~ msgstr "Pozovi u pomoć vilu za uspostavljanje veza"
+
+#~ msgid "Exit"
+#~ msgstr "Izađi"
+
+#~ msgid "Quit GNOME-Mud"
+#~ msgstr "Izađi iz Gnom-MUD-a"
+
+#~ msgid "_MudList Listing..."
+#~ msgstr "_Ispis mudlist-a..."
+
+#~ msgid "_Plugin Information..."
+#~ msgstr "_Podaci o dodatku"
+
+#~ msgid "Auto _Mapper..."
+#~ msgstr "Samo_mapiranje.."
+
+#~ msgid "P_lugins"
+#~ msgstr "_Dodaci"
+
+#~ msgid "User Manual"
+#~ msgstr "Uputstvo"
+
+#~ msgid "Display the GNOME-Mud User Manual"
+#~ msgstr "Prikaži uputstvo za Gnom-MUD"
+
+#~ msgid "Plugin API Manual"
+#~ msgstr "Uputstvo za API za dodatke"
+
+#~ msgid "Display the GNOME-Mud Plugin API Manual"
+#~ msgstr "Prikaži uputstvo za Gnom-MUD API za dodatke"
+
+#~ msgid "Main"
+#~ msgstr "Glavno"
+
+#~ msgid "GNOME-Mud version %s (compiled %s, %s)\n"
+#~ msgstr "Gnom-MUD izdanje %s (izgrađena %s, %s)\n"
+
+#~ msgid "Distributed under the terms of the GNU General Public License.\n"
+#~ msgstr "Objavljeno pod Gnuovom Opštom javnom licencom (GPL).\n"
+
+#~ msgid "You must use capture first!"
+#~ msgstr "Morate prvo izabrati tastere!"
+
+# nesigurno
+#~ msgid "Can't add an existing key."
+#~ msgstr "Ne mogu da dodam postojeći taster."
+
+#~ msgid "Incomplete fields."
+#~ msgstr "Nepotpuna polja."
+
+#~ msgid "GNOME-Mud Keybinding Center"
+#~ msgstr "Centar za izbor prečica za Gnom-MUD"
+
+#~ msgid "Key"
+#~ msgstr "Taster"
+
+#~ msgid "Command"
+#~ msgstr "Naredba"
+
+#~ msgid "Bind"
+#~ msgstr "Priveži"
+
+#~ msgid "Capture"
+#~ msgstr "Izaberi"
+
+#~ msgid "*** Already logging to %s. Close that log first.\n"
+#~ msgstr "*** Već beleži u dnevnik %s. Prvo zatvorite taj dnevnik.\n"
+
+#~ msgid "Open log"
+#~ msgstr "Otvori dnevnik"
+
+#~ msgid "*** No log to be closed is open in this window.\n"
+#~ msgstr ""
+#~ "*** Nijedan dnevnik nije otvoren o ovom prozoru koji je moguće "
+#~ "zatvoriti.\n"
+
+#~ msgid "*** Stopped logging to %s.\n"
+#~ msgstr "*** Zaustavi beleženje u %s.\n"
+
+#~ msgid "Please select a log file..."
+#~ msgstr "Izaberite datoteku dnevnika..."
+
+#~ msgid "Ready."
+#~ msgstr "Spreman."
+
+#~ msgid "Canceled."
+#~ msgstr "Otkazano."
+
+#~ msgid "A link already exists here!"
+#~ msgstr "Veza već postoji ovde!"
+
+#~ msgid "Ready"
+#~ msgstr "Spreman"
+
+#~ msgid "Link created"
+#~ msgstr "Veza je stvorena"
+
+#~ msgid "Can't create a node here"
+#~ msgstr "Ne može ovde da napravi čvor"
+
+#~ msgid "New Map"
+#~ msgstr "Nova mapa"
+
+#~ msgid "Creating a path"
+#~ msgstr "Stvaram putanju"
+
+#~ msgid "Path lead to a new map"
+#~ msgstr "Putanja vodi na novu mapu"
+
+#~ msgid "New map"
+#~ msgstr "Nova mapa"
+
+#~ msgid "Path follows an already existing path:"
+#~ msgstr "Putanja prati već postojeću putanju:"
+
+#~ msgid "Create"
+#~ msgstr "Stvori"
+
+#~ msgid "Enter in a path"
+#~ msgstr "Unesite putanju"
+
+#~ msgid "Create a new path:"
+#~ msgstr "Napravi novu putanju:"
+
+#~ msgid "Enter in existing path:"
+#~ msgstr "Unesi u postojeću putanju:"
+
+#~ msgid ""
+#~ "This node has already 8 links. Destroy one of these before trying to "
+#~ "create a new one"
+#~ msgstr ""
+#~ "Ovaj čvor već ima 8 veza. Uništite jednu od ovih pre nego što dodate novu"
+
+#~ msgid "Enter to finish, Esc to quit"
+#~ msgstr "Enter da okončate, Esc da izađete"
+
+#~ msgid "Use move buttons to build the link."
+#~ msgstr "Koristite dugmad za pomeranje za izgradnju veze."
+
+#~ msgid "Zoom In"
+#~ msgstr "Uvećaj"
+
+#~ msgid "Zoom Out"
+#~ msgstr "Umanji"
+
+#~ msgid "Configure Automap"
+#~ msgstr "Podesi samomapiranje"
+
+#~ msgid "Teleport here"
+#~ msgstr "Teleportuj se ovde"
+
+#~ msgid "Create new link"
+#~ msgstr "Napravi novu vezu"
+
+#~ msgid "Enter"
+#~ msgstr "Uđi"
+
+#~ msgid "N"
+#~ msgstr "S"
+
+#~ msgid "NE"
+#~ msgstr "SI"
+
+#~ msgid "E"
+#~ msgstr "I"
+
+#~ msgid "SE"
+#~ msgstr "SI"
+
+#~ msgid "S"
+#~ msgstr "J"
+
+#~ msgid "SW"
+#~ msgstr "JZ"
+
+#~ msgid "W"
+#~ msgstr "Z"
+
+#~ msgid "NW"
+#~ msgstr "SZ"
+
+#~ msgid "Up"
+#~ msgstr "Gore:"
+
+#~ msgid "Down"
+#~ msgstr "Dole"
+
+#~ msgid "Remove"
+#~ msgstr "Ukloni"
+
+#~ msgid "Load"
+#~ msgstr "Učitaj"
+
+#~ msgid "Save"
+#~ msgstr "Sačuvaj"
+
+#~ msgid "Load map"
+#~ msgstr "Učitaj mapu"
+
+#~ msgid "Save map"
+#~ msgstr "Sačuvaj mapu"
+
+#~ msgid "No link existed in that direction"
+#~ msgstr "Ne postoji veza u tom smeru"
+
+#~ msgid "Cannot break links to a node going up or down"
+#~ msgstr "Ne može da prekine vezu ka čvoru koje idu gore ili dole"
+
+#~ msgid "Destination node has already a connection here"
+#~ msgstr "Odredišni čvor je već povezan ovde"
+
+#~ msgid "Can't create a link to another floor!"
+#~ msgstr "Ne može da napravi vezu sa drugim spratom!"
+
+#~ msgid "There is already a link here!"
+#~ msgstr "Ovde već postoji veza!"
+
+#~ msgid "GNOME-Mud AutoMapper"
+#~ msgstr "Gnom-MUD samomapiranje"
+
+#~ msgid "Plugin Information"
+#~ msgstr "Podaci o dodatku"
+
+#~ msgid "Plugin Name:"
+#~ msgstr "Ime dodatka:"
+
+#~ msgid "Plugin Author:"
+#~ msgstr "Autor dodatka:"
+
+#~ msgid "Plugin Description:"
+#~ msgstr "Opis dodatka:"
+
+#~ msgid "Enable plugin"
+#~ msgstr "Uključi dodatak"
+
+#~ msgid "Error getting plugin handle (%s): %s."
+#~ msgstr "Greška pri dobavljanju ručke dodatke (%s): %s."
+
+#~ msgid "Error, %s not an GNOME-Mud module: %s."
+#~ msgstr "Greška, %s ne predstavlja moduo za Gnom-MUD: %s."
+
+#~ msgid "Registering plugin `%s' under the name `%s'."
+#~ msgstr "Prijava dodatka „%s“ pod imenom „%s“."
+
+#~ msgid "Error while registering the menu: %s"
+#~ msgstr "Greška pri prijavi menija: %s"
+
+#~ msgid "Error while registering data %s: %s"
+#~ msgstr "Greška pri prijavi podataka %s: %s"
+
+#~ msgid "Error while getting plugin from handle."
+#~ msgstr "Greška pri dobavljanju dodatka pomoću ručke."
+
+#~ msgid "Could not open MudList file for reading"
+#~ msgstr "Nisam mogao da pročitam datoteku sa MudList-om"
+
+#~ msgid "GNOME-Mud MudList"
+#~ msgstr "Gnom-MUD MudList"
+
+#~ msgid "Mud name:"
+#~ msgstr "MUD ime:"
+
+#~ msgid "Codebase:"
+#~ msgstr "Osnova koda:"
+
+#~ msgid "Telnet address:"
+#~ msgstr "Telnet adresa:"
+
+#~ msgid "Import and close"
+#~ msgstr "Uvezi i zatvori"
+
+#~ msgid "Go to webpage of the mud"
+#~ msgstr "Idi na veb stranicu MUD-a"
+
+#~ msgid "Description:"
+#~ msgstr "Opis:"
+
+#~ msgid "*** Can't connect - you didn't specify a host.\n"
+#~ msgstr "*** Ne može da se poveže — niste naveli server.\n"
+
+#~ msgid "*** No port specified - assuming port 23.\n"
+#~ msgstr "*** Port nije naveden — podrazumeva port broj 23.\n"
+
+#~ msgid "*** Trying %s port %s...\n"
+#~ msgstr "*** Isprobava %s preko porta broj %s...\n"
+
+#~ msgid "Couldn't convert text input"
+#~ msgstr "Ne mogu da pretvorim uneti tekst"
+
+#~ msgid "Palette had %d entry instead of %d\n"
+#~ msgid_plural "Palette had %d entries instead of %d\n"
+#~ msgstr[0] "Paleta ima %d stavku umesto %d\n"
+#~ msgstr[1] "Paleta ima %d stavke umesto %d\n"
+#~ msgstr[2] "Paleta ima %d stavki umesto %d\n"
+
+#~ msgid "%s already exists and is not a directory!"
+#~ msgstr "%s već postoji, a nije direktorijum!"
+
+#~ msgid "%s does not exist and can NOT be created: %s"
+#~ msgstr "%s ne postoji i ne mogu da ga napravim: %s"
+
+#~ msgid "Font:"
+#~ msgstr "Font:"
+
+#~ msgid "Main font that is used on all open connections."
+#~ msgstr "Glavni font koji se koristi u svim uspostavljenim vezama."
+
+# Ovde nam treba kratka rečenica koja uključuje sva slova iz azbuke!
+#~ msgid "The quick brown fox jumps over the lazy dog"
+#~ msgstr "Brza smeđa lisica skače preko lenjog psa."
+
+#~ msgid ""
+#~ "Default foreground color used when the connection doesn't request the use "
+#~ "of a specific color."
+#~ msgstr ""
+#~ "Podrazumevana boja koja se koristi kada veza ne zahteva izričito upotrebu "
+#~ "neke boje."
+
+#~ msgid ""
+#~ "Default background color used when the connection doesn't request the use "
+#~ "of a specific color."
+#~ msgstr ""
+#~ "Podrazumevana boja pozadine koja se koristi kada veza ne zahteva izričito "
+#~ "upotrebu neke boje."
+
+#~ msgid "Change the color of a specific color that the MUD requests to use."
+#~ msgstr "Izmenite boju izričite boje koju zahteva MUD."
+
+#~ msgid "on top"
+#~ msgstr "na vrhu"
+
+#~ msgid "on the right"
+#~ msgstr "desno"
+
+#~ msgid "at the bottom"
+#~ msgstr "u dnu"
+
+#~ msgid "on the left"
+#~ msgstr "levo"
+
+#~ msgid "Functionality"
+#~ msgstr "Mogućnosti"
+
+#~ msgid "Disable _System Keys"
+#~ msgstr "Isključi _sistemske tastere"
+
+#~ msgid ""
+#~ "The character used to divide commands sent to the mud. For example, \";"
+#~ "\", will let the string \"w;look\" be sent to the mud as 2 separate "
+#~ "commands."
+#~ msgstr ""
+#~ "Znak kojim se dele naredbe koje se šalju MUD-u. Na primer, „;“ će "
+#~ "omogućiti da se niska „z;gledaj“ pošalje MUD-u kao dve zasebne naredbe."
+
+#~ msgid "Command history:"
+#~ msgstr "Istorijat naredbi:"
+
+#~ msgid "The number of entries to be saved in the command history."
+#~ msgstr "Broj stavki koje se čuvaju u istorijatu naredbi."
+
+#~ msgid "Terminal type:"
+#~ msgstr "Vrsta terminala:"
+
+#~ msgid "MudList file:"
+#~ msgstr "MudList datoteka:"
+
+#~ msgid "Select a MudList File..."
+#~ msgstr "Izaberite MudList datoteku..."
+
+#~ msgid "Mudlist file to be used for the mudlist functionality."
+#~ msgstr "Mudlist datoteka koja se koristi za mudlist mogućnosti."
+
+#~ msgid "Color and Fonts"
+#~ msgstr "Boje i fontovi"
+
+#~ msgid "Appearance"
+#~ msgstr "Izgled"
+
+#~ msgid "Tabs are located:"
+#~ msgstr "Jezičci se nalaze:"
+
+#~ msgid ""
+#~ "This setting defines where to place the connection tabs that are used to "
+#~ "change active connection."
+#~ msgstr ""
+#~ "Ovo podešavanje određuje gde se smeštaju jezičci za veze koji se koriste "
+#~ "za izmenu aktivne veze."
+
+#~ msgid "Scrollback:"
+#~ msgstr "Zapamti:"
+
+#~ msgid "Number of lines to save in the scrollback."
+#~ msgstr "Broj linija koje se pamte."
+
+#~ msgid "lines"
+#~ msgstr "redova"
+
+#~ msgid ""
+#~ "If enabled, the terminal will scroll to the bottom if new output appears "
+#~ "in the connection when the terminal was scrolled back."
+#~ msgstr ""
+#~ "Ukoliko je uključeno, terminal će se prebacivati na kraj ukoliko se pojavi "
+#~ "novi izlaz preko veze."
+
+#~ msgid "AutoMapper"
+#~ msgstr "Samomapiranje"
+
+#~ msgid "Unusual movement commands:"
+#~ msgstr "Neobične naredbe kretanja:"
+
+#~ msgid ""
+#~ "If you use the automapper, you may want to specify here some unusual "
+#~ "movement commands. When you use one of these, the automapper will create "
+#~ "a path to an other map. Use a semicolon to separate the different "
+#~ "commands."
+#~ msgstr ""
+#~ "Ukoliko koristite samomapiranje, ovde možete navesti neke neobične naredbe "
+#~ "kretanja. Kada koristite neku od njih, samomapiranje će napraviti putanju do "
+#~ "druge mape. Koristite tačka-zarez za razdvajanje više naredbi."
+
+#~ msgid "Name of new profile:"
+#~ msgstr "Ime novog skupa podešavanja:"
+
+#~ msgid "GNOME-Mud: Profilelist"
+#~ msgstr "Gnom-MUD: Spisak skupa podešavanja"
+
+#~ msgid "Default"
+#~ msgstr "Podrazumevano"
+
+#~ msgid "GNOME-Mud Connections"
+#~ msgstr "Gnom-MUD veze"
+
+#~ msgid "Mud"
+#~ msgstr "MUD"
+
+#~ msgid "Mud information"
+#~ msgstr "Podaci o MUD-u"
+
+#~ msgid "Title:"
+#~ msgstr "Naslov:"
+
+#~ msgid "Character information"
+#~ msgstr "Podaci o liku"
+
+#~ msgid "Password:"
+#~ msgstr "Lozinka:"
+
+#~ msgid "Profile information"
+#~ msgstr "Podaci o skupu podešavanja"
+
+#~ msgid "Fetch from mudlist"
+#~ msgstr "Preuzmi iz mudlist-a"
+
+#~ msgid "GNOME-Mud Profiles"
+#~ msgstr "Skupovi Gnom-MUD podešavanja"
+
+#~ msgid "New"
+#~ msgstr "Novi"
+
+#~ msgid "Create a new profile"
+#~ msgstr "Napravi novi skup podešavanja"
+
+#~ msgid "Delete a profile"
+#~ msgstr "Obriši skup podešavanja"
+
+#~ msgid "Set aliases"
+#~ msgstr "Postavi nadimke"
+
+#~ msgid "Set variables"
+#~ msgstr "Postavi promenljive"
+
+#~ msgid "Set triggers"
+#~ msgstr "Postavi događaje"
+
+#~ msgid "Close the window"
+#~ msgstr "Zatvori prozor"
+
+#~ msgid "GNOME Mud"
+#~ msgstr "Gnom MUD"

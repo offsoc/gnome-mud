@@ -1,0 +1,785 @@
+# Hungarian translation for gnome-mud.
+# Copyright (C) 2014 gnome-mud's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-mud package.
+#
+# Balázs Úr <urbalazs@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-mud master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"mud&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-12-29 07:59+0000\n"
+"PO-Revision-Date: 2014-12-29 20:30+0100\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"Language-Team: Hungarian <gnome-hu-list@gnome.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: ../gnome-mud.desktop.in.h:1
+msgid "GNOME-Mud"
+msgstr "GNOME-Mud"
+
+#: ../gnome-mud.desktop.in.h:2
+msgid "The GNOME MUD Client"
+msgstr "A GNOME MUD kliens"
+
+#: ../gnome-mud.schemas.in.h:1
+msgid "Font"
+msgstr "Betűkészlet"
+
+#: ../gnome-mud.schemas.in.h:2
+msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
+msgstr "Egy Pango betűkészletnév. Például: „Sans 12” vagy „Monospace Bold 14”."
+
+#: ../gnome-mud.schemas.in.h:3
+msgid "Default color of the background"
+msgstr "A háttér alapértelmezett színe"
+
+#: ../gnome-mud.schemas.in.h:4
+msgid ""
+"Default color of the background, as a color specification (can be HTML-style "
+"hex digits, or a color name such as \"red\")."
+msgstr ""
+"A háttér alapértelmezett színe, színmegadásként (lehet HTML-stílusú hexa "
+"számjegyekkel vagy színnévvel, például „red” = vörös)."
+
+#: ../gnome-mud.schemas.in.h:5
+msgid "Default color of the text"
+msgstr "A szöveg alapértelmezett színe"
+
+#: ../gnome-mud.schemas.in.h:6
+msgid ""
+"Default color of the text, as a color specification (can be HTML-style hex "
+"digits, or a color name such as \"red\")."
+msgstr ""
+"A szöveg alapértelmezett színe, színmegadásként (lehet HTML-stílusú hexa "
+"számjegyekkel vagy színnévvel, például „red” = vörös)."
+
+#: ../gnome-mud.schemas.in.h:7
+msgid "Color palette"
+msgstr "Színpaletta"
+
+#: ../gnome-mud.schemas.in.h:8
+msgid ""
+"GNOME-Mud has a 16-color palette that MUDs can use. It must be specified in "
+"the form of a colon-separated list of color names. Color names should be in "
+"hex format e.g. \"#FF00FF\"."
+msgstr ""
+"A GNOME-Mud rendelkezik egy 16 színű palettával, amit MUD-ok használhatnak. A "
+"színnevek vesszővel elválasztott listája formájában kell megadni. A színnevek "
+"hexa alakban kell legyenek, például „#FF00FF”."
+
+#: ../gnome-mud.schemas.in.h:9
+msgid "Number of lines to keep in scrollback"
+msgstr "A visszagörgetendő sorok száma"
+
+#: ../gnome-mud.schemas.in.h:10
+msgid ""
+"Number of scrollback lines to keep around. You can scroll back in the "
+"terminal by this number of lines; lines that don't fit in the scrollback are "
+"discarded."
+msgstr ""
+"A visszagörgetéshez megtartandó sorok száma. Ennyi sort görgethet vissza a "
+"terminálban; azon sorok, amik nem férnek bele ebbe, el lesznek dobva."
+
+#: ../gnome-mud.schemas.in.h:11 ../ui/prefs.glade.h:13
+msgid "Encoding"
+msgstr "Kódolás"
+
+#: ../gnome-mud.schemas.in.h:12
+msgid "The encoding for the terminal widget."
+msgstr "A terminál felületi elem kódolása."
+
+#: ../gnome-mud.schemas.in.h:13
+msgid "Encoding Index"
+msgstr "Kódolási index"
+
+#: ../gnome-mud.schemas.in.h:14
+msgid "The index of the currently selected encoding."
+msgstr "A jelenleg kiválasztott kódolás indexe."
+
+#: ../gnome-mud.schemas.in.h:15
+msgid "Proxy Hostname"
+msgstr "Proxy gépnév"
+
+#: ../gnome-mud.schemas.in.h:16
+msgid "The hostname for the SOCKS proxy server."
+msgstr "A SOCKS proxykiszolgáló gépneve."
+
+#: ../gnome-mud.schemas.in.h:17
+msgid "Proxy Version"
+msgstr "Proxyverzió"
+
+#: ../gnome-mud.schemas.in.h:18
+msgid "The SOCKS Version to be used."
+msgstr "A használt SOCKS verzió."
+
+#: ../gnome-mud.schemas.in.h:19
+msgid "Remote Encoding"
+msgstr "Távoli kódolás"
+
+#: ../gnome-mud.schemas.in.h:20
+msgid "Use Remote Encoding negotiation."
+msgstr "Távoli kódolásegyeztetés használata."
+
+#: ../gnome-mud.schemas.in.h:21
+msgid "Use Proxy"
+msgstr "Proxy használata"
+
+#: ../gnome-mud.schemas.in.h:22
+msgid "Use a proxy server to connect to the MUD."
+msgstr "Proxykiszolgáló használata a MUD-hoz való csatlakozáshoz."
+
+#: ../gnome-mud.schemas.in.h:23
+msgid "Remote Download"
+msgstr "Távoli letöltés"
+
+#: ../gnome-mud.schemas.in.h:24
+msgid "Enable sound file downloading on MSP enabled MUDs"
+msgstr "Hangfájl letöltés engedélyezése MSP engedélyezett MUD-okon"
+
+#: ../gnome-mud.schemas.in.h:25
+msgid "Command Divider"
+msgstr "Parancsfelosztó"
+
+#: ../gnome-mud.schemas.in.h:26
+msgid ""
+"A character that is used to split commands in a string like \"w;w;w;l\", "
+"which will be sent to the MUD as 4 separate commands."
+msgstr ""
+"Egy karakterláncban lévő parancsok felosztásához használt karakter, például "
+"„w;w;w;l”, amely a MUD-nak 4 különálló parancsként kerül elküldésre."
+
+#: ../gnome-mud.schemas.in.h:27
+msgid "Whether to echo sent text to the connection"
+msgstr "Visszhangozza-e a kapcsolatnak elküldött szöveget"
+
+#: ../gnome-mud.schemas.in.h:28
+msgid ""
+"If enabled, all the text typed in will be echoed in the terminal, making it "
+"easier to control what is sent."
+msgstr ""
+"Ha engedélyezve van, minden begépelt szöveg visszhangozva lesz a terminálban, "
+"megkönnyítve annak vezérlését, hogy mi lett elküldve."
+
+#: ../gnome-mud.schemas.in.h:29
+msgid "Whether to keep text sent to the connection"
+msgstr "Folytassa-e a szövegküldést a kapcsolatnak"
+
+#: ../gnome-mud.schemas.in.h:30
+msgid ""
+"If enabled, the text that is sent to the connection will be left as a "
+"selection in the entry box. Otherwise, the text entry box will be cleared "
+"after each text input."
+msgstr ""
+"Ha engedélyezve van, a kapcsolatnak küldött szöveg kijelölésként fogja "
+"elhagyni a bejegyzésdobozt. Egyébként a szövegbeviteli doboz törlésre kerül "
+"minden szövegbevitel után."
+
+#: ../gnome-mud.schemas.in.h:31
+msgid "Whether to enable or disable the system keys"
+msgstr "Engedélyezze vagy tiltsa-e a rendszerbillentyűket"
+
+#: ../gnome-mud.schemas.in.h:32
+msgid ""
+"If enabled, GNOME-Mud will offer a few built-in keybindings. They can be "
+"overridden by custom keybindings, or they can be disabled completely with "
+"this option."
+msgstr ""
+"Ha engedélyezve van, a GNOME-Mud fel fog ajánlani néhány beépített "
+"billentyűparancsot. Ezek felülbírálhatók egyéni billentyűparancsokkal, vagy "
+"teljesen letilthatók ezzel a beállítással."
+
+#: ../gnome-mud.schemas.in.h:33
+msgid "Whether to scroll to the bottom when there's new output"
+msgstr "Görgessen-e a terminál aljára ha új kimenet jelenik meg"
+
+#: ../gnome-mud.schemas.in.h:34
+msgid ""
+"If enabled, whenever there's new output the terminal will be scrolled to the "
+"bottom."
+msgstr ""
+"Ha engedélyezve van, a terminál új kimenet kiírásakor az aljára fog gördülni."
+
+#: ../gnome-mud.schemas.in.h:35
+msgid "Last log file"
+msgstr "Utolsó naplófájl"
+
+#: ../gnome-mud.schemas.in.h:36
+msgid "The file in which a mudlog was last saved."
+msgstr "Az a fájl, amelyben egy mudnapló legutóbb mentésre került."
+
+#: ../gnome-mud.schemas.in.h:37
+msgid "Log flush interval"
+msgstr "Napló kiürítési időköz"
+
+#: ../gnome-mud.schemas.in.h:38
+msgid "How often in seconds gnome-mud should flush logfiles."
+msgstr "Hány másodpercenként ürítse a gnome-mud a naplófájlokat."
+
+#: ../gnome-mud.schemas.in.h:39
+msgid "List of profiles"
+msgstr "Profilok listája"
+
+#: ../gnome-mud.schemas.in.h:40
+msgid ""
+"List of profiles known to GNOME-Mud. The list contains strings naming "
+"subdirectories relative to /apps/gnome-mud/profiles."
+msgstr ""
+"A GNOME-Mud számára ismert profilok listája A lista alkönyvtárakat "
+"megnevező karakterláncokat tartalmaz az /apps/gnome-mud/profiles "
+"könyvtárra vonatkozóan."
+
+#: ../gnome-mud.schemas.in.h:41 ../ui/prefs.glade.h:32
+msgid "Aliases"
+msgstr "Álnevek"
+
+#: ../gnome-mud.schemas.in.h:42 ../ui/prefs.glade.h:33
+msgid "Variables"
+msgstr "Változók"
+
+#: ../gnome-mud.schemas.in.h:43 ../ui/prefs.glade.h:31
+msgid "Triggers"
+msgstr "Aktiválók"
+
+#: ../gnome-mud.schemas.in.h:44 ../ui/prefs.glade.h:35
+msgid "Keybindings"
+msgstr "Billentyűparancsok"
+
+#: ../gnome-mud.schemas.in.h:45
+msgid "Directional keybindings"
+msgstr "Irányított billentyűparancsok"
+
+#: ../src/debug-logger.c:827 ../src/mud-connections.c:1272
+msgid "Error"
+msgstr "Hiba"
+
+#: ../src/debug-logger.c:830 ../src/debug-logger.c:913
+#, c-format
+msgid "ERROR: %s\n"
+msgstr "HIBA: %s\n"
+
+#: ../src/debug-logger.c:834
+msgid "Critical"
+msgstr "Kritikus"
+
+#: ../src/debug-logger.c:841
+msgid "Warning"
+msgstr "Figyelmeztetés"
+
+#: ../src/debug-logger.c:848 ../src/debug-logger.c:998
+msgid "Message"
+msgstr "Üzenet"
+
+#: ../src/debug-logger.c:855
+msgid "Info"
+msgstr "Információ"
+
+#: ../src/debug-logger.c:862
+msgid "Debug"
+msgstr "Hibakeresés"
+
+#: ../src/debug-logger.c:869
+msgid "Unknown"
+msgstr "Ismeretlen"
+
+#: ../src/debug-logger.c:917
+#, c-format
+msgid "CRITICAL ERROR: %s\n"
+msgstr "KRITIKUS HIBA: %s\n"
+
+#: ../src/debug-logger.c:921
+#, c-format
+msgid "Warning: %s\n"
+msgstr "Figyelmeztetés: %s\n"
+
+#: ../src/debug-logger.c:991
+msgid "Type"
+msgstr "Típus"
+
+#: ../src/gnome-mud.c:63
+#, c-format
+msgid "Failed to init GConf: %s"
+msgstr "Nem sikerült a GConf előkészítése: %s"
+
+#: ../src/mud-connections.c:933
+#, c-format
+msgid "Are you sure you want to delete %s?"
+msgstr "Biztosan törölni szeretné a következőt: %s?"
+
+#: ../src/mud-connections.c:934
+#, c-format
+msgid "Delete %s?"
+msgstr "%s törlése?"
+
+#: ../src/mud-connections.c:1273
+msgid "No MUD name specified."
+msgstr "Nincs MUD név megadva."
+
+#: ../src/mud-connection-view.c:575 ../src/mud-connection-view.c:1977
+#, c-format
+msgid "*** Making connection to %s, port %d.\n"
+msgstr "*** Kapcsolat létrehozása: %s, port: %d.\n"
+
+#: ../src/mud-connection-view.c:1054
+msgid "Close"
+msgstr "Bezárás"
+
+#: ../src/mud-connection-view.c:1074
+msgid "Change P_rofile"
+msgstr "_Profil módosítása"
+
+#: ../src/mud-connection-view.c:1113
+msgid "_Input Methods"
+msgstr "_Beviteli módok"
+
+#: ../src/mud-connection-view.c:1142
+msgid "*** Could not connect.\n"
+msgstr "*** Nem sikerült kapcsolódni.\n"
+
+#: ../src/mud-connection-view.c:1147
+msgid "*** Connected.\n"
+msgstr "*** Kapcsolódva.\n"
+
+#: ../src/mud-connection-view.c:1175
+msgid "*** Connection closed.\n"
+msgstr "*** Kapcsolat lezárva.\n"
+
+#: ../src/mud-connection-view.c:1405
+#, c-format
+msgid ""
+"There was an error loading config value for whether to use image in menus. "
+"(%s)\n"
+msgstr ""
+"Hiba történt a menükben való kép használata konfigurációs értékének "
+"betöltésekor. (%s)\n"
+
+#: ../src/mud-connection-view.c:1880 ../src/mud-connection-view.c:1924
+msgid ""
+"\n"
+"*** Connection closed.\n"
+msgstr ""
+"\n"
+"*** Kapcsolat lezárva.\n"
+
+#: ../src/mud-connection-view.c:2027
+msgid "<password removed>"
+msgstr "<jelszó eltávolítva>"
+
+#: ../src/mud-connection-view.c:2223
+msgid "Connecting..."
+msgstr "Kapcsolódás…"
+
+#: ../src/mud-connection-view.c:2346
+msgid "Connection timed out."
+msgstr "A kapcsolat túllépte az időkorlátot."
+
+#: ../src/mud-connection-view.c:2362
+msgid "There was an internal http connection error."
+msgstr "Belső http kapcsolódási hiba történt."
+
+#: ../src/mud-connection-view.c:2384
+msgid "Downloading"
+msgstr "Letöltés"
+
+#: ../src/mud-log.c:395
+msgid "Save log as..."
+msgstr "Napló mentése másként…"
+
+#: ../src/mud-log.c:727
+msgid ""
+"\n"
+"*** Log starts *** %d/%m/%Y %H:%M:%S\n"
+msgstr ""
+"\n"
+"*** Naplózás elindult *** %Y-%m-%d %H:%M:%S\n"
+
+#: ../src/mud-log.c:811
+msgid "Log Error"
+msgstr "Naplózási hiba"
+
+#: ../src/mud-log.c:812
+#, c-format
+msgid "Could not open \"%s\" for writing."
+msgstr "Nem sikerült megnyitni olvasásra a következőt: „%s”."
+
+#: ../src/mud-log.c:839
+msgid ""
+"\n"
+" *** Log stops *** %d/%m/%Y %H:%M:%S\n"
+msgstr ""
+"\n"
+" *** Naplózás leállt *** %Y-%m-%d %H:%M:%S\n"
+
+#: ../src/mud-log.c:913
+msgid "Could not write data to log file!"
+msgstr "Nem sikerült kiírni az adatot a naplófájlba!"
+
+#: ../src/mud-tray.c:271
+msgid "_Hide window"
+msgstr "Ablak _elrejtése"
+
+#: ../src/mud-tray.c:273
+msgid "_Show window"
+msgstr "Ablak _megjelenítése"
+
+#: ../src/mud-tray.c:279
+msgid "_Quit"
+msgstr "_Kilépés"
+
+#: ../src/mud-trigger.c:724
+msgid "#Submatch Out of Range#"
+msgstr "#Részillesztés tartományon kívül#"
+
+#: ../src/mud-window.c:847
+msgid "A Multi-User Dungeon (MUD) client for GNOME"
+msgstr "Egy többfelhasználós kazamata (MUD) kliens a GNOME-hoz"
+
+#: ../src/mud-window.c:859
+msgid "translator-credits"
+msgstr "Úr Balázs <urbalazs@gmail.com>, 2014."
+
+#: ../src/mud-window.c:968
+msgid "Error Saving Buffer"
+msgstr "Hiba a puffer mentésekor"
+
+#: ../src/mud-window.c:1279
+msgid "_Manage Profiles..."
+msgstr "Profilok _kezelése…"
+
+#: ../src/handlers/mud-telnet-mccp.c:429
+msgid ""
+"\n"
+"MCCP data corrupted. Aborting connection.\n"
+msgstr ""
+"\n"
+"Az MCCP adatok sérültek. Kapcsolat megszakítása.\n"
+
+#: ../ui/main.glade.h:1
+msgid "Gnome-Mud"
+msgstr "Gnome-Mud"
+
+#: ../ui/main.glade.h:2
+msgid "_File"
+msgstr "_Fájl"
+
+#: ../ui/main.glade.h:3
+msgid "C_onnection..."
+msgstr "_Kapcsolat…"
+
+#: ../ui/main.glade.h:4
+msgid "_Disconnect"
+msgstr "Kapcsolat _bontása"
+
+#: ../ui/main.glade.h:5
+msgid "_Reconnect"
+msgstr "Ú_jrakapcsolódás"
+
+#: ../ui/main.glade.h:6
+msgid "Start _Logging..."
+msgstr "Naplózás _indítása…"
+
+#: ../ui/main.glade.h:7
+msgid "Stop Lo_gging"
+msgstr "Naplózás _leállítása"
+
+#: ../ui/main.glade.h:8
+msgid "_Save Buffer..."
+msgstr "_Puffer mentése…"
+
+#: ../ui/main.glade.h:9
+msgid "Close _Window"
+msgstr "_Ablak bezárása"
+
+#: ../ui/main.glade.h:10
+msgid "_Settings"
+msgstr "_Beállítások"
+
+#: ../ui/main.glade.h:11
+msgid "P_rofiles"
+msgstr "P_rofilok"
+
+#: ../ui/main.glade.h:12
+msgid "_Help"
+msgstr "_Súgó"
+
+#: ../ui/main.glade.h:13
+msgid "Connect to MUD"
+msgstr "Kapcsolódás MUD-hoz"
+
+#: ../ui/main.glade.h:14
+msgid "Connect"
+msgstr "Kapcsolódás"
+
+#: ../ui/main.glade.h:15
+msgid "Connect to host"
+msgstr "Kapcsolódás géphez"
+
+#: ../ui/main.glade.h:16
+msgid "Disconnect from current MUD"
+msgstr "Kapcsolat bontása a jelenlegi MUD-dal"
+
+#: ../ui/main.glade.h:17
+msgid "Disconnect"
+msgstr "Kapcsolat bontása"
+
+#: ../ui/main.glade.h:18
+msgid "Disconnect from current host"
+msgstr "Kapcsolat bontása a jelenlegi géppel"
+
+#: ../ui/main.glade.h:19
+msgid "Reconnect to current MUD"
+msgstr "Újrakapcsolódás a jelenlegi MUD-hoz"
+
+#: ../ui/main.glade.h:20
+msgid "Reconnect"
+msgstr "Újrakapcsolódás"
+
+#: ../ui/main.glade.h:21
+msgid "Save buffer as..."
+msgstr "Puffer mentése másként…"
+
+#: ../ui/main.glade.h:22
+msgid "Debug Log"
+msgstr "Hibakeresési napló"
+
+#: ../ui/main.glade.h:23
+msgid "Start Logging..."
+msgstr "Naplózás indítása…"
+
+#: ../ui/main.glade.h:24
+msgid "_Log to File:"
+msgstr "_Naplózás fájlba:"
+
+#: ../ui/main.glade.h:25
+msgid "_Select File"
+msgstr "Fájl _kiválasztása"
+
+#: ../ui/main.glade.h:26
+msgid "Logging Options"
+msgstr "Naplózási beállítások"
+
+#: ../ui/main.glade.h:27
+msgid "_Number of lines to log:"
+msgstr "Naplózandó sorok _száma:"
+
+#: ../ui/main.glade.h:28
+msgid "Number of _previous lines to include:"
+msgstr "Belevenni kívánt _előző sorok száma:"
+
+#: ../ui/main.glade.h:29
+msgid "_Append to file"
+msgstr "_Hozzáfűzés fájlhoz"
+
+#: ../ui/main.glade.h:30
+msgid "Log Inp_ut"
+msgstr "Be_menet naplózása"
+
+#: ../ui/main.glade.h:31
+msgid "_Include entire buffer"
+msgstr "Teljes puffer _belevétele"
+
+#: ../ui/main.glade.h:32
+msgid "Include C_olor"
+msgstr "S_zín belevétele"
+
+#: ../ui/muds.glade.h:1
+msgid "Connections"
+msgstr "Kapcsolatok"
+
+#: ../ui/muds.glade.h:2
+msgid " _Host: "
+msgstr " _Gép: "
+
+#: ../ui/muds.glade.h:3
+msgid " _Port: "
+msgstr " _Port: "
+
+#: ../ui/muds.glade.h:4
+msgid "Custom Connection"
+msgstr "Egyéni kapcsolat"
+
+#: ../ui/muds.glade.h:5
+msgid "Connection Properties"
+msgstr "Kapcsolat tulajdonságai"
+
+#: ../ui/muds.glade.h:6
+msgid "MUD"
+msgstr "MUD"
+
+#: ../ui/muds.glade.h:7
+msgid "Name:"
+msgstr "Név:"
+
+#: ../ui/muds.glade.h:8
+msgid "Host:"
+msgstr "Gép:"
+
+#: ../ui/muds.glade.h:9
+msgid "Port:"
+msgstr "Port:"
+
+#: ../ui/muds.glade.h:10
+msgid "Profile"
+msgstr "Profil"
+
+#: ../ui/muds.glade.h:11
+msgid "Character"
+msgstr "Karakter"
+
+#: ../ui/muds.glade.h:12
+msgid "Logon:"
+msgstr "Bejelentkezés:"
+
+#: ../ui/muds.glade.h:13
+msgid "Unsaved Changes"
+msgstr "Mentetlen módosítások"
+
+#: ../ui/muds.glade.h:14
+msgid "You have unsaved changes. Do you want to save before closing?"
+msgstr "Mentetlen módosításai vannak. El szeretné menteni bezárás előtt?"
+
+#: ../ui/muds.glade.h:15
+msgid "Close _without Saving"
+msgstr "Bezárás mentés _nélkül"
+
+#: ../ui/muds.glade.h:16
+msgid "Delete MUD?"
+msgstr "MUD törlése?"
+
+#: ../ui/muds.glade.h:17
+msgid "Are you sure you want to delete this MUD?"
+msgstr "Biztosan törölni szeretné ezt a MUD-ot?"
+
+#: ../ui/muds.glade.h:18
+msgid "Select An Icon..."
+msgstr "Válasszon ikont…"
+
+#: ../ui/muds.glade.h:19
+msgid "Select A Folder"
+msgstr "Válasszon mappát"
+
+#: ../ui/prefs.glade.h:1
+msgid "New Profile"
+msgstr "Új profil"
+
+#: ../ui/prefs.glade.h:2
+msgid "New Profile Name:"
+msgstr "Új profil neve:"
+
+#: ../ui/prefs.glade.h:3
+msgid "Regex Error"
+msgstr "Regex hiba"
+
+#: ../ui/prefs.glade.h:4
+msgid "Error Code:"
+msgstr "Hibakód:"
+
+#: ../ui/prefs.glade.h:5
+msgid "Error String:"
+msgstr "Hibaszöveg:"
+
+#: ../ui/prefs.glade.h:6
+msgid "Error At:"
+msgstr "Hiba itt:"
+
+#: ../ui/prefs.glade.h:7
+msgid "Profiles"
+msgstr "Profilok"
+
+#: ../ui/prefs.glade.h:8
+msgid "Preferences"
+msgstr "Beállítások"
+
+#: ../ui/prefs.glade.h:9
+msgid "Input"
+msgstr "Bemenet"
+
+#: ../ui/prefs.glade.h:10
+msgid "_Echo the Text Sent"
+msgstr "Az elküldött szöveg _visszhangosítása"
+
+#: ../ui/prefs.glade.h:11
+msgid "_Keep the Text Entered"
+msgstr "A megadott szöveg _megtartása"
+
+#: ../ui/prefs.glade.h:12
+msgid "Command _Division Character:"
+msgstr "Parancs_felosztó karakter:"
+
+#: ../ui/prefs.glade.h:14
+msgid "_Character Set:"
+msgstr "_Karakterkészlet:"
+
+#: ../ui/prefs.glade.h:15
+msgid "Output"
+msgstr "Kimenet"
+
+#: ../ui/prefs.glade.h:16
+msgid "Scroll on _Output"
+msgstr "_Kimenethez görgetés"
+
+#: ../ui/prefs.glade.h:17
+msgid "_Number of Scrollback Lines:"
+msgstr "_Visszagörgethető sorok száma:"
+
+#: ../ui/prefs.glade.h:18
+msgid "Fon_t:"
+msgstr "_Betűkészlet:"
+
+#: ../ui/prefs.glade.h:19
+msgid "_Foreground Color:"
+msgstr "_Előtérszín:"
+
+#: ../ui/prefs.glade.h:20
+msgid "_Background Color:"
+msgstr "_Háttérszín:"
+
+#: ../ui/prefs.glade.h:21
+msgid "Color Palette:"
+msgstr "Színpaletta:"
+
+#: ../ui/prefs.glade.h:22
+msgid "Terminal"
+msgstr "Terminál"
+
+#: ../ui/prefs.glade.h:23
+msgid "Proxy"
+msgstr "Proxy"
+
+#: ../ui/prefs.glade.h:24
+msgid "_Enable Proxy"
+msgstr "Proxy _engedélyezése"
+
+#: ../ui/prefs.glade.h:25
+msgid "_Host:"
+msgstr "_Gép:"
+
+#: ../ui/prefs.glade.h:26
+msgid "_Version:"
+msgstr "_Verzió:"
+
+#: ../ui/prefs.glade.h:27
+msgid "Telnet Options"
+msgstr "Telnet beállítások"
+
+#: ../ui/prefs.glade.h:28
+msgid "Enable Mud _Sound Protocol (MSP)"
+msgstr "Mud _hangprotokoll (MSP) engedélyezése"
+
+#: ../ui/prefs.glade.h:29
+msgid "Enable _Character Encoding Negotiation (CHARSET)"
+msgstr "_Karakterkódolás-egyeztetés (CHARSET) engedélyezése"
+
+#: ../ui/prefs.glade.h:30
+msgid "Network"
+msgstr "Hálózat"
+
+#: ../ui/prefs.glade.h:34
+msgid "Timers"
+msgstr "Időzítők"
+

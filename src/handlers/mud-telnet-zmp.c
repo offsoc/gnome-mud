@@ -22,7 +22,6 @@
 #endif
 
 #include <glib.h>
-#include <gnet.h>
 #include <string.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -412,7 +411,7 @@ mud_zmp_send_command(MudTelnetZmp *self, guint32 count, ...)
     guchar null = '\0';
     va_list va;
     gchar *arg;
-    GConn *conn;
+    MudConnection *conn;
 
     g_return_if_fail(MUD_IS_TELNET_ZMP(self));
 
@@ -423,11 +422,11 @@ mud_zmp_send_command(MudTelnetZmp *self, guint32 count, ...)
     g_log("Telnet", G_LOG_LEVEL_DEBUG, "Sending ZMP Command:");
 
     byte = (guchar)TEL_IAC;
-    gnet_conn_write(conn, (gchar *)&byte, 1);
+    mud_connection_send(conn, (gchar *)&byte, 1);
     byte = (guchar)TEL_SB;
-    gnet_conn_write(conn, (gchar *)&byte, 1);
+    mud_connection_send(conn, (gchar *)&byte, 1);
     byte = (guchar)TELOPT_ZMP;
-    gnet_conn_write(conn, (gchar *)&byte, 1);
+    mud_connection_send(conn, (gchar *)&byte, 1);
 
     for (i = 0; i < count; ++i)
     {
@@ -438,22 +437,21 @@ mud_zmp_send_command(MudTelnetZmp *self, guint32 count, ...)
         for(j = 0; j < strlen(arg); ++j)
         {
             byte = (guchar)arg[j];
-
-            gnet_conn_write(conn, (gchar *)&byte, 1);
+            mud_connection_send(conn, (gchar *)&byte, 1);
 
             if (byte == (guchar)TEL_IAC)
-                gnet_conn_write(conn, (gchar *)&byte, 1);
+                mud_connection_send(conn, (gchar *)&byte, 1);
         }
 
-        gnet_conn_write(conn, (gchar *)&null, 1);
+        mud_connection_send(conn, (gchar *)&null, 1);
     }
 
     va_end(va);
 
     byte = (guchar)TEL_IAC;
-    gnet_conn_write(conn, (gchar *)&byte, 1);
+    mud_connection_send(conn, (gchar *)&byte, 1);
     byte = (guchar)TEL_SE;
-    gnet_conn_write(conn, (gchar *)&byte, 1);
+    mud_connection_send(conn, (gchar *)&byte, 1);
 }
 
 gboolean

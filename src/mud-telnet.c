@@ -25,7 +25,6 @@
 #endif
 
 #include <glib.h>
-#include <gnet.h>
 #include <stdarg.h>
 #include <string.h> // memset
 #include <glib/gprintf.h>
@@ -38,7 +37,8 @@
 
 struct _MudTelnetPrivate
 {
-    GConn *conn;
+    MudConnection *conn;
+
     gchar *mud_name;
 
     enum TelnetState tel_state;
@@ -177,7 +177,7 @@ mud_telnet_class_init (MudTelnetClass *klass)
             g_param_spec_pointer("connection",
                 "Connection",
                 "The Connection Object to the MUD",
-                G_PARAM_READABLE));
+                G_PARAM_READWRITE));
 }
 
 static void
@@ -192,6 +192,7 @@ mud_telnet_init (MudTelnet *telnet)
     telnet->ga_received = FALSE;
     telnet->eor_received = FALSE;
 
+    telnet->priv->conn = NULL;
     telnet->priv->pos = 0;
     telnet->priv->buffer = NULL;
     telnet->priv->subreq_pos = 0;
@@ -230,11 +231,6 @@ mud_telnet_constructor (GType gtype,
     memset(self->priv->telopt_states, 0, sizeof(self->priv->telopt_states));
 
     mud_telnet_register_handlers(self);
-
-    g_object_get(self->parent_view,
-                 "connection", &self->priv->conn,
-                 "mud-name", &self->priv->mud_name,
-                 NULL);
 
     return obj;
 }
@@ -285,6 +281,10 @@ mud_telnet_set_property(GObject *object,
 
         case PROP_EOR_RECEIVED:
             self->eor_received = g_value_get_boolean(value);
+            break;
+
+        case PROP_CONNECTION:
+            self->priv->conn = g_value_get_pointer(value);
             break;
 
         default:
@@ -682,25 +682,25 @@ mud_telnet_send_sub_req(MudTelnet *telnet, guint32 count, ...)
     
     byte = (guchar)TEL_IAC;
 
-    gnet_conn_write(telnet->priv->conn, (gchar *)&byte, 1);
+    mud_connection_send(telnet->priv->conn, (gchar *)&byte, 1);
     byte = (guchar)TEL_SB;
-    gnet_conn_write(telnet->priv->conn, (gchar *)&byte, 1);
+    mud_connection_send(telnet->priv->conn, (gchar *)&byte, 1);
 
     for (i = 0; i < count; ++i)
     {
 	byte = (guchar)va_arg(va, gint);
-	gnet_conn_write(telnet->priv->conn, (gchar *)&byte, 1);
+	mud_connection_send(telnet->priv->conn, (gchar *)&byte, 1);
 
 	if (byte == (guchar)TEL_IAC)
-	    gnet_conn_write(telnet->priv->conn, (gchar *)&byte, 1);
+	    mud_connection_send(telnet->priv->conn, (gchar *)&byte, 1);
     }
 
     va_end(va);
 
     byte = (guchar)TEL_IAC;
-    gnet_conn_write(telnet->priv->conn, (gchar *)&byte, 1);
+    mud_connection_send(telnet->priv->conn, (gchar *)&byte, 1);
     byte = (guchar)TEL_SE;
-    gnet_conn_write(telnet->priv->conn, (gchar *)&byte, 1);
+    mud_connection_send(telnet->priv->conn, (gchar *)&byte, 1);
 }
 
 void
@@ -717,10 +717,10 @@ mud_telnet_send_raw(MudTelnet *telnet, guint32 count, ...)
     for (i = 0; i < count; ++i)
     {
 	byte = (guchar)va_arg(va, gint);
-	gnet_conn_write(telnet->priv->conn, (gchar *)&byte, 1);
+	mud_connection_send(telnet->priv->conn, (gchar *)&byte, 1);
 
 	if (byte == (guchar)TEL_IAC)
-	    gnet_conn_write(telnet->priv->conn, (gchar *)&byte, 1);
+	    mud_connection_send(telnet->priv->conn, (gchar *)&byte, 1);
     }
 
     va_end(va);
@@ -898,7 +898,7 @@ mud_telnet_send_iac(MudTelnet *telnet, guchar ch1, guchar ch2)
     buf[1] = ch1;
     buf[2] = ch2;
 
-    gnet_conn_write(telnet->priv->conn, (gchar *)buf, 3);
+    mud_connection_send(telnet->priv->conn, (gchar *)buf, 3);
 }
 
 static void

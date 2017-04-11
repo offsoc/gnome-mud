@@ -24,7 +24,6 @@
 #ifdef ENABLE_GST
 
 #include <glib.h>
-#include <gnet.h>
 #include <string.h>
 #include <gst/gst.h>
 #include <ctype.h>

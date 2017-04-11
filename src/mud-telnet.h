@@ -137,7 +137,6 @@ typedef struct _MudTelnet            MudTelnet;
 typedef struct _MudTelnetClass       MudTelnetClass;
 typedef struct _MudTelnetPrivate     MudTelnetPrivate;
 
-#include <gnet.h>
 #include "mud-connection-view.h"
 #include "handlers/mud-telnet-handlers.h"
 

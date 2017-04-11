@@ -517,28 +517,7 @@ mud_window_get_property(GObject *object,
 static int
 mud_window_close(GtkWidget *widget, MudWindow *self)
 {
-    GSList *entry = self->priv->mud_views_list;
-
-    while(entry != NULL)
-    {
-        MudTelnetNaws *naws;
-        gboolean enabled;
-        MudConnectionView *view =
-            MUD_CONNECTION_VIEW(entry->data);
-
-        naws = MUD_TELNET_NAWS(mud_telnet_get_handler(view->telnet,
-                    TELOPT_NAWS));
-
-        g_object_get(naws, "enabled", &enabled, NULL);
-
-        if(enabled)
-            mud_telnet_naws_disconnect_signals(naws);
-
-        entry = g_slist_next(entry);
-    }
-
     g_object_unref(self);
-
     return TRUE;
 }
 
@@ -575,7 +554,9 @@ mud_window_reconnect_cb(GtkWidget *widget, MudWindow *self)
     if (self->priv->current_view != NULL)
     {
         gtk_widget_set_sensitive(self->priv->startlog, TRUE);
+        gtk_widget_set_sensitive(self->priv->menu_reconnect, FALSE);
         gtk_widget_set_sensitive(self->priv->menu_disconnect, TRUE);
+        gtk_widget_set_sensitive(self->priv->toolbar_reconnect, FALSE);
         gtk_widget_set_sensitive(self->priv->toolbar_disconnect, TRUE);
         mud_connection_view_reconnect(self->priv->current_view);
     }
@@ -1336,10 +1317,10 @@ mud_window_add_connection_view(MudWindow *self, GObject *cview, gchar *tabLbl)
     gtk_widget_set_sensitive(self->priv->startlog, TRUE);
     gtk_widget_set_sensitive(self->priv->bufferdump, TRUE);
     gtk_widget_set_sensitive(self->priv->menu_close, TRUE);
-    gtk_widget_set_sensitive(self->priv->menu_reconnect, TRUE);
+    gtk_widget_set_sensitive(self->priv->menu_reconnect, FALSE);
     gtk_widget_set_sensitive(self->priv->menu_disconnect, TRUE);
     gtk_widget_set_sensitive(self->priv->toolbar_disconnect, TRUE);
-    gtk_widget_set_sensitive(self->priv->toolbar_reconnect, TRUE);
+    gtk_widget_set_sensitive(self->priv->toolbar_reconnect, FALSE);
 
     g_signal_connect(terminal,
                      "focus-in-event",
@@ -1360,8 +1341,10 @@ mud_window_disconnected(MudWindow *self)
     g_return_if_fail(IS_MUD_WINDOW(self));
 
     gtk_widget_set_sensitive(self->priv->startlog, FALSE);
+    gtk_widget_set_sensitive(self->priv->menu_reconnect, TRUE);
     gtk_widget_set_sensitive(self->priv->menu_disconnect, FALSE);
     gtk_widget_set_sensitive(self->priv->toolbar_disconnect, FALSE);
+    gtk_widget_set_sensitive(self->priv->toolbar_reconnect, TRUE);
 
     if(gtk_widget_get_visible(self->priv->password_entry))
     {

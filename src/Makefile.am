@@ -42,6 +42,8 @@ gnome_mud_SOURCES =				\
 	mud-connections.c			\
 	mud-connections.h			\
 	mud-connection-view.h			\
+	mud-connection.c			\
+	mud-connection.h			\
 	mud-line-buffer.c			\
 	mud-line-buffer.h			\
 	mud-log.c				\

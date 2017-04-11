@@ -25,7 +25,6 @@
 #include <glib-object.h>
 #include <glib/gi18n.h>
 #include <vte/vte.h>
-#include <gnet.h>
 #include <glib/gprintf.h>
 
 #include "gnome-mud.h"
@@ -348,9 +347,7 @@ mud_telnet_naws_resized_cb(MudWindow *window,
     if(!IS_MUD_CONNECTION_VIEW(view))
         return;
 
-    if(view->connection &&
-       gnet_conn_is_connected(view->connection) &&
-       self->priv->enabled)
+    if(self->priv->enabled && mud_connection_is_connected(view->conn))
         mud_telnet_naws_send(self,
                              view->terminal->column_count,
                              view->terminal->row_count);
@@ -388,18 +385,3 @@ mud_telnet_naws_delete_event_cb(GtkWidget *widget,
 
     return FALSE;
 }
-
-void
-mud_telnet_naws_disconnect_signals(MudTelnetNaws *self)
-{
-
-    if(self->priv->resized_signal != 0)
-        g_signal_handler_disconnect(self->priv->window, self->priv->resized_signal);
-
-    if(self->priv->delete_signal != 0)
-        g_signal_handler_disconnect(self->priv->main_window, self->priv->delete_signal);
-
-    self->priv->resized_signal = 0;
-    self->priv->delete_signal = 0;
-}
-

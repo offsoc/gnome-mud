@@ -24,12 +24,12 @@
 #include <glib.h>
 #include <glib-object.h>
 #include <glib/gi18n.h>
-#include <gnet.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <glib/gprintf.h>
 
 #include "gnome-mud.h"
+#include "mud-connection.h"
 #include "mud-telnet.h"
 #include "mud-telnet-handler-interface.h"
 #include "mud-telnet-charset.h"
@@ -339,7 +339,7 @@ mud_telnet_charset_send(MudTelnetCharset *self, gchar *encoding)
 {
     guchar byte;
     guint32 i;
-    GConn *conn;
+    MudConnection *conn;
 
     g_return_if_fail(MUD_IS_TELNET_CHARSET(self));
 
@@ -352,27 +352,26 @@ mud_telnet_charset_send(MudTelnetCharset *self, gchar *encoding)
 
     /* Writes IAC SB CHARSET ACCEPTED <charset> IAC SE to server */
     byte = (guchar)TEL_IAC;
-
-    gnet_conn_write(conn, (gchar *)&byte, 1);
+    mud_connection_send(conn, (gchar *)&byte, 1);
     byte = (guchar)TEL_SB;
-    gnet_conn_write(conn, (gchar *)&byte, 1);
+    mud_connection_send(conn, (gchar *)&byte, 1);
     byte = (guchar)TELOPT_CHARSET;
-    gnet_conn_write(conn, (gchar *)&byte, 1);
+    mud_connection_send(conn, (gchar *)&byte, 1);
     byte = (guchar)TEL_CHARSET_ACCEPT;
-    gnet_conn_write(conn, (gchar *)&byte, 1);
+    mud_connection_send(conn, (gchar *)&byte, 1);
 
-    for (i = 0; i < strlen(encoding); ++i)
+    for(i = 0; i < strlen(encoding); ++i)
     {
-	byte = (guchar)encoding[i];
-	gnet_conn_write(conn, (gchar *)&byte, 1);
+        byte = (guchar)encoding[i];
+        mud_connection_send(conn, (gchar *)&byte, 1);
 
-	if (byte == (guchar)TEL_IAC)
-	    gnet_conn_write(conn, (gchar *)&byte, 1);
+        if(byte == (guchar)TEL_IAC)
+            mud_connection_send(conn, (gchar *)&byte, 1);
     }
 
     byte = (guchar)TEL_IAC;
-    gnet_conn_write(conn, (gchar *)&byte, 1);
+    mud_connection_send(conn, (gchar *)&byte, 1);
     byte = (guchar)TEL_SE;
-    gnet_conn_write(conn, (gchar *)&byte, 1);
+    mud_connection_send(conn, (gchar *)&byte, 1);
 }
 

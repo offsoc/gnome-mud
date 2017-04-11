@@ -27,7 +27,6 @@
 #include <gtk/gtk.h>
 #include <stdio.h>
 #include <sys/stat.h>
-#include <gnet.h>
 
 #ifdef ENABLE_GST
 #include <gst/gst.h>
@@ -65,9 +64,6 @@ main (gint argc, char *argv[])
     }
 
     gtk_init(&argc, &argv);
-
-    /* Initialize the Gnet library */
-    gnet_init();
 
 #ifdef ENABLE_GST
     /* Initialize GStreamer */

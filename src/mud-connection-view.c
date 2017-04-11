@@ -26,8 +26,6 @@
 #include <gtk/gtk.h>
 #include <glib.h>
 #include <vte/vte.h>
-#define GNET_EXPERIMENTAL
-#include <gnet.h>
 #include <string.h>
 #include <glib/gprintf.h>
 
@@ -129,9 +127,6 @@ static void mud_connection_view_popup(MudConnectionView *view,
                                       GdkEventButton *event);
 
 static void popup_menu_detach(GtkWidget *widget, GtkMenu *menu);
-static void mud_connection_view_network_event_cb(GConn *conn, 
-                                                 GConnEvent *event,
-                                                 gpointer data);
 static void mud_connection_view_close_current_cb(GtkWidget *menu_item,
                                                  MudConnectionView *view);
 static void mud_connection_view_profile_changed_cb(MudProfile *profile,
@@ -373,12 +368,9 @@ mud_connection_view_init (MudConnectionView *self)
 
     self->priv->processed = NULL;
 
-    self->connection = NULL;
-
     self->local_echo = TRUE;
     self->remote_encode = FALSE;   
     self->connect_hook = FALSE;
-    self->connected = FALSE;;
 
     self->connect_string = NULL;
     self->remote_encoding = NULL;
@@ -404,6 +396,99 @@ mud_connection_view_init (MudConnectionView *self)
                                            NULL);
 }
 
+static void
+mud_connection_connected_cb(MudConnection *conn, MudConnectionView *self)
+{
+    self->telnet = g_object_new(MUD_TYPE_TELNET,
+                                "parent-view", self,
+                                "connection", conn,
+                                NULL);
+
+    mud_tray_update_icon(self->tray, online);
+    mud_connection_view_add_text(self, _("*** Connected.\n"), System);
+}
+
+static void
+mud_connection_disconnected_cb(MudConnection *conn, MudConnectionView *self)
+{
+    g_clear_object(&self->telnet);
+
+    /* We may have been disconnected with local echo disabled, it must be
+     * enabled to display the connection closed message.
+     */
+    self->local_echo = TRUE;
+
+    mud_window_disconnected(self->window);
+    mud_connection_view_add_text(self, _("\n*** Connection closed.\n"), Error);
+}
+
+static void
+mud_connection_data_ready_cb(MudConnection *conn, MudConnectionView *self)
+{
+    const GByteArray *input;
+    gint tlen;
+
+    input = mud_connection_get_input(conn);
+
+    self->priv->processed = mud_telnet_process(self->telnet,
+                                               input->data,
+                                               input->len,
+                                               &tlen);
+
+    if(self->priv->processed)
+    {
+        mud_line_buffer_add_data(self->priv->line_buffer,
+                                 self->priv->processed->str,
+                                 self->priv->processed->len);
+        g_string_free(self->priv->processed, TRUE);
+        self->priv->processed = NULL;
+    }
+}
+
+/* TODO: Support loading the system-wide proxy. */
+static gchar *
+mud_connection_view_create_proxy_uri(const MudConnectionView *self)
+{
+    GConfClient *client;
+    gchar *uri = NULL;
+    gchar *host, *str_version;
+    guint version;
+    gchar key[2048];
+    gchar extra_path[512] = "";
+
+    if (strcmp(self->profile_name, "Default") != 0)
+    {
+        g_snprintf(extra_path, sizeof(extra_path), "profiles/%s/", self->profile_name);
+    }
+
+    client = gconf_client_get_default();
+
+    g_snprintf(key, sizeof(key), "/apps/gnome-mud/%s%s", extra_path, "functionality/use_proxy");
+    if(!gconf_client_get_bool(client, key, NULL))
+    {
+        g_object_unref(client);
+        return NULL;
+    }
+
+    g_snprintf(key, sizeof(key), "/apps/gnome-mud/%s%s", extra_path, "functionality/proxy_hostname");
+    host = gconf_client_get_string(client, key, NULL);
+
+    g_snprintf(key, sizeof(key), "/apps/gnome-mud/%s%s", extra_path, "functionality/proxy_version");
+    str_version = gconf_client_get_string(client, key, NULL);
+    if(strcmp(str_version, "4") == 0)
+        version = 4;
+    else
+        version = 5;
+
+    uri = g_strdup_printf("socks%d://%s", version, host);
+
+    g_object_unref(client);
+    g_free(host);
+    g_free(str_version);
+
+    return uri;
+}
+
 static GObject *
 mud_connection_view_constructor (GType gtype,
                                  guint n_properties,
@@ -417,16 +502,9 @@ mud_connection_view_constructor (GType gtype,
     GtkWidget *term_box;
     GtkWidget *main_window;
     MudTray *tray;
-    GConfClient *client;
-
-    gchar key[2048];
-    gchar extra_path[512] = "";
     gchar *buf;
-    gchar *proxy_host;
-    gchar *version;
-    gboolean use_proxy;
+    gchar *proxy_uri;
     MudProfile *profile;
-    
     MudConnectionView *self;
     GObject *obj;
 
@@ -546,15 +624,6 @@ mud_connection_view_constructor (GType gtype,
                  "tray", &tray,
                  NULL);
 
-    self->connection = gnet_conn_new(self->hostname, self->port,
-            mud_connection_view_network_event_cb, self);
-    gnet_conn_ref(self->connection);
-    gnet_conn_set_watch_error(self->connection, TRUE);
-
-    self->telnet = g_object_new(MUD_TYPE_TELNET,
-                                "parent-view", self,
-                                NULL);
-
     profile =
         mud_profile_manager_get_profile_by_name(self->window->profile_manager,
                                                 self->profile_name);
@@ -578,40 +647,20 @@ mud_connection_view_constructor (GType gtype,
     g_free(buf);
     buf = NULL;
 
-    if (strcmp(self->profile_name, "Default") != 0)
-    {
-        g_snprintf(extra_path, 512, "profiles/%s/", self->profile_name);
-    }
+    self->conn = g_object_new(MUD_TYPE_CONNECTION, NULL);
 
-    g_snprintf(key, 2048, "/apps/gnome-mud/%s%s", extra_path, "functionality/use_proxy");
-    client = gconf_client_get_default();
-    use_proxy = gconf_client_get_bool(client, key, NULL);
+    g_signal_connect(self->conn, "connected",
+                     G_CALLBACK(mud_connection_connected_cb), self);
 
-    g_snprintf(key, 2048, "/apps/gnome-mud/%s%s", extra_path, "functionality/proxy_hostname");
-    proxy_host = gconf_client_get_string(client, key, NULL);
+    g_signal_connect(self->conn, "disconnected",
+                     G_CALLBACK(mud_connection_disconnected_cb), self);
 
-    g_snprintf(key, 2048, "/apps/gnome-mud/%s%s", extra_path, "functionality/proxy_version");
-    version = gconf_client_get_string(client, key, NULL);
+    g_signal_connect(self->conn, "data-ready",
+                     G_CALLBACK(mud_connection_data_ready_cb), self);
 
-    if(use_proxy)
-    {
-        if(proxy_host && version)
-        {
-            gnet_socks_set_enabled(TRUE);
-            gnet_socks_set_server(gnet_inetaddr_new(proxy_host,GNET_SOCKS_PORT));
-            gnet_socks_set_version((strcmp(version, "4") == 0) ? 4 : 5);
-        }
-    }
-    else
-        gnet_socks_set_enabled(FALSE);
-
-    if(proxy_host)
-        g_free(proxy_host);
-
-    if(version)
-        g_free(version);
-
-    g_object_unref(client);
+    proxy_uri = mud_connection_view_create_proxy_uri(self);
+    mud_connection_connect(self->conn, self->hostname, self->port, proxy_uri);
+    g_free(proxy_uri);
 
     /* Show everything */
     gtk_widget_show_all(box);
@@ -634,8 +683,6 @@ mud_connection_view_constructor (GType gtype,
                      "partial-line-received",
                      G_CALLBACK(mud_connection_view_partial_line_cb),
                      self);
-
-    gnet_conn_connect(self->connection);
 
     return obj;
 }
@@ -672,12 +719,8 @@ mud_connection_view_finalize (GObject *object)
         g_queue_free(connection_view->priv->download_queue);
 #endif
 
-    if(connection_view->connection && 
-            gnet_conn_is_connected(connection_view->connection))
-        gnet_conn_disconnect(connection_view->connection);
-
-    if(connection_view->connection)
-        gnet_conn_unref(connection_view->connection);
+    if(connection_view->conn)
+        g_object_unref(connection_view->conn);
 
     if(connection_view->hostname)
         g_free(connection_view->hostname);
@@ -687,13 +730,10 @@ mud_connection_view_finalize (GObject *object)
     
     if(connection_view->mud_name)
         g_free(connection_view->mud_name);
-    
+
     if(connection_view->priv->processed)
         g_string_free(connection_view->priv->processed, TRUE);
     
-    if(connection_view->telnet)
-        g_object_unref(connection_view->telnet);
-  
     g_object_unref(connection_view->log);
 
     g_object_unref(connection_view->parse);
@@ -882,7 +922,7 @@ mud_connection_view_get_property(GObject *object,
     switch(prop_id)
     {
         case PROP_CONNECTION:
-            g_value_set_pointer(value, self->connection);
+            g_value_set_pointer(value, self->conn);
             break;
 
         case PROP_LOCAL_ECHO:
@@ -898,7 +938,7 @@ mud_connection_view_get_property(GObject *object,
             break;
 
         case PROP_CONNECTED:
-            g_value_set_boolean(value, self->connected);
+            g_value_set_boolean(value, mud_connection_is_connected(self->conn));
             break;
 
         case PROP_CONNECT_STRING:
@@ -1125,101 +1165,6 @@ mud_connection_view_popup(MudConnectionView *view, GdkEventButton *event)
 }
 
 static void
-mud_connection_view_network_event_cb(GConn *conn, GConnEvent *event, gpointer pview)
-{
-    gint length;
-    MudConnectionView *view = MUD_CONNECTION_VIEW(pview);
-
-#ifdef ENABLE_GST
-    MudMSPDownloadItem *item;
-#endif
-
-    g_assert(view != NULL);
-
-    switch(event->type)
-    {
-        case GNET_CONN_ERROR:
-            mud_connection_view_add_text(view, _("*** Could not connect.\n"), Error);
-            mud_window_disconnected(view->window);
-            break;
-
-        case GNET_CONN_CONNECT:
-            mud_connection_view_add_text(view, _("*** Connected.\n"), System);
-            gnet_conn_read(view->connection);
-            break;
-
-        case GNET_CONN_CLOSE:
-#ifdef ENABLE_GST
-            if(view->priv->download_queue)
-                while((item = (MudMSPDownloadItem *)g_queue_pop_head(view->priv->download_queue)) != NULL)
-                    mud_telnet_msp_download_item_free(item);
-
-            if(view->priv->download_queue)
-                g_queue_free(view->priv->download_queue);
-
-            view->priv->download_queue = NULL;
-#endif
-
-            view->priv->processed = NULL;
-
-            gnet_conn_disconnect(view->connection);
-            gnet_conn_unref(view->connection);
-            view->connection = NULL;
-
-            if(view->telnet)
-            {
-                g_object_unref(view->telnet);
-                view->telnet = NULL;
-            }
-
-            mud_connection_view_add_text(view, _("*** Connection closed.\n"), Error);
-
-            mud_window_disconnected(view->window);
-            break;
-
-        case GNET_CONN_TIMEOUT:
-            break;
-
-        case GNET_CONN_READ:
-            if(!view->connected)
-            {
-                view->connected = TRUE;
-                mud_tray_update_icon(view->tray, online);
-            }
-
-            view->priv->processed =
-                mud_telnet_process(view->telnet, 
-                                   (guchar *)event->buffer,
-                                   event->length,
-                                   &length);
-
-            if(view->priv->processed)
-            {
-                mud_line_buffer_add_data(view->priv->line_buffer,
-                                         view->priv->processed->str,
-                                         view->priv->processed->len);
-
-                g_string_free(view->priv->processed, TRUE);
-                view->priv->processed = NULL;
-
-                mud_line_buffer_flush(view->priv->line_buffer);
-            }
-
-            gnet_conn_read(view->connection);
-            break;
-
-        case GNET_CONN_WRITE:
-            break;
-
-        case GNET_CONN_READABLE:
-            break;
-
-        case GNET_CONN_WRITABLE:
-            break;
-    }
-}
-
-static void
 mud_connection_view_line_added_cb(MudLineBuffer *buffer,
                                   MudLineBufferLine *line,
                                   guint length,
@@ -1348,6 +1293,7 @@ popup_menu_detach(GtkWidget *widget, GtkMenu *menu)
 static void
 mud_connection_view_update_geometry (MudConnectionView *window)
 {
+    /* TODO: switch to vte_terminal_set_geometry_hints_for_window */
     GtkWidget *widget = GTK_WIDGET(window->terminal);
     GtkWidget *mainwindow;
     GdkGeometry hints;
@@ -1848,119 +1794,30 @@ mud_connection_view_disconnect(MudConnectionView *view)
 
     g_return_if_fail(IS_MUD_CONNECTION_VIEW(view));
 
-    if(view->connection && gnet_conn_is_connected(view->connection))
-    {
 #ifdef ENABLE_GST
-        if(view->priv->download_queue)
-            while((item = (MudMSPDownloadItem *)g_queue_pop_head(view->priv->download_queue)) != NULL)
-                mud_telnet_msp_download_item_free(item);
+    if(view->priv->download_queue)
+        while((item = (MudMSPDownloadItem *)g_queue_pop_head(view->priv->download_queue)) != NULL)
+            mud_telnet_msp_download_item_free(item);
 
-        if(view->priv->download_queue)
-            g_queue_free(view->priv->download_queue);
+    if(view->priv->download_queue)
+        g_queue_free(view->priv->download_queue);
 
-        view->priv->download_queue = NULL;
+    view->priv->download_queue = NULL;
 #endif
 
-        mud_connection_view_stop_logging(view);
+    mud_connection_view_stop_logging(view);
 
-        view->priv->processed = NULL;
+    view->priv->processed = NULL;
 
-        gnet_conn_disconnect(view->connection);
-        gnet_conn_unref(view->connection);
-        view->connection = NULL;
-
-        if(view->telnet)
-        {
-            g_object_unref(view->telnet);
-            view->telnet = NULL;
-        }
-
-        mud_connection_view_add_text(view, _("\n*** Connection closed.\n"), System);
-    }
+    mud_connection_disconnect(view->conn);
 }
 
 void
 mud_connection_view_reconnect(MudConnectionView *view)
 {
-    gchar *buf, *profile_name, *proxy_host, *version;
-    gchar key[2048];
-    gchar extra_path[512] = "";
-    gboolean use_proxy;
-    GConfClient *client;
+    gchar *buf, *proxy_uri;
 
-#ifdef ENABLE_GST
-    MudMSPDownloadItem *item;
-#endif
     g_return_if_fail(IS_MUD_CONNECTION_VIEW(view));
-
-    if(view->connection && gnet_conn_is_connected(view->connection))
-    {
-
-#ifdef ENABLE_GST
-        while((item = (MudMSPDownloadItem *)
-                    g_queue_pop_head(view->priv->download_queue)) != NULL)
-            mud_telnet_msp_download_item_free(item);
-
-        if(view->priv->download_queue)
-            g_queue_free(view->priv->download_queue);
-
-        view->priv->download_queue = NULL;
-#endif
-
-        mud_connection_view_stop_logging(view);
-
-        view->priv->processed = NULL;
-
-        gnet_conn_disconnect(view->connection);
-        gnet_conn_unref(view->connection);
-        view->connection = NULL;
-
-        g_object_unref(view->telnet);
-        view->telnet = NULL;
-
-        mud_connection_view_add_text(view,
-                _("\n*** Connection closed.\n"), System);
-    }
-
-    view->connection = gnet_conn_new(view->hostname, view->port,
-            mud_connection_view_network_event_cb, view);
-    gnet_conn_ref(view->connection);
-    gnet_conn_set_watch_error(view->connection, TRUE);
-
-    g_object_get(view->profile, "name", &profile_name, NULL);
-
-    if (!g_str_equal(profile_name, "Default"))
-        g_snprintf(extra_path, 512, "profiles/%s/", profile_name);
-    
-    g_free(profile_name);
-
-    g_snprintf(key, 2048, "/apps/gnome-mud/%s%s", extra_path, "functionality/use_proxy");
-    client = gconf_client_get_default();
-    use_proxy = gconf_client_get_bool(client, key, NULL);
-
-    g_snprintf(key, 2048, "/apps/gnome-mud/%s%s", extra_path, "functionality/proxy_hostname");
-    proxy_host = gconf_client_get_string(client, key, NULL);
-
-    g_snprintf(key, 2048, "/apps/gnome-mud/%s%s", extra_path, "functionality/proxy_version");
-    version = gconf_client_get_string(client, key, NULL);
-
-    if(use_proxy)
-    {
-        if(proxy_host && version)
-        {
-            gnet_socks_set_enabled(TRUE);
-            gnet_socks_set_server(gnet_inetaddr_new(proxy_host,GNET_SOCKS_PORT));
-            gnet_socks_set_version((strcmp(version, "4") == 0) ? 4 : 5);
-        }
-    }
-    else
-        gnet_socks_set_enabled(FALSE);
-
-    if(proxy_host)
-        g_free(proxy_host);
-
-    if(version)
-        g_free(version);
 
 #ifdef ENABLE_GST
     view->priv->download_queue = g_queue_new();
@@ -1968,18 +1825,14 @@ mud_connection_view_reconnect(MudConnectionView *view)
 
     view->local_echo = TRUE;
 
-    view->telnet = g_object_new(MUD_TYPE_TELNET,
-                                "parent-view", view,
-                                NULL);
-
     buf = g_strdup_printf(_("*** Making connection to %s, port %d.\n"),
             view->hostname, view->port);
     mud_connection_view_add_text(view, buf, System);
     g_free(buf);
 
-    g_object_unref(client);
-
-    gnet_conn_connect(view->connection);
+    proxy_uri = mud_connection_view_create_proxy_uri(view);
+    mud_connection_connect(view->conn, view->hostname, view->port, proxy_uri);
+    g_free(proxy_uri);
 }
 
 void
@@ -2000,7 +1853,7 @@ mud_connection_view_send(MudConnectionView *view, const gchar *data)
     
     g_return_if_fail(IS_MUD_CONNECTION_VIEW(view));
 
-    if(view->connection && gnet_conn_is_connected(view->connection))
+    if(mud_connection_is_connected(view->conn))
     {
         if(view->local_echo) // Prevent password from being cached.
         {
@@ -2092,10 +1945,9 @@ mud_connection_view_send(MudConnectionView *view, const gchar *data)
 
             if(!zmp_enabled)
             {
-                gchar *line = (conv_text == NULL) ? text : conv_text;
-
-                gnet_conn_write(view->connection, line, strlen(line));
-                gnet_conn_write(view->connection, "\r\n", 2);
+                const gchar *line = (conv_text == NULL) ? text : conv_text;
+                mud_connection_send(view->conn, line, -1);
+                mud_connection_send(view->conn, "\r\n", 2);
             }
             else // ZMP is enabled, use zmp.input.
             {

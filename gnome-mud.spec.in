@@ -19,11 +19,9 @@ Requires:       gstreamer >= 1.0
 Requires:       libpcre >= 6.0.0
 Requires:       gconf-2.0 >= 2.12.0
 Requires:       gtk+-2.0 >= 2.12.0
-Requires:       gnet-2.0 >= 2.0.0
 BuildRequires:  gtk+-2.0-devel >= 2.12.0
 BuildRequires:  libpcre-devel > = 6.0.0
 BuildRequires   gstreamer-devel >= 1.0
-BuildRequires   gnet-2.0-devel >= 2.0.0
 BuildRequires:	vte-devel >= 0.10.26
 BuildRequires:  scrollkeeper >= @SCROLLKEEPER_BUILD_REQUIRED@
 

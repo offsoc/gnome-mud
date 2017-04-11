@@ -8,7 +8,6 @@ G_BEGIN_DECLS
 #endif
 
 #include <gtk/gtk.h>
-#include <gnet.h>
 #include <vte/vte.h>
 
 #define MUD_TYPE_CONNECTION_VIEW               (mud_connection_view_get_type ())
@@ -23,6 +22,7 @@ typedef struct _MudConnectionView           MudConnectionView;
 typedef struct _MudConnectionViewClass      MudConnectionViewClass;
 typedef struct _MudConnectionViewPrivate    MudConnectionViewPrivate;
 
+#include "mud-connection.h"
 #include "mud-telnet.h"
 #include "mud-parse-base.h"
 #include "mud-profile.h"
@@ -44,7 +44,7 @@ struct _MudConnectionView
     MudConnectionViewPrivate *priv;
 
     /*< Public >*/
-    GConn *connection;
+    MudConnection *conn;
 
     // Flags
     gboolean local_echo;

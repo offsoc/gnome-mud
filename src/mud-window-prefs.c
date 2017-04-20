@@ -936,8 +936,6 @@ mud_window_prefs_update_proxy_combo(MudWindowPrefs *self,
         if(current != active)
             gtk_combo_box_set_active(GTK_COMBO_BOX(self->priv->proxy_combo),
                                      active);
-
-        current = gtk_combo_box_get_active(GTK_COMBO_BOX(self->priv->proxy_combo));
     }
 
     g_free(version);

@@ -44,7 +44,6 @@
 gint
 main (gint argc, char *argv[])
 {
-    MudWindow *window;
     GConfClient *client;
     DebugLogger *logger;
     GError      *err = NULL;
@@ -116,7 +115,7 @@ main (gint argc, char *argv[])
     //g_log_set_always_fatal(G_LOG_LEVEL_CRITICAL|G_LOG_LEVEL_WARNING);
 
     /* Let 'er rip */
-    window = g_object_new(MUD_TYPE_WINDOW, NULL);
+    g_object_new(MUD_TYPE_WINDOW, NULL);
 
     gtk_main();
 

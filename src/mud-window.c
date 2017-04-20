@@ -469,10 +469,6 @@ mud_window_set_property(GObject *object,
                         const GValue *value,
                         GParamSpec *pspec)
 {
-    MudWindow *self;
-
-    self = MUD_WINDOW(object);
-
     switch(prop_id)
     {
         /* These properties aren't writeable. If we get here
@@ -792,7 +788,6 @@ mud_window_notebook_page_change(GtkNotebook *notebook, gpointer page, gint arg, 
 static void
 mud_window_preferences_cb(GtkWidget *widget, MudWindow *self)
 {
-    MudWindowPrefs *prefs;
     gchar *profile;
 
     if(self->priv->current_view)
@@ -801,10 +796,10 @@ mud_window_preferences_cb(GtkWidget *widget, MudWindow *self)
         profile = g_strdup("Default");
 
 
-    prefs = g_object_new(MUD_TYPE_WINDOW_PREFS,
-                         "parent-window", self,
-                         "name", profile,
-                         NULL);
+    g_object_new(MUD_TYPE_WINDOW_PREFS,
+                 "parent-window", self,
+                 "name", profile,
+                 NULL);
 
     g_free(profile);
 }

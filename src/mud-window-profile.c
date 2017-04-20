@@ -233,10 +233,7 @@ mud_profile_window_constructor (GType gtype,
 static void
 mud_profile_window_finalize (GObject *object)
 {
-    MudProfileWindow *profwin;
     GObjectClass *parent_class;
-
-    profwin = MUD_PROFILE_WINDOW(object);
 
     parent_class = g_type_class_peek_parent(G_OBJECT_GET_CLASS(object));
     parent_class->finalize(object);

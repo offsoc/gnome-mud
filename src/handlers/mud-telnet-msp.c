@@ -949,7 +949,7 @@ mud_telnet_msp_get_files(MudTelnetMsp *self, MudMSPTypes type)
     g_snprintf(sound_dir, 2048, "%s/.gnome-mud/audio/%s/",
             g_get_home_dir(), mud_name);
     if(!g_file_test(sound_dir, G_FILE_TEST_IS_DIR))
-        mkdir(sound_dir, 0777 );
+        g_mkdir_with_parents(sound_dir, 0777);
 
     g_free(mud_name);
 

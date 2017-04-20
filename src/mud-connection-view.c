@@ -1774,8 +1774,6 @@ mud_connection_view_add_text(MudConnectionView *view, gchar *message, enum MudCo
 
     client = gconf_client_get_default();
 
-    text = g_strdup(message);
-
     g_snprintf(key, 2048, "/apps/gnome-mud/%s%s", extra_path, "functionality/remote_encoding");
     remote = gconf_client_get_bool(client, key, NULL);
 

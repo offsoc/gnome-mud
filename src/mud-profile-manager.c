@@ -294,7 +294,7 @@ void
 mud_profile_manager_delete_profile(MudProfileManager *self,
                                    const gchar *name)
 {
-    MudProfile *profile, *default_profile;
+    MudProfile *profile;
     gchar *key, *pname;
     GSList *connections, *entry;
     GConfClient *client;
@@ -304,7 +304,6 @@ mud_profile_manager_delete_profile(MudProfileManager *self,
     client = gconf_client_get_default();
 
     profile = mud_profile_manager_get_profile_by_name(self, name);
-    default_profile = mud_profile_manager_get_profile_by_name(self, "Default");
 
     if (profile)
     {

@@ -66,7 +66,7 @@ struct _MudConnectionViewPrivate
 
 #ifdef ENABLE_GST
     GQueue *download_queue;
-    GConnHttp *dl_conn;
+    GCancellable *download_cancel;
     gboolean downloading;
 #endif
 };
@@ -164,11 +164,14 @@ static void mud_connection_view_feed_text(MudConnectionView *view,
 static void mud_connection_view_update_geometry (MudConnectionView *window);
 
 #ifdef ENABLE_GST
-static void mud_connection_view_http_cb(GConnHttp *conn,
-                                        GConnHttpEvent *event,
-                                        gpointer data);
-static void mud_connection_view_cancel_dl_cb(GtkWidget *widget,
-                                             MudConnectionView *view);
+static void mud_connection_view_download_progress_cb(goffset current_num_bytes,
+                                                     goffset total_num_bytes,
+                                                     gpointer user_data);
+static void mud_connection_view_download_complete_cb(GObject *source_object,
+                                                     GAsyncResult *res,
+                                                     gpointer user_data);
+static void mud_connection_view_download_cancel_cb(GtkWidget *widget,
+                                                   MudConnectionView *view);
 #endif
 
 /* Class Functions */
@@ -567,12 +570,11 @@ mud_connection_view_constructor (GType gtype,
     /* Set defaults and create download queue */
     self->priv->downloading = FALSE;
     self->priv->download_queue = g_queue_new();
-    self->priv->dl_conn = NULL;
 
     /* Connect Download Cancel Signal */
     g_signal_connect(self->priv->dl_button,
                      "clicked",
-                     G_CALLBACK(mud_connection_view_cancel_dl_cb),
+                     G_CALLBACK(mud_connection_view_download_cancel_cb),
                      self);
 #endif
 
@@ -2066,8 +2068,13 @@ static void
 mud_connection_view_start_download(MudConnectionView *view)
 {
     MudMSPDownloadItem *item;
+    GFile *source;
+    GFile *destination;
+    gchar **uri;
+    GString *dl_label_text;
 
     g_return_if_fail(IS_MUD_CONNECTION_VIEW(view));
+    g_return_if_fail(!view->priv->downloading);
 
     gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(view->priv->progressbar), 0.0);
     gtk_label_set_text(GTK_LABEL(view->priv->dl_label), _("Connecting..."));
@@ -2075,20 +2082,31 @@ mud_connection_view_start_download(MudConnectionView *view)
     gtk_widget_show(view->priv->dl_label);
     gtk_widget_show(view->priv->dl_button);
 
-    if(!view->priv->downloading && view->priv->dl_conn)
-        gnet_conn_http_delete(view->priv->dl_conn);
-
     item = g_queue_peek_head(view->priv->download_queue);
-    view->priv->dl_conn = gnet_conn_http_new();
-    gnet_conn_http_set_uri(view->priv->dl_conn, item->url);
-    gnet_conn_http_set_user_agent (view->priv->dl_conn, "gnome-mud");
-    // 30 minute timeout, if the file didn't download in 30 minutes, its not going to happen.
-    gnet_conn_http_set_timeout(view->priv->dl_conn, 1800000);
+
+    uri = g_strsplit(item->url, "/", 0);
+
+    dl_label_text = g_string_new(NULL);
+
+    g_string_append(dl_label_text, _("Downloading"));
+    g_string_append_c(dl_label_text, ' ');
+    g_string_append(dl_label_text, uri[g_strv_length(uri) - 1]);
+    g_string_append(dl_label_text, "...");
+
+    gtk_label_set_text(GTK_LABEL(view->priv->dl_label), dl_label_text->str);
+
+    g_string_free(dl_label_text, TRUE);
+    g_strfreev(uri);
+
+    source = g_file_new_for_uri(item->url);
+    destination = g_file_new_for_path(item->file);
 
     view->priv->downloading = TRUE;
+    view->priv->download_cancel = g_cancellable_new();
 
-    gnet_conn_http_run_async(view->priv->dl_conn,
-            mud_connection_view_http_cb, view);
+    g_file_copy_async(source, destination, G_FILE_COPY_NONE, G_PRIORITY_DEFAULT,
+                      view->priv->download_cancel, mud_connection_view_download_progress_cb, view,
+                      mud_connection_view_download_complete_cb, view);
 }
 
 void
@@ -2142,132 +2160,49 @@ mud_connection_view_queue_download(MudConnectionView *view, gchar *url, gchar *f
 }
 
 static void
-mud_connection_view_http_cb(GConnHttp *conn, GConnHttpEvent *event, gpointer data)
+mud_connection_view_download_progress_cb(goffset current_num_bytes,
+                                         goffset total_num_bytes,
+                                         gpointer user_data)
 {
-    MudConnectionView *view = (MudConnectionView *)data;
-    MudMSPDownloadItem *item;
-    gchar **uri;
-    GString *file_name;
-    GConnHttpEventData *event_data;
+    MudConnectionView *self = MUD_CONNECTION_VIEW(user_data);
 
-    switch(event->type)
-    {
-        case GNET_CONN_HTTP_CONNECTED:
-            break;
-
-        case GNET_CONN_HTTP_DATA_PARTIAL:
-            event_data = (GConnHttpEventData *)event;
-
-            if(event_data->content_length == 0)
-                gtk_progress_bar_pulse(GTK_PROGRESS_BAR(view->priv->progressbar));
-            else
-                gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(view->priv->progressbar),
-                        (gdouble)((gdouble)event_data->data_received / (gdouble)event_data->content_length));
-            break;
-
-        case GNET_CONN_HTTP_DATA_COMPLETE:
-            event_data = (GConnHttpEventData *)event;
-
-            gtk_widget_hide(view->priv->progressbar);
-            gtk_widget_hide(view->priv->dl_label);
-            gtk_widget_hide(view->priv->dl_button);
-
-            item = g_queue_pop_head(view->priv->download_queue);
-
-            g_file_set_contents(item->file, event_data->buffer,
-                    event_data->buffer_length, NULL);
-
-            mud_telnet_msp_download_item_free(item);
-            view->priv->downloading = FALSE;
-
-            if(!g_queue_is_empty(view->priv->download_queue))
-                mud_connection_view_start_download(view);
-
-            break;
-
-        case GNET_CONN_HTTP_TIMEOUT:
-            if(!view->priv->downloading)
-                break;
-
-            gtk_widget_hide(view->priv->progressbar);
-            gtk_widget_hide(view->priv->dl_label);
-            gtk_widget_hide(view->priv->dl_button);
-
-            g_warning(_("Connection timed out."));
-
-            item = g_queue_pop_head(view->priv->download_queue);
-            mud_telnet_msp_download_item_free(item);
-
-            view->priv->downloading = FALSE;
-
-            if(!g_queue_is_empty(view->priv->download_queue))
-                mud_connection_view_start_download(view);
-            break;
-
-        case GNET_CONN_HTTP_ERROR:
-            gtk_widget_hide(view->priv->progressbar);
-            gtk_widget_hide(view->priv->dl_label);
-            gtk_widget_hide(view->priv->dl_button);
-
-            g_warning(_("There was an internal http connection error."));
-
-            item = g_queue_pop_head(view->priv->download_queue);
-            mud_telnet_msp_download_item_free(item);
-
-            view->priv->downloading = FALSE;
-
-            if(!g_queue_is_empty(view->priv->download_queue))
-                mud_connection_view_start_download(view);
-
-            break;
-
-        case GNET_CONN_HTTP_RESOLVED:
-            break;
-
-        case GNET_CONN_HTTP_RESPONSE:
-            item = g_queue_peek_head(view->priv->download_queue);
-
-            uri = g_strsplit(item->url, "/", 0);
-
-            file_name = g_string_new(NULL);
-
-            g_string_append(file_name, _("Downloading"));
-            g_string_append_c(file_name, ' ');
-            g_string_append(file_name, uri[g_strv_length(uri) - 1]);
-            g_string_append(file_name, "...");
-
-            gtk_label_set_text(GTK_LABEL(view->priv->dl_label), file_name->str);
-
-            g_string_free(file_name, TRUE);
-            g_strfreev(uri);
-            break;
-
-        case GNET_CONN_HTTP_REDIRECT:
-            break;
-    }
+    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(self->priv->progressbar),
+                                  (gdouble)current_num_bytes / total_num_bytes);
 }
 
 static void
-mud_connection_view_cancel_dl_cb(GtkWidget *widget, MudConnectionView *view)
+mud_connection_view_download_complete_cb(GObject *source_object,
+                                         GAsyncResult *res, gpointer user_data)
 {
+    MudConnectionView *self = MUD_CONNECTION_VIEW(user_data);
+    GFile *file = G_FILE(source_object);
     MudMSPDownloadItem *item;
 
-    gtk_widget_hide(view->priv->progressbar);
-    gtk_widget_hide(view->priv->dl_label);
-    gtk_widget_hide(view->priv->dl_button);
+    gtk_widget_hide(self->priv->progressbar);
+    gtk_widget_hide(self->priv->dl_label);
+    gtk_widget_hide(self->priv->dl_button);
 
-    if(view->priv->dl_conn)
-    {
-        gnet_conn_http_delete(view->priv->dl_conn);
-        view->priv->dl_conn = NULL;
-    }
-
-    item = g_queue_pop_head(view->priv->download_queue);
+    item = g_queue_pop_head(self->priv->download_queue);
     mud_telnet_msp_download_item_free(item);
 
-    view->priv->downloading = FALSE;
+    self->priv->downloading = FALSE;
+    g_clear_object(&self->priv->download_cancel);
 
-    if(!g_queue_is_empty(view->priv->download_queue))
-        mud_connection_view_start_download(view);
+    if(!g_file_copy_finish(file, res, NULL))
+        g_warning(_("There was an internal http connection error."));
+
+    if(!g_queue_is_empty(self->priv->download_queue))
+        mud_connection_view_start_download(self);
+}
+
+static void
+mud_connection_view_download_cancel_cb(GtkWidget *widget,
+                                       MudConnectionView *self)
+{
+    g_assert(IS_MUD_CONNECTION_VIEW(self));
+    g_assert(self->priv->download_cancel);
+
+    g_cancellable_cancel(self->priv->download_cancel);
+
 }
 #endif

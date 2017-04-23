@@ -1778,7 +1778,7 @@ mud_connection_view_add_text(MudConnectionView *view, gchar *message, enum MudCo
     remote = gconf_client_get_bool(client, key, NULL);
 
     if(view->remote_encode && remote)
-        encoding = view->remote_encoding;
+        encoding = g_strdup(view->remote_encoding);
     else
     {
         g_object_get(view->profile,

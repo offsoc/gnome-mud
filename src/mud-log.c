@@ -827,9 +827,15 @@ mud_log_close(MudLog *log)
 
     if(log->priv->color)
     {
+        gsize write_size;
+        const gchar span[] = "</span>";
+
         while(!g_queue_is_empty(log->priv->span_queue))
         {
-            fwrite("</span>", 1, strlen("</span>"), log->priv->logfile);
+            write_size = fwrite(span, 1, sizeof(span) - 1,
+                                log->priv->logfile);
+            if(write_size != sizeof(span) - 1)
+                g_critical(_("Could not write data to log file!"));
             g_queue_pop_head(log->priv->span_queue);
         }
     }
@@ -922,7 +928,11 @@ mud_log_write(MudLog *log, const gchar *data, gsize size)
 
         if(output)
         {
-            write_size = fwrite(output, 1, strlen(output), log->priv->logfile);
+            const gsize output_len = strlen(output);
+
+            write_size = fwrite(output, 1, output_len, log->priv->logfile);
+            if(write_size != output_len)
+                g_critical(_("Could not write data to log file!"));
 
             g_free(output);
         }

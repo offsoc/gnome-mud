@@ -26,7 +26,6 @@
 #include <glib/gi18n.h>
 #include <gconf/gconf.h>
 #include <gconf/gconf-client.h>
-#include <glade/glade-xml.h>
 #include <glib/gprintf.h>
 
 #include "gnome-mud.h"
@@ -413,34 +412,37 @@ mud_window_prefs_get_property(GObject *object,
 static void
 mud_window_prefs_construct_window(MudWindowPrefs *self)
 {
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     GtkWidget *main_window;
     gint i;
 
-    glade = glade_xml_new(GLADEDIR "/prefs.glade", "preferences_window", NULL);
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/prefs.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
 
-    self->priv->window = glade_xml_get_widget(glade, "preferences_window");
+    self->priv->window = GTK_WIDGET(gtk_builder_get_object(builder, "preferences_window"));
 
-    self->priv->echo_check     = glade_xml_get_widget(glade, "cb_echo");
-    self->priv->keep_check     = glade_xml_get_widget(glade, "cb_keep");
-    self->priv->div_entry      = glade_xml_get_widget(glade, "entry_commdev");
-    self->priv->encoding_combo = glade_xml_get_widget(glade, "encoding_combo");
-    self->priv->scroll_check   = glade_xml_get_widget(glade, "cb_scrollback");
-    self->priv->lines_spin     = glade_xml_get_widget(glade, "sb_lines");
-    self->priv->font_button    = glade_xml_get_widget(glade, "fp_font");
-    self->priv->fore_button    = glade_xml_get_widget(glade, "cb_foreground");
-    self->priv->back_button    = glade_xml_get_widget(glade, "cb_background");
-    self->priv->proxy_check    = glade_xml_get_widget(glade, "proxy_check");
-    self->priv->proxy_entry    = glade_xml_get_widget(glade, "proxy_entry");
-    self->priv->proxy_combo    = glade_xml_get_widget(glade, "proxy_combo");
-    self->priv->msp_check      = glade_xml_get_widget(glade, "msp_check");
-    self->priv->charset_check  = glade_xml_get_widget(glade, "charset_check");
+    self->priv->echo_check     = GTK_WIDGET(gtk_builder_get_object(builder, "cb_echo"));
+    self->priv->keep_check     = GTK_WIDGET(gtk_builder_get_object(builder, "cb_keep"));
+    self->priv->div_entry      = GTK_WIDGET(gtk_builder_get_object(builder, "entry_commdev"));
+    self->priv->encoding_combo = GTK_WIDGET(gtk_builder_get_object(builder, "encoding_combo"));
+    self->priv->scroll_check   = GTK_WIDGET(gtk_builder_get_object(builder, "cb_scrollback"));
+    self->priv->lines_spin     = GTK_WIDGET(gtk_builder_get_object(builder, "sb_lines"));
+    self->priv->font_button    = GTK_WIDGET(gtk_builder_get_object(builder, "fp_font"));
+    self->priv->fore_button    = GTK_WIDGET(gtk_builder_get_object(builder, "cb_foreground"));
+    self->priv->back_button    = GTK_WIDGET(gtk_builder_get_object(builder, "cb_background"));
+    self->priv->proxy_check    = GTK_WIDGET(gtk_builder_get_object(builder, "proxy_check"));
+    self->priv->proxy_entry    = GTK_WIDGET(gtk_builder_get_object(builder, "proxy_entry"));
+    self->priv->proxy_combo    = GTK_WIDGET(gtk_builder_get_object(builder, "proxy_combo"));
+    self->priv->msp_check      = GTK_WIDGET(gtk_builder_get_object(builder, "msp_check"));
+    self->priv->charset_check  = GTK_WIDGET(gtk_builder_get_object(builder, "charset_check"));
 
     for(i = 0; i < C_MAX; ++i)
     {
         gchar *cwidget = g_strdup_printf("cb%d", i);
 
-        self->priv->colors[i]  = glade_xml_get_widget(glade, cwidget);
+        self->priv->colors[i]  = GTK_WIDGET(gtk_builder_get_object(builder, cwidget));
 
         g_free(cwidget); 
     }
@@ -459,7 +461,7 @@ mud_window_prefs_construct_window(MudWindowPrefs *self)
                      G_CALLBACK(mud_window_prefs_delete_event_cb),
                      self);
 
-    g_object_unref(glade);
+    g_object_unref(builder);
 }
 
 // Callbacks

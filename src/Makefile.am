@@ -13,6 +13,7 @@ gnome_mud_CPPFLAGS =							\
 	-DDATADIR=\""$(datadir)"\"					\
 	-DLIBDIR=\""$(libdir)"\"					\
 	-DGLADEDIR=\""$(pkgdatadir)"\"					\
+	-DUIDIR=\""$(pkgdatadir)"\"					\
 	-DPKGDATADIR=\""$(pkgdatadir)"\"
 
 gnome_mud_CFLAGS = \

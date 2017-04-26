@@ -22,7 +22,6 @@
 #  include "config.h"
 #endif
 
-#include <glade/glade-xml.h>
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
@@ -230,7 +229,8 @@ mud_window_class_init (MudWindowClass *klass)
 static void
 mud_window_init (MudWindow *self)
 {
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     GtkTextIter iter;
     gint y;
 
@@ -238,10 +238,12 @@ mud_window_init (MudWindow *self)
     self->priv = MUD_WINDOW_GET_PRIVATE(self);
 
     /* start glading */
-    glade = glade_xml_new(GLADEDIR "/main.glade", "main_window", NULL);
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/main.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
 
     /* set public properties */
-    self->window = GTK_WINDOW(glade_xml_get_widget(glade, "main_window"));
+    self->window = GTK_WINDOW(gtk_builder_get_object(builder, "main_window"));
     self->tray = g_object_new(MUD_TYPE_TRAY,
                               "parent-window", self->window,
                               NULL); 
@@ -251,20 +253,20 @@ mud_window_init (MudWindow *self)
     self->priv->current_view = NULL;
     self->priv->mud_views_list = NULL;
     self->priv->profile_menu_list = NULL;
-    self->priv->menu_disconnect = glade_xml_get_widget(glade, "menu_disconnect");
-    self->priv->toolbar_disconnect = glade_xml_get_widget(glade, "toolbar_disconnect");
-    self->priv->menu_reconnect = glade_xml_get_widget(glade, "menu_reconnect");
-    self->priv->toolbar_reconnect = glade_xml_get_widget(glade, "toolbar_reconnect");
-    self->priv->menu_close = glade_xml_get_widget(glade, "menu_closewindow");
-    self->priv->startlog = glade_xml_get_widget(glade, "menu_start_logging");
-    self->priv->stoplog = glade_xml_get_widget(glade, "menu_stop_logging");
-    self->priv->bufferdump = glade_xml_get_widget(glade, "menu_dump_buffer");
-    self->priv->mi_profiles = glade_xml_get_widget(glade, "mi_profiles_menu");
-    self->priv->notebook = glade_xml_get_widget(glade, "notebook");
-    self->priv->textviewscroll = glade_xml_get_widget(glade, "text_view_scroll");
-    self->priv->textview = glade_xml_get_widget(glade, "text_view");
-    self->priv->image = glade_xml_get_widget(glade, "image");
-    self->priv->password_entry = glade_xml_get_widget(glade, "password_entry");
+    self->priv->menu_disconnect = GTK_WIDGET(gtk_builder_get_object(builder, "menu_disconnect"));
+    self->priv->toolbar_disconnect = GTK_WIDGET(gtk_builder_get_object(builder, "toolbar_disconnect"));
+    self->priv->menu_reconnect = GTK_WIDGET(gtk_builder_get_object(builder, "menu_reconnect"));
+    self->priv->toolbar_reconnect = GTK_WIDGET(gtk_builder_get_object(builder, "toolbar_reconnect"));
+    self->priv->menu_close = GTK_WIDGET(gtk_builder_get_object(builder, "menu_closewindow"));
+    self->priv->startlog = GTK_WIDGET(gtk_builder_get_object(builder, "menu_start_logging"));
+    self->priv->stoplog = GTK_WIDGET(gtk_builder_get_object(builder, "menu_stop_logging"));
+    self->priv->bufferdump = GTK_WIDGET(gtk_builder_get_object(builder, "menu_dump_buffer"));
+    self->priv->mi_profiles = GTK_WIDGET(gtk_builder_get_object(builder, "mi_profiles_menu"));
+    self->priv->notebook = GTK_WIDGET(gtk_builder_get_object(builder, "notebook"));
+    self->priv->textviewscroll = GTK_WIDGET(gtk_builder_get_object(builder, "text_view_scroll"));
+    self->priv->textview = GTK_WIDGET(gtk_builder_get_object(builder, "text_view"));
+    self->priv->image = GTK_WIDGET(gtk_builder_get_object(builder, "image"));
+    self->priv->password_entry = GTK_WIDGET(gtk_builder_get_object(builder, "password_entry"));
 
     /* connect quit buttons */
     g_signal_connect(self->window,
@@ -272,18 +274,18 @@ mud_window_init (MudWindow *self)
                      G_CALLBACK(mud_window_close),
                      self);
 
-    g_signal_connect(glade_xml_get_widget(glade, "menu_quit"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "menu_quit")),
                      "activate",
                      G_CALLBACK(mud_window_close),
                      self);
 
     /* connect connect buttons */
-    g_signal_connect(glade_xml_get_widget(glade, "main_connect"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "main_connect")),
                      "activate",
                      G_CALLBACK(mud_window_mconnect_dialog),
                      self);
 
-    g_signal_connect(glade_xml_get_widget(glade, "toolbar_connect"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "toolbar_connect")),
                      "clicked",
                      G_CALLBACK(mud_window_mconnect_dialog),
                      self);
@@ -332,12 +334,12 @@ mud_window_init (MudWindow *self)
                      self);
 
     /* preferences window button */
-    g_signal_connect(glade_xml_get_widget(glade, "menu_preferences"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "menu_preferences")),
                      "activate",
                      G_CALLBACK(mud_window_preferences_cb),
                      self);
 
-    g_signal_connect(glade_xml_get_widget(glade, "menu_about"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "menu_about")),
                      "activate",
                      G_CALLBACK(mud_window_about_cb),
                      self);
@@ -401,9 +403,9 @@ mud_window_init (MudWindow *self)
                         &self->priv->width,
                         &self->priv->height);
 
+    gtk_widget_set_visible(GTK_WIDGET(self->window), TRUE);
 
-
-    g_object_unref(glade);
+    g_object_unref(builder);
 }
 
 static GObject *
@@ -904,12 +906,16 @@ mud_window_size_allocate_cb(GtkWidget *widget,
 static void
 mud_window_buffer_cb(GtkWidget *widget, MudWindow *self)
 {
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     GtkWidget *dialog;
     gint result;
 
-    glade = glade_xml_new(GLADEDIR "/main.glade", "save_dialog", NULL);
-    dialog = glade_xml_get_widget(glade, "save_dialog");
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/main.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
+
+    dialog = GTK_WIDGET(gtk_builder_get_object(builder, "save_dialog"));
 
     gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (dialog), "buffer.txt");
 
@@ -950,7 +956,7 @@ mud_window_buffer_cb(GtkWidget *widget, MudWindow *self)
     }
 
     gtk_widget_destroy(dialog);
-    g_object_unref(glade);
+    g_object_unref(builder);
 }
 
 static void

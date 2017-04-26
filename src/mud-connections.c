@@ -26,7 +26,6 @@
 #include <glib/gi18n.h>
 #include <gconf/gconf.h>
 #include <gconf/gconf-client.h>
-#include <glade/glade-xml.h>
 #include <string.h>
 
 #include "gnome-mud.h"
@@ -227,8 +226,8 @@ mud_connections_constructor (GType gtype,
                              GObjectConstructParam *properties)
 {
     MudConnections *conn;
-
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     GConfClient *client;
     GtkWidget *main_window;
 
@@ -251,17 +250,19 @@ mud_connections_constructor (GType gtype,
                  "tray",   &conn->priv->tray,
                  NULL);
 
-    glade = glade_xml_new(GLADEDIR "/muds.glade", "mudviewwindow", NULL);
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/muds.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
 
-    conn->priv->window = glade_xml_get_widget(glade, "mudviewwindow");
-    conn->priv->iconview = glade_xml_get_widget(glade, "iconview");
+    conn->priv->window = GTK_WIDGET(gtk_builder_get_object(builder, "mudviewwindow"));
+    conn->priv->iconview = GTK_WIDGET(gtk_builder_get_object(builder, "iconview"));
 
     conn->priv->qconnect_host_entry =
-        glade_xml_get_widget(glade, "qconnect_host_entry");
+        GTK_WIDGET(gtk_builder_get_object(builder, "qconnect_host_entry"));
     conn->priv->qconnect_port_entry =
-        glade_xml_get_widget(glade, "qconnect_port_entry");
+        GTK_WIDGET(gtk_builder_get_object(builder, "qconnect_port_entry"));
     conn->priv->qconnect_connect_button =
-        glade_xml_get_widget(glade, "qconnect_connect_button");
+        GTK_WIDGET(gtk_builder_get_object(builder, "qconnect_connect_button"));
 
     conn->priv->icon_model =
         GTK_TREE_MODEL(gtk_list_store_new(MODEL_COLUMN_N,
@@ -310,15 +311,15 @@ mud_connections_constructor (GType gtype,
             conn);
     g_signal_connect(conn->priv->window, "destroy",
             G_CALLBACK(mud_connections_close_cb), conn);
-    g_signal_connect(glade_xml_get_widget(glade, "connect_button"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "connect_button")),
             "clicked", G_CALLBACK(mud_connections_connect_cb),
             conn);
-    g_signal_connect(glade_xml_get_widget(glade, "add_button"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "add_button")),
             "clicked", G_CALLBACK(mud_connections_add_cb), conn);
-    g_signal_connect(glade_xml_get_widget(glade, "delete_button"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "delete_button")),
             "clicked", G_CALLBACK(mud_connections_delete_cb),
             conn);
-    g_signal_connect(glade_xml_get_widget(glade, "properties_button"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "properties_button")),
             "clicked", G_CALLBACK(mud_connections_properties_cb),
             conn);
     g_signal_connect(conn->priv->qconnect_connect_button, "clicked",
@@ -333,7 +334,7 @@ mud_connections_constructor (GType gtype,
                  NULL);
 
     gtk_widget_show_all(conn->priv->window);
-    g_object_unref(glade);
+    g_object_unref(builder);
     g_object_unref(client);
 
     return obj;
@@ -825,7 +826,8 @@ mud_connections_button_press_cb(GtkWidget *widget,
 static void
 mud_connections_popup(MudConnections *conn, GdkEventButton *event)
 {
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     GtkWidget *popup;
     GList *selected =
 	gtk_icon_view_get_selected_items(
@@ -834,23 +836,26 @@ mud_connections_popup(MudConnections *conn, GdkEventButton *event)
     if(g_list_length(selected) == 0)
 	return;
 
-    glade = glade_xml_new(GLADEDIR "/muds.glade", "popupmenu", NULL);
-    popup = glade_xml_get_widget(glade, "popupmenu");
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/muds.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
 
-    g_signal_connect(glade_xml_get_widget(glade, "connect"), "activate",
+    popup = GTK_WIDGET(gtk_builder_get_object(builder, "popupmenu"));
+
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "connect")), "activate",
 		     G_CALLBACK(mud_connections_connect_cb),
 		     conn);
-    g_signal_connect(glade_xml_get_widget(glade, "add"), "activate",
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "add")), "activate",
 		     G_CALLBACK(mud_connections_add_cb),
 		     conn);
-    g_signal_connect(glade_xml_get_widget(glade, "delete"), "activate",
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "delete")), "activate",
 		     G_CALLBACK(mud_connections_delete_cb),
 		     conn);
-    g_signal_connect(glade_xml_get_widget(glade, "properties"), "activate",
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "properties")), "activate",
 		     G_CALLBACK(mud_connections_properties_cb),
 		     conn);
 
-    g_object_unref(glade);
+    g_object_unref(builder);
 
     gtk_menu_attach_to_widget(GTK_MENU(popup), conn->priv->iconview,
 			      NULL);
@@ -866,18 +871,21 @@ mud_connections_popup(MudConnections *conn, GdkEventButton *event)
 static gboolean
 mud_connections_delete_confirm(gchar *name)
 {
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     GtkWidget *dialog;
     GtkWidget *label;
     gint result;
     gchar *message;
     gchar *title;
 
-    glade = glade_xml_new(
-	GLADEDIR "/muds.glade", "mudviewdelconfirm", NULL);
-    dialog = glade_xml_get_widget(glade, "mudviewdelconfirm");
-    label = glade_xml_get_widget(glade, "message");
-    g_object_unref(glade);
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/muds.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
+
+    dialog = GTK_WIDGET(gtk_builder_get_object(builder, "mudviewdelconfirm"));
+    label = GTK_WIDGET(gtk_builder_get_object(builder, "message"));
+    g_object_unref(builder);
 
     message =
 	g_strdup_printf(_("Are you sure you want to delete %s?"), name);
@@ -898,29 +906,31 @@ mud_connections_delete_confirm(gchar *name)
 static void
 mud_connections_show_properties(MudConnections *conn, gchar *mud)
 {
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     GConfClient *client;
     GtkTextBuffer *buffer;
     gchar *key, *buf, *name_strip, *char_strip;
     gint port;
     gchar **mud_tuple;
 
-    glade =
-	glade_xml_new(GLADEDIR "/muds.glade", "mudviewproperties", NULL);
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/muds.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
 
     conn->priv->properties_window =
-	glade_xml_get_widget(glade, "mudviewproperties");
-    conn->priv->name_entry = glade_xml_get_widget(glade, "name_entry");
-    conn->priv->host_entry = glade_xml_get_widget(glade, "host_entry");
-    conn->priv->port_entry = glade_xml_get_widget(glade, "port_entry");
-    conn->priv->icon_button = glade_xml_get_widget(glade, "icon_button");
-    conn->priv->icon_image = glade_xml_get_widget(glade, "icon_image");
+        GTK_WIDGET(gtk_builder_get_object(builder, "mudviewproperties"));
+    conn->priv->name_entry = GTK_WIDGET(gtk_builder_get_object(builder, "name_entry"));
+    conn->priv->host_entry = GTK_WIDGET(gtk_builder_get_object(builder, "host_entry"));
+    conn->priv->port_entry = GTK_WIDGET(gtk_builder_get_object(builder, "port_entry"));
+    conn->priv->icon_button = GTK_WIDGET(gtk_builder_get_object(builder, "icon_button"));
+    conn->priv->icon_image = GTK_WIDGET(gtk_builder_get_object(builder, "icon_image"));
     conn->priv->profile_combo =
-	glade_xml_get_widget(glade, "profile_combo");
+	GTK_WIDGET(gtk_builder_get_object(builder, "profile_combo"));
     conn->priv->character_name_entry =
-	glade_xml_get_widget(glade, "character_name_entry");
+	GTK_WIDGET(gtk_builder_get_object(builder, "character_name_entry"));
     conn->priv->logon_textview =
-	glade_xml_get_widget(glade, "character_logon_textview");
+	GTK_WIDGET(gtk_builder_get_object(builder, "character_logon_textview"));
 
     if(conn->priv->icon_current)
 	g_free(conn->priv->icon_current);
@@ -941,45 +951,47 @@ mud_connections_show_properties(MudConnections *conn, gchar *mud)
 
     g_signal_connect(conn->priv->properties_window, "delete-event",
 		     G_CALLBACK(mud_connections_property_delete_cb), conn);
-    g_signal_connect(glade_xml_get_widget(glade, "cancel_button"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "cancel_button")),
 		     "clicked",
 		     G_CALLBACK(mud_connections_property_cancel_cb),
 		     conn);
-    g_signal_connect(glade_xml_get_widget(glade, "save_button"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "save_button")),
 		     "clicked",
 		     G_CALLBACK(mud_connections_property_save_cb),
 		     conn);
-    g_signal_connect(glade_xml_get_widget(glade, "icon_button"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "icon_button")),
 		     "clicked",
 		     G_CALLBACK(mud_connections_property_icon_cb),
 		     conn);
-    g_signal_connect(glade_xml_get_widget(glade, "name_entry"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "name_entry")),
 		     "key-press-event",
 		     G_CALLBACK(mud_connections_property_changed_cb),
 		     conn);
-    g_signal_connect(glade_xml_get_widget(glade, "host_entry"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "host_entry")),
 		     "key-press-event",
 		     G_CALLBACK(mud_connections_property_changed_cb),
 		     conn);
-    g_signal_connect(glade_xml_get_widget(glade, "port_entry"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "port_entry")),
 		     "key-press-event",
 		     G_CALLBACK(mud_connections_property_changed_cb),
 		     conn);
-    g_signal_connect(glade_xml_get_widget(glade, "character_name_entry"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "character_name_entry")),
 		     "key-press-event",
 		     G_CALLBACK(mud_connections_property_changed_cb),
 		     conn);
     g_signal_connect(
-	glade_xml_get_widget(glade, "character_logon_textview"),
+	GTK_WIDGET(gtk_builder_get_object(builder, "character_logon_textview")),
 	"key-press-event",
 	G_CALLBACK(mud_connections_property_changed_cb),
 	conn);
-    g_signal_connect(glade_xml_get_widget(glade, "profile_combo"),
+    g_signal_connect(GTK_WIDGET(gtk_builder_get_object(builder, "profile_combo")),
 		     "changed",
 		     G_CALLBACK(mud_connections_property_combo_changed_cb),
 		     conn);
 
-    g_object_unref(glade);
+    g_object_unref(builder);
+
+    gtk_widget_set_visible(conn->priv->properties_window, TRUE);
 
     if(conn->priv->original_name != NULL)
 	g_free(conn->priv->original_name);
@@ -1160,13 +1172,17 @@ mud_connections_property_delete_cb(GtkWidget *widget,
 static gint
 mud_connections_property_confirm(void)
 {
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     GtkWidget *dialog;
     gint result;
 
-    glade = glade_xml_new(GLADEDIR "/muds.glade", "mudviewconfirm", NULL);
-    dialog = glade_xml_get_widget(glade, "mudviewconfirm");
-    g_object_unref(glade);
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/muds.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
+
+    dialog = GTK_WIDGET(gtk_builder_get_object(builder, "mudviewconfirm"));
+    g_object_unref(builder);
 
     result = gtk_dialog_run(GTK_DIALOG(dialog));
     gtk_widget_destroy(dialog);
@@ -1399,15 +1415,18 @@ mud_connections_property_combo_get_index(MudConnections *conn,
 static void
 mud_connections_show_icon_dialog(MudConnections *conn)
 {
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     gint result;
 
-    glade = glade_xml_new(GLADEDIR "/muds.glade", "iconselect", NULL);
-    conn->priv->icon_dialog = glade_xml_get_widget(glade, "iconselect");
-    conn->priv->icon_dialog_view = glade_xml_get_widget(glade, "view");
-    conn->priv->icon_dialog_chooser =
-	glade_xml_get_widget(glade, "chooser");
-    g_object_unref(glade);
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/muds.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
+
+    conn->priv->icon_dialog = GTK_WIDGET(gtk_builder_get_object(builder, "iconselect"));
+    conn->priv->icon_dialog_view = GTK_WIDGET(gtk_builder_get_object(builder, "view"));
+    conn->priv->icon_dialog_chooser = GTK_WIDGET(gtk_builder_get_object(builder, "chooser"));
+    g_object_unref(builder);
 
     conn->priv->icon_dialog_view_model =
 	GTK_TREE_MODEL(gtk_list_store_new(MODEL_COLUMN_N,

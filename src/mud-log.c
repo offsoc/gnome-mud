@@ -28,7 +28,6 @@
 #include <time.h>
 #include <unistd.h>
 #include <string.h>
-#include <glade/glade-xml.h>
 #include <glib/gprintf.h>
 #include <stdlib.h>
 
@@ -384,13 +383,17 @@ static void
 mud_log_select_clicked_cb(GtkWidget *widget,
                           MudLog *self)
 {
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     GtkWidget *dialog;
     gint result;
 
-    glade = glade_xml_new(GLADEDIR "/main.glade", "save_dialog", NULL);
-    dialog = glade_xml_get_widget(glade, "save_dialog");
-    g_object_unref(glade);
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/main.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
+
+    dialog = GTK_WIDGET(gtk_builder_get_object(builder, "save_dialog"));
+    g_object_unref(builder);
 
     g_object_set(dialog, "title", _("Save log as..."), NULL);
 
@@ -611,7 +614,8 @@ mud_log_line_added_cb(MudLineBuffer *buffer,
 void
 mud_log_open(MudLog *self)
 {
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     GtkWidget *main_window;
     gchar buf[1024];
     time_t t;
@@ -619,20 +623,21 @@ mud_log_open(MudLog *self)
 
     g_return_if_fail(MUD_IS_LOG(self));
 
-    /* start glading */
-    glade = glade_xml_new(GLADEDIR "/main.glade", "log_config_window", NULL);
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/main.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
 
-    self->priv->window = glade_xml_get_widget(glade, "log_config_window");
-    self->priv->check_log_next = glade_xml_get_widget(glade, "inc_next_check_btn");
-    self->priv->spin_log_next = glade_xml_get_widget(glade, "next_spin_btn");
-    self->priv->check_log_prev = glade_xml_get_widget(glade, "inc_prev_check_btn");
-    self->priv->spin_log_prev = glade_xml_get_widget(glade, "prev_spin_btn");
-    self->priv->check_append = glade_xml_get_widget(glade, "append_check_btn");
-    self->priv->check_input = glade_xml_get_widget(glade, "input_check_btn");
-    self->priv->check_buffer = glade_xml_get_widget(glade, "buffer_check_btn");
-    self->priv->check_color = glade_xml_get_widget(glade, "color_check_btn");
-    self->priv->btn_select = glade_xml_get_widget(glade, "select_btn");
-    self->priv->entry_file = glade_xml_get_widget(glade, "file_entry");
+    self->priv->window = GTK_WIDGET(gtk_builder_get_object(builder, "log_config_window"));
+    self->priv->check_log_next = GTK_WIDGET(gtk_builder_get_object(builder, "inc_next_check_btn"));
+    self->priv->spin_log_next = GTK_WIDGET(gtk_builder_get_object(builder, "next_spin_btn"));
+    self->priv->check_log_prev = GTK_WIDGET(gtk_builder_get_object(builder, "inc_prev_check_btn"));
+    self->priv->spin_log_prev = GTK_WIDGET(gtk_builder_get_object(builder, "prev_spin_btn"));
+    self->priv->check_append = GTK_WIDGET(gtk_builder_get_object(builder, "append_check_btn"));
+    self->priv->check_input = GTK_WIDGET(gtk_builder_get_object(builder, "input_check_btn"));
+    self->priv->check_buffer = GTK_WIDGET(gtk_builder_get_object(builder, "buffer_check_btn"));
+    self->priv->check_color = GTK_WIDGET(gtk_builder_get_object(builder, "color_check_btn"));
+    self->priv->btn_select = GTK_WIDGET(gtk_builder_get_object(builder, "select_btn"));
+    self->priv->entry_file = GTK_WIDGET(gtk_builder_get_object(builder, "file_entry"));
 
     g_object_get(self->priv->parent_window, "window", &main_window, NULL);
 
@@ -689,7 +694,7 @@ mud_log_open(MudLog *self)
                      G_CALLBACK(mud_log_color_toggled_cb),
                      self);
 
-    g_object_unref(glade);
+    g_object_unref(builder);
 
     if(self->priv->filename)
         g_free(self->priv->filename);

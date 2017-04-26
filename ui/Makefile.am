@@ -1,9 +1,3 @@
-gladedir = $(pkgdatadir)
-glade_DATA = \
-	main.glade		\
-	muds.glade		\
-	prefs.glade
-
 uidir=$(pkgdatadir)
 
 ui_DATA = \
@@ -11,7 +5,7 @@ ui_DATA = \
 	muds.ui \
 	prefs.ui
 
-EXTRA_DIST = $(glade_DATA) $(ui_DATA)
+EXTRA_DIST = $(ui_DATA)
 
 
 -include $(top_srcdir)/git.mk

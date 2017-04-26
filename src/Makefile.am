@@ -12,7 +12,6 @@ gnome_mud_CPPFLAGS =							\
 	-DSYSCONFDIR=\""$(sysconfdir)"\"				\
 	-DDATADIR=\""$(datadir)"\"					\
 	-DLIBDIR=\""$(libdir)"\"					\
-	-DGLADEDIR=\""$(pkgdatadir)"\"					\
 	-DUIDIR=\""$(pkgdatadir)"\"					\
 	-DPKGDATADIR=\""$(pkgdatadir)"\"
 

@@ -25,7 +25,6 @@
 #include <glib-object.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#include <glade/glade-xml.h>
 #include <string.h>
 #include <stdio.h>
 #include <glib/gprintf.h>
@@ -600,7 +599,8 @@ debug_logger_window_delete(GtkWidget *widget,
 static void
 debug_logger_save_clicked(GtkWidget *widget, DebugLogger *logger)
 {
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     GtkWidget *dialog;
     gint result;
     GList *selected_rows = NULL, *entry;
@@ -615,8 +615,11 @@ debug_logger_save_clicked(GtkWidget *widget, DebugLogger *logger)
     if (gtk_notebook_get_n_pages(logger->priv->notebook) == 0)
         return;
 
-    glade = glade_xml_new(GLADEDIR "/main.glade", "save_dialog", NULL);
-    dialog = glade_xml_get_widget(glade, "save_dialog");
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/main.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
+
+    dialog = GTK_WIDGET(gtk_builder_get_object(builder, "save_dialog"));
 
     copy_data = g_string_new(NULL);
 
@@ -671,7 +674,7 @@ debug_logger_save_clicked(GtkWidget *widget, DebugLogger *logger)
     g_list_free(selected_rows);
 
     gtk_widget_destroy(dialog);
-    g_object_unref(glade);
+    g_object_unref(builder);
 }
 
 static void
@@ -1034,7 +1037,8 @@ debug_logger_create_domain_page(DebugLogger *logger,
 void
 debug_logger_create_window(DebugLogger *self)
 {
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     GSList *entry;
 
     g_return_if_fail(IS_DEBUG_LOGGER(self));
@@ -1044,15 +1048,16 @@ debug_logger_create_window(DebugLogger *self)
 
     self->ui_enabled = TRUE;
 
-    glade = glade_xml_new(GLADEDIR "/main.glade", "log_window", NULL);
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/main.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
 
-    self->priv->window = GTK_WINDOW(glade_xml_get_widget(glade, "log_window"));
-    self->priv->vbox = GTK_VBOX(glade_xml_get_widget(glade, "vbox"));
-
-    self->priv->toolbar_save = glade_xml_get_widget(glade, "toolbar_save");
-    self->priv->toolbar_copy = glade_xml_get_widget(glade, "toolbar_copy");
-    self->priv->toolbar_select = glade_xml_get_widget(glade, "toolbar_selectall");
-    self->priv->toolbar_clear = glade_xml_get_widget(glade, "toolbar_clear");
+    self->priv->window = GTK_WINDOW(gtk_builder_get_object(builder, "log_window"));
+    self->priv->vbox = GTK_VBOX(gtk_builder_get_object(builder, "vbox"));
+    self->priv->toolbar_save = GTK_WIDGET(gtk_builder_get_object(builder, "toolbar_save"));
+    self->priv->toolbar_copy = GTK_WIDGET(gtk_builder_get_object(builder, "toolbar_copy"));
+    self->priv->toolbar_select = GTK_WIDGET(gtk_builder_get_object(builder, "toolbar_selectall"));
+    self->priv->toolbar_clear = GTK_WIDGET(gtk_builder_get_object(builder, "toolbar_clear"));
 
     self->priv->notebook = GTK_NOTEBOOK(gtk_notebook_new());
 
@@ -1092,7 +1097,7 @@ debug_logger_create_window(DebugLogger *self)
 
     gtk_widget_show_all(GTK_WIDGET(self->priv->window));
 
-    g_object_unref(glade);
+    g_object_unref(builder);
 
     entry = self->priv->domains;
 

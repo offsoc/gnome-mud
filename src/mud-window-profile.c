@@ -22,7 +22,6 @@
 #endif
 
 #include <gconf/gconf-client.h>
-#include <glade/glade-xml.h>
 #include <glib/gi18n.h>
 #include <string.h>
 #include <glib/gprintf.h>
@@ -148,7 +147,8 @@ mud_profile_window_constructor (GType gtype,
     MudProfileWindowClass *klass;
     GObjectClass *parent_class;
 
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     GtkWindow *main_window;
 
     /* Chain up to parent constructor */
@@ -164,16 +164,18 @@ mud_profile_window_constructor (GType gtype,
         g_error("Tried to instantiate MudProfileWindow without passing parent GtkWindow\n");
     }
 
-    glade = glade_xml_new(GLADEDIR "/prefs.glade", "profiles_window", NULL);
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/prefs.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
 
-    profwin->priv->window = glade_xml_get_widget(glade, "profiles_window");
+    profwin->priv->window = GTK_WIDGET(gtk_builder_get_object(builder, "profiles_window"));
 
-    profwin->priv->btnAdd = glade_xml_get_widget(glade, "btnAdd");
-    profwin->priv->btnDelete = glade_xml_get_widget(glade, "btnDelete");
-    profwin->priv->btnEdit = glade_xml_get_widget(glade, "btnEdit");
+    profwin->priv->btnAdd = GTK_WIDGET(gtk_builder_get_object(builder, "btnAdd"));
+    profwin->priv->btnDelete = GTK_WIDGET(gtk_builder_get_object(builder, "btnDelete"));
+    profwin->priv->btnEdit = GTK_WIDGET(gtk_builder_get_object(builder, "btnEdit"));
 
-    profwin->priv->treeview = glade_xml_get_widget(glade, "profilesView");
-    profwin->priv->treestore = gtk_tree_store_new(N_COLUMNS, G_TYPE_STRING);
+    profwin->priv->treeview = GTK_WIDGET(gtk_builder_get_object(builder, "profilesView"));
+    profwin->priv->treestore = GTK_TREE_STORE(gtk_tree_store_new(N_COLUMNS, G_TYPE_STRING));
 
     g_object_set(profwin->priv->treeview,
                  "model", GTK_TREE_MODEL(profwin->priv->treestore),
@@ -225,7 +227,7 @@ mud_profile_window_constructor (GType gtype,
 
     gtk_widget_show_all(profwin->priv->window);
 
-    g_object_unref(glade);
+    g_object_unref(builder);
 
     return obj;
 }
@@ -288,15 +290,19 @@ mud_profile_window_get_property(GObject *object,
 static void
 mud_profile_window_add_cb(GtkWidget *widget, MudProfileWindow *profwin)
 {
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
     GtkWidget *window;
     GtkWidget *entry_profile;
     gchar *profile;
     gint result;
     MudProfile *def, *prof;
 
-    glade = glade_xml_new(GLADEDIR "/prefs.glade", "newprofile_dialog", NULL);
-    window = glade_xml_get_widget(glade, "newprofile_dialog");
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/prefs.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
+
+    window = GTK_WIDGET(gtk_builder_get_object(builder, "newprofile_dialog"));
 
     def = mud_profile_manager_get_profile_by_name(profwin->parent_window->profile_manager,
                                                   "Default");
@@ -305,7 +311,7 @@ mud_profile_window_add_cb(GtkWidget *widget, MudProfileWindow *profwin)
             GTK_WINDOW(window),
             GTK_WINDOW(profwin->priv->window));
 
-    entry_profile = glade_xml_get_widget(glade, "entry_profile");
+    entry_profile = GTK_WIDGET(gtk_builder_get_object(builder, "entry_profile"));
 
     result = gtk_dialog_run(GTK_DIALOG(window));
     if (result == GTK_RESPONSE_OK)
@@ -329,7 +335,7 @@ mud_profile_window_add_cb(GtkWidget *widget, MudProfileWindow *profwin)
     }
 
     gtk_widget_destroy(window);
-    g_object_unref(glade);
+    g_object_unref(builder);
 }
 
 static void

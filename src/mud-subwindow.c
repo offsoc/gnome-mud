@@ -24,7 +24,6 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include <vte/vte.h>
-#include <glade/glade-xml.h>
 #include <gconf/gconf-client.h>
 #include <gdk/gdkkeysyms.h>
 #include <glib/gprintf.h>
@@ -350,8 +349,8 @@ mud_subwindow_constructor (GType gtype,
     GObject *obj;
     MudSubwindowClass *klass;
     GObjectClass *parent_class;
-
-    GladeXML *glade;
+    GtkBuilder *builder;
+    GError *error = NULL;
 
     /* Chain up to parent constructor */
     klass = MUD_SUBWINDOW_CLASS( g_type_class_peek(MUD_TYPE_SUBWINDOW) );
@@ -390,11 +389,13 @@ mud_subwindow_constructor (GType gtype,
     self->priv->initial_height = self->priv->height;
 
     /* start glading */
-    glade = glade_xml_new(GLADEDIR "/main.glade", "subwindow", NULL);
+    builder = gtk_builder_new();
+    if(gtk_builder_add_from_file(builder, UIDIR "/main.ui", &error) == 0)
+        g_error("Failed to load: %s", error->message);
 
-    self->priv->window = glade_xml_get_widget(glade, "subwindow");
+    self->priv->window = GTK_WIDGET(gtk_builder_get_object(builder, "subwindow"));
 
-    g_object_unref(glade);
+    g_object_unref(builder);
 
     gtk_window_set_type_hint(GTK_WINDOW(self->priv->window),
                              GDK_WINDOW_TYPE_HINT_UTILITY);

@@ -26,7 +26,6 @@
 #include <glib-object.h>
 
 #include "mud-line-buffer.h"
-#include "gnome-mud-marshallers.h"
 
 struct _MudLineBufferPrivate
 {

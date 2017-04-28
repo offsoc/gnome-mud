@@ -42,7 +42,6 @@
 #include "mud-window-profile.h"
 #include "mud-parse-base.h"
 #include "mud-connections.h"
-#include "gnome-mud-marshallers.h"
 #include "mud-telnet.h"
 #include "handlers/mud-telnet-handlers.h"
 #include "utils.h"

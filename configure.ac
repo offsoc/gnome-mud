@@ -80,8 +80,6 @@ PKG_CHECK_MODULES(GMUD, gtk+-2.0 >= $GTK_REQUIRED vte >= $VTE_REQUIRED libpcre >
 AC_SUBST(GMUD_CFLAGS)
 AC_SUBST(GMUD_LIBS)
 
-GLIB_GENMARSHAL="$($PKG_CONFIG --variable=glib_genmarshal glib-2.0)"
-AC_SUBST([GLIB_GENMARSHAL])
 GLIB_MKENUMS="$($PKG_CONFIG --variable=glib_mkenums glib-2.0)"
 AC_SUBST([GLIB_MKENUMS])
 

@@ -29,7 +29,6 @@
 #include <glib/gprintf.h>
 
 #include "gnome-mud.h"
-#include "gnome-mud-marshallers.h"
 #include "mud-connection-view.h"
 #include "mud-window.h"
 #include "mud-subwindow.h"

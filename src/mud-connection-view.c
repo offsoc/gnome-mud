@@ -134,11 +134,9 @@ static void mud_connection_view_profile_changed_cb(MudProfile *profile,
                                                    MudConnectionView *view);
 static void mud_connection_view_line_added_cb(MudLineBuffer *buffer,
                                               MudLineBufferLine *line,
-                                              guint length,
                                               MudConnectionView *view);
 static void mud_connection_view_partial_line_cb(MudLineBuffer *buffer,
-                                                const gchar *line,
-                                                guint length,
+                                                const GString *line,
                                                 MudConnectionView *view);
 
 
@@ -1169,7 +1167,6 @@ mud_connection_view_popup(MudConnectionView *view, GdkEventButton *event)
 static void
 mud_connection_view_line_added_cb(MudLineBuffer *buffer,
                                   MudLineBufferLine *line,
-                                  guint length,
                                   MudConnectionView *view)
 {
 #ifdef ENABLE_GST
@@ -1203,8 +1200,8 @@ mud_connection_view_line_added_cb(MudLineBuffer *buffer,
         if(g_str_equal(view->priv->current_output, "main"))
         {
             vte_terminal_feed(view->terminal,
-                              line->line,
-                              length);
+                              line->line->str,
+                              line->line->len);
 
             mud_window_toggle_tab_icon(view->window, view);
         }
@@ -1215,12 +1212,12 @@ mud_connection_view_line_added_cb(MudLineBuffer *buffer,
                         view->priv->current_output);
 
             if(sub)
-                mud_subwindow_feed(sub, line->line, length);
+                mud_subwindow_feed(sub, line->line->str, line->line->len);
             else
             {
                 vte_terminal_feed(view->terminal,
-                                  line->line,
-                                  length);
+                                  line->line->str,
+                                  line->line->len);
 
                 mud_window_toggle_tab_icon(view->window, view);
             }
@@ -1234,13 +1231,12 @@ mud_connection_view_line_added_cb(MudLineBuffer *buffer,
     }
 
     if(view->logging)
-        mud_log_write_hook(view->log, line->line, length);
+        mud_log_write_hook(view->log, line->line->str, line->line->len);
 }
 
 static void
 mud_connection_view_partial_line_cb(MudLineBuffer *buffer,
-                                    const gchar *line,
-                                    guint length,
+                                    const GString *line,
                                     MudConnectionView *view)
 {
     //TODO:  Pass through trigger and script code.
@@ -1252,8 +1248,8 @@ mud_connection_view_partial_line_cb(MudLineBuffer *buffer,
         if(g_str_equal(view->priv->current_output, "main"))
         {
             vte_terminal_feed(view->terminal,
-                    line,
-                    length);
+                    line->str,
+                    line->len);
 
             mud_window_toggle_tab_icon(view->window, view);
         }
@@ -1264,12 +1260,12 @@ mud_connection_view_partial_line_cb(MudLineBuffer *buffer,
                         view->priv->current_output);
 
             if(sub)
-                mud_subwindow_feed(sub, line, length);
+                mud_subwindow_feed(sub, line->str, line->len);
             else
             {
                 vte_terminal_feed(view->terminal,
-                        line,
-                        length);
+                        line->str,
+                        line->len);
 
                 mud_window_toggle_tab_icon(view->window, view);
             }
@@ -1279,7 +1275,7 @@ mud_connection_view_partial_line_cb(MudLineBuffer *buffer,
     }
 
     if(view->logging)
-        mud_log_write_hook(view->log, line, length);
+        mud_log_write_hook(view->log, line->str, line->len);
 }
 
 static void

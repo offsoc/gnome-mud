@@ -128,7 +128,6 @@ static gboolean mud_log_keypress_cb(GtkWidget *widget,
                                     MudLog *self);
 static void mud_log_line_added_cb(MudLineBuffer *buffer,
                                   MudLineBufferLine *line,
-                                  guint length,
                                   MudLog *self);
 
 /* Private Methods */
@@ -587,13 +586,12 @@ mud_log_prev_spin_changed_cb(GtkSpinButton *button,
 static void
 mud_log_line_added_cb(MudLineBuffer *buffer,
                       MudLineBufferLine *line,
-                      guint length,
                       MudLog *self)
 {
     if(!self->priv->done)
     {
-        if(line && length != 0) 
-            mud_log_write(self, line->line, length);
+        if(line && line->line && line->line->len != 0)
+            mud_log_write(self, line->line->str, line->line->len);
 
         if(self->priv->include_next)
         {

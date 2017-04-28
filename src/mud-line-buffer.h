@@ -55,7 +55,7 @@ typedef struct MudLineBufferLine
     gboolean gag;
 
     // Line Data
-    gchar *line;
+    GString *line;
 } MudLineBufferLine;
 
 GType           mud_line_buffer_get_type (void);

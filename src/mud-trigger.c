@@ -124,7 +124,6 @@ static void mud_trigger_get_property(GObject *object,
 // Callbacks
 static void mud_trigger_line_added_cb(MudLineBuffer *buffer,
                                       MudLineBufferLine *line,
-                                      guint length,
                                       MudTrigger *self);
 
 // Private Methods
@@ -441,7 +440,7 @@ mud_trigger_execute(MudTrigger *self,
                     MudLineBufferLine *line,
                     guint length)
 {
-    gchar *stripped = utils_strip_ansi(line->line);
+    gchar *stripped = utils_strip_ansi(line->line->str);
     guint len = strlen(stripped);
 
     switch(self->priv->type)
@@ -536,7 +535,6 @@ mud_trigger_add_window(MudTrigger *self,
 static void
 mud_trigger_line_added_cb(MudLineBuffer *buffer,
                           MudLineBufferLine *line,
-                          guint length,
                           MudTrigger *self)
 {
     gulong len, max;

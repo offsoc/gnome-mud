@@ -127,11 +127,10 @@ mud_line_buffer_class_init (MudLineBufferClass *klass)
                      0,
                      NULL,
                      NULL,
-                     gnome_mud_cclosure_VOID__POINTER_UINT,
+                     g_cclosure_marshal_VOID__POINTER,
                      G_TYPE_NONE,
-                     2,
-                     G_TYPE_POINTER,
-                     G_TYPE_UINT);
+                     1,
+                     G_TYPE_POINTER);
 
     mud_line_buffer_signal[LINE_REMOVED] =
         g_signal_newv("line-removed",
@@ -152,11 +151,10 @@ mud_line_buffer_class_init (MudLineBufferClass *klass)
                       0,
                       NULL,
                       NULL,
-                      gnome_mud_cclosure_VOID__STRING_UINT,
+                      g_cclosure_marshal_VOID__POINTER,
                       G_TYPE_NONE,
-                      2,
-                      G_TYPE_STRING,
-                      G_TYPE_UINT);
+                      1,
+                      G_TYPE_POINTER);
 }
 
 static void
@@ -287,7 +285,7 @@ mud_line_buffer_add_data(MudLineBuffer *self,
 
     for(i = 0; i < data_buffer->len; ++i)
     {
-        line = g_string_append_c(line, data_buffer->str[i]);
+        g_string_append_c(line, data_buffer->str[i]);
 
         if(data_buffer->str[i] == '\n')
         {
@@ -296,7 +294,8 @@ mud_line_buffer_add_data(MudLineBuffer *self,
             ++self->priv->length;
 
             new_line->gag = FALSE;
-            new_line->line = g_strdup(line->str);
+            new_line->line = line;
+            line = g_string_new(NULL);
 
             self->priv->line_buffer =
                 g_list_append(self->priv->line_buffer,
@@ -325,12 +324,7 @@ mud_line_buffer_add_data(MudLineBuffer *self,
             g_signal_emit(self,
                           mud_line_buffer_signal[LINE_ADDED],
                           0,
-                          new_line,
-                          line->len);
-
-            g_string_free(line, TRUE);
-
-            line = g_string_new(NULL);
+                          new_line);
         }
     }
 
@@ -343,8 +337,7 @@ mud_line_buffer_add_data(MudLineBuffer *self,
         g_signal_emit(self,
                       mud_line_buffer_signal[PARTIAL_LINE_RECEIVED],
                       0,
-                      line->str,
-                      line->len);
+                      line);
     }
 
     g_string_free(line, TRUE);
@@ -387,7 +380,7 @@ mud_line_buffer_get_lines(MudLineBuffer *self)
         const MudLineBufferLine *line =
             (MudLineBufferLine *)entry->data;
 
-        lines = g_string_append(lines, line->line);
+        lines = g_string_append(lines, line->line->str);
 
         entry = g_list_next(entry);
     }
@@ -421,7 +414,7 @@ mud_line_buffer_get_lines_and_partial(MudLineBuffer *self)
         const MudLineBufferLine *line =
             (MudLineBufferLine *)entry->data;
 
-        lines = g_string_append(lines, line->line);
+        lines = g_string_append(lines, line->line->str);
 
         entry = g_list_next(entry);
     }
@@ -468,7 +461,7 @@ mud_line_buffer_get_line(MudLineBuffer *self,
     buffer_line = g_list_nth_data(self->priv->line_buffer,
                                   line);
 
-    return buffer_line->line;
+    return buffer_line->line->str;
 }
 
 gchar *
@@ -504,7 +497,7 @@ mud_line_buffer_get_range(MudLineBuffer *self,
         MudLineBufferLine *buffer_line =
             (MudLineBufferLine *)entry->data;
 
-        range = g_string_append(range, buffer_line->line);
+        range = g_string_append(range, buffer_line->line->str);
 
         entry = g_list_next(entry);
     }
@@ -556,7 +549,7 @@ mud_line_buffer_free_line(gpointer value,
 
     if(line)
     {
-        g_free(line->line);
+        g_string_free(line->line, TRUE);
         g_free(line);
     }
 }

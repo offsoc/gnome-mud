@@ -81,8 +81,6 @@ void mud_telnet_naws_handle_sub_neg(MudTelnetHandler *self,
 
 /* Callbacks */
 static void mud_telnet_naws_resized_cb(MudWindow *window,
-                                       gint width,
-                                       gint height,
                                        MudTelnetNaws *self);
 
 static gboolean mud_telnet_naws_delete_event_cb(GtkWidget *widget,
@@ -334,8 +332,6 @@ mud_telnet_naws_handle_sub_neg(MudTelnetHandler *handler,
 /* Callbacks */
 static void
 mud_telnet_naws_resized_cb(MudWindow *window,
-                           gint width,
-                           gint height,
                            MudTelnetNaws *self)
 {
     MudConnectionView *view;

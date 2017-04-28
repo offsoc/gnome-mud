@@ -207,11 +207,9 @@ mud_window_class_init (MudWindowClass *klass)
                      0,
                      NULL,
                      NULL,
-                     gnome_mud_cclosure_VOID__INT_INT,
+                     g_cclosure_marshal_VOID__VOID,
                      G_TYPE_NONE,
-                     2,
-                     G_TYPE_INT,
-                     G_TYPE_INT);
+                     0);
 
     mud_window_signal[TOGGLEDOFF] =
         g_signal_new("toggled-off",
@@ -894,11 +892,7 @@ mud_window_size_allocate_cb(GtkWidget *widget,
             self->priv->width = allocation->width;
             self->priv->height = allocation->height;
 
-            g_signal_emit(self,
-                          mud_window_signal[RESIZED],
-                          0,
-                          self->priv->width,
-                          self->priv->height);
+            g_signal_emit(self, mud_window_signal[RESIZED], 0);
         }
     }
 }

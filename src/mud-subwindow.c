@@ -285,11 +285,9 @@ mud_subwindow_class_init (MudSubwindowClass *klass)
                      0,
                      NULL,
                      NULL,
-                     gnome_mud_cclosure_VOID__UINT_UINT,
+                     g_cclosure_marshal_VOID__VOID,
                      G_TYPE_NONE,
-                     2,
-                     G_TYPE_UINT,
-                     G_TYPE_UINT);
+                     0);
 
     mud_subwindow_signal[INPUT] =
         g_signal_new("input-received",

@@ -83,8 +83,6 @@ static void zmp_subwindow_do_input(MudSubwindow *sub,
                                    const gchar *input,
                                    ZmpSubwindow *self);
 static void zmp_subwindow_size(MudSubwindow *sub,
-                               guint width,
-                               guint height,
                                ZmpSubwindow *self);
 
 /* Create the Type. We implement ZmpPackageInterface */
@@ -437,15 +435,16 @@ zmp_subwindow_do_input(MudSubwindow *sub,
 
 static void
 zmp_subwindow_size(MudSubwindow *sub,
-                   guint width,
-                   guint height,
                    ZmpSubwindow *self)
 {
     gchar *identifier;
     gchar *w, *h;
+    gint width, height;
     guint old_w, old_h;
 
     g_object_get(sub,
+                 "width", &width,
+                 "height", &height,
                  "old-width", &old_w,
                  "old-height", &old_h,
                  NULL);

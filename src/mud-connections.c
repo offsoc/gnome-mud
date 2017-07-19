@@ -88,6 +88,8 @@ typedef enum MudConnectionsModelColumns
 {
     MODEL_COLUMN_STRING,
     MODEL_COLUMN_PIXBUF,
+    MODEL_COLUMN_MUDNAME,
+    MODEL_COLUMN_CHARNAME,
     MODEL_COLUMN_N
 } MudConnectionsModelColumns;
 
@@ -264,7 +266,9 @@ mud_connections_constructor (GType gtype,
     conn->priv->icon_model =
         GTK_TREE_MODEL(gtk_list_store_new(MODEL_COLUMN_N,
                     G_TYPE_STRING,
-                    GDK_TYPE_PIXBUF));
+                    GDK_TYPE_PIXBUF,
+                    G_TYPE_STRING,
+                    G_TYPE_STRING));
 
     gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(conn->priv->icon_model),
                                          MODEL_COLUMN_STRING,
@@ -460,65 +464,38 @@ mud_connections_connect_cb(GtkWidget *widget, MudConnections *conn)
 	gtk_icon_view_get_selected_items(
 	    GTK_ICON_VIEW(conn->priv->iconview));
     GtkTreeIter iter;
-    gchar *buf, *mud_name, *key, *strip_name,
-	*profile, *host, *logon, *char_name;
+    gchar *mud_name, *char_name, *key,
+	*profile, *host, *logon;
     gint port;
-    gchar **mud_tuple;
-    gint len;
     GConfClient *client = gconf_client_get_default();
     MudConnectionView *view;
 
     if(g_list_length(selected) == 0)
 	return;
 
-    logon = char_name = NULL;
+    logon = NULL;
 
     gtk_tree_model_get_iter(conn->priv->icon_model, &iter,
 			    (GtkTreePath *)selected->data);
-    gtk_tree_model_get(conn->priv->icon_model, &iter, 0, &buf, -1);
-	
-    mud_tuple = g_strsplit(buf, "\n", -1);
+    gtk_tree_model_get(conn->priv->icon_model, &iter, MODEL_COLUMN_MUDNAME, &mud_name, MODEL_COLUMN_CHARNAME, &char_name, -1);
 
-    len = g_strv_length(mud_tuple);
-
-    switch(len)
-    {
-    case 1:
-	mud_name = g_strdup(mud_tuple[0]);
-	break;
-
-    case 2:
-	char_name = gconf_escape_key(mud_tuple[0], -1);
-	mud_name = g_strdup(mud_tuple[1]);
-	break;
-
-    default:
-	g_warning("Malformed MUD name passed to delete.");
-	return;
-    }
-
-    g_strfreev(mud_tuple);
-    g_free(buf);
-
-    strip_name = gconf_escape_key(mud_name, -1);
-
-    key = g_strdup_printf("/apps/gnome-mud/muds/%s/host", strip_name);
+    key = g_strdup_printf("/apps/gnome-mud/muds/%s/host", mud_name);
     host = gconf_client_get_string(client, key, NULL);
     g_free(key);
 
-    key = g_strdup_printf("/apps/gnome-mud/muds/%s/profile", strip_name);
+    key = g_strdup_printf("/apps/gnome-mud/muds/%s/profile", mud_name);
     profile = gconf_client_get_string(client, key, NULL);
     g_free(key);
 
-    key = g_strdup_printf("/apps/gnome-mud/muds/%s/port", strip_name);
+    key = g_strdup_printf("/apps/gnome-mud/muds/%s/port", mud_name);
     port = gconf_client_get_int(client, key, NULL);
     g_free(key);
 
     if(char_name && strlen(char_name) > 0)
     {
         key = g_strdup_printf(
-                "/apps/gnome-mud/muds/%s/characters/%s/logon", 
-                strip_name, char_name);
+                "/apps/gnome-mud/muds/%s/characters/%s/logon",
+                mud_name, char_name);
         logon = gconf_client_get_string(client, key, NULL);
         g_free(key);
     }
@@ -541,7 +518,7 @@ mud_connections_connect_cb(GtkWidget *widget, MudConnections *conn)
     mud_window_profile_menu_set_active(conn->parent_window, profile);
 
     g_free(mud_name);
-    g_free(strip_name);
+    g_free(char_name);
     g_object_unref(client);
 
     g_list_foreach(selected, (GFunc)gtk_tree_path_free, NULL);
@@ -592,52 +569,31 @@ mud_connections_delete_cb(GtkWidget *widget, MudConnections *conn)
 	gtk_icon_view_get_selected_items(
 	    GTK_ICON_VIEW(conn->priv->iconview));
     GtkTreeIter iter;
-    gchar *buf, *mud_name, *key, *strip_name,
-          *strip_char_name,  *char_name;
-    gchar **mud_tuple;
-    gint len;
+    gchar *display_name, *display_mud_name, *mud_name, *key, *char_name;
     GConfClient *client = gconf_client_get_default();
 
     if(g_list_length(selected) == 0)
 	return;
 
-    char_name = strip_name = NULL;
-
     gtk_tree_model_get_iter(conn->priv->icon_model, &iter,
 			    (GtkTreePath *)selected->data);
-    gtk_tree_model_get(conn->priv->icon_model, &iter, 0, &buf, -1);
-	
-    mud_tuple = g_strsplit(buf, "\n", -1);
-    g_free(buf);
+    gtk_tree_model_get(conn->priv->icon_model, &iter,
+                       MODEL_COLUMN_STRING, &display_name,
+                       MODEL_COLUMN_MUDNAME, &mud_name,
+                       MODEL_COLUMN_CHARNAME, &char_name, -1);
 
-    len = g_strv_length(mud_tuple);
+    display_mud_name = g_strrstr(display_name, "\n");
+    if(display_mud_name)
+        ++display_mud_name;
+    else
+        display_mud_name = display_name;
 
-    switch(len)
+    if(!mud_connections_delete_confirm(display_mud_name))
     {
-        /* Delete Mud */
-        case 1:
-            mud_name = g_strdup(mud_tuple[0]);
-            break;
-
-        /* Delete Character */
-        case 2:
-            char_name = g_strdup(mud_tuple[0]);
-            mud_name = g_strdup(mud_tuple[1]);
-            break;
-
-        default:
-            g_warning("Malformed MUD name passed to delete.");
-            return;
-    }
-
-    if(!mud_connections_delete_confirm(mud_tuple[0]))
-    {
+        g_free(display_name);
         g_free(mud_name);
+        g_free(char_name);
 
-        if(char_name)
-            g_free(char_name);
-
-        g_strfreev(mud_tuple);
         g_object_unref(client);
 
         g_list_foreach(selected, (GFunc)gtk_tree_path_free, NULL);
@@ -646,38 +602,28 @@ mud_connections_delete_cb(GtkWidget *widget, MudConnections *conn)
         return;
     }
 
-    g_strfreev(mud_tuple);
-
-    if(len == 1)
+    if(char_name && strlen(char_name) > 0)
     {
-        strip_name = gconf_escape_key(mud_name, -1);
-        
-        key = g_strdup_printf("/apps/gnome-mud/muds/%s", strip_name);
-        gconf_client_recursive_unset(client, key, 0, NULL);
-        
-        g_free(key);
-        
-        gconf_client_suggest_sync(client, NULL);
-    }
-    else if(len == 2)
-    {
-        strip_name = gconf_escape_key(mud_name, -1);
-        strip_char_name = gconf_escape_key(char_name, -1);
-
         key = g_strdup_printf("/apps/gnome-mud/muds/%s/characters/%s",
-                strip_name, strip_char_name);
+                              mud_name, char_name);
 
         gconf_client_recursive_unset(client, key, 0, NULL);
 
         g_free(key);
-        g_free(strip_char_name);
-        g_free(char_name);
+
+        gconf_client_suggest_sync(client, NULL);
+    } else {
+        key = g_strdup_printf("/apps/gnome-mud/muds/%s", mud_name);
+        gconf_client_recursive_unset(client, key, 0, NULL);
+
+        g_free(key);
 
         gconf_client_suggest_sync(client, NULL);
     }
 
+    g_free(display_name);
     g_free(mud_name);
-    g_free(strip_name);
+    g_free(char_name);
     g_object_unref(client);
 
     g_list_foreach(selected, (GFunc)gtk_tree_path_free, NULL);
@@ -757,6 +703,8 @@ mud_connections_populate_iconview(MudConnections *conn)
                     GTK_LIST_STORE(conn->priv->icon_model), &iter,
                     MODEL_COLUMN_STRING, name_strip,
                     MODEL_COLUMN_PIXBUF, icon,
+                    MODEL_COLUMN_MUDNAME, mud_name,
+                    MODEL_COLUMN_CHARNAME, "",
                     -1);
 
             g_object_unref(icon);
@@ -798,6 +746,8 @@ mud_connections_populate_iconview(MudConnections *conn)
                     &iter,
                     MODEL_COLUMN_STRING, display_name,
                     MODEL_COLUMN_PIXBUF, icon,
+                    MODEL_COLUMN_MUDNAME, mud_name,
+                    MODEL_COLUMN_CHARNAME, char_name,
                     -1);
 
             g_object_unref(icon);

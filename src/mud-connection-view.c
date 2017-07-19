@@ -1945,7 +1945,7 @@ mud_connection_view_send(MudConnectionView *view, const gchar *data)
             else
                 g_object_get(zmp_handler, "enabled", &zmp_enabled, NULL);
 
-            if(!zmp_enabled)
+            if(TRUE) // FIXME: (!zmp_enabled)
             {
                 const gchar *line = (conv_text == NULL) ? text : conv_text;
                 mud_connection_send(view->conn, line, -1);

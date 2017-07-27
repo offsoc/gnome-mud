@@ -705,7 +705,7 @@ mud_connections_populate_iconview(MudConnections *conn)
                     MODEL_COLUMN_STRING, name_strip,
                     MODEL_COLUMN_PIXBUF, icon,
                     MODEL_COLUMN_MUDNAME, mud_name,
-                    MODEL_COLUMN_CHARNAME, "",
+                    MODEL_COLUMN_CHARNAME, NULL,
                     -1);
 
             g_object_unref(icon);

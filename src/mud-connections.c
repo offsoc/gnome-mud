@@ -759,8 +759,7 @@ mud_connections_populate_iconview(MudConnections *conn)
 
         for(char_entry = characters; char_entry != NULL;
                 char_entry = g_slist_next(char_entry))
-            if(char_entry->data)
-                g_free(char_entry->data);
+            g_free(char_entry->data);
 
         if(characters)
             g_slist_free(characters);
@@ -771,8 +770,7 @@ mud_connections_populate_iconview(MudConnections *conn)
 
     for(mud_entry = muds; mud_entry != NULL;
             mud_entry = g_slist_next(mud_entry))
-        if(mud_entry->data)
-            g_free(mud_entry->data);
+        g_free(mud_entry->data);
 
     if(muds)
         g_slist_free(muds);
@@ -997,8 +995,7 @@ mud_connections_show_properties(MudConnections *conn, gchar *mud)
 	g_free(conn->priv->original_name);
     conn->priv->original_name = NULL;
 
-    if(conn->priv->original_char_name != NULL)
-	g_free(conn->priv->original_char_name);
+    g_free(conn->priv->original_char_name);
     conn->priv->original_char_name = NULL;
 
     if(mud != NULL)
@@ -1238,11 +1235,8 @@ mud_connections_property_save(MudConnections *conn)
 	utils_error_message(conn->priv->properties_window, _("Error"),
 			    "%s", _("No MUD name specified."));
 
-	if(logon)
-	    g_free(logon);
-
-	if(profile)
-	    g_free(profile);
+	g_free(logon);
+	g_free(profile);
 
 	return FALSE;
     }
@@ -1284,8 +1278,7 @@ mud_connections_property_save(MudConnections *conn)
 	}
 
 	for(entry = chars; entry != NULL; entry = g_slist_next(entry))
-	    if(entry->data)
-		g_free(entry->data);
+	    g_free(entry->data);
 	g_slist_free(chars);
 
 	key = g_strdup_printf(
@@ -1354,11 +1347,8 @@ mud_connections_property_save(MudConnections *conn)
 
     g_object_unref(client);
 
-    if(logon)
-	g_free(logon);
-
-    if(profile)
-	g_free(profile);
+    g_free(logon);
+    g_free(profile);
 
     return TRUE;
 }
@@ -1390,7 +1380,7 @@ mud_connections_property_combo_get_index(MudConnections *conn,
 {
     gchar *buf;
     GtkTreeIter iter;
-	
+
     gtk_tree_model_get_iter_first(conn->priv->profile_model, &iter);
 
     do
@@ -1442,8 +1432,7 @@ mud_connections_show_icon_dialog(MudConnections *conn)
 	GTK_ICON_VIEW(conn->priv->icon_dialog_view),
 	MODEL_COLUMN_PIXBUF);
 
-    if(conn->priv->icon_current != NULL)
-	g_free(conn->priv->icon_current);
+    g_free(conn->priv->icon_current);
     conn->priv->icon_current = NULL;
 
     g_signal_connect(
@@ -1548,8 +1537,7 @@ mud_connections_icon_select_cb(GtkIconView *view, MudConnections *conn)
     gtk_tree_model_get(conn->priv->icon_dialog_view_model,
 		       &iter, 0, &buf, -1);
 
-    if(conn->priv->icon_current != NULL)
-	g_free(conn->priv->icon_current);
+    g_free(conn->priv->icon_current);
 
     conn->priv->icon_current = g_strconcat(
 	gtk_file_chooser_get_current_folder(

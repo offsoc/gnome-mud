@@ -143,7 +143,7 @@ msgid ""
 "If enabled, whenever there's new output the terminal will be scrolled to the "
 "bottom."
 msgstr ""
-"Si s'habilita, quan es produisca nova eixida, el terminal es desplaçarà cap "
+"Si s'habilita, quan es produïsca nova eixida, el terminal es desplaçarà cap "
 "avall."
 
 #: ../gnome-mud.schemas.in.h:21 ../ui/prefs.glade.h:70
@@ -164,7 +164,7 @@ msgid ""
 "subdirectories relative to /apps/gnome-mud/profiles."
 msgstr ""
 "Llista de perfils coneguts per GNOME-Mud. Aquesta llista conté cadenes amb "
-"els noms dels subdirectoris rel·latius a /apps/gnome-mud/profiles."
+"els noms dels subdirectoris relatius a /apps/gnome-mud/profiles."
 
 #: ../gnome-mud.schemas.in.h:25
 msgid "Log flush interval"
@@ -400,7 +400,7 @@ msgstr "Jordi Mallach <jordi@sindominio.net>"
 
 #: ../src/mud-window.c:933
 msgid "Error Saving Buffer"
-msgstr "S'ha produït un error en desar el búfer"
+msgstr "S'ha produït un error en desar la memòria intermèdia"
 
 #: ../src/mud-window.c:1239
 msgid "_Manage Profiles..."
@@ -531,7 +531,7 @@ msgstr "Reconnecta al MUD actual"
 
 #: ../ui/main.glade.h:19
 msgid "Save buffer as..."
-msgstr "Anomena i desa el búfer..."
+msgstr "Anomena i desa la memòria intermèdia..."
 
 #: ../ui/main.glade.h:20
 msgid "Start Logging..."
@@ -563,7 +563,7 @@ msgstr "A_juda"
 
 #: ../ui/main.glade.h:27
 msgid "_Include entire buffer"
-msgstr "_Inclou el búfer sencer"
+msgstr "_Inclou la memòria intermèdia sencera"
 
 #: ../ui/main.glade.h:28
 msgid "_Number of lines to log:"
@@ -575,7 +575,7 @@ msgstr "_Reconnecta"
 
 #: ../ui/main.glade.h:30
 msgid "_Save Buffer..."
-msgstr "De_sa el búfer..."
+msgstr "De_sa la memòria intermèdia..."
 
 #: ../ui/main.glade.h:31
 msgid "_Select File"
@@ -841,7 +841,7 @@ msgstr "_Mantin el text introduït"
 
 #: ../ui/prefs.glade.h:88
 msgid "_Number of Scrollback Lines:"
-msgstr "_Nombre de línies de desplaçament"
+msgstr "_Nombre de línies de desplaçament:"
 
 #: ../ui/prefs.glade.h:89
 msgid "_Version:"

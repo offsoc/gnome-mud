@@ -47,7 +47,6 @@ struct _MudTelnetMspPrivate
     MudMSPTypes msp_type;
     MudMSPSound sound[2];
     gchar *base_url;
-    GString *prev_buffer;
 };
 
 /* Property Identifiers */
@@ -171,7 +170,6 @@ mud_telnet_msp_init (MudTelnetMsp *self)
     self->priv->sound[1].playing = FALSE;
     self->priv->sound[1].files_len = 0;
 
-    self->priv->prev_buffer = NULL;
     self->priv->base_url = NULL;
 }
 
@@ -202,8 +200,8 @@ mud_telnet_msp_constructor (GType gtype,
     self->priv->msp_parser.state = MSP_STATE_TEXT;
     self->priv->msp_parser.lex_pos_start = 0;
     self->priv->msp_parser.lex_pos_end = 0;
-    self->priv->msp_parser.output = NULL;
-    self->priv->msp_parser.arg_buffer = NULL;
+    self->priv->msp_parser.output = g_string_new(NULL);
+    self->priv->msp_parser.arg_buffer = g_string_new(NULL);
 
     return obj;
 }
@@ -218,11 +216,11 @@ mud_telnet_msp_finalize (GObject *object)
 
     mud_telnet_msp_stop_playing(self, MSP_TYPE_SOUND);
     mud_telnet_msp_stop_playing(self, MSP_TYPE_MUSIC);
-    
-    if(self->priv->prev_buffer)
-        g_string_free(self->priv->prev_buffer, TRUE);
+
     if(self->priv->base_url)
         g_free(self->priv->base_url);
+    g_string_free(self->priv->msp_parser.output, TRUE);
+    g_string_free(self->priv->msp_parser.arg_buffer, TRUE);
 
     parent_class = g_type_class_peek_parent(G_OBJECT_GET_CLASS(object));
     parent_class->finalize(object);
@@ -292,18 +290,10 @@ mud_telnet_msp_enable(MudTelnetHandler *handler)
 
     self->priv->enabled = TRUE;
 
-    if(self->priv->msp_parser.output)
-        g_string_free(self->priv->msp_parser.output, TRUE);
-
-    if(self->priv->msp_parser.arg_buffer)
-        g_string_free(self->priv->msp_parser.arg_buffer, TRUE);
-
     self->priv->msp_parser.enabled = TRUE;
     self->priv->msp_parser.state = MSP_STATE_TEXT;
     self->priv->msp_parser.lex_pos_start = 0;
     self->priv->msp_parser.lex_pos_end = 0;
-    self->priv->msp_parser.output = g_string_new(NULL);
-    self->priv->msp_parser.arg_buffer = NULL;
 
     g_log("Telnet", G_LOG_LEVEL_INFO, "%s", "MSP Enabled");
 }
@@ -321,15 +311,11 @@ mud_telnet_msp_disable(MudTelnetHandler *handler)
 
     mud_telnet_msp_stop_playing(self, MSP_TYPE_SOUND);
     mud_telnet_msp_stop_playing(self, MSP_TYPE_MUSIC);
-    
-    if(self->priv->prev_buffer)
-        g_string_free(self->priv->prev_buffer, TRUE);
+
     if(self->priv->base_url)
         g_free(self->priv->base_url);
-    if(self->priv->msp_parser.output)
-        g_string_free(self->priv->msp_parser.output, TRUE);
-    if(self->priv->msp_parser.arg_buffer)
-        g_string_free(self->priv->msp_parser.arg_buffer, TRUE);
+    g_string_truncate(self->priv->msp_parser.output, 0);
+    g_string_truncate(self->priv->msp_parser.arg_buffer, 0);
 
     self->priv->msp_parser.enabled = FALSE;
 
@@ -357,12 +343,10 @@ mud_telnet_msp_parser_clear(MudTelnetMsp *self)
 {
     g_return_if_fail(MUD_IS_TELNET_MSP(self));
 
-    if(self->priv->msp_parser.output)
-	g_string_free(self->priv->msp_parser.output, TRUE);
+    g_string_truncate(self->priv->msp_parser.output, 0);
 
     self->priv->msp_parser.lex_pos_start = 0;
     self->priv->msp_parser.lex_pos_end = 0;
-    self->priv->msp_parser.output = g_string_new(NULL);
 }
 
 void
@@ -422,9 +406,6 @@ mud_telnet_msp_parse(MudTelnetMsp *self, MudLineBufferLine *line)
                 self->priv->msp_parser.lex_pos_end =
                     self->priv->msp_parser.lex_pos_start;
 
-                if(self->priv->msp_parser.arg_buffer == NULL)
-                    self->priv->msp_parser.arg_buffer = g_string_new(NULL);
-
                 while(self->priv->msp_parser.lex_pos_end < len &&
                         buf[self->priv->msp_parser.lex_pos_end] != ')')
                     self->priv->msp_parser.arg_buffer = 
@@ -446,8 +427,7 @@ mud_telnet_msp_parse(MudTelnetMsp *self, MudLineBufferLine *line)
             case MSP_STATE_PARSE_ARGS:
                 mud_telnet_msp_parser_args(self);
 
-                g_string_free(self->priv->msp_parser.arg_buffer, TRUE);
-                self->priv->msp_parser.arg_buffer = NULL;
+                g_string_truncate(self->priv->msp_parser.arg_buffer, 0);
                 self->priv->msp_parser.lex_pos_start =
                     self->priv->msp_parser.lex_pos_end + 1;
                 self->priv->msp_parser.state = MSP_STATE_TEXT;

@@ -36,6 +36,7 @@ struct _MudConnection
     GByteArray *outbuf;
     GSocketConnection *scon;
     GSocket *socket;
+    guint read_source_id;
     GSource *write_source;
 };
 
@@ -72,6 +73,12 @@ mud_connection_finalize(GObject *object)
 
     if(self->scon)
         g_io_stream_close(G_IO_STREAM(self->scon), NULL, NULL);
+
+    if(self->read_source_id > 0)
+        g_source_remove(self->read_source_id);
+
+    if(self->write_source)
+        g_source_remove(g_source_get_id(self->write_source));
 
     G_OBJECT_CLASS(mud_connection_parent_class)->finalize(object);
 }
@@ -123,6 +130,7 @@ mud_connection_init(MudConnection *self)
     self->outbuf = g_byte_array_sized_new(BUFFER_RESERVE);
     self->scon = NULL;
     self->socket = NULL;
+    self->read_source_id = 0;
     self->write_source = NULL;
 }
 
@@ -294,7 +302,7 @@ socket_client_connect_cb(GObject *source_object, GAsyncResult *res,
     source = g_socket_create_source(self->socket, G_IO_IN, NULL);
     g_source_set_callback(source, (GSourceFunc)socket_read_ready_cb, self, NULL);
     g_source_set_can_recurse(source, FALSE);
-    g_source_attach(source, NULL);
+    self->read_source_id = g_source_attach(source, NULL);
     g_source_unref(source);
 }
 

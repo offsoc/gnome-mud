@@ -1275,7 +1275,8 @@ mud_window_add_connection_view(MudWindow *self, GObject *cview, gchar *tabLbl)
     GtkVBox *viewport;
     GtkHBox *hbox;
     GtkWidget *tab_label;
-    GtkImage *image;
+    GtkImage *image, *close_image;
+    GtkButton *close_button;
     MudConnectionView *view = MUD_CONNECTION_VIEW(cview);
 
     g_return_if_fail(IS_MUD_WINDOW(self));
@@ -1297,8 +1298,15 @@ mud_window_add_connection_view(MudWindow *self, GObject *cview, gchar *tabLbl)
     image = GTK_IMAGE(gtk_image_new_from_icon_name(GMUD_STOCK_NEGATIVE,
                                                    GTK_ICON_SIZE_MENU));
 
+    close_image = GTK_IMAGE(gtk_image_new_from_icon_name("window-close",
+                                                         GTK_ICON_SIZE_MENU));
+    close_button = GTK_BUTTON(gtk_button_new());
+    gtk_button_set_relief(close_button, GTK_RELIEF_NONE);
+    gtk_button_set_image(close_button, GTK_WIDGET(close_image));
+
     gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(image), FALSE, FALSE, 0);
     gtk_box_pack_start(GTK_BOX(hbox), tab_label, TRUE, TRUE, 0);
+    gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(close_button), FALSE, FALSE, 0);
 
     gtk_widget_show_all(GTK_WIDGET(hbox));
 
@@ -1325,6 +1333,11 @@ mud_window_add_connection_view(MudWindow *self, GObject *cview, gchar *tabLbl)
     g_signal_connect(terminal,
                      "focus-in-event",
                      G_CALLBACK(mud_window_grab_entry_focus_cb),
+                     self);
+
+    g_signal_connect(close_button,
+                     "clicked",
+                     G_CALLBACK(mud_window_closewindow_cb),
                      self);
 
     self->priv->mud_views_list = g_slist_append(self->priv->mud_views_list, view);

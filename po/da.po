@@ -9,8 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-mud master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-17 16:24+0100\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"mud&keywords=I18N+L10N&component=i18n\n"
+"POT-Creation-Date: 2017-07-26 15:30+0000\n"
 "PO-Revision-Date: 2013-03-17 18:29+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -34,8 +35,7 @@ msgstr "Skrifttype"
 
 #: ../gnome-mud.schemas.in.h:2
 msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
-msgstr ""
-"Et Pangoskriftnavn. Eksempler er \"Sans 12\" eller \"Monospace Bold 14\"."
+msgstr "Et Pangoskriftnavn. Eksempler er “Sans 12” eller “Monospace Bold 14”."
 
 #: ../gnome-mud.schemas.in.h:3
 msgid "Default color of the background"
@@ -52,7 +52,7 @@ msgid ""
 "hex digits, or a color name such as \"red\")."
 msgstr ""
 "Standardfarve på baggrunden, som en farvespecifikation (kan være hekstal som "
-"i HTML-stil, eller et farvenavn som \"red\")."
+"i HTML-stil, eller et farvenavn som “red”)."
 
 #: ../gnome-mud.schemas.in.h:5
 msgid "Default color of the text"
@@ -64,7 +64,7 @@ msgid ""
 "digits, or a color name such as \"red\")."
 msgstr ""
 "Standardfarve på teksten, som en farvespecifikation (kan være HTML-stil "
-"hekstal, eller et farvenavn som \"red\")."
+"hekstal, eller et farvenavn som “red”)."
 
 #: ../gnome-mud.schemas.in.h:7
 msgid "Color palette"
@@ -78,7 +78,7 @@ msgid ""
 msgstr ""
 "GNOME-Mud har en 16-farvet palette som MUD'er kan bruge. Den skal være "
 "angivet som en kolonadskilt liste over farvenavne. Farvenavne bør være i "
-"heksformat f.eks. \"#FF00FF\"."
+"heksformat f.eks. “#FF00FF”."
 
 #: ../gnome-mud.schemas.in.h:9
 msgid "Number of lines to keep in scrollback"
@@ -94,7 +94,7 @@ msgstr ""
 "terminalen i dette antal linjer; linjer som ikke kan indeholdes i "
 "tilbagerulningen bliver slettet."
 
-#: ../gnome-mud.schemas.in.h:11 ../ui/prefs.glade.h:13
+#: ../gnome-mud.schemas.in.h:11 ../ui/prefs.ui.h:8
 msgid "Encoding"
 msgstr "Kodning"
 
@@ -159,7 +159,7 @@ msgid ""
 "A character that is used to split commands in a string like \"w;w;w;l\", "
 "which will be sent to the MUD as 4 separate commands."
 msgstr ""
-"Et tegn som bruges til at opdele kommandoer i en streng som \"w;w;w;l\", som "
+"Et tegn som bruges til at opdele kommandoer i en streng som “w;w;w;l”, som "
 "vil blive sendt til MUD'en som 4 adskilte kommandoer."
 
 #: ../gnome-mud.schemas.in.h:27
@@ -242,19 +242,19 @@ msgstr ""
 "Liste over profiler kendt af GNOME-Mud. Denne liste indeholder strenge der "
 "navngiver undermapper relativt til /apps/gnome-mud/profiles."
 
-#: ../gnome-mud.schemas.in.h:41 ../ui/prefs.glade.h:32
+#: ../gnome-mud.schemas.in.h:41 ../ui/prefs.ui.h:27
 msgid "Aliases"
 msgstr "Aliaser"
 
-#: ../gnome-mud.schemas.in.h:42 ../ui/prefs.glade.h:33
+#: ../gnome-mud.schemas.in.h:42 ../ui/prefs.ui.h:28
 msgid "Variables"
 msgstr "Variabler"
 
-#: ../gnome-mud.schemas.in.h:43 ../ui/prefs.glade.h:31
+#: ../gnome-mud.schemas.in.h:43 ../ui/prefs.ui.h:26
 msgid "Triggers"
 msgstr "Udløsere"
 
-#: ../gnome-mud.schemas.in.h:44 ../ui/prefs.glade.h:35
+#: ../gnome-mud.schemas.in.h:44 ../ui/prefs.ui.h:30
 msgid "Keybindings"
 msgstr "Genvejstaster"
 
@@ -266,102 +266,102 @@ msgstr "Genvejstaster"
 msgid "Directional keybindings"
 msgstr "Retningsbestemte genvejstaster"
 
-#: ../src/debug-logger.c:827 ../src/mud-connections.c:1272
+#: ../src/debug-logger.c:830 ../src/mud-connections.c:1238
 msgid "Error"
 msgstr "Fejl"
 
-#: ../src/debug-logger.c:830 ../src/debug-logger.c:913
+#: ../src/debug-logger.c:833 ../src/debug-logger.c:916
 #, c-format
 msgid "ERROR: %s\n"
 msgstr "FEJL: %s\n"
 
-#: ../src/debug-logger.c:834
+#: ../src/debug-logger.c:837
 msgid "Critical"
 msgstr "Kritisk"
 
-#: ../src/debug-logger.c:841
+#: ../src/debug-logger.c:844
 msgid "Warning"
 msgstr "Advarsel"
 
-#: ../src/debug-logger.c:848 ../src/debug-logger.c:998
+#: ../src/debug-logger.c:851 ../src/debug-logger.c:1001
 msgid "Message"
 msgstr "Besked"
 
-#: ../src/debug-logger.c:855
+#: ../src/debug-logger.c:858
 msgid "Info"
 msgstr "Info"
 
-#: ../src/debug-logger.c:862
+#: ../src/debug-logger.c:865
 msgid "Debug"
 msgstr "Fejlsøg"
 
-#: ../src/debug-logger.c:869
+#: ../src/debug-logger.c:872
 msgid "Unknown"
 msgstr "Ukendt"
 
-#: ../src/debug-logger.c:917
+#: ../src/debug-logger.c:920
 #, c-format
 msgid "CRITICAL ERROR: %s\n"
 msgstr "KRITISK FEJL: %s\n"
 
-#: ../src/debug-logger.c:921
+#: ../src/debug-logger.c:924
 #, c-format
 msgid "Warning: %s\n"
 msgstr "Advarsel %s\n"
 
-#: ../src/debug-logger.c:991
+#: ../src/debug-logger.c:994
 msgid "Type"
 msgstr "Type"
 
-#: ../src/gnome-mud.c:63
+#: ../src/gnome-mud.c:61
 #, c-format
 msgid "Failed to init GConf: %s"
 msgstr "Kunne ikke initialisere GConf: %s"
 
-#: ../src/mud-connections.c:933
+#: ../src/mud-connections.c:891
 #, c-format
 msgid "Are you sure you want to delete %s?"
 msgstr "Er du sikker på, at du ønsker at slette %s?"
 
-#: ../src/mud-connections.c:934
+#: ../src/mud-connections.c:892
 #, c-format
 msgid "Delete %s?"
 msgstr "Slet %s?"
 
-#: ../src/mud-connections.c:1273
+#: ../src/mud-connections.c:1239
 msgid "No MUD name specified."
 msgstr "Intet MUD-navn angivet."
 
-#: ../src/mud-connection-view.c:575 ../src/mud-connection-view.c:1977
+#: ../src/mud-connection-view.c:411
+msgid "*** Connected.\n"
+msgstr "*** Forbundet.\n"
+
+#: ../src/mud-connection-view.c:425
+msgid ""
+"\n"
+"*** Connection closed.\n"
+msgstr ""
+"\n"
+"*** Forbindelse lukket.\n"
+
+#: ../src/mud-connection-view.c:646 ../src/mud-connection-view.c:1830
 #, c-format
 msgid "*** Making connection to %s, port %d.\n"
 msgstr "*** Etablerer forbindelse til %s, port %d.\n"
 
-#: ../src/mud-connection-view.c:1054
+#: ../src/mud-connection-view.c:1096
 msgid "Close"
 msgstr "Luk"
 
-#: ../src/mud-connection-view.c:1074
+#: ../src/mud-connection-view.c:1116
 msgid "Change P_rofile"
 msgstr "Ændr _profil"
 
-#: ../src/mud-connection-view.c:1113
+#: ../src/mud-connection-view.c:1155
 msgid "_Input Methods"
 msgstr "_Inddatametoder"
 
-#: ../src/mud-connection-view.c:1142
-msgid "*** Could not connect.\n"
-msgstr "*** Kunne ikke forbinde.\n"
-
-#: ../src/mud-connection-view.c:1147
-msgid "*** Connected.\n"
-msgstr "*** Forbundet.\n"
-
-#: ../src/mud-connection-view.c:1175
-msgid "*** Connection closed.\n"
-msgstr "*** Forbindelse lukket.\n"
-
-#: ../src/mud-connection-view.c:1405
+#: ../src/mud-connection-view.c:1353
 #, c-format
 msgid ""
 "There was an error loading config value for whether to use image in menus. "
@@ -370,39 +370,27 @@ msgstr ""
 "Der opstod en fejl ved indlæsning af konfigurationsværdi for hvorvidt, der "
 "skal bruges billede i menuer. (%s)\n"
 
-#: ../src/mud-connection-view.c:1880 ../src/mud-connection-view.c:1924
-msgid ""
-"\n"
-"*** Connection closed.\n"
-msgstr ""
-"\n"
-"*** Forbindelse lukket.\n"
-
-#: ../src/mud-connection-view.c:2027
+#: ../src/mud-connection-view.c:1880
 msgid "<password removed>"
 msgstr "<adgangskode fjernet>"
 
-#: ../src/mud-connection-view.c:2223
+#: ../src/mud-connection-view.c:2080
 msgid "Connecting..."
-msgstr "Forbinder..."
+msgstr "Forbinder …"
 
-#: ../src/mud-connection-view.c:2346
-msgid "Connection timed out."
-msgstr "Tidsfrist for forbindelsen løb ud."
-
-#: ../src/mud-connection-view.c:2362
-msgid "There was an internal http connection error."
-msgstr "Der var en intern http-forbindelsesfejl."
-
-#: ../src/mud-connection-view.c:2384
+#: ../src/mud-connection-view.c:2091
 msgid "Downloading"
 msgstr "Henter"
 
-#: ../src/mud-log.c:395
-msgid "Save log as..."
-msgstr "Gem log som..."
+#: ../src/mud-connection-view.c:2192
+msgid "There was an internal http connection error."
+msgstr "Der var en intern http-forbindelsesfejl."
 
-#: ../src/mud-log.c:727
+#: ../src/mud-log.c:398
+msgid "Save log as..."
+msgstr "Gem log som …"
+
+#: ../src/mud-log.c:732
 msgid ""
 "\n"
 "*** Log starts *** %d/%m/%Y %H:%M:%S\n"
@@ -410,26 +398,26 @@ msgstr ""
 "\n"
 "*** Log starter *** %d/%m/%Y %H:%M:%S\n"
 
-#: ../src/mud-log.c:811
+#: ../src/mud-log.c:816
 msgid "Log Error"
 msgstr "Logfejl"
 
-#: ../src/mud-log.c:812
+#: ../src/mud-log.c:817
 #, c-format
 msgid "Could not open \"%s\" for writing."
-msgstr "Kunne ikke åbne \"%s\" til skrivning."
+msgstr "Kunne ikke åbne “%s” til skrivning."
 
-#: ../src/mud-log.c:839
+#: ../src/mud-log.c:843 ../src/mud-log.c:924 ../src/mud-log.c:940
+msgid "Could not write data to log file!"
+msgstr "Kunne ikke skrive data til logfil!"
+
+#: ../src/mud-log.c:850
 msgid ""
 "\n"
 " *** Log stops *** %d/%m/%Y %H:%M:%S\n"
 msgstr ""
 "\n"
 "*** Log stopper *** %d/%m/%Y %H:%M:%S\n"
-
-#: ../src/mud-log.c:913
-msgid "Could not write data to log file!"
-msgstr "Kunne ikke skrive data til logfil!"
 
 #: ../src/mud-tray.c:271
 msgid "_Hide window"
@@ -448,11 +436,11 @@ msgid "#Submatch Out of Range#"
 msgstr "#Underresultat uden for interval#"
 
 # dungeon?
-#: ../src/mud-window.c:847
+#: ../src/mud-window.c:825
 msgid "A Multi-User Dungeon (MUD) client for GNOME"
 msgstr "En flerbrugerdungeonklient (MUD) til GNOME"
 
-#: ../src/mud-window.c:859
+#: ../src/mud-window.c:837
 msgid "translator-credits"
 msgstr ""
 "Joe Hansen, 2010, 2013.\n"
@@ -460,13 +448,13 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../src/mud-window.c:968
+#: ../src/mud-window.c:950
 msgid "Error Saving Buffer"
 msgstr "Fejl under gemning af mellemlager"
 
-#: ../src/mud-window.c:1279
+#: ../src/mud-window.c:1261
 msgid "_Manage Profiles..."
-msgstr "_Håndter profiler..."
+msgstr "_Håndter profiler …"
 
 #: ../src/handlers/mud-telnet-mccp.c:429
 msgid ""
@@ -476,326 +464,335 @@ msgstr ""
 "\n"
 "MCCP-data korrumperet. Afbryder forbindelse.\n"
 
-#: ../ui/main.glade.h:1
-msgid "Gnome-Mud"
-msgstr "Gnome-Mud"
-
-#: ../ui/main.glade.h:2
-msgid "_File"
-msgstr "_Fil"
-
-#: ../ui/main.glade.h:3
-msgid "C_onnection..."
-msgstr "_Forbindelse..."
-
-#: ../ui/main.glade.h:4
-msgid "_Disconnect"
-msgstr "_Afbryd"
-
-#: ../ui/main.glade.h:5
-msgid "_Reconnect"
-msgstr "_Genforbind"
-
-#: ../ui/main.glade.h:6
-msgid "Start _Logging..."
-msgstr "Start _logning..."
-
-#: ../ui/main.glade.h:7
-msgid "Stop Lo_gging"
-msgstr "Stop lo_gning"
-
-#: ../ui/main.glade.h:8
-msgid "_Save Buffer..."
-msgstr "_Gem mellemlager..."
-
-#: ../ui/main.glade.h:9
-msgid "Close _Window"
-msgstr "Luk _vindue"
-
-#: ../ui/main.glade.h:10
-msgid "_Settings"
-msgstr "_Opsætning"
-
-#: ../ui/main.glade.h:11
-msgid "P_rofiles"
-msgstr "_Profiler"
-
-#: ../ui/main.glade.h:12
-msgid "_Help"
-msgstr "_Hjælp"
-
-#: ../ui/main.glade.h:13
-msgid "Connect to MUD"
-msgstr "Forbind til MUD"
-
-#: ../ui/main.glade.h:14
-msgid "Connect"
-msgstr "Forbind"
-
-#: ../ui/main.glade.h:15
-msgid "Connect to host"
-msgstr "Forbind til vært"
-
-#: ../ui/main.glade.h:16
-msgid "Disconnect from current MUD"
-msgstr "Afbryd fra aktuel MUD"
-
-#: ../ui/main.glade.h:17
-msgid "Disconnect"
-msgstr "Afbryd"
-
-#: ../ui/main.glade.h:18
-msgid "Disconnect from current host"
-msgstr "Afbrydelse fra aktuel vært"
-
-#: ../ui/main.glade.h:19
-msgid "Reconnect to current MUD"
-msgstr "Genforbind til aktuel MUD"
-
-#: ../ui/main.glade.h:20
-msgid "Reconnect"
-msgstr "Genforbind"
-
-#: ../ui/main.glade.h:21
-msgid "Save buffer as..."
-msgstr "Gem mellemlager som..."
-
-#: ../ui/main.glade.h:22
-msgid "Debug Log"
-msgstr "Fejlsøgningslog"
-
-#: ../ui/main.glade.h:23
+#: ../ui/main.ui.h:1
 msgid "Start Logging..."
-msgstr "Start logning..."
+msgstr "Start logning …"
 
-#: ../ui/main.glade.h:24
+#: ../ui/main.ui.h:2
 msgid "_Log to File:"
 msgstr "_Log til fil:"
 
-#: ../ui/main.glade.h:25
+#: ../ui/main.ui.h:3
 msgid "_Select File"
 msgstr "_Vælg fil"
 
-#: ../ui/main.glade.h:26
+#: ../ui/main.ui.h:4
 msgid "Logging Options"
 msgstr "Logningsindstillinger"
 
-#: ../ui/main.glade.h:27
+#: ../ui/main.ui.h:5
 msgid "_Number of lines to log:"
 msgstr "_Antal linjer der skal logges:"
 
-#: ../ui/main.glade.h:28
+#: ../ui/main.ui.h:6
 msgid "Number of _previous lines to include:"
 msgstr "Antal _forrige linjer der skal inkluderes:"
 
-#: ../ui/main.glade.h:29
+#: ../ui/main.ui.h:7
 msgid "_Append to file"
 msgstr "_Tilføj til fil"
 
-#: ../ui/main.glade.h:30
+#: ../ui/main.ui.h:8
 msgid "Log Inp_ut"
 msgstr "Log _inddata"
 
-#: ../ui/main.glade.h:31
+#: ../ui/main.ui.h:9
 msgid "_Include entire buffer"
 msgstr "_Inkluder hele mellemlageret"
 
-#: ../ui/main.glade.h:32
+#: ../ui/main.ui.h:10
 msgid "Include C_olor"
 msgstr "Inkluder _farve"
 
-#: ../ui/muds.glade.h:1
-msgid "Connections"
-msgstr "Forbindelser"
+#: ../ui/main.ui.h:11
+msgid "Debug Log"
+msgstr "Fejlsøgningslog"
 
-#: ../ui/muds.glade.h:2
-msgid " _Host: "
-msgstr " _Vært: "
+#: ../ui/main.ui.h:12
+msgid "Gnome-Mud"
+msgstr "Gnome-Mud"
 
-#: ../ui/muds.glade.h:3
-msgid " _Port: "
-msgstr " _Port: "
+#: ../ui/main.ui.h:13
+msgid "_File"
+msgstr "_Fil"
 
-#: ../ui/muds.glade.h:4
-msgid "Custom Connection"
-msgstr "Tilpasset forbindelse"
+#: ../ui/main.ui.h:14
+msgid "C_onnection..."
+msgstr "_Forbindelse …"
 
-#: ../ui/muds.glade.h:5
-msgid "Connection Properties"
-msgstr "Forbindelsesegenskaber"
+#: ../ui/main.ui.h:15
+msgid "_Disconnect"
+msgstr "_Afbryd"
 
-#: ../ui/muds.glade.h:6
-msgid "MUD"
-msgstr "MUD"
+#: ../ui/main.ui.h:16
+msgid "_Reconnect"
+msgstr "_Genforbind"
 
-#: ../ui/muds.glade.h:7
-msgid "Name:"
-msgstr "Navn:"
+#: ../ui/main.ui.h:17
+msgid "Start _Logging..."
+msgstr "Start _logning …"
 
-#: ../ui/muds.glade.h:8
-msgid "Host:"
-msgstr "Vært:"
+#: ../ui/main.ui.h:18
+msgid "Stop Lo_gging"
+msgstr "Stop lo_gning"
 
-#: ../ui/muds.glade.h:9
-msgid "Port:"
-msgstr "Port:"
+#: ../ui/main.ui.h:19
+msgid "_Save Buffer..."
+msgstr "_Gem mellemlager …"
 
-#: ../ui/muds.glade.h:10
-msgid "Profile"
-msgstr "Profil"
+#: ../ui/main.ui.h:20
+msgid "Close _Window"
+msgstr "Luk _vindue"
 
-#: ../ui/muds.glade.h:11
-msgid "Character"
-msgstr "Tegn"
+#: ../ui/main.ui.h:21
+msgid "_Settings"
+msgstr "_Opsætning"
 
-#: ../ui/muds.glade.h:12
-msgid "Logon:"
-msgstr "Logind:"
+#: ../ui/main.ui.h:22
+msgid "P_rofiles"
+msgstr "_Profiler"
 
-#: ../ui/muds.glade.h:13
-msgid "Unsaved Changes"
-msgstr "Ugemte ændringer"
+#: ../ui/main.ui.h:23
+msgid "_Help"
+msgstr "_Hjælp"
 
-#: ../ui/muds.glade.h:14
-msgid "You have unsaved changes. Do you want to save before closing?"
-msgstr "Du har ugemte ændringer. Ønsker du at gemme før lukning?"
+#: ../ui/main.ui.h:24
+msgid "Connect to MUD"
+msgstr "Forbind til MUD"
 
-#: ../ui/muds.glade.h:15
-msgid "Close _without Saving"
-msgstr "Luk _uden at gemme"
+#: ../ui/main.ui.h:25
+msgid "Connect"
+msgstr "Forbind"
 
-#: ../ui/muds.glade.h:16
-msgid "Delete MUD?"
-msgstr "Slet MUD?"
+#: ../ui/main.ui.h:26
+msgid "Connect to host"
+msgstr "Forbind til vært"
 
-#: ../ui/muds.glade.h:17
-msgid "Are you sure you want to delete this MUD?"
-msgstr "Er du sikker på, at du ønsker at slette denne MUD?"
+#: ../ui/main.ui.h:27
+msgid "Disconnect from current MUD"
+msgstr "Afbryd fra aktuel MUD"
 
-#: ../ui/muds.glade.h:18
+#: ../ui/main.ui.h:28
+msgid "Disconnect"
+msgstr "Afbryd"
+
+#: ../ui/main.ui.h:29
+msgid "Disconnect from current host"
+msgstr "Afbrydelse fra aktuel vært"
+
+#: ../ui/main.ui.h:30
+msgid "Reconnect to current MUD"
+msgstr "Genforbind til aktuel MUD"
+
+#: ../ui/main.ui.h:31
+msgid "Reconnect"
+msgstr "Genforbind"
+
+#: ../ui/main.ui.h:32
+msgid "Save buffer as..."
+msgstr "Gem mellemlager som …"
+
+#: ../ui/muds.ui.h:1
 msgid "Select An Icon..."
-msgstr "Vælg et ikon..."
+msgstr "Vælg et ikon …"
 
-#: ../ui/muds.glade.h:19
+#: ../ui/muds.ui.h:2
 msgid "Select A Folder"
 msgstr "Vælg en mappe"
 
-#: ../ui/prefs.glade.h:1
+#: ../ui/muds.ui.h:3
+msgid "Unsaved Changes"
+msgstr "Ugemte ændringer"
+
+#: ../ui/muds.ui.h:4
+msgid "Close _without Saving"
+msgstr "Luk _uden at gemme"
+
+#: ../ui/muds.ui.h:5
+msgid "You have unsaved changes. Do you want to save before closing?"
+msgstr "Du har ugemte ændringer. Ønsker du at gemme før lukning?"
+
+#: ../ui/muds.ui.h:6
+msgid "Delete MUD?"
+msgstr "Slet MUD?"
+
+#: ../ui/muds.ui.h:7
+msgid "Are you sure you want to delete this MUD?"
+msgstr "Er du sikker på, at du ønsker at slette denne MUD?"
+
+#: ../ui/muds.ui.h:8
+msgid "Connection Properties"
+msgstr "Forbindelsesegenskaber"
+
+#: ../ui/muds.ui.h:9
+msgid "MUD"
+msgstr "MUD"
+
+#: ../ui/muds.ui.h:10
+msgid "Name:"
+msgstr "Navn:"
+
+#: ../ui/muds.ui.h:11
+msgid "Host:"
+msgstr "Vært:"
+
+#: ../ui/muds.ui.h:12
+msgid "Port:"
+msgstr "Port:"
+
+#: ../ui/muds.ui.h:13
+msgid "Profile"
+msgstr "Profil"
+
+#: ../ui/muds.ui.h:14
+msgid "Character"
+msgstr "Tegn"
+
+#: ../ui/muds.ui.h:15
+msgid "Logon:"
+msgstr "Logind:"
+
+#: ../ui/muds.ui.h:16
+msgid "Connections"
+msgstr "Forbindelser"
+
+#: ../ui/muds.ui.h:17
+msgid " _Host: "
+msgstr " _Vært: "
+
+#: ../ui/muds.ui.h:18
+msgid " _Port: "
+msgstr " _Port: "
+
+#: ../ui/muds.ui.h:19
+msgid "Custom Connection"
+msgstr "Tilpasset forbindelse"
+
+#: ../ui/prefs.ui.h:1
 msgid "New Profile"
 msgstr "Ny profil"
 
-#: ../ui/prefs.glade.h:2
+#: ../ui/prefs.ui.h:2
 msgid "New Profile Name:"
 msgstr "Nyt profilnavn:"
 
-#: ../ui/prefs.glade.h:3
-msgid "Regex Error"
-msgstr "Regexfejl"
-
-#: ../ui/prefs.glade.h:4
-msgid "Error Code:"
-msgstr "Fejlkode:"
-
-#: ../ui/prefs.glade.h:5
-msgid "Error String:"
-msgstr "Fejlstreng:"
-
-#: ../ui/prefs.glade.h:6
-msgid "Error At:"
-msgstr "Fejl ved:"
-
-#: ../ui/prefs.glade.h:7
-msgid "Profiles"
-msgstr "Profiler"
-
-#: ../ui/prefs.glade.h:8
+#: ../ui/prefs.ui.h:3
 msgid "Preferences"
 msgstr "Indstillinger"
 
-#: ../ui/prefs.glade.h:9
+#: ../ui/prefs.ui.h:4
 msgid "Input"
 msgstr "Inddata"
 
-#: ../ui/prefs.glade.h:10
+#: ../ui/prefs.ui.h:5
 msgid "_Echo the Text Sent"
 msgstr "_Ekko den sendte tekst"
 
-#: ../ui/prefs.glade.h:11
+#: ../ui/prefs.ui.h:6
 msgid "_Keep the Text Entered"
 msgstr "_Behold den indtastede tekst"
 
-#: ../ui/prefs.glade.h:12
+#: ../ui/prefs.ui.h:7
 msgid "Command _Division Character:"
 msgstr "_Kommandoopdelingstegn:"
 
-#: ../ui/prefs.glade.h:14
+#: ../ui/prefs.ui.h:9
 msgid "_Character Set:"
 msgstr "_Tegnsæt:"
 
-#: ../ui/prefs.glade.h:15
+#: ../ui/prefs.ui.h:10
 msgid "Output"
 msgstr "Uddata"
 
-#: ../ui/prefs.glade.h:16
+#: ../ui/prefs.ui.h:11
 msgid "Scroll on _Output"
 msgstr "Rul ved _uddata"
 
-#: ../ui/prefs.glade.h:17
+#: ../ui/prefs.ui.h:12
 msgid "_Number of Scrollback Lines:"
 msgstr "_Antal tilbagerulningslinjer:"
 
-#: ../ui/prefs.glade.h:18
+#: ../ui/prefs.ui.h:13
 msgid "Fon_t:"
 msgstr "_Skrifttype:"
 
-#: ../ui/prefs.glade.h:19
+#: ../ui/prefs.ui.h:14
 msgid "_Foreground Color:"
 msgstr "_Forgrundsfarve:"
 
-#: ../ui/prefs.glade.h:20
+#: ../ui/prefs.ui.h:15
 msgid "_Background Color:"
 msgstr "_Baggrundsfarve:"
 
-#: ../ui/prefs.glade.h:21
+#: ../ui/prefs.ui.h:16
 msgid "Color Palette:"
 msgstr "Farvepalette:"
 
-#: ../ui/prefs.glade.h:22
+#: ../ui/prefs.ui.h:17
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../ui/prefs.glade.h:23
+#: ../ui/prefs.ui.h:18
 msgid "Proxy"
 msgstr "Proxy"
 
-#: ../ui/prefs.glade.h:24
+#: ../ui/prefs.ui.h:19
 msgid "_Enable Proxy"
 msgstr "_Aktiver proxy"
 
-#: ../ui/prefs.glade.h:25
+#: ../ui/prefs.ui.h:20
 msgid "_Host:"
 msgstr "_Vært:"
 
-#: ../ui/prefs.glade.h:26
+#: ../ui/prefs.ui.h:21
 msgid "_Version:"
 msgstr "_Version:"
 
-#: ../ui/prefs.glade.h:27
+#: ../ui/prefs.ui.h:22
 msgid "Telnet Options"
 msgstr "Telnetindstillinger"
 
-#: ../ui/prefs.glade.h:28
+#: ../ui/prefs.ui.h:23
 msgid "Enable Mud _Sound Protocol (MSP)"
 msgstr "Aktiver Muds _lydprotokol (MSP)"
 
-#: ../ui/prefs.glade.h:29
+#: ../ui/prefs.ui.h:24
 msgid "Enable _Character Encoding Negotiation (CHARSET)"
 msgstr "Aktiver _tegnkodningsforhandlinng (CHARSET)"
 
-#: ../ui/prefs.glade.h:30
+#: ../ui/prefs.ui.h:25
 msgid "Network"
 msgstr "Netværk"
 
-#: ../ui/prefs.glade.h:34
+#: ../ui/prefs.ui.h:29
 msgid "Timers"
 msgstr "Tidsudløb"
+
+#: ../ui/prefs.ui.h:31
+msgid "Profiles"
+msgstr "Profiler"
+
+#: ../ui/prefs.ui.h:32
+msgid "Regex Error"
+msgstr "Regexfejl"
+
+#: ../ui/prefs.ui.h:33
+msgid "Error Code:"
+msgstr "Fejlkode:"
+
+#: ../ui/prefs.ui.h:34
+msgid "Error String:"
+msgstr "Fejlstreng:"
+
+#: ../ui/prefs.ui.h:35
+msgid "Error At:"
+msgstr "Fejl ved:"
+
+#~ msgid "*** Could not connect.\n"
+#~ msgstr "*** Kunne ikke forbinde.\n"
+
+#~ msgid "*** Connection closed.\n"
+#~ msgstr "*** Forbindelse lukket.\n"
+
+#~ msgid "Connection timed out."
+#~ msgstr "Tidsfrist for forbindelsen løb ud."

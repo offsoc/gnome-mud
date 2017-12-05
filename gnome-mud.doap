@@ -27,7 +27,7 @@
   <maintainer>
     <foaf:Person>
       <foaf:name>Jordi Mallach</foaf:name>
-      <foaf:mbox rdf:resource="mailto:jordi@sindominio.net" />
+      <foaf:mbox rdf:resource="mailto:jordi@mallach.net" />
     </foaf:Person>
   </maintainer>
 

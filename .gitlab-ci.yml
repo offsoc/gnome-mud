@@ -1,0 +1,15 @@
+image: fedora:latest
+
+stages:
+  - build
+
+before_script:
+  - dnf install -y GConf2-devel glib2-devel gnome-common gstreamer1-devel
+                   intltool make vte-devel which
+
+build_gnome_mud:
+  stage: build
+  script:
+    - ./autogen.sh --enable-gstreamer --enable-mccp --enable-debug-logger
+    - make
+    - make install

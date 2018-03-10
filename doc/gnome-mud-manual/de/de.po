@@ -1,0 +1,1384 @@
+# German translation for the gnome-mud manual.
+# Copyright (C) 2018 gnome-mud's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-mud package.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2018.
+# Tim Sabsch <tim@sabsch.com>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-mud master\n"
+"POT-Creation-Date: 2018-01-31 16:15+0000\n"
+"PO-Revision-Date: 2018-03-10 20:55+0100\n"
+"Last-Translator: Tim Sabsch <tim@sabsch.com>\n"
+"Language-Team: German <gnome-de@gnome.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: C/gnome-mud-manual.xml:30(title) C/gnome-mud-manual.xml:73(revnumber)
+msgid "GNOME-Mud Manual V1.1"
+msgstr "GNOME-Mud-Handbuch V1.1"
+
+#: C/gnome-mud-manual.xml:32(para)
+msgid "User manual for GNOME-Mud, a MUD client for the GNOME Desktop."
+msgstr ""
+"Benutzerhandbuch für GNOME-Mud, einen MUD-Client für die GNOME-"
+"Arbeitsumgebung."
+
+#: C/gnome-mud-manual.xml:35(year)
+msgid "2001"
+msgstr "2001"
+
+#: C/gnome-mud-manual.xml:36(year)
+msgid "2002"
+msgstr "2002"
+
+#: C/gnome-mud-manual.xml:37(year)
+msgid "2005"
+msgstr "2005"
+
+#: C/gnome-mud-manual.xml:38(year)
+msgid "2006"
+msgstr "2006"
+
+#: C/gnome-mud-manual.xml:39(holder) C/gnome-mud-manual.xml:76(para)
+#: C/gnome-mud-manual.xml:85(para)
+msgid "Jordi Mallach"
+msgstr "Jordi Mallach"
+
+#: C/gnome-mud-manual.xml:52(publishername) C/gnome-mud-manual.xml:65(orgname)
+#: C/gnome-mud-manual.xml:77(para) C/gnome-mud-manual.xml:86(para)
+msgid "GNOME Documentation Project"
+msgstr "GNOME-Dokumentationsprojekt"
+
+#: C/gnome-mud-manual.xml:2(para)
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or "
+"in the file COPYING-DOCS distributed with this manual."
+msgstr ""
+"Das vorliegende Dokument kann gemäß den Bedingungen der GNU Free "
+"Documentation License (GFDL), Version 1.1 oder jeder späteren, von der Free "
+"Software Foundation veröffentlichten Version ohne unveränderbare Abschnitte "
+"sowie ohne Texte auf dem vorderen und hinteren Buchdeckel kopiert, verteilt "
+"und/oder modifiziert werden. Eine Kopie der GFDL finden Sie unter diesem "
+"<ulink type=\"help\" url=\"ghelp:fdl\">Link</ulink> oder in der mit diesem "
+"Handbuch gelieferten Datei COPYING-DOCS."
+
+#: C/gnome-mud-manual.xml:12(para)
+msgid ""
+"This manual is part of a collection of GNOME manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
+msgstr ""
+"Dieses Handbuch ist Teil einer Sammlung von GNOME-Handbüchern, die unter der "
+"GFDL veröffentlicht werden. Wenn Sie dieses Handbuch getrennt von der "
+"Sammlung weiterverbreiten möchten, können Sie das tun, indem Sie eine Kopie "
+"der Lizenz zum Handbuch hinzufügen, wie es in Abschnitt 6 der Lizenz "
+"beschrieben ist."
+
+#: C/gnome-mud-manual.xml:19(para)
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any GNOME "
+"documentation, and the members of the GNOME Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+"Viele der Namen, die von Unternehmen verwendet werden, um ihre Produkte und "
+"Dienstleistungen von anderen zu unterscheiden, sind eingetragene "
+"Warenzeichen. An den Stellen, an denen diese Namen in einer GNOME-"
+"Dokumentation erscheinen, werden die Namen in Großbuchstaben oder mit einem "
+"großen Anfangsbuchstaben geschrieben, wenn das GNOME-Dokumentationsprojekt "
+"auf diese Warenzeichen hingewiesen wird."
+
+#: C/gnome-mud-manual.xml:35(para)
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+"DIESES DOKUMENT WIRD »WIE VORLIEGEND« GELIEFERT, OHNE GARANTIEN IRGENDEINER "
+"ART, SOWOHL AUSDRÜCKLICH GENANNTE ALS AUCH ANGEDEUTETE. DIES BEZIEHT SICH "
+"AUCH OHNE EINSCHRÄNKUNG AUF GARANTIEN, DASS DIESES DOKUMENT ODER VERÄNDERTE "
+"FASSUNGEN DIESES DOKUMENTS FREI VON HANDELSDEFEKTEN, FÜR EINEN BESTIMMTEN "
+"ZWECK GEEIGNET IST ODER DASS ES KEINE RECHTE DRITTER VERLETZT. DAS VOLLE "
+"RISIKO WAS QUALITÄT, GENAUIGKEIT UND LEISTUNG DES DOKUMENTS ODER VERÄNDERTE "
+"FASSUNGEN DES DOKUMENTS LIEGT BEI IHNEN. SOLLTE EIN DOKUMENT ODER EINE "
+"VERÄNDERTE FASSUNG DAVON FEHLER IRGENDEINER ART BEINHALTEN, TRAGEN SIE "
+"(NICHT DER URSPRUNGSAUTOR, DER AUTOR ODER EIN MITWIRKENDER) DIE KOSTEN FÜR "
+"NOTWENDIGE DIENSTLEISTUNGEN, REPARATUREN ODER FEHLERKORREKTUREN. DIESER "
+"HAFTUNGSAUSSCHLUSS IST EIN ESSENZIELLER TEIL DIESER LIZENZ. DIE VERWENDUNG "
+"EINES DOKUMENTS ODER EINER VERÄNDERTEN VERSION DES DOKUMENTS IST NICHT "
+"GESTATTET AUßER UNTER BEACHTUNG DIESES HAFTUNGSAUSSCHLUSSES UND"
+
+#: C/gnome-mud-manual.xml:55(para)
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+"UNTER KEINEN UMSTÄNDEN UND AUF BASIS KEINER RECHTSGRUNDLAGE, EGAL OB DURCH "
+"UNERLAUBTEN HANDLUNGEN (EINSCHLIEßLICH FAHRLÄSSIGKEIT), VERTRAG ODER "
+"ANDERWEITIG KANN DER AUTOR, URSPRUNGSAUTOR, EIN MITWIRKENDER ODER EIN "
+"VERTRIEBSPARTNER DIESES DOKUMENTS ODER EINER VERÄNDERTEN FASSUNG DES "
+"DOKUMENTS ODER EIN ZULIEFERER EINER DIESER PARTEIEN, HAFTBAR GEMACHT WERDEN "
+"FÜR DIREKTE, INDIREKTE, SPEZIELLE, VERSEHENTLICHE ODER FOLGESCHÄDEN "
+"JEGLICHER ART, EINSCHLIEßLICH UND OHNE EINSCHRÄNKUNGEN SCHÄDEN DURCH VERLUST "
+"VON KULANZ, ARBEITSAUSFALL, COMPUTERVERSAGEN ODER COMPUTERFEHLFUNKTIONEN "
+"ODER ALLE ANDEREN SCHÄDEN ODER VERLUSTE, DIE SICH AUS ODER IN VERBINDUNG MIT "
+"DER VERWENDUNG DES DOKUMENTS UND VERÄNDERTER FASSUNGEN DES DOKUMENTS "
+"ERGEBEN, AUCH WENN DIE OBEN GENANNTEN PARTEIEN ÜBER DIE MÖGLICHKEIT SOLCHER "
+"SCHÄDEN INFORMIERT WAREN."
+
+#: C/gnome-mud-manual.xml:28(para)
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<placeholder-1/>"
+msgstr ""
+"DAS DOKUMENT UND VERÄNDERTE FASSUNGEN DES DOKUMENTS WERDEN UNTER DEN "
+"BEDINGUNGEN DER GNU FREE DOCUMENTATION LICENSE ZUR VERFÜGUNG GESTELLT MIT "
+"DEM WEITERGEHENDEN VERSTÄNDNIS, DASS: <placeholder-1/>"
+
+#: C/gnome-mud-manual.xml:62(firstname)
+msgid "Jordi"
+msgstr "Jordi"
+
+#: C/gnome-mud-manual.xml:63(surname)
+msgid "Mallach"
+msgstr "Mallach"
+
+#: C/gnome-mud-manual.xml:66(email)
+msgid "jordim@gnome.org"
+msgstr "jordim@gnome.org"
+
+#: C/gnome-mud-manual.xml:74(date)
+msgid "January 2006"
+msgstr "Januar 2006"
+
+#: C/gnome-mud-manual.xml:82(revnumber)
+msgid "GNOME-Mud Manual V1.0"
+msgstr "GNOME-Mud-Handbuch V1.0"
+
+#: C/gnome-mud-manual.xml:83(date)
+msgid "June 2003"
+msgstr "Juni 2003"
+
+#: C/gnome-mud-manual.xml:91(releaseinfo)
+msgid ""
+"This manual describes version 0.9.1 of GNOME-Mud. It was last updated on "
+"January 2006."
+msgstr ""
+"Dieses Handbuch beschreibt Version 0.9.1 von GNOME-Mud. Es wurde zuletzt im "
+"Januar 2006 aktualisiert."
+
+#: C/gnome-mud-manual.xml:102(title)
+msgid "Feedback"
+msgstr "Rückmeldungen"
+
+#: C/gnome-mud-manual.xml:103(para)
+msgid ""
+"To report a bug or make a suggestion regarding the GNOME-Mud application or "
+"this manual, follow the directions in the <ulink url=\"ghelp:gnome-feedback"
+"\" type=\"help\">GNOME Feedback Page</ulink>."
+msgstr ""
+"Um Fehler zu melden oder einen Vorschlag zur Anwendung GNOME-Mud oder zu "
+"diesem Handbuch zu machen, folgen Sie den Anweisungen auf der <ulink url="
+"\"ghelp:gnome-feedback\" type=\"help\">GNOME-Seite für Rückmeldungen</ulink>."
+
+#: C/gnome-mud-manual.xml:114(title)
+msgid "Introduction"
+msgstr "Einführung"
+
+#: C/gnome-mud-manual.xml:116(para)
+msgid ""
+"<application>GNOME-Mud</application> is an specialized telnet client to play "
+"Multi-User Dungeons, or MUDs."
+msgstr ""
+"<application>GNOME-Mud</application> ist ein spezieller Telnet-Client zum "
+"Spielen in Mehrspieler-Dungeons (MUDs)."
+
+#: C/gnome-mud-manual.xml:120(para)
+msgid ""
+"Multi-User Dungeons are imaginary worlds and realms that exist on the "
+"Internet, where people connect and can perform a variety of actions. A MUD "
+"can be thought of a chat forum with a space dimension, as the users can move "
+"around and interact with other users and the artifacts they find in each "
+"location. In a typical mud, players can communicate and fight each other, "
+"use magic, trade, travel to new zones, resolve quizzes (also called quests), "
+"and become part of communities like guilds, orders, etc. The environment "
+"also varies between MUDs, but the most common are ambiented in fantasy "
+"worlds, similar to those described by Tolkien's `Lord of the Rings' or "
+"Dungeons and Dragons. Classic MUDs are text-based, and can be accessed "
+"through a simple `telnet' connection; the user inputs orders to the MUD "
+"server, and the server replies with the result of the action."
+msgstr ""
+"Multi-User Dungeons sind imaginäre Welten und Gebiete im Internet, in denen "
+"sich Leute verbinden und eine Reihe von Aktionen ausführen können. Ein MUD "
+"kann man sich als Chat-Forum mit einer räumlichen Dimension vorstellen, in "
+"dem sich Benutzer bewegen und mit anderen Benutzern und den an jedem Ort "
+"befindlichen Artefakten interagieren können. In einem typischen MUD können "
+"Benutzer kommunizieren und gegeneinander kämpfen, Magie anwenden, Handel "
+"treiben, in neue Zonen reisen, Rätsel lösen (auch »Quests«) genannt, Teil "
+"von Gemeinschaften werden, wie Gilden oder Orden usw. Die Umgebung variiert "
+"zwischen MUDs, aber die meisten sind im Fantasy-Bereich angesiedelt, ähnlich "
+"zu den in Tolkiens »Herr der Ringe« oder in »Dungeons and Dragons« "
+"beschriebenen Welten. Klassische MUDs sind textbasiert und können über eine "
+"einfache Telnet-Verbindung erreicht werden. Der Benutzer gibt Anfragen an "
+"den MUD-Server ein und der Server antwortet mit dem Ergebnis der Aktion."
+
+#: C/gnome-mud-manual.xml:135(para)
+msgid ""
+"There are hundreds of MUDs available on the Internet, but there are some "
+"sites that classify them and provide with detailed MUD lists, often provided "
+"by the MUD maintainers. <ulink url=\"http://www.mudconnect.com/\" type=\"http"
+"\">MudConnect.com</ulink> is one of them, and GNOME-Mud has native support "
+"for their mudlist format."
+msgstr ""
+"Im Internet sind Hunderte dieser MUDs verfügbar, die auf einigen Seiten "
+"klassifiziert in detaillierten MUD-Listen dargestellt werden. Dies "
+"übernehmen oft die MUD-Betreuer selbst. Eine davon ist <ulink url=\"http://"
+"www.mudconnect.com/\" type=\"http\">MudConnect.com</ulink>. Deren MUD-Listen-"
+"Format ist von GNOME-Mud nativ unterstützt."
+
+#: C/gnome-mud-manual.xml:142(para)
+msgid ""
+"<application>GNOME-Mud</application> provides the user with a series of "
+"functionality that makes mudding somewhat easier. Most notably, the ability "
+"to define `triggers', `aliases' and `character profiles', or the MUD lists "
+"support help making usual tasks like connecting to different MUDs and typing "
+"common names or commands more effective and fast."
+msgstr ""
+"<application>GNOME-Mud</application> stellt dem Benutzer eine Reihe von "
+"Funktionen zur Verfügung, die das »Mudding« erleichtert. Zu erwähnen wären "
+"»Auslöser«, »Aliase« und »Charakter-Profile«, oder die Unterstützung für MUD-"
+"Listen, die die Ausführung einfacher Aufgaben wie Verbindungsaufbau zu "
+"verschiedenen MUDs und die Eingabe häufig genutzter Namen und Befehle "
+"effektiver und schneller machen."
+
+#: C/gnome-mud-manual.xml:150(para)
+msgid ""
+"To run <application>GNOME-Mud</application>, select "
+"<menuchoice><guisubmenu>Games</guisubmenu><guimenuitem>GNOME-Mud</"
+"guimenuitem></menuchoice> from the <guimenu>Main Menu</guimenu>, or type "
+"<command>gnome-mud</command> on the command line."
+msgstr ""
+"Um <application>GNOME-Mud</application> auszuführen, wählen Sie "
+"<menuchoice><guisubmenu>Spiele</guisubmenu><guimenuitem>GNOME-Mud</"
+"guimenuitem></menuchoice> aus dem <guimenu>Hauptmenü</guimenu> oder geben "
+"Sie <command>gnome-mud</command> in der Befehlszeile ein."
+
+#: C/gnome-mud-manual.xml:167(title)
+msgid "Using GNOME-Mud"
+msgstr "GNOME-Mud verwenden"
+
+#: C/gnome-mud-manual.xml:168(para)
+msgid ""
+"<application>GNOME-Mud</application> can be used to play any kind of telnet-"
+"based MUDs, and should make mudding easier, both for players and coders. It "
+"can connect to various MUDs on the same application window, and load "
+"different settings depending on the character you're logging in. "
+"<application>GNOME-Mud</application>'s goal is to provide a similar client "
+"to <ulink url=\"http://www.zuggsoft.com/zmud/zmudinfo.htm\" type=\"http\"> "
+"zMUD</ulink>, a very mature MUD client for the Windows platform."
+msgstr ""
+"Mit <application>GNOME-Mud</application> können Sie jede Art von Telnet-"
+"basierten MUD spielen. Mudding sollte vereinfacht werden, sowohl für Spieler "
+"wie auch für Programmierer. Es kann sich mit mehreren MUDs im gleichen "
+"Anwendungsfenster verbinden und abhängig vom angemeldeten Charakter "
+"verschiedene Einstellungen laden. Das Ziel von <application>GNOME-Mud</"
+"application> ist es, einen ähnlichen Client wie <ulink url=\"http://www."
+"zuggsoft.com/zmud/zmudinfo.htm\" type=\"http\">zMUD</ulink> bereitzustellen, "
+"einem sehr ausgereiften Client für die Windows-Plattform."
+
+#: C/gnome-mud-manual.xml:181(title)
+msgid "Basic usage"
+msgstr "Grundlagen der Verwendung"
+
+#: C/gnome-mud-manual.xml:190(title) C/gnome-mud-manual.xml:192(screeninfo)
+msgid "GNOME-Mud Main Window"
+msgstr "Hauptfenster von GNOME-Mud"
+
+#: C/gnome-mud-manual.xml:182(para)
+msgid ""
+"Starting <application>GNOME-Mud</application> opens the <interface>Main "
+"window</interface>, shown in <xref linkend=\"main-window\"/>. The window is "
+"at first mostly empty, just showing some information about the "
+"<application>GNOME-Mud</application> build you're running. <placeholder-1/>"
+msgstr ""
+"Beim Start von <application>GNOME-Mud</application> wird das "
+"<interface>Hauptfenster</interface> geöffnet, wie in <xref linkend=\"main-"
+"window\"/> gezeigt. Das Fenster ist zunächst leer und zeigt lediglich einige "
+"Informationen über die laufende Version von <application>GNOME-Mud</"
+"application> an. <placeholder-1/>"
+
+#: C/gnome-mud-manual.xml:207(title)
+msgid "Connecting to a MUD"
+msgstr "Verbindung zu einem MUD"
+
+#: C/gnome-mud-manual.xml:220(title) C/gnome-mud-manual.xml:222(screeninfo)
+msgid "GNOME-Mud Connection Wizard"
+msgstr "Verbindungsassistent von GNOME-Mud"
+
+#: C/gnome-mud-manual.xml:208(para)
+msgid ""
+"To connect to a MUD, select <menuchoice><guisubmenu>File</"
+"guisubmenu><guimenuitem>Connection Wizard…</guimenuitem></menuchoice>, which "
+"will bring up the <interface>GNOME-Mud Connections</interface> dialog box. "
+"The <interface>Connection Wizard</interface> allows you to create different "
+"connections so you can store a list of \"personalities\". <placeholder-1/> "
+"To create a connection, enter a descriptive title (normally the MUD's full "
+"name) in the <guilabel>Title</guilabel> field and fill in the MUD's "
+"information in the <guilabel>Host</guilabel> and <guilabel>Port</guilabel> "
+"fields (leaving <guilabel>Port</guilabel> blank will make it default to port "
+"23). You can also import those fields very easily using the <link linkend="
+"\"mudlist\"><interface>GNOME-Mud MudList</interface></link> and selecting a "
+"MUD from there. Enter the character information in the <guilabel>Character</"
+"guilabel> and <guilabel>Password</guilabel> (password is only required if "
+"you want to autolog into the MUD). If you want to bind the connection to a "
+"set of aliases, triggers, variables keybinds, click on <guibutton>Select "
+"Profile</guibutton> and select the desired one from the list. See the "
+"section on <link linkend=\"profiles\"><interface>Profiles</interface></link> "
+"for more information on them. Once you have filled all the fields, press "
+"<guibutton>Apply</guibutton> to accept the values of the new profile or to "
+"update them, in case a profile with the same <guilabel>title</guilabel> "
+"already existed, or <guibutton>Cancel </guibutton> to discard them. When a "
+"connection is created, it will show up in the left column of the dialog, "
+"showing the MUD title and character name. Select the desired connection and "
+"press <guibutton>Connect</guibutton> to start the connection. "
+"<guibutton>Close</guibutton> will close the <interface>Connection Wizard</"
+"interface>."
+msgstr ""
+"Um eine Verbindung zu einem MUD aufzubauen, wählen Sie "
+"<menuchoice><guisubmenu>Datei</guisubmenu><guimenuitem>Verbindungsassistent …"
+"</guimenuitem></menuchoice>, wodurch der Dialog <interface>GNOME-Mud "
+"Verbindungen</interface> geöffnet wird. Der <interface>Verbindungsassistent</"
+"interface> ermöglicht Ihnen das Anlegen verschiedener Verbindungen, so dass "
+"Sie eine Liste von »Persönlichkeiten« pflegen können. <placeholder-1/> Um "
+"eine Verbindung zu erstellen, geben Sie einen beschreibenden Titel "
+"(normalerweise den vollständigen Namen des MUDs) im Feld <guilabel>Titel</"
+"guilabel> ein und tragen Sie die Informationen zum MUD in den Feldern "
+"<guilabel>Rechner</guilabel> und <guilabel>Port</guilabel> ein (ein leeres "
+"<guilabel>Port</guilabel>-Feld belässt den Port auf der Voreinstellung 23). "
+"Sie können diese Felder auch bequem über die <link linkend=\"mudlist"
+"\"><interface>MUD-Liste von GNOME-Mud</interface></link> ausfüllen, indem "
+"Sie einfach einen MUD von dort wählen. Geben Sie die Charakter-Information "
+"in <guilabel>Charakter</guilabel> und <guilabel>Passwort</guilabel> an (ein "
+"Passwort ist nur erforderlich, wenn Sie sich automatisch an diesem MUD "
+"anmelden wollen). Wenn Sie die Verbindung mit Aliasen, Auslösern oder "
+"variablen Tastenkombinationen verknüpfen wollen, klicken Sie auf "
+"<guibutton>Profil wählen</guibutton> und wählen Sie das Gewünschte aus der "
+"Liste aus. Siehe den Abschnitt zu <link linkend=\"profiles"
+"\"><interface>Profilen</interface></link> für weitere Informationen hierzu. "
+"Sobald Sie alle Felder ausgefüllt haben, klicken Sie auf "
+"<guibutton>Anwenden</guibutton>, um die Werte des aktuellen Profils zu "
+"übernehmen oder zu aktualisieren, im Fall wenn ein Profil mit dem gleichen "
+"<guilabel>Titel</guilabel> bereits existiert, oder <guibutton>Abbrechen</"
+"guibutton>, um sie zu verwerfen. Wenn die Verbindung erstellt ist, wird "
+"diese in der linken Spalte des Dialogs angezeigt, mit dem MUD-Titel und dem "
+"Charakternamen. Wählen Sie die gewünschte Verbindung aus und klicken Sie auf "
+"<guibutton>Verbinden</guibutton>, um die Verbindung aufzubauen. Mit "
+"<guibutton>Schließen</guibutton> schließen Sie den "
+"<interface>Verbindungsassistenten</interface>."
+
+#: C/gnome-mud-manual.xml:252(para)
+msgid ""
+"Alternatively, you can quickly connect to a MUD, bypassing the connection "
+"wizard selecting <menuchoice><guisubmenu>File</"
+"guisubmenu><guimenuitem>Connect…</guimenuitem></menuchoice>, which will "
+"bring up the <interface>Quick Connect</interface> dialog. Just fill in the "
+"<guilabel>Host</guilabel> and <guilabel>Port </guilabel> fields and press "
+"<guibutton>OK</guibutton> to connect to the desired MUD."
+msgstr ""
+"Alternativ können Sie schnell eine Verbindung zu einem MUD aufbauen, ohne "
+"den Verbindungsassistenten zu verwenden. Wählen Sie hierzu "
+"<menuchoice><guisubmenu>Datei</guisubmenu><guimenuitem>Verbinden …</"
+"guimenuitem></menuchoice>, woraufhin der Dialog "
+"<interface>Schnellverbindung</interface> geöffnet wird. Geben Sie einfach "
+"<guilabel>Rechner</guilabel> und <guilabel>Port</guilabel> ein und klicken "
+"Sie auf <guibutton>OK</guibutton>, um die Verbindung zum gewünschten MUD "
+"herzustellen."
+
+#: C/gnome-mud-manual.xml:264(para)
+msgid ""
+"If you open various connections simultaneously, <application> GNOME-Mud</"
+"application> will place them inside <interface>connection tabs</interface>, "
+"which will appear below the connection screen. To close a tab after "
+"disconnecting from a MUD, select <menuchoice><guisubmenu>File</"
+"guisubmenu><guimenuitem>Close Window</guimenuitem></menuchoice> and the tab "
+"will disappear."
+msgstr ""
+"Wenn Sie gleichzeitig mehrere Verbindungen öffnen, stellt <application>GNOME-"
+"Mud</application> diese in <interface>Verbindungsreitern</interface> dar, "
+"die unter der Verbindungsansicht erscheinen. Um einen Reiter nach erfolgter "
+"Trennung der Verbindung zu einem MUD zu schließen, wählen Sie "
+"<menuchoice><guisubmenu>Datei</guisubmenu><guimenuitem>Fenster schließen</"
+"guimenuitem></menuchoice>, und der Reiter wird geschlossen."
+
+#: C/gnome-mud-manual.xml:278(title)
+msgid "MudList support"
+msgstr "MudList-Unterstützung"
+
+#: C/gnome-mud-manual.xml:287(title) C/gnome-mud-manual.xml:289(screeninfo)
+msgid "GNOME-Mud MudList"
+msgstr "MUD-Liste in GNOME-Mud"
+
+#: C/gnome-mud-manual.xml:279(para)
+msgid ""
+"<application>GNOME-Mud</application> can read <ulink url=\"http://www."
+"mudconnect.com/\" type=\"http\"> MudConnect.com</ulink>'s MUD list, which is "
+"an extensive list of MUDs, with information about their codebase, host, port "
+"and including a description. There are two ways to use the <interface>GNOME-"
+"Mud MudList</interface>. <placeholder-1/>"
+msgstr ""
+"<application>GNOME-Mud</application> kann die MUD-Liste von <ulink url="
+"\"http://www.mudconnect.com/\" type=\"http\">MudConnect.com</ulink> lesen. "
+"Diese Liste ist sehr umfangreich, mit Informationen über die Codebasis, den "
+"Rechner, den Port und einer Beschreibung. Sie haben zwei Möglichkeiten zur "
+"Verwendung einer MUD-Liste in <interface>GNOME-Mud</interface>. "
+"<placeholder-1/>"
+
+#: C/gnome-mud-manual.xml:295(para)
+msgid ""
+"The most common way is probably by opening it from the <link linkend="
+"\"connecting\"><interface>Connection Wizard </interface></link>. This will "
+"open the <interface>GNOME-Mud Mudlist </interface> in \"import mode\". You "
+"will find a list of MUDs at the left column of the dialog, ordered by "
+"codebase. If you expand a codebase, you'll get a list of the MUDs in that "
+"section. Click on a MUD to see the information displayed in the right side "
+"of the <interface>MudList</interface>.<guilabel>Mud Name</guilabel> is the "
+"full name of the MUD, <guilabel>Telnet Address</guilabel> is the host and "
+"port where it is located and <guilabel>Codebase</guilabel> describes what "
+"type of MUD it is. <guilabel>Description</guilabel> shows a more or less "
+"description of the selected MUD. In \"import mode\", there will be a "
+"<guibutton>Import and close </guibutton> button, which will fetch the MUD "
+"info and fill it into a new connection in the <interface>Connection Wizard</"
+"interface>. There's also a <guibutton>Go to webpage of the MUD</guibutton> "
+"button, which will point a web browser to the webpage defined in the mud "
+"list."
+msgstr ""
+"Der am meisten verwendete Weg führt wahrscheinlich über den <link linkend="
+"\"connecting\"><interface>Verbindungsassistenten</interface></link>. Dies "
+"öffnet die <interface>MUD-Listen</interface> im »Importmodus«. Sie finden "
+"eine Liste der MUDs in der linken Spalte des Dialogs, nach Codebasis "
+"geordnet. Wenn Sie eine Codebasis ausklappen, wird eine Liste der MUDs in "
+"diesem Bereich angezeigt. Durch Anklicken eines MUDs werden Informationen "
+"rechts in der <interface>MUD-Liste</interface> angezeigt. <guilabel>MUD-"
+"Name</guilabel> ist der vollständige Name des MUDs, <guilabel>Telnet-"
+"Adresse</guilabel> gibt den Rechner und Port an, wo er sich befindet und "
+"<guilabel>Codebasis</guilabel> beschreibt den Typ des MUDs. In "
+"<guilabel>Beschreibung</guilabel> finden Sie eine mehr oder weniger "
+"ausführliche Beschreibung des MUDs. Im »Importmodus« gibt es einen mit "
+"<guibutton>Importieren und Schließen</guibutton> bezeichneten Knopf, über "
+"den die MUD-Information geholt und als neue Verbindung im "
+"<interface>Verbindungsassistenten</interface> eingetragen wird. Außerdem "
+"finden Sie dort den Knopf <guibutton>Zur Webseite des MUDs gehen</"
+"guibutton>, der einen Webbrowser mit der in der MUD-Liste angegebenen "
+"Adresse öffnet."
+
+#: C/gnome-mud-manual.xml:314(para)
+msgid ""
+"Another way of using the MudList is exactly the opposite. Select "
+"<menuchoice><guisubmenu>File</guisubmenu><guimenuitem>MudList Listing…</"
+"guimenuitem></menuchoice> and you'll get the same dialog as if opened from "
+"the <interface>Connection Wizard</interface>, only the <guibutton>Import and "
+"close</guibutton> button will be replaced by <guibutton>Connect to the mud</"
+"guibutton>."
+msgstr ""
+"Ein weiterer Weg zur Verwendung der MUD-Liste ist genau andersherum. Wählen "
+"Sie <menuchoice><guisubmenu>Datei</guisubmenu><guimenuitem>Mud-Listen …</"
+"guimenuitem></menuchoice> und der gleiche Dialog wie beim "
+"<interface>Verbindungsassistenten</interface> wird geöffnet. Lediglich der "
+"Knopf <guibutton>Importieren und Schließen</guibutton> wird durch "
+"<guibutton>Zum MUD verbinden</guibutton> ersetzt."
+
+#: C/gnome-mud-manual.xml:328(title)
+msgid "Disconnecting from MUDs"
+msgstr "Verbindungen zu MUDs trennen"
+
+#: C/gnome-mud-manual.xml:329(para)
+msgid ""
+"To disconnect from a MUD, you should try to use your MUD's logout command. "
+"Normally this command is <command>quit</command> or <command>rent</command>, "
+"but it can vary across MUD flavours. <application>GNOME-Mud</application> "
+"can \"hard-disconnect\" from a mud, using <menuchoice><guisubmenu>File</"
+"guisubmenu><guimenuitem>Disconnect</guimenuitem></menuchoice>, or just "
+"quitting from <application>GNOME-Mud</application>."
+msgstr ""
+"Um die Verbindung zu einem MUD zu trennen, sollten Sie stets versuchen, den "
+"Abmeldebefehl des jeweiligen MUDs zu verwenden. Normalerweise ist dies der "
+"Befehl <command>quit</command> oder <command>rent</command>, kann aber "
+"abhängig vom MUD auch variieren. In <application>GNOME-Mud</application> "
+"können Sie eine »harte« Verbindungstrennung vornehmen, indem Sie "
+"<menuchoice><guisubmenu>Datei</guisubmenu><guimenuitem>Verbindung trennen</"
+"guimenuitem></menuchoice> wählen oder <application>GNOME-Mud</application> "
+"einfach beenden."
+
+#: C/gnome-mud-manual.xml:342(title)
+msgid "Warning on hard-disconnects"
+msgstr "Warnung bei harten Verbindungsabbrüchen"
+
+#: C/gnome-mud-manual.xml:343(para)
+msgid ""
+"It is very desirable that you disconnect from MUDs using the MUD's own "
+"logout procedures. Some MUDs have retarded quit commands to avoid people "
+"escaping from death during fights, so you need to wait some seconds or "
+"minutes since you send the quit command till you actually quit. If you hard-"
+"disconnect using <application> GNOME-Mud</application>'s "
+"<interface>Disconnect</interface>, you may stay in the MUD for a while, "
+"idling and uncontrolled, while the MUD locks you in or it realizes you have "
+"lost your connection. This could be dangerous, as other players could take "
+"advantage of your idling to kill you or steal your possessions, for example."
+msgstr ""
+"Es ist sehr sinnvoll, dass Sie eine Verbindung über die jeweilige "
+"Abmeldeprozedur eines MUDs trennen. Einige MUDs haben verzögerte Beenden-"
+"Befehle, um zu verhindern, dass Spieler während eines Kampfs dem Tod "
+"entgehen, daher müssen Sie zwischen dem Absenden des Beenden-Befehls und der "
+"tatsächlichen Abmeldung einige Sekunden oder Minuten warten. Wenn Sie über "
+"den <interface>Disconnect</interface>-Befehl in <application> GNOME-Mud</"
+"application> eine harte Trennung vornehmen, verbleiben Sie möglicherweise "
+"eine Zeitlang untätig und unkontrolliert im MUD, während der MUD Sie sperrt "
+"oder bemerkt, dass Sie Ihre Verbindung verloren haben. Das kann gefährlich "
+"sein, weil andere Mitspieler einen Vorteil daraus ziehen und Sie "
+"beispielsweise töten oder Ihre erworbenen Güter stehlen könnten."
+
+#: C/gnome-mud-manual.xml:359(title)
+msgid "Editing Profiles"
+msgstr "Profile bearbeiten"
+
+#: C/gnome-mud-manual.xml:369(title) C/gnome-mud-manual.xml:371(screeninfo)
+msgid "GNOME-Mud Profiles"
+msgstr "Profile in GNOME-Mud"
+
+#: C/gnome-mud-manual.xml:378(term)
+msgid "New"
+msgstr "Neu"
+
+#: C/gnome-mud-manual.xml:380(para)
+msgid ""
+"Brings up the <interface>New Profile</interface> dialog. Enter the name of "
+"the new profile and it will be created with empty values."
+msgstr ""
+"Öffnet den Dialog <interface>Neues Profil</interface>. Geben Sie den Namen "
+"des neuen Profils ein, woraufhin dieses mit zunächst leeren Werten erstellt "
+"wird."
+
+#: C/gnome-mud-manual.xml:388(term)
+msgid "Delete"
+msgstr "Löschen"
+
+#: C/gnome-mud-manual.xml:390(para)
+msgid "Deletes the selected profile. The \"Default\" profile can't be deleted."
+msgstr ""
+"Löscht das ausgewählte Profil. Das Profil »Standard« kann nicht gelöscht "
+"werden."
+
+#: C/gnome-mud-manual.xml:397(term)
+msgid "Aliases"
+msgstr "Aliase"
+
+#: C/gnome-mud-manual.xml:399(para)
+msgid ""
+"Aliases are similar to UNIX shell aliases. Pressing on the button will open "
+"an alias editor. On the top of the dialog, there is a list of defined "
+"aliases, and beneath it there are two fields to insert new values. To create "
+"a new alias, insert an shortcut in the <guilabel>Alias</guilabel> field, and "
+"the desired expanded command in the <guilabel> Replacement </guilabel> "
+"field. Clicking on <guibutton> Add</guibutton> will add or modify the edited "
+"alias and add it to the alias list. For example, filling in <guilabel>Alias</"
+"guilabel> with \"wd\" and <guilabel> Replacement</guilabel> with \"who drow"
+"\" will make <application>GNOME-Mud</application> send the \"who drow\" "
+"command to the MUD when the user issues a \"wd\" command in the input line. "
+"You can get rid of unwanted aliases by selecting it and clicking on "
+"<guibutton>Delete</guibutton>. Exit the alias editor with the "
+"<guibutton>Close</guibutton> button."
+msgstr ""
+"Aliase ähneln den Shell-Aliasen unixoider Betriebssysteme. Durch Anklicken "
+"des Knopfes wird ein Alias-Editor geöffnet. Im oberen Bereich des Dialogs "
+"und darunter finden finden Sie zwei Felder, in denen Sie neue Werte eingeben "
+"können. Um einen neuen Alias anzulegen, geben Sie ein Kürzel in das Feld "
+"<guilabel>Alias</guilabel> und den vollständigen gewünschten Befehl in das "
+"Feld  <guilabel>Ersetzung</guilabel> ein. Durch einen Klick auf "
+"<guibutton>Hinzufügen</guibutton> wird der Alias hinzugefügt oder geändert "
+"und zur Alias-Liste hinzugefügt. Wenn Sie beispielsweise »wd« in "
+"<guilabel>Alias</guilabel> eintragen und als <guilabel>Ersetzung</guilabel> "
+"»who draw« angeben, sendet <application>GNOME-Mud</application> den Befehl "
+"»who draw« zum MUD, wenn Sie »wd« in die Eingabezeile schreiben. Sie können "
+"einen nicht mehr erwünschten Alias löschen, indem Sie ihn auswählen und auf "
+"<guibutton>Löschen</guibutton> klicken. Beenden können Sie den Alias-Editor "
+"mit dem Knopf <guibutton>Schließen</guibutton>."
+
+#: C/gnome-mud-manual.xml:421(term)
+msgid "Variables"
+msgstr "Variablen"
+
+#: C/gnome-mud-manual.xml:423(para)
+msgid ""
+"Variables are useful to replace things within <interface> Triggers</"
+"interface> or <interface>Variables</interface>. For example, if you have "
+"defined a trigger with a nick in it, you can use a variable instead of "
+"specifying the nick, so you just need to change the variable value to apply "
+"the trigger to another nick."
+msgstr ""
+"Variablen sind nützlich, um Dinge wie <interface>Auslöser</interface> oder "
+"<interface>Variablen</interface> zu ersetzen. Wenn Sie beispielsweise einen "
+"Auslöser mit einem Spitznamen darin definiert haben, können Sie eine "
+"Variable verwenden, anstatt den Spitznamen anzugeben. So brauchen Sie nur "
+"den Wert der Variable zu ändern, um den Spitznamen in einem anderen Auslöser "
+"zu verwenden."
+
+#: C/gnome-mud-manual.xml:432(para)
+msgid ""
+"This feature is very limited at the moment and should be extended in future "
+"<application>GNOME-Mud</application> releases."
+msgstr ""
+"Dieses Funktionsmerkmal ist derzeit noch ziemlich eingeschränkt und wird in "
+"zukünftigen Veröffentlichungen von <application>GNOME-Mud</application> "
+"leistungsfähiger sein."
+
+#: C/gnome-mud-manual.xml:441(term)
+msgid "Triggers"
+msgstr "Auslöser"
+
+#: C/gnome-mud-manual.xml:443(para)
+msgid ""
+"Triggers are a very useful feature. When you define an <guilabel>Action</"
+"guilabel> and bind a <guilabel>Trigger </guilabel> to it, <application>GNOME-"
+"Mud</application> will execute the trigger when it detects that the action "
+"has occured. For example, setting <guilabel>Action</guilabel> to \"You are "
+"being attacked\" and <guilabel>Trigger</guilabel> to \"<command>flee</"
+"command>\", you will try to escape as soon as you get hit by an enemy. "
+"Please note that some MUDs consider any kind of automation as "
+"<emphasis>cheating </emphasis>, so ask the MUD staff about this before using "
+"it."
+msgstr ""
+"Auslöser sind ein sehr nützliches Funktionsmerkmal. Wenn Sie eine "
+"<guilabel>Aktion</guilabel> definieren und einen <guilabel>Auslöser </"
+"guilabel> damit verknüpfen, führt <application>GNOME-Mud</application> den "
+"Auslöser aus, sobald es erkennt, dass sich die Aktion ereignet hat. Wenn Sie "
+"beispielsweise »Sie werden angegriffen« als <guilabel>Aktion</guilabel> "
+"definieren und <command>flee</command> als <guilabel>Auslöser</guilabel> "
+"setzen, dann werden Sie versuchen zu entkommen, sobald Sie von einem Feind "
+"getroffen werden. Beachten Sie aber, dass diese Art der Automatisierung von "
+"einigen MUDs als unerwünschtes <emphasis>Cheating</emphasis> gewertet wird. "
+"Fragen Sie also erst die Betreuer des MUDs, bevor Sie dieses "
+"Funktionsmerkmal verwenden."
+
+#: C/gnome-mud-manual.xml:458(term)
+msgid "Keybinds"
+msgstr "Tastenkombinationen"
+
+#: C/gnome-mud-manual.xml:460(para)
+msgid ""
+"Keybinds perform commands when you activate a key sequence or combination. "
+"You need to insert a keybind in the <guilabel>Bind</guilabel> field and the "
+"command to be sent in <guilabel>Command</guilabel>. You can insert binds "
+"more easily using the <guibutton>Capture</guibutton>. When pressed, it will "
+"capture the next key combination that you press on the keyboard and insert "
+"it in the <guilabel>Bind </guilabel> field. Keybinds are useful for many "
+"things, for example, \"speed walking\". If you bind \"Up\" to the \"north\" "
+"command, you will be able to walk north just pressing the \"Up Arrow\" key."
+msgstr ""
+"Tastenkombinationen führen Befehle aus, wenn Sie eine Tastenfolge oder "
+"Kombination mehrerer Tasten eingeben. Sie müssen eine Tastenkombination in "
+"das Feld <guilabel>Binden</guilabel> und den zu sendenden Befehl in das Feld "
+"<guilabel>Befehl</guilabel> eintragen. Einfacher lassen sich "
+"Tastenzuweisungen durch <guibutton>Aufzeichnen</guibutton> definieren. Wenn "
+"gedrückt, wird die nächste Tastenkombination, die Sie drücken, aufgezeichnet "
+"und in das Feld <guilabel>Binden</guilabel> eingetragen. Tastenkombinationen "
+"sind auf vielfältige Weise nützlich, zum Beispiel für die schnelle "
+"Fortbewegung. Wenn Sie die »Pfeiltaste hoch« mit dem »north«-Befehl "
+"verknüpfen, können Sie sich einfach durch Drücken dieser Pfeiltaste nach "
+"Norden bewegen."
+
+#: C/gnome-mud-manual.xml:476(term)
+msgid "Close"
+msgstr "Schließen"
+
+#: C/gnome-mud-manual.xml:478(para)
+msgid "This closes the Profiles editor."
+msgstr "Dadurch wird der Profileditor geschlossen."
+
+#: C/gnome-mud-manual.xml:360(para)
+msgid ""
+"Normally, each character class has different commands and abilities which "
+"require different configurations for the mudding session. Using "
+"<interface>Profiles</interface>, you can customize different features of "
+"<application>GNOME-Mud</application> to suit the current character's needs. "
+"To edit them, select <guibutton>Profiles</guibutton> from the toolbar, and a "
+"dialog with a list of customizable items will appear. <placeholder-1/"
+"><placeholder-2/> Use the <link linkend=\"connecting\"><interface>Connection "
+"Wizard </interface></link> to bind a profile to a connection."
+msgstr ""
+"Normalerweise sind verschiedene Charakterklassen mit ihren eigenen Befehlen "
+"und Fähigkeiten verbunden und erfordern daher unterschiedliche "
+"Konfigurationen für eine Mudding-Sitzung. Mit <interface>Profilen</"
+"interface> können Sie verschiedene Funktionsmerkmale von <application>GNOME-"
+"Mud</application> anpassen, um den Erfordernissen des aktuellen Charakters "
+"gerecht zu werden. Um diese zu bearbeiten, wählen Sie <guibutton>Profile</"
+"guibutton> in der Werkzeugleiste, woraufhin ein Dialog mit einer Liste "
+"anpassbarer Objekte angezeigt wird. <placeholder-1/><placeholder-2/> "
+"Verwenden Sie den <link linkend=\"connecting"
+"\"><interface>Verbindungsassistenten</interface></link>, um ein Profil mit "
+"einer Verbindung zu verknüpfen."
+
+#: C/gnome-mud-manual.xml:490(title)
+msgid "The GNOME-Mud Auto Mapper"
+msgstr "Automatische Kartierung in GNOME-Mud"
+
+# Die Kürzel für die Himmelsrichtungen sind in der GUI nicht übersetzbar.
+#: C/gnome-mud-manual.xml:491(para)
+msgid ""
+"<application>GNOME-Mud</application> has a an internal application which can "
+"be used to draw maps of dungeons, roads or other zones of a MUD. It consists "
+"of a simple dialog of the eight cardinal directions (<guibutton>N</"
+"guibutton>, <guibutton>NE</guibutton>, <guibutton>E</guibutton>, "
+"<guibutton>SE</guibutton>, <guibutton>S</guibutton>, <guibutton>SW</"
+"guibutton>, <guibutton>W</guibutton> and <guibutton>NW</guibutton>), "
+"<guibutton>Up</guibutton> and <guibutton>Down</guibutton>. Using them (or "
+"the numeric keypad) will draw a simple map in the drawing screen at the "
+"left. You can save maps using <guibutton> Save</guibutton> and typing a "
+"filename, and load previously saved maps using the <guibutton>Load</"
+"guibutton>."
+msgstr ""
+"<application>GNOME-Mud</application> verfügt über eine interne Anwendung, "
+"die zum Kartieren von Dungeons, Wegen oder anderer Zonen eines MUDs "
+"verwendet werden kann. Es besteht aus einem simplen Dialog der acht Haupt- "
+"und Nebenhimmelsrichtungen (<guibutton>N</guibutton>, <guibutton>NE</"
+"guibutton>, <guibutton>E</guibutton>, <guibutton>SE</guibutton>, "
+"<guibutton>S</guibutton>, <guibutton>SW</guibutton>, <guibutton>W</"
+"guibutton> and <guibutton>NW</guibutton>), <guibutton>Hoch</guibutton> und "
+"<guibutton>Runter</guibutton>. Mit diesen (oder dem Ziffernblock) wird eine "
+"einfache Karte im Zeichenbereich links angezeigt. Sie können solche Karten "
+"speichern, indem Sie <guibutton>Speichern</guibutton> wählen und einen "
+"Dateinamen eingeben. Zuvor gespeicherte Karten können Sie mit "
+"<guibutton>Laden</guibutton> wieder anzeigen lassen."
+
+#: C/gnome-mud-manual.xml:522(title)
+msgid "Toolbar"
+msgstr "Werkzeugleiste"
+
+#: C/gnome-mud-manual.xml:527(term)
+msgid "Wizard…"
+msgstr "Assistent …"
+
+#: C/gnome-mud-manual.xml:529(para)
+msgid ""
+"Brings up the <link linkend=\"connecting\"><interface> Connection Wizard</"
+"interface></link> dialog."
+msgstr ""
+"Öffnet den Dialog des <link linkend=\"connecting"
+"\"><interface>Verbindungsassistenten</interface></link>."
+
+#: C/gnome-mud-manual.xml:536(term)
+msgid "Profiles"
+msgstr "Profile"
+
+#: C/gnome-mud-manual.xml:538(para)
+msgid ""
+"Opens the <link linkend=\"profiles\"><interface>Profiles Editor </"
+"interface></link> dialog."
+msgstr ""
+"Öffnet den Dialog des <link linkend=\"profiles\"><interface>Profileditors</"
+"interface></link>."
+
+#: C/gnome-mud-manual.xml:545(term)
+msgid "Connect…"
+msgstr "Verbinden …"
+
+#: C/gnome-mud-manual.xml:547(para)
+msgid ""
+"Opens the <interface>Quick Connect</interface> dialog. Use this to open a "
+"MUD connection bypassing the Connection Wizard."
+msgstr ""
+"Öffnet den <interface>Schnellverbindungs</interface>-Dialog. Verwenden Sie "
+"dies zum Öffnen einer MUD-Verbindung, ohne den Verbindungsassistenten zu "
+"nutzen."
+
+#: C/gnome-mud-manual.xml:555(term)
+msgid "Disconnect"
+msgstr "Verbindung trennen"
+
+#: C/gnome-mud-manual.xml:557(para)
+msgid ""
+"Disconnects from the current connection. See the <link linkend="
+"\"disconnecting\">Disconnecting from MUDs</link> for more information about "
+"this."
+msgstr ""
+"Trennt die aktuelle Verbindung. In <link linkend=\"disconnecting"
+"\">Verbindungen zu MUDs trennen</link> finden Sie dazu weitere Informationen."
+
+#: C/gnome-mud-manual.xml:565(term)
+msgid "Reconnect"
+msgstr "Neu verbinden"
+
+#: C/gnome-mud-manual.xml:567(para)
+msgid ""
+"Reconnects to the current connection. If you loose the link to the MUD, you "
+"can hit this to get reconnected again. If the connection was open, it will "
+"close the current connection and start a new one."
+msgstr ""
+"Stellt die aktuelle Verbindung erneut her. Wenn Sie den Link zum MUD "
+"verlieren, können Sie diese Funktion verwenden, um die Verbindung erneut "
+"aufzubauen. Wenn die Verbindung noch geöffnet war, wird die aktuelle "
+"Verbindung geschlossen und eine neue aufgebaut."
+
+#: C/gnome-mud-manual.xml:576(term)
+msgid "Exit"
+msgstr "Beenden"
+
+#: C/gnome-mud-manual.xml:578(para)
+msgid "Exits from <application>GNOME-Mud</application>."
+msgstr "Beendet <application>GNOME-Mud</application>."
+
+#: C/gnome-mud-manual.xml:523(para)
+msgid ""
+"The toolbar provides access to several commonly used routines. "
+"<placeholder-1/>"
+msgstr ""
+"Die Werkzeugleiste ermöglicht den Zugriff auf verschiedene häufig genutzte "
+"Aktionen. <placeholder-1/>"
+
+#. Describing the menubar ensures comprehensive feature
+#.        coverage. Nest itemizedlists inside variablelists so that each
+#.        menu is easily located by indexing software. Proper indentation
+#.        makes it easier!
+#: C/gnome-mud-manual.xml:595(title)
+msgid "Menus"
+msgstr "Menüs"
+
+#: C/gnome-mud-manual.xml:596(para)
+msgid ""
+"The menu bar, located at the top of the <interface>Main Window</interface>, "
+"contains the following menus:"
+msgstr ""
+"Die Menüleiste am oberen Rand des <interface>Hauptfensters</interface> "
+"enthält die folgenden Menüs:"
+
+#: C/gnome-mud-manual.xml:602(guimenu)
+msgid "File"
+msgstr "Datei"
+
+#: C/gnome-mud-manual.xml:608(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Connection Wizard…</guimenuitem></menuchoice> "
+"This starts the <link linkend=\"connecting\"><interface>Connection Wizard</"
+"interface></link> dialog, which can be used to select to which MUD should "
+"<application>GNOME-Mud</application> connect."
+msgstr ""
+"<menuchoice> • <guimenuitem>Verbindungsassistent …</guimenuitem></"
+"menuchoice> Dies startet den Dialog des <link linkend=\"connecting"
+"\"><interface>Verbindungsassistenten</interface></link>, in dem Sie "
+"auswählen können, mit welchem MUD sich <application>GNOME-Mud</application> "
+"verbinden soll."
+
+#: C/gnome-mud-manual.xml:619(para)
+msgid ""
+"<menuchoice> • <guimenuitem>MudList Listing…</guimenuitem></menuchoice> This "
+"opens the <link linkend=\"mudlist\"><interface>MudList</interface> dialog</"
+"link>, which can be used to browse a list of MUDs and connect to them or add "
+"them to your MUD connections."
+msgstr ""
+"<menuchoice> • <guimenuitem>MudList-Listen …</guimenuitem></menuchoice> Dies "
+"öffnet den <link linkend=\"mudlist\"><interface>MUD-Listen</interface>-"
+"Dialog</link>, in dem Sie eine Liste der MUDs durchsuchen und eine "
+"Verbindung zu MUDs aufbauen oder Sie zu Ihren MUD-Verbindungen hinzufügen "
+"können."
+
+#: C/gnome-mud-manual.xml:630(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Connect…</guimenuitem></menuchoice> This opens "
+"the <interface>Quick Connect </interface> dialog. Use this to open a MUD "
+"connection bypassing the Connection Wizard."
+msgstr ""
+"<menuchoice> • <guimenuitem>Verbinden …</guimenuitem></menuchoice> Dies "
+"öffnet den <interface>Schnellverbindungs</interface>-Dialog. Verwenden Sie "
+"dies zum Öffnen einer MUD-Verbindung, ohne den Verbindungsassistenten zu "
+"nutzen."
+
+#: C/gnome-mud-manual.xml:640(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Disconnect</guimenuitem></menuchoice> This "
+"disconnects you from the current connection. See <link linkend="
+"\"disconnecting\">Disconnecting from MUDs </link> for more info about this."
+msgstr ""
+"<menuchoice> • <guimenuitem>Verbindung trennen</guimenuitem></menuchoice> "
+"Schließt die aktuelle Verbindung. Siehe <link linkend=\"disconnecting"
+"\">Verbindungen zu MUDs trennen</link> für weitere Informationen darüber."
+
+#: C/gnome-mud-manual.xml:650(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Reconnect</guimenuitem></menuchoice> This will "
+"reconnect you to the current connection. If you loose the link to the MUD, "
+"you can hit this to get reconnected again. If the connection was open, it "
+"will close the current connection and start a new one."
+msgstr ""
+"<menuchoice> • <guimenuitem>Neu verbinden</guimenuitem></menuchoice> Dadurch "
+"wird die aktuelle Verbindung erneut aufgebaut. Wenn Sie die Verbindung zum "
+"MUD verlieren, können Sie damit eine erneute Verbindung aufbauen. Wenn die "
+"Verbindung geöffnet war, wird diese geschlossen und eine neue hergestellt."
+
+#: C/gnome-mud-manual.xml:661(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Start Logging…</guimenuitem></menuchoice> This "
+"will enable the recording of the currently selected connection. It will "
+"write all the output of a mudding session into the selected file."
+msgstr ""
+"<menuchoice> • <guimenuitem>Protokollierung beginnen …</guimenuitem></"
+"menuchoice> Dadurch wird die Aufzeichnung der aktuell ausgewählten "
+"Verbindung aktiviert. Sämtliche Ausgaben einer Mudding-Sitzung werden in die "
+"ausgewählte Datei geschrieben."
+
+#: C/gnome-mud-manual.xml:671(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Stop Logging</guimenuitem></menuchoice> This "
+"stops the recording of a connection, if it had been previously started."
+msgstr ""
+"<menuchoice> • <guimenuitem>Protokollierung anhalten</guimenuitem></"
+"menuchoice> Dadurch wird die Protokollierung einer Sitzung gestoppt, die "
+"vorher gestartet wurde."
+
+#: C/gnome-mud-manual.xml:680(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Save Buffer…</guimenuitem></menuchoice> This "
+"permits you to save your current connection buffer into a file. Useful to "
+"keep deathlogs or questlogs. It will just take a 'snapshot' of past "
+"messages, writing it into the selected file. For real time logging, see "
+"'Start/Stop Logging'."
+msgstr ""
+"<menuchoice> • <guimenuitem>Puffer speichern …</guimenuitem></menuchoice> "
+"Dies ermöglicht Ihnen die Speicherung des Puffers der aktuellen Verbindung "
+"in eine Datei. Dies ist nützlich, wenn Sie »Deathlogs« oder »Questlogs« "
+"behalten wollen. Gespeichert wird einfach ein Schnappschuss der letzten "
+"Meldungen. Diese werden in die ausgewählte Datei geschrieben. Für die "
+"Echtzeitprotokollierung siehe »Protokollierung starten/anhalten«."
+
+#: C/gnome-mud-manual.xml:692(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Close Window</guimenuitem></menuchoice> This "
+"closes a connection tab, even if the connection is still open."
+msgstr ""
+"<menuchoice> • <guimenuitem>Fenster schließen</guimenuitem></menuchoice> "
+"Dadurch wird der Verbindungsreiter geschlossen, selbst wenn noch eine "
+"Verbindung geöffnet ist."
+
+#: C/gnome-mud-manual.xml:701(para)
+msgid ""
+"<menuchoice><shortcut><keycombo><keycap>Ctrl</keycap><keycap>Q</keycap></"
+"keycombo></shortcut> • <guimenuitem>Exit</guimenuitem></menuchoice> This "
+"quits the application."
+msgstr ""
+"<menuchoice><shortcut><keycombo><keycap>Strg</keycap><keycap>Q</keycap></"
+"keycombo></shortcut> • <guimenuitem>Beenden</guimenuitem></menuchoice> "
+"Beendet die Anwendung."
+
+#: C/gnome-mud-manual.xml:604(para) C/gnome-mud-manual.xml:719(para)
+#: C/gnome-mud-manual.xml:766(para)
+msgid "This menu contains: <placeholder-1/>"
+msgstr "Dieses Menü enthält: <placeholder-1/>"
+
+#: C/gnome-mud-manual.xml:717(guimenu)
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: C/gnome-mud-manual.xml:723(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Auto Mapper…</guimenuitem></menuchoice> This "
+"opens the Auto Mapper feature (see the <link linkend=\"mapping\">GNOME-Mud "
+"Auto Mapper</link> section for more information."
+msgstr ""
+"<menuchoice> • <guimenuitem>Auto-Kartierung …</guimenuitem></menuchoice> "
+"Dies öffnet die automatische Kartenerstellung (siehe <link linkend=\"mapping"
+"\">Automatische Kartierung in GNOME-Mud</link> für weitere Informationen."
+
+#: C/gnome-mud-manual.xml:733(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Plugins</guimenuitem></menuchoice> This opens a "
+"submenu with the list of available plugins for <application>GNOME-Mud</"
+"application> and the <interface>Plugin Information</interface>, which shows "
+"information about them. Currently, <application>GNOME-Mud </application> "
+"does not ship with any plugin, but creating your own should be pretty easy. "
+"An example of an useful plugin could be a graphical Health Points/Mana "
+"monitor."
+msgstr ""
+"<menuchoice> • <guimenuitem>Erweiterungen</guimenuitem></menuchoice> Dies "
+"öffnet ein Untermenü mit einer Auflistung der verfügbaren Erweiterungen für "
+"<application>GNOME-Mud</application> und die <interface>Information zur "
+"Erweiterung</interface>, in der weitere Informationen enthalten sind. "
+"Gegenwärtig wird keine Erweiterung mit <application>GNOME-Mud </application> "
+"ausgeliefert, aber die Erstellung Ihrer eigenen Erweiterung sollte kein "
+"allzu großes Problem darstellen. Ein Beispiel für eine nützliche Erweiterung "
+"könnte eine grafische Überwachung der Lebenspunkte/Mana sein."
+
+#: C/gnome-mud-manual.xml:748(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Preferences…</guimenuitem></menuchoice> This "
+"opens the <link linkend=\"prefs\"><interface>Preferences</interface></link> "
+"dialog, which is used configure different aspects of <application>GNOME-Mud</"
+"application>."
+msgstr ""
+"<menuchoice> • <guimenuitem>Einstellungen …</guimenuitem></menuchoice> "
+"Dadurch wird der <link linkend=\"prefs\"><interface>Einstellungsdialog</"
+"interface></link> geöffnet, in dem Sie verschiedene Aspekte von "
+"<application>GNOME-Mud</application> konfigurieren können."
+
+#: C/gnome-mud-manual.xml:764(guimenu)
+msgid "Help"
+msgstr "Hilfe"
+
+#: C/gnome-mud-manual.xml:770(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Manual</guimenuitem></menuchoice> This opens the "
+"<application>GNOME Help Browser</application> and displays this manual."
+msgstr ""
+"<menuchoice> • <guimenuitem>Handbuch</guimenuitem></menuchoice> Der "
+"<application>GNOME-Hilfebrowser</application> wird geöffnet und dieses "
+"Handbuch angezeigt."
+
+#: C/gnome-mud-manual.xml:779(para)
+msgid ""
+"<menuchoice> • <guimenuitem>About</guimenuitem></menuchoice> This opens the "
+"<interface>About</interface> dialog which shows basic information about "
+"<application>GNOME-Mud</application>, such as the author's name, the "
+"application version number, the names of several contributors to the project "
+"and a link to<application>GNOME-Mud</application>'s Homepage."
+msgstr ""
+"<menuchoice> • <guimenuitem>Info</guimenuitem></menuchoice> Dies öffnet den "
+"<interface>Info</interface>-Dialog, in dem grundlegende Informationen zu "
+"<application>GNOME-Mud</application> angezeigt werden, wie den Namen des "
+"Autors, die Versionsnummer der Anwendung, die Namen der verschiedenen "
+"Mitwirkenden und einen Verweis zur Projektseite von <application>GNOME-Mud</"
+"application>."
+
+#: C/gnome-mud-manual.xml:805(title)
+msgid "Customization"
+msgstr "Anpassung"
+
+#: C/gnome-mud-manual.xml:806(para)
+msgid ""
+"To change the application settings, select <menuchoice><guimenu>Settings</"
+"guimenu><guimenuitem>Preferences…</guimenuitem></menuchoice>. This opens the "
+"<interface>Preferences</interface> dialog, shown in <xref linkend="
+"\"preferences-window\"/>."
+msgstr ""
+"Um die Einstellungen der Anwendung anzupassen, wählen Sie "
+"<menuchoice><guimenu>Einstellungen</guimenu><guimenuitem>Einstellungen …</"
+"guimenuitem></menuchoice>. Daraufhin wird der <interface>Einstellungs</"
+"interface>dialog geöffnet, wie in <xref linkend=\"preferences-window\"/> "
+"gezeigt."
+
+#: C/gnome-mud-manual.xml:817(title) C/gnome-mud-manual.xml:819(screeninfo)
+msgid "Preferences Dialog"
+msgstr "Einstellungsdialog"
+
+#: C/gnome-mud-manual.xml:829(guilabel)
+msgid "Echo the text sent?"
+msgstr "Den verschickten Text lokal ausgeben?"
+
+#: C/gnome-mud-manual.xml:831(para)
+msgid ""
+"If this is set, all the text you type and enter will be echoed on the "
+"connection so you can control what you are sending."
+msgstr ""
+"Falls dies gesetzt ist, wird sämtlicher eingegebener und versendeter Text "
+"lokal ausgegeben, so dass Sie überprüfen können, was Sie versenden."
+
+#: C/gnome-mud-manual.xml:839(term)
+msgid "Keep the text entered?"
+msgstr "Den eingegebenen Text beibehalten?"
+
+#: C/gnome-mud-manual.xml:841(para)
+msgid ""
+"If this is set, the text you have entered and sent to the connection, will "
+"be left in the entry box but selected. Turn this off to remove the text "
+"after it has been sent."
+msgstr ""
+"Falls dies gesetzt ist, verbleibt der von Ihnen eingegebene und versendete "
+"Text im Eingabefeld und ist weiterhin markiert. Schalten Sie dies aus, um "
+"den Text nach dem Senden zu entfernen."
+
+#: C/gnome-mud-manual.xml:849(term)
+msgid "Freeze/Thaw?"
+msgstr "Einfrieren/Auftauen?"
+
+#: C/gnome-mud-manual.xml:851(para)
+msgid ""
+"If set, text will draw faster but it will not draw every character, only "
+"whole strings. This will probably make displays a lot faster if you are "
+"playing MUDs with a lot of different colours."
+msgstr ""
+"Falls dies gesetzt ist, wird Text schneller dargestellt, aber nicht "
+"zeichenweise, sondern nur ganze Zeichenketten. Dadurch wird die Anzeige "
+"möglicherweise etwas schneller, wenn Sie MUDs mit vielen verschiedenen "
+"Farben spielen."
+
+#: C/gnome-mud-manual.xml:860(term)
+msgid "Disable system keys"
+msgstr "Systemtasten deaktivieren"
+
+#: C/gnome-mud-manual.xml:862(para)
+msgid ""
+"If set, <application>GNOME-Mud</application> will provide with some default "
+"keybinds, like for example direction aliases in the numeric keypad. These "
+"can always be overriden by user keybindings, or can be totally disabled from "
+"here."
+msgstr ""
+"Wenn gesetzt, stellt <application>GNOME-Mud</application> eine Reihe "
+"voreingestellter Tastenkombinationen bereit, wie für Richtungsanweisungen "
+"über den Ziffernblock. Diese können jederzeit durch benutzerdefinierte "
+"Tastenkombinationen außer Kraft gesetzt oder vollständig deaktiviert werden."
+
+#: C/gnome-mud-manual.xml:871(term)
+msgid "Command divide char"
+msgstr "Befehlstrenner"
+
+#: C/gnome-mud-manual.xml:873(para)
+msgid ""
+"Insert the character you want to use to separate multi-command orders "
+"entered in the command line. For example, if set to \";\", entering "
+"\"north ; east\" in the command line will execute two independent commands "
+"\"north\", \"east\"."
+msgstr ""
+"Fügen Sie das Zeichen ein, das Sie als Trenner für mehrere Befehle in der "
+"Befehlszeile verwenden wollen. Wenn Sie es zum Beispiel auf »;« setzen, wird "
+"die Befehlszeile »north ; east« als zwei getrennte Befehle »north« und "
+"»east« ausgeführt."
+
+#: C/gnome-mud-manual.xml:882(term)
+msgid "Command history"
+msgstr "Befehlschronik"
+
+#: C/gnome-mud-manual.xml:884(para)
+msgid ""
+"This is the number of commands that <application>GNOME-Mud </application> "
+"will store in it's command history."
+msgstr ""
+"Dies ist die Anzahl der Befehle, die <application>GNOME-Mud </application> "
+"in seiner Befehlschronik speichert."
+
+#: C/gnome-mud-manual.xml:825(para)
+msgid ""
+"The properties in the <guilabel>Functionality</guilabel> tab are: "
+"<placeholder-1/>"
+msgstr ""
+"Die Eigenschaften im Reiter <guilabel>Funktionalität</guilabel> sind: "
+"<placeholder-1/>"
+
+#: C/gnome-mud-manual.xml:897(term)
+msgid "Font"
+msgstr "Schriftart"
+
+#: C/gnome-mud-manual.xml:899(para)
+msgid ""
+"Click here to open a font selection window to select the desired font to be "
+"used in the connection window."
+msgstr ""
+"Klicken Sie hier, um ein Schriftauswahlfenster zu öffnen und die im "
+"Verbindungsfenster zu verwendende Schrift auszuwählen."
+
+#: C/gnome-mud-manual.xml:906(term)
+msgid "Foreground color"
+msgstr "Vordergrundfarbe"
+
+#: C/gnome-mud-manual.xml:908(para)
+msgid ""
+"This will open a color chooser dialog that you can use to select the font "
+"color you want to use."
+msgstr ""
+"Dadurch wird ein Farbwählerdialog geöffnet, in dem Sie gewünschte "
+"Schriftfarbe wählen können."
+
+#: C/gnome-mud-manual.xml:915(term)
+msgid "Bold foreground color"
+msgstr "Fettschrift-Vordergrundfarbe"
+
+#: C/gnome-mud-manual.xml:917(para)
+msgid ""
+"This will open a color chooser dialog that you can use to select the bold "
+"font color you want to use."
+msgstr ""
+"Dadurch wird ein Farbwählerdialog geöffnet, in dem Sie die für Fettschrift "
+"gewünschte Farbe auswählen können."
+
+#: C/gnome-mud-manual.xml:924(term)
+msgid "Background color"
+msgstr "Hintergrundfarbe"
+
+#: C/gnome-mud-manual.xml:926(para)
+msgid ""
+"This will open the same dialog as before, but will select the foreground "
+"color of your font."
+msgstr ""
+"Dadurch wird der gleiche Farbwählerdialog geöffnet wie zuvor, aber zur "
+"Auswahl der Hintergrundfarbe Ihrer Schrift."
+
+#: C/gnome-mud-manual.xml:933(term)
+msgid "Color Palette"
+msgstr "Farbpalette"
+
+#: C/gnome-mud-manual.xml:935(para)
+msgid ""
+"This is a series of buttons which lets you define your own colors for ANSI. "
+"Each color represents one ANSI color which you can redefine."
+msgstr ""
+"Mit diesen Knöpfen können Sie Ihre eigenen Farben für ANSI definieren. Jede "
+"Farbe stellt eine ANSI-Farbe dar, die Sie neu definieren können."
+
+#: C/gnome-mud-manual.xml:893(para)
+msgid ""
+"The properties in the <guilabel>Colors and Fonts</guilabel> tab are: "
+"<placeholder-1/>"
+msgstr ""
+"Die Eigenschaften im Reiter <guilabel>Farben und Schriften</guilabel> sind: "
+"<placeholder-1/>"
+
+#: C/gnome-mud-manual.xml:945(para)
+msgid ""
+"After you have made all the changes you want, click on <guibutton>OK</"
+"guibutton> to apply the changes and close the <interface>Preferences</"
+"interface> dialog. To cancel the changes and return to previous values, "
+"click the <guibutton>Close</guibutton> button."
+msgstr ""
+"Nachdem Sie Ihre sämtlichen gewünschten Einstellungen vorgenommen haben, "
+"klicken Sie auf <guibutton>OK</guibutton>, um die Änderungen anzuwenden und "
+"den <interface>Einstellungsdialog</interface> zu schließen. Um die "
+"Änderungen zu verwerfen und zu den vorherigen Einstellungen zurückzukehren, "
+"klicken Sie auf <guibutton>Schließen</guibutton>."
+
+#: C/gnome-mud-manual.xml:969(title)
+msgid "Known Bugs and Limitations"
+msgstr "Bekannte Fehler und Einschränkungen"
+
+#: C/gnome-mud-manual.xml:970(para)
+msgid ""
+"Command history search won't show the last command when you press the up-"
+"arrow key, but the command before the last."
+msgstr ""
+"Die Befehlschronik zeigt beim Drücken des Aufwärtspfeils nicht den letzten "
+"Befehl, sondern den vorletzten Befehl."
+
+#: C/gnome-mud-manual.xml:974(para)
+msgid ""
+"The mapping support is still limited and must be used manually (you can't "
+"map as you walk through the MUD)."
+msgstr ""
+"Die Kartierung ist noch sehr eingeschränkt und muss manuell verwendet werden "
+"(Kartierung ist während des Bewegens durch den MUD nicht möglich)."
+
+#: C/gnome-mud-manual.xml:978(para)
+msgid "And of course, there are no plugins available yet!"
+msgstr "Und außerdem sind noch keine Erweiterungen verfügbar!"
+
+#: C/gnome-mud-manual.xml:987(title)
+msgid "Authors"
+msgstr "Autoren"
+
+#: C/gnome-mud-manual.xml:988(para)
+msgid ""
+"<application>GNOME-Mud</application> was written by Robin Ericsson "
+"(<email>lobbin@localhost.nu</email>). To find more information about "
+"<application>GNOME-Mud</application>, please visit the <ulink url=\"http://"
+"amcl.sourceforge.net/\" type=\"http\">GNOME-Mud Web page</ulink>. This "
+"manual was written by Jordi Mallach (<email>jordi@sindominio.net</email>)."
+msgstr ""
+"<application>GNOME-Mud</application> wurde von Robin Ericsson "
+"(<email>lobbin@localhost.nu</email>) geschrieben. Weitere Informationen zu "
+"<application>GNOME-Mud</application> finden Sie auf dessen <ulink url="
+"\"http://amcl.sourceforge.net/\" type=\"http\">Webseite</ulink>. Dieses "
+"Handbuch wurde von Jordi Mallach (<email>jordi@sindominio.net</email>) "
+"geschrieben."
+
+#: C/gnome-mud-manual.xml:996(para)
+msgid ""
+"If you have some comments or suggestions regarding this application, need "
+"help, or want to report a bug, plese contact us! Instructions for doing so "
+"are given in <ulink type=\"help\" url=\"gnome-help:gnome-feedback"
+"\"><citetitle>Reporting GNOME bugs and other feedback</citetitle></ulink> "
+"document, which you can find in the <guilabel>Help</guilabel> tab of "
+"<application>Nautilus</application> file manager."
+msgstr ""
+"Wenn Sie Anmerkungen oder Vorschläge zu dieser Anwendung haben, Hilfe "
+"benötigen oder einen Fehler melden wollen, bitte nehmen Sie mit uns Kontakt "
+"auf! Anweisungen dazu finden Sie im Dokument <ulink type=\"help\" url="
+"\"gnome-help:gnome-feedback\"><citetitle>Melden von Fehlern in GNOME und "
+"andere Rückmeldungen</citetitle></ulink>, den Sie im Reiter <guilabel>Hilfe</"
+"guilabel> der Dateiverwaltung <application>Nautilus</application> finden."
+
+#: C/gnome-mud-manual.xml:1022(title)
+msgid "License"
+msgstr "Lizenz"
+
+#: C/gnome-mud-manual.xml:1023(para)
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the <ulink type=\"help\" url=\"gnome-help:gpl"
+"\"><citetitle>GNU General Public License</citetitle></ulink> as published by "
+"the Free Software Foundation; either version 2 of the License, or (at your "
+"option) any later version."
+msgstr ""
+"Dieses Programm ist freie Software. Sie können es unter den Bedingungen der "
+"<ulink type=\"help\" url=\"gnome-help:gpl\"><citetitle>GNU General Public "
+"License</citetitle></ulink>, so wie sie von der Free Software Foundation "
+"veröffentlicht wird, weiterverbreiten und/oder verändern; entweder in "
+"Version 2 der Lizenz, oder nach Ihrer Wahl jeder neueren Version."
+
+#: C/gnome-mud-manual.xml:1031(para)
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE. See the <citetitle>GNU General Public "
+"License</citetitle> for more details."
+msgstr ""
+"Die Veröffentlichung dieses Programms erfolgt in der Hoffnung, dass es Ihnen "
+"von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die "
+"implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN "
+"BESTIMMTEN ZWECK. Details finden Sie in der <citetitle>GNU General Public "
+"License</citetitle>."
+
+#: C/gnome-mud-manual.xml:1037(para)
+msgid ""
+"A copy of the <citetitle>GNU General Public License</citetitle> is included "
+"as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
+"obtain a copy of the <citetitle>GNU General Public License</citetitle> from "
+"the Free Software Foundation by visiting <ulink type=\"http\" url=\"http://"
+"www.fsf.org\">their Web site</ulink> or by writing to <address> Free "
+"Software Foundation, Inc. <street>59 Temple Place</street> - Suite 330 "
+"<city>Boston</city>, <state>MA</state><postcode>02111-1307</"
+"postcode><country>USA</country></address>"
+msgstr ""
+"Eine Kopie der <citetitle>GNU General Public License</citetitle> ist als "
+"Anhang im <citetitle>GNOME-Benutzerhandbuch</citetitle> enthalten. Sie "
+"können auch eine Kopie der <citetitle>GNU General Public License</citetitle> "
+"von der Free Software Foundation erhalten, indem Sie <ulink type=\"http\" "
+"url=\"http://www.fsf.org\">deren Webseite</ulink> besuchen, oder Sie "
+"schreiben an <address> Free Software Foundation, Inc. <street>59 Temple "
+"Place</street> - Suite 330 <city>Boston</city>, <state>MA</"
+"state><postcode>02111-1307</postcode><country>USA</country></address>"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: C/gnome-mud-manual.xml:0(None)
+msgid "translator-credits"
+msgstr "Mario Blättermann <mario.blaettermann@gmail.com>, 2018."

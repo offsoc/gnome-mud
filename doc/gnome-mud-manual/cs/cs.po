@@ -1,0 +1,1319 @@
+# Czech translation for gnome-mud.
+# Copyright (C) 2018 gnome-mud's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-mud package.
+# Marek Černocký <marek@manet.cz>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-mud master\n"
+"POT-Creation-Date: 2018-01-31 16:15+0000\n"
+"PO-Revision-Date: 2018-05-22 10:52+0200\n"
+"Last-Translator: Marek Černocký <marek@manet.cz>\n"
+"Language-Team: čeština <gnome-cs-list@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Gtranslator 2.91.7\n"
+
+#: C/gnome-mud-manual.xml:30(title) C/gnome-mud-manual.xml:73(revnumber)
+msgid "GNOME-Mud Manual V1.1"
+msgstr "Příručka V1.1 k aplikaci Mud GNOME"
+
+#: C/gnome-mud-manual.xml:32(para)
+msgid "User manual for GNOME-Mud, a MUD client for the GNOME Desktop."
+msgstr ""
+"Uživatelská příručka k Mud GNOME, klientovi MUD pro uživatelské prostředí "
+"GNOME."
+
+#: C/gnome-mud-manual.xml:35(year)
+msgid "2001"
+msgstr "2001"
+
+#: C/gnome-mud-manual.xml:36(year)
+msgid "2002"
+msgstr "2002"
+
+#: C/gnome-mud-manual.xml:37(year)
+msgid "2005"
+msgstr "2005"
+
+#: C/gnome-mud-manual.xml:38(year)
+msgid "2006"
+msgstr "2006"
+
+#: C/gnome-mud-manual.xml:39(holder) C/gnome-mud-manual.xml:76(para)
+#: C/gnome-mud-manual.xml:85(para)
+msgid "Jordi Mallach"
+msgstr "Jordi Mallach"
+
+#: C/gnome-mud-manual.xml:52(publishername) C/gnome-mud-manual.xml:65(orgname)
+#: C/gnome-mud-manual.xml:77(para) C/gnome-mud-manual.xml:86(para)
+msgid "GNOME Documentation Project"
+msgstr "Dokumentační projekt GNOME"
+
+#: C/gnome-mud-manual.xml:2(para)
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or "
+"in the file COPYING-DOCS distributed with this manual."
+msgstr ""
+"Je povoleno kopírovat, šířit a/nebo upravovat tento dokument za podmínek GNU "
+"Free Documentation License (GFDL) ve verzi 1.1 nebo v jakékoli novější verzi "
+"vydané nadací Free Software Foundation, bez neměnných oddílů, bez textů "
+"předních desek a bez textů zadních desek. Kopii licence GFDL naleznete pod "
+"<ulink type=\\\"help\\\" url=\\\"ghelp:fdl\\\">tímto odkazem</ulink> nebo v "
+"souboru COPYING-DOCS dodávaném s touto příručkou."
+
+#: C/gnome-mud-manual.xml:12(para)
+msgid ""
+"This manual is part of a collection of GNOME manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
+msgstr ""
+"Tato příručka je součástí sbírky příruček GNOME šířených za podmínek licence "
+"GNU FDL. Pokud chcete tento dokument šířit odděleně od sbírky, musíte "
+"přiložit kopii licence dle popisu v oddílu 6 dané licence."
+
+#: C/gnome-mud-manual.xml:19(para)
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any GNOME "
+"documentation, and the members of the GNOME Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+"Mnoho názvů použitých firmami k zviditelnění produktů nebo služeb jsou "
+"ochranné známky. Na místech, kde jsou tyto názvy v dokumentaci použity, a "
+"členové Dokumentačního projektu GNOME jsou si vědomi skutečnosti, že se "
+"jedná o ochrannou známku, je takovýto název psán velkými písmeny celý nebo s "
+"velkým písmenem na začátku."
+
+#: C/gnome-mud-manual.xml:35(para)
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+"DOKUMENT JE POSKYTOVÁN V PODOBĚ „JAK JE“, BEZ ZÁRUKY JAKÉHOKOLIV DRUHU, "
+"NEPOSKYTUJÍ SE ANI ODVOZENÉ ZÁRUKY, ZÁRUKY, ŽE DOKUMENT, NEBO JEHO UPRAVENÁ "
+"VERZE, JE BEZCHYBNÝ, NEBO ZÁRUKY PRODEJNOSTI, VHODNOSTI PRO URČITÝ ÚČEL, "
+"NEBO NEPORUŠENOSTI. RIZIKO NEKVALITY, NEPŘESNOSTI A ŠPATNÉHO PROVEDENÍ "
+"DOKUMENTU, NEBO JEHO UPRAVENÉ VERZE, NESETE VY. POKUD JE TENTO DOKUMENT NEBO "
+"JEHO UPRAVENÁ VERZE VADNÁ V JAKÉMKOLIV SMYSLU, VY (NIKOLIV PŮVODCE, AUTOR "
+"NEBO JAKÝKOLIV PŘISPĚVATEL) PŘEBÍRÁTE ODPOVĚDNOST ZA JAKÉKOLIV NÁKLADY NA "
+"NUTNÉ ÚPRAVY, OPRAVY ČI SLUŽBY. TOTO PROHLÁŠENÍ O ZÁRUCE PŘEDSTAVUJE "
+"ZÁKLADNÍ SOUČÁST TÉTO LICENCE. BEZ TOHOTO PROHLÁŠENÍ NENÍ PODLE TÉTO DOHODY "
+"POVOLENO UŽÍVÁNÍ ANI ÚPRAVY TOHOTO DOKUMENTU; DÁLE"
+
+#: C/gnome-mud-manual.xml:55(para)
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+"ZA ŽÁDNÝCH OKOLNOSTÍ A ŽÁDNÝCH PRÁVNÍCH PŘEDPOKLADŮ, AŤ SE JEDNÁ O PŘEČIN "
+"(VČETNĚ NEDBALOSTNÍCH), SMLOUVU NEBO JINÉ, NENÍ AUTOR, PŮVODNÍ PISATEL, "
+"KTERÝKOLIV PŘISPĚVATEL NEBO KTERÝKOLIV DISTRIBUTOR TOHOTO DOKUMENTU NEBO "
+"UPRAVENÉ VERZE DOKUMENTU NEBO KTERÝKOLIV DODAVATEL NĚKTERÉ Z TĚCHTO STRAN "
+"ODPOVĚDNÝ NĚJAKÉ OSOBĚ ZA PŘÍMÉ, NEPŘÍMÉ, SPECIÁLNÍ, NAHODILÉ NEBO NÁSLEDNÉ "
+"ŠKODY JAKÉHOKOLIV CHARAKTERU, VČETNĚ, ALE NEJEN, ZA POŠKOZENÍ ZE ZTRÁTY "
+"DOBRÉHO JMÉNA, PŘERUŠENÍ PRÁCE, PORUCHY NEBO NESPRÁVNÉ FUNKCE POČÍTAČE NEBO "
+"JINÉHO A VŠECH DALŠÍCH ŠKOD NEBO ZTRÁT VYVSTÁVAJÍCÍCH Z NEBO VZTAHUJÍCÍCH SE "
+"K POUŽÍVÁNÍ TOHOTO DOKUMENTU NEBO UPRAVENÝCH VERZÍ DOKUMENTU, I KDYŽ BY "
+"TAKOVÁTO STRANA BYLA INFORMOVANÁ O MOŽNOSTI TAKOVÉHOTO POŠKOZENÍ."
+
+#: C/gnome-mud-manual.xml:28(para)
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<placeholder-1/>"
+msgstr ""
+"DOKUMENT A JEHO UPRAVENÉ VERZE JSOU ŠÍŘENY V SOULADU SE ZNĚNÍM LICENCE GNU "
+"FREE DOCUMENTATION LICENSE S NÁSLEDUJÍCÍM USTANOVENÍM: <placeholder-1/>"
+
+#: C/gnome-mud-manual.xml:62(firstname)
+msgid "Jordi"
+msgstr "Jordi"
+
+#: C/gnome-mud-manual.xml:63(surname)
+msgid "Mallach"
+msgstr "Mallach"
+
+#: C/gnome-mud-manual.xml:66(email)
+msgid "jordim@gnome.org"
+msgstr "jordim@gnome.org"
+
+#: C/gnome-mud-manual.xml:74(date)
+msgid "January 2006"
+msgstr "leden 2006"
+
+#: C/gnome-mud-manual.xml:82(revnumber)
+msgid "GNOME-Mud Manual V1.0"
+msgstr "Příručka V1.0 k aplikaci Mud GNOME"
+
+#: C/gnome-mud-manual.xml:83(date)
+msgid "June 2003"
+msgstr "červen 2003"
+
+#: C/gnome-mud-manual.xml:91(releaseinfo)
+msgid ""
+"This manual describes version 0.9.1 of GNOME-Mud. It was last updated on "
+"January 2006."
+msgstr ""
+"Tato příručka popisuje Mud GNOME ve verzi 0.9.1. Naposledy byla "
+"aktualizovaná v lednu 2006."
+
+#: C/gnome-mud-manual.xml:102(title)
+msgid "Feedback"
+msgstr "Ohlasy"
+
+#: C/gnome-mud-manual.xml:103(para)
+msgid ""
+"To report a bug or make a suggestion regarding the GNOME-Mud application or "
+"this manual, follow the directions in the <ulink url=\"ghelp:gnome-feedback"
+"\" type=\"help\">GNOME Feedback Page</ulink>."
+msgstr ""
+"Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k aplikaci "
+"<application>Mud GNOME</application> nebo této příručce, postupujte dle "
+"instrukcí na <ulink url=\"ghelp:gnome-feedback\" type=\"help\">stránce "
+"Ohlasy ke GNOME</ulink>."
+
+#: C/gnome-mud-manual.xml:114(title)
+msgid "Introduction"
+msgstr "Úvod"
+
+#: C/gnome-mud-manual.xml:116(para)
+msgid ""
+"<application>GNOME-Mud</application> is an specialized telnet client to play "
+"Multi-User Dungeons, or MUDs."
+msgstr ""
+"<application>Mud GNOME</application> je specializovaný klient protokolu "
+"Telnet pro hraní Multi-User Dungeon, zkráceně MUD."
+
+#: C/gnome-mud-manual.xml:120(para)
+msgid ""
+"Multi-User Dungeons are imaginary worlds and realms that exist on the "
+"Internet, where people connect and can perform a variety of actions. A MUD "
+"can be thought of a chat forum with a space dimension, as the users can move "
+"around and interact with other users and the artifacts they find in each "
+"location. In a typical mud, players can communicate and fight each other, "
+"use magic, trade, travel to new zones, resolve quizzes (also called quests), "
+"and become part of communities like guilds, orders, etc. The environment "
+"also varies between MUDs, but the most common are ambiented in fantasy "
+"worlds, similar to those described by Tolkien's `Lord of the Rings' or "
+"Dungeons and Dragons. Classic MUDs are text-based, and can be accessed "
+"through a simple `telnet' connection; the user inputs orders to the MUD "
+"server, and the server replies with the result of the action."
+msgstr ""
+"MUD jsou imaginární světy a říše, které existují v Internetu. Lidé se do "
+"nich mohou připojit a provádět různé činnosti. MUD si můžete představit jako "
+"diskuzní fórum s prostorovými dimenzemi, protože uživatelé s v něm mohou "
+"pohybovat a vzájemně se ovlivňovat s ostatními uživateli a artefakty, které "
+"na jednotlivých místech naleznou. Typický MUD je místo, ve kterém hráč "
+"komunikuje a bojuje s ostatními, používá magii, obchoduje, cestuje na nová "
+"místa, řeší hlavolamy (nazývané také jako pátrání) a stává se součástí "
+"společenství, jako jsou cechy nebo stavy. Prostředí má každý MUD své "
+"vlastní, ale často to jsou světy ve stylu fantazy, podobné jako najdete v "
+"Tolkienově Pánu prstenů nebo ve hře Dungeons & Dragons. Klasický MUD je "
+"textový a přístup k němu je skrze připojení „telnet“. Uživatel zadá serveru "
+"MUD požadavek a server odpoví výsledkem činnosti."
+
+#: C/gnome-mud-manual.xml:135(para)
+msgid ""
+"There are hundreds of MUDs available on the Internet, but there are some "
+"sites that classify them and provide with detailed MUD lists, often provided "
+"by the MUD maintainers. <ulink url=\"http://www.mudconnect.com/\" type=\"http"
+"\">MudConnect.com</ulink> is one of them, and GNOME-Mud has native support "
+"for their mudlist format."
+msgstr ""
+"Na Internetu jsou dostupné stovky serverů MUD. Jsou ale k dispozici i webové "
+"stránky, které je třídí a poskytují jejich podrobné seznamy, často "
+"sestavované přímo správci serverů MUD. Jedním z takovýchto webů je <ulink "
+"url=\"http://www.mudconnect.com/\" type=\"http\">MudConnect.com</ulink> a "
+"Mud GNOME má vestavěnou podporu pro jeho formát seznamů mudlist."
+
+#: C/gnome-mud-manual.xml:142(para)
+msgid ""
+"<application>GNOME-Mud</application> provides the user with a series of "
+"functionality that makes mudding somewhat easier. Most notably, the ability "
+"to define `triggers', `aliases' and `character profiles', or the MUD lists "
+"support help making usual tasks like connecting to different MUDs and typing "
+"common names or commands more effective and fast."
+msgstr ""
+"<application>Mud GNOME</application> poskytuje uživatelům řadu funkcí, které "
+"hraní usnadňují. Zejména možnost definovat „spouštěče“, „aliasy“ a „profily "
+"postav“, nebo podpora seznamů MUD pomáhají dělat běžné úkoly, jako je "
+"připojování k různým MUD a psaní běžných názvů a příkazů, mnohem efektivněji "
+"a rychleji."
+
+#: C/gnome-mud-manual.xml:150(para)
+msgid ""
+"To run <application>GNOME-Mud</application>, select "
+"<menuchoice><guisubmenu>Games</guisubmenu><guimenuitem>GNOME-Mud</"
+"guimenuitem></menuchoice> from the <guimenu>Main Menu</guimenu>, or type "
+"<command>gnome-mud</command> on the command line."
+msgstr ""
+"Když chcete <application>Mud GNOME</application> spustit, vyberte v "
+"<guimenu>hlavní nabídce</guimenu> <menuchoice><guisubmenu>Hry</"
+"guisubmenu><guimenuitem>Mud GNOME</guimenuitem></menuchoice>, nebo napište v "
+"příkazové řádce <command>gnome-mud</command>."
+
+#: C/gnome-mud-manual.xml:167(title)
+msgid "Using GNOME-Mud"
+msgstr "Používání Mud GNOME"
+
+#: C/gnome-mud-manual.xml:168(para)
+msgid ""
+"<application>GNOME-Mud</application> can be used to play any kind of telnet-"
+"based MUDs, and should make mudding easier, both for players and coders. It "
+"can connect to various MUDs on the same application window, and load "
+"different settings depending on the character you're logging in. "
+"<application>GNOME-Mud</application>'s goal is to provide a similar client "
+"to <ulink url=\"http://www.zuggsoft.com/zmud/zmudinfo.htm\" type=\"http\"> "
+"zMUD</ulink>, a very mature MUD client for the Windows platform."
+msgstr ""
+"<application>Mud GNOME</application> můžete používat k hraní libovolné hry "
+"MUD stojící na protokolu Telnet. Umí usnadnit život hráčům i vývojářům. "
+"Dokáže se připojit k více serverům MUD v jediném aplikačním okně a načítat "
+"různá nastavení v závislosti na postavě, pod kterou se přihlásíte. Vzorem je "
+"obdobný klient <ulink url=\"http://www.zuggsoft.com/zmud/zmudinfo.htm\" type="
+"\"http\">zMUD</ulink>, který je určený pro platformu Windows a je léty "
+"prověřený."
+
+#: C/gnome-mud-manual.xml:181(title)
+msgid "Basic usage"
+msgstr "Základy"
+
+#: C/gnome-mud-manual.xml:190(title) C/gnome-mud-manual.xml:192(screeninfo)
+msgid "GNOME-Mud Main Window"
+msgstr "Hlavní okno Mud GNOME"
+
+#: C/gnome-mud-manual.xml:182(para)
+msgid ""
+"Starting <application>GNOME-Mud</application> opens the <interface>Main "
+"window</interface>, shown in <xref linkend=\"main-window\"/>. The window is "
+"at first mostly empty, just showing some information about the "
+"<application>GNOME-Mud</application> build you're running. <placeholder-1/>"
+msgstr ""
+"Po spuštění <application>Mud GNOME</application> se otevře <interface>hlavní "
+"okno</interface>, které můžete vidět na <xref linkend=\"main-window\"/>. "
+"Okno je na začátku povětšinou prázdné, zobrazuje jen nějaké informace o "
+"verzi <application>Mud GNOME</application>, kterou máte spuštěnou. "
+"<placeholder-1/>"
+
+#: C/gnome-mud-manual.xml:207(title)
+msgid "Connecting to a MUD"
+msgstr "Připojování k serverům MUD"
+
+#: C/gnome-mud-manual.xml:220(title) C/gnome-mud-manual.xml:222(screeninfo)
+msgid "GNOME-Mud Connection Wizard"
+msgstr "Průvodce připojením"
+
+#: C/gnome-mud-manual.xml:208(para)
+msgid ""
+"To connect to a MUD, select <menuchoice><guisubmenu>File</"
+"guisubmenu><guimenuitem>Connection Wizard…</guimenuitem></menuchoice>, which "
+"will bring up the <interface>GNOME-Mud Connections</interface> dialog box. "
+"The <interface>Connection Wizard</interface> allows you to create different "
+"connections so you can store a list of \"personalities\". <placeholder-1/> "
+"To create a connection, enter a descriptive title (normally the MUD's full "
+"name) in the <guilabel>Title</guilabel> field and fill in the MUD's "
+"information in the <guilabel>Host</guilabel> and <guilabel>Port</guilabel> "
+"fields (leaving <guilabel>Port</guilabel> blank will make it default to port "
+"23). You can also import those fields very easily using the <link linkend="
+"\"mudlist\"><interface>GNOME-Mud MudList</interface></link> and selecting a "
+"MUD from there. Enter the character information in the <guilabel>Character</"
+"guilabel> and <guilabel>Password</guilabel> (password is only required if "
+"you want to autolog into the MUD). If you want to bind the connection to a "
+"set of aliases, triggers, variables keybinds, click on <guibutton>Select "
+"Profile</guibutton> and select the desired one from the list. See the "
+"section on <link linkend=\"profiles\"><interface>Profiles</interface></link> "
+"for more information on them. Once you have filled all the fields, press "
+"<guibutton>Apply</guibutton> to accept the values of the new profile or to "
+"update them, in case a profile with the same <guilabel>title</guilabel> "
+"already existed, or <guibutton>Cancel </guibutton> to discard them. When a "
+"connection is created, it will show up in the left column of the dialog, "
+"showing the MUD title and character name. Select the desired connection and "
+"press <guibutton>Connect</guibutton> to start the connection. "
+"<guibutton>Close</guibutton> will close the <interface>Connection Wizard</"
+"interface>."
+msgstr ""
+"Když se chcete připojit k serveru MUD, vyberte "
+"<menuchoice><guisubmenu>Soubor</guisubmenu> <guimenuitem>Průvodce připojením…"
+"</guimenuitem></menuchoice>, který zobrazí dialogové okno "
+"<interface>Připojení Mud GNOME</interface>. Pomocí <interface>Průvodce "
+"připojením</interface> si můžete vytvořit různá připojení, díky čemuž si "
+"můžete uchovat, co vám osobně vyhovuje. <placeholder-1/> Pro vytvoření "
+"spojení zadejte popisný název (běžné plný název daného MUD) do pole "
+"<guilabel>Název</guilabel> a vyplňte připojovací údaje v polích "
+"<guilabel>Hostitel</guilabel> a <guilabel>Port</guilabel> (pokud ponecháte "
+"<guilabel>Port</guilabel> prázdný, použije se výchozí 23). Všechna tato "
+"nastavení můžete také jednoduše naimportovat pomocí <link linkend=\"mudlist"
+"\"><interface>MudList Mud GNOME</interface></link>, ve kterém si MUD "
+"vyberete. Zadejte informace o postavě do pole <guilabel>Postava</guilabel> a "
+"případně <guilabel>Heslo</guilabel> (heslo je potřeba, když se chcete "
+"přihlašovat automaticky). Pokud chcete spojení provázat se sadou aliasů, "
+"spouštěčů, proměnných a klávesových zkratek, klikněte na <guibutton>Vybrat "
+"profil</guibutton> a vyberte požadovaný profil ze seznamu. Více informací o "
+"profilech najdete v kapitole <link linkend=\"profiles\"><interface>Profily</"
+"interface></link>. Jakmile máte všechna pole vyplněná, zmáčkněte "
+"<guibutton>Použít</guibutton>, aby se přijaly údaje nového profilu nebo "
+"aktualizoval stávající v případě, že profil se stejným <guilabel>Názvem</"
+"guilabel> již existuje. Případně použijte <guibutton>Zrušit</guibutton> k "
+"zahození změn. Až budete mít spojení vytvořené, objeví se v levém sloupci "
+"dialogového okna a bude zobrazovat název a postavy. Spojení započnete jeho "
+"výběrem a zmáčknutím <guibutton>Připojit</guibutton>. Tlačítko "
+"<guibutton>Zavřít</guibutton> <interface>Průvodce připojením</interface> "
+"zavře."
+
+#: C/gnome-mud-manual.xml:252(para)
+msgid ""
+"Alternatively, you can quickly connect to a MUD, bypassing the connection "
+"wizard selecting <menuchoice><guisubmenu>File</"
+"guisubmenu><guimenuitem>Connect…</guimenuitem></menuchoice>, which will "
+"bring up the <interface>Quick Connect</interface> dialog. Just fill in the "
+"<guilabel>Host</guilabel> and <guilabel>Port </guilabel> fields and press "
+"<guibutton>OK</guibutton> to connect to the desired MUD."
+msgstr ""
+"Jinou možností, jak se rychle připojit k serveru MUD, aniž byste použili "
+"průvodce připojením, je vybrat <menuchoice><guisubmenu>Soubor</guisubmenu> "
+"<guimenuitem>Připojit…</guimenuitem></menuchoice>. Zobrazí se vám dialogové "
+"okno <interface>Rychle připojit</interface>, ve kterém stačí vyplnit pole "
+"<guilabel>Hostitel</guilabel> a <guilabel>Port </guilabel> a zmáčknutím "
+"<guibutton>Budiž</guibutton> se k požadovanému MUD připojíte."
+
+#: C/gnome-mud-manual.xml:264(para)
+msgid ""
+"If you open various connections simultaneously, <application> GNOME-Mud</"
+"application> will place them inside <interface>connection tabs</interface>, "
+"which will appear below the connection screen. To close a tab after "
+"disconnecting from a MUD, select <menuchoice><guisubmenu>File</"
+"guisubmenu><guimenuitem>Close Window</guimenuitem></menuchoice> and the tab "
+"will disappear."
+msgstr ""
+"Když otevřete různá připojení naráz, umístí je <application>Mud GNOME</"
+"application> do <interface>karet připojení</interface> s oušky pod "
+"obrazovkou připojení. Aby se karta po odpojení od serveru MUD zavřela, "
+"vyberte <menuchoice><guisubmenu>Soubor</guisubmenu> <guimenuitem>Zavřít "
+"okno</guimenuitem></menuchoice> a karta zmizí."
+
+#: C/gnome-mud-manual.xml:278(title)
+msgid "MudList support"
+msgstr "Podpora MudList"
+
+#: C/gnome-mud-manual.xml:287(title) C/gnome-mud-manual.xml:289(screeninfo)
+msgid "GNOME-Mud MudList"
+msgstr "MudList v Mud GNOME"
+
+#: C/gnome-mud-manual.xml:279(para)
+msgid ""
+"<application>GNOME-Mud</application> can read <ulink url=\"http://www."
+"mudconnect.com/\" type=\"http\"> MudConnect.com</ulink>'s MUD list, which is "
+"an extensive list of MUDs, with information about their codebase, host, port "
+"and including a description. There are two ways to use the <interface>GNOME-"
+"Mud MudList</interface>. <placeholder-1/>"
+msgstr ""
+"<application>Mud GNOME</application> umí číst seznam MUD z webu <ulink url="
+"\"http://www.mudconnect.com/\" type=\"http\">MudConnect.com</ulink>, což je "
+"rozsáhlý seznam serverů MUD s informacemi o základu kódu, hostiteli, portu a "
+"včetně popisu. Existují dva způsoby, jak použít <interface>MudList Mud "
+"GNOME</interface>. <placeholder-1/>"
+
+#: C/gnome-mud-manual.xml:295(para)
+msgid ""
+"The most common way is probably by opening it from the <link linkend="
+"\"connecting\"><interface>Connection Wizard </interface></link>. This will "
+"open the <interface>GNOME-Mud Mudlist </interface> in \"import mode\". You "
+"will find a list of MUDs at the left column of the dialog, ordered by "
+"codebase. If you expand a codebase, you'll get a list of the MUDs in that "
+"section. Click on a MUD to see the information displayed in the right side "
+"of the <interface>MudList</interface>.<guilabel>Mud Name</guilabel> is the "
+"full name of the MUD, <guilabel>Telnet Address</guilabel> is the host and "
+"port where it is located and <guilabel>Codebase</guilabel> describes what "
+"type of MUD it is. <guilabel>Description</guilabel> shows a more or less "
+"description of the selected MUD. In \"import mode\", there will be a "
+"<guibutton>Import and close </guibutton> button, which will fetch the MUD "
+"info and fill it into a new connection in the <interface>Connection Wizard</"
+"interface>. There's also a <guibutton>Go to webpage of the MUD</guibutton> "
+"button, which will point a web browser to the webpage defined in the mud "
+"list."
+msgstr ""
+"Asi nejběžnějším způsobem je otevřít MudList z <link linkend=\"connecting"
+"\"><interface>Průvodce připojením</interface></link>. Tím se dialogové okno "
+"<interface>MudList Mud GNOME</interface> otevře v „režimu importu“. V levém "
+"sloupci najdete seznam jednotlivých MUD seřazených podle základu kódu, ve "
+"kterém můžete jednotlivé větve rozbalovat. Kliknutím na konkrétní MUD si o "
+"něm zobrazíte informace v pravé části. <guilabel>Název MUD</guilabel> je "
+"plný název, <guilabel>Telnetová adresa</guilabel> udává hostitele a port, na "
+"kterém se nachází, a <guilabel>Základní kód</guilabel> popisuje, o jaký typ "
+"se jedná. V <guilabel>Popisu</guilabel> pak najdete MUD více či méně "
+"popsaný. V „režimu importu“ obsahuje dialogové okno také tlačítko "
+"<guibutton>Naimportovat a zavřít</guibutton>, které převezme informace a "
+"vyplní je do nového připojení v průvodci. A nakonec je tu tlačítko "
+"<guibutton>Otevřít webové stránky</guibutton>, které spustí webový prohlížeč "
+"a v něm zobrazí web pojednávající o vybraném MUD."
+
+#: C/gnome-mud-manual.xml:314(para)
+msgid ""
+"Another way of using the MudList is exactly the opposite. Select "
+"<menuchoice><guisubmenu>File</guisubmenu><guimenuitem>MudList Listing…</"
+"guimenuitem></menuchoice> and you'll get the same dialog as if opened from "
+"the <interface>Connection Wizard</interface>, only the <guibutton>Import and "
+"close</guibutton> button will be replaced by <guibutton>Connect to the mud</"
+"guibutton>."
+msgstr ""
+"Další způsob použití seznamu MudList je přesně opačný. Vyberte "
+"<menuchoice><guisubmenu>Soubor</guisubmenu> <guimenuitem>Výpisy MudList…</"
+"guimenuitem></menuchoice> a dostanete to stejné dialogové okno, jako když "
+"jej otevřete z <interface>Průvodce připojením</interface>, akorát tlačítko "
+"<guibutton>Importovat a zavřít</guibutton> bude nahrazené tlačítkem "
+"<guibutton>Připojit k serveru MUD</guibutton>."
+
+#: C/gnome-mud-manual.xml:328(title)
+msgid "Disconnecting from MUDs"
+msgstr "Odpojování od serverů MUD"
+
+#: C/gnome-mud-manual.xml:329(para)
+msgid ""
+"To disconnect from a MUD, you should try to use your MUD's logout command. "
+"Normally this command is <command>quit</command> or <command>rent</command>, "
+"but it can vary across MUD flavours. <application>GNOME-Mud</application> "
+"can \"hard-disconnect\" from a mud, using <menuchoice><guisubmenu>File</"
+"guisubmenu><guimenuitem>Disconnect</guimenuitem></menuchoice>, or just "
+"quitting from <application>GNOME-Mud</application>."
+msgstr ""
+"Když se chcete odpojit od serveru MUD, měli byste zkusit použít odhlašovací "
+"příkaz MUD. Normálně to je <command>quit</command> nebo <command>rent</"
+"command>, ale může se lišit. <application>Mud GNOME</application> se umí "
+"odpojit natvrdo, pomocí <menuchoice><guisubmenu>Soubor</guisubmenu> "
+"<guimenuitem>Odpojit</guimenuitem></menuchoice>, případně jednoduše ukončete "
+"aplikaci <application>Mud GNOME</application>."
+
+#: C/gnome-mud-manual.xml:342(title)
+msgid "Warning on hard-disconnects"
+msgstr "Varování při odpojení natvrdo"
+
+#: C/gnome-mud-manual.xml:343(para)
+msgid ""
+"It is very desirable that you disconnect from MUDs using the MUD's own "
+"logout procedures. Some MUDs have retarded quit commands to avoid people "
+"escaping from death during fights, so you need to wait some seconds or "
+"minutes since you send the quit command till you actually quit. If you hard-"
+"disconnect using <application> GNOME-Mud</application>'s "
+"<interface>Disconnect</interface>, you may stay in the MUD for a while, "
+"idling and uncontrolled, while the MUD locks you in or it realizes you have "
+"lost your connection. This could be dangerous, as other players could take "
+"advantage of your idling to kill you or steal your possessions, for example."
+msgstr ""
+"Je velmi vhodné, abyste při odpojování od serverů MUD používali odhlašovací "
+"proceduru. Některé MUD mají zpožděné ukončovací příkazy, aby se zabránilo "
+"útěku lidí během probíhajících bojů, takže musíte po odeslání ukončovacího "
+"příkazu počkat několik sekund, nebo i minut, než opravdu dojde k ukončení. "
+"Pokud se odpojíte natvrdo pomocí příkazu <interface>Odpojit</interface> "
+"poskytovaném aplikací <application>Mud GNOME</application>, můžete ve hře ve "
+"skutečnosti ještě nějakou dobu zůstat. Vaši postavu nebudete mít pod "
+"kontrolou a bude nečinná, než přijde server na to, že se připojení "
+"přerušilo, a než ji uzamkne nebo uvolní. To může být z hlediska hráče "
+"nebezpečné, protože ostatní hráči toho mohou využít například k zabití nebo "
+"okradení vaší postavy."
+
+#: C/gnome-mud-manual.xml:359(title)
+msgid "Editing Profiles"
+msgstr "Úprava profilů"
+
+#: C/gnome-mud-manual.xml:369(title) C/gnome-mud-manual.xml:371(screeninfo)
+msgid "GNOME-Mud Profiles"
+msgstr "Profily"
+
+#: C/gnome-mud-manual.xml:378(term)
+msgid "New"
+msgstr "Nový"
+
+#: C/gnome-mud-manual.xml:380(para)
+msgid ""
+"Brings up the <interface>New Profile</interface> dialog. Enter the name of "
+"the new profile and it will be created with empty values."
+msgstr ""
+"Zobrazí dialogové okno <interface>Nový profil</interface>. Zadejte název "
+"nového profilu a ten se vytvoří s prázdnými hodnotami."
+
+#: C/gnome-mud-manual.xml:388(term)
+msgid "Delete"
+msgstr "Smazat"
+
+#: C/gnome-mud-manual.xml:390(para)
+msgid "Deletes the selected profile. The \"Default\" profile can't be deleted."
+msgstr "Smaže vybraný profil. „Výchozí“ profil smazat nelze."
+
+#: C/gnome-mud-manual.xml:397(term)
+msgid "Aliases"
+msgstr "Aliasy"
+
+#: C/gnome-mud-manual.xml:399(para)
+msgid ""
+"Aliases are similar to UNIX shell aliases. Pressing on the button will open "
+"an alias editor. On the top of the dialog, there is a list of defined "
+"aliases, and beneath it there are two fields to insert new values. To create "
+"a new alias, insert an shortcut in the <guilabel>Alias</guilabel> field, and "
+"the desired expanded command in the <guilabel> Replacement </guilabel> "
+"field. Clicking on <guibutton> Add</guibutton> will add or modify the edited "
+"alias and add it to the alias list. For example, filling in <guilabel>Alias</"
+"guilabel> with \"wd\" and <guilabel> Replacement</guilabel> with \"who drow"
+"\" will make <application>GNOME-Mud</application> send the \"who drow\" "
+"command to the MUD when the user issues a \"wd\" command in the input line. "
+"You can get rid of unwanted aliases by selecting it and clicking on "
+"<guibutton>Delete</guibutton>. Exit the alias editor with the "
+"<guibutton>Close</guibutton> button."
+msgstr ""
+"Aliasy jsou něco podobného jako unixový příkaz alias. Zmáčknutím tlačítka se "
+"otevře editor aliasů. V jeho horní části je seznam definovaných aliasů a pod "
+"ním jsou dvě pole pro vložení nových hodnot. Když chcete vytvořit nový "
+"alias, vložte do pole <guilabel>Alias</guilabel> zkratku a do pole "
+"<guilabel>Nahradit</guilabel> požadovaný příkaz. Kliknutím na "
+"<guibutton>Přidat</guibutton> se zadaný alias přidá, nebo změní, a zobrazí "
+"se v seznamu aliasů. Například vyplněním „wd“ do <guilabel>Alias</guilabel> "
+"a „who drow“ do <guilabel>Nahradit</guilabel> naučíte <application>Mud "
+"GNOME</application> poslat na server MUD příkaz „who drow“, když uživatel "
+"napíše do vstupní řádky příkaz „wd“. Nepotřebné aliasy lze smazat jejich "
+"vybráním a kliknutím na <guibutton>Smazat</guibutton>. Kliknutím na "
+"<guibutton>Zavřít</guibutton> editor aliasů opustíte."
+
+#: C/gnome-mud-manual.xml:421(term)
+msgid "Variables"
+msgstr "Proměnné"
+
+#: C/gnome-mud-manual.xml:423(para)
+msgid ""
+"Variables are useful to replace things within <interface> Triggers</"
+"interface> or <interface>Variables</interface>. For example, if you have "
+"defined a trigger with a nick in it, you can use a variable instead of "
+"specifying the nick, so you just need to change the variable value to apply "
+"the trigger to another nick."
+msgstr ""
+"Proměnné jsou šikovná věc pro nahrazování ve <interface>Spouštěčích</"
+"interface> nebo <interface>Aliasech</interface>. Například, pokud máte "
+"definované spouštěče, ve kterých je vaše přezdívka, můžete použít místo "
+"jejího přímého zadání proměnnou. Když pak přezdívku změníte, stačí změnit "
+"obsah proměnné a ve všech spouštěčích se bude používat ta nová."
+
+#: C/gnome-mud-manual.xml:432(para)
+msgid ""
+"This feature is very limited at the moment and should be extended in future "
+"<application>GNOME-Mud</application> releases."
+msgstr ""
+"V současnosti je tato funkcionalita velmi omezená a teprve v budoucích "
+"vydáních <application>Mud GNOME</application> by měla být rozvinuta."
+
+#: C/gnome-mud-manual.xml:441(term)
+msgid "Triggers"
+msgstr "Spouštěče"
+
+#: C/gnome-mud-manual.xml:443(para)
+msgid ""
+"Triggers are a very useful feature. When you define an <guilabel>Action</"
+"guilabel> and bind a <guilabel>Trigger </guilabel> to it, <application>GNOME-"
+"Mud</application> will execute the trigger when it detects that the action "
+"has occured. For example, setting <guilabel>Action</guilabel> to \"You are "
+"being attacked\" and <guilabel>Trigger</guilabel> to \"<command>flee</"
+"command>\", you will try to escape as soon as you get hit by an enemy. "
+"Please note that some MUDs consider any kind of automation as "
+"<emphasis>cheating </emphasis>, so ask the MUD staff about this before using "
+"it."
+msgstr ""
+"Spouštěče jsou velmi užitečnou funkcí. Když nadefinujete nějakou "
+"<guilabel>Činnost</guilabel> a napojíte ji na <guilabel>Spouštěč</guilabel>, "
+"spustí <application>Mud GNOME</application> spouštěč ve chvíli, kdy zjistí, "
+"že se má činnost provést. Například, nastavením <guilabel>Činnosti</"
+"guilabel> na „You are being attacked“ a <guilabel>Spouštěče</guilabel> na "
+"„<command>flee</command>“, se pokusí vaše postava uniknout ihned, jakmile "
+"narazí na nepřítele. Pamatujte ale, že některé MUD považují některé druhy "
+"automatizace za <emphasis>podfuk</emphasis>, takže se před jejich použitím "
+"podívejte do pravidel pro daný MUD."
+
+#: C/gnome-mud-manual.xml:458(term)
+msgid "Keybinds"
+msgstr "Klávesové zkratky"
+
+#: C/gnome-mud-manual.xml:460(para)
+msgid ""
+"Keybinds perform commands when you activate a key sequence or combination. "
+"You need to insert a keybind in the <guilabel>Bind</guilabel> field and the "
+"command to be sent in <guilabel>Command</guilabel>. You can insert binds "
+"more easily using the <guibutton>Capture</guibutton>. When pressed, it will "
+"capture the next key combination that you press on the keyboard and insert "
+"it in the <guilabel>Bind </guilabel> field. Keybinds are useful for many "
+"things, for example, \"speed walking\". If you bind \"Up\" to the \"north\" "
+"command, you will be able to walk north just pressing the \"Up Arrow\" key."
+msgstr ""
+"Klávesové zkratky provedou příkaz, když zmáčknete posloupnost nebo kombinaci "
+"kláves. Aby to fungovalo, musíte zadat do pole <guilabel>Klávesová zkratka</"
+"guilabel> klávesy a do pole <guilabel>Příkaz</guilabel> odpovídající příkaz. "
+"Klávesy můžete jednoduše zadat pomocí <guibutton>Zachytit</guibutton>. Když "
+"tlačítko zmáčknete, bezprostředně následující zmáčknutá kombinace kláves se "
+"vyplní do pole <guilabel>Klávesová zkratka</guilabel>. Klávesové zkratky se "
+"hodí pro řadu věcí, např. „rychlý přesun“. Stačí si navázat kurzorovou "
+"klávesu nahoru na příkaz „north“ a můžete chodit směrem na sever prostým "
+"zmáčknutím klávesy se šipkou nahoru."
+
+#: C/gnome-mud-manual.xml:476(term)
+msgid "Close"
+msgstr "Zavřít"
+
+#: C/gnome-mud-manual.xml:478(para)
+msgid "This closes the Profiles editor."
+msgstr "Zavře editor profilů."
+
+#: C/gnome-mud-manual.xml:360(para)
+msgid ""
+"Normally, each character class has different commands and abilities which "
+"require different configurations for the mudding session. Using "
+"<interface>Profiles</interface>, you can customize different features of "
+"<application>GNOME-Mud</application> to suit the current character's needs. "
+"To edit them, select <guibutton>Profiles</guibutton> from the toolbar, and a "
+"dialog with a list of customizable items will appear. <placeholder-1/"
+"><placeholder-2/> Use the <link linkend=\"connecting\"><interface>Connection "
+"Wizard </interface></link> to bind a profile to a connection."
+msgstr ""
+"Normálně mají jednotlivé postavy různé sady příkazů a schopností, což "
+"vyžaduje různá nastavení sezení. Pomocí <interface>Profilů</interface> si "
+"můžete přizpůsobit jednotlivé funkce aplikace <application>Mud GNOME</"
+"application>, aby vyhovovaly potřebám aktuální postavy. Pro úpravu profilu "
+"použijte <guibutton>Profily</guibutton> z nástrojové lišty. Objeví se "
+"dialogové okno se seznamem přizpůsobitelných položek. <placeholder-1/"
+"><placeholder-2/> K provázání profilu a připojení použijte <link linkend="
+"\"connecting\"><interface>Průvodce připojením</interface></link>."
+
+#: C/gnome-mud-manual.xml:490(title)
+msgid "The GNOME-Mud Auto Mapper"
+msgstr "Automatické mapování"
+
+#: C/gnome-mud-manual.xml:491(para)
+msgid ""
+"<application>GNOME-Mud</application> has a an internal application which can "
+"be used to draw maps of dungeons, roads or other zones of a MUD. It consists "
+"of a simple dialog of the eight cardinal directions (<guibutton>N</"
+"guibutton>, <guibutton>NE</guibutton>, <guibutton>E</guibutton>, "
+"<guibutton>SE</guibutton>, <guibutton>S</guibutton>, <guibutton>SW</"
+"guibutton>, <guibutton>W</guibutton> and <guibutton>NW</guibutton>), "
+"<guibutton>Up</guibutton> and <guibutton>Down</guibutton>. Using them (or "
+"the numeric keypad) will draw a simple map in the drawing screen at the "
+"left. You can save maps using <guibutton> Save</guibutton> and typing a "
+"filename, and load previously saved maps using the <guibutton>Load</"
+"guibutton>."
+msgstr ""
+"<application>Mud GNOME</application> má interní program, který můžete "
+"používat ke kreslení map chodeb, cest a dalších míst ve světě MUD. Sestává z "
+"jednoduchého dialogového okna s osmi světovými směry (<guibutton>S</"
+"guibutton>, <guibutton>SV</guibutton>, <guibutton>V</guibutton>, "
+"<guibutton>JV</guibutton>, <guibutton>J</guibutton>, <guibutton>JZ</"
+"guibutton>, <guibutton>Z</guibutton> a <guibutton>SZ</guibutton>) a směrů "
+"<guibutton>Nahoru</guibutton> a <guibutton>Dolů</guibutton>. Použitím "
+"příslušných tlačítek (případně numerické klávesnice) se kreslí jednoduchá "
+"mapa na kreslící ploše vlevo. Mapu můžete uložit zmáčknutím tlačítka "
+"<guibutton>Uložit</guibutton> a zadáním názvu souboru. Dřívější mapu pak "
+"můžete nazpět načíst pomocí tlačítka <guibutton>Načíst</guibutton>."
+
+#: C/gnome-mud-manual.xml:522(title)
+msgid "Toolbar"
+msgstr "Nástrojová lišta"
+
+#: C/gnome-mud-manual.xml:527(term)
+msgid "Wizard…"
+msgstr "Průvodce…"
+
+#: C/gnome-mud-manual.xml:529(para)
+msgid ""
+"Brings up the <link linkend=\"connecting\"><interface> Connection Wizard</"
+"interface></link> dialog."
+msgstr ""
+"Zobrazí dialogové okno <link linkend=\"connecting\"><interface>Průvodce "
+"připojením</interface></link>."
+
+#: C/gnome-mud-manual.xml:536(term)
+msgid "Profiles"
+msgstr "Profily"
+
+#: C/gnome-mud-manual.xml:538(para)
+msgid ""
+"Opens the <link linkend=\"profiles\"><interface>Profiles Editor </"
+"interface></link> dialog."
+msgstr ""
+"Otevře dialogové okno <link linkend=\"profiles\"><interface>Editor profilů</"
+"interface></link>."
+
+#: C/gnome-mud-manual.xml:545(term)
+msgid "Connect…"
+msgstr "Připojit…"
+
+#: C/gnome-mud-manual.xml:547(para)
+msgid ""
+"Opens the <interface>Quick Connect</interface> dialog. Use this to open a "
+"MUD connection bypassing the Connection Wizard."
+msgstr ""
+"Otevře dialogové okno <interface>Rychle připojit</interface>. Použijte, když "
+"chcete otevřít připojení k serveru MUD bez průvodce připojením."
+
+#: C/gnome-mud-manual.xml:555(term)
+msgid "Disconnect"
+msgstr "Odpojit"
+
+#: C/gnome-mud-manual.xml:557(para)
+msgid ""
+"Disconnects from the current connection. See the <link linkend="
+"\"disconnecting\">Disconnecting from MUDs</link> for more information about "
+"this."
+msgstr ""
+"Odpojí od aktuálního připojení. Více informací na toto téma najdete v "
+"kapitole <link linkend=\"disconnecting\">Odpojení od MUD</link>."
+
+#: C/gnome-mud-manual.xml:565(term)
+msgid "Reconnect"
+msgstr "Znovu připojit"
+
+#: C/gnome-mud-manual.xml:567(para)
+msgid ""
+"Reconnects to the current connection. If you loose the link to the MUD, you "
+"can hit this to get reconnected again. If the connection was open, it will "
+"close the current connection and start a new one."
+msgstr ""
+"Znovu připojí aktuální připojení. Když se vám ztratí spojení na MUD, můžete "
+"tuhle funkci použít k opětovnému připojení. Jestliže je připojení otevřené, "
+"nejprve se uzavře a pak otevře nové."
+
+#: C/gnome-mud-manual.xml:576(term)
+msgid "Exit"
+msgstr "Ukončit"
+
+#: C/gnome-mud-manual.xml:578(para)
+msgid "Exits from <application>GNOME-Mud</application>."
+msgstr "Ukončí aplikaci <application>Mud GNOME</application>."
+
+#: C/gnome-mud-manual.xml:523(para)
+msgid ""
+"The toolbar provides access to several commonly used routines. "
+"<placeholder-1/>"
+msgstr ""
+"Nástrojová lišta poskytuje přístup k několika běžně používaným funkcím. "
+"<placeholder-1/>"
+
+#. Describing the menubar ensures comprehensive feature
+#.        coverage. Nest itemizedlists inside variablelists so that each
+#.        menu is easily located by indexing software. Proper indentation
+#.        makes it easier!
+#: C/gnome-mud-manual.xml:595(title)
+msgid "Menus"
+msgstr "Nabídky"
+
+#: C/gnome-mud-manual.xml:596(para)
+msgid ""
+"The menu bar, located at the top of the <interface>Main Window</interface>, "
+"contains the following menus:"
+msgstr ""
+"Nabídková lišta, nacházející se v horní části <interface>hlavního okna</"
+"interface>, obsahuje následující nabídky:"
+
+#: C/gnome-mud-manual.xml:602(guimenu)
+msgid "File"
+msgstr "Soubor"
+
+#: C/gnome-mud-manual.xml:608(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Connection Wizard…</guimenuitem></menuchoice> "
+"This starts the <link linkend=\"connecting\"><interface>Connection Wizard</"
+"interface></link> dialog, which can be used to select to which MUD should "
+"<application>GNOME-Mud</application> connect."
+msgstr ""
+"<menuchoice> • <guimenuitem>Průvodce připojením…</guimenuitem></menuchoice> "
+"Spustí dialogové okno s <link linkend=\"connecting\"><interface>Průvodcem "
+"připojením</interface></link>, který můžete použít k výběru, ke kterému "
+"serveru MUD se má <application>Mud GNOME</application> připojit."
+
+#: C/gnome-mud-manual.xml:619(para)
+msgid ""
+"<menuchoice> • <guimenuitem>MudList Listing…</guimenuitem></menuchoice> This "
+"opens the <link linkend=\"mudlist\"><interface>MudList</interface> dialog</"
+"link>, which can be used to browse a list of MUDs and connect to them or add "
+"them to your MUD connections."
+msgstr ""
+"<menuchoice> • <guimenuitem>Výpisy MudList…</guimenuitem></menuchoice> "
+"Otevře <link linkend=\"mudlist\">dialogové okno <interface>MudList</"
+"interface></link>, které můžete použít k procházení seznamu jednotlivých MUD "
+"a připojení k nim, případně jejich přidání do svých připojení."
+
+#: C/gnome-mud-manual.xml:630(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Connect…</guimenuitem></menuchoice> This opens "
+"the <interface>Quick Connect </interface> dialog. Use this to open a MUD "
+"connection bypassing the Connection Wizard."
+msgstr ""
+"<menuchoice> • <guimenuitem>Připojit…</guimenuitem></menuchoice> Otevře "
+"dialogové okno <interface>Rychle připojit</interface>. Použijte k otevření "
+"připojení k serveru MUD bez průvodce připojením."
+
+#: C/gnome-mud-manual.xml:640(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Disconnect</guimenuitem></menuchoice> This "
+"disconnects you from the current connection. See <link linkend="
+"\"disconnecting\">Disconnecting from MUDs </link> for more info about this."
+msgstr ""
+"<menuchoice> • <guimenuitem>Odpojit</guimenuitem></menuchoice> Odpojí "
+"aktuální připojení. Více k tématu najdete v kapitole <link linkend="
+"\"disconnecting\">Odpojování od serverů MUD</link>."
+
+#: C/gnome-mud-manual.xml:650(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Reconnect</guimenuitem></menuchoice> This will "
+"reconnect you to the current connection. If you loose the link to the MUD, "
+"you can hit this to get reconnected again. If the connection was open, it "
+"will close the current connection and start a new one."
+msgstr ""
+"<menuchoice> • <guimenuitem>Znovu připojit</guimenuitem></menuchoice> "
+"Provede nově připojení aktuálního připojení. Když ztratíte spojení se "
+"serverem MUD, může vám to pomoci s opětovným připojením. Pokud je připojení "
+"otevřené, nejprve se zavře a pak se spustí nové."
+
+#: C/gnome-mud-manual.xml:661(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Start Logging…</guimenuitem></menuchoice> This "
+"will enable the recording of the currently selected connection. It will "
+"write all the output of a mudding session into the selected file."
+msgstr ""
+"<menuchoice> • <guimenuitem>Začít zaznamenávat…</guimenuitem></menuchoice> "
+"Zapne zaznamenávání právě vybraného připojení. Veškerý výstup sezení se bude "
+"zapisovat do vybraného souboru."
+
+#: C/gnome-mud-manual.xml:671(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Stop Logging</guimenuitem></menuchoice> This "
+"stops the recording of a connection, if it had been previously started."
+msgstr ""
+"<menuchoice> • <guimenuitem>Přestat zaznamenávat</guimenuitem></menuchoice> "
+"Ukončí zaznamenávání připojení, pokud bylo před tím spuštěno."
+
+#: C/gnome-mud-manual.xml:680(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Save Buffer…</guimenuitem></menuchoice> This "
+"permits you to save your current connection buffer into a file. Useful to "
+"keep deathlogs or questlogs. It will just take a 'snapshot' of past "
+"messages, writing it into the selected file. For real time logging, see "
+"'Start/Stop Logging'."
+msgstr ""
+"<menuchoice> • <guimenuitem>Uložit vyrovnávací paměť…</guimenuitem></"
+"menuchoice> Umožní vám uložit vyrovnávací paměť aktuálního připojení do "
+"souboru. Hodí se například pro uchování záznamů o úmrtích nebo pátráních. "
+"Jednoduše se vezme „snímek“ uchovaných zpráv a zapíše se do souboru. Pro "
+"záznam v reálném čase použijte Začít zaznamenávat/Přestat zaznamenávat."
+
+#: C/gnome-mud-manual.xml:692(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Close Window</guimenuitem></menuchoice> This "
+"closes a connection tab, even if the connection is still open."
+msgstr ""
+"<menuchoice> • <guimenuitem>Zavřít okno</guimenuitem></menuchoice> Zavře "
+"kartu s připojením, i když je připojení stále aktivní."
+
+#: C/gnome-mud-manual.xml:701(para)
+msgid ""
+"<menuchoice><shortcut><keycombo><keycap>Ctrl</keycap><keycap>Q</keycap></"
+"keycombo></shortcut> • <guimenuitem>Exit</guimenuitem></menuchoice> This "
+"quits the application."
+msgstr ""
+"<menuchoice><shortcut><keycombo><keycap>Ctrl</keycap><keycap>Q</keycap></"
+"keycombo></shortcut> • <guimenuitem>Exit</guimenuitem></menuchoice> Ukončí "
+"aplikaci."
+
+#: C/gnome-mud-manual.xml:604(para) C/gnome-mud-manual.xml:719(para)
+#: C/gnome-mud-manual.xml:766(para)
+msgid "This menu contains: <placeholder-1/>"
+msgstr "Tato nabídka obsahuje: <placeholder-1/>"
+
+#: C/gnome-mud-manual.xml:717(guimenu)
+msgid "Settings"
+msgstr "Nastavení"
+
+#: C/gnome-mud-manual.xml:723(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Auto Mapper…</guimenuitem></menuchoice> This "
+"opens the Auto Mapper feature (see the <link linkend=\"mapping\">GNOME-Mud "
+"Auto Mapper</link> section for more information."
+msgstr ""
+"<menuchoice> • <guimenuitem>Automatické mapování…</guimenuitem></menuchoice> "
+"Otevře funkci automatického mapování (více informací viz <link linkend="
+"\"mapping\">Automatické mapování Mud GNOME</link>."
+
+#: C/gnome-mud-manual.xml:733(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Plugins</guimenuitem></menuchoice> This opens a "
+"submenu with the list of available plugins for <application>GNOME-Mud</"
+"application> and the <interface>Plugin Information</interface>, which shows "
+"information about them. Currently, <application>GNOME-Mud </application> "
+"does not ship with any plugin, but creating your own should be pretty easy. "
+"An example of an useful plugin could be a graphical Health Points/Mana "
+"monitor."
+msgstr ""
+"<menuchoice> • <guimenuitem>Zásuvné moduly</guimenuitem></menuchoice> Otevře "
+"podnabídku se seznamem dostupných zásuvných modulů pro <menuchoice>Mud "
+"GNOME<guimenuitem> a <interface>Informace o zásuvných modulech</interface>, "
+"která o nich zobrazí informace. V současnosti </menuchoice>Mud "
+"GNOME<application> není šířen se žádným zásuvným modulem, ale napsání vašeho "
+"vlastního by mělo být snadné. Příkladem užitečného zásuvného modulu by mohlo "
+"být grafické sledování, kde se dají sbírat životy a mana."
+
+#: C/gnome-mud-manual.xml:748(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Preferences…</guimenuitem></menuchoice> This "
+"opens the <link linkend=\"prefs\"><interface>Preferences</interface></link> "
+"dialog, which is used configure different aspects of <application>GNOME-Mud</"
+"application>."
+msgstr ""
+"<menuchoice> • <guimenuitem>Předvolby…</guimenuitem></menuchoice> Otevře "
+"dialogové okno <link linkend=\"prefs\"><interface>Předvolby</interface></"
+"link>, které se používá k nastavení různých vlastností aplikace "
+"<application>Mud GNOME</application>."
+
+#: C/gnome-mud-manual.xml:764(guimenu)
+msgid "Help"
+msgstr "Nápověda"
+
+#: C/gnome-mud-manual.xml:770(para)
+msgid ""
+"<menuchoice> • <guimenuitem>Manual</guimenuitem></menuchoice> This opens the "
+"<application>GNOME Help Browser</application> and displays this manual."
+msgstr ""
+"<menuchoice> • <guimenuitem>Příručka</guimenuitem></menuchoice> Otevře "
+"<application>Prohlížeč nápovědy GNOME</application> a zobrazí tuto příručku."
+
+#: C/gnome-mud-manual.xml:779(para)
+msgid ""
+"<menuchoice> • <guimenuitem>About</guimenuitem></menuchoice> This opens the "
+"<interface>About</interface> dialog which shows basic information about "
+"<application>GNOME-Mud</application>, such as the author's name, the "
+"application version number, the names of several contributors to the project "
+"and a link to<application>GNOME-Mud</application>'s Homepage."
+msgstr ""
+"<menuchoice> • <guimenuitem>O aplikaci</guimenuitem></menuchoice> Otevře "
+"dialogové okno <interface>O aplikaci</interface>, které zobrazuje základní "
+"informace o aplikaci <application>Mud GNOME</application>, jako je jméno "
+"autora, číslo verze, jména přispěvatelů do projektu a odkaz na domovskou "
+"stránku <application>Mud GNOME</application>."
+
+#: C/gnome-mud-manual.xml:805(title)
+msgid "Customization"
+msgstr "Přizpůsobení"
+
+#: C/gnome-mud-manual.xml:806(para)
+msgid ""
+"To change the application settings, select <menuchoice><guimenu>Settings</"
+"guimenu><guimenuitem>Preferences…</guimenuitem></menuchoice>. This opens the "
+"<interface>Preferences</interface> dialog, shown in <xref linkend="
+"\"preferences-window\"/>."
+msgstr ""
+"Když chcete změnit nastavení aplikace, vyberte "
+"<menuchoice><guimenu>Nastavení</guimenu> <guimenuitem>Předvolby</"
+"guimenuitem></menuchoice>. Otevře se dialogové okno <interface>Předvolby</"
+"interface>, které můžete vidět na <xref linkend=\"preferences-window\"/>."
+
+#: C/gnome-mud-manual.xml:817(title) C/gnome-mud-manual.xml:819(screeninfo)
+msgid "Preferences Dialog"
+msgstr "Dialogové okno předvoleb"
+
+#: C/gnome-mud-manual.xml:829(guilabel)
+msgid "Echo the text sent?"
+msgstr "Opakovat odeslaný text"
+
+#: C/gnome-mud-manual.xml:831(para)
+msgid ""
+"If this is set, all the text you type and enter will be echoed on the "
+"connection so you can control what you are sending."
+msgstr ""
+"Když je zapnuto, veškerý text, který zadáváte psaním se bude souběžně "
+"vypisovat na obrazovku, takže máte přehled, co do připojení odesíláte."
+
+#: C/gnome-mud-manual.xml:839(term)
+msgid "Keep the text entered?"
+msgstr "Ponechat zadaný text"
+
+#: C/gnome-mud-manual.xml:841(para)
+msgid ""
+"If this is set, the text you have entered and sent to the connection, will "
+"be left in the entry box but selected. Turn this off to remove the text "
+"after it has been sent."
+msgstr ""
+"Když je zapnuto, tak text, který zadáte a odešlete do připojení, bude "
+"ponechán ve vstupním poli a navíc bude označený jako vybraný. Vypnutí této "
+"volby způsobí, že text bude vždy po odeslání odstraněn."
+
+#: C/gnome-mud-manual.xml:849(term)
+msgid "Freeze/Thaw?"
+msgstr "Zmrazit/rozmrazit"
+
+#: C/gnome-mud-manual.xml:851(para)
+msgid ""
+"If set, text will draw faster but it will not draw every character, only "
+"whole strings. This will probably make displays a lot faster if you are "
+"playing MUDs with a lot of different colours."
+msgstr ""
+"Když je zapnuto, bude text vypisován rychleji, ale nebudou se psát "
+"jednotlivé znaky, jen celé texty. Hlavně to zobrazování asi zrychlí, když "
+"hrajete MUD s velkým množstvím různých barev."
+
+#: C/gnome-mud-manual.xml:860(term)
+msgid "Disable system keys"
+msgstr "Zakázat systémové klávesy"
+
+#: C/gnome-mud-manual.xml:862(para)
+msgid ""
+"If set, <application>GNOME-Mud</application> will provide with some default "
+"keybinds, like for example direction aliases in the numeric keypad. These "
+"can always be overriden by user keybindings, or can be totally disabled from "
+"here."
+msgstr ""
+"Když je zapnuto, poskytuje <application>Mud GNOME</application> některé "
+"klávesové zkratky, jako třeba pro určení směru přes numerickou klávesnici. "
+"Vždy máte možnost definice změnit pomocí uživatelských klávesových zkratek, "
+"nebo je zde úplně zakázat."
+
+#: C/gnome-mud-manual.xml:871(term)
+msgid "Command divide char"
+msgstr "Znak oddělující příkazy"
+
+#: C/gnome-mud-manual.xml:873(para)
+msgid ""
+"Insert the character you want to use to separate multi-command orders "
+"entered in the command line. For example, if set to \";\", entering "
+"\"north ; east\" in the command line will execute two independent commands "
+"\"north\", \"east\"."
+msgstr ""
+"Zadejte znak, které chcete používat k oddělování více příkazů zadaných v "
+"příkazové řádce. Když například určíte „;“, zadání „north; east“ v příkazové "
+"řádce spustí dva nezávislé příkazy „norh“ a „east“."
+
+#: C/gnome-mud-manual.xml:882(term)
+msgid "Command history"
+msgstr "Historie příkazů"
+
+#: C/gnome-mud-manual.xml:884(para)
+msgid ""
+"This is the number of commands that <application>GNOME-Mud </application> "
+"will store in it's command history."
+msgstr ""
+"Jedná se o počet příkazů, které <application>Mud GNOME</application> bude "
+"uchovávat ve své historii příkazů."
+
+#: C/gnome-mud-manual.xml:825(para)
+msgid ""
+"The properties in the <guilabel>Functionality</guilabel> tab are: "
+"<placeholder-1/>"
+msgstr ""
+"Vlastnosti na kartě <guilabel>Funkcionalita</guilabel> jsou: <placeholder-1/>"
+
+#: C/gnome-mud-manual.xml:897(term)
+msgid "Font"
+msgstr "Font"
+
+#: C/gnome-mud-manual.xml:899(para)
+msgid ""
+"Click here to open a font selection window to select the desired font to be "
+"used in the connection window."
+msgstr ""
+"Kliknutím otevřete okno pro výběr fontu, který si přejete používat v okně "
+"připojení."
+
+#: C/gnome-mud-manual.xml:906(term)
+msgid "Foreground color"
+msgstr "Barva popředí"
+
+#: C/gnome-mud-manual.xml:908(para)
+msgid ""
+"This will open a color chooser dialog that you can use to select the font "
+"color you want to use."
+msgstr ""
+"Otevře dialogové okno pro výběr barvy, ve kterém si můžete vybrat barvu, "
+"kterou chcete používat pro text."
+
+#: C/gnome-mud-manual.xml:915(term)
+msgid "Bold foreground color"
+msgstr "Barva tučného popředí"
+
+#: C/gnome-mud-manual.xml:917(para)
+msgid ""
+"This will open a color chooser dialog that you can use to select the bold "
+"font color you want to use."
+msgstr ""
+"Otevře dialogové okno pro výběr barvy, ve kterém si můžete vybrat barvu, "
+"kterou chcete používat pro tučný text."
+
+#: C/gnome-mud-manual.xml:924(term)
+msgid "Background color"
+msgstr "Barva pozadí"
+
+#: C/gnome-mud-manual.xml:926(para)
+msgid ""
+"This will open the same dialog as before, but will select the foreground "
+"color of your font."
+msgstr ""
+"Otevře již zmíněné dialogové okno, tentokrát ale pro výběr barvy pozadí pod "
+"textem."
+
+#: C/gnome-mud-manual.xml:933(term)
+msgid "Color Palette"
+msgstr "Paleta barev"
+
+#: C/gnome-mud-manual.xml:935(para)
+msgid ""
+"This is a series of buttons which lets you define your own colors for ANSI. "
+"Each color represents one ANSI color which you can redefine."
+msgstr ""
+"Řada tlačítek, pomocí kterých můžete definovat vlastní barvy pro ANSI. Každá "
+"z barev představuje jednu barvu ANSI, kterou můžete změnit."
+
+#: C/gnome-mud-manual.xml:893(para)
+msgid ""
+"The properties in the <guilabel>Colors and Fonts</guilabel> tab are: "
+"<placeholder-1/>"
+msgstr ""
+"Vlastnosti na kartě <guilabel>Barvy a fonty</guilabel> jsou: <placeholder-1/>"
+
+#: C/gnome-mud-manual.xml:945(para)
+msgid ""
+"After you have made all the changes you want, click on <guibutton>OK</"
+"guibutton> to apply the changes and close the <interface>Preferences</"
+"interface> dialog. To cancel the changes and return to previous values, "
+"click the <guibutton>Close</guibutton> button."
+msgstr ""
+"Jakmile máte provedené všechny změny, které chcete, klikněte na "
+"<guibutton>Budiž</guibutton>. Změny se použijí a dialogové okno "
+"<interface>Předvolby</interface> zavře. Pokud změny nechcete a přejete si "
+"vrátit předchozí hodnoty, klikněte na tlačítko <guibutton>Zavřít</guibutton>."
+
+#: C/gnome-mud-manual.xml:969(title)
+msgid "Known Bugs and Limitations"
+msgstr "Známé chyby a omezení"
+
+#: C/gnome-mud-manual.xml:970(para)
+msgid ""
+"Command history search won't show the last command when you press the up-"
+"arrow key, but the command before the last."
+msgstr ""
+"Hledání v historii příkazů nechce zobrazit poslední příkaz, když zmáčknete "
+"šipku nahoru, ale místo toho zobrazí předposlední."
+
+#: C/gnome-mud-manual.xml:974(para)
+msgid ""
+"The mapping support is still limited and must be used manually (you can't "
+"map as you walk through the MUD)."
+msgstr ""
+"Podpora mapování je zatím omezená a je nutné ji používat ručně (nemůžete "
+"mapovat pouhým procházením daného MUD)."
+
+#: C/gnome-mud-manual.xml:978(para)
+msgid "And of course, there are no plugins available yet!"
+msgstr "A na konec samozřejmě, zatím nejsou k dispozici žádné zásuvné moduly!"
+
+#: C/gnome-mud-manual.xml:987(title)
+msgid "Authors"
+msgstr "Autoři"
+
+#: C/gnome-mud-manual.xml:988(para)
+msgid ""
+"<application>GNOME-Mud</application> was written by Robin Ericsson "
+"(<email>lobbin@localhost.nu</email>). To find more information about "
+"<application>GNOME-Mud</application>, please visit the <ulink url=\"http://"
+"amcl.sourceforge.net/\" type=\"http\">GNOME-Mud Web page</ulink>. This "
+"manual was written by Jordi Mallach (<email>jordi@sindominio.net</email>)."
+msgstr ""
+"<application>Mud GNOME</application> napsal Robin Ericsson "
+"(<email>lobbin@localhost.nu</email>). Více informací o aplikaci se můžete "
+"dozvědět navštívením jejích <ulink url=\"http://amcl.sourceforge.net/\" type="
+"\"http\">webových stránek</ulink>. Tuto příručku napsal Jordi Mallach "
+"(<email>jordi@sindominio.net</email>)."
+
+#: C/gnome-mud-manual.xml:996(para)
+msgid ""
+"If you have some comments or suggestions regarding this application, need "
+"help, or want to report a bug, plese contact us! Instructions for doing so "
+"are given in <ulink type=\"help\" url=\"gnome-help:gnome-feedback"
+"\"><citetitle>Reporting GNOME bugs and other feedback</citetitle></ulink> "
+"document, which you can find in the <guilabel>Help</guilabel> tab of "
+"<application>Nautilus</application> file manager."
+msgstr ""
+"Pokud máte nějaké připomínky nebo návrhy k této aplikaci, potřebujete pomoc, "
+"nebo chcete nahlásit chybu, kontaktujte nás prosím! Jak na to, najdete v "
+"dokumentu <ulink type=\"help\" url=\"gnome-help:gnome-feedback"
+"\"><citetitle>Hlášení chyb GNOME a další ohlasy</citetitle></ulink>, kterou "
+"najdete na kartě <guilabel>Nápověda</guilabel> ve správci souborů "
+"<application>Nautilus</application>."
+
+#: C/gnome-mud-manual.xml:1022(title)
+msgid "License"
+msgstr "Licence"
+
+#: C/gnome-mud-manual.xml:1023(para)
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the <ulink type=\"help\" url=\"gnome-help:gpl"
+"\"><citetitle>GNU General Public License</citetitle></ulink> as published by "
+"the Free Software Foundation; either version 2 of the License, or (at your "
+"option) any later version."
+msgstr ""
+"Mud GNOME je svobodný software: Můžete jej dále šířit a/nebo upravovat za "
+"podmínek licence GNU General Public License v podobě, v jaké ji vydala Free "
+"Software Foundation, a to buď ve verzi 2 této licence nebo (dle vaší volby) "
+"v libovolné novější verzi."
+
+#: C/gnome-mud-manual.xml:1031(para)
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE. See the <citetitle>GNU General Public "
+"License</citetitle> for more details."
+msgstr ""
+"Mud GNOME je šířen ve víře, že bude užitečný, ale BEZ JAKÝCHKOLIV ZÁRUK, a "
+"to i bez předpokládané záruky na PRODEJNOST nebo VHODNOST PRO KONKRÉTNÍ "
+"ÚČEL. Více podrobností najdete přímo v licenci <citetitle>GNU General Public "
+"License</citetitle>."
+
+#: C/gnome-mud-manual.xml:1037(para)
+msgid ""
+"A copy of the <citetitle>GNU General Public License</citetitle> is included "
+"as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
+"obtain a copy of the <citetitle>GNU General Public License</citetitle> from "
+"the Free Software Foundation by visiting <ulink type=\"http\" url=\"http://"
+"www.fsf.org\">their Web site</ulink> or by writing to <address> Free "
+"Software Foundation, Inc. <street>59 Temple Place</street> - Suite 330 "
+"<city>Boston</city>, <state>MA</state><postcode>02111-1307</"
+"postcode><country>USA</country></address>"
+msgstr ""
+"Kopie znění <citetitle>GNU General Public License</citetitle> je v podobě "
+"přílohy součástí <citetitle>Uživatelské příručky k Mud GNOME</citetitle>. "
+"Případně můžete její kopii získat od Free Software Foundation, buď na <ulink "
+"type=\"http\" url=\"http://www.fsf.org\">jejich webových stránkách</ulink>, "
+"nebo když si o ni napíšete na adresu <address>Free Software Foundation, Inc. "
+"<street>59 Temple Place</street> - Suite 330 <city>Boston</city>, <state>MA</"
+"state><postcode>02111-1307</postcode><country>USA</country></address>"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: C/gnome-mud-manual.xml:0(None)
+msgid "translator-credits"
+msgstr "Marek Černocký <marek@manet.cz>"

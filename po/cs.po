@@ -241,7 +241,7 @@ msgstr ""
 
 #: ../gnome-mud.schemas.in.h:41 ../ui/prefs.glade.h:32
 msgid "Aliases"
-msgstr "Přezdívky"
+msgstr "Aliasy"
 
 #: ../gnome-mud.schemas.in.h:42 ../ui/prefs.glade.h:33
 msgid "Variables"
@@ -328,7 +328,7 @@ msgstr "Nebyl zadán žádný název serveru MUD."
 #: ../src/mud-connection-view.c:575 ../src/mud-connection-view.c:1977
 #, c-format
 msgid "*** Making connection to %s, port %d.\n"
-msgstr "*** Vytváří se spojení k %s, port %d.\n"
+msgstr "*** Vytváří se připojení k %s, port %d.\n"
 
 #: ../src/mud-connection-view.c:1054
 msgid "Close"
@@ -352,7 +352,7 @@ msgstr "*** Připojeno.\n"
 
 #: ../src/mud-connection-view.c:1175
 msgid "*** Connection closed.\n"
-msgstr "*** Spojení uzavřeno.\n"
+msgstr "*** Připojení uzavřeno.\n"
 
 #: ../src/mud-connection-view.c:1405
 #, c-format
@@ -369,7 +369,7 @@ msgid ""
 "*** Connection closed.\n"
 msgstr ""
 "\n"
-"*** Spojení uzavřeno.\n"
+"*** Připojení uzavřeno.\n"
 
 #: ../src/mud-connection-view.c:2027
 msgid "<password removed>"
@@ -385,7 +385,7 @@ msgstr "Vypršel časový limit připojení."
 
 #: ../src/mud-connection-view.c:2362
 msgid "There was an internal http connection error."
-msgstr "Vyskytla se interní chyba spojení http."
+msgstr "Vyskytla se interní chyba připojení http."
 
 #: ../src/mud-connection-view.c:2384
 msgid "Downloading"
@@ -464,7 +464,7 @@ msgid ""
 "MCCP data corrupted. Aborting connection.\n"
 msgstr ""
 "\n"
-"Poškozená data MCCP. Spojení bude zrušeno.\n"
+"Poškozená data MCCP. Připojení bude zrušeno.\n"
 
 #: ../ui/main.glade.h:1
 msgid "Gnome-Mud"
@@ -476,7 +476,7 @@ msgstr "_Soubor"
 
 #: ../ui/main.glade.h:3
 msgid "C_onnection..."
-msgstr "_Připojení…"
+msgstr "_Připojit…"
 
 #: ../ui/main.glade.h:4
 msgid "_Disconnect"

@@ -90,14 +90,14 @@ CLEANFILES = \
 	$(BUILT_SOURCES)
 
 gnome-mud-builtins.h: $(enumheaders) gnome-mud-builtins.h.template
-	( $(GLIB_MKENUMS) --template gnome-mud-builtins.h.template \
-	    $(enumheaders) > gnome-mud-builtins.h.tmp \
+	( $(GLIB_MKENUMS) --template $(srcdir)/gnome-mud-builtins.h.template \
+	    $(srcdir)/$(enumheaders) > gnome-mud-builtins.h.tmp \
 	    && mv gnome-mud-builtins.h.tmp gnome-mud-builtins.h ) \
 	    || ( rm -f gnome-mud-builtins.h.tmp && exit 1 )
 
 gnome-mud-builtins.c: $(enumheaders) gnome-mud-builtins.c.template
-	( $(GLIB_MKENUMS) --template gnome-mud-builtins.c.template \
-	    $(enumheaders) > gnome-mud-builtins.c.tmp \
+	( $(GLIB_MKENUMS) --template $(srcdir)/gnome-mud-builtins.c.template \
+	    $(srcdir)/$(enumheaders) > gnome-mud-builtins.c.tmp \
 	    && mv gnome-mud-builtins.c.tmp gnome-mud-builtins.c ) \
 	    || ( rm -f gnome-mud-builtins.c.tmp && exit 1 )
 

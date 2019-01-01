@@ -63,7 +63,7 @@ GType mud_window_get_type (void);
 
 void mud_window_add_connection_view(MudWindow *window, GObject *view, gchar *tabLbl);
 void mud_window_populate_profiles_menu(MudWindow *window);
-void mud_window_profile_menu_set_active(MudWindow *window, gchar *name);
+void mud_window_profile_menu_set_active(MudWindow *window, MudProfile *profile);
 void mud_window_close_current_window(MudWindow *window);
 void mud_window_disconnected(MudWindow *window);
 void mud_window_toggle_input_mode(MudWindow *window, MudConnectionView *view);

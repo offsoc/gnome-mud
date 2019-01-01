@@ -45,26 +45,18 @@ struct _MudPrefs
 {
     gboolean   EchoText;
     gboolean   KeepText;
-    gboolean   AutoSave;
-    gboolean   DisableKeys;
     gboolean   ScrollOnOutput;
 
     gchar     *FontName;
     gchar     *CommDev;
-    gchar     *LastLogDir;
     gchar     *Encoding;
     gchar     *ProxyVersion;
     gchar     *ProxyHostname;
 
-    gint       History;
-    gint       Scrollback;
-    gint       FlushInterval;
+    guint      Scrollback;
 
     GdkColor   Foreground;
     GdkColor   Background;
-
-    GSList	  *alias_names;
-    GSList	  *trigger_names;
 
     gboolean UseRemoteEncoding;
     gboolean UseProxy;
@@ -79,7 +71,9 @@ struct _MudProfile
 
     MudProfilePrivate *priv;
 
-    gchar *name;
+    guint64 id;
+    gchar *visible_name;
+    GSettings *settings;
     MudPrefs *preferences;
 };
 
@@ -87,7 +81,6 @@ typedef struct
 {
     unsigned int EchoText : 1;
     unsigned int KeepText : 1;
-    unsigned int DisableKeys : 1;
     unsigned int CommDev : 1;
     unsigned int History : 1;
     unsigned int ScrollOnOutput : 1;
@@ -113,26 +106,25 @@ struct _MudProfileClass
 
 GType mud_profile_get_type (void);
 
+const gchar *mud_profile_get_name (MudProfile *self);
+
 void mud_profile_copy_preferences (MudProfile *from, MudProfile *to);
 
 void mud_profile_set_echotext (MudProfile *profile, gboolean value);
 void mud_profile_set_keeptext (MudProfile *profile, gboolean value);
-void mud_profile_set_disablekeys (MudProfile *profile, gboolean value);
 void mud_profile_set_scrolloutput (MudProfile *profile, gboolean value);
 void mud_profile_set_commdev (MudProfile *profile, const gchar *value);
-void mud_profile_set_terminal (MudProfile *profile, const gchar *value);
-void mud_profile_set_history (MudProfile *profile, const gint value);
-void mud_profile_set_scrollback (MudProfile *profile, const gint value);
+void mud_profile_set_scrollback (MudProfile *profile, const guint value);
 void mud_profile_set_font (MudProfile *profile, const gchar *value);
-void mud_profile_set_foreground (MudProfile *profile, guint r, guint g, guint b);
-void mud_profile_set_background (MudProfile *profile, guint r, guint g, guint b);
-void mud_profile_set_colors (MudProfile *profile, gint nr, guint r, guint g, guint b);
-void mud_profile_set_encoding_combo(MudProfile *profile, const gchar *e);
-void mud_profile_set_encoding_check (MudProfile *profile, const gint value);
-void mud_profile_set_proxy_check (MudProfile *profile, const gint value);
+void mud_profile_set_foreground (MudProfile *profile, GdkColor *color);
+void mud_profile_set_background (MudProfile *profile, GdkColor *color);
+void mud_profile_set_colors (MudProfile *profile, gint nr, GdkColor *color);
+void mud_profile_set_encoding_combo(MudProfile *profile, const gchar *value);
+void mud_profile_set_encoding_check (MudProfile *profile, gboolean value);
+void mud_profile_set_proxy_check (MudProfile *profile, const gboolean value);
 void mud_profile_set_proxy_combo(MudProfile *profile, GtkComboBox *combo);
 void mud_profile_set_proxy_entry (MudProfile *profile, const gchar *value);
-void mud_profile_set_msp_check (MudProfile *profile, const gint value);
+void mud_profile_set_msp_check (MudProfile *profile, const gboolean value);
 
 G_END_DECLS
 

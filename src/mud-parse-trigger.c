@@ -21,7 +21,6 @@
 #  include "config.h"
 #endif
 
-#include <gconf/gconf-client.h>
 #include <glib-object.h>
 #include <glib/gi18n.h>
 #include <string.h>
@@ -193,7 +192,6 @@ mud_parse_trigger_do(MudParseTrigger *self, gchar *data)
     gchar *regexstr;
     gchar *stripped_data;
     GSList *triggers, *entry;
-    GConfClient *client;
     GError *error = NULL;
     gchar keyname[2048];
     gint enabled;
@@ -206,8 +204,6 @@ mud_parse_trigger_do(MudParseTrigger *self, gchar *data)
     if(!MUD_IS_PARSE_TRIGGER(self))
         return FALSE;
 
-    client = gconf_client_get_default();
-
     g_object_get(self->priv->parent,
                  "parent-view", &view,
                  "regex", &regex,
@@ -217,6 +213,8 @@ mud_parse_trigger_do(MudParseTrigger *self, gchar *data)
                  "profile-name", &profile_name,
                  NULL);
 
+#warning Reimplement
+#if 0
     g_snprintf(keyname, 2048, "/apps/gnome-mud/profiles/%s/triggers/list", profile_name);
     triggers = gconf_client_get_list(client, keyname, GCONF_VALUE_STRING, &error);
 
@@ -265,8 +263,7 @@ mud_parse_trigger_do(MudParseTrigger *self, gchar *data)
 
     if(triggers)
         g_slist_free(triggers);
-
-    g_object_unref(client);
+#endif
 
     g_free(profile_name);
 

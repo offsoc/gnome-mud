@@ -24,7 +24,6 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include <vte/vte.h>
-#include <gconf/gconf-client.h>
 #include <gdk/gdkkeysyms.h>
 #include <glib/gprintf.h>
 
@@ -956,7 +955,6 @@ mud_subwindow_entry_keypress_cb(GtkWidget *widget,
                                 MudSubwindow *self)
 {
     const gchar *history;
-    GConfClient *client = gconf_client_get_default();
 
     if ((event->keyval == GDK_Return || event->keyval == GDK_KP_Enter) &&
         (event->state & gtk_accelerator_get_default_mod_mask()) == 0   &&
@@ -986,18 +984,13 @@ mud_subwindow_entry_keypress_cb(GtkWidget *widget,
                       0,
                       text);
 
-        if (gconf_client_get_bool(client,
-                    "/apps/gnome-mud/functionality/keeptext", NULL) == FALSE)
-            gtk_entry_set_text(GTK_ENTRY(self->priv->entry), "");
-        else
+        if (g_settings_get_boolean(self->priv->parent_view->profile->settings, "keep-text"))
             gtk_editable_select_region(GTK_EDITABLE(self->priv->entry), 0, -1);
-
-        g_object_unref(client);
+        else
+            gtk_entry_set_text(GTK_ENTRY(self->priv->entry), "");
 
         return TRUE;
     }
-
-    g_object_unref(client);
 
     if(event->keyval == GDK_Up)
     {

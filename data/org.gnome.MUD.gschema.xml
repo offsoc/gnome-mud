@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="gnome-mud">
+  <schema path="/org/gnome/MUD/" id="org.gnome.MUD">
+    <key name="schema-version" type="u">
+      <default>1</default>
+      <summary>Settings schema version</summary>
+    </key>
+    <key name="profile-list" type="as">
+      <default>['profile-0']</default>
+      <summary>List of available profiles</summary>
+    </key>
+    <key name="default-profile" type="s">
+      <default>'profile-0'</default>
+      <summary>Default profile</summary>
+    </key>
+    <key name="mud-list" type="as">
+      <default>[]</default>
+      <summary>List of available MUDs</summary>
+    </key>
+    <key name="character-list" type="as">
+      <default>[]</default>
+      <summary>List of available characters</summary>
+    </key>
+  </schema>
+
+  <schema id="org.gnome.MUD.Profile">
+    <!-- UI -->
+    <key name="visible-name" type="s">
+      <default>'Unnamed'</default>
+      <summary>Human-readable name of the profile</summary>
+    </key>
+    <key name="font" type="s">
+      <default>'monospace 12'</default>
+      <summary>A Pango font name and size</summary>
+    </key>
+    <!-- TODO: Add and implement use-system-font boolean setting "Whether to use the system monospace font" -->
+    <key name="foreground-color" type="s">
+      <default>'#FFFFDD'</default>
+      <summary>Default color of the text</summary>
+      <description>Default color of the text, as a color specification (can be HTML-style hex digits, or a color name such as “red”).</description>
+    </key>
+    <key name="background-color" type="s">
+      <default>'#000000'</default>
+      <summary>Default color of the background</summary>
+      <description>Default color of the background, as a color specification (can be HTML-style hex digits, or a color name such as “red”).</description>
+    </key>
+    <key name="palette" type="as">
+      <!-- TODO: Default currently matches "Linux console" - maybe switch to Tango?; add support for builtin color palettes -->
+      <default>['#000000',
+                '#AA0000',
+                '#00AA00',
+                '#AA5500',
+                '#0000AA',
+                '#AA00AA',
+                '#00AAAA',
+                '#AAAAAA',
+                '#555555',
+                '#FF5555',
+                '#55FF55',
+                '#FFFF55',
+                '#5555FF',
+                '#FF55FF',
+                '#55FFFF',
+                '#FFFFFF']</default>
+      <summary>Color palette</summary>
+      <description>List of the 16 colors that MUDs can use with indexed ANSI color codes.</description>
+    </key>
+    <key name="scrollback-lines" type="u">
+      <default>500</default><!-- TODO: Increase default? -->
+      <summary>Number of lines to keep in scrollback</summary>
+      <description>Number of scrollback lines to keep around. You can scroll back in the terminal by this number of lines; lines that don’t fit in the scrollback are discarded.</description>
+      <!-- TODO: If “scrollback-unlimited” is true, this value is ignored. --><!-- TODO: Maybe use "mu" for this? -->
+    </key>
+    <!-- FUNCTIONALITY -->
+    <key name="encoding" type="s">
+      <default>'UTF-8'</default><!-- TODO: Settings provides an encoding list, so we could have an enum type or choice list, instead of bare string -->
+      <summary>The encoding for the terminal widget.</summary>
+    </key>
+    <key name="remote-encoding" type="b">
+      <default>false</default><!-- TODO: Change to true? -->
+      <summary>Remote encoding</summary>
+      <description>Use Remote Encoding negotiation.</description>
+    </key>
+    <key name="remote-download" type="b">
+      <default>true</default>
+      <summary>Remote download</summary>
+      <description>Enable sound file downloading on MSP enabled MUDs.</description>
+    </key>
+    <key name="command-divider" type="s">
+      <default>';'</default>
+      <summary>Command divider</summary>
+      <description>A character that is used to split commands in a string like “w;w;w;l”, which will be sent to the MUD as 4 separate commands.</description>
+    </key>
+    <key name="echo" type="b">
+      <default>true</default>
+      <summary>Whether to echo sent text to the connection</summary>
+      <description>If enabled, all the text typed in will be echoed in the terminal, making it easier to control what is sent.</description>
+    </key>
+    <key name="keep-text" type="b">
+      <default>false</default>
+      <summary>Whether to keep text sent to the connection</summary>
+      <description>If enabled, the text that is sent to the connection will be left as a selection in the entry box. Otherwise, the text entry box will be cleared after each text input.</description>
+    </key>
+    <key name="scroll-on-output" type="b">
+      <default>false</default>
+      <summary>Whether to scroll to the bottom when there’s new output</summary>
+      <description>If true, whenever there’s new output the terminal will scroll to the bottom.</description>
+    </key>
+    <key name="use-proxy" type="b">
+      <default>false</default>
+      <summary>Use proxy</summary>
+      <description>Whether to use a proxy server to connect to the MUD.</description>
+    </key>
+    <key name="proxy-socks-version" type="s">
+      <choices>
+        <choice value="4"/>
+        <choice value="5"/>
+      </choices>
+      <default>'5'</default>
+      <summary>Proxy version</summary>
+      <description>The SOCKS version to be used.</description>
+    </key>
+    <key name="proxy-hostname" type="s">
+      <default>'127.0.0.1'</default>
+      <summary>Proxy server hostname</summary>
+      <description>The hostname for the SOCKS proxy server.</description>
+    </key>
+  </schema>
+
+  <schema id="org.gnome.MUD.Mud">
+    <key name="name" type="s">
+      <default>''</default>
+      <summary>Visible name of the MUD.</summary>
+    </key>
+    <key name="hostname" type="s">
+      <default>''</default>
+    </key>
+    <key name="port" type="u">
+      <default>23</default>
+    </key>
+  </schema>
+
+  <schema id="org.gnome.MUD.Character">
+    <key name="profile" type="s">
+      <default>''</default>
+      <summary>Profile ID</summary>
+    </key>
+    <key name="mud" type="s">
+      <default>''</default>
+      <summary>MUD ID</summary>
+    </key>
+    <key name="name" type="s">
+      <default>''</default>
+      <summary>Name of the character.</summary>
+    </key>
+    <key name="connect-string" type="s">
+      <default>''</default>
+      <summary>Connect string</summary>
+      <description>Commands to send to MUD upon establishing connection.</description>
+    </key>
+  </schema>
+</schemalist>

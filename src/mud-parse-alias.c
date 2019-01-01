@@ -24,7 +24,6 @@
 #include <glib-object.h>
 #include <glib/gi18n.h>
 #include <string.h>
-#include <gconf/gconf-client.h>
 #include <glib/gprintf.h>
 
 #include "mud-parse-base.h"
@@ -186,11 +185,9 @@ mud_parse_alias_get_property(GObject *object,
 gboolean
 mud_parse_alias_do(MudParseAlias *self, gchar *data)
 {
-    gchar *profile_name;
     gchar *actions;
     gchar *regexstr;
     GSList *aliases, *entry;
-    GConfClient *client;
     GError *error = NULL;
     gchar keyname[2048];
     gint enabled;
@@ -202,17 +199,13 @@ mud_parse_alias_do(MudParseAlias *self, gchar *data)
     if(!MUD_IS_PARSE_ALIAS(self))
         return FALSE;
 
-    client = gconf_client_get_default();
-
     g_object_get(self->priv->parent,
                  "parent-view", &view,
                  "regex", &regex,
                  NULL);
 
-    g_object_get(view,
-                 "profile-name", &profile_name,
-                 NULL);
-
+#warning reimplement
+#if 0
     g_snprintf(keyname, 2048, "/apps/gnome-mud/profiles/%s/aliases/list", profile_name);
     aliases = gconf_client_get_list(client, keyname, GCONF_VALUE_STRING, &error);
 
@@ -252,10 +245,7 @@ mud_parse_alias_do(MudParseAlias *self, gchar *data)
 
     if(aliases)
         g_slist_free(aliases);
-
-    g_free(profile_name);
-
-    g_object_unref(client);
+#endif
 
     return send_line;
 }

@@ -22,7 +22,6 @@
 
 G_BEGIN_DECLS
 
-#include <gconf/gconf-client.h>
 #include "mud-window.h"
 
 #define MUD_TYPE_PROFILE_WINDOW              (mud_profile_window_get_type ())

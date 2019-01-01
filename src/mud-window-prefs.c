@@ -1,6 +1,7 @@
 /* GNOME-Mud - A simple Mud Client
  * mud-window-prefs.c
- * Copyright (C) 2005-2009 Les Harris <lharris@gnome.org>
+ * Copyright 2005-2009 Les Harris <lharris@gnome.org>
+ * Copyright 2018 Mart Raudsepp <leio@gentoo.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,9 +24,6 @@
 
 #include <glib.h>
 #include <gtk/gtk.h>
-#include <glib/gi18n.h>
-#include <gconf/gconf.h>
-#include <gconf/gconf-client.h>
 #include <glib/gprintf.h>
 
 #include "gnome-mud.h"
@@ -37,10 +35,7 @@
 struct _MudWindowPrefsPrivate
 {
     MudWindow *parent;
-    MudProfile *profile;
-
-    gchar *name;
-    gchar *disp_name;
+    MudProfile *mud_profile;
 
     GtkWidget *window;
     gulong signal;
@@ -81,7 +76,7 @@ enum
 {
     PROP_MUD_WINDOW_PREFS_0,
     PROP_PARENT,
-    PROP_NAME
+    PROP_MUD_PROFILE
 };
 
 /* Create the Type */
@@ -146,9 +141,6 @@ static void mud_window_prefs_update_background(MudWindowPrefs *self,
                                                MudPrefs *preferences);
 static void mud_window_prefs_update_colors(MudWindowPrefs *self,
                                            MudPrefs *preferences);
-
-// Set Functions
-
 
 // Callbacks
 static void mud_window_prefs_echo_cb(GtkWidget *widget,
@@ -243,11 +235,11 @@ mud_window_prefs_class_init (MudWindowPrefsClass *klass)
                 G_PARAM_READWRITE|G_PARAM_CONSTRUCT_ONLY));
 
     g_object_class_install_property(object_class,
-            PROP_NAME,
-            g_param_spec_string("name",
-                "Name",
-                "The name of the Profile",
-                NULL,
+            PROP_MUD_PROFILE,
+            g_param_spec_object("mud-profile",
+                "MudProfile",
+                "The associated MudProfile object.",
+                MUD_TYPE_PROFILE,
                 G_PARAM_READWRITE|G_PARAM_CONSTRUCT_ONLY));
 }
 
@@ -285,10 +277,10 @@ mud_window_prefs_constructor (GType gtype,
         g_error("Tried to instantiate MudWindowPrefs without passing parent MudWindow");
     }
 
-    if(!self->priv->name)
+    if(!self->priv->mud_profile)
     {
-        g_printf("ERROR: Tried to instantiate MudWindowPrefs without passing profile name.\n");
-        g_error("Tried to instantiate MudWindowPrefs without passing parent profile name.");
+        g_printf("ERROR: Tried to instantiate MudWindowPrefs without passing profile.\n");
+        g_error("Tried to instantiate MudWindowPrefs without passing parent profile.");
     }
 
     mud_window_prefs_construct_window(self);
@@ -300,13 +292,7 @@ mud_window_prefs_constructor (GType gtype,
     mud_window_prefs_construct_timers_tab(self);
     mud_window_prefs_construct_keybindings_tab(self);
 
-    self->priv->profile = mud_profile_manager_get_profile_by_name(self->priv->parent->profile_manager,
-                                                                  self->priv->name);
-    if(!self->priv->profile)
-        self->priv->profile = mud_profile_manager_get_profile_by_name(self->priv->parent->profile_manager,
-                                                                      "Default");
-
-    self->priv->signal = g_signal_connect(self->priv->profile,
+    self->priv->signal = g_signal_connect(self->priv->mud_profile,
                                           "changed",
                                           G_CALLBACK(mud_window_prefs_changed_cb),
                                           self);
@@ -334,11 +320,8 @@ mud_window_prefs_finalize (GObject *object)
 
     self = MUD_WINDOW_PREFS(object);
 
-    g_signal_handler_disconnect(self->priv->profile,
+    g_signal_handler_disconnect(self->priv->mud_profile,
                                 self->priv->signal);
-
-    g_free(self->priv->name);
-    g_free(self->priv->disp_name);
 
     parent_class = g_type_class_peek_parent(G_OBJECT_GET_CLASS(object));
     parent_class->finalize(object);
@@ -351,7 +334,6 @@ mud_window_prefs_set_property(GObject *object,
                               GParamSpec *pspec)
 {
     MudWindowPrefs *self;
-    gchar *new_string;
 
     self = MUD_WINDOW_PREFS(object);
 
@@ -362,18 +344,8 @@ mud_window_prefs_set_property(GObject *object,
             self->priv->parent = MUD_WINDOW(g_value_get_object(value));
             break;
 
-        case PROP_NAME:
-            new_string = g_value_dup_string(value);
-
-            if(!self->priv->name)
-                self->priv->name = g_strdup(new_string);
-            else if( !g_str_equal(self->priv->name, new_string) )
-            {
-                g_free(self->priv->name);
-                self->priv->name = g_strdup(new_string);
-            }
-
-            g_free(new_string);
+        case PROP_MUD_PROFILE:
+            self->priv->mud_profile = MUD_PROFILE(g_value_get_object(value));
             break;
 
         default:
@@ -398,8 +370,8 @@ mud_window_prefs_get_property(GObject *object,
             g_value_take_object(value, self->priv->parent);
             break;
 
-        case PROP_NAME:
-            g_value_set_string(value, self->priv->name);
+        case PROP_MUD_PROFILE:
+            g_value_take_object(value, self->priv->mud_profile);
             break;
 
         default:
@@ -451,10 +423,8 @@ mud_window_prefs_construct_window(MudWindowPrefs *self)
     gtk_window_set_transient_for(GTK_WINDOW(self->priv->window),
                                  GTK_WINDOW(main_window));
 
-    self->priv->disp_name = gconf_unescape_key(self->priv->name, -1);
-
     gtk_window_set_title(GTK_WINDOW(self->priv->window),
-                         self->priv->disp_name);
+                         self->priv->mud_profile->visible_name);
 
     g_signal_connect(self->priv->window,
                      "delete-event",
@@ -517,24 +487,25 @@ mud_window_prefs_changed_cb(MudProfile *profile,
 static void
 mud_window_prefs_set_preferences(MudWindowPrefs *self)
 {
+    /* TODO: Just bind via GSettings instead? */
     // Terminal
-    mud_window_prefs_update_echotext(self, self->priv->profile->preferences);
-    mud_window_prefs_update_keeptext(self, self->priv->profile->preferences);
-    mud_window_prefs_update_scrolloutput(self, self->priv->profile->preferences);
-    mud_window_prefs_update_commdev(self, self->priv->profile->preferences);
-    mud_window_prefs_update_scrollback(self, self->priv->profile->preferences);
-    mud_window_prefs_update_font(self, self->priv->profile->preferences);
-    mud_window_prefs_update_foreground(self, self->priv->profile->preferences);
-    mud_window_prefs_update_background(self, self->priv->profile->preferences);
-    mud_window_prefs_update_colors(self, self->priv->profile->preferences);
-    mud_window_prefs_update_encoding_combo(self, self->priv->profile->preferences);
+    mud_window_prefs_update_echotext(self, self->priv->mud_profile->preferences);
+    mud_window_prefs_update_keeptext(self, self->priv->mud_profile->preferences);
+    mud_window_prefs_update_scrolloutput(self, self->priv->mud_profile->preferences);
+    mud_window_prefs_update_commdev(self, self->priv->mud_profile->preferences);
+    mud_window_prefs_update_scrollback(self, self->priv->mud_profile->preferences);
+    mud_window_prefs_update_font(self, self->priv->mud_profile->preferences);
+    mud_window_prefs_update_foreground(self, self->priv->mud_profile->preferences);
+    mud_window_prefs_update_background(self, self->priv->mud_profile->preferences);
+    mud_window_prefs_update_colors(self, self->priv->mud_profile->preferences);
+    mud_window_prefs_update_encoding_combo(self, self->priv->mud_profile->preferences);
 
     // Network
-    mud_window_prefs_update_proxy_check(self, self->priv->profile->preferences);
-    mud_window_prefs_update_proxy_combo(self, self->priv->profile->preferences);
-    mud_window_prefs_update_proxy_entry(self, self->priv->profile->preferences);
-    mud_window_prefs_update_encoding_check(self, self->priv->profile->preferences);
-    mud_window_prefs_update_msp_check(self, self->priv->profile->preferences);
+    mud_window_prefs_update_proxy_check(self, self->priv->mud_profile->preferences);
+    mud_window_prefs_update_proxy_combo(self, self->priv->mud_profile->preferences);
+    mud_window_prefs_update_proxy_entry(self, self->priv->mud_profile->preferences);
+    mud_window_prefs_update_encoding_check(self, self->priv->mud_profile->preferences);
+    mud_window_prefs_update_msp_check(self, self->priv->mud_profile->preferences);
 }
 
 /************************ Terminal Tab ************************/
@@ -734,7 +705,7 @@ mud_window_prefs_scrolloutput_cb(GtkWidget *widget,
     gboolean value = GTK_TOGGLE_BUTTON(widget)->active ? TRUE : FALSE;
     RETURN_IF_CHANGING_PROFILES(self);
 
-    mud_profile_set_scrolloutput(self->priv->profile, value);
+    mud_profile_set_scrolloutput(self->priv->mud_profile, value);
 }
 
 static void
@@ -744,7 +715,7 @@ mud_window_prefs_keeptext_cb(GtkWidget *widget,
     gboolean value = GTK_TOGGLE_BUTTON(widget)->active ? TRUE : FALSE;
     RETURN_IF_CHANGING_PROFILES(self);
 
-    mud_profile_set_keeptext(self->priv->profile, value);
+    mud_profile_set_keeptext(self->priv->mud_profile, value);
 }
 
 static void
@@ -754,7 +725,7 @@ mud_window_prefs_echo_cb(GtkWidget *widget,
     gboolean value = GTK_TOGGLE_BUTTON(widget)->active ? TRUE : FALSE;
     RETURN_IF_CHANGING_PROFILES(self);
 
-    mud_profile_set_echotext(self->priv->profile, value);
+    mud_profile_set_echotext(self->priv->mud_profile, value);
 }
 
 static void
@@ -765,7 +736,7 @@ mud_window_prefs_commdev_cb(GtkWidget *widget,
     const gchar *s = gtk_entry_get_text(GTK_ENTRY(widget));
     RETURN_IF_CHANGING_PROFILES(self);
 
-    mud_profile_set_commdev(self->priv->profile, s);
+    mud_profile_set_commdev(self->priv->mud_profile, s);
 }
 
 static void
@@ -775,17 +746,18 @@ mud_window_prefs_encoding_combo_cb(GtkWidget *widget,
     const gchar *s = gtk_combo_box_get_active_text(GTK_COMBO_BOX(widget));
     RETURN_IF_CHANGING_PROFILES(self);
 
-    mud_profile_set_encoding_combo(self->priv->profile, s);
+    mud_profile_set_encoding_combo(self->priv->mud_profile, s);
 }
 
 static void
 mud_window_prefs_scrollback_cb(GtkWidget *widget,
                                MudWindowPrefs *self)
 {
-    const gint value = (gint) gtk_spin_button_get_value(GTK_SPIN_BUTTON(widget));
+    /* TODO: Looks like a rather risky integer cast */
+    const guint value = (guint) gtk_spin_button_get_value(GTK_SPIN_BUTTON(widget));
     RETURN_IF_CHANGING_PROFILES(self);
 
-    mud_profile_set_scrollback(self->priv->profile, value);
+    mud_profile_set_scrollback(self->priv->mud_profile, value);
 }
 
 static void
@@ -795,7 +767,7 @@ mud_window_prefs_font_cb(GtkWidget *widget,
     const gchar *fontname = gtk_font_button_get_font_name(GTK_FONT_BUTTON(widget));
 
     RETURN_IF_CHANGING_PROFILES(self);
-    mud_profile_set_font(self->priv->profile, fontname);
+    mud_profile_set_font(self->priv->mud_profile, fontname);
 }
 
 static void
@@ -807,7 +779,7 @@ mud_window_prefs_foreground_cb(GtkWidget *widget,
     RETURN_IF_CHANGING_PROFILES(self);
 
     gtk_color_button_get_color(GTK_COLOR_BUTTON(widget), &color);
-    mud_profile_set_foreground(self->priv->profile, color.red, color.green, color.blue);
+    mud_profile_set_foreground(self->priv->mud_profile, &color);
 }
 
 static void
@@ -819,7 +791,7 @@ mud_window_prefs_background_cb(GtkWidget *widget,
     RETURN_IF_CHANGING_PROFILES(self);
 
     gtk_color_button_get_color(GTK_COLOR_BUTTON(widget), &color);
-    mud_profile_set_background(self->priv->profile, color.red, color.green, color.blue);
+    mud_profile_set_background(self->priv->mud_profile, &color);
 }
 
 static void
@@ -836,11 +808,7 @@ mud_window_prefs_colors_cb(GtkWidget *widget,
         if (widget == self->priv->colors[i])
         {
             gtk_color_button_get_color(GTK_COLOR_BUTTON(widget), &color);
-            
-            mud_profile_set_colors(self->priv->profile, i,
-                                   color.red,
-                                   color.green,
-                                   color.blue);
+            mud_profile_set_colors(self->priv->mud_profile, i, &color);
         }
     }
 }
@@ -906,24 +874,11 @@ static void
 mud_window_prefs_update_proxy_combo(MudWindowPrefs *self,
                                     MudPrefs *preferences)
 {
-    gchar *profile_name;
-    GConfClient *client;
-
-    gchar buf[2048];
-    gchar extra_path[512] = "";
     gchar *version;
     gint active;
     gint current;
 
-    g_object_get(self->priv->profile, "name", &profile_name, NULL);
-
-    if (!g_str_equal(profile_name, "Default"))
-        g_snprintf(extra_path, 512, "profiles/%s/", profile_name);
-    g_free(profile_name);
-
-    g_snprintf(buf, 2048, "/apps/gnome-mud/%s%s", extra_path, "functionality/proxy_version");
-    client = gconf_client_get_default();
-    version = gconf_client_get_string(client, buf, NULL);
+    version = g_settings_get_string(self->priv->mud_profile->settings, "proxy-socks-version");
 
     if(version)
     {
@@ -941,8 +896,6 @@ mud_window_prefs_update_proxy_combo(MudWindowPrefs *self,
     }
 
     g_free(version);
-
-    g_object_unref(client);
 }
 
 static void
@@ -963,7 +916,7 @@ mud_window_prefs_encoding_check_cb(GtkWidget *widget,
     gboolean value = GTK_TOGGLE_BUTTON(widget)->active ? TRUE : FALSE;
     RETURN_IF_CHANGING_PROFILES(self);
 
-    mud_profile_set_encoding_check(self->priv->profile, value);
+    mud_profile_set_encoding_check(self->priv->mud_profile, value);
 }
 
 static void
@@ -977,7 +930,7 @@ mud_window_prefs_proxy_check_cb(GtkWidget *widget,
 
     RETURN_IF_CHANGING_PROFILES(self);
 
-    mud_profile_set_proxy_check(self->priv->profile, value);
+    mud_profile_set_proxy_check(self->priv->mud_profile, value);
 }
 
 static void
@@ -987,7 +940,7 @@ mud_window_prefs_msp_check_cb(GtkWidget *widget,
     gboolean value = GTK_TOGGLE_BUTTON(widget)->active ? TRUE : FALSE;
     RETURN_IF_CHANGING_PROFILES(self);
 
-    mud_profile_set_msp_check(self->priv->profile, value);
+    mud_profile_set_msp_check(self->priv->mud_profile, value);
 }
 
 static void
@@ -996,7 +949,7 @@ mud_window_prefs_proxy_combo_cb(GtkWidget *widget,
 {
     RETURN_IF_CHANGING_PROFILES(self);
 
-    mud_profile_set_proxy_combo(self->priv->profile, GTK_COMBO_BOX(widget));
+    mud_profile_set_proxy_combo(self->priv->mud_profile, GTK_COMBO_BOX(widget));
 }
 
 static void
@@ -1007,7 +960,7 @@ mud_window_prefs_proxy_entry_cb(GtkWidget *widget,
     RETURN_IF_CHANGING_PROFILES(self);
 
     if(s)
-        mud_profile_set_proxy_entry(self->priv->profile, s);
+        mud_profile_set_proxy_entry(self->priv->mud_profile, s);
 }
 
 /************************ Triggers Tab ************************/

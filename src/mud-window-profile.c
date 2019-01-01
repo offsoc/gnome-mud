@@ -1,6 +1,7 @@
 /* GNOME-Mud - A simple Mud Client
  * mud-window-profile.c
- * Copyright (C) 2008-2009 Les Harris <lharris@gnome.org>
+ * Copyright 2008-2009 Les Harris <lharris@gnome.org>
+ * Copyright 2018 Mart Raudsepp <leio@gentoo.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +22,6 @@
 #  include "config.h"
 #endif
 
-#include <gconf/gconf-client.h>
 #include <glib/gi18n.h>
 #include <string.h>
 #include <glib/gprintf.h>
@@ -37,24 +37,23 @@
 struct _MudProfileWindowPrivate
 {
     GtkWidget *window;
-    GtkWidget *treeview;
+    GtkWidget *treeview; /* TODO: Port to GtkListBox or some other redesign with gtk3 */
 
     GtkWidget *btnAdd;
     GtkWidget *btnDelete;
     GtkWidget *btnEdit;
 
-    gint CurrSelRow;
-    gchar *CurrSelRowText;
+    MudProfile *CurrSelRowProfile; /* TODO: We might lose the pointer while having a pointer stored here; reference it or add other safeguards (e.g. storing uuid instead and handling it appropriately in the face of uuid removals) */
 
-    GtkTreeStore *treestore;
+    GtkListStore *liststore;
     GtkTreeViewColumn *col;
-    GtkCellRenderer *renderer;
 };
 
 /* Model Columns */
 enum
 {
     NAME_COLUMN,
+    PROFILE_COLUMN,
     N_COLUMNS
 };
 
@@ -150,6 +149,7 @@ mud_profile_window_constructor (GType gtype,
     GtkBuilder *builder;
     GError *error = NULL;
     GtkWindow *main_window;
+    GtkCellRenderer *renderer;
 
     /* Chain up to parent constructor */
     klass = MUD_PROFILE_WINDOW_CLASS( g_type_class_peek(MUD_TYPE_PROFILE_WINDOW) );
@@ -175,10 +175,10 @@ mud_profile_window_constructor (GType gtype,
     profwin->priv->btnEdit = GTK_WIDGET(gtk_builder_get_object(builder, "btnEdit"));
 
     profwin->priv->treeview = GTK_WIDGET(gtk_builder_get_object(builder, "profilesView"));
-    profwin->priv->treestore = GTK_TREE_STORE(gtk_tree_store_new(N_COLUMNS, G_TYPE_STRING));
+    profwin->priv->liststore = GTK_LIST_STORE(gtk_list_store_new(N_COLUMNS, G_TYPE_STRING, G_TYPE_POINTER));
 
     g_object_set(profwin->priv->treeview,
-                 "model", GTK_TREE_MODEL(profwin->priv->treestore),
+                 "model", GTK_TREE_MODEL(profwin->priv->liststore),
                  "rules-hint", TRUE,
                  "headers-visible", FALSE,
                  NULL);
@@ -188,16 +188,15 @@ mud_profile_window_constructor (GType gtype,
     gtk_tree_view_append_column(GTK_TREE_VIEW(profwin->priv->treeview),
                                 profwin->priv->col);
     
-    profwin->priv->renderer = gtk_cell_renderer_text_new();
+    renderer = gtk_cell_renderer_text_new();
     
     gtk_tree_view_column_pack_start(profwin->priv->col,
-                                   profwin->priv->renderer,
-                                   TRUE);
+                                    renderer,
+                                    TRUE);
 
     gtk_tree_view_column_add_attribute(profwin->priv->col,
-                                       profwin->priv->renderer,
-                                       "text",
-                                       NAME_COLUMN);
+                                       renderer,
+                                       "text", NAME_COLUMN);
 
     gtk_tree_selection_set_select_function(
             gtk_tree_view_get_selection(GTK_TREE_VIEW(profwin->priv->treeview)),
@@ -294,18 +293,15 @@ mud_profile_window_add_cb(GtkWidget *widget, MudProfileWindow *profwin)
     GError *error = NULL;
     GtkWidget *window;
     GtkWidget *entry_profile;
-    gchar *profile;
+    gchar *profile_name;
     gint result;
-    MudProfile *def, *prof;
+    MudProfile *prof;
 
     builder = gtk_builder_new();
     if(gtk_builder_add_from_file(builder, UIDIR "/prefs.ui", &error) == 0)
         g_error("Failed to load: %s", error->message);
 
     window = GTK_WIDGET(gtk_builder_get_object(builder, "newprofile_dialog"));
-
-    def = mud_profile_manager_get_profile_by_name(profwin->parent_window->profile_manager,
-                                                  "Default");
 
     gtk_window_set_transient_for(
             GTK_WINDOW(window),
@@ -316,22 +312,13 @@ mud_profile_window_add_cb(GtkWidget *widget, MudProfileWindow *profwin)
     result = gtk_dialog_run(GTK_DIALOG(window));
     if (result == GTK_RESPONSE_OK)
     {
-        gchar *escaped_name;
-        profile = g_strdup(gtk_entry_get_text(GTK_ENTRY(entry_profile)));
+        profile_name = g_strdup(gtk_entry_get_text(GTK_ENTRY(entry_profile)));
+        prof = mud_profile_manager_add_profile(profwin->parent_window->profile_manager,
+                                               profile_name);
 
-        mud_profile_manager_add_profile(profwin->parent_window->profile_manager,
-                                        profile);
-
-        escaped_name = gconf_escape_key(profile, -1);
-
-        prof = mud_profile_manager_get_profile_by_name(profwin->parent_window->profile_manager,
-                                                       escaped_name);
-
-        mud_profile_copy_preferences(def, prof);
         mud_profile_window_populate_treeview(profwin);
 
-        g_free(profile);
-        g_free(escaped_name);
+        g_free(profile_name);
     }
 
     gtk_widget_destroy(window);
@@ -341,30 +328,20 @@ mud_profile_window_add_cb(GtkWidget *widget, MudProfileWindow *profwin)
 static void
 mud_profile_window_del_cb(GtkWidget *widget, MudProfileWindow *profwin)
 {
-    if(!g_str_equal("Default", profwin->priv->CurrSelRowText))
-    {
-        gchar *escaped_name = gconf_escape_key(profwin->priv->CurrSelRowText, -1);
+#warning Add safeguards against deleting default or last item
+    mud_profile_manager_delete_profile(profwin->parent_window->profile_manager,
+                                       profwin->priv->CurrSelRowProfile);
 
-        mud_profile_manager_delete_profile(profwin->parent_window->profile_manager,
-                                           escaped_name);
-
-        g_free(escaped_name);
-
-        mud_profile_window_populate_treeview(profwin);
-    }
+    mud_profile_window_populate_treeview(profwin);
 }
 
 static void
-mud_profile_window_edit_cb(GtkWidget *widget, MudProfileWindow *profwin)
+mud_profile_window_edit_cb (GtkWidget *widget, MudProfileWindow *profwin)
 {
-    gchar *escaped_name = gconf_escape_key(profwin->priv->CurrSelRowText, -1);
-
-    g_object_new(MUD_TYPE_WINDOW_PREFS,
-                 "parent-window", profwin->parent_window,
-                 "name", escaped_name,
-                 NULL);
-
-    g_free(escaped_name);
+  g_object_new(MUD_TYPE_WINDOW_PREFS,
+               "parent-window", profwin->parent_window,
+               "mud-profile", profwin->priv->CurrSelRowProfile,
+               NULL);
 }
 
 static gint
@@ -377,66 +354,66 @@ mud_profile_window_close_cb(GtkWidget *widget, MudProfileWindow *profwin)
 
 static gboolean
 mud_profile_window_tree_select_cb(GtkTreeSelection *selection,
-                     		  GtkTreeModel     *model,
-                     	          GtkTreePath      *path,
-                   	          gboolean        path_currently_selected,
-                     		  gpointer          userdata)
+                                  GtkTreeModel     *model,
+                                  GtkTreePath      *path,
+                                  gboolean          path_currently_selected,
+                                  gpointer          userdata)
 {
     GtkTreeIter iter;
     MudProfileWindow *profwin = (MudProfileWindow *)userdata;
 
     if (gtk_tree_model_get_iter(model, &iter, path))
     {
-        gtk_tree_model_get(model, &iter, 0, &profwin->priv->CurrSelRowText, -1);
-
-        profwin->priv->CurrSelRow = (gtk_tree_path_get_indices(path))[0];
+        gtk_tree_model_get(model, &iter, PROFILE_COLUMN, &profwin->priv->CurrSelRowProfile, -1);
 
         gtk_widget_set_sensitive(profwin->priv->btnEdit, TRUE);
 
-        if(g_str_equal(profwin->priv->CurrSelRowText, "Default"))
-            gtk_widget_set_sensitive(profwin->priv->btnDelete, FALSE);
-        else
-            gtk_widget_set_sensitive(profwin->priv->btnDelete, TRUE);
+        /* TODO: Don't allow deleting default profile (in addition to the last one, which should be the default too */
+        gtk_widget_set_sensitive(profwin->priv->btnDelete, gtk_tree_model_iter_n_children(GTK_TREE_MODEL(profwin->priv->liststore), NULL) > 1);
     }
+    /* TODO: desensitize btnEdit if selection is removed (ctrl+click on selected item with treeview); alternative just ensure a selection is always kept, perhaps after GtkListBox or redesign */
 
     return TRUE;
 }
 
 /* Private Methods */
 static void
-mud_profile_window_populate_treeview(MudProfileWindow *profwin)
+mud_profile_window_populate_treeview (MudProfileWindow *profwin)
 {
-    const GSList *profiles, *entry;
-    GtkTreeStore* store;
-    GtkTreeIter iter;
+  GSequence *profiles;
+  MudProfile *profile;
+  GtkListStore *store;
+  GtkTreeIter iter;
+  GSequenceIter *seqiter;
 
-    g_return_if_fail(MUD_IS_PROFILE_WINDOW(profwin));
+  g_return_if_fail(MUD_IS_PROFILE_WINDOW(profwin));
 
-    store = GTK_TREE_STORE(profwin->priv->treestore);
+  store = profwin->priv->liststore;
 
-    gtk_tree_store_clear(store);
+  gtk_list_store_clear (store);
 
-    gtk_widget_set_sensitive(profwin->priv->btnDelete, FALSE);
-    gtk_widget_set_sensitive(profwin->priv->btnEdit, FALSE);
+  gtk_widget_set_sensitive (profwin->priv->btnDelete, FALSE);
+  gtk_widget_set_sensitive (profwin->priv->btnEdit, FALSE);
 
-    profiles = mud_profile_manager_get_profiles(profwin->parent_window->profile_manager);
+  profiles = mud_profile_manager_get_profiles (profwin->parent_window->profile_manager);
 
-    entry = profiles;
-    while(entry)
+  for (seqiter = g_sequence_get_begin_iter (profiles);
+       !g_sequence_iter_is_end (seqiter);
+       seqiter = g_sequence_iter_next (seqiter))
     {
-        MudProfile *profile = MUD_PROFILE(entry->data);
-        gchar *escaped_name;
+      profile = g_sequence_get (seqiter);
 
-        escaped_name = gconf_unescape_key(profile->name, -1);
+      gtk_list_store_append(store, &iter);
+      gchar *name2;
+      g_object_get (profile,
+                    "name", &name2,
+                    NULL);
+      g_free (name2);
+      gtk_list_store_set (store, &iter,
+                          NAME_COLUMN, profile->visible_name, /* TODO: Handle outside visible-name renames */
+                          PROFILE_COLUMN, profile,
+                          -1);
 
-        gtk_tree_store_append(store, &iter, NULL);
-        gtk_tree_store_set(store, &iter,
-                           NAME_COLUMN, escaped_name,
-                           -1);
-
-        g_free(escaped_name);
-
-        entry = g_slist_next(entry);
     }
 }
 

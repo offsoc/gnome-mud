@@ -22,8 +22,8 @@
 #  include "config.h"
 #endif
 
-#include <gconf/gconf-client.h>
 #include <glib/gi18n.h>
+#include <gio/gio.h>
 #include <gtk/gtk.h>
 #include <stdio.h>
 #include <sys/stat.h>
@@ -43,10 +43,9 @@
 gint
 main (gint argc, char *argv[])
 {
-    GConfClient *client;
     DebugLogger *logger;
-    GError      *err = NULL;
     GString *dir;
+    GSettings *global_settings;
 
 #ifdef ENABLE_NLS
     /* Initialize internationalization */
@@ -55,13 +54,11 @@ main (gint argc, char *argv[])
     textdomain(GETTEXT_PACKAGE);
 #endif
 
-    /* Initialize the GConf library */
-    if (!gconf_init(argc, argv, &err))
-    {
-        g_error(_("Failed to init GConf: %s"), err->message);
-        g_error_free(err);
-        return 1;
-    }
+    /* Set up schema version */
+    global_settings = g_settings_new("org.gnome.MUD");
+    /* Add any future migration triggers here */
+    g_settings_set_uint(global_settings, "schema-version", 1);
+    g_object_unref(global_settings);
 
     gtk_init(&argc, &argv);
 
@@ -70,17 +67,13 @@ main (gint argc, char *argv[])
     gst_init(&argc, &argv);
 #endif
 
-    client = gconf_client_get_default();
-    gconf_client_add_dir(client, "/apps/gnome-mud",
-            GCONF_CLIENT_PRELOAD_ONELEVEL, NULL);
-
     dir = g_string_new(NULL);
     g_string_printf(dir,
                     "%s%cgnome-mud%clogs",
                     g_get_user_data_dir(),
                     G_DIR_SEPARATOR,
                     G_DIR_SEPARATOR);
-    g_mkdir_with_parents(dir->str, 0755);      
+    g_mkdir_with_parents(dir->str, 0755);
     g_string_free(dir, TRUE);
 
     dir = g_string_new(NULL);
@@ -115,10 +108,7 @@ main (gint argc, char *argv[])
 
     gtk_main();
 
-    gconf_client_suggest_sync(client, &err);
-    
     g_object_unref(logger);
-    g_object_unref(client);
 
     return 0;
 }

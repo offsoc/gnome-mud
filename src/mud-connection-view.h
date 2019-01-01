@@ -55,7 +55,6 @@ struct _MudConnectionView
 
     gchar *connect_string;
     gchar *remote_encoding;
-    gchar *profile_name;
 
     gint port;
     gchar *mud_name;

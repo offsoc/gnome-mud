@@ -1,6 +1,7 @@
 /* GNOME-Mud - A simple Mud Client
  * mud-profile-manager.h
- * Copyright (C) 2005-2009 Les Harris <lharris@gnome.org>
+ * Copyright 2005-2009 Les Harris <lharris@gnome.org>
+ * Copyright 2018 Mart Raudsepp <leio@gentoo.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,9 +21,13 @@
 #ifndef MUD_PROFILE_MANAGER_H
 #define MUD_PROFILE_MANAGER_H
 
+#include <glib.h>
+
 G_BEGIN_DECLS
 
-#include <glib.h>
+typedef struct _MudProfile   MudProfile;
+typedef struct _MudMud       MudMud;
+typedef struct _MudCharacter MudCharacter;
 
 #define MUD_TYPE_PROFILE_MANAGER              (mud_profile_manager_get_type ())
 #define MUD_PROFILE_MANAGER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), MUD_TYPE_PROFILE_MANAGER, MudProfileManager))
@@ -35,8 +40,6 @@ G_BEGIN_DECLS
 typedef struct _MudProfileManager            MudProfileManager;
 typedef struct _MudProfileManagerClass       MudProfileManagerClass;
 typedef struct _MudProfileManagerPrivate     MudProfileManagerPrivate;
-
-#include "mud-profile.h"
 
 struct _MudProfileManagerClass
 {
@@ -53,10 +56,24 @@ struct _MudProfileManager
 
 GType mud_profile_manager_get_type (void);
 
-void mud_profile_manager_add_profile(MudProfileManager *self, const gchar *name);
-void mud_profile_manager_delete_profile(MudProfileManager *self, const gchar *name);
-const GSList* mud_profile_manager_get_profiles (MudProfileManager *self);
-MudProfile* mud_profile_manager_get_profile_by_name(MudProfileManager *self, const gchar *name);
+MudProfile   *mud_profile_manager_add_profile      (MudProfileManager *self,
+                                                    const gchar       *name);
+void          mud_profile_manager_delete_profile   (MudProfileManager *self,
+                                                    MudProfile        *profile);
+GSequence    *mud_profile_manager_get_profiles     (MudProfileManager *self);
+MudMud       *mud_profile_manager_add_mud          (MudProfileManager *self,
+                                                    const gchar       *name,
+                                                    const gchar       *hostname,
+                                                    guint              port);
+GSequence    *mud_profile_manager_get_characters   (MudProfileManager *self);
+MudCharacter *mud_profile_manager_add_character    (MudProfileManager *self,
+                                                    MudProfile        *profile,
+                                                    MudMud            *mud,
+                                                    const gchar       *name,
+                                                    const gchar       *connect_string,
+                                                    const gchar       *icon);
+void          mud_profile_manager_delete_character (MudProfileManager *self,
+                                                    MudCharacter      *character);
 
 G_END_DECLS
 

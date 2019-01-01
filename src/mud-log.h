@@ -22,8 +22,6 @@
 
 G_BEGIN_DECLS
 
-#include <gconf/gconf-client.h>
-
 #define MUD_TYPE_LOG              (mud_log_get_type ())
 #define MUD_LOG(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), MUD_TYPE_LOG, MudLog))
 #define MUD_LOG_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), MUD_TYPE_LOG, MudLogClass))

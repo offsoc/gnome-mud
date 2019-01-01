@@ -3,10 +3,6 @@ SUBDIRS = data doc po src ui
 @INTLTOOL_SCHEMAS_RULE@
 @INTLTOOL_DESKTOP_RULE@
 
-schemadir = $(GCONF_SCHEMA_FILE_DIR)
-schema_in_files = gnome-mud.schemas.in
-schema_DATA = $(schema_in_files:.schemas.in=.schemas)
-
 Applicationsdir = $(datadir)/applications
 Applications_in_files = gnome-mud.desktop.in
 Applications_DATA = $(Applications_in_files:.desktop.in=.desktop)
@@ -56,14 +52,5 @@ MAINTAINERCLEANFILES = \
 
 
 DISTCHECK_CONFIGURE_FLAGS = --disable-schemas-install --disable-scrollkeeper
-
-install-data-local: $(schema_DATA)
-if GCONF_SCHEMAS_INSTALL
-	if test -z "$(DESTDIR)"; then \
-		for p in $^ ; do \
-			GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $$p 2>&1 > /dev/null; \
-		done \
-	fi
-endif
 
 -include $(top_srcdir)/git.mk

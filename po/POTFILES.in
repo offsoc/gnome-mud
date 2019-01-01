@@ -2,9 +2,8 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
 gnome-mud.desktop.in
-gnome-mud.schemas.in
+[type: gettext/gsettings]data/org.gnome.MUD.gschema.xml
 src/debug-logger.c
-src/gnome-mud.c
 src/mud-connections.c
 src/mud-connection-view.c
 src/mud-log.c

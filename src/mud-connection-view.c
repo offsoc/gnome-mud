@@ -1,9 +1,11 @@
-/* GNOME-Mud - A simple Mud CLient
- * Copyright (C) 1998-2006 Robin Ericsson <lobbin@localhost.nu>
+/* mud-connection-view.c
  *
- * This program is free software; you can redistribute it and/or modify
+ * Copyright 1998-2006 Robin Ericsson <lobbin@localhost.nu>
+ * Copyright 2018 Mart Raudsepp <leio@gentoo.org>
+ *
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,15 +14,15 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
 #ifdef HAVE_CONFIG_H
 #  include "config.h"
 #endif
 
-#include <gconf/gconf-client.h>
 #include <glib-object.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
@@ -91,7 +93,6 @@ enum
     PROP_PARSE_BASE,
     PROP_TELNET,
     PROP_WINDOW,
-    PROP_PROFILE_NAME,
     PROP_LOGGING,
     PROP_TERMINAL,
     PROP_VBOX
@@ -235,14 +236,6 @@ mud_connection_view_class_init (MudConnectionViewClass *klass)
                 MUD_TYPE_WINDOW,
                 G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
 
-    g_object_class_install_property(object_class,
-            PROP_PROFILE_NAME,
-            g_param_spec_string("profile-name",
-                "profile name",
-                "the name of the current profile",
-                NULL,
-                G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
-
     // Setable properties
     g_object_class_install_property(object_class,
             PROP_REMOTE_ENCODE,
@@ -322,7 +315,7 @@ mud_connection_view_class_init (MudConnectionViewClass *klass)
                 "profile",
                 "the mud profile object",
                 MUD_TYPE_PROFILE,
-                G_PARAM_READABLE));
+                G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY)); /* TODO: Make it changeable again */
 
     g_object_class_install_property(object_class,
             PROP_TELNET,
@@ -450,32 +443,15 @@ mud_connection_data_ready_cb(MudConnection *conn, MudConnectionView *self)
 static gchar *
 mud_connection_view_create_proxy_uri(const MudConnectionView *self)
 {
-    GConfClient *client;
     gchar *uri = NULL;
     gchar *host, *str_version;
     guint version;
-    gchar key[2048];
-    gchar extra_path[512] = "";
 
-    if (strcmp(self->profile_name, "Default") != 0)
-    {
-        g_snprintf(extra_path, sizeof(extra_path), "profiles/%s/", self->profile_name);
-    }
-
-    client = gconf_client_get_default();
-
-    g_snprintf(key, sizeof(key), "/apps/gnome-mud/%s%s", extra_path, "functionality/use_proxy");
-    if(!gconf_client_get_bool(client, key, NULL))
-    {
-        g_object_unref(client);
+    if (!g_settings_get_boolean(self->profile->settings, "use-proxy"))
         return NULL;
-    }
 
-    g_snprintf(key, sizeof(key), "/apps/gnome-mud/%s%s", extra_path, "functionality/proxy_hostname");
-    host = gconf_client_get_string(client, key, NULL);
-
-    g_snprintf(key, sizeof(key), "/apps/gnome-mud/%s%s", extra_path, "functionality/proxy_version");
-    str_version = gconf_client_get_string(client, key, NULL);
+    host = g_settings_get_string(self->profile->settings, "proxy-hostname");
+    str_version = g_settings_get_string(self->profile->settings, "proxy-socks-version");
     if(strcmp(str_version, "4") == 0)
         version = 4;
     else
@@ -483,7 +459,6 @@ mud_connection_view_create_proxy_uri(const MudConnectionView *self)
 
     uri = g_strdup_printf("socks%d://%s", version, host);
 
-    g_object_unref(client);
     g_free(host);
     g_free(str_version);
 
@@ -542,7 +517,7 @@ mud_connection_view_constructor (GType gtype,
     /* Create main VBox, VTE, and scrollbar */
     box = gtk_vbox_new(FALSE, 0);
     self->ui_vbox = GTK_VBOX(box);
-    self->terminal = VTE_TERMINAL(vte_terminal_new());
+    self->terminal = VTE_TERMINAL(vte_terminal_new()); /* TODO: Set up autowrap, so things rewrap on resize (this will be the default once we upgrade VTE to some gtk3 version); make sure none of our own tracking of things gets messed up from that, though */
     self->priv->scrollbar = gtk_vscrollbar_new(NULL);
     term_box = gtk_hbox_new(FALSE, 0);
 
@@ -624,9 +599,8 @@ mud_connection_view_constructor (GType gtype,
                  "tray", &tray,
                  NULL);
 
-    profile =
-        mud_profile_manager_get_profile_by_name(self->window->profile_manager,
-                                                self->profile_name);
+    profile = self->profile; /* FIXME: Gross workaround to get around set_profile check and early bail-out after construct_only restructuring; hopefully this can all be cleaned up together with move away from constructor to constructed override */
+    self->profile = NULL;
     mud_connection_view_set_profile(self, profile);
 
     self->tray = tray;
@@ -738,8 +712,10 @@ mud_connection_view_finalize (GObject *object)
 
     g_object_unref(connection_view->parse);
 
-    if(connection_view->profile)
-        g_object_unref(connection_view->profile);
+    /* TODO: We don't hold a ref right now - we should, or keep a weakref?
+     * if(connection_view->profile)
+     *  g_object_unref(connection_view->profile);
+     */
 
     g_object_unref(connection_view->priv->line_buffer);
 
@@ -871,29 +847,16 @@ mud_connection_view_set_property(GObject *object,
             g_free(new_string);
             break;
 
+        case PROP_PROFILE:
+            self->profile = g_value_get_object (value);
+            break;
+
         case PROP_WINDOW:
             self->window = MUD_WINDOW(g_value_get_object(value));
             break;
 
         case PROP_TRAY:
             self->tray = MUD_TRAY(g_value_get_object(value));
-            break;
-
-        case PROP_PROFILE_NAME:
-            new_string = g_value_dup_string(value);
-
-            if(!self->profile_name)
-                self->profile_name = 
-                    (new_string) ? g_strdup(new_string) : NULL;
-            else if( strcmp(self->profile_name, new_string) != 0)
-            {
-                if(self->profile_name)
-                    g_free(self->profile_name);
-                self->profile_name = 
-                    (new_string) ? g_strdup(new_string) : NULL;
-            }
-
-            g_free(new_string);
             break;
 
         case PROP_LOGGING:
@@ -989,10 +952,6 @@ mud_connection_view_get_property(GObject *object,
             g_value_set_boolean(value, self->logging);
             break;
 
-        case PROP_PROFILE_NAME:
-            g_value_set_string(value, self->profile_name);
-            break;
-
         case PROP_TERMINAL:
             g_value_take_object(value, self->terminal);
             break;
@@ -1076,8 +1035,8 @@ mud_connection_view_popup(MudConnectionView *view, GdkEventButton *event)
     GtkWidget *im_menu;
     GtkWidget *menu_item;
     GtkWidget *profile_menu;
-    const GSList *profiles;
-    const GSList *profile;
+    GSequence *profiles;
+    GSequenceIter *iter;
     GSList *group;
 
     if (view->priv->popup_menu)
@@ -1117,18 +1076,18 @@ mud_connection_view_popup(MudConnectionView *view, GdkEventButton *event)
 
     group = NULL;
     profiles = mud_profile_manager_get_profiles(view->window->profile_manager);
-    profile = profiles;
-    while (profile != NULL)
-    {
-        MudProfile *prof;
 
-        prof = profile->data;
+    for (iter = g_sequence_get_begin_iter (profiles);
+         !g_sequence_iter_is_end (iter);
+         iter = g_sequence_iter_next (iter))
+    {
+        MudProfile *prof = g_sequence_get (iter);
 
         /* Profiles can go away while the menu is up. */
-        g_object_ref(G_OBJECT(prof));
+        g_object_ref(G_OBJECT(prof)); /* TODO: Review reference handling (weakref?) */
 
         menu_item = gtk_radio_menu_item_new_with_label(group,
-                prof->name);
+                prof->visible_name);
         group = gtk_radio_menu_item_get_group(GTK_RADIO_MENU_ITEM(menu_item));
         gtk_menu_shell_append(GTK_MENU_SHELL(profile_menu), menu_item);
 
@@ -1143,7 +1102,6 @@ mud_connection_view_popup(MudConnectionView *view, GdkEventButton *event)
                 "profile",
                 prof,
                 (GDestroyNotify) g_object_unref);
-        profile = g_slist_next(profile);
     }
 
     menu_item = gtk_separator_menu_item_new();
@@ -1330,33 +1288,8 @@ static GtkWidget*
 append_stock_menuitem(GtkWidget *menu, const gchar *text, GCallback callback, gpointer data)
 {
     GtkWidget *menu_item;
-    GtkWidget *image;
-    GConfClient *client;
-    GError *error;
-    gboolean use_image;
 
     menu_item = gtk_image_menu_item_new_from_stock(text, NULL);
-    image = gtk_image_menu_item_get_image(GTK_IMAGE_MENU_ITEM(menu_item));
-
-    client = gconf_client_get_default();
-    error = NULL;
-
-    use_image = gconf_client_get_bool(client,
-                                      "/desktop/gnome/interface/menus_have_icons",
-                                      &error);
-    if (error)
-    {
-        g_printerr(_("There was an error loading config value for whether to use image in menus. (%s)\n"),
-                   error->message);
-        g_error_free(error);
-    }
-    else
-    {
-        if (use_image)
-            gtk_widget_show(image);
-        else
-            gtk_widget_hide(image);
-    }
 
     gtk_menu_shell_append(GTK_MENU_SHELL(menu), menu_item);
 
@@ -1364,8 +1297,6 @@ append_stock_menuitem(GtkWidget *menu, const gchar *text, GCallback callback, gp
         g_signal_connect(G_OBJECT(menu_item),
                          "activate",
                          callback, data);
-
-    g_object_unref(client);
 
     return menu_item;
 }
@@ -1705,37 +1636,18 @@ mud_connection_view_add_text(MudConnectionView *view, gchar *message, enum MudCo
 {
     gchar *encoding, *text;
     const gchar *local_codeset;
-    gchar *profile_name;
-    GConfClient *client;
     gboolean remote;
     gsize bytes_read, bytes_written;
     GError *error = NULL;
 
-    gchar key[2048];
-    gchar extra_path[512] = "";
-
     g_return_if_fail(IS_MUD_CONNECTION_VIEW(view));
 
-    client = gconf_client_get_default();
-
-    g_snprintf(key, 2048, "/apps/gnome-mud/%s%s", extra_path, "functionality/remote_encoding");
-    remote = gconf_client_get_bool(client, key, NULL);
+    remote = g_settings_get_boolean(view->profile->settings, "remote-encoding");
 
     if(view->remote_encode && remote)
         encoding = g_strdup(view->remote_encoding);
     else
-    {
-        g_object_get(view->profile,
-                     "name", &profile_name, NULL);
-
-        if (!g_str_equal(profile_name, "Default"))
-            g_snprintf(extra_path, 512, "profiles/%s/", profile_name);
-
-        g_snprintf(key, 2048, "/apps/gnome-mud/%s%s", extra_path, "functionality/encoding");
-        encoding = gconf_client_get_string(client, key, NULL);
-
-        g_free(profile_name);
-    }
+        encoding = g_settings_get_string(view->profile->settings, "encoding");
 
     g_get_charset(&local_codeset);
 
@@ -1779,8 +1691,6 @@ mud_connection_view_add_text(MudConnectionView *view, gchar *message, enum MudCo
 
     if(text != NULL)
         g_free(text);
-
-    g_object_unref(client);
 }
 
 void
@@ -1836,19 +1746,15 @@ mud_connection_view_reconnect(MudConnectionView *view)
 void
 mud_connection_view_send(MudConnectionView *view, const gchar *data)
 {
-    GConfClient *client;
     MudTelnetZmp *zmp_handler;
     GList *commands, *command;
     const gchar *local_codeset;
     gboolean remote, zmp_enabled;
     gsize bytes_read, bytes_written;
-    gchar *encoding, *conv_text, *profile_name;
-
-    gchar key[2048];
-    gchar extra_path[512] = "";
+    gchar *encoding, *conv_text;
 
     GError *error = NULL;
-    
+
     g_return_if_fail(IS_MUD_CONNECTION_VIEW(view));
 
     if(mud_connection_is_connected(view->conn))
@@ -1877,25 +1783,12 @@ mud_connection_view_send(MudConnectionView *view, const gchar *data)
 
         view->priv->current_history_index = -1;
 
-        client = gconf_client_get_default();
-
-        g_snprintf(key, 2048, "/apps/gnome-mud/%s%s", extra_path, "functionality/remote_encoding");
-        remote = gconf_client_get_bool(client, key, NULL);
+        remote = g_settings_get_boolean(view->profile->settings, "remote-encoding");
 
         if(view->remote_encode && remote)
             encoding = view->remote_encoding;
         else
-        {
-            g_object_get(view->profile, "name", &profile_name, NULL);
-
-            if (!g_str_equal(profile_name, "Default"))
-                g_snprintf(extra_path, 512, "profiles/%s/", profile_name);
-
-            g_snprintf(key, 2048, "/apps/gnome-mud/%s%s", extra_path, "functionality/encoding");
-            encoding = gconf_client_get_string(client, key, NULL);
-
-            g_free(profile_name);
-        }
+            encoding = g_settings_get_string(view->profile->settings, "encoding"); /* FIXME: This appears to leak */
 
         g_get_charset(&local_codeset);
 
@@ -1984,7 +1877,6 @@ mud_connection_view_send(MudConnectionView *view, const gchar *data)
         }
 
         g_list_free(commands);
-        g_object_unref(client);
     }
 }
 
@@ -2019,7 +1911,7 @@ mud_connection_view_set_profile(MudConnectionView *view, MudProfile *profile)
 {
     g_return_if_fail(IS_MUD_CONNECTION_VIEW(view));
 
-    if(profile == view->profile)
+    if(profile == view->profile) /* TODO: This bails out in case we have profile set from CONSTRUCT_ONLY, but we do want the rest done after terminal widget is ready... */
         return;
 
     if (view->profile)
@@ -2110,18 +2002,11 @@ mud_connection_view_queue_download(MudConnectionView *view, gchar *url, gchar *f
 {
     MudMSPDownloadItem *item;
     guint i, size;
-    GConfClient *client;
     gboolean download;
-
-    gchar key[2048];
-    gchar extra_path[512] = "";
 
     g_return_if_fail(IS_MUD_CONNECTION_VIEW(view));
 
-    client = gconf_client_get_default();
-
-    g_snprintf(key, 2048, "/apps/gnome-mud/%s%s", extra_path, "functionality/remote_download");
-    download = gconf_client_get_bool(client, key, NULL);
+    download = g_settings_get_boolean(view->profile->settings, "remote-download");
 
     if(download)
     {
@@ -2133,7 +2018,6 @@ mud_connection_view_queue_download(MudConnectionView *view, gchar *url, gchar *f
 
             if(strcmp(item->url, url) == 0)
             {
-                g_object_unref(client);
                 return;
             }
         }
@@ -2151,8 +2035,6 @@ mud_connection_view_queue_download(MudConnectionView *view, gchar *url, gchar *f
         if(view->priv->downloading == FALSE)
             mud_connection_view_start_download(view);
     }
-
-    g_object_unref(client);
 }
 
 static void

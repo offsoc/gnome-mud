@@ -36,6 +36,8 @@ gnome_mud_SOURCES =				\
 	gnome-mud-builtins.c			\
 	gnome-mud-builtins.h			\
 	gnome-mud-icons.h			\
+	mud-character.c				\
+	mud-character.h				\
 	mud-connection-view.c			\
 	mud-connections.c			\
 	mud-connections.h			\
@@ -46,6 +48,8 @@ gnome_mud_SOURCES =				\
 	mud-line-buffer.h			\
 	mud-log.c				\
 	mud-log.h				\
+	mud-mud.c				\
+	mud-mud.h				\
 	mud-parse-alias.c			\
 	mud-parse-alias.h			\
 	mud-parse-base.c			\

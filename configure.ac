@@ -46,14 +46,6 @@ GETTEXT_PACKAGE=gnome-mud
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE(GETTEXT_PACKAGE, "gnome-mud", [Gettext domain name])
 
-dnl gconf tests
-AM_GCONF_SOURCE_2
-AC_PATH_PROG(GCONFTOOL, gconftool-2)
-
-if test x"$GCONFTOOL" = xno; then
-	AC_MSG_ERROR([gconftool-2 executable not found in your path - should be installed with GConf])
-fi
-
 dnl Checks for programs.
 AC_PROG_CC
 AC_PROG_LIBTOOL
@@ -68,15 +60,17 @@ AC_HEADER_STDC
 AC_HEADER_TIME
 AC_CHECK_HEADERS(strings.h)
 
+dnl gsettings
+GLIB_GSETTINGS
+
 dnl pkg-config dep checks
 GTK_REQUIRED=2.24.0
-LIBGLIB_REQUIRED=2.36
+LIBGLIB_REQUIRED=2.48
 VTE_REQUIRED=0.11.00
 PCRE_REQUIRED=6.0.0
-GCONF_REQUIRED=0.20
 GSTREAMER_REQUIRED=1.0
 
-PKG_CHECK_MODULES(GMUD, gtk+-2.0 >= $GTK_REQUIRED vte >= $VTE_REQUIRED libpcre >= $PCRE_REQUIRED gio-2.0 >= $LIBGLIB_REQUIRED gconf-2.0 >= $GCONF_REQUIRED)
+PKG_CHECK_MODULES(GMUD, gtk+-2.0 >= $GTK_REQUIRED vte >= $VTE_REQUIRED libpcre >= $PCRE_REQUIRED gio-2.0 >= $LIBGLIB_REQUIRED)
 AC_SUBST(GMUD_CFLAGS)
 AC_SUBST(GMUD_LIBS)
 

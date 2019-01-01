@@ -830,7 +830,7 @@
                     </child>
                     <child>
                       <object class="GtkImageMenuItem" id="menu_preferences">
-                        <property name="label">Profile Preferences…</property>
+                        <property name="label" translatable="yes">Profile Preferences…</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_action_appearance">False</property>
@@ -966,7 +966,7 @@
                   <object class="GtkLabel" id="label37">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">label37</property>
+                    <property name="label">label37</property>
                   </object>
                   <packing>
                     <property name="tab_fill">False</property>

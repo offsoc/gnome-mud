@@ -309,7 +309,7 @@ msgid "%s does not exist and can NOT be created: %s"
 msgstr "Čini se da %s ne postoji i NEĆE biti kreiran: %s"
 
 #: ../src/gconf-helper.c:140
-#, c-format
+#, fuzzy, c-format
 msgid "Palette had %d entry instead of %d\n"
 msgid_plural "Palette had %d entries instead of %d\n"
 msgstr[0] "Paleta ima %d zapisa umjesto %d\n"

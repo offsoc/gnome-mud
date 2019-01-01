@@ -1959,7 +1959,7 @@ mud_connection_view_start_download(MudConnectionView *view)
     GFile *source;
     GFile *destination;
     gchar **uri;
-    GString *dl_label_text;
+    gchar *dl_label_text;
 
     g_return_if_fail(IS_MUD_CONNECTION_VIEW(view));
     g_return_if_fail(!view->priv->downloading);
@@ -1974,17 +1974,10 @@ mud_connection_view_start_download(MudConnectionView *view)
 
     uri = g_strsplit(item->url, "/", 0);
 
-    dl_label_text = g_string_new(NULL);
-
-    g_string_append(dl_label_text, _("Downloading"));
-    g_string_append_c(dl_label_text, ' ');
-    g_string_append(dl_label_text, uri[g_strv_length(uri) - 1]);
-    g_string_append(dl_label_text, "…");
-
-    gtk_label_set_text(GTK_LABEL(view->priv->dl_label), dl_label_text->str);
-
-    g_string_free(dl_label_text, TRUE);
-    g_strfreev(uri);
+    dl_label_text = g_strdup_printf (_("Downloading %s…"), uri[g_strv_length(uri) - 1]);
+    gtk_label_set_text (GTK_LABEL (view->priv->dl_label), dl_label_text);
+    g_free (dl_label_text);
+    g_strfreev (uri);
 
     source = g_file_new_for_uri(item->url);
     destination = g_file_new_for_path(item->file);

@@ -4,7 +4,7 @@ stages:
   - build
 
 before_script:
-  - dnf install -y GConf2-devel glib2-devel gnome-common gstreamer1-devel
+  - dnf install -y glib2-devel gnome-common gstreamer1-devel
                    intltool make vte-devel which
 
 build_gnome_mud:

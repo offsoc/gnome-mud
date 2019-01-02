@@ -526,7 +526,7 @@ mud_connection_view_constructor (GType gtype,
     dl_vbox = gtk_vbox_new(FALSE, 0);
     dl_hbox = gtk_hbox_new(FALSE, 0);
 
-    self->priv->dl_label = gtk_label_new("Downloading…");
+    self->priv->dl_label = gtk_label_new(_("Downloading…"));
     self->priv->progressbar = gtk_progress_bar_new();
     gtk_progress_bar_set_pulse_step (GTK_PROGRESS_BAR(self->priv->progressbar), 0.1);
     self->priv->dl_button = gtk_button_new_from_stock("gtk-cancel");

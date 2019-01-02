@@ -1,17 +1,16 @@
 # Swedish messages for gnome-mud.
-# Copyright © 2000-2017 Free Software Foundation, Inc.
+# Copyright © 2000-2019 Free Software Foundation, Inc.
 # Robin Ericsson <lobbin@localhost.nu>, 2000, 2001, 2002, 2003.
 # Christian Rose <menthos@menthos.com>, 2003.
 # Daniel Nylander <po@danielnylander.se>, 2006, 2008, 2009.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2017.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2017, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-mud\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"mud&keywords=I18N+L10N&component=i18n\n"
-"POT-Creation-Date: 2017-04-23 19:29+0000\n"
-"PO-Revision-Date: 2017-05-01 00:09+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-mud/issues\n"
+"POT-Creation-Date: 2019-01-02 19:04+0000\n"
+"PO-Revision-Date: 2019-01-02 21:49+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -19,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.2\n"
 
 #: ../gnome-mud.desktop.in.h:1
 msgid "GNOME-Mud"
@@ -29,141 +28,121 @@ msgstr "GNOME-Mud"
 msgid "The GNOME MUD Client"
 msgstr "GNOME-MUD-klienten"
 
-#: ../gnome-mud.schemas.in.h:1
-msgid "Font"
-msgstr "Typsnitt"
+#: ../data/org.gnome.MUD.gschema.xml.h:1
+msgid "Settings schema version"
+msgstr "Schemaversion för inställningar"
 
-#: ../gnome-mud.schemas.in.h:2
-msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
-msgstr ""
-"Ett Pango-typsnittsnamn. Som exempel kan nämnas \"Sans 12\" eller "
-"\"Monospace Bold 14\"."
+#: ../data/org.gnome.MUD.gschema.xml.h:2
+msgid "List of available profiles"
+msgstr "Lista över tillgängliga profiler"
 
-#: ../gnome-mud.schemas.in.h:3
-msgid "Default color of the background"
-msgstr "Standardfärg på bakgrunden"
+#: ../data/org.gnome.MUD.gschema.xml.h:3
+msgid "Default profile"
+msgstr "Standardprofil"
 
-#: ../gnome-mud.schemas.in.h:4
-msgid ""
-"Default color of the background, as a color specification (can be HTML-style "
-"hex digits, or a color name such as \"red\")."
-msgstr ""
-"Standardfärg på bakgrunden, som en färgspecifikation (kan vara hexadecimala "
-"siffror i HTML-stil, eller ett färgnamn som exempelvis \"red\")."
+#: ../data/org.gnome.MUD.gschema.xml.h:4
+msgid "List of available MUDs"
+msgstr "Lista över tillgängliga MUD:ar"
 
-#: ../gnome-mud.schemas.in.h:5
+#: ../data/org.gnome.MUD.gschema.xml.h:5
+msgid "List of available characters"
+msgstr "Lista över tillgängliga rollfigurer"
+
+#: ../data/org.gnome.MUD.gschema.xml.h:6
+msgid "Human-readable name of the profile"
+msgstr "Läsbart namn för profilen"
+
+#: ../data/org.gnome.MUD.gschema.xml.h:7
+msgid "A Pango font name and size"
+msgstr "Namn och storlek för ett Pango-typsnitt"
+
+#: ../data/org.gnome.MUD.gschema.xml.h:8
 msgid "Default color of the text"
 msgstr "Standardfärg på texten"
 
-#: ../gnome-mud.schemas.in.h:6
+#: ../data/org.gnome.MUD.gschema.xml.h:9
 msgid ""
 "Default color of the text, as a color specification (can be HTML-style hex "
-"digits, or a color name such as \"red\")."
+"digits, or a color name such as “red”)."
 msgstr ""
 "Standardfärg på texten, som en färgspecifikation (kan vara hexadecimala "
-"siffror i HTML-stil, eller ett färgnamn som exempelvis \"red\")."
+"siffror i HTML-stil, eller ett färgnamn som exempelvis ”red”)."
 
-#: ../gnome-mud.schemas.in.h:7
+#: ../data/org.gnome.MUD.gschema.xml.h:10
+msgid "Default color of the background"
+msgstr "Standardfärg på bakgrunden"
+
+#: ../data/org.gnome.MUD.gschema.xml.h:11
+msgid ""
+"Default color of the background, as a color specification (can be HTML-style "
+"hex digits, or a color name such as “red”)."
+msgstr ""
+"Standardfärg på bakgrunden, som en färgspecifikation (kan vara hexadecimala "
+"siffror i HTML-stil, eller ett färgnamn som exempelvis ”red”)."
+
+#: ../data/org.gnome.MUD.gschema.xml.h:12
 msgid "Color palette"
 msgstr "Färgpalett"
 
-#: ../gnome-mud.schemas.in.h:8
-msgid ""
-"GNOME-Mud has a 16-color palette that MUDs can use. It must be specified in "
-"the form of a colon-separated list of color names. Color names should be in "
-"hex format e.g. \"#FF00FF\"."
+#: ../data/org.gnome.MUD.gschema.xml.h:13
+msgid "List of the 16 colors that MUDs can use with indexed ANSI color codes."
 msgstr ""
-"GNOME-Mud har en palett med 16 färger som muddar kan använda. Den måste "
-"anges i formen av en kolonseparerad lista med färgnamn. Färgnamn måste vara "
-"i hexadecimalt format, exempelvis \"#FF00FF\"."
+"Lista över de 16 färger som MUD:ar kan använda med indexerade ANSI-färgkoder."
 
-#: ../gnome-mud.schemas.in.h:9
+#. TODO: Increase default?
+#: ../data/org.gnome.MUD.gschema.xml.h:15
 msgid "Number of lines to keep in scrollback"
 msgstr "Antal rader att behålla i rullningshistorik"
 
-#: ../gnome-mud.schemas.in.h:10
+#: ../data/org.gnome.MUD.gschema.xml.h:16
 msgid ""
 "Number of scrollback lines to keep around. You can scroll back in the "
-"terminal by this number of lines; lines that don't fit in the scrollback are "
+"terminal by this number of lines; lines that don’t fit in the scrollback are "
 "discarded."
 msgstr ""
 "Antal rader att behålla i rullningshistoriken. Du kan rulla tillbaka i "
 "terminalfönstret detta antal rader. Rader som inte får plats i "
 "rullningshistoriken kastas."
 
-#: ../gnome-mud.schemas.in.h:11 ../ui/prefs.glade.h:13
-msgid "Encoding"
-msgstr "Kodning"
-
-#: ../gnome-mud.schemas.in.h:12
+#. TODO: Settings provides an encoding list, so we could have an enum type or choice list, instead of bare string
+#: ../data/org.gnome.MUD.gschema.xml.h:18
 msgid "The encoding for the terminal widget."
 msgstr "Kodningen för terminalwidgeten."
 
-#: ../gnome-mud.schemas.in.h:13
-msgid "Encoding Index"
-msgstr "Kodningsindex"
-
-#: ../gnome-mud.schemas.in.h:14
-msgid "The index of the currently selected encoding."
-msgstr "Indexet för den för närvarande valda kodningen."
-
-#: ../gnome-mud.schemas.in.h:15
-msgid "Proxy Hostname"
-msgstr "Värdnamn för proxy"
-
-#: ../gnome-mud.schemas.in.h:16
-msgid "The hostname for the SOCKS proxy server."
-msgstr "Värdnamnet för SOCKS-proxyservern."
-
-#: ../gnome-mud.schemas.in.h:17
-msgid "Proxy Version"
-msgstr "Proxyversion"
-
-#: ../gnome-mud.schemas.in.h:18
-msgid "The SOCKS Version to be used."
-msgstr "SOCKS-versionen att använda."
-
-#: ../gnome-mud.schemas.in.h:19
-msgid "Remote Encoding"
+#. TODO: Change to true?
+#: ../data/org.gnome.MUD.gschema.xml.h:20
+msgid "Remote encoding"
 msgstr "Fjärrkodning"
 
-#: ../gnome-mud.schemas.in.h:20
+#: ../data/org.gnome.MUD.gschema.xml.h:21
 msgid "Use Remote Encoding negotiation."
 msgstr "Använd förhandling av fjärrkodning."
 
-#: ../gnome-mud.schemas.in.h:21
-msgid "Use Proxy"
-msgstr "Använd proxyserver"
-
-#: ../gnome-mud.schemas.in.h:22
-msgid "Use a proxy server to connect to the MUD."
-msgstr "Använd en proxyserver för att ansluta till MUD."
-
-#: ../gnome-mud.schemas.in.h:23
-msgid "Remote Download"
+#: ../data/org.gnome.MUD.gschema.xml.h:22
+msgid "Remote download"
 msgstr "Fjärrhämtning"
 
-#: ../gnome-mud.schemas.in.h:24
-msgid "Enable sound file downloading on MSP enabled MUDs"
-msgstr "Aktivera hämtning av ljudfiler på MSP-aktiverade MUD:ar"
+#: ../data/org.gnome.MUD.gschema.xml.h:23
+msgid "Enable sound file downloading on MSP enabled MUDs."
+msgstr "Aktivera hämtning av ljudfiler på MSP-aktiverade MUD:ar."
 
-#: ../gnome-mud.schemas.in.h:25
-msgid "Command Divider"
+#: ../data/org.gnome.MUD.gschema.xml.h:24
+msgid "Command divider"
 msgstr "Kommandoskiljetecken"
 
-#: ../gnome-mud.schemas.in.h:26
+#: ../data/org.gnome.MUD.gschema.xml.h:25
 msgid ""
-"A character that is used to split commands in a string like \"w;w;w;l\", "
-"which will be sent to the MUD as 4 separate commands."
+"A character that is used to split commands in a string like “w;w;w;l”, which "
+"will be sent to the MUD as 4 separate commands."
 msgstr ""
-"Ett tecken som används för att dela kommandon i strängar som exempelvis \"w;"
-"w;w;l\", som kommer att skickas till mudden som fyra separata kommandon."
+"Ett tecken som används för att dela kommandon i strängar som exempelvis ”w;w;"
+"w;l”, som kommer att skickas till MUD:en som fyra separata kommandon."
 
-#: ../gnome-mud.schemas.in.h:27
+#: ../data/org.gnome.MUD.gschema.xml.h:26
 msgid "Whether to echo sent text to the connection"
 msgstr "Huruvida text som skickats till anslutningen ska skrivas ut"
 
-#: ../gnome-mud.schemas.in.h:28
+#: ../data/org.gnome.MUD.gschema.xml.h:27
 msgid ""
 "If enabled, all the text typed in will be echoed in the terminal, making it "
 "easier to control what is sent."
@@ -171,11 +150,11 @@ msgstr ""
 "Om detta är aktiverat kommer all text som skrivs att skrivas ut i "
 "terminalfönstret, så att det blir lättare att kontrollera vad som skickas."
 
-#: ../gnome-mud.schemas.in.h:29
+#: ../data/org.gnome.MUD.gschema.xml.h:28
 msgid "Whether to keep text sent to the connection"
 msgstr "Huruvida text som skickats till anslutningen ska behållas"
 
-#: ../gnome-mud.schemas.in.h:30
+#: ../data/org.gnome.MUD.gschema.xml.h:29
 msgid ""
 "If enabled, the text that is sent to the connection will be left as a "
 "selection in the entry box. Otherwise, the text entry box will be cleared "
@@ -185,185 +164,136 @@ msgstr ""
 "kvar som en markering i inmatningsfältet. Annars kommer textinmatningsfältet "
 "att tömmas efter varje textinmatning."
 
-#: ../gnome-mud.schemas.in.h:31
-msgid "Whether to enable or disable the system keys"
-msgstr "Huruvida systemtangenterna ska aktiveras eller inaktiveras"
-
-#: ../gnome-mud.schemas.in.h:32
-msgid ""
-"If enabled, GNOME-Mud will offer a few built-in keybindings. They can be "
-"overridden by custom keybindings, or they can be disabled completely with "
-"this option."
-msgstr ""
-"Om detta är aktiverat kommer GNOME-Mud att erbjuda några inbyggda "
-"snabbtangenter. De kan åsidosättas med anpassade snabbtangenter eller helt "
-"inaktiveras med detta alternativ."
-
-#: ../gnome-mud.schemas.in.h:33
-msgid "Whether to scroll to the bottom when there's new output"
+#: ../data/org.gnome.MUD.gschema.xml.h:30
+msgid "Whether to scroll to the bottom when there’s new output"
 msgstr "Huruvida rullning till nedersta läget ska ske då det finns ny utdata"
 
-#: ../gnome-mud.schemas.in.h:34
+#: ../data/org.gnome.MUD.gschema.xml.h:31
 msgid ""
-"If enabled, whenever there's new output the terminal will be scrolled to the "
-"bottom."
+"If true, whenever there’s new output the terminal will scroll to the bottom."
 msgstr ""
-"Om detta är aktiverat kommer terminalfönstret att rullas till nedersta läget "
-"närhelst det finns ny utdata."
+"Om detta är true (sant) kommer terminalfönstret att rullas till nedersta "
+"läget närhelst det finns ny utdata."
 
-#: ../gnome-mud.schemas.in.h:35
-msgid "Last log file"
-msgstr "Senaste loggfil"
+#: ../data/org.gnome.MUD.gschema.xml.h:32
+msgid "Use proxy"
+msgstr "Använd proxyserver"
 
-#: ../gnome-mud.schemas.in.h:36
-msgid "The file in which a mudlog was last saved."
-msgstr "Filen som senast användes för att spara en mudlog i."
+#: ../data/org.gnome.MUD.gschema.xml.h:33
+msgid "Whether to use a proxy server to connect to the MUD."
+msgstr "Huruvida en proxyserver ska användas för att ansluta till denna MUD."
 
-#: ../gnome-mud.schemas.in.h:37
-msgid "Log flush interval"
-msgstr "Loggtömningsintervall"
+#: ../data/org.gnome.MUD.gschema.xml.h:34
+msgid "Proxy version"
+msgstr "Proxyversion"
 
-#: ../gnome-mud.schemas.in.h:38
-msgid "How often in seconds gnome-mud should flush logfiles."
-msgstr "Hur ofta i sekunder som gnome-mud ska tömma loggfiler."
+#: ../data/org.gnome.MUD.gschema.xml.h:35
+msgid "The SOCKS version to be used."
+msgstr "SOCKS-versionen att använda."
 
-#: ../gnome-mud.schemas.in.h:39
-msgid "List of profiles"
-msgstr "Profillista"
+#: ../data/org.gnome.MUD.gschema.xml.h:36
+msgid "Proxy server hostname"
+msgstr "Värdnamn för proxyserver"
 
-#: ../gnome-mud.schemas.in.h:40
-msgid ""
-"List of profiles known to GNOME-Mud. The list contains strings naming "
-"subdirectories relative to /apps/gnome-mud/profiles."
-msgstr ""
-"Lista med profiler som är kända av GNOME-Mud. Listan innehåller strängar som "
-"namnger underkataloger relativa till /apps/gnome-mud/profiles."
+#: ../data/org.gnome.MUD.gschema.xml.h:37
+msgid "The hostname for the SOCKS proxy server."
+msgstr "Värdnamnet för SOCKS-proxyservern."
 
-#: ../gnome-mud.schemas.in.h:41 ../ui/prefs.glade.h:32
-msgid "Aliases"
-msgstr "Alias"
+#: ../data/org.gnome.MUD.gschema.xml.h:38
+msgid "Visible name of the MUD."
+msgstr "Synligt namn på MUD:en"
 
-#: ../gnome-mud.schemas.in.h:42 ../ui/prefs.glade.h:33
-msgid "Variables"
-msgstr "Variabler"
+#: ../data/org.gnome.MUD.gschema.xml.h:39
+msgid "Profile ID"
+msgstr "Profil-ID"
 
-#: ../gnome-mud.schemas.in.h:43 ../ui/prefs.glade.h:31
-msgid "Triggers"
-msgstr "Triggrar"
+#: ../data/org.gnome.MUD.gschema.xml.h:40
+msgid "MUD ID"
+msgstr "MUD-ID"
 
-#: ../gnome-mud.schemas.in.h:44 ../ui/prefs.glade.h:35
-msgid "Keybindings"
-msgstr "Snabbtangenter"
+#: ../data/org.gnome.MUD.gschema.xml.h:41
+msgid "Name of the character."
+msgstr "Rollfigurens namn."
 
-#: ../gnome-mud.schemas.in.h:45
-msgid "Directional keybindings"
-msgstr "Snabbtangenter för riktningar"
+#: ../data/org.gnome.MUD.gschema.xml.h:42
+msgid "Connect string"
+msgstr "Anslutningssträng"
 
-#: ../src/debug-logger.c:827 ../src/mud-connections.c:1272
+#: ../data/org.gnome.MUD.gschema.xml.h:43
+msgid "Commands to send to MUD upon establishing connection."
+msgstr "Kommandon att skicka till MUD då anslutning startas."
+
+#: ../src/debug-logger.c:830 ../src/mud-connections.c:807
+#: ../src/mud-connections.c:814
 msgid "Error"
 msgstr "Fel"
 
-#: ../src/debug-logger.c:830 ../src/debug-logger.c:913
+#: ../src/debug-logger.c:833 ../src/debug-logger.c:916
 #, c-format
 msgid "ERROR: %s\n"
 msgstr "FEL: %s\n"
 
-#: ../src/debug-logger.c:834
+#: ../src/debug-logger.c:837
 msgid "Critical"
 msgstr "Kritiskt"
 
-#: ../src/debug-logger.c:841
+#: ../src/debug-logger.c:844
 msgid "Warning"
 msgstr "Varning"
 
-#: ../src/debug-logger.c:848 ../src/debug-logger.c:998
+#: ../src/debug-logger.c:851 ../src/debug-logger.c:1001
 msgid "Message"
 msgstr "Meddelande"
 
-#: ../src/debug-logger.c:855
+#: ../src/debug-logger.c:858
 msgid "Info"
 msgstr "Information"
 
-#: ../src/debug-logger.c:862
+#: ../src/debug-logger.c:865
 msgid "Debug"
 msgstr "Felsökning"
 
-#: ../src/debug-logger.c:869
+#: ../src/debug-logger.c:872
 msgid "Unknown"
 msgstr "Okänt"
 
-#: ../src/debug-logger.c:917
+#: ../src/debug-logger.c:920
 #, c-format
 msgid "CRITICAL ERROR: %s\n"
 msgstr "KRITISKT FEL: %s\n"
 
-#: ../src/debug-logger.c:921
+#: ../src/debug-logger.c:924
 #, c-format
 msgid "Warning: %s\n"
 msgstr "Varning: %s\n"
 
-#: ../src/debug-logger.c:991
+#: ../src/debug-logger.c:994
 msgid "Type"
 msgstr "Typ"
 
-#: ../src/gnome-mud.c:62
-#, c-format
-msgid "Failed to init GConf: %s"
-msgstr "Misslyckades med att initiera GConf: %s"
-
-#: ../src/mud-connections.c:933
+#: ../src/mud-connections.c:554
 #, c-format
 msgid "Are you sure you want to delete %s?"
 msgstr "Är du säker på att du vill ta bort %s?"
 
-#: ../src/mud-connections.c:934
+#: ../src/mud-connections.c:555
 #, c-format
 msgid "Delete %s?"
 msgstr "Ta bort %s?"
 
-#: ../src/mud-connections.c:1273
+#: ../src/mud-connections.c:808
+msgid "No profile specified."
+msgstr "Ingen profil angiven."
+
+#: ../src/mud-connections.c:815
 msgid "No MUD name specified."
 msgstr "Inget MUD-namn angivet."
 
-#: ../src/mud-connection-view.c:575 ../src/mud-connection-view.c:1975
-#, c-format
-msgid "*** Making connection to %s, port %d.\n"
-msgstr "*** Skapar anslutning till %s, port %d.\n"
-
-#: ../src/mud-connection-view.c:1054
-msgid "Close"
-msgstr "Stäng"
-
-#: ../src/mud-connection-view.c:1074
-msgid "Change P_rofile"
-msgstr "Ändra p_rofil"
-
-#: ../src/mud-connection-view.c:1113
-msgid "_Input Methods"
-msgstr "_Inmatningsmetoder"
-
-#: ../src/mud-connection-view.c:1142
-msgid "*** Could not connect.\n"
-msgstr "*** Kunde inte ansluta.\n"
-
-#: ../src/mud-connection-view.c:1147
+#: ../src/mud-connection-view.c:402
 msgid "*** Connected.\n"
 msgstr "*** Ansluten.\n"
 
-#: ../src/mud-connection-view.c:1175
-msgid "*** Connection closed.\n"
-msgstr "*** Anslutning avslutad.\n"
-
-#: ../src/mud-connection-view.c:1405
-#, c-format
-msgid ""
-"There was an error loading config value for whether to use image in menus. "
-"(%s)\n"
-msgstr ""
-"Det inträffade ett fel vid inläsning av konfigurationsvärdet för huruvida "
-"bilder ska användas i menyer. (%s)\n"
-
-#: ../src/mud-connection-view.c:1878 ../src/mud-connection-view.c:1922
+#: ../src/mud-connection-view.c:416
 msgid ""
 "\n"
 "*** Connection closed.\n"
@@ -371,58 +301,83 @@ msgstr ""
 "\n"
 "*** Anslutningen stängdes.\n"
 
-#: ../src/mud-connection-view.c:2025
+#: ../src/mud-connection-view.c:529
+msgid "Downloading…"
+msgstr "Hämtar…"
+
+#: ../src/mud-connection-view.c:618 ../src/mud-connection-view.c:1736
+#, c-format
+msgid "*** Making connection to %s, port %d.\n"
+msgstr "*** Skapar anslutning till %s, port %d.\n"
+
+#: ../src/mud-connection-view.c:1053
+msgid "Close"
+msgstr "Stäng"
+
+#: ../src/mud-connection-view.c:1073
+msgid "Change P_rofile"
+msgstr "Ändra p_rofil"
+
+#: ../src/mud-connection-view.c:1111
+msgid "_Input Methods"
+msgstr "_Inmatningsmetoder"
+
+#: ../src/mud-connection-view.c:1782
 msgid "<password removed>"
 msgstr "<lösenord borttaget>"
 
-#: ../src/mud-connection-view.c:2221
-msgid "Connecting..."
-msgstr "Ansluter..."
+#: ../src/mud-connection-view.c:1968
+msgid "Connecting…"
+msgstr "Ansluter…"
 
-#: ../src/mud-connection-view.c:2344
-msgid "Connection timed out."
-msgstr "Anslutningens tidsgräns överstegs."
+#: ../src/mud-connection-view.c:1977
+#, c-format
+msgid "Downloading %s…"
+msgstr "Hämtar %s…"
 
-#: ../src/mud-connection-view.c:2360
+#: ../src/mud-connection-view.c:2063
 msgid "There was an internal http connection error."
 msgstr "Det inträffade ett internt fel i http-anslutningen."
 
-#: ../src/mud-connection-view.c:2382
-msgid "Downloading"
-msgstr "Hämtar"
+#: ../src/mud-log.c:397
+msgid "Save log as…"
+msgstr "Spara logg som…"
 
-#: ../src/mud-log.c:395
-msgid "Save log as..."
-msgstr "Spara logg som..."
-
-#: ../src/mud-log.c:727
+#: ../src/mud-log.c:730
 msgid ""
 "\n"
-"*** Log starts *** %d/%m/%Y %H:%M:%S\n"
+"*** Log starts *** %d/%m/%Y %H∶%M∶%S\n"
 msgstr ""
 "\n"
-"*** Logg startar *** %Y/%m/%d %H:%M:%S\n"
+"*** Logg startar *** %Y/%m/%d %H∶%M∶%S\n"
 
-#: ../src/mud-log.c:811
+#: ../src/mud-log.c:814
 msgid "Log Error"
 msgstr "Loggfel"
 
-#: ../src/mud-log.c:812
+#: ../src/mud-log.c:815
 #, c-format
-msgid "Could not open \"%s\" for writing."
-msgstr "Kunde inte öppna \"%s\" för skrivning."
+msgid "Could not open “%s” for writing."
+msgstr "Kunde inte öppna ”%s” för skrivning."
 
-#: ../src/mud-log.c:838 ../src/mud-log.c:919 ../src/mud-log.c:935
+#: ../src/mud-log.c:841 ../src/mud-log.c:922 ../src/mud-log.c:938
 msgid "Could not write data to log file!"
 msgstr "Kunde inte skriva data till loggfil!"
 
-#: ../src/mud-log.c:845
+#: ../src/mud-log.c:848
 msgid ""
 "\n"
-" *** Log stops *** %d/%m/%Y %H:%M:%S\n"
+" *** Log stops *** %d/%m/%Y %H∶%M∶%S\n"
 msgstr ""
 "\n"
-" *** Logg slutar *** %Y/%m/%d %H:%M:%S\n"
+" *** Logg slutar *** %Y/%m/%d %H∶%M∶%S\n"
+
+#: ../src/mud-profile.c:737
+#, c-format
+msgid "Palette had %u entry instead of %u\n"
+msgid_plural "Palette had %u entries instead of %u\n"
+msgstr[0] "Paletten hade %u fält istället för %u\n"
+msgstr[1] "Paletten hade %u fält istället för %u\n"
 
 #: ../src/mud-tray.c:271
 msgid "_Hide window"
@@ -436,15 +391,15 @@ msgstr "_Visa fönster"
 msgid "_Quit"
 msgstr "_Avsluta"
 
-#: ../src/mud-trigger.c:724
+#: ../src/mud-trigger.c:722
 msgid "#Submatch Out of Range#"
 msgstr "#Submatch Out of Range#"
 
-#: ../src/mud-window.c:842
+#: ../src/mud-window.c:812
 msgid "A Multi-User Dungeon (MUD) client for GNOME"
 msgstr "En Multi-User Dungeon-klient (MUD) för GNOME"
 
-#: ../src/mud-window.c:854
+#: ../src/mud-window.c:824
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -453,13 +408,13 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: ../src/mud-window.c:963
+#: ../src/mud-window.c:933
 msgid "Error Saving Buffer"
 msgstr "Fel vid sparande av buffert"
 
-#: ../src/mud-window.c:1274
-msgid "_Manage Profiles..."
-msgstr "_Hantera profiler..."
+#: ../src/mud-window.c:1228
+msgid "_Manage Profiles…"
+msgstr "_Hantera profiler…"
 
 #: ../src/handlers/mud-telnet-mccp.c:429
 msgid ""
@@ -469,329 +424,433 @@ msgstr ""
 "\n"
 "MCCP-data skadat. Avbryter anslutningen.\n"
 
-#: ../ui/main.glade.h:1
-msgid "Gnome-Mud"
-msgstr "Gnome-Mud"
+#: ../ui/main.ui.h:1
+msgid "Start Logging…"
+msgstr "Starta loggning…"
 
-#: ../ui/main.glade.h:2
-msgid "_File"
-msgstr "_Arkiv"
-
-#: ../ui/main.glade.h:3
-msgid "C_onnection..."
-msgstr "_Anslutning..."
-
-#: ../ui/main.glade.h:4
-msgid "_Disconnect"
-msgstr "_Koppla från"
-
-#: ../ui/main.glade.h:5
-msgid "_Reconnect"
-msgstr "_Återanslut"
-
-#: ../ui/main.glade.h:6
-msgid "Start _Logging..."
-msgstr "Starta _loggning..."
-
-#: ../ui/main.glade.h:7
-msgid "Stop Lo_gging"
-msgstr "Stoppa lo_ggning"
-
-#: ../ui/main.glade.h:8
-msgid "_Save Buffer..."
-msgstr "_Spara buffert..."
-
-#: ../ui/main.glade.h:9
-msgid "Close _Window"
-msgstr "_Stäng fönster"
-
-#: ../ui/main.glade.h:10
-msgid "_Settings"
-msgstr "_Inställningar"
-
-#: ../ui/main.glade.h:11
-msgid "P_rofiles"
-msgstr "P_rofiler"
-
-#: ../ui/main.glade.h:12
-msgid "_Help"
-msgstr "_Hjälp"
-
-#: ../ui/main.glade.h:13
-msgid "Connect to MUD"
-msgstr "Anslut till MUD"
-
-#: ../ui/main.glade.h:14
-msgid "Connect"
-msgstr "Anslut"
-
-#: ../ui/main.glade.h:15
-msgid "Connect to host"
-msgstr "Anslut till värd"
-
-#: ../ui/main.glade.h:16
-msgid "Disconnect from current MUD"
-msgstr "Koppla från aktuell MUD"
-
-#: ../ui/main.glade.h:17
-msgid "Disconnect"
-msgstr "Koppla från"
-
-#: ../ui/main.glade.h:18
-msgid "Disconnect from current host"
-msgstr "Koppla från aktuell värd"
-
-#: ../ui/main.glade.h:19
-msgid "Reconnect to current MUD"
-msgstr "Återanslut till aktuell MUD"
-
-#: ../ui/main.glade.h:20
-msgid "Reconnect"
-msgstr "Återanslut"
-
-#: ../ui/main.glade.h:21
-msgid "Save buffer as..."
-msgstr "Spara buffert som..."
-
-#: ../ui/main.glade.h:22
-msgid "Debug Log"
-msgstr "Felsökningslogg"
-
-#: ../ui/main.glade.h:23
-msgid "Start Logging..."
-msgstr "Starta loggning..."
-
-#: ../ui/main.glade.h:24
+#: ../ui/main.ui.h:2
 msgid "_Log to File:"
 msgstr "_Logga till fil:"
 
-#: ../ui/main.glade.h:25
+#: ../ui/main.ui.h:3
 msgid "_Select File"
 msgstr "_Välj fil"
 
-#: ../ui/main.glade.h:26
+#: ../ui/main.ui.h:4
 msgid "Logging Options"
 msgstr "Loggningsalternativ"
 
-#: ../ui/main.glade.h:27
+#: ../ui/main.ui.h:5
 msgid "_Number of lines to log:"
 msgstr "_Antal rader att logga:"
 
-#: ../ui/main.glade.h:28
+#: ../ui/main.ui.h:6
 msgid "Number of _previous lines to include:"
 msgstr "Antal _tidigare rader att inkludera:"
 
-#: ../ui/main.glade.h:29
+#: ../ui/main.ui.h:7
 msgid "_Append to file"
 msgstr "_Lägg till i fil"
 
-#: ../ui/main.glade.h:30
+#: ../ui/main.ui.h:8
 msgid "Log Inp_ut"
 msgstr "Logginma_tning"
 
-#: ../ui/main.glade.h:31
+#: ../ui/main.ui.h:9
 msgid "_Include entire buffer"
 msgstr "_Inkludera hela bufferten"
 
-#: ../ui/main.glade.h:32
+#: ../ui/main.ui.h:10
 msgid "Include C_olor"
 msgstr "Inkludera f_ärg"
 
-#: ../ui/muds.glade.h:1
-msgid "Connections"
-msgstr "Anslutningar"
+#: ../ui/main.ui.h:11
+msgid "Debug Log"
+msgstr "Felsökningslogg"
 
-#: ../ui/muds.glade.h:2
-msgid " _Host: "
-msgstr "_Värd: "
+#: ../ui/main.ui.h:12
+msgid "Gnome-Mud"
+msgstr "Gnome-Mud"
 
-#: ../ui/muds.glade.h:3
-msgid " _Port: "
-msgstr " _Port: "
+#: ../ui/main.ui.h:13
+msgid "_File"
+msgstr "_Arkiv"
 
-#: ../ui/muds.glade.h:4
-msgid "Custom Connection"
-msgstr "Anpassad anslutning"
+#: ../ui/main.ui.h:14
+msgid "C_onnection…"
+msgstr "A_nslutning…"
 
-#: ../ui/muds.glade.h:5
-msgid "Connection Properties"
-msgstr "Anslutningsegenskaper"
+#: ../ui/main.ui.h:15
+msgid "_Disconnect"
+msgstr "_Koppla från"
 
-#: ../ui/muds.glade.h:6
-msgid "MUD"
-msgstr "MUD"
+#: ../ui/main.ui.h:16
+msgid "_Reconnect"
+msgstr "_Återanslut"
 
-#: ../ui/muds.glade.h:7
-msgid "Name:"
-msgstr "Namn:"
+#: ../ui/main.ui.h:17
+msgid "Start _Logging…"
+msgstr "Starta _loggning…"
 
-#: ../ui/muds.glade.h:8
-msgid "Host:"
-msgstr "Värd:"
+#: ../ui/main.ui.h:18
+msgid "Stop Lo_gging"
+msgstr "Stoppa lo_ggning"
 
-#: ../ui/muds.glade.h:9
-msgid "Port:"
-msgstr "Port:"
+#: ../ui/main.ui.h:19
+msgid "_Save Buffer…"
+msgstr "_Spara buffert…"
 
-#: ../ui/muds.glade.h:10
-msgid "Profile"
-msgstr "Profil"
+#: ../ui/main.ui.h:20
+msgid "Close _Window"
+msgstr "_Stäng fönster"
 
-#: ../ui/muds.glade.h:11
-msgid "Character"
-msgstr "Karaktär"
+#: ../ui/main.ui.h:21
+msgid "_Settings"
+msgstr "_Inställningar"
 
-#: ../ui/muds.glade.h:12
-msgid "Logon:"
-msgstr "Inloggning:"
+#: ../ui/main.ui.h:22
+msgid "P_rofiles"
+msgstr "P_rofiler"
 
-#: ../ui/muds.glade.h:13
-msgid "Unsaved Changes"
-msgstr "Osparade ändringar"
+#: ../ui/main.ui.h:23
+msgid "Profile Preferences…"
+msgstr "Profilinställningar…"
 
-#: ../ui/muds.glade.h:14
-msgid "You have unsaved changes. Do you want to save before closing?"
-msgstr "Du har osparade ändringar. Vill du spara innan stängning?"
+#: ../ui/main.ui.h:24
+msgid "_Help"
+msgstr "_Hjälp"
 
-#: ../ui/muds.glade.h:15
-msgid "Close _without Saving"
-msgstr "Stäng _utan att spara"
+#: ../ui/main.ui.h:25
+msgid "Connect to MUD"
+msgstr "Anslut till MUD"
 
-#: ../ui/muds.glade.h:16
-msgid "Delete MUD?"
-msgstr "Ta bort MUD?"
+#: ../ui/main.ui.h:26
+msgid "Connect"
+msgstr "Anslut"
 
-#: ../ui/muds.glade.h:17
-msgid "Are you sure you want to delete this MUD?"
-msgstr "Är du säker på att du vill ta bort denna MUD?"
+#: ../ui/main.ui.h:27
+msgid "Connect to host"
+msgstr "Anslut till värd"
 
-#: ../ui/muds.glade.h:18
-msgid "Select An Icon..."
-msgstr "Välj en ikon..."
+#: ../ui/main.ui.h:28
+msgid "Disconnect from current MUD"
+msgstr "Koppla från aktuell MUD"
 
-#: ../ui/muds.glade.h:19
+#: ../ui/main.ui.h:29
+msgid "Disconnect"
+msgstr "Koppla från"
+
+#: ../ui/main.ui.h:30
+msgid "Disconnect from current host"
+msgstr "Koppla från aktuell värd"
+
+#: ../ui/main.ui.h:31
+msgid "Reconnect to current MUD"
+msgstr "Återanslut till aktuell MUD"
+
+#: ../ui/main.ui.h:32
+msgid "Reconnect"
+msgstr "Återanslut"
+
+#: ../ui/main.ui.h:33
+msgid "Save buffer as…"
+msgstr "Spara buffert som…"
+
+#: ../ui/muds.ui.h:1
+msgid "Select An Icon…"
+msgstr "Välj en ikon…"
+
+#: ../ui/muds.ui.h:2
 msgid "Select A Folder"
 msgstr "Välj en mapp"
 
-#: ../ui/prefs.glade.h:1
+#: ../ui/muds.ui.h:3
+msgid "Unsaved Changes"
+msgstr "Osparade ändringar"
+
+#: ../ui/muds.ui.h:4
+msgid "Close _without Saving"
+msgstr "Stäng _utan att spara"
+
+#: ../ui/muds.ui.h:5
+msgid "You have unsaved changes. Do you want to save before closing?"
+msgstr "Du har osparade ändringar. Vill du spara innan stängning?"
+
+#: ../ui/muds.ui.h:6
+msgid "Delete MUD?"
+msgstr "Ta bort MUD?"
+
+#: ../ui/muds.ui.h:7
+msgid "Are you sure you want to delete this MUD?"
+msgstr "Är du säker på att du vill ta bort denna MUD?"
+
+#: ../ui/muds.ui.h:8
+msgid "Connection Properties"
+msgstr "Anslutningsegenskaper"
+
+#: ../ui/muds.ui.h:9
+msgid "MUD"
+msgstr "MUD"
+
+#: ../ui/muds.ui.h:10
+msgid "Name:"
+msgstr "Namn:"
+
+#: ../ui/muds.ui.h:11
+msgid "Host:"
+msgstr "Värd:"
+
+#: ../ui/muds.ui.h:12
+msgid "Port:"
+msgstr "Port:"
+
+#: ../ui/muds.ui.h:13
+msgid "Profile"
+msgstr "Profil"
+
+#: ../ui/muds.ui.h:14
+msgid "Character"
+msgstr "Karaktär"
+
+#: ../ui/muds.ui.h:15
+msgid "Logon:"
+msgstr "Inloggning:"
+
+#: ../ui/muds.ui.h:16
+msgid "Connections"
+msgstr "Anslutningar"
+
+#: ../ui/muds.ui.h:17
+msgid " _Host: "
+msgstr " _Värd: "
+
+#: ../ui/muds.ui.h:18
+msgid " _Port: "
+msgstr " _Port: "
+
+#: ../ui/muds.ui.h:19
+msgid "Custom Connection"
+msgstr "Anpassad anslutning"
+
+#: ../ui/prefs.ui.h:1
 msgid "New Profile"
 msgstr "Ny profil"
 
-#: ../ui/prefs.glade.h:2
+#: ../ui/prefs.ui.h:2
 msgid "New Profile Name:"
 msgstr "Nytt profilnamn:"
 
-#: ../ui/prefs.glade.h:3
-msgid "Regex Error"
-msgstr "Fel i reguljärt uttryck"
-
-#: ../ui/prefs.glade.h:4
-msgid "Error Code:"
-msgstr "Felkod:"
-
-#: ../ui/prefs.glade.h:5
-msgid "Error String:"
-msgstr "Felsträng:"
-
-#: ../ui/prefs.glade.h:6
-msgid "Error At:"
-msgstr "Fel vid:"
-
-#: ../ui/prefs.glade.h:7
-msgid "Profiles"
-msgstr "Profiler"
-
-#: ../ui/prefs.glade.h:8
+#: ../ui/prefs.ui.h:3
 msgid "Preferences"
 msgstr "Inställningar"
 
-#: ../ui/prefs.glade.h:9
+#: ../ui/prefs.ui.h:4
 msgid "Input"
 msgstr "Inmatning"
 
-#: ../ui/prefs.glade.h:10
+#: ../ui/prefs.ui.h:5
 msgid "_Echo the Text Sent"
 msgstr "_Eka tillbaka skickad text"
 
-#: ../ui/prefs.glade.h:11
+#: ../ui/prefs.ui.h:6
 msgid "_Keep the Text Entered"
 msgstr "_Behåll inmatad text"
 
-#: ../ui/prefs.glade.h:12
+#: ../ui/prefs.ui.h:7
 msgid "Command _Division Character:"
 msgstr "Skiljetecken för _kommando:"
 
-#: ../ui/prefs.glade.h:14
+#: ../ui/prefs.ui.h:8
+msgid "Encoding"
+msgstr "Kodning"
+
+#: ../ui/prefs.ui.h:9
 msgid "_Character Set:"
 msgstr "Tecken_uppsättning:"
 
-#: ../ui/prefs.glade.h:15
+#: ../ui/prefs.ui.h:10
 msgid "Output"
 msgstr "Utmatning"
 
-#: ../ui/prefs.glade.h:16
+#: ../ui/prefs.ui.h:11
 msgid "Scroll on _Output"
 msgstr "_Rulla vid utmatning"
 
-#: ../ui/prefs.glade.h:17
+#: ../ui/prefs.ui.h:12
 msgid "_Number of Scrollback Lines:"
 msgstr "_Antal rader i rullningslist:"
 
-#: ../ui/prefs.glade.h:18
+#: ../ui/prefs.ui.h:13
 msgid "Fon_t:"
 msgstr "Ty_psnitt:"
 
-#: ../ui/prefs.glade.h:19
+#: ../ui/prefs.ui.h:14
 msgid "_Foreground Color:"
 msgstr "_Förgrundsfärg:"
 
-#: ../ui/prefs.glade.h:20
+#: ../ui/prefs.ui.h:15
 msgid "_Background Color:"
 msgstr "_Bakgrundsfärg:"
 
-#: ../ui/prefs.glade.h:21
+#: ../ui/prefs.ui.h:16
 msgid "Color Palette:"
 msgstr "Färgpalett:"
 
-#: ../ui/prefs.glade.h:22
+#: ../ui/prefs.ui.h:17
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../ui/prefs.glade.h:23
+#: ../ui/prefs.ui.h:18
 msgid "Proxy"
 msgstr "Proxyserver"
 
-#: ../ui/prefs.glade.h:24
+#: ../ui/prefs.ui.h:19
 msgid "_Enable Proxy"
 msgstr "Aktivera _proxyserver"
 
-#: ../ui/prefs.glade.h:25
+#: ../ui/prefs.ui.h:20
 msgid "_Host:"
 msgstr "_Värd:"
 
-#: ../ui/prefs.glade.h:26
+#: ../ui/prefs.ui.h:21
 msgid "_Version:"
 msgstr "_Version:"
 
-#: ../ui/prefs.glade.h:27
+#: ../ui/prefs.ui.h:22
 msgid "Telnet Options"
 msgstr "Telnetalternativ"
 
-#: ../ui/prefs.glade.h:28
+#: ../ui/prefs.ui.h:23
 msgid "Enable Mud _Sound Protocol (MSP)"
 msgstr "Aktivera _ljudprotokoll för mud (MSP)"
 
-#: ../ui/prefs.glade.h:29
+#: ../ui/prefs.ui.h:24
 msgid "Enable _Character Encoding Negotiation (CHARSET)"
 msgstr "Aktivera _teckenkodningsförhandling (CHARSET)"
 
-#: ../ui/prefs.glade.h:30
+#: ../ui/prefs.ui.h:25
 msgid "Network"
 msgstr "Nätverk"
 
-#: ../ui/prefs.glade.h:34
-msgid "Timers"
+#: ../ui/prefs.ui.h:26
+msgid "Triggers"
 msgstr "Triggrar"
+
+#: ../ui/prefs.ui.h:27
+msgid "Aliases"
+msgstr "Alias"
+
+#: ../ui/prefs.ui.h:28
+msgid "Variables"
+msgstr "Variabler"
+
+#: ../ui/prefs.ui.h:29
+msgid "Timers"
+msgstr "Tidtagare"
+
+#: ../ui/prefs.ui.h:30
+msgid "Keybindings"
+msgstr "Snabbtangenter"
+
+#: ../ui/prefs.ui.h:31
+msgid "Profiles"
+msgstr "Profiler"
+
+#: ../ui/prefs.ui.h:32
+msgid "Regex Error"
+msgstr "Fel i reguljärt uttryck"
+
+#: ../ui/prefs.ui.h:33
+msgid "Error Code:"
+msgstr "Felkod:"
+
+#: ../ui/prefs.ui.h:34
+msgid "Error String:"
+msgstr "Felsträng:"
+
+#: ../ui/prefs.ui.h:35
+msgid "Error At:"
+msgstr "Fel vid:"
+
+#~ msgid "Font"
+#~ msgstr "Typsnitt"
+
+#~ msgid ""
+#~ "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
+#~ msgstr ""
+#~ "Ett Pango-typsnittsnamn. Som exempel kan nämnas \"Sans 12\" eller "
+#~ "\"Monospace Bold 14\"."
+
+#~ msgid ""
+#~ "GNOME-Mud has a 16-color palette that MUDs can use. It must be specified "
+#~ "in the form of a colon-separated list of color names. Color names should "
+#~ "be in hex format e.g. \"#FF00FF\"."
+#~ msgstr ""
+#~ "GNOME-Mud har en palett med 16 färger som muddar kan använda. Den måste "
+#~ "anges i formen av en kolonseparerad lista med färgnamn. Färgnamn måste "
+#~ "vara i hexadecimalt format, exempelvis \"#FF00FF\"."
+
+#~ msgid "Encoding Index"
+#~ msgstr "Kodningsindex"
+
+#~ msgid "The index of the currently selected encoding."
+#~ msgstr "Indexet för den för närvarande valda kodningen."
+
+#~ msgid "Whether to enable or disable the system keys"
+#~ msgstr "Huruvida systemtangenterna ska aktiveras eller inaktiveras"
+
+#~ msgid ""
+#~ "If enabled, GNOME-Mud will offer a few built-in keybindings. They can be "
+#~ "overridden by custom keybindings, or they can be disabled completely with "
+#~ "this option."
+#~ msgstr ""
+#~ "Om detta är aktiverat kommer GNOME-Mud att erbjuda några inbyggda "
+#~ "snabbtangenter. De kan åsidosättas med anpassade snabbtangenter eller "
+#~ "helt inaktiveras med detta alternativ."
+
+#~ msgid "Last log file"
+#~ msgstr "Senaste loggfil"
+
+#~ msgid "The file in which a mudlog was last saved."
+#~ msgstr "Filen som senast användes för att spara en mudlog i."
+
+#~ msgid "Log flush interval"
+#~ msgstr "Loggtömningsintervall"
+
+#~ msgid "How often in seconds gnome-mud should flush logfiles."
+#~ msgstr "Hur ofta i sekunder som gnome-mud ska tömma loggfiler."
+
+#~ msgid ""
+#~ "List of profiles known to GNOME-Mud. The list contains strings naming "
+#~ "subdirectories relative to /apps/gnome-mud/profiles."
+#~ msgstr ""
+#~ "Lista med profiler som är kända av GNOME-Mud. Listan innehåller strängar "
+#~ "som namnger underkataloger relativa till /apps/gnome-mud/profiles."
+
+#~ msgid "Directional keybindings"
+#~ msgstr "Snabbtangenter för riktningar"
+
+#~ msgid "Failed to init GConf: %s"
+#~ msgstr "Misslyckades med att initiera GConf: %s"
+
+#~ msgid "*** Could not connect.\n"
+#~ msgstr "*** Kunde inte ansluta.\n"
+
+#~ msgid "*** Connection closed.\n"
+#~ msgstr "*** Anslutning avslutad.\n"
+
+#~ msgid ""
+#~ "There was an error loading config value for whether to use image in "
+#~ "menus. (%s)\n"
+#~ msgstr ""
+#~ "Det inträffade ett fel vid inläsning av konfigurationsvärdet för huruvida "
+#~ "bilder ska användas i menyer. (%s)\n"
+
+#~ msgid "Connection timed out."
+#~ msgstr "Anslutningens tidsgräns överstegs."
+
+#~ msgid "C_onnection..."
+#~ msgstr "_Anslutning..."
 
 #~ msgid "<b>Character</b>"
 #~ msgstr "<b>Karaktär</b>"
@@ -950,11 +1009,6 @@ msgstr "Triggrar"
 
 #~ msgid "%s does not exist and can NOT be created: %s"
 #~ msgstr "%s finns inte och kan INTE skapas: %s"
-
-#~ msgid "Palette had %d entry instead of %d\n"
-#~ msgid_plural "Palette had %d entries instead of %d\n"
-#~ msgstr[0] "Paletten hade %d fält istället för %d\n"
-#~ msgstr[1] "Paletten hade %d fält istället för %d\n"
 
 #~ msgid "There was an error accessing GConf: %s"
 #~ msgstr "Ett fel inträffade vid åtkomst av GConf: %s"
@@ -1671,9 +1725,6 @@ msgstr "Triggrar"
 
 #~ msgid "GNOME-Mud Profiles"
 #~ msgstr "GNOME-Mud-profiler"
-
-#~ msgid "Delete a profile"
-#~ msgstr "Ta bort en profil"
 
 #~ msgid "Set aliases"
 #~ msgstr "Ställ in alias"

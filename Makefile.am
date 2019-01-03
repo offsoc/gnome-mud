@@ -1,4 +1,4 @@
-SUBDIRS = data doc po src ui
+SUBDIRS = data doc po src
 
 @INTLTOOL_SCHEMAS_RULE@
 @INTLTOOL_DESKTOP_RULE@

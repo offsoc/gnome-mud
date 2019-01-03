@@ -6,4 +6,13 @@ gsettings_SCHEMAS = \
 
 @GSETTINGS_RULES@
 
+EXTRA_DIST = \
+	org.gnome.MUD.gresource.xml \
+	main.ui \
+	muds.ui \
+	prefs.ui \
+	$(NULL)
+
+CLEANFILES = $(BUILT_SOURCES)
+
 -include $(top_srcdir)/git.mk

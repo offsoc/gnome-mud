@@ -33,6 +33,7 @@
 
 #include "gnome-mud.h"
 #include "mud-log.h"
+#include "resources.h"
 #include "mud-window.h"
 #include "mud-connection-view.h"
 #include "mud-line-buffer.h"
@@ -383,13 +384,19 @@ mud_log_select_clicked_cb(GtkWidget *widget,
                           MudLog *self)
 {
     GtkBuilder *builder;
+    GBytes *res_bytes;
+    gconstpointer res_data;
+    gsize res_size;
     GError *error = NULL;
     GtkWidget *dialog;
     gint result;
 
-    builder = gtk_builder_new();
-    if(gtk_builder_add_from_file(builder, UIDIR "/main.ui", &error) == 0)
-        g_error("Failed to load: %s", error->message);
+    builder = gtk_builder_new ();
+    res_bytes = g_resource_lookup_data (gnome_mud_get_resource (), "/org/gnome/MUD/main.ui", 0, NULL);
+    res_data = g_bytes_get_data (res_bytes, &res_size);
+    if (gtk_builder_add_from_string (builder, res_data, res_size, &error) == 0)
+        g_error ("Failed to load resources: %s", error->message);
+    g_bytes_unref (res_bytes);
 
     dialog = GTK_WIDGET(gtk_builder_get_object(builder, "save_dialog"));
     g_object_unref(builder);
@@ -613,6 +620,9 @@ void
 mud_log_open(MudLog *self)
 {
     GtkBuilder *builder;
+    GBytes *res_bytes;
+    gconstpointer res_data;
+    gsize res_size;
     GError *error = NULL;
     GtkWidget *main_window;
     gchar buf[1024];
@@ -621,9 +631,12 @@ mud_log_open(MudLog *self)
 
     g_return_if_fail(MUD_IS_LOG(self));
 
-    builder = gtk_builder_new();
-    if(gtk_builder_add_from_file(builder, UIDIR "/main.ui", &error) == 0)
-        g_error("Failed to load: %s", error->message);
+    builder = gtk_builder_new ();
+    res_bytes = g_resource_lookup_data (gnome_mud_get_resource (), "/org/gnome/MUD/main.ui", 0, NULL);
+    res_data = g_bytes_get_data (res_bytes, &res_size);
+    if (gtk_builder_add_from_string (builder, res_data, res_size, &error) == 0)
+        g_error ("Failed to load resources: %s", error->message);
+    g_bytes_unref (res_bytes);
 
     self->priv->window = GTK_WIDGET(gtk_builder_get_object(builder, "log_config_window"));
     self->priv->check_log_next = GTK_WIDGET(gtk_builder_get_object(builder, "inc_next_check_btn"));

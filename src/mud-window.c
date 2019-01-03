@@ -33,6 +33,7 @@
 #include <stdlib.h>
 #include <glib/gprintf.h>
 
+#include "resources.h"
 #include "gnome-mud.h"
 #include "gnome-mud-icons.h"
 #include "mud-connection-view.h"
@@ -228,6 +229,9 @@ static void
 mud_window_init (MudWindow *self)
 {
     GtkBuilder *builder;
+    GBytes *res_bytes;
+    gconstpointer res_data;
+    gsize res_size;
     GError *error = NULL;
     GtkTextIter iter;
     gint y;
@@ -236,9 +240,12 @@ mud_window_init (MudWindow *self)
     self->priv = MUD_WINDOW_GET_PRIVATE(self);
 
     /* start glading */
-    builder = gtk_builder_new();
-    if(gtk_builder_add_from_file(builder, UIDIR "/main.ui", &error) == 0)
-        g_error("Failed to load: %s", error->message);
+    builder = gtk_builder_new ();
+    res_bytes = g_resource_lookup_data (gnome_mud_get_resource (), "/org/gnome/MUD/main.ui", 0, NULL);
+    res_data = g_bytes_get_data (res_bytes, &res_size);
+    if (gtk_builder_add_from_string (builder, res_data, res_size, &error) == 0)
+        g_error ("Failed to load resources: %s", error->message);
+    g_bytes_unref (res_bytes);
 
     /* set public properties */
     self->window = GTK_WINDOW(gtk_builder_get_object(builder, "main_window"));
@@ -890,13 +897,19 @@ static void
 mud_window_buffer_cb(GtkWidget *widget, MudWindow *self)
 {
     GtkBuilder *builder;
+    GBytes *res_bytes;
+    gconstpointer res_data;
+    gsize res_size;
     GError *error = NULL;
     GtkWidget *dialog;
     gint result;
 
-    builder = gtk_builder_new();
-    if(gtk_builder_add_from_file(builder, UIDIR "/main.ui", &error) == 0)
-        g_error("Failed to load: %s", error->message);
+    builder = gtk_builder_new ();
+    res_bytes = g_resource_lookup_data (gnome_mud_get_resource (), "/org/gnome/MUD/main.ui", 0, NULL);
+    res_data = g_bytes_get_data (res_bytes, &res_size);
+    if (gtk_builder_add_from_string (builder, res_data, res_size, &error) == 0)
+        g_error ("Failed to load resources: %s", error->message);
+    g_bytes_unref (res_bytes);
 
     dialog = GTK_WIDGET(gtk_builder_get_object(builder, "save_dialog"));
 

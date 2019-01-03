@@ -129,6 +129,9 @@ if test "x$enable_debug_logger" != "xno"; then
 fi
 AM_CONDITIONAL(USE_DEBUG_LOGGER, test "x$enable_debug_logger" = xyes)
 
+GLIB_COMPILE_RESOURCES=`$PKG_CONFIG --variable glib_compile_resources gio-2.0`
+AC_SUBST(GLIB_COMPILE_RESOURCES)
+
 AC_CONFIG_FILES([
   Makefile
   gnome-mud.spec
@@ -139,7 +142,6 @@ AC_CONFIG_FILES([
   src/handlers/Makefile
   src/zmp/Makefile
   po/Makefile.in
-  ui/Makefile
 ])
 AC_OUTPUT
 

@@ -4,6 +4,18 @@ bin_PROGRAMS = gnome-mud
 
 localedir = $(datadir)/locale
 
+resource_files = $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(top_srcdir)/data --generate-dependencies $(top_srcdir)/data/org.gnome.MUD.gresource.xml)
+resources.c: $(top_srcdir)/data/org.gnome.MUD.gresource.xml $(resource_files)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(top_srcdir)/data --generate-source --c-name gnome_mud $<
+resources.h: $(top_srcdir)/data/org.gnome.MUD.gresource.xml $(resource_files)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(top_srcdir)/data --generate-header --c-name gnome_mud $<
+
+BUILT_SOURCES = \
+	gnome-mud-builtins.c \
+	gnome-mud-builtins.h \
+	resources.c \
+	resources.h
+
 gnome_mud_CPPFLAGS =							\
 	-DLOCALEDIR=\"$(localedir)\"					\
 	-DPIXMAPSDIR=\""$(datadir)/pixmaps"\"				\
@@ -12,7 +24,6 @@ gnome_mud_CPPFLAGS =							\
 	-DSYSCONFDIR=\""$(sysconfdir)"\"				\
 	-DDATADIR=\""$(datadir)"\"					\
 	-DLIBDIR=\""$(libdir)"\"					\
-	-DUIDIR=\""$(pkgdatadir)"\"					\
 	-DPKGDATADIR=\""$(pkgdatadir)"\"
 
 gnome_mud_CFLAGS = \
@@ -33,8 +44,6 @@ gnome_mud_SOURCES =				\
 	ecma48.h				\
 	gnome-mud.c				\
 	gnome-mud.h				\
-	gnome-mud-builtins.c			\
-	gnome-mud-builtins.h			\
 	gnome-mud-icons.h			\
 	mud-character.c				\
 	mud-character.h				\
@@ -77,11 +86,8 @@ gnome_mud_SOURCES =				\
 	mud-window-profile.c			\
 	mud-window-profile.h			\
 	utils.c					\
-	utils.h
-
-BUILT_SOURCES = \
-	gnome-mud-builtins.c \
-	gnome-mud-builtins.h
+	utils.h					\
+	$(BUILT_SOURCES)
 
 enumheaders = \
 	mud-trigger.h

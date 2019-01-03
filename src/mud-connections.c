@@ -32,6 +32,7 @@
 
 #include "gnome-mud.h"
 #include "mud-connections.h"
+#include "resources.h"
 #include "mud-mud.h"
 #include "mud-character.h"
 #include "mud-window.h"
@@ -494,6 +495,9 @@ mud_connections_popup (MudConnections *self,
                        GdkEventButton *event)
 {
   GtkBuilder *builder;
+  GBytes *res_bytes;
+  gconstpointer res_data;
+  gsize res_size;
   GError *error = NULL;
   GtkWidget *popup;
   GList *selected = gtk_icon_view_get_selected_items (GTK_ICON_VIEW (self->iconview));
@@ -502,8 +506,11 @@ mud_connections_popup (MudConnections *self,
     return;
 
   builder = gtk_builder_new ();
-  if (gtk_builder_add_from_file (builder, UIDIR "/muds.ui", &error) == 0)
-    g_error ("Failed to load: %s", error->message);
+  res_bytes = g_resource_lookup_data (gnome_mud_get_resource (), "/org/gnome/MUD/muds.ui", 0, NULL);
+  res_data = g_bytes_get_data (res_bytes, &res_size);
+  if (gtk_builder_add_from_string (builder, res_data, res_size, &error) == 0)
+    g_error ("Failed to load resources: %s", error->message);
+  g_bytes_unref (res_bytes);
 
   popup = GTK_WIDGET (gtk_builder_get_object (builder, "popupmenu"));
 
@@ -536,6 +543,9 @@ static gboolean
 mud_connections_delete_confirm (gchar *name)
 {
   GtkBuilder *builder;
+  GBytes *res_bytes;
+  gconstpointer res_data;
+  gsize res_size;
   GError *error = NULL;
   GtkWidget *dialog;
   GtkWidget *label;
@@ -544,8 +554,11 @@ mud_connections_delete_confirm (gchar *name)
   gchar *title;
 
   builder = gtk_builder_new ();
-  if(gtk_builder_add_from_file (builder, UIDIR "/muds.ui", &error) == 0)
-      g_error ("Failed to load: %s", error->message);
+  res_bytes = g_resource_lookup_data (gnome_mud_get_resource (), "/org/gnome/MUD/muds.ui", 0, NULL);
+  res_data = g_bytes_get_data (res_bytes, &res_size);
+  if (gtk_builder_add_from_string (builder, res_data, res_size, &error) == 0)
+    g_error ("Failed to load resources: %s", error->message);
+  g_bytes_unref (res_bytes);
 
   dialog = GTK_WIDGET (gtk_builder_get_object (builder, "mudviewdelconfirm"));
   label = GTK_WIDGET (gtk_builder_get_object (builder, "message"));
@@ -571,14 +584,20 @@ mud_connections_show_properties (MudConnections *self,
                                  MudCharacter   *character)
 {
   GtkBuilder *builder;
+  GBytes *res_bytes;
+  gconstpointer res_data;
+  gsize res_size;
   GError *error = NULL;
   GtkTextBuffer *buffer;
   MudMud *mud;
   const gchar *icon_name, *connect_string;
 
   builder = gtk_builder_new ();
-  if (gtk_builder_add_from_file (builder, UIDIR "/muds.ui", &error) == 0)
-    g_error ("Failed to load: %s", error->message);
+  res_bytes = g_resource_lookup_data (gnome_mud_get_resource (), "/org/gnome/MUD/muds.ui", 0, NULL);
+  res_data = g_bytes_get_data (res_bytes, &res_size);
+  if (gtk_builder_add_from_string (builder, res_data, res_size, &error) == 0)
+    g_error ("Failed to load resources: %s", error->message);
+  g_bytes_unref (res_bytes);
 
   self->properties_window = GTK_WIDGET (gtk_builder_get_object (builder, "mudviewproperties"));
   self->name_entry     = GTK_WIDGET (gtk_builder_get_object (builder, "name_entry"));
@@ -755,13 +774,19 @@ static gint
 mud_connections_property_confirm (void)
 {
   GtkBuilder *builder;
+  GBytes *res_bytes;
+  gconstpointer res_data;
+  gsize res_size;
   GError *error = NULL;
   GtkWidget *dialog;
   gint result;
 
   builder = gtk_builder_new ();
-  if (gtk_builder_add_from_file (builder, UIDIR "/muds.ui", &error) == 0)
-    g_error ("Failed to load: %s", error->message);
+  res_bytes = g_resource_lookup_data (gnome_mud_get_resource (), "/org/gnome/MUD/muds.ui", 0, NULL);
+  res_data = g_bytes_get_data (res_bytes, &res_size);
+  if (gtk_builder_add_from_string (builder, res_data, res_size, &error) == 0)
+    g_error ("Failed to load resources: %s", error->message);
+  g_bytes_unref (res_bytes);
 
   dialog = GTK_WIDGET (gtk_builder_get_object (builder, "mudviewconfirm"));
   g_object_unref (builder);
@@ -903,12 +928,18 @@ static void
 mud_connections_show_icon_dialog (MudConnections *self)
 {
   GtkBuilder *builder;
+  GBytes *res_bytes;
+  gconstpointer res_data;
+  gsize res_size;
   GError *error = NULL;
   gint result;
 
   builder = gtk_builder_new ();
-  if (gtk_builder_add_from_file (builder, UIDIR "/muds.ui", &error) == 0)
-    g_error ("Failed to load: %s", error->message);
+  res_bytes = g_resource_lookup_data (gnome_mud_get_resource (), "/org/gnome/MUD/muds.ui", 0, NULL);
+  res_data = g_bytes_get_data (res_bytes, &res_size);
+  if (gtk_builder_add_from_string (builder, res_data, res_size, &error) == 0)
+    g_error ("Failed to load resources: %s", error->message);
+  g_bytes_unref (res_bytes);
 
   self->icon_dialog = GTK_WIDGET (gtk_builder_get_object (builder, "iconselect"));
   self->icon_dialog_view = GTK_WIDGET (gtk_builder_get_object (builder, "view"));
@@ -1041,6 +1072,9 @@ mud_connections_constructed (GObject *object)
   MudConnections *self = (MudConnections *)object;
 
   GtkBuilder *builder;
+  GBytes *res_bytes;
+  gconstpointer res_data;
+  gsize res_size;
   GError *error = NULL;
   GtkWidget *main_window;
 
@@ -1052,8 +1086,11 @@ mud_connections_constructed (GObject *object)
                 NULL);
 
   builder = gtk_builder_new ();
-  if (gtk_builder_add_from_file (builder, UIDIR "/muds.ui", &error) == 0)
-    g_error ("Failed to load: %s", error->message);
+  res_bytes = g_resource_lookup_data (gnome_mud_get_resource (), "/org/gnome/MUD/muds.ui", 0, NULL);
+  res_data = g_bytes_get_data (res_bytes, &res_size);
+  if (gtk_builder_add_from_string (builder, res_data, res_size, &error) == 0)
+    g_error ("Failed to load resources: %s", error->message);
+  g_bytes_unref (res_bytes);
 
   self->window = GTK_WIDGET (gtk_builder_get_object (builder, "mudviewwindow"));
   self->iconview = GTK_WIDGET (gtk_builder_get_object (builder, "iconview"));

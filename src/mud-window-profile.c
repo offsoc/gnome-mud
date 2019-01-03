@@ -30,6 +30,7 @@
 #include "mud-connection-view.h"
 #include "mud-window.h"
 #include "mud-window-profile.h"
+#include "resources.h"
 #include "utils.h"
 #include "mud-profile-manager.h"
 #include "mud-window-prefs.h"
@@ -147,6 +148,9 @@ mud_profile_window_constructor (GType gtype,
     GObjectClass *parent_class;
 
     GtkBuilder *builder;
+    GBytes *res_bytes;
+    gconstpointer res_data;
+    gsize res_size;
     GError *error = NULL;
     GtkWindow *main_window;
     GtkCellRenderer *renderer;
@@ -164,9 +168,12 @@ mud_profile_window_constructor (GType gtype,
         g_error("Tried to instantiate MudProfileWindow without passing parent GtkWindow\n");
     }
 
-    builder = gtk_builder_new();
-    if(gtk_builder_add_from_file(builder, UIDIR "/prefs.ui", &error) == 0)
-        g_error("Failed to load: %s", error->message);
+    builder = gtk_builder_new ();
+    res_bytes = g_resource_lookup_data (gnome_mud_get_resource (), "/org/gnome/MUD/prefs.ui", 0, NULL);
+    res_data = g_bytes_get_data (res_bytes, &res_size);
+    if (gtk_builder_add_from_string (builder, res_data, res_size, &error) == 0)
+        g_error ("Failed to load resources: %s", error->message);
+    g_bytes_unref (res_bytes);
 
     profwin->priv->window = GTK_WIDGET(gtk_builder_get_object(builder, "profiles_window"));
 
@@ -290,6 +297,9 @@ static void
 mud_profile_window_add_cb(GtkWidget *widget, MudProfileWindow *profwin)
 {
     GtkBuilder *builder;
+    GBytes *res_bytes;
+    gconstpointer res_data;
+    gsize res_size;
     GError *error = NULL;
     GtkWidget *window;
     GtkWidget *entry_profile;
@@ -297,9 +307,12 @@ mud_profile_window_add_cb(GtkWidget *widget, MudProfileWindow *profwin)
     gint result;
     MudProfile *prof;
 
-    builder = gtk_builder_new();
-    if(gtk_builder_add_from_file(builder, UIDIR "/prefs.ui", &error) == 0)
-        g_error("Failed to load: %s", error->message);
+    builder = gtk_builder_new ();
+    res_bytes = g_resource_lookup_data (gnome_mud_get_resource (), "/org/gnome/MUD/prefs.ui", 0, NULL);
+    res_data = g_bytes_get_data (res_bytes, &res_size);
+    if (gtk_builder_add_from_string (builder, res_data, res_size, &error) == 0)
+        g_error ("Failed to load resources: %s", error->message);
+    g_bytes_unref (res_bytes);
 
     window = GTK_WIDGET(gtk_builder_get_object(builder, "newprofile_dialog"));
 

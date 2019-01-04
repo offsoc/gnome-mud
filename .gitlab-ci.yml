@@ -4,7 +4,7 @@ stages:
   - build
 
 before_script:
-  - dnf install -y gcc glib2-devel gstreamer1-devel
+  - dnf install -y desktop-file-utils gcc glib2-devel gstreamer1-devel
                    meson vte291-devel which
 
 build_gnome_mud:

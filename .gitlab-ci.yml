@@ -11,4 +11,5 @@ build_gnome_mud:
   stage: build
   script:
     - meson _build -Dgstreamer=enabled -Dmccp=enabled -Ddebug-logger=true
+    - ninja -C _build test
     - ninja -C _build install

@@ -130,7 +130,7 @@ utils_error_message(GtkWidget *parent, const gchar *title, const gchar *fmt, ...
     icon = gtk_image_new_from_icon_name("gtk-dialog-error", GTK_ICON_SIZE_DIALOG);
     hbox = gtk_hbox_new(FALSE, 0);
 
-    gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox), hbox, TRUE, TRUE, 0);
+    gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog))), hbox, TRUE, TRUE, 0);
     gtk_box_pack_start(GTK_BOX(hbox), icon, FALSE, TRUE, 0);
     gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
 

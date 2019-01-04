@@ -68,7 +68,7 @@ struct _MudConnectionView
     MudParseBase *parse;
 
     VteTerminal *terminal;
-    GtkVBox *ui_vbox;
+    GtkBox *ui_vbox;
 };
 
 enum MudConnectionColorType

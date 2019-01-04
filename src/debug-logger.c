@@ -34,7 +34,7 @@
 
 struct _DebugLoggerPrivate
 {
-    GtkVBox *vbox;
+    GtkBox *vbox;
     GtkWindow *window;
     GtkNotebook *notebook;
 
@@ -975,7 +975,7 @@ debug_logger_create_domain_page(DebugLogger *logger,
     GtkTreeViewColumn *column;
     GtkCellRenderer *renderer;
     GtkTreeSelection *selection;
-    GtkHBox *hbox;
+    GtkBox *hbox;
     GtkImage *image;
 
     g_return_if_fail(IS_DEBUG_LOGGER(logger));
@@ -1017,17 +1017,19 @@ debug_logger_create_domain_page(DebugLogger *logger,
 
     gtk_container_add(GTK_CONTAINER(scrolled_window), treeview);
 
-    hbox = GTK_HBOX(gtk_hbox_new(FALSE, 0));
+    hbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0));
     image = GTK_IMAGE(gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_MENU));
 
-    gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(image), FALSE, FALSE, 0);
-    gtk_box_pack_start(GTK_BOX(hbox), tab_label, TRUE, TRUE, 0);
+    gtk_box_pack_start(hbox, GTK_WIDGET(image), FALSE, FALSE, 0);
+    gtk_box_pack_start(hbox, tab_label, TRUE, TRUE, 0);
 
     gtk_widget_show_all(GTK_WIDGET(hbox));
 
     gtk_notebook_append_page(logger->priv->notebook, scrolled_window, GTK_WIDGET(hbox));
-    gtk_notebook_set_tab_label_packing(logger->priv->notebook, scrolled_window,
-            TRUE, TRUE, GTK_PACK_START);
+    gtk_container_child_set(GTK_CONTAINER(logger->priv->notebook), scrolled_window,
+                            "tab-expand", TRUE,
+                            "tab-fill", TRUE,
+                            NULL);
 
     gtk_widget_show_all(GTK_WIDGET(logger->priv->notebook));
 
@@ -1066,7 +1068,7 @@ debug_logger_create_window(DebugLogger *self)
     g_bytes_unref (res_bytes);
 
     self->priv->window = GTK_WINDOW(gtk_builder_get_object(builder, "log_window"));
-    self->priv->vbox = GTK_VBOX(gtk_builder_get_object(builder, "vbox"));
+    self->priv->vbox = GTK_BOX(gtk_builder_get_object(builder, "vbox"));
     self->priv->toolbar_save = GTK_WIDGET(gtk_builder_get_object(builder, "toolbar_save"));
     self->priv->toolbar_copy = GTK_WIDGET(gtk_builder_get_object(builder, "toolbar_copy"));
     self->priv->toolbar_select = GTK_WIDGET(gtk_builder_get_object(builder, "toolbar_selectall"));

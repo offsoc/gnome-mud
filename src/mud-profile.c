@@ -371,7 +371,7 @@ mud_profile_load_preferences (MudProfile *profile)
   MudPrefs *prefs;
   gchar *color_string;
   gchar **color_palette;
-  GdkColor color;
+  GdkRGBA color;
 
   /* TODO: Get rid of this - currently needed due to keeping a copy of setting values in profile->preferences */
   prefs = profile->preferences;
@@ -390,12 +390,12 @@ mud_profile_load_preferences (MudProfile *profile)
   prefs->Scrollback = g_settings_get_uint (profile->settings, "scrollback-lines");
 
   color_string = g_settings_get_string (profile->settings, "foreground-color");
-  if (color_string && gdk_color_parse (color_string, &color))
+  if (color_string && gdk_rgba_parse (&color, color_string))
     prefs->Foreground = color;
   g_free (color_string);
 
   color_string = g_settings_get_string (profile->settings, "background-color");
-  if (color_string && gdk_color_parse (color_string, &color))
+  if (color_string && gdk_rgba_parse (&color, color_string))
     prefs->Background = color;
   g_free (color_string);
 
@@ -629,7 +629,7 @@ mud_profile_set_proxy_combo_full(MudProfile *profile, gchar *version)
 void
 mud_profile_set_proxy_combo(MudProfile *profile, GtkComboBox *combo)
 {
-    gchar *version = gtk_combo_box_get_active_text(combo);
+    gchar *version = gtk_combo_box_get_active_id(combo);
     mud_profile_set_proxy_combo_full(profile, version);
 }
 
@@ -649,17 +649,17 @@ mud_profile_set_font (MudProfile *profile, const gchar *value)
 }
 
 void
-mud_profile_set_foreground (MudProfile *profile, GdkColor *color)
+mud_profile_set_foreground (MudProfile *profile, GdkRGBA *color)
 {
-    gchar *s = gdk_color_to_string(color);
+    gchar *s = gdk_rgba_to_string(color);
     g_settings_set_string(profile->settings, "foreground-color", s);
     g_free(s);
 }
 
 void
-mud_profile_set_background (MudProfile *profile, GdkColor *color)
+mud_profile_set_background (MudProfile *profile, GdkRGBA *color)
 {
-    gchar *s = gdk_color_to_string(color);
+    gchar *s = gdk_rgba_to_string(color);
     g_settings_set_string(profile->settings, "background-color", s);
     g_free(s);
 }
@@ -667,10 +667,10 @@ mud_profile_set_background (MudProfile *profile, GdkColor *color)
 void
 mud_profile_set_colors (MudProfile *profile,
                         gint        nr,
-                        GdkColor   *color)
+                        GdkRGBA    *color)
 {
   gchar **value;
-  gchar *s = gdk_color_to_string (color);
+  gchar *s = gdk_rgba_to_string (color);
   /* FIXME: Guard against retrieved old value not having 16 entries */
   value = g_settings_get_strv (profile->settings, "palette");
   g_free (value[nr]); /* FIXME: Guard against wrong 'nr' value */
@@ -689,16 +689,13 @@ mud_profile_set_scrollback(MudProfile *profile, const guint value)
 static gboolean
 set_Foreground(MudProfile *profile, const gchar *candidate)
 {
-    GdkColor color;
+    GdkRGBA color;
 
-    if (candidate && gdk_color_parse(candidate, &color))
+    if (candidate && gdk_rgba_parse(&color, candidate))
     {
-        if (!gdk_color_equal(&color, &profile->priv->preferences.Foreground))
+        if (!gdk_rgba_equal(&color, &profile->priv->preferences.Foreground))
         {
-            profile->priv->preferences.Foreground.red = color.red;
-            profile->priv->preferences.Foreground.green = color.green;
-            profile->priv->preferences.Foreground.blue = color.blue;
-
+            profile->priv->preferences.Foreground = color;
             return TRUE;
         }
     }
@@ -709,16 +706,13 @@ set_Foreground(MudProfile *profile, const gchar *candidate)
 static gboolean
 set_Background(MudProfile *profile, const gchar *candidate)
 {
-    GdkColor color;
+    GdkRGBA color;
 
-    if (candidate && gdk_color_parse(candidate, &color))
+    if (candidate && gdk_rgba_parse(&color, candidate))
     {
-        if (!gdk_color_equal(&color, &profile->priv->preferences.Background))
+        if (!gdk_rgba_equal(&color, &profile->priv->preferences.Background))
         {
-            profile->priv->preferences.Background.red = color.red;
-            profile->priv->preferences.Background.green = color.green;
-            profile->priv->preferences.Background.blue = color.blue;
-
+            profile->priv->preferences.Background = color;
             return TRUE;
         }
     }
@@ -730,7 +724,7 @@ static gboolean
 set_Colors (MudProfile *profile, gchar **palette)
 {
   guint n_colors = (palette == NULL) ? 0 : g_strv_length (palette);
-  GdkColor colors[C_MAX];
+  GdkRGBA colors[C_MAX];
 
   if ((palette == NULL) || (n_colors < C_MAX))
     {
@@ -743,10 +737,9 @@ set_Colors (MudProfile *profile, gchar **palette)
     }
 
   for (gsize i = 0; i < C_MAX; ++i)
-    if (!gdk_color_parse (palette[i], &colors[i]))
+    if (!gdk_rgba_parse (&colors[i], palette[i]))
       return FALSE;
 
-  memcpy(profile->priv->preferences.Colors, &colors, C_MAX * sizeof(GdkColor));
+  memcpy(profile->priv->preferences.Colors, &colors, C_MAX * sizeof(GdkRGBA));
   return TRUE;
 }
-

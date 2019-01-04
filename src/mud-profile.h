@@ -2,6 +2,7 @@
  * mud-profile.h
  * Copyright (C) 1998-2005 Robin Ericsson <lobbin@localhost.nu>
  * Copyright (C) 2005-2009 Les Harris <lharris@gnome.org>
+ * Copytight (C) 2019 Mart Raudsepp <leio@gentoo.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,38 +44,38 @@ typedef struct _MudPrefs              MudPrefs;
 
 struct _MudPrefs
 {
-    gboolean   EchoText;
-    gboolean   KeepText;
-    gboolean   ScrollOnOutput;
+  gboolean EchoText;
+  gboolean KeepText;
+  gboolean ScrollOnOutput;
 
-    gchar     *FontName;
-    gchar     *CommDev;
-    gchar     *Encoding;
-    gchar     *ProxyVersion;
-    gchar     *ProxyHostname;
+  gchar   *FontName;
+  gchar   *CommDev;
+  gchar   *Encoding;
+  gchar   *ProxyVersion;
+  gchar   *ProxyHostname;
 
-    guint      Scrollback;
+  guint    Scrollback;
 
-    GdkColor   Foreground;
-    GdkColor   Background;
+  GdkRGBA  Foreground;
+  GdkRGBA  Background;
 
-    gboolean UseRemoteEncoding;
-    gboolean UseProxy;
-    gboolean UseRemoteDownload;
+  gboolean UseRemoteEncoding;
+  gboolean UseProxy;
+  gboolean UseRemoteDownload;
 
-    GdkColor   Colors[C_MAX];
+  GdkRGBA  Colors[C_MAX];
 };
 
 struct _MudProfile
 {
-    GObject parent_instance;
+  GObject parent_instance;
 
-    MudProfilePrivate *priv;
+  MudProfilePrivate *priv;
 
-    guint64 id;
-    gchar *visible_name;
-    GSettings *settings;
-    MudPrefs *preferences;
+  guint64 id;
+  gchar *visible_name;
+  GSettings *settings;
+  MudPrefs *preferences;
 };
 
 typedef struct
@@ -116,9 +117,9 @@ void mud_profile_set_scrolloutput (MudProfile *profile, gboolean value);
 void mud_profile_set_commdev (MudProfile *profile, const gchar *value);
 void mud_profile_set_scrollback (MudProfile *profile, const guint value);
 void mud_profile_set_font (MudProfile *profile, const gchar *value);
-void mud_profile_set_foreground (MudProfile *profile, GdkColor *color);
-void mud_profile_set_background (MudProfile *profile, GdkColor *color);
-void mud_profile_set_colors (MudProfile *profile, gint nr, GdkColor *color);
+void mud_profile_set_foreground (MudProfile *profile, GdkRGBA *color);
+void mud_profile_set_background (MudProfile *profile, GdkRGBA *color);
+void mud_profile_set_colors (MudProfile *profile, gint nr, GdkRGBA *color);
 void mud_profile_set_encoding_combo(MudProfile *profile, const gchar *value);
 void mud_profile_set_encoding_check (MudProfile *profile, gboolean value);
 void mud_profile_set_proxy_check (MudProfile *profile, const gboolean value);

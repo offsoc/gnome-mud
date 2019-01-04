@@ -152,7 +152,6 @@ static void mud_subwindow_set_size_force_grid (MudSubwindow *window,
 const gchar *mud_subwindow_get_history_item(MudSubwindow *self,
                                             enum MudSubwindowHistoryDirection direction);
 
-static void mud_subwindow_update_geometry (MudSubwindow *window);
 static void mud_subwindow_set_terminal_colors(MudSubwindow *self);
 static void mud_subwindow_set_terminal_scrollback(MudSubwindow *self);
 static void mud_subwindow_set_terminal_scrolloutput(MudSubwindow *self);
@@ -411,20 +410,20 @@ mud_subwindow_constructor (GType gtype,
     gtk_window_set_transient_for(GTK_WINDOW(self->priv->window),
                                  GTK_WINDOW(main_window));
 
-    self->priv->vbox = gtk_vbox_new(FALSE, 0);
+    self->priv->vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
     self->priv->entry = gtk_entry_new();
 
     gtk_widget_hide(self->priv->entry);
 
     self->priv->terminal = vte_terminal_new();
-    self->priv->scrollbar = gtk_vscrollbar_new(NULL);
-    term_box = gtk_hbox_new(FALSE, 0);
+    self->priv->scrollbar = gtk_scrollbar_new (GTK_ORIENTATION_VERTICAL, gtk_scrollable_get_vadjustment (GTK_SCROLLABLE (self->priv->terminal)));
+    term_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
 
     vte_terminal_set_encoding(VTE_TERMINAL(self->priv->terminal),
-                              "ISO-8859-1");
+                              "ISO-8859-1", NULL); /* TODO: This is deprecated; if keeping, at least add error handling? */
 
-    vte_terminal_set_emulation(VTE_TERMINAL(self->priv->terminal),
-                               "xterm");
+    /* TODO: set_emulation doesn't exist anymore. We don't really care, but does it affect TTYPE queries? */
+    /* vte_terminal_set_emulation(VTE_TERMINAL(self->priv->terminal), "xterm"); */
 
     vte_terminal_set_cursor_shape(VTE_TERMINAL(self->priv->terminal),
                                   VTE_CURSOR_SHAPE_UNDERLINE);
@@ -451,10 +450,6 @@ mud_subwindow_constructor (GType gtype,
     gtk_box_pack_start(GTK_BOX(self->priv->vbox), term_box, TRUE, TRUE, 0);
     gtk_box_pack_end(GTK_BOX(self->priv->vbox), self->priv->entry, FALSE, FALSE, 0);
     gtk_container_add(GTK_CONTAINER(self->priv->window), self->priv->vbox);
-
-    gtk_range_set_adjustment(
-            GTK_RANGE(self->priv->scrollbar),
-            VTE_TERMINAL(self->priv->terminal)->adjustment);
 
     gtk_window_set_title(GTK_WINDOW(self->priv->window), self->priv->title);
 
@@ -800,6 +795,9 @@ mud_subwindow_set_size_force_grid (MudSubwindow *window,
                                    int             force_grid_width,
                                    int             force_grid_height)
 {
+    /* TODO: Missing get_padding in new VTE; maybe we can just use vte_terminal_set_size? */
+#if 0
+#warning Reimplement mud_subwindow size forcing
     /* Owen's hack from gnome-terminal */
     GtkWidget *widget;
     GtkWidget *app;
@@ -827,11 +825,11 @@ mud_subwindow_set_size_force_grid (MudSubwindow *window,
     w = toplevel_request.width - widget_request.width;
     h = toplevel_request.height - widget_request.height;
 
-    char_width = VTE_TERMINAL(screen)->char_width;
-    char_height = VTE_TERMINAL(screen)->char_height;
+    char_width = vte_terminal_get_char_width (screen);
+    char_height = vte_terminal_get_char_height (screen);
 
-    grid_width = VTE_TERMINAL(screen)->column_count;
-    grid_height = VTE_TERMINAL(screen)->row_count;
+    grid_width = vte_terminal_get_column_count (screen);
+    grid_height = vte_terminal_get_row_count (screen);
 
     if (force_grid_width >= 0)
         grid_width = force_grid_width;
@@ -859,8 +857,8 @@ mud_subwindow_update_geometry (MudSubwindow *window)
 
     if(gtk_widget_get_mapped(window->priv->window))
     {
-        char_width = VTE_TERMINAL(widget)->char_width;
-        char_height = VTE_TERMINAL(widget)->char_height;
+        char_width = vte_terminal_get_char_width (VTE_TERMINAL(widget));
+        char_height = vte_terminal_get_char_height (VTE_TERMINAL(widget));
 
         vte_terminal_get_padding (VTE_TERMINAL (window->priv->terminal), &xpad, &ypad);
 
@@ -884,6 +882,7 @@ mud_subwindow_update_geometry (MudSubwindow *window)
                 GDK_HINT_MIN_SIZE |
                 GDK_HINT_BASE_SIZE);
     }
+#endif
 }
 
 /* MudSubwindow Callbacks */
@@ -931,8 +930,8 @@ mud_subwindow_size_allocate_cb(GtkWidget *widget,
         if(self->priv->width != allocation->width ||
                 self->priv->height != allocation->height)
         {
-            self->priv->width = VTE_TERMINAL(self->priv->terminal)->column_count;
-            self->priv->height = VTE_TERMINAL(self->priv->terminal)->row_count;
+            self->priv->width = vte_terminal_get_column_count (VTE_TERMINAL (self->priv->terminal));
+            self->priv->height = vte_terminal_get_row_count (VTE_TERMINAL(self->priv->terminal));
 
             g_signal_emit(self,
                     mud_subwindow_signal[RESIZED],
@@ -963,7 +962,7 @@ mud_subwindow_entry_keypress_cb(GtkWidget *widget,
 {
     const gchar *history;
 
-    if ((event->keyval == GDK_Return || event->keyval == GDK_KP_Enter) &&
+    if ((event->keyval == GDK_KEY_Return || event->keyval == GDK_KEY_KP_Enter) &&
         (event->state & gtk_accelerator_get_default_mod_mask()) == 0   &&
          gtk_widget_get_mapped(self->priv->entry) )
     {
@@ -999,7 +998,7 @@ mud_subwindow_entry_keypress_cb(GtkWidget *widget,
         return TRUE;
     }
 
-    if(event->keyval == GDK_Up)
+    if(event->keyval == GDK_KEY_Up)
     {
         history =
             mud_subwindow_get_history_item(self,
@@ -1014,7 +1013,7 @@ mud_subwindow_entry_keypress_cb(GtkWidget *widget,
         return TRUE;
     }
 
-    if(event->keyval == GDK_Down)
+    if(event->keyval == GDK_KEY_Down)
     {
         history =
             mud_subwindow_get_history_item(self,

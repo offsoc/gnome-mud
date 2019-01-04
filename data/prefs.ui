@@ -9,184 +9,6 @@
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
   </object>
-  <object class="GtkListStore" id="model1">
-    <columns>
-      <!-- column-name gchararray -->
-      <column type="gchararray"/>
-    </columns>
-    <data>
-      <row>
-        <col id="0">ISO-8859-1</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-2</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-3</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-4</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-5</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-6</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-7</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-8</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-9</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-10</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-11</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-12</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-13</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-14</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-15</col>
-      </row>
-      <row>
-        <col id="0">ISO-8859-16</col>
-      </row>
-      <row>
-        <col id="0">UTF-8</col>
-      </row>
-      <row>
-        <col id="0">ARMSCII-8</col>
-      </row>
-      <row>
-        <col id="0">BIG5</col>
-      </row>
-      <row>
-        <col id="0">BIG5-HKSCS</col>
-      </row>
-      <row>
-        <col id="0">CP866</col>
-      </row>
-      <row>
-        <col id="0">EUC-JP</col>
-      </row>
-      <row>
-        <col id="0">EUC-KR</col>
-      </row>
-      <row>
-        <col id="0">EUC-TW</col>
-      </row>
-      <row>
-        <col id="0">GB18030</col>
-      </row>
-      <row>
-        <col id="0">GB2312</col>
-      </row>
-      <row>
-        <col id="0">GBK</col>
-      </row>
-      <row>
-        <col id="0">GEORGIAN-PS</col>
-      </row>
-      <row>
-        <col id="0">IBM850</col>
-      </row>
-      <row>
-        <col id="0">IBM852</col>
-      </row>
-      <row>
-        <col id="0">IBM855</col>
-      </row>
-      <row>
-        <col id="0">IBM857</col>
-      </row>
-      <row>
-        <col id="0">IBM862</col>
-      </row>
-      <row>
-        <col id="0">ISO-2022-JP</col>
-      </row>
-      <row>
-        <col id="0">ISO-IR-111</col>
-      </row>
-      <row>
-        <col id="0">KOI8-R</col>
-      </row>
-      <row>
-        <col id="0">KOI8-U</col>
-      </row>
-      <row>
-        <col id="0">MAC-CYRILLIC</col>
-      </row>
-      <row>
-        <col id="0">SHIFT_JIS</col>
-      </row>
-      <row>
-        <col id="0">TCVN</col>
-      </row>
-      <row>
-        <col id="0">TIS-620</col>
-      </row>
-      <row>
-        <col id="0">UHC</col>
-      </row>
-      <row>
-        <col id="0">VISCII</col>
-      </row>
-      <row>
-        <col id="0">WINDOWS-1250</col>
-      </row>
-      <row>
-        <col id="0">WINDOWS-1251</col>
-      </row>
-      <row>
-        <col id="0">WINDOWS-1252</col>
-      </row>
-      <row>
-        <col id="0">WINDOWS-1253</col>
-      </row>
-      <row>
-        <col id="0">WINDOWS-1254</col>
-      </row>
-      <row>
-        <col id="0">WINDOWS-1255</col>
-      </row>
-      <row>
-        <col id="0">WINDOWS-1256</col>
-      </row>
-      <row>
-        <col id="0">WINDOWS-1257</col>
-      </row>
-      <row>
-        <col id="0">WINDOWS-1258</col>
-      </row>
-    </data>
-  </object>
-  <object class="GtkListStore" id="model2">
-    <columns>
-      <!-- column-name gchararray -->
-      <column type="gchararray"/>
-    </columns>
-    <data>
-      <row>
-        <col id="0">4</col>
-      </row>
-      <row>
-        <col id="0">5</col>
-      </row>
-    </data>
-  </object>
   <object class="GtkDialog" id="newprofile_dialog">
     <property name="visible">False</property>
     <property name="can_focus">False</property>
@@ -514,16 +336,63 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkComboBox" id="encoding_combo">
+                              <object class="GtkComboBoxText" id="encoding_combo">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="model">model1</property>
-                                <child>
-                                  <object class="GtkCellRendererText" id="renderer1"/>
-                                  <attributes>
-                                    <attribute name="text">0</attribute>
-                                  </attributes>
-                                </child>
+                                <items>
+                                  <item id="ISO-8859-1">ISO-8859-1</item>
+                                  <item id="ISO-8859-2">ISO-8859-2</item>
+                                  <item id="ISO-8859-3">ISO-8859-3</item>
+                                  <item id="ISO-8859-4">ISO-8859-4</item>
+                                  <item id="ISO-8859-5">ISO-8859-5</item>
+                                  <item id="ISO-8859-6">ISO-8859-6</item>
+                                  <item id="ISO-8859-7">ISO-8859-7</item>
+                                  <item id="ISO-8859-8">ISO-8859-8</item>
+                                  <item id="ISO-8859-9">ISO-8859-9</item>
+                                  <item id="ISO-8859-10">ISO-8859-10</item>
+                                  <item id="ISO-8859-11">ISO-8859-11</item>
+                                  <item id="ISO-8859-12">ISO-8859-12</item>
+                                  <item id="ISO-8859-13">ISO-8859-13</item>
+                                  <item id="ISO-8859-14">ISO-8859-14</item>
+                                  <item id="ISO-8859-15">ISO-8859-15</item>
+                                  <item id="ISO-8859-16">ISO-8859-16</item>
+                                  <item id="UTF-8">UTF-8</item>
+                                  <item id="ARMSCII-8">ARMSCII-8</item>
+                                  <item id="BIG5">BIG5</item>
+                                  <item id="BIG5-HKSCS">BIG5-HKSCS</item>
+                                  <item id="CP866">CP866</item>
+                                  <item id="EUC-JP">EUC-JP</item>
+                                  <item id="EUC-KR">EUC-KR</item>
+                                  <item id="EUC-TW">EUC-TW</item>
+                                  <item id="GB18030">GB18030</item>
+                                  <item id="GB2312">GB2312</item>
+                                  <item id="GBK">GBK</item>
+                                  <item id="GEORGIAN-PS">GEORGIAN-PS</item>
+                                  <item id="IBM850">IBM850</item>
+                                  <item id="IBM852">IBM852</item>
+                                  <item id="IBM855">IBM855</item>
+                                  <item id="IBM857">IBM857</item>
+                                  <item id="IBM862">IBM862</item>
+                                  <item id="ISO-2022-JP">ISO-2022-JP</item>
+                                  <item id="ISO-IR-111">ISO-IR-111</item>
+                                  <item id="KOI8-R">KOI8-R</item>
+                                  <item id="KOI8-U">KOI8-U</item>
+                                  <item id="MAC-CYRILLIC">MAC-CYRILLIC</item>
+                                  <item id="SHIFT_JIS">SHIFT_JIS</item>
+                                  <item id="TCVN">TCVN</item>
+                                  <item id="TIS-620">TIS-620</item>
+                                  <item id="UHC">UHC</item>
+                                  <item id="VISCII">VISCII</item>
+                                  <item id="WINDOWS-1250">WINDOWS-1250</item>
+                                  <item id="WINDOWS-1251">WINDOWS-1251</item>
+                                  <item id="WINDOWS-1252">WINDOWS-1252</item>
+                                  <item id="WINDOWS-1253">WINDOWS-1253</item>
+                                  <item id="WINDOWS-1254">WINDOWS-1254</item>
+                                  <item id="WINDOWS-1255">WINDOWS-1255</item>
+                                  <item id="WINDOWS-1256">WINDOWS-1256</item>
+                                  <item id="WINDOWS-1257">WINDOWS-1257</item>
+                                  <item id="WINDOWS-1258">WINDOWS-1258</item>
+                                </items>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -1245,17 +1114,14 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkComboBox" id="proxy_combo">
+                              <object class="GtkComboBoxText" id="proxy_combo">
                                 <property name="visible">True</property>
                                 <property name="sensitive">False</property>
                                 <property name="can_focus">False</property>
-                                <property name="model">model2</property>
-                                <child>
-                                  <object class="GtkCellRendererText" id="renderer2"/>
-                                  <attributes>
-                                    <attribute name="text">0</attribute>
-                                  </attributes>
-                                </child>
+                                <items>
+                                  <item id="4">4</item>
+                                  <item id="5">5</item>
+                                </items>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>

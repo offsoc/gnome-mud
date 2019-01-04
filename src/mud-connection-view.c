@@ -160,8 +160,6 @@ static void mud_connection_view_reread_profile(MudConnectionView *view);
 static void mud_connection_view_feed_text(MudConnectionView *view,
                                           gchar *message);
 
-static void mud_connection_view_update_geometry (MudConnectionView *window);
-
 #ifdef ENABLE_GST
 static void mud_connection_view_download_progress_cb(goffset current_num_bytes,
                                                      goffset total_num_bytes,
@@ -346,7 +344,7 @@ mud_connection_view_class_init (MudConnectionViewClass *klass)
             g_param_spec_object("ui-vbox",
                 "ui vbox",
                 "main ui vbox",
-                GTK_TYPE_VBOX,
+                GTK_TYPE_BOX,
                 G_PARAM_READABLE));
 }
 
@@ -470,7 +468,6 @@ mud_connection_view_constructor (GType gtype,
                                  guint n_properties,
                                  GObjectConstructParam *properties)
 {
-    GtkWidget *box;
 #ifdef ENABLE_GST
     GtkWidget *dl_vbox;
     GtkWidget *dl_hbox;
@@ -515,16 +512,15 @@ mud_connection_view_constructor (GType gtype,
     }
 
     /* Create main VBox, VTE, and scrollbar */
-    box = gtk_vbox_new(FALSE, 0);
-    self->ui_vbox = GTK_VBOX(box);
+    self->ui_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
     self->terminal = VTE_TERMINAL(vte_terminal_new()); /* TODO: Set up autowrap, so things rewrap on resize (this will be the default once we upgrade VTE to some gtk3 version); make sure none of our own tracking of things gets messed up from that, though */
-    self->priv->scrollbar = gtk_vscrollbar_new(NULL);
-    term_box = gtk_hbox_new(FALSE, 0);
+    self->priv->scrollbar = gtk_scrollbar_new (GTK_ORIENTATION_VERTICAL, gtk_scrollable_get_vadjustment (GTK_SCROLLABLE (self->terminal)));
+    term_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
 
 #ifdef ENABLE_GST
     /* Setup Download UI */
-    dl_vbox = gtk_vbox_new(FALSE, 0);
-    dl_hbox = gtk_hbox_new(FALSE, 0);
+    dl_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    dl_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
 
     self->priv->dl_label = gtk_label_new(_("Downloading…"));
     self->priv->progressbar = gtk_progress_bar_new();
@@ -538,7 +534,7 @@ mud_connection_view_constructor (GType gtype,
     gtk_box_pack_end(GTK_BOX(dl_vbox), dl_hbox, TRUE, TRUE, 0);
 
     /* Pack into Main UI */
-    gtk_box_pack_start(GTK_BOX(box), dl_vbox, FALSE, FALSE, 0);
+    gtk_box_pack_start(self->ui_vbox, dl_vbox, FALSE, FALSE, 0);
 
     /* Set defaults and create download queue */
     self->priv->downloading = FALSE;
@@ -565,7 +561,7 @@ mud_connection_view_constructor (GType gtype,
                      0);
 
     /* Pack into Main UI */
-    gtk_box_pack_end(GTK_BOX(box), term_box, TRUE, TRUE, 0);
+    gtk_box_pack_end(self->ui_vbox, term_box, TRUE, TRUE, 0);
 
     /* Connect signals and set data */
     g_signal_connect(G_OBJECT(self->terminal),
@@ -576,18 +572,14 @@ mud_connection_view_constructor (GType gtype,
     g_object_set_data(G_OBJECT(self->terminal),
                       "connection-view",
                       self);
-    g_object_set_data(G_OBJECT(box),
+    g_object_set_data(G_OBJECT(self->ui_vbox),
                       "connection-view",
                       self);
 
-    /* Setup scrollbar */
-    gtk_range_set_adjustment(
-            GTK_RANGE(self->priv->scrollbar),
-            self->terminal->adjustment);
-
     /* Setup VTE */
-    vte_terminal_set_encoding(self->terminal, "ISO-8859-1");
-    vte_terminal_set_emulation(self->terminal, "xterm");
+    vte_terminal_set_encoding(self->terminal, "ISO-8859-1", NULL); /* TODO: This is deprecated; if keeping, at least add error handling? */
+    /* TODO: set_emulation doesn't exist anymore. We don't really care, but does it affect TTYPE queries? */
+    /* vte_terminal_set_emulation(self->terminal, "xterm"); */
     vte_terminal_set_cursor_shape(self->terminal,
                                   VTE_CURSOR_SHAPE_UNDERLINE);
 
@@ -637,9 +629,9 @@ mud_connection_view_constructor (GType gtype,
     g_free(proxy_uri);
 
     /* Show everything */
-    gtk_widget_show_all(box);
+    gtk_widget_show_all(self->ui_vbox);
 
-    mud_connection_view_update_geometry (self);
+    /* TODO: Reimplement and call - mud_connection_view_update_geometry (self); */
 
 #ifdef ENABLE_GST
     /* Hide UI until download starts */
@@ -1032,7 +1024,6 @@ mud_connection_view_button_press_event(GtkWidget *widget, GdkEventButton *event,
 static void
 mud_connection_view_popup(MudConnectionView *view, GdkEventButton *event)
 {
-    GtkWidget *im_menu;
     GtkWidget *menu_item;
     GtkWidget *profile_menu;
     GSequence *profiles;
@@ -1103,16 +1094,6 @@ mud_connection_view_popup(MudConnectionView *view, GdkEventButton *event)
                 prof,
                 (GDestroyNotify) g_object_unref);
     }
-
-    menu_item = gtk_separator_menu_item_new();
-    gtk_menu_shell_append(GTK_MENU_SHELL(view->priv->popup_menu), menu_item);
-
-    im_menu = gtk_menu_new();
-    menu_item = gtk_menu_item_new_with_mnemonic(_("_Input Methods"));
-    gtk_menu_item_set_submenu(GTK_MENU_ITEM(menu_item), im_menu);
-    vte_terminal_im_append_menuitems(view->terminal,
-            GTK_MENU_SHELL(im_menu));
-    gtk_menu_shell_append(GTK_MENU_SHELL(view->priv->popup_menu), menu_item);
 
     gtk_widget_show_all(view->priv->popup_menu);
     gtk_menu_popup(GTK_MENU(view->priv->popup_menu),
@@ -1246,6 +1227,8 @@ popup_menu_detach(GtkWidget *widget, GtkMenu *menu)
 }
 
 /* Private Methods */
+#if 0
+#warning Reimplement
 static void
 mud_connection_view_update_geometry (MudConnectionView *window)
 {
@@ -1283,6 +1266,7 @@ mud_connection_view_update_geometry (MudConnectionView *window)
             GDK_HINT_MIN_SIZE |
             GDK_HINT_BASE_SIZE);
 }
+#endif
 
 static GtkWidget*
 append_stock_menuitem(GtkWidget *menu, const gchar *text, GCallback callback, gpointer data)
@@ -1661,7 +1645,7 @@ mud_connection_view_add_text(MudConnectionView *view, gchar *message, enum MudCo
         text = NULL;
     }
 
-    vte_terminal_set_encoding(view->terminal, encoding);
+    vte_terminal_set_encoding(view->terminal, encoding, NULL); /* TODO: This is deprecated; if keeping, at least add error handling? */
 
     g_free(encoding);
 

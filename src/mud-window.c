@@ -398,7 +398,7 @@ mud_window_init (MudWindow *self)
     gtk_widget_set_size_request(self->priv->textview, -1,
                                 self->priv->textview_line_height*1);
     gtk_widget_set_size_request(
-            GTK_SCROLLED_WINDOW(self->priv->textviewscroll)->vscrollbar,
+            gtk_scrolled_window_get_vscrollbar(GTK_SCROLLED_WINDOW(self->priv->textviewscroll)),
             -1, 1);
 
     if (gtk_widget_get_visible(self->priv->textviewscroll))
@@ -590,7 +590,7 @@ mud_window_textview_keypress(GtkWidget *widget, GdkEventKey *event, MudWindow *s
     GtkTextIter start, end;
     MudParseBase *base;
 
-    if ((event->keyval == GDK_Return || event->keyval == GDK_KP_Enter) &&
+    if ((event->keyval == GDK_KEY_Return || event->keyval == GDK_KEY_KP_Enter) &&
             (event->state & gtk_accelerator_get_default_mod_mask()) == 0)
     {
         gtk_text_buffer_get_bounds(buffer, &start, &end);
@@ -622,7 +622,7 @@ mud_window_textview_keypress(GtkWidget *widget, GdkEventKey *event, MudWindow *s
 
     if(self->priv->current_view)
     {
-        if(event->keyval == GDK_Up)
+        if(event->keyval == GDK_KEY_Up)
         {
             history = 
                 mud_connection_view_get_history_item(self->priv->current_view, 
@@ -638,7 +638,7 @@ mud_window_textview_keypress(GtkWidget *widget, GdkEventKey *event, MudWindow *s
             return TRUE;
         }
 
-        if(event->keyval == GDK_Down)
+        if(event->keyval == GDK_KEY_Down)
         {
             history =
                 mud_connection_view_get_history_item(self->priv->current_view,
@@ -665,7 +665,7 @@ mud_window_entry_keypress(GtkWidget *widget,
 {
     const gchar *text;
 
-    if ((event->keyval == GDK_Return || event->keyval == GDK_KP_Enter) &&
+    if ((event->keyval == GDK_KEY_Return || event->keyval == GDK_KEY_KP_Enter) &&
             (event->state & gtk_accelerator_get_default_mod_mask()) == 0)
     {
         if (self->priv->current_view)
@@ -933,11 +933,12 @@ mud_window_buffer_cb(GtkWidget *widget, MudWindow *self)
 
         /* This is really hackish but the only alternative,
          * vte_terminal_get_text_range, is just broken. */
+        /* FIXME: Re-evaluate for gtk3 vte */
 
         clipboard = gtk_clipboard_get(GDK_SELECTION_PRIMARY);
         vte_terminal_select_all(term);
         vte_terminal_copy_primary(term);
-        vte_terminal_select_none(term);
+        vte_terminal_unselect_all(term);
         buffer_text = gtk_clipboard_wait_for_text(clipboard);
 
         if(buffer_text)
@@ -1259,8 +1260,8 @@ mud_window_add_connection_view(MudWindow *self, GObject *cview, gchar *tabLbl)
 {
     gint nr;
     VteTerminal *terminal;
-    GtkVBox *viewport;
-    GtkHBox *hbox;
+    GtkBox *viewport;
+    GtkBox *hbox;
     GtkWidget *tab_label;
     GtkImage *image, *close_image;
     GtkButton *close_button;
@@ -1281,7 +1282,7 @@ mud_window_add_connection_view(MudWindow *self, GObject *cview, gchar *tabLbl)
                  NULL);
 
     tab_label = gtk_label_new(tabLbl);
-    hbox = GTK_HBOX(gtk_hbox_new(FALSE, 0));
+    hbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0));
     image = GTK_IMAGE(gtk_image_new_from_icon_name(GMUD_STOCK_NEGATIVE,
                                                    GTK_ICON_SIZE_MENU));
 
@@ -1291,9 +1292,9 @@ mud_window_add_connection_view(MudWindow *self, GObject *cview, gchar *tabLbl)
     gtk_button_set_relief(close_button, GTK_RELIEF_NONE);
     gtk_button_set_image(close_button, GTK_WIDGET(close_image));
 
-    gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(image), FALSE, FALSE, 0);
-    gtk_box_pack_start(GTK_BOX(hbox), tab_label, TRUE, TRUE, 0);
-    gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(close_button), FALSE, FALSE, 0);
+    gtk_box_pack_start(hbox, GTK_WIDGET(image), FALSE, FALSE, 0);
+    gtk_box_pack_start(hbox, tab_label, TRUE, TRUE, 0);
+    gtk_box_pack_start(hbox, GTK_WIDGET(close_button), FALSE, FALSE, 0);
 
     gtk_widget_show_all(GTK_WIDGET(hbox));
 
@@ -1301,11 +1302,11 @@ mud_window_add_connection_view(MudWindow *self, GObject *cview, gchar *tabLbl)
                                   GTK_WIDGET(viewport),
                                   GTK_WIDGET(hbox));
 
-    gtk_notebook_set_tab_label_packing(GTK_NOTEBOOK(self->priv->notebook),
-                                       GTK_WIDGET(viewport),
-                                       TRUE,
-                                       TRUE,
-                                       GTK_PACK_START);
+    gtk_container_child_set(GTK_CONTAINER(self->priv->notebook),
+                            GTK_WIDGET(viewport),
+                            "tab-expand", TRUE,
+                            "tab-fill", TRUE,
+                            NULL);
 
     gtk_notebook_set_current_page(GTK_NOTEBOOK(self->priv->notebook), nr);
 

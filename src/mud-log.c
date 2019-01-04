@@ -754,10 +754,11 @@ mud_log_open(MudLog *self)
                 g_object_get(self->priv->parent, "terminal", &term, NULL);
 
                 clipboard = gtk_clipboard_get(GDK_SELECTION_PRIMARY);
+                /* FIXME: Can't we get this more directly than futzing via clipboard? */
                 vte_terminal_select_all(term);
                 vte_terminal_copy_primary(term);
                 term_text = gtk_clipboard_wait_for_text(clipboard);
-                vte_terminal_select_none(term);
+                vte_terminal_unselect_all(term);
 
                 if(term_text)
                 {
@@ -780,11 +781,12 @@ mud_log_open(MudLog *self)
 
                 g_object_get(self->priv->parent, "terminal", &term, NULL);
 
+                /* FIXME: Can we get rid of the clipboard hack with gtk3 vte? */
                 clipboard = gtk_clipboard_get(GDK_SELECTION_PRIMARY);
                 vte_terminal_select_all(term);
                 vte_terminal_copy_primary(term);
                 term_text = gtk_clipboard_wait_for_text(clipboard);
-                vte_terminal_select_none(term);
+                vte_terminal_unselect_all(term);
 
                 if(term_text)
                 {
@@ -1354,6 +1356,7 @@ static void
 mud_log_write_html_header(MudLog *self)
 {
     gchar *title = g_path_get_basename(self->priv->filename);
+    gchar *color_string;
 
     fprintf(self->priv->logfile, "%s", "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
     fprintf(self->priv->logfile, "%s", "\t<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n ");
@@ -1368,15 +1371,13 @@ mud_log_write_html_header(MudLog *self)
 
     fprintf(self->priv->logfile, "%s", "<style type=\"text/css\">\n\t\t\t");
 
-    fprintf(self->priv->logfile, "body {\n\t\t\t\tbackground-color: rgb(%d, %d, %d);\n",
-                                 self->priv->parent->profile->preferences->Background.red / 256,
-                                 self->priv->parent->profile->preferences->Background.green / 256,
-                                 self->priv->parent->profile->preferences->Background.blue / 256);
+    color_string = gdk_rgba_to_string (&self->priv->parent->profile->preferences->Background);
+    fprintf(self->priv->logfile, "body {\n\t\t\t\tbackground-color: %s;\n", color_string);
+    g_free (color_string);
 
-    fprintf(self->priv->logfile, "\t\t\t\tcolor: rgb(%d, %d, %d);\n",
-                                 self->priv->parent->profile->preferences->Foreground.red / 256,
-                                 self->priv->parent->profile->preferences->Foreground.green / 256,
-                                 self->priv->parent->profile->preferences->Foreground.blue / 256);
+    color_string = gdk_rgba_to_string (&self->priv->parent->profile->preferences->Foreground);
+    fprintf(self->priv->logfile, "\t\t\t\tcolor: %s;\n", color_string);
+    g_free (color_string);
 
     fprintf(self->priv->logfile, "%s", "\t\t\t\tfont-family: monospace;\n");
 
@@ -1402,6 +1403,7 @@ mud_log_write_html_foreground_span(MudLog *self,
                                    gboolean bold,
                                    gint ecma_code)
 {
+    gchar *color_string;
     gint color_index = ecma_code - 30;
 
     /* Work around some gnome-mud palette weirdness */
@@ -1426,10 +1428,9 @@ mud_log_write_html_foreground_span(MudLog *self,
 
     color_index += (bold) ? 8 : 0;
 
-    g_string_append_printf(output, "<span style=\"color: rgb(%d, %d, %d);\">",
-            self->priv->parent->profile->preferences->Colors[color_index].red / 256,
-            self->priv->parent->profile->preferences->Colors[color_index].blue / 256,
-            self->priv->parent->profile->preferences->Colors[color_index].green / 256);
+    color_string = gdk_rgba_to_string (&self->priv->parent->profile->preferences->Colors[color_index]);
+    g_string_append_printf(output, "<span style=\"color: %s;\">", color_string);
+    g_free (color_string);
     g_queue_push_head(self->priv->span_queue, GINT_TO_POINTER(ecma_code));
 }
 
@@ -1439,6 +1440,7 @@ mud_log_write_html_background_span(MudLog *self,
                                    gboolean bold,
                                    gint ecma_code)
 {
+    gchar *color_string;
     gint color_index = ecma_code - 40;
 
     /* Work around some gnome-mud palette weirdness */
@@ -1463,10 +1465,9 @@ mud_log_write_html_background_span(MudLog *self,
 
     color_index += (bold) ? 8 : 0;
 
-    g_string_append_printf(output, "<span style=\"background-color: rgb(%d, %d, %d);\">",
-            self->priv->parent->profile->preferences->Colors[color_index].red / 256,
-            self->priv->parent->profile->preferences->Colors[color_index].blue / 256,
-            self->priv->parent->profile->preferences->Colors[color_index].green / 256);
+    color_string = gdk_rgba_to_string (&self->priv->parent->profile->preferences->Colors[color_index]);
+    g_string_append_printf(output, "<span style=\"background-color: %s;\">", color_string);
+    g_free (color_string);
     g_queue_push_head(self->priv->span_queue, GINT_TO_POINTER(ecma_code));
 }
 

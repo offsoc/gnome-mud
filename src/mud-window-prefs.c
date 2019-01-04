@@ -591,39 +591,10 @@ mud_window_prefs_update_scrolloutput(MudWindowPrefs *self,
 }
 
 static void
-mud_window_prefs_update_encoding_combo(MudWindowPrefs *self,
-                                       MudPrefs *preferences)
+mud_window_prefs_update_encoding_combo (MudWindowPrefs *self,
+                                        MudPrefs       *preferences)
 {
-    GtkTreeModel *encodings =
-        gtk_combo_box_get_model(GTK_COMBO_BOX(self->priv->encoding_combo));
-    GtkTreeIter iter;
-    gboolean valid;
-    gint count = 0;
-
-    valid = gtk_tree_model_get_iter_first(encodings, &iter);
-
-    if(!preferences->Encoding)
-        return;
-
-    while(valid)
-    {
-        gchar *encoding;
-
-        gtk_tree_model_get(encodings, &iter, 0, &encoding, -1);
-
-        if(!encoding)
-            continue;
-
-        if(g_str_equal(encoding, preferences->Encoding))
-            break;
-
-        count++;
-
-        valid = gtk_tree_model_iter_next(encodings, &iter);
-    }
-
-    gtk_combo_box_set_active(GTK_COMBO_BOX(self->priv->encoding_combo),
-                             count);
+  gtk_combo_box_set_active_id (GTK_COMBO_BOX (self->priv->encoding_combo), preferences->Encoding);
 }
 
 static void
@@ -651,56 +622,38 @@ mud_window_prefs_update_scrollback(MudWindowPrefs *self,
 }
 
 static void
-mud_window_prefs_update_font(MudWindowPrefs *self,
-                             MudPrefs *preferences)
+mud_window_prefs_update_font (MudWindowPrefs *self,
+                              MudPrefs       *preferences)
 {
-    gtk_font_button_set_font_name(GTK_FONT_BUTTON(self->priv->font_button),
-                                  preferences->FontName);
+  gtk_font_button_set_font_name (GTK_FONT_BUTTON (self->priv->font_button),
+                                 preferences->FontName);
 }
 
 static void
-mud_window_prefs_update_foreground(MudWindowPrefs *self,
-                                   MudPrefs *preferences)
+mud_window_prefs_update_foreground (MudWindowPrefs *self,
+                                    MudPrefs       *preferences)
 {
-    GdkColor color;
-
-    color.red = preferences->Foreground.red;
-    color.green = preferences->Foreground.green;
-    color.blue = preferences->Foreground.blue;
-
-    gtk_color_button_set_color(GTK_COLOR_BUTTON(self->priv->fore_button),
-                               &color);
+  gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (self->priv->fore_button),
+                              &preferences->Foreground);
 }
 
 static void
-mud_window_prefs_update_background(MudWindowPrefs *self,
-                                   MudPrefs *preferences)
+mud_window_prefs_update_background (MudWindowPrefs *self,
+                                    MudPrefs       *preferences)
 {
-    GdkColor color;
-
-    color.red = preferences->Background.red;
-    color.green = preferences->Background.green;
-    color.blue = preferences->Background.blue;
-
-    gtk_color_button_set_color(GTK_COLOR_BUTTON(self->priv->back_button),
-                               &color);
+  gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (self->priv->back_button),
+                              &preferences->Background);
 }
 
 static void
-mud_window_prefs_update_colors(MudWindowPrefs *self,
-                               MudPrefs *preferences)
+mud_window_prefs_update_colors (MudWindowPrefs *self,
+                                MudPrefs       *preferences)
 {
-    gint i;
-    GdkColor color;
-
-    for (i = 0; i < C_MAX; i++)
+  gint i;
+  for (i = 0; i < C_MAX; i++)
     {
-        color.red = preferences->Colors[i].red;
-        color.green = preferences->Colors[i].green;
-        color.blue = preferences->Colors[i].blue;
-
-        gtk_color_button_set_color(GTK_COLOR_BUTTON(self->priv->colors[i]),
-                                   &color);
+      gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (self->priv->colors[i]),
+                                  &preferences->Colors[i]);
     }
 }
 
@@ -709,7 +662,7 @@ static void
 mud_window_prefs_scrolloutput_cb(GtkWidget *widget,
                                  MudWindowPrefs *self)
 {
-    gboolean value = GTK_TOGGLE_BUTTON(widget)->active ? TRUE : FALSE;
+    gboolean value = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
     RETURN_IF_CHANGING_PROFILES(self);
 
     mud_profile_set_scrolloutput(self->priv->mud_profile, value);
@@ -719,7 +672,7 @@ static void
 mud_window_prefs_keeptext_cb(GtkWidget *widget,
                              MudWindowPrefs *self)
 {
-    gboolean value = GTK_TOGGLE_BUTTON(widget)->active ? TRUE : FALSE;
+    gboolean value = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
     RETURN_IF_CHANGING_PROFILES(self);
 
     mud_profile_set_keeptext(self->priv->mud_profile, value);
@@ -729,7 +682,7 @@ static void
 mud_window_prefs_echo_cb(GtkWidget *widget,
                          MudWindowPrefs *self)
 {
-    gboolean value = GTK_TOGGLE_BUTTON(widget)->active ? TRUE : FALSE;
+    gboolean value = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
     RETURN_IF_CHANGING_PROFILES(self);
 
     mud_profile_set_echotext(self->priv->mud_profile, value);
@@ -747,13 +700,13 @@ mud_window_prefs_commdev_cb(GtkWidget *widget,
 }
 
 static void
-mud_window_prefs_encoding_combo_cb(GtkWidget *widget,
-                                   MudWindowPrefs *self)
+mud_window_prefs_encoding_combo_cb (GtkWidget      *widget,
+                                    MudWindowPrefs *self)
 {
-    const gchar *s = gtk_combo_box_get_active_text(GTK_COMBO_BOX(widget));
-    RETURN_IF_CHANGING_PROFILES(self);
+  const gchar *s = gtk_combo_box_get_active_id (GTK_COMBO_BOX (widget));
+  RETURN_IF_CHANGING_PROFILES (self);
 
-    mud_profile_set_encoding_combo(self->priv->mud_profile, s);
+  mud_profile_set_encoding_combo (self->priv->mud_profile, s);
 }
 
 static void
@@ -778,44 +731,44 @@ mud_window_prefs_font_cb(GtkWidget *widget,
 }
 
 static void
-mud_window_prefs_foreground_cb(GtkWidget *widget,
-                               MudWindowPrefs *self)
+mud_window_prefs_foreground_cb (GtkWidget      *widget,
+                                MudWindowPrefs *self)
 {
-    GdkColor color;
+  GdkRGBA color;
 
-    RETURN_IF_CHANGING_PROFILES(self);
+  RETURN_IF_CHANGING_PROFILES(self);
 
-    gtk_color_button_get_color(GTK_COLOR_BUTTON(widget), &color);
-    mud_profile_set_foreground(self->priv->mud_profile, &color);
+  gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (widget), &color);
+  mud_profile_set_foreground (self->priv->mud_profile, &color);
 }
 
 static void
-mud_window_prefs_background_cb(GtkWidget *widget,
-                               MudWindowPrefs *self)
+mud_window_prefs_background_cb (GtkWidget      *widget,
+                                MudWindowPrefs *self)
 {
-    GdkColor color;
+  GdkRGBA color;
 
-    RETURN_IF_CHANGING_PROFILES(self);
+  RETURN_IF_CHANGING_PROFILES(self);
 
-    gtk_color_button_get_color(GTK_COLOR_BUTTON(widget), &color);
-    mud_profile_set_background(self->priv->mud_profile, &color);
+  gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (widget), &color);
+  mud_profile_set_background (self->priv->mud_profile, &color);
 }
 
 static void
 mud_window_prefs_colors_cb(GtkWidget *widget,
                            MudWindowPrefs *self)
 {
-    gint i;
-    GdkColor color;
+  gint i;
+  GdkRGBA color;
 
-    RETURN_IF_CHANGING_PROFILES(self);
+  RETURN_IF_CHANGING_PROFILES (self);
 
-    for (i = 0; i < C_MAX; i++)
+  for (i = 0; i < C_MAX; i++)
     {
-        if (widget == self->priv->colors[i])
+      if (widget == self->priv->colors[i])
         {
-            gtk_color_button_get_color(GTK_COLOR_BUTTON(widget), &color);
-            mud_profile_set_colors(self->priv->mud_profile, i, &color);
+          gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (widget), &color);
+          mud_profile_set_colors (self->priv->mud_profile, i, &color);
         }
     }
 }
@@ -878,31 +831,12 @@ mud_window_prefs_update_msp_check(MudWindowPrefs *self,
 }
 
 static void
-mud_window_prefs_update_proxy_combo(MudWindowPrefs *self,
-                                    MudPrefs *preferences)
+mud_window_prefs_update_proxy_combo (MudWindowPrefs *self,
+                                     MudPrefs       *preferences)
 {
-    gchar *version;
-    gint active;
-    gint current;
-
-    version = g_settings_get_string(self->priv->mud_profile->settings, "proxy-socks-version");
-
-    if(version)
-    {
-        current = gtk_combo_box_get_active(GTK_COMBO_BOX(self->priv->proxy_combo));
-
-        if(strcmp(version,"4") == 0)
-            active = 0;
-        else
-            active = 1;
-
-
-        if(current != active)
-            gtk_combo_box_set_active(GTK_COMBO_BOX(self->priv->proxy_combo),
-                                     active);
-    }
-
-    g_free(version);
+  gchar *version = g_settings_get_string(self->priv->mud_profile->settings, "proxy-socks-version");
+  gtk_combo_box_set_active_id (GTK_COMBO_BOX (self->priv->proxy_combo), version);
+  g_free(version);
 }
 
 static void
@@ -920,7 +854,7 @@ static void
 mud_window_prefs_encoding_check_cb(GtkWidget *widget,
                                    MudWindowPrefs *self)
 {
-    gboolean value = GTK_TOGGLE_BUTTON(widget)->active ? TRUE : FALSE;
+    gboolean value = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
     RETURN_IF_CHANGING_PROFILES(self);
 
     mud_profile_set_encoding_check(self->priv->mud_profile, value);
@@ -930,7 +864,7 @@ static void
 mud_window_prefs_proxy_check_cb(GtkWidget *widget,
                                 MudWindowPrefs *self)
 {
-    gboolean value = GTK_TOGGLE_BUTTON(widget)->active ? TRUE : FALSE;
+    gboolean value = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
 
     gtk_widget_set_sensitive(self->priv->proxy_entry, value);
     gtk_widget_set_sensitive(self->priv->proxy_combo, value);
@@ -944,7 +878,7 @@ static void
 mud_window_prefs_msp_check_cb(GtkWidget *widget,
                               MudWindowPrefs *self)
 {
-    gboolean value = GTK_TOGGLE_BUTTON(widget)->active ? TRUE : FALSE;
+    gboolean value = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
     RETURN_IF_CHANGING_PROFILES(self);
 
     mud_profile_set_msp_check(self->priv->mud_profile, value);

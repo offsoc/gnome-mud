@@ -282,8 +282,8 @@ mud_telnet_naws_enable(MudTelnetHandler *handler)
                          self);
     
     mud_telnet_naws_send(self,
-                         terminal->column_count,
-                         terminal->row_count);
+                         vte_terminal_get_column_count (terminal),
+                         vte_terminal_get_row_count (terminal));
 
     g_log("Telnet", G_LOG_LEVEL_INFO, "%s", "NAWS Enabled");
 }
@@ -345,8 +345,8 @@ mud_telnet_naws_resized_cb(MudWindow *window,
 
     if(self->priv->enabled && mud_connection_is_connected(view->conn))
         mud_telnet_naws_send(self,
-                             view->terminal->column_count,
-                             view->terminal->row_count);
+                             vte_terminal_get_column_count (view->terminal),
+                             vte_terminal_get_row_count (view->terminal));
 }
 
 /* Private Methods */

@@ -43,12 +43,10 @@ main (gint argc, char *argv[])
     GString *dir;
     GSettings *global_settings;
 
-#ifdef ENABLE_NLS
     /* Initialize internationalization */
     bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR);
     bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
     textdomain(GETTEXT_PACKAGE);
-#endif
 
     /* Set up schema version */
     global_settings = g_settings_new("org.gnome.MUD");

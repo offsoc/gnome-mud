@@ -55,7 +55,6 @@ foreach define: set_defines
   config_h.set_quoted(define[0], define[1])
 endforeach
 
-config_h.set('ENABLE_NLS', true) # FIXME: remove conditionals from source code
 config_h.set('ENABLE_GST', libgst_dep.found())
 config_h.set('ENABLE_MCCP', libz_dep.found())
 config_h.set('ENABLE_DEBUG_LOGGER', get_option('debug-logger'))

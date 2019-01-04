@@ -612,7 +612,7 @@ mud_window_textview_keypress(GtkWidget *widget, GdkEventKey *event, MudWindow *s
             g_free(text);
         }
 
-        if (g_settings_get_boolean(self->priv->current_view->profile->settings, "keep-text"))
+        if ((self->priv->current_view != NULL) && g_settings_get_boolean(self->priv->current_view->profile->settings, "keep-text"))
             gtk_text_buffer_select_range(buffer, &start, &end);
         else
             gtk_text_buffer_delete(buffer, &start, &end);

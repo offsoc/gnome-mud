@@ -4,7 +4,7 @@ data/main.ui
 data/muds.ui
 data/prefs.ui
 data/org.gnome.MUD.gschema.xml
-gnome-mud.desktop.in
+data/org.gnome.MUD.desktop.in
 src/debug-logger.c
 src/mud-connections.c
 src/mud-connection-view.c

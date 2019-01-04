@@ -810,9 +810,10 @@ mud_window_about_cb(GtkWidget *widget, MudWindow *self)
     };
 
     static const gchar copyright[] = "Copyright \xc2\xa9 1998-2005 Robin Ericsson\n"
-                                     "Copyright \xc2\xa9 2005-2009 Les Harris";
+                                     "Copyright \xc2\xa9 2005-2009 Les Harris\n"
+                                     "Copyright \xc2\xa9 2006-2019 Mart Raudsepp";
 
-    static const gchar comments[] = N_("A Multi-User Dungeon (MUD) client for GNOME");
+    static const gchar comments[] = N_("Connect to Multi-User Dungeons");
 
     GdkPixbuf *logo = gtk_icon_theme_load_icon(gtk_icon_theme_get_default(), "gnome-mud",
             128, GTK_ICON_LOOKUP_FORCE_SVG, NULL);
@@ -823,11 +824,12 @@ mud_window_about_cb(GtkWidget *widget, MudWindow *self)
             "comments", _(comments),
             "copyright", copyright,
             "documenters", documenters,
+            "license-type", GTK_LICENSE_GPL_2_0,
             "logo", logo,
+            "program-name", _("MUD"),
             "translator-credits", _("translator-credits"),
             "version", VERSION,
-            "website", "http://live.gnome.org/GnomeMud",
-            "name", "Gnome-Mud",
+            "website", PACKAGE_URL,
             NULL);
 
     if(logo)

@@ -45,7 +45,8 @@ status = [
 config_h = configuration_data()
 
 set_defines = [
-  ['VERSION', meson.project_version()],
+  ['PACKAGE_URL', 'https://wiki.gnome.org/Apps/MUD'],
+  ['VERSION', '@VCS_TAG@'],
   ['GETTEXT_PACKAGE', meson.project_name()],
   ['LOCALEDIR', localedir]
 ]
@@ -58,6 +59,14 @@ config_h.set('ENABLE_NLS', true) # FIXME: remove conditionals from source code
 config_h.set('ENABLE_GST', libgst_dep.found())
 config_h.set('ENABLE_MCCP', libz_dep.found())
 config_h.set('ENABLE_DEBUG_LOGGER', get_option('debug-logger'))
+
+vcs_identifier_h = vcs_tag(
+  input: configure_file(
+    output: 'config.h.in',
+    configuration: config_h
+  ),
+  output: 'config.h',
+)
 
 configure_file(
   output: 'config.h',

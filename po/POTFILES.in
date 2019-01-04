@@ -1,6 +1,9 @@
-[encoding: UTF-8]
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
+data/main.ui
+data/muds.ui
+data/prefs.ui
+data/org.gnome.MUD.gschema.xml
 gnome-mud.desktop.in
 src/debug-logger.c
 src/mud-connections.c
@@ -12,7 +15,3 @@ src/mud-trigger.c
 src/mud-window.c
 src/mud-window-prefs.c
 src/handlers/mud-telnet-mccp.c
-[type: gettext/glade]data/main.ui
-[type: gettext/glade]data/muds.ui
-[type: gettext/glade]data/prefs.ui
-[type: gettext/gsettings]data/org.gnome.MUD.gschema.xml

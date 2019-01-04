@@ -22,10 +22,6 @@
 
 G_BEGIN_DECLS
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
 #include "mud-telnet-handler-interface.h"
 #include "mud-telnet-charset.h"
 #include "mud-telnet-echo.h"

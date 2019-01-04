@@ -17,12 +17,6 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#ifdef HAVE_CONFIG_H
-#  include "config.h"
-#endif
-
-#ifdef ENABLE_MCCP
-
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <zlib.h>
@@ -438,6 +432,3 @@ mud_mccp_decompress(MudTelnetMccp *self, guchar *buffer, guint32 length)
 
     return ret;
 }
-
-#endif // ENABLE_MCCP
-

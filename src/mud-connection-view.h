@@ -3,10 +3,6 @@
 
 G_BEGIN_DECLS
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
 #include <gtk/gtk.h>
 #include <vte/vte.h>
 

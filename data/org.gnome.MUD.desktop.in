@@ -1,6 +1,6 @@
 [Desktop Entry]
-_Name=GNOME-Mud
-_Comment=The GNOME MUD Client
+Name=GNOME-Mud
+Comment=The GNOME MUD Client
 Exec=gnome-mud
 Icon=gnome-mud
 StartupNotify=true

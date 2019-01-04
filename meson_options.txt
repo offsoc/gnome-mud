@@ -1,0 +1,17 @@
+option('gstreamer',
+  type: 'feature',
+  value: 'auto',
+  description: 'Enable GStreamer used for MSP (Mud Sound Protocol)'
+)
+
+option('mccp',
+  type: 'feature',
+  value: 'auto',
+  description: 'Enable MCCP (MUD Client Compression Protocol)'
+)
+
+option('debug-logger',
+  type: 'boolean',
+  value: 'false',
+  description: 'Enable debugging info logger'
+)

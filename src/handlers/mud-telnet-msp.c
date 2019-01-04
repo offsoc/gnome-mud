@@ -17,12 +17,6 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#ifdef HAVE_CONFIG_H
-#  include "config.h"
-#endif
-
-#ifdef ENABLE_GST
-
 #include <glib.h>
 #include <string.h>
 #include <gst/gst.h>
@@ -1170,6 +1164,3 @@ mud_telnet_msp_music_bus_call (GstBus *bus, GstMessage *msg, gpointer data)
 
     return TRUE;
 }
-
-#endif
-

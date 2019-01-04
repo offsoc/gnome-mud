@@ -18,13 +18,10 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <glib/gprintf.h>
+#include <errno.h>
 
 #include "gnome-mud.h"
 #include "mud-window.h"

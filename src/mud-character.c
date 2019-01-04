@@ -18,10 +18,6 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifdef HAVE_CONFIG_H
-#  include "config.h"
-#endif
-
 #include "mud-character.h"
 #include "mud-profile.h"
 #include "mud-mud.h"

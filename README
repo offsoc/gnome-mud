@@ -53,7 +53,7 @@ This program is under GPL. See file COPYING for details.
 
     You can hack away as much as you like. If you make something you think
     would be useful for others, please send us a patch, either via
-    bugzilla or our mailing list.
+    gitlab or our mailing list.
 
 
     Things that is in constant need of contrib is:
@@ -65,9 +65,8 @@ This program is under GPL. See file COPYING for details.
 
 6. Reporting bugs.
 
-   GNOME-Mud uses the GNOME Bugtracker at <http://bugzilla.gnome.org/>. Please
-   submit any errors you find there. You may want to install the bug-buddy
-   utility to do this easily.
+   GNOME-Mud uses the GNOME Gitlab at <https://gitlab.gnome.org/GNOME/gnome-mud>. Please
+   submit any errors you find there.
 
 
 7. Contacting.

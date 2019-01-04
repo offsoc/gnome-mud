@@ -2,7 +2,7 @@
  * mud-window.c
  * Copyright (C) 1998-2005 Robin Ericsson <lobbin@localhost.nu>
  * Copyright (C) 2005-2009 Les Harris <lharris@gnome.org>
- * Copyright (C) 2018 Mart Raudsepp <leio@gentoo.org>
+ * Copyright (C) 2018-2019 Mart Raudsepp <leio@gentoo.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,10 +18,6 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
-
-#ifdef HAVE_CONFIG_H
-#  include "config.h"
-#endif
 
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>

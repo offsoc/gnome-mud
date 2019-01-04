@@ -4,12 +4,11 @@ stages:
   - build
 
 before_script:
-  - dnf install -y glib2-devel gnome-common gstreamer1-devel
-                   intltool make vte291-devel which
+  - dnf install -y glib2-devel gstreamer1-devel
+                   meson vte291-devel which
 
 build_gnome_mud:
   stage: build
   script:
-    - ./autogen.sh --enable-gstreamer --enable-mccp --enable-debug-logger
-    - make
-    - make install
+    - meson _build -Dgstreamer=enabled -Dmccp=enabled -Ddebug-logger=true
+    - ninja -C _build install

@@ -65,6 +65,20 @@ configure_file(
 )
 top_inc = include_directories('.')
 
+cc = meson.get_compiler('c')
+global_c_args = []
+test_c_args = [
+  '-Wno-unused-parameter',
+]
+
+foreach arg: test_c_args
+  if cc.has_multi_arguments(arg)
+    global_c_args += arg
+  endif
+endforeach
+
+add_project_arguments(global_c_args, language: 'c')
+
 subdir('data')
 subdir('src')
 subdir('po')

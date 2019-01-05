@@ -21,6 +21,8 @@ gnome_mud_sources = [
   'mud-connection-view.h',
   'mud-connection.c',
   'mud-connection.h',
+  'mud-input-view.c',
+  'mud-input-view.h',
   'mud-line-buffer.c',
   'mud-line-buffer.h',
   'mud-log.c',

@@ -1,7 +1,8 @@
 /* GNOME-Mud - A simple Mud Client
  * gnome-mud.c
- * Copyright (C) 1998-2005 Robin Ericsson <lobbin@localhost.nu>
- * Copyright (C) 2005-2009 Les Harris <lharris@gnome.org>
+ * Copyright 1998-2005 Robin Ericsson <lobbin@localhost.nu>
+ * Copyright 2005-2009 Les Harris <lharris@gnome.org>
+ * Copyright 2019 Mart Raudsepp <leio@gentoo.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,6 +43,7 @@ main (gint argc, char *argv[])
     DebugLogger *logger;
     GString *dir;
     GSettings *global_settings;
+    GtkCssProvider *css_provider;
 
     /* Initialize internationalization */
     bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR);
@@ -60,6 +62,14 @@ main (gint argc, char *argv[])
     /* Initialize GStreamer */
     gst_init(&argc, &argv);
 #endif
+
+    /* Load our style overrides */
+    css_provider = gtk_css_provider_new ();
+    gtk_css_provider_load_from_resource (css_provider, "/org/gnome/MUD/ui/style.css");
+    gtk_style_context_add_provider_for_screen (gdk_screen_get_default (),
+                                               css_provider,
+                                               GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+    g_object_unref (css_provider);
 
     dir = g_string_new(NULL);
     g_string_printf(dir,

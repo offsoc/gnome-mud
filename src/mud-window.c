@@ -32,6 +32,7 @@
 #include "gnome-mud.h"
 #include "gnome-mud-icons.h"
 #include "mud-connection-view.h"
+#include "mud-input-view.h"
 #include "mud-window-prefs.h"
 #include "mud-window.h"
 #include "mud-tray.h"
@@ -47,10 +48,8 @@ struct _MudWindowPrivate
 {
     GSList *mud_views_list;
 
-    GtkWidget *notebook;
-    GtkWidget *textview;
-    GtkWidget *textviewscroll;
-    GtkWidget *password_entry;
+    GtkWidget    *notebook;
+    MudInputView *mud_input_view;
 
     GtkWidget *startlog;
     GtkWidget *stoplog;
@@ -93,12 +92,11 @@ enum
 enum
 {
     RESIZED,
-    TOGGLEDOFF,
     LAST_SIGNAL
 };
 
 /* Signal Identifier Map */
-static guint mud_window_signal[LAST_SIGNAL] = { 0, 0 };
+static guint mud_window_signal[LAST_SIGNAL] = { 0, };
 
 /* Class Function Prototypes */
 static void mud_window_init       (MudWindow *self);
@@ -124,8 +122,6 @@ static gboolean mud_window_grab_entry_focus_cb(GtkWidget *widget,
 static void mud_window_disconnect_cb(GtkWidget *widget, MudWindow *self);
 static void mud_window_reconnect_cb(GtkWidget *widget, MudWindow *self);
 static void mud_window_closewindow_cb(GtkWidget *widget, MudWindow *self);
-static void mud_window_textview_buffer_changed(GtkTextBuffer *buffer, 
-                                               MudWindow *self);
 static gboolean mud_window_textview_keypress(GtkWidget *widget,
                                              GdkEventKey *event, 
                                              MudWindow *self);
@@ -156,7 +152,6 @@ static void mud_window_size_allocate_cb(GtkWidget *widget,
 /* Private Method Prototypes */
 static void mud_window_remove_connection_view(MudWindow *self, gint nr);
 static gint mud_window_textview_get_display_line_count(GtkTextView *textview);
-static void mud_window_textview_ensure_height(MudWindow *self, guint max_lines);
 static void mud_window_clear_profiles_menu(GtkWidget *widget, gpointer data);
 
 /* Class Functions */
@@ -206,18 +201,6 @@ mud_window_class_init (MudWindowClass *klass)
                      g_cclosure_marshal_VOID__VOID,
                      G_TYPE_NONE,
                      0);
-
-    mud_window_signal[TOGGLEDOFF] =
-        g_signal_new("toggled-off",
-                     G_TYPE_FROM_CLASS(object_class),
-                     G_SIGNAL_RUN_LAST | G_SIGNAL_NO_HOOKS,
-                     0,
-                     NULL,
-                     NULL,
-                     g_cclosure_marshal_VOID__VOID,
-                     G_TYPE_NONE,
-                     0);
-
 }
 
 static void
@@ -231,6 +214,10 @@ mud_window_init (MudWindow *self)
     self->priv = MUD_WINDOW_GET_PRIVATE(self);
 
     /* start glading */
+    /* We use this composite widget in our UI file, so need to ensure it's registered */
+    /* TODO: Move this above gtk_widget_init_template call of our own, once we use that */
+    g_type_ensure (mud_input_view_get_type());
+
     builder = gtk_builder_new_from_resource ("/org/gnome/MUD/main.ui");
 
     /* set public properties */
@@ -254,10 +241,8 @@ mud_window_init (MudWindow *self)
     self->priv->bufferdump = GTK_WIDGET(gtk_builder_get_object(builder, "menu_dump_buffer"));
     self->priv->mi_profiles = GTK_WIDGET(gtk_builder_get_object(builder, "mi_profiles_menu"));
     self->priv->notebook = GTK_WIDGET(gtk_builder_get_object(builder, "notebook"));
-    self->priv->textviewscroll = GTK_WIDGET(gtk_builder_get_object(builder, "text_view_scroll"));
-    self->priv->textview = GTK_WIDGET(gtk_builder_get_object(builder, "text_view"));
+    self->priv->mud_input_view = MUD_INPUT_VIEW(gtk_builder_get_object(builder, "mud_input_view"));
     self->priv->image = GTK_WIDGET(gtk_builder_get_object(builder, "image"));
-    self->priv->password_entry = GTK_WIDGET(gtk_builder_get_object(builder, "password_entry"));
 
     /* connect quit buttons */
     g_signal_connect(self->window,
@@ -351,48 +336,15 @@ mud_window_init (MudWindow *self)
                      G_CALLBACK(mud_window_size_allocate_cb),
                      self);
 
-    g_signal_connect(self->priv->textview,
+    g_signal_connect(mud_input_view_get_text_view(self->priv->mud_input_view),
                      "key_press_event",
                      G_CALLBACK(mud_window_textview_keypress),
                      self);
 
-    g_signal_connect(self->priv->password_entry,
+    g_signal_connect(mud_input_view_get_password_entry (self->priv->mud_input_view),
                      "key_press_event",
                      G_CALLBACK(mud_window_entry_keypress),
                      self);
-
-    g_signal_connect(
-            gtk_text_view_get_buffer(GTK_TEXT_VIEW(self->priv->textview)),
-            "changed",
-            G_CALLBACK(mud_window_textview_buffer_changed),
-            self);
-
-    /* Setup TextView */
-    gtk_text_view_set_wrap_mode(
-            GTK_TEXT_VIEW(self->priv->textview), GTK_WRAP_WORD_CHAR);
-
-    /* Set the initial height of the input box equal to the height of one line */
-    gtk_text_buffer_get_start_iter(
-            gtk_text_view_get_buffer(
-                GTK_TEXT_VIEW(self->priv->textview)),
-                &iter);
-
-    gtk_text_view_get_line_yrange(GTK_TEXT_VIEW(self->priv->textview),
-                                  &iter, &y,
-                                  &self->priv->textview_line_height);
-
-    gtk_widget_set_size_request(self->priv->textview, -1,
-                                self->priv->textview_line_height*1);
-    gtk_widget_set_size_request(
-            gtk_scrolled_window_get_vscrollbar(GTK_SCROLLED_WINDOW(self->priv->textviewscroll)),
-            -1, 1);
-
-    if (gtk_widget_get_visible(self->priv->textviewscroll))
-        gtk_widget_queue_resize(self->priv->textviewscroll);
-
-    gtk_window_get_size(GTK_WINDOW(self->window),
-                        &self->priv->width,
-                        &self->priv->height);
 
     gtk_widget_set_visible(GTK_WIDGET(self->window), TRUE);
 
@@ -521,10 +473,7 @@ mud_window_grab_entry_focus_cb(GtkWidget *widget,
 {
     MudWindow *self = MUD_WINDOW(user_data);
 
-    if(gtk_widget_get_visible(self->priv->textview))
-        gtk_widget_grab_focus(self->priv->textview);
-    else
-        gtk_widget_grab_focus(self->priv->password_entry);
+    gtk_widget_grab_focus(GTK_WIDGET (self->priv->mud_input_view));
 
     return TRUE;
 }
@@ -561,18 +510,12 @@ mud_window_closewindow_cb(GtkWidget *widget, MudWindow *self)
     mud_window_close_current_window(self);
 }
 
-static void
-mud_window_textview_buffer_changed(GtkTextBuffer *buffer, MudWindow *self)
-{
-    mud_window_textview_ensure_height(self, 5);
-}
-
 static gboolean
 mud_window_textview_keypress(GtkWidget *widget, GdkEventKey *event, MudWindow *self)
 {
     gchar *text;
     const gchar *history;
-    GtkTextBuffer *buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(self->priv->textview));
+    GtkTextBuffer *buffer = gtk_text_view_get_buffer (mud_input_view_get_text_view (self->priv->mud_input_view));
     GtkTextIter start, end;
     MudParseBase *base;
 
@@ -656,11 +599,12 @@ mud_window_entry_keypress(GtkWidget *widget,
     {
         if (self->priv->current_view)
         {
-            text = gtk_entry_get_text(GTK_ENTRY(self->priv->password_entry));
+            GtkEntry *password_entry = mud_input_view_get_password_entry (self->priv->mud_input_view);
+            text = gtk_entry_get_text(password_entry);
 
             mud_connection_view_send(self->priv->current_view, text);
 
-            gtk_entry_set_text(GTK_ENTRY(self->priv->password_entry), "");
+            gtk_entry_set_text(password_entry, "");
         }
 
         return TRUE;
@@ -723,10 +667,7 @@ mud_window_notebook_page_change(GtkNotebook *notebook, gpointer page, gint arg, 
 
         mud_window_toggle_input_mode(self, self->priv->current_view);
 
-        if(gtk_widget_get_visible(self->priv->textview))
-            gtk_widget_grab_focus(self->priv->textview);
-        else
-            gtk_widget_grab_focus(self->priv->password_entry);
+        gtk_widget_grab_focus(self->priv->mud_input_view);
 
         g_object_get(self->priv->current_view,
                 "ui-vbox", &viewport,
@@ -855,10 +796,7 @@ mud_window_configure_event(GtkWidget *widget, GdkEventConfigure *event, gpointer
         g_object_unref(buf);
     }
 
-    if(gtk_widget_get_visible(self->priv->textview))
-        gtk_widget_grab_focus(self->priv->textview);
-    else
-        gtk_widget_grab_focus(self->priv->password_entry);
+    gtk_widget_grab_focus (GTK_WIDGET (self->priv->mud_input_view));
 
     return FALSE;
 }
@@ -1049,16 +987,6 @@ mud_window_textview_get_display_line_count(GtkTextView *textview)
 }
 
 static void
-mud_window_textview_ensure_height(MudWindow *self, guint max_lines)
-{
-    gint lines = mud_window_textview_get_display_line_count(GTK_TEXT_VIEW(self->priv->textview));
-    gtk_widget_set_size_request(self->priv->textview, -1,
-            self->priv->textview_line_height * MIN(lines, max_lines));
-    gtk_widget_queue_resize(gtk_widget_get_parent(self->priv->textview));
-}
-
-
-static void
 mud_window_clear_profiles_menu(GtkWidget *widget, gpointer data)
 {
     gtk_widget_destroy(widget);
@@ -1072,44 +1000,25 @@ mud_window_get_views(MudWindow *window)
 }
 
 void
-mud_window_toggle_input_mode(MudWindow *self,
-                             MudConnectionView *view)
+mud_window_toggle_input_mode (MudWindow         *self,
+                              MudConnectionView *view)
 {
-    gboolean local_echo;
+  g_return_if_fail (IS_MUD_WINDOW (self));
 
-    g_return_if_fail(IS_MUD_WINDOW(self));
+  /* Don't want to log a critical when a view unrefs */
+  if (!IS_MUD_CONNECTION_VIEW (view))
+    return;
 
-    /* Don't want to log a critical when a view unrefs */
-    if(!IS_MUD_CONNECTION_VIEW(view))
-        return;
-
-    if(g_direct_equal(self->priv->current_view, view))
+  if (g_direct_equal (self->priv->current_view, view))
     {
-        g_object_get(view, "local-echo", &local_echo, NULL);
+      gboolean local_echo;
 
-        if(local_echo)
-        {
-            if(gtk_widget_get_mapped(self->priv->password_entry))
-            {
-                gtk_widget_hide(self->priv->password_entry);
+      g_object_get (view, "local-echo", &local_echo, NULL);
 
-                gtk_widget_show(self->priv->textviewscroll);
-                gtk_widget_show(self->priv->textview);
-
-                gtk_widget_grab_focus(self->priv->textview);
-
-                g_signal_emit(self, mud_window_signal[TOGGLEDOFF], 0);
-            }
-        }
-        else
-        {
-            gtk_widget_show(self->priv->password_entry);
-
-            gtk_widget_hide(self->priv->textviewscroll);
-            gtk_widget_hide(self->priv->textview);
-
-            gtk_widget_grab_focus(self->priv->password_entry);
-        }
+      if (local_echo)
+        mud_input_view_hide_password (self->priv->mud_input_view);
+      else
+        mud_input_view_show_password (self->priv->mud_input_view);
     }
 }
 
@@ -1326,15 +1235,8 @@ mud_window_disconnected(MudWindow *self)
     gtk_widget_set_sensitive(self->priv->toolbar_disconnect, FALSE);
     gtk_widget_set_sensitive(self->priv->toolbar_reconnect, TRUE);
 
-    if(gtk_widget_get_visible(self->priv->password_entry))
-    {
-        gtk_widget_hide(self->priv->password_entry);
-
-        gtk_widget_show(self->priv->textviewscroll);
-        gtk_widget_show(self->priv->textview);
-
-        gtk_widget_grab_focus(self->priv->textview);
-    }
+    mud_input_view_hide_password (self->priv->mud_input_view);
+    gtk_widget_grab_focus(GTK_WIDGET(self->priv->mud_input_view));
 }
 
 void

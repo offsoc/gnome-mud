@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.10 -->
+  <template class="MudInputView" parent="GtkStack">
+    <property name="visible">true</property>
+    <property name="homogeneous">false</property>
+    <property name="transition-type">GTK_STACK_TRANSITION_TYPE_OVER_DOWN_UP</property>
+    <property name="interpolate-size">true</property>
+    <child>
+      <object class="GtkScrolledWindow" id="scrolled_text_view">
+        <property name="visible">true</property>
+        <property name="max-content-height">200</property><!-- TODO: Make dynamic based on window size? -->
+        <property name="propagate-natural-height">true</property>
+        <child>
+          <object class="GtkTextView" id="text_view">
+            <property name="visible">true</property>
+            <property name="wrap-mode">GTK_WRAP_WORD_CHAR</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkEntry" id="password_entry">
+        <property name="visible">true</property>
+        <property name="visibility">false</property>
+        <property name="input-purpose">GTK_INPUT_PURPOSE_PASSWORD</property>
+      </object>
+    </child>
+  </template>
+</interface>
+
+

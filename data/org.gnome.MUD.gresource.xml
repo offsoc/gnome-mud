@@ -5,4 +5,8 @@
     <file preprocess="xml-stripblanks">muds.ui</file>
     <file preprocess="xml-stripblanks">prefs.ui</file>
   </gresource>
+  <gresource prefix="/org/gnome/MUD/ui">
+    <file preprocess="xml-stripblanks" alias="mud-input-view.ui">../src/mud-input-view.ui</file>
+    <file>style.css</file>
+  </gresource>
 </gresources>

@@ -2,6 +2,7 @@
 Name=GNOME-Mud
 Comment=The GNOME MUD Client
 Exec=gnome-mud
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=gnome-mud
 StartupNotify=true
 Terminal=false

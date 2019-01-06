@@ -10,7 +10,6 @@ src/mud-connections.c
 src/mud-connection-view.c
 src/mud-log.c
 src/mud-profile.c
-src/mud-tray.c
 src/mud-trigger.c
 src/mud-window.c
 src/mud-window-prefs.c

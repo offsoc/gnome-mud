@@ -25,7 +25,7 @@ localedir = join_paths(datadir, 'locale')
 schemadir = join_paths(datadir, 'glib-2.0', 'schemas')
 
 libgio_dep = dependency('gio-2.0', version: '>= 2.48')
-libgtk_dep = dependency('gtk+-3.0', version: '>= 3.16')
+libgtk_dep = dependency('gtk+-3.0', version: '>= 3.22')
 libvte_dep = dependency('vte-2.91', version: '>= 0.37')
 libpcre_dep = dependency('libpcre', version: '>= 6.0.0')
 libgst_dep = dependency('gstreamer-1.0', version: '>= 1.0', required: get_option('gstreamer'))

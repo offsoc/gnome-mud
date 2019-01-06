@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <!-- interface-requires gtk+ 3.14 -->
+  <!-- interface-requires gtk+ 3.22 -->
   <template class="MudInputView" parent="GtkStack">
     <property name="visible">true</property>
     <property name="homogeneous">false</property>

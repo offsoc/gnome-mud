@@ -47,8 +47,6 @@ gnome_mud_sources = [
   'mud-telnet.h',
   'mud-trigger.c',
   'mud-trigger.h',
-  'mud-tray.c',
-  'mud-tray.h',
   'mud-window.c',
   'mud-window.h',
   'mud-window-prefs.c',

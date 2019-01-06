@@ -24,7 +24,6 @@ typedef struct _MudConnectionViewPrivate    MudConnectionViewPrivate;
 #include "mud-profile.h"
 #include "mud-window.h"
 #include "mud-log.h"
-#include "mud-tray.h"
 #include "mud-subwindow.h"
 
 struct _MudConnectionViewClass
@@ -57,7 +56,6 @@ struct _MudConnectionView
     gchar *hostname;
 
     MudLog *log;
-    MudTray *tray;
     MudTelnet *telnet;
     MudWindow *window;
     MudProfile *profile;

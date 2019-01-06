@@ -35,7 +35,6 @@
 #include "mud-input-view.h"
 #include "mud-window-prefs.h"
 #include "mud-window.h"
-#include "mud-tray.h"
 #include "mud-profile.h"
 #include "mud-window-profile.h"
 #include "mud-parse-base.h"
@@ -84,8 +83,7 @@ G_DEFINE_TYPE(MudWindow, mud_window, G_TYPE_OBJECT);
 enum
 {
     PROP_MUD_WINDOW_0,
-    PROP_WINDOW,
-    PROP_TRAY
+    PROP_WINDOW
 };
 
 /* Signal Indices */
@@ -182,14 +180,6 @@ mud_window_class_init (MudWindowClass *klass)
                 GTK_TYPE_WINDOW,
                 G_PARAM_READABLE));
 
-    g_object_class_install_property(object_class,
-            PROP_TRAY,
-            g_param_spec_object("tray",
-                "mud tray",
-                "mud status tray icon",
-                MUD_TYPE_TRAY,
-                G_PARAM_READABLE));
-    
     /* Register Signals */
     mud_window_signal[RESIZED] =
         g_signal_new("resized",
@@ -222,9 +212,6 @@ mud_window_init (MudWindow *self)
 
     /* set public properties */
     self->window = GTK_WINDOW(gtk_builder_get_object(builder, "main_window"));
-    self->tray = g_object_new(MUD_TYPE_TRAY,
-                              "parent-window", self->window,
-                              NULL); 
 
     /* set private members */
     self->priv->nr_of_tabs = 0;
@@ -398,8 +385,6 @@ mud_window_finalize (GObject *object)
 
     g_slist_free(self->priv->mud_views_list);
     
-    g_object_unref(self->tray);
-
     g_object_unref(self->profile_manager);
 
     parent_class = g_type_class_peek_parent(G_OBJECT_GET_CLASS(object));
@@ -419,10 +404,6 @@ mud_window_set_property(GObject *object,
         /* These properties aren't writeable. If we get here
          * something is really screwy. */
         case PROP_WINDOW:
-            g_return_if_reached();
-            break;
-
-        case PROP_TRAY:
             g_return_if_reached();
             break;
 
@@ -446,10 +427,6 @@ mud_window_get_property(GObject *object,
     {
         case PROP_WINDOW:
             g_value_take_object(value, self->window);
-            break;
-
-        case PROP_TRAY:
-            g_value_take_object(value, self->tray);
             break;
 
         default:
@@ -1063,9 +1040,6 @@ mud_window_close_current_window(MudWindow *self)
         gint nr = gtk_notebook_get_current_page(GTK_NOTEBOOK(self->priv->notebook));
 
         mud_window_remove_connection_view(self, nr);
-
-        if(self->priv->nr_of_tabs == 0)
-            mud_tray_update_icon(MUD_TRAY(self->tray), offline_connecting);
     }
 }
 

@@ -32,7 +32,6 @@
 #include "mud-character.h"
 #include "mud-window.h"
 #include "mud-connection-view.h"
-#include "mud-tray.h"
 #include "mud-profile.h"
 #include "utils.h"
 
@@ -44,7 +43,6 @@ struct _MudConnections
 
   // Main Window
   GtkWidget *winwidget;
-  MudTray *tray;
 
   GtkWidget *window;
   GtkWidget *iconview;
@@ -269,8 +267,6 @@ mud_connections_connect_cb (GtkWidget      *widget,
                 "port", &port,
                 NULL);
 
-  mud_tray_update_icon (self->tray, offline);
-
   /* TODO: Bind these instead? */
   view = g_object_new (MUD_TYPE_CONNECTION_VIEW,
                        "hostname", host,
@@ -304,7 +300,6 @@ mud_connections_qconnect_cb (GtkWidget      *widget,
 
   if (strlen (host) != 0)
     {
-      mud_tray_update_icon (self->tray, offline);
       view = g_object_new (MUD_TYPE_CONNECTION_VIEW,
                            "hostname", host,
                            "port", port,
@@ -1028,7 +1023,6 @@ mud_connections_constructed (GObject *object)
 
   g_object_get (self->parent_window,
                 "window", &self->winwidget,
-                "tray",   &self->tray,
                 NULL);
 
   builder = gtk_builder_new_from_resource ("/org/gnome/MUD/muds.ui");

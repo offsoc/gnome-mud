@@ -31,7 +31,6 @@
 #include "mud-connection-view.h"
 #include "mud-profile.h"
 #include "mud-window.h"
-#include "mud-tray.h"
 #include "mud-log.h"
 #include "mud-parse-base.h"
 #include "mud-telnet.h"
@@ -84,7 +83,6 @@ enum
     PROP_MUD_NAME,
     PROP_HOSTNAME,
     PROP_LOG,
-    PROP_TRAY,
     PROP_PROFILE,
     PROP_PARSE_BASE,
     PROP_TELNET,
@@ -257,14 +255,6 @@ mud_connection_view_class_init (MudConnectionViewClass *klass)
 
     // Readable Properties
     g_object_class_install_property(object_class,
-            PROP_TRAY,
-            g_param_spec_object("tray",
-                "mud tray",
-                "mud status tray icon",
-                MUD_TYPE_TRAY,
-                G_PARAM_READABLE));
-
-    g_object_class_install_property(object_class,
             PROP_CONNECTION,
             g_param_spec_pointer("connection",
                 "connection",
@@ -368,7 +358,6 @@ mud_connection_view_init (MudConnectionView *self)
     self->hostname = NULL;
 
     self->log = NULL;
-    self->tray = NULL;
     self->profile = NULL;
     self->parse = NULL;
     self->window = NULL;
@@ -392,7 +381,6 @@ mud_connection_connected_cb(MudConnection *conn, MudConnectionView *self)
                                 "connection", conn,
                                 NULL);
 
-    mud_tray_update_icon(self->tray, online);
     mud_connection_view_add_text(self, _("*** Connected.\n"), System);
 }
 
@@ -470,7 +458,6 @@ mud_connection_view_constructor (GType gtype,
 #endif
     GtkWidget *term_box;
     GtkWidget *main_window;
-    MudTray *tray;
     gchar *buf;
     gchar *proxy_uri;
     MudProfile *profile;
@@ -584,14 +571,11 @@ mud_connection_view_constructor (GType gtype,
 
     g_object_get(self->window,
                  "window", &main_window,
-                 "tray", &tray,
                  NULL);
 
     profile = self->profile; /* FIXME: Gross workaround to get around set_profile check and early bail-out after construct_only restructuring; hopefully this can all be cleaned up together with move away from constructor to constructed override */
     self->profile = NULL;
     mud_connection_view_set_profile(self, profile);
-
-    self->tray = tray;
 
     self->parse = g_object_new(MUD_TYPE_PARSE_BASE,
                                "parent-view", self,
@@ -843,10 +827,6 @@ mud_connection_view_set_property(GObject *object,
             self->window = MUD_WINDOW(g_value_get_object(value));
             break;
 
-        case PROP_TRAY:
-            self->tray = MUD_TRAY(g_value_get_object(value));
-            break;
-
         case PROP_LOGGING:
             new_boolean = g_value_get_boolean(value);
 
@@ -914,10 +894,6 @@ mud_connection_view_get_property(GObject *object,
 
         case PROP_LOG:
             g_value_take_object(value, self->log);
-            break;
-
-        case PROP_TRAY:
-            g_value_take_object(value, self->tray);
             break;
 
         case PROP_PROFILE:

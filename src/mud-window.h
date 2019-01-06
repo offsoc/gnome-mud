@@ -38,7 +38,6 @@ typedef struct _MudWindowClass      MudWindowClass;
 typedef struct _MudWindowPrivate    MudWindowPrivate;
 
 #include "mud-connection-view.h"
-#include "mud-tray.h"
 #include "mud-profile-manager.h"
 
 struct _MudWindowClass
@@ -55,7 +54,6 @@ struct _MudWindow
 
     /*< public >*/
     GtkWindow *window;
-    MudTray *tray;
     MudProfileManager *profile_manager;
 };
 

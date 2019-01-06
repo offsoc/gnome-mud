@@ -8,6 +8,9 @@
     <property name="interpolate-size">true</property>
     <child>
       <object class="GtkScrolledWindow" id="scrolled_text_view">
+        <style>
+          <class name="org-gnome-MUD"/>
+        </style>
         <property name="visible">true</property>
         <property name="max-content-height">200</property><!-- TODO: Make dynamic based on window size? -->
         <property name="propagate-natural-height">true</property>

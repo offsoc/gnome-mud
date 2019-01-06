@@ -145,8 +145,6 @@ mud_input_view_class_init (MudInputViewClass *klass)
   gtk_widget_class_bind_template_child (widget_class, MudInputView, scrolled_text_view);
   gtk_widget_class_bind_template_child (widget_class, MudInputView, text_view);
   gtk_widget_class_bind_template_child (widget_class, MudInputView, password_entry);
-
-  gtk_widget_class_set_css_name (widget_class, "mud-input-view");
 }
 
 static void

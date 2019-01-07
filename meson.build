@@ -1,7 +1,7 @@
 project(
   'gnome-mud', 'c',
   license: 'GPL2+',
-  version: '0.11.3',
+  version: '3.31.1',
   default_options: [
     'warning_level=2', # TODO: Try 3 after 2 is clean
     'buildtype=debugoptimized',

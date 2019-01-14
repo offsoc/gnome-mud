@@ -300,10 +300,12 @@ mud_connections_qconnect_cb (GtkWidget      *widget,
 
   if (strlen (host) != 0)
     {
+      /* TODO: get default profile instead of what happens to be first */
+      MudProfile *profile = g_sequence_get (g_sequence_get_begin_iter (mud_profile_manager_get_profiles (self->parent_window->profile_manager)));
       view = g_object_new (MUD_TYPE_CONNECTION_VIEW,
                            "hostname", host,
                            "port", port,
-                           "profile-name", "Default",
+                           "profile", profile,
                            "mud-name", (gchar *)host,
                            "connect-string", NULL,
                            "window", self->parent_window,

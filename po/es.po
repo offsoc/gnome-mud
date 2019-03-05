@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-mud.HEAD\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-mud/issues\n"
-"POT-Creation-Date: 2019-01-29 15:21+0000\n"
-"PO-Revision-Date: 2019-02-26 09:10+0100\n"
+"POT-Creation-Date: 2019-02-26 08:17+0000\n"
+"PO-Revision-Date: 2019-03-05 12:38+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -409,7 +409,6 @@ msgid "Default color of the text"
 msgstr "Color predeterminado del texto"
 
 #: data/org.gnome.MUD.gschema.xml:40
-#, fuzzy
 #| msgid ""
 #| "Default color of the text, as a color specification (can be HTML-style "
 #| "hex digits, or a color name such as \"red\")."
@@ -418,16 +417,13 @@ msgid ""
 "digits, or a color name such as “red”)."
 msgstr ""
 "Color predeterminado del texto, como una especificación de color (puede ser "
-"estilo HTML, dígitos hex, o un nombre de color como «red»)"
+"estilo HTML, dígitos hexadecimales, o un nombre de color como «red»)"
 
 #: data/org.gnome.MUD.gschema.xml:44
 msgid "Default color of the background"
 msgstr "Color predeterminado del fondo"
 
 #: data/org.gnome.MUD.gschema.xml:45
-#| msgid ""
-#| "Default color of the background, as a color specification (can be HTML-"
-#| "style hex digits, or a color name such as \"red\")."
 msgid ""
 "Default color of the background, as a color specification (can be HTML-style "
 "hex digits, or a color name such as “red”)."
@@ -442,6 +438,8 @@ msgstr "Paleta de colores"
 #: data/org.gnome.MUD.gschema.xml:66
 msgid "List of the 16 colors that MUDs can use with indexed ANSI color codes."
 msgstr ""
+"Lista de los 16 colores que los MUD pueden usar con códigos de color ANSI "
+"indexados."
 
 #. TODO: Increase default?
 #: data/org.gnome.MUD.gschema.xml:70
@@ -449,10 +447,6 @@ msgid "Number of lines to keep in scrollback"
 msgstr "Número de líneas a mantener en el desplazamiento hacia atrás"
 
 #: data/org.gnome.MUD.gschema.xml:71
-#| msgid ""
-#| "Number of scrollback lines to keep around. You can scroll back in the "
-#| "terminal by this number of lines; lines that don't fit in the scrollback "
-#| "are discarded."
 msgid ""
 "Number of scrollback lines to keep around. You can scroll back in the "
 "terminal by this number of lines; lines that don’t fit in the scrollback are "
@@ -481,7 +475,6 @@ msgid "Remote download"
 msgstr "Descarga remota"
 
 #: data/org.gnome.MUD.gschema.xml:87
-#| msgid "Enable sound file downloading on MSP enabled MUDs"
 msgid "Enable sound file downloading on MSP enabled MUDs."
 msgstr "Permitir descarga de archivo de sonido en los MUD MSP habilitados"
 
@@ -490,9 +483,6 @@ msgid "Command divider"
 msgstr "Divisor de comandos"
 
 #: data/org.gnome.MUD.gschema.xml:92
-#| msgid ""
-#| "A character that is used to split commands in a string like \"w;w;w;l\", "
-#| "which will be sent to the MUD as 4 separate commands."
 msgid ""
 "A character that is used to split commands in a string like “w;w;w;l”, which "
 "will be sent to the MUD as 4 separate commands."
@@ -527,14 +517,10 @@ msgstr ""
 "opción para eliminar el texto una vez haya sido mandado."
 
 #: data/org.gnome.MUD.gschema.xml:106
-#| msgid "Whether to scroll to the bottom when there's new output"
 msgid "Whether to scroll to the bottom when there’s new output"
 msgstr "Indica si se debe desplazar al final cuando hay una salida nueva"
 
 #: data/org.gnome.MUD.gschema.xml:107
-#| msgid ""
-#| "If enabled, whenever there's new output the terminal will be scrolled to "
-#| "the bottom."
 msgid ""
 "If true, whenever there’s new output the terminal will scroll to the bottom."
 msgstr ""
@@ -546,7 +532,6 @@ msgid "Use proxy"
 msgstr "Usar proxy"
 
 #: data/org.gnome.MUD.gschema.xml:112
-#| msgid "Use a proxy server to connect to the MUD."
 msgid "Whether to use a proxy server to connect to the MUD."
 msgstr "Indica si se debe usar un servidor proxy para conectarse con MUD."
 
@@ -559,7 +544,6 @@ msgid "The SOCKS version to be used."
 msgstr "La versión SOCKS que usar."
 
 #: data/org.gnome.MUD.gschema.xml:125
-#| msgid "Proxy Hostname"
 msgid "Proxy server hostname"
 msgstr "Nombre del servidor proxy"
 
@@ -589,7 +573,7 @@ msgstr "Cadena de conexión"
 
 #: data/org.gnome.MUD.gschema.xml:159
 msgid "Commands to send to MUD upon establishing connection."
-msgstr ""
+msgstr "Comandos que enviar a MUD para establecer una conexión."
 
 #: data/org.gnome.MUD.desktop.in:3
 msgid "GNOME-Mud"
@@ -662,7 +646,6 @@ msgid "Delete %s?"
 msgstr "¿Eliminar %s?"
 
 #: src/mud-connections.c:789
-#| msgid "No MUD name specified."
 msgid "No profile specified."
 msgstr "No se especificó ningún perfil."
 
@@ -721,9 +704,6 @@ msgid "Save log as…"
 msgstr "Guardar registro como…"
 
 #: src/mud-log.c:724
-#| msgid ""
-#| "\n"
-#| "*** Log starts *** %d/%m/%Y %H:%M:%S\n"
 msgid ""
 "\n"
 "*** Log starts *** %d/%m/%Y %H∶%M∶%S\n"
@@ -745,9 +725,6 @@ msgid "Could not write data to log file!"
 msgstr "No se pudieron escribir los datos en el archivo de registro"
 
 #: src/mud-log.c:844
-#| msgid ""
-#| "\n"
-#| " *** Log stops *** %d/%m/%Y %H:%M:%S\n"
 msgid ""
 "\n"
 " *** Log stops *** %d/%m/%Y %H∶%M∶%S\n"
@@ -757,8 +734,6 @@ msgstr ""
 
 #: src/mud-profile.c:727
 #, c-format
-#| msgid "Palette had %d entry instead of %d\n"
-#| msgid_plural "Palette had %d entries instead of %d\n"
 msgid "Palette had %u entry instead of %u\n"
 msgid_plural "Palette had %u entries instead of %u\n"
 msgstr[0] "La paleta tenía %u entrada en vez de %u\n"
@@ -769,7 +744,6 @@ msgid "#Submatch Out of Range#"
 msgstr "#Correspondencia fuera del rango#"
 
 #: src/mud-window.c:724
-#| msgid "Connect to MUD"
 msgid "Connect to Multi-User Dungeons"
 msgstr "Conectar a mazmorras multi-usuario"
 

@@ -88,14 +88,14 @@ msgstr "Llista dels 16 colors que els MUD poden emprar amb codis de color ANSI i
 #. TODO: Increase default?
 #: ../data/org.gnome.MUD.gschema.xml.h:15
 msgid "Number of lines to keep in scrollback"
-msgstr "Número de línies a desar en el desplaçament"
+msgstr "Nombre de línies a desar en el desplaçament"
 
 #: ../data/org.gnome.MUD.gschema.xml.h:16
 msgid ""
 "Number of scrollback lines to keep around. You can scroll back in the "
 "terminal by this number of lines; lines that don’t fit in the scrollback are "
 "discarded."
-msgstr "Número de línies de desplaçament a conservar. Podeu desplaçar cap enrere el terminal aquest número de línies; les línies que no caben en el desplaçament es descarten."
+msgstr "Nombre de línies de desplaçament a conservar. Podeu desplaçar cap enrere el terminal aquest nombre de línies; les línies que no caben en el desplaçament es descarten."
 
 #. TODO: Settings provides an encoding list, so we could have an enum type or choice list, instead of bare string
 #: ../data/org.gnome.MUD.gschema.xml.h:18
@@ -138,12 +138,12 @@ msgid ""
 "If enabled, all the text typed in will be echoed in the terminal, making it "
 "easier to control what is sent."
 msgstr ""
-"Si s'habilita, tot el text que s'envii es mostrarà en la terminal, fent més "
+"Si s'habilita, tot el text que s'enviï es mostrarà en la terminal, fent més "
 "fàcil el control del que s'està enviant."
 
 #: ../data/org.gnome.MUD.gschema.xml.h:28
 msgid "Whether to keep text sent to the connection"
-msgstr "Si s'ha de mantindre el text enviat a la connexió."
+msgstr "Si s'ha de mantenir el text enviat a la connexió"
 
 #: ../data/org.gnome.MUD.gschema.xml.h:29
 msgid ""
@@ -162,7 +162,7 @@ msgstr "Si s'ha de desplaçar avall quan es produeix nova sortida"
 #: ../data/org.gnome.MUD.gschema.xml.h:31
 msgid ""
 "If true, whenever there’s new output the terminal will scroll to the bottom."
-msgstr "Si s'habilita, quan es produïsca nova sortida, el terminal es desplaçarà cap avall."
+msgstr "Si s'habilita, quan es produeixi una sortida nova, el terminal es desplaçarà cap avall."
 
 #: ../data/org.gnome.MUD.gschema.xml.h:32
 msgid "Use proxy"

@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-mud master\n"
-"POT-Creation-Date: 2019-10-28 16:00+0000\n"
-"PO-Revision-Date: 2020-01-31 11:23+0100\n"
+"POT-Creation-Date: 2020-01-31 10:33+0000\n"
+"PO-Revision-Date: 2020-02-13 12:19+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
@@ -887,7 +887,7 @@ msgstr ""
 
 #: C/gnome-mud-manual.xml:906(term)
 msgid "Foreground color"
-msgstr "Color de frente"
+msgstr "Color de primer plano"
 
 #: C/gnome-mud-manual.xml:908(para)
 msgid ""

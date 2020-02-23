@@ -1,144 +1,500 @@
 # Turkish translation of gnome-mud
+# Copyright (C) 2003-2020 gnome-mud'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-mud package.
-# Copyright (C) 2003 gnome-mud'S COPYRIGHT HOLDER
-# Sami Onur Zaim <onurzaim@hotmail.com>, 2003
+#
+# Sami Onur Zaim <onurzaim@hotmail.com>, 2003.
+# Sabri Ünal <libreajans@gmail.com>, 2019-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-mud\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-12-28 21:43+0000\n"
-"PO-Revision-Date: 2003-06-18 00:17+0300\n"
-"Last-Translator: Sami Onur Zaim <onurzaim@hotmail.com>\n"
-"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-mud/issues\n"
+"POT-Creation-Date: 2020-02-17 16:04+0000\n"
+"PO-Revision-Date: 2020-02-23 14:51+0300\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
+"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
 
-#: gnome-mud.desktop.in.h:1 src/init.c:248
-msgid "GNOME-Mud"
+#: data/main.ui:22
+msgid "Start Logging…"
+msgstr "Günlüklemeyi Başlat…"
+
+#: data/main.ui:84
+msgid "_Log to File:"
+msgstr "_Dosyaya Günlükle:"
+
+#: data/main.ui:155
+msgid "_Select File"
+msgstr "Dosya _Seç"
+
+#: data/main.ui:197
+msgid "Logging Options"
+msgstr "Günlükleme Seçenekleri"
+
+#: data/main.ui:226
+msgid "_Number of lines to log:"
+msgstr "Günlüklenecek _satır sayısı:"
+
+#: data/main.ui:285
+msgid "Number of _previous lines to include:"
+msgstr "Eklenecek _önceki satır sayısı:"
+
+#: data/main.ui:379
+msgid "_Append to file"
+msgstr "_Dosyanın sonuna ekle"
+
+#: data/main.ui:420
+msgid "Log Inp_ut"
+msgstr "Gir_di Günlüğü"
+
+#: data/main.ui:462
+msgid "_Include entire buffer"
+msgstr "Tüm _arabelleği içer"
+
+#: data/main.ui:503
+msgid "Include C_olor"
+msgstr "Renk_leri İçer"
+
+#: data/main.ui:553
+msgid "Debug Log"
+msgstr "Hata Ayıklama Günlüğü"
+
+#: data/main.ui:659
+msgid "Gnome-Mud"
 msgstr "Gnome-Mud"
 
-#: gnome-mud.desktop.in.h:2
-msgid "The GNOME MUD Client"
-msgstr "GNOME MUD istemcisi"
+#: data/main.ui:675
+msgid "_File"
+msgstr "_Dosya"
 
-#: gnome-mud.schemas.in.h:1
-msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
+#: data/main.ui:682
+msgid "C_onnection…"
+msgstr "_Bağlantı…"
+
+#: data/main.ui:699
+msgid "_Disconnect"
+msgstr "_Bağlantıyı Kopar"
+
+#: data/main.ui:710
+msgid "_Reconnect"
+msgstr "_Yeniden Bağlan"
+
+#: data/main.ui:727
+msgid "Start _Logging…"
+msgstr "_Günlüklemeyi Başlat…"
+
+#: data/main.ui:738
+msgid "Stop Lo_gging"
+msgstr "Günlüklemeyi _Durdur"
+
+#: data/main.ui:749
+msgid "_Save Buffer…"
+msgstr "Arabelleği _Kaydet…"
+
+#: data/main.ui:766
+msgid "Close _Window"
+msgstr "_Pencereyi Kapat"
+
+#: data/main.ui:800
+msgid "_Settings"
+msgstr "_Ayarlar"
+
+#: data/main.ui:810
+msgid "P_rofiles"
+msgstr "P_rofiller"
+
+#: data/main.ui:833
+msgid "Profile Preferences…"
+msgstr "Profil Tercihleri…"
+
+#: data/main.ui:849
+msgid "_Help"
+msgstr "_Yardım"
+
+#: data/main.ui:884
+msgid "Connect to MUD"
+msgstr "MUD’a bağlan"
+
+#: data/main.ui:886 data/main.ui:891
+msgid "Connect"
+msgstr "Bağlan"
+
+#: data/main.ui:892
+msgid "Connect to host"
+msgstr "Ana bilgisayara bağlan"
+
+#: data/main.ui:906
+msgid "Disconnect from current MUD"
+msgstr "Geçerli MUD’dan bağlantıyı kes"
+
+#: data/main.ui:908 data/main.ui:913
+msgid "Disconnect"
+msgstr "Bağlanıyı kes"
+
+#: data/main.ui:914
+msgid "Disconnect from current host"
+msgstr "Geçerli ana bilgisayarla bağlantıyı kes"
+
+#: data/main.ui:928
+msgid "Reconnect to current MUD"
+msgstr "MUD’a yeniden bağlan"
+
+#: data/main.ui:930
+msgid "Reconnect"
+msgstr "Yeniden bağlan"
+
+#: data/main.ui:1005
+msgid "Save buffer as…"
+msgstr "Arabelleği farklı kaydet…"
+
+#: data/muds.ui:20
+msgid "Select An Icon…"
+msgstr "Simge Seç…"
+
+#: data/muds.ui:84
+msgid "Select A Folder"
+msgstr "Dizin Seç"
+
+#: data/muds.ui:127
+msgid "Unsaved Changes"
+msgstr "Kaydedilmemiş Değişiklikler"
+
+#: data/muds.ui:143
+msgid "Close _without Saving"
+msgstr "Ka_ydetmeden Kapat"
+
+#: data/muds.ui:219
+msgid "You have unsaved changes. Do you want to save before closing?"
 msgstr ""
-"Bir Pango yazı tipi ismi. Örnek olarak \"Sans 12\" veya \"Monospace Bold 14"
-"\"."
+"Kaydedilmemiş değişikliklikler var. Kapatmadan önce kaydetmek ister misiniz?"
 
-#: gnome-mud.schemas.in.h:2
-msgid ""
-"A character that is used to split commands in a string like \"w;w;w;l\", "
-"which will be sent to the MUD as 4 separate commands."
-msgstr "Yeni çıkan satırı bölmeye"
+#: data/muds.ui:244
+msgid "Delete MUD?"
+msgstr "MUD silinsin mi?"
 
-#: gnome-mud.schemas.in.h:3 src/profiles.c:1212
+#: data/muds.ui:319
+msgid "Are you sure you want to delete this MUD?"
+msgstr "Bu MUD’u silmek istediğinize emin misiniz?"
+
+#: data/muds.ui:343
+msgid "Connection Properties"
+msgstr "Bağlantı Özellikleri"
+
+#: data/muds.ui:418 src/mud-window.c:737
+msgid "MUD"
+msgstr "MUD"
+
+#: data/muds.ui:474 data/muds.ui:805
+msgid "Name:"
+msgstr "Ad:"
+
+#: data/muds.ui:538
+msgid "Host:"
+msgstr "Ana Bilgisayar:"
+
+#: data/muds.ui:602
+msgid "Port:"
+msgstr "Bağlantı Noktası:"
+
+#: data/muds.ui:652
+msgid "Profile"
+msgstr "Profil"
+
+#: data/muds.ui:749
+msgid "Character"
+msgstr "Karakter"
+
+#: data/muds.ui:870
+msgid "Logon:"
+msgstr "Oturum:"
+
+#: data/muds.ui:989
+msgid "Connections"
+msgstr "Bağlantı"
+
+#: data/muds.ui:1108
+msgid " _Host: "
+msgstr " Ana _Bilgisayar: "
+
+#: data/muds.ui:1138
+msgid " _Port: "
+msgstr " _Bağlantı Noktası: "
+
+#: data/muds.ui:1201
+msgid "Custom Connection"
+msgstr "Özel Bağlantı"
+
+#: data/prefs.ui:15
+msgid "New Profile"
+msgstr "Yeni Profil"
+
+#: data/prefs.ui:78
+msgid "New Profile Name:"
+msgstr "Yeni Profil İsmi:"
+
+#: data/prefs.ui:120
+msgid "Preferences"
+msgstr "Tercihler"
+
+#: data/prefs.ui:142
+msgid "Input"
+msgstr "Girdi"
+
+#: data/prefs.ui:176
+msgid "_Echo the Text Sent"
+msgstr "_Echo Yazı Yollandı"
+
+#: data/prefs.ui:192
+msgid "_Keep the Text Entered"
+msgstr "_Yazının Sürekli Girilmesini Sağla"
+
+#: data/prefs.ui:226
+msgid "Command _Division Character:"
+msgstr "Komut _Bölme Karakteri:"
+
+#: data/prefs.ui:291
+msgid "Encoding"
+msgstr "Kodlanıyor"
+
+#: data/prefs.ui:328
+msgid "_Character Set:"
+msgstr "_Karakter Takımı:"
+
+#: data/prefs.ui:422
+msgid "Output"
+msgstr "Çıktı"
+
+#: data/prefs.ui:456
+msgid "Scroll on _Output"
+msgstr "Çıktı Ü_zerinde Kaydır"
+
+#: data/prefs.ui:478
+msgid "_Number of Scrollback Lines:"
+msgstr "_Geri Sürüklenecek Satırların Sayısı:"
+
+#: data/prefs.ui:549
+msgid "Fon_t:"
+msgstr "Yazı _Tipi:"
+
+#: data/prefs.ui:563
+msgid "_Foreground Color:"
+msgstr "Önpanel _Rengi:"
+
+#: data/prefs.ui:579
+msgid "_Background Color:"
+msgstr "_Arkaplan Rengi:"
+
+#: data/prefs.ui:595
+msgid "Color Palette:"
+msgstr "Renk Paleti:"
+
+#: data/prefs.ui:952
+msgid "Terminal"
+msgstr "Uçbirim"
+
+#: data/prefs.ui:967
+msgid "Proxy"
+msgstr "Vekil Sunucu"
+
+#: data/prefs.ui:1005
+msgid "_Enable Proxy"
+msgstr "Vekil Sunucuyu _Etkinleştir"
+
+#: data/prefs.ui:1023
+msgid "_Host:"
+msgstr "Ana _Bilgisayar:"
+
+#: data/prefs.ui:1039
+msgid "_Version:"
+msgstr "_Sürüm:"
+
+#: data/prefs.ui:1153
+msgid "Telnet Options"
+msgstr "Telnet Seçenekleri"
+
+#: data/prefs.ui:1187
+msgid "Enable Mud _Sound Protocol (MSP)"
+msgstr "MUD _Ses İletişim Kuralını (MSP) Etkinleştir"
+
+#: data/prefs.ui:1203
+msgid "Enable _Character Encoding Negotiation (CHARSET)"
+msgstr "Karakter _Kodlaması Anlaşmasını Etkinleştir (CHARSET)"
+
+#: data/prefs.ui:1251
+msgid "Network"
+msgstr "Ağ"
+
+#: data/prefs.ui:1271
+msgid "Triggers"
+msgstr "Tetikleyiciler"
+
+#: data/prefs.ui:1291
 msgid "Aliases"
 msgstr "Takma Adlar"
 
-#: gnome-mud.schemas.in.h:4
-#, fuzzy
-msgid "Color palette"
-msgstr "Renk Paleti"
+#: data/prefs.ui:1311
+msgid "Variables"
+msgstr "Değişkenler"
 
-#: gnome-mud.schemas.in.h:5
-msgid "Command Divider"
-msgstr "Komut sürücüsü"
+#: data/prefs.ui:1331
+msgid "Timers"
+msgstr "Zamanlayıcılar"
 
-#: gnome-mud.schemas.in.h:6
-#, fuzzy
-msgid "Default color of the background"
-msgstr "Varsayılan arkaplan rengi"
+#: data/prefs.ui:1351
+msgid "Keybindings"
+msgstr "Tuş Kombinasyonları"
 
-#: gnome-mud.schemas.in.h:7
-#, fuzzy
-msgid ""
-"Default color of the background, as a color specification (can be HTML-style "
-"hex digits, or a color name such as \"red\")."
-msgstr ""
-"Arkaplanın öntanımlı seçilebilen rengi(HTML, Hex veya renk ismi girilebilir "
-"ör: \"red\")."
+#: data/prefs.ui:1379
+msgid "Profiles"
+msgstr "Profiller"
 
-#: gnome-mud.schemas.in.h:8
-#, fuzzy
+#: data/prefs.ui:1473
+msgid "Regex Error"
+msgstr "Düzenli İfade Hatası"
+
+#: data/prefs.ui:1525
+msgid "Error Code:"
+msgstr "Hata Kodu:"
+
+#: data/prefs.ui:1563
+msgid "Error String:"
+msgstr "Hata Dizgesi:"
+
+#: data/prefs.ui:1601
+msgid "Error At:"
+msgstr "Şurada Hata:"
+
+#: data/org.gnome.MUD.gschema.xml:6
+msgid "Settings schema version"
+msgstr "Ayarlar şema sürümü"
+
+#: data/org.gnome.MUD.gschema.xml:10
+msgid "List of available profiles"
+msgstr "Kullanılabilir profillerin listesi"
+
+#: data/org.gnome.MUD.gschema.xml:14
+msgid "Default profile"
+msgstr "Öntanımlı profil"
+
+#: data/org.gnome.MUD.gschema.xml:18
+msgid "List of available MUDs"
+msgstr "Kullanılabilir MUD’ların listesi"
+
+#: data/org.gnome.MUD.gschema.xml:22
+msgid "List of available characters"
+msgstr "Kullanılabilir karakterlerin listesi"
+
+#: data/org.gnome.MUD.gschema.xml:30
+msgid "Human-readable name of the profile"
+msgstr "Profilin insan tarafından okunabilir adı"
+
+#: data/org.gnome.MUD.gschema.xml:34
+msgid "A Pango font name and size"
+msgstr "Pango yazı tipi adı ve boyutu"
+
+#: data/org.gnome.MUD.gschema.xml:39
 msgid "Default color of the text"
-msgstr "Metinin öntanımlı rengi"
+msgstr "Öntanımlı metin rengi"
 
-#: gnome-mud.schemas.in.h:9
-#, fuzzy
+#: data/org.gnome.MUD.gschema.xml:40
 msgid ""
 "Default color of the text, as a color specification (can be HTML-style hex "
-"digits, or a color name such as \"red\")."
+"digits, or a color name such as “red”)."
 msgstr ""
-"Metinin öntanımlı seçilebilen rengi(HTML, Hex veya renk ismi girilebilir ör: "
-"\"red\").."
+"Metnin öntanımlı rengi, renk belirtimi olarak (HTML-biçemi onaltılık sayı ya "
+"da “red“ gibi renk adı olabilir)."
 
-#: gnome-mud.schemas.in.h:10
+#: data/org.gnome.MUD.gschema.xml:44
+msgid "Default color of the background"
+msgstr "Öntanımlı arkaplan rengi"
+
+#: data/org.gnome.MUD.gschema.xml:45
 msgid ""
-"File where the mud list will be read from to be used in the MudList dialog."
+"Default color of the background, as a color specification (can be HTML-style "
+"hex digits, or a color name such as “red”)."
 msgstr ""
+"Arkaplanın öntanımlı rengi, renk belirtimi olarak (HTML-biçemi onaltılık "
+"sayı ya da “red” gibi renk adı olabilir)."
 
-#: gnome-mud.schemas.in.h:11
-msgid "Font"
-msgstr "Yazı tipi"
+#: data/org.gnome.MUD.gschema.xml:65
+msgid "Color palette"
+msgstr "Renk paleti"
 
-#: gnome-mud.schemas.in.h:12
-#, fuzzy
+#: data/org.gnome.MUD.gschema.xml:66
+msgid "List of the 16 colors that MUDs can use with indexed ANSI color codes."
+msgstr ""
+"MUD’un dizinlenmiş ANSI renk kodlarıyla kullanabileceği 16 rengin listesi."
+
+#. TODO: Increase default?
+#: data/org.gnome.MUD.gschema.xml:70
+msgid "Number of lines to keep in scrollback"
+msgstr "Geri sürüklemek için kullanılacak satır sayısı"
+
+#: data/org.gnome.MUD.gschema.xml:71
 msgid ""
-"GNOME-Mud has a 16-color palette that MUDs can use. It must be specified in "
-"the form of a colon-separated list of color names. Color names should be in "
-"hex format e.g. \"#FF00FF\"."
+"Number of scrollback lines to keep around. You can scroll back in the "
+"terminal by this number of lines; lines that don’t fit in the scrollback are "
+"discarded."
 msgstr ""
-"GNOME-Mud Mud'ın kullanabileceği 16 renklik bir palete sahiptir. Bunlar "
-"sekmelere ayrılmış olarak tanımlanmak zorundadır. Renkler Hex biçiminde "
-"tanımlanmış olmalıdır. ör: \"#FF00FF\"."
+"Satırları geri sürüklemek için gereken sayı. Bu geri sürükleme sayısı ile uç "
+"birim ekranında tuş ile ne kadar satır sürükleneceğini ayarlayabilirsiniz."
 
-#: gnome-mud.schemas.in.h:13 src/prefs.c:850
+#. TODO: Settings provides an encoding list, so we could have an enum type or choice list, instead of bare string
+#: data/org.gnome.MUD.gschema.xml:77
+msgid "The encoding for the terminal widget."
+msgstr "Uçbirim parçacığı için kodlama."
+
+#. TODO: Change to true?
+#: data/org.gnome.MUD.gschema.xml:81
+msgid "Remote encoding"
+msgstr "Uzak kodlama"
+
+#: data/org.gnome.MUD.gschema.xml:82
+msgid "Use Remote Encoding negotiation."
+msgstr "Uzak Kodlama anlaşması kullan."
+
+#: data/org.gnome.MUD.gschema.xml:86
+msgid "Remote download"
+msgstr "Uzak indirme"
+
+#: data/org.gnome.MUD.gschema.xml:87
+msgid "Enable sound file downloading on MSP enabled MUDs."
+msgstr "MSP etkin MUDlardan ses dosyası indirmeyi etkinleştir."
+
+#: data/org.gnome.MUD.gschema.xml:91
+msgid "Command divider"
+msgstr "Komut ayracı"
+
+#: data/org.gnome.MUD.gschema.xml:92
 msgid ""
-"GNOME-Mud will attempt to transmit a terminal type (like ANSI or VT100) if "
-"the MUD requests one. This option sets the terminal type that will be sent."
+"A character that is used to split commands in a string like “w;w;w;l”, which "
+"will be sent to the MUD as 4 separate commands."
 msgstr ""
-"Eğer GNOME-Mud talep ederse bir uçbirim türü aktarmaya çalışacak (ANSI veya "
-"VT100 gibi). Bu seçenek aktarılacak uçbirim türünü ayarlamanızı sağlar."
+"MUD’a 4 ayrı komut olarak gönderilecek “w;w;w;l” gibi dizgedeki komutları "
+"bölmek için kullanılacak karakter."
 
-#: gnome-mud.schemas.in.h:14
-#, fuzzy
-msgid "How many entries to keep in the command history"
-msgstr "Komut geçimişde tutulacak komut sayısı"
+#: data/org.gnome.MUD.gschema.xml:96
+msgid "Whether to echo sent text to the connection"
+msgstr "Bağlantıda olmasada yankılancak metin"
 
-#: gnome-mud.schemas.in.h:15
-#, fuzzy
-msgid "How many entries to keep in the command history."
-msgstr "Komut geçimişde tutulacak komut sayısı"
-
-#: gnome-mud.schemas.in.h:16
-msgid "How often in seconds gnome-mud should flush logfiles."
-msgstr ""
-
-#: gnome-mud.schemas.in.h:17 src/prefs.c:804
-#, fuzzy
-msgid ""
-"If enabled, GNOME-Mud will offer a few built-in keybindings. They can be "
-"overridden by custom keybindings, or they can be disabled completely with "
-"this option."
-msgstr ""
-"Etkinleştirildiğinde , GNOME-Mud size birkaç tuş kombinasyonu önerecektir. "
-"Bu tuş kombinasyonlarını isteğinize göre düzenleyebilir veya "
-"kullanmayabilirsiniz."
-
-#: gnome-mud.schemas.in.h:18 src/prefs.c:782
+#: data/org.gnome.MUD.gschema.xml:97
 msgid ""
 "If enabled, all the text typed in will be echoed in the terminal, making it "
 "easier to control what is sent."
 msgstr ""
 "Etkinleştirildiğinde, bütün yazılmış metinler uçbirim ekranında "
-"gösteriliecek, Bu göderilenlerin daha kolay kontrol edilmesini sağlayacaktır."
+"gösterilecek. Bu göderilenlerin daha kolay kontrol edilmesini sağlayacaktır."
 
-#: gnome-mud.schemas.in.h:19 src/prefs.c:793
+#: data/org.gnome.MUD.gschema.xml:101
+msgid "Whether to keep text sent to the connection"
+msgstr "Olmasa da bağlantıda sürekli yollanacak metin"
+
+#: data/org.gnome.MUD.gschema.xml:102
 msgid ""
 "If enabled, the text that is sent to the connection will be left as a "
 "selection in the entry box. Otherwise, the text entry box will be cleared "
@@ -147,1091 +503,897 @@ msgstr ""
 "Etkinleştirldiğinde, gönderilen metin kutuda bir seçenek olak "
 "bırakılacaktır. Aksi taktirde her göderilen metin silinecektir."
 
-#: gnome-mud.schemas.in.h:20
+#: data/org.gnome.MUD.gschema.xml:106
+msgid "Whether to scroll to the bottom when there’s new output"
+msgstr "Yeni çıktı olduğunda aşağı doğru kaydırılıp kaydırılmayacağı"
+
+#: data/org.gnome.MUD.gschema.xml:107
 msgid ""
-"If enabled, whenever there's new output the terminal will be scrolled to the "
-"bottom."
-msgstr ""
-"Aktif edildiğinde, uçbirimde yeni bir metin çıktığında metinler aşağıya "
-"sürüklenecektir."
+"If true, whenever there’s new output the terminal will scroll to the bottom."
+msgstr "Eğer seçili ise, yeni bir çıktı oluştuğunda uçbirim en alta kayacak."
 
-#: gnome-mud.schemas.in.h:21 src/profiles.c:1243
-#, fuzzy
-msgid "Keybindings"
-msgstr "Tuş Kombinasyonları"
+#: data/org.gnome.MUD.gschema.xml:111
+msgid "Use proxy"
+msgstr "Vekil sunucu kullan"
 
-#: gnome-mud.schemas.in.h:22
-#, fuzzy
-msgid "Last log file"
-msgstr "Son kayıt dizini"
+#: data/org.gnome.MUD.gschema.xml:112
+msgid "Whether to use a proxy server to connect to the MUD."
+msgstr "MUD’a bağlanmak için vekil sunucusu kullanılıp kullanılmayacağı."
 
-#: gnome-mud.schemas.in.h:23
+#: data/org.gnome.MUD.gschema.xml:120
+msgid "Proxy version"
+msgstr "Vekil sunucu sürümü"
+
+#: data/org.gnome.MUD.gschema.xml:121
+msgid "The SOCKS version to be used."
+msgstr "Kullanılacak SOCKS sürümü."
+
+#: data/org.gnome.MUD.gschema.xml:125
+msgid "Proxy server hostname"
+msgstr "Vekil sunucusu ana bilgisayar adı"
+
+#: data/org.gnome.MUD.gschema.xml:126
+msgid "The hostname for the SOCKS proxy server."
+msgstr "SOCKS vekil sunucu için ana bilgisayar adı."
+
+#: data/org.gnome.MUD.gschema.xml:133
+msgid "Visible name of the MUD."
+msgstr "MUD’un görünür adı."
+
+#: data/org.gnome.MUD.gschema.xml:146
+msgid "Profile ID"
+msgstr "Profil Kimliği"
+
+#: data/org.gnome.MUD.gschema.xml:150
+msgid "MUD ID"
+msgstr "MUD Kimliği"
+
+#: data/org.gnome.MUD.gschema.xml:154
+msgid "Name of the character."
+msgstr "Karakter adı."
+
+#: data/org.gnome.MUD.gschema.xml:158
+msgid "Connect string"
+msgstr "Bağlan dizisi"
+
+#: data/org.gnome.MUD.gschema.xml:159
+msgid "Commands to send to MUD upon establishing connection."
+msgstr "Bağlantı kurulduktan sonra MUD’a gönderilecek komutlar."
+
+#: data/org.gnome.MUD.desktop.in:3
+msgid "GNOME-Mud"
+msgstr "GNOME-Mud"
+
+#: data/org.gnome.MUD.desktop.in:4
+msgid "The GNOME MUD Client"
+msgstr "GNOME MUD istemcisi"
+
+#: src/debug-logger.c:823 src/mud-connections.c:788 src/mud-connections.c:795
+msgid "Error"
+msgstr "Hata"
+
+#: src/debug-logger.c:826 src/debug-logger.c:909
+#, c-format
+msgid "ERROR: %s\n"
+msgstr "HATA: %s\n"
+
+#: src/debug-logger.c:830
+msgid "Critical"
+msgstr "Kritik"
+
+#: src/debug-logger.c:837
+msgid "Warning"
+msgstr "Uyarı"
+
+#: src/debug-logger.c:844 src/debug-logger.c:994
+msgid "Message"
+msgstr "İleti"
+
+#: src/debug-logger.c:851
+msgid "Info"
+msgstr "Bilgi"
+
+#: src/debug-logger.c:858
+msgid "Debug"
+msgstr "Hata ayıkla"
+
+#: src/debug-logger.c:865
+msgid "Unknown"
+msgstr "Bilinmiyor"
+
+#: src/debug-logger.c:913
+#, c-format
+msgid "CRITICAL ERROR: %s\n"
+msgstr "KRİTİK HATA: %s\n"
+
+#: src/debug-logger.c:917
+#, c-format
+msgid "Warning: %s\n"
+msgstr "Uyarı: %s\n"
+
+#: src/debug-logger.c:987
+msgid "Type"
+msgstr "Tür"
+
+#: src/mud-connections.c:541
+#, c-format
+msgid "Are you sure you want to delete %s?"
+msgstr "Gerçekten %s nesnesini silmek istiyor musunuz?"
+
+#: src/mud-connections.c:542
+#, c-format
+msgid "Delete %s?"
+msgstr "%s silinsin mi?"
+
+#: src/mud-connections.c:789
+msgid "No profile specified."
+msgstr "Profil belirtilmedi."
+
+#: src/mud-connections.c:796
+msgid "No MUD name specified."
+msgstr "MUD adı belirtilmedi."
+
+#: src/mud-connection-view.c:384
+msgid "*** Connected.\n"
+msgstr "*** Bağlandı.\n"
+
+#: src/mud-connection-view.c:398
 msgid ""
-"List of commands which will be treated as movement commands by the "
-"automapper. A semicolon is used to separate each command."
+"\n"
+"*** Connection closed.\n"
 msgstr ""
-"Otomatik yol göstericisitarafından  haraket komutları olarak algılanacak "
-"komutların listesi. Komutları ayırmak için noktalıvirgül kullanınız."
+"\n"
+"*** Bağlantı kesildi.\n"
 
-#: gnome-mud.schemas.in.h:24
-msgid "List of connections"
-msgstr "Bağlantıların listesi"
+#: src/mud-connection-view.c:508
+msgid "Downloading…"
+msgstr "İndiriliyor…"
 
-#: gnome-mud.schemas.in.h:25
-msgid ""
-"List of connections known to GNOME-Mud. The list contains strings naming "
-"subdirectories relative to /apps/gnome-mud/connections."
-msgstr ""
-"GNOME-Mud tarafından bilinen komutların listesi. Bu liste  /apps/gnome-mud/"
-"connections dizin ve alt dizinlerinde uzantılarını içerir."
-
-#: gnome-mud.schemas.in.h:26
-msgid "List of movement commands"
-msgstr "Haraket komutlarının listesi"
-
-#: gnome-mud.schemas.in.h:27
-msgid "List of profiles"
-msgstr "Profillerin listesi"
-
-#: gnome-mud.schemas.in.h:28
-msgid ""
-"List of profiles known to GNOME-Mud. The list contains strings naming "
-"subdirectories relative to /apps/gnome-mud/profiles."
-msgstr ""
-"GNOME-Mud tarafından bilinen profillerin listesi.  Bu liste  //apps/gnome-"
-"mud/profiles dizin ve alt dizinlerinde uzantılarını içerir."
-
-#: gnome-mud.schemas.in.h:29
-msgid "Log flush interval"
-msgstr ""
-
-#: gnome-mud.schemas.in.h:30
-msgid "Mudlist file"
-msgstr "Mudlist dosyası"
-
-#: gnome-mud.schemas.in.h:31
-msgid "Number of lines to keep in scrollback"
-msgstr "Geri sürüklemek için kullanılacak satır sayısı"
-
-#: gnome-mud.schemas.in.h:32
-msgid ""
-"Number of scrollback lines to keep around. You can scroll back in the "
-"terminal by this number of lines; lines that don't fit in the scrollback are "
-"discarded."
-msgstr ""
-"Satırları geri sürüklemek için gereken sayı. Bu geri sürükleme sayısı ile uç "
-"birim ekranında bir tuşle ne kadar satır sürükleneceğini ayarlayabilirsiniz."
-
-#: gnome-mud.schemas.in.h:33
-msgid "Tab location"
-msgstr "Sekme konumu"
-
-#: gnome-mud.schemas.in.h:34
-msgid "Terminal type"
-msgstr "Uç birim ekran türü"
-
-#: gnome-mud.schemas.in.h:35
-msgid "The file that was last used to save a mudlog in."
-msgstr ""
-
-#: gnome-mud.schemas.in.h:36
-msgid ""
-"The location of the connection tabs. Valid options are \"left\", \"right\", "
-"\"top\" and \"bottom\"."
-msgstr ""
-"Bağlantı sekmelerinin yeri. Geçerli seçenekler \"sol\", \"sağ\", \"yukarı\" "
-"ve \"aşağı\"."
-
-#: gnome-mud.schemas.in.h:37 src/data.c:346 src/profiles.c:1226
-msgid "Triggers"
-msgstr "Başlangıç"
-
-#. vars
-#: gnome-mud.schemas.in.h:38 src/data.c:353 src/profiles.c:1219
-msgid "Variables"
-msgstr "Değişkenler"
-
-#: gnome-mud.schemas.in.h:39
-msgid "Whether to echo sent text to the connection"
-msgstr "Bağlantıda olmasada yankılancak metin"
-
-#: gnome-mud.schemas.in.h:40
-msgid "Whether to enable or disable the system keys"
-msgstr "Olmasa da etkinleşirilecek veya etkinleştirilmeyecek sistem tuşları"
-
-#: gnome-mud.schemas.in.h:41
-msgid "Whether to keep text sent to the connection"
-msgstr "Olmasa da bağlantıda sürekli yollanacak metin"
-
-#: gnome-mud.schemas.in.h:42
-msgid "Whether to scroll to the bottom when there's new output"
-msgstr "Olmasa da yeni metin gelidiğinde aşağıya sürükle"
-
-#: src/data.c:247
-msgid "No void characters allowed."
-msgstr "Geçersiz karakterler kullanılamaz."
-
-#. actions
-#: src/data.c:251 src/data.c:345
-msgid "Actions"
-msgstr "Haraketler"
-
-#: src/data.c:253
+#: src/mud-connection-view.c:590 src/mud-connection-view.c:1692
 #, c-format
-msgid "Character '%c' not allowed."
-msgstr "'%c' karakteri kullanılamaz"
+msgid "*** Making connection to %s, port %d.\n"
+msgstr "*** %s’a %d bağlantı noktasından bağlanılıyor.\n"
 
-#: src/data.c:260 src/data.c:267
-#, c-format
-msgid "%s too big."
-msgstr "%s çok büyük"
-
-#: src/data.c:274
-#, c-format
-msgid "Can't duplicate %s."
-msgstr "'%s çoğaltılamıyor"
-
-#. alias
-#: src/data.c:337
-msgid "Alias"
-msgstr "Takma ad"
-
-#: src/data.c:338
-msgid "Replacement"
-msgstr "Yer değiştirme"
-
-#: src/data.c:354
-msgid "Values"
-msgstr "Değerler"
-
-#: src/data.c:361
-#, fuzzy, c-format
-msgid "%s: trying to access to undefined data range: %d"
-msgstr "Pencere verisi: Tanımlanmamış veri kümesine ulaşılmaya çalışılıyor: %d"
-
-#: src/data.c:373
-#, fuzzy
-msgid "GNOME-Mud Configuration Center"
-msgstr "GNOME-Mud Denetim Merkezi"
-
-#: src/gnome-mud.c:51
-#, fuzzy, c-format
-msgid "There was an error accessing GConf: %s"
-msgstr "Yardımı görüntülemeye çalışırken hata oluştu: %s"
-
-#: src/gnome-mud.c:64
-msgid "The default configuration values could not be retrieved correctly."
-msgstr ""
-
-#: src/gnome-mud.c:65
-msgid ""
-"Please check your GConf configuration, specifically that the schemas have "
-"been installed correctly."
-msgstr ""
-
-#: src/gnome-mud.c:89
-#, c-format
-msgid "Failed to init GConf: %s"
-msgstr "Gconf Yapılandırılamadı:%s"
-
-#: src/init.c:94
-msgid "Do you really want to quit?"
-msgstr "Gerçekten çıkmak istiyor musunuz?"
-
-#: src/init.c:142 src/init.c:644
-msgid "Connect..."
-msgstr "Bağlan..."
-
-#: src/init.c:154 src/profiles.c:950
-msgid "Host:"
-msgstr "Ana makine:"
-
-#: src/init.c:160 src/profiles.c:970
-msgid "Port:"
-msgstr "Port:"
-
-#: src/init.c:210
-msgid "*** Internal error: no such connection.\n"
-msgstr "*** İçsel hata: Bağlantı yok.\n"
-
-#. Translators: translate as your names & emails
-#. * Paul Translator <paul@translator.org>
-#: src/init.c:244
-msgid "translator_credits"
-msgstr "Çevirmenler"
-
-#: src/init.c:250
-msgid "A Multi-User Dungeon (MUD) client for GNOME.\n"
-msgstr "GNOME için çok kullanıcılı Dungeon(MUD) istemcisi. \n"
-
-#: src/init.c:262
-msgid "GNOME-Mud home page"
-msgstr "GNOME-Mud ana sayfası"
-
-#: src/init.c:594 src/init.c:624
-#, c-format
-msgid "There was an error displaying help: %s"
-msgstr "Yardımı görüntülemeye çalışırken hata oluştu: %s"
-
-#: src/init.c:640
-msgid "Wizard..."
-msgstr "Sihirbaz..."
-
-#: src/init.c:640
-#, fuzzy
-msgid "Open the Connection Wizard"
-msgstr "Bağlantı_Sihirbazı"
-
-#: src/init.c:642
-msgid "Profiles..."
-msgstr "Profiller..."
-
-#: src/init.c:642
-msgid "Manage user profiles"
-msgstr ""
-
-#: src/init.c:644
-#, fuzzy
-msgid "Connect to a mud"
-msgstr "Mud'a bağlan"
-
-#: src/init.c:646
-msgid "Disconnect"
-msgstr "Bağlanıyı kes"
-
-#: src/init.c:646
-#, fuzzy
-msgid "Disconnect from the mud"
-msgstr "Mud'a bağlan"
-
-#: src/init.c:648
-msgid "Reconnect"
-msgstr "Yeniden bağlan"
-
-#: src/init.c:648
-#, fuzzy
-msgid "Reconnect to the mud"
-msgstr "Mud'a bağlan"
-
-#: src/init.c:650
-msgid "Exit"
-msgstr "Çıkış"
-
-#: src/init.c:650
-#, fuzzy
-msgid "Quit GNOME-Mud"
-msgstr "Gnome-Mud"
-
-#: src/init.c:655
-msgid "Connection _Wizard..."
-msgstr "Bağlantı_Sihirbazı"
-
-#: src/init.c:656
-msgid "_MudList Listing..."
-msgstr "_MudList Listeleniyor..."
-
-#: src/init.c:658
-msgid "C_onnect..."
-msgstr "B_ağlan"
-
-#: src/init.c:659
-msgid "_Disconnect"
-msgstr "_Bağlantıyı Kopar"
-
-#: src/init.c:660
-msgid "_Reconnect"
-msgstr "_Yeniden Bağlan"
-
-#: src/init.c:662
-msgid "S_tart Logging..."
-msgstr "S_isteme giriş yap"
-
-#: src/init.c:663
-msgid "Sto_p Logging"
-msgstr "Giriş ya_pmayı durudur"
-
-#: src/init.c:664
-msgid "_Save Buffer..."
-msgstr "_Kayıt Önbelleği"
-
-#: src/init.c:666
-msgid "_Close Window"
-msgstr "_Pencereyi Kapa"
-
-#: src/init.c:674
-msgid "_Plugin Information..."
-msgstr "_Eklenti bilgisi"
-
-#: src/init.c:680
-msgid "Auto _Mapper..."
-msgstr "Otomatik _yolgösterici"
-
-#: src/init.c:683
-msgid "P_lugins"
-msgstr "Eklen_tiler"
-
-#: src/init.c:690
-msgid "User Manual"
-msgstr "Kullanıcı elkitabı"
-
-#: src/init.c:691
-msgid "Display the GNOME-Mud User Manual"
-msgstr "GNOME-Mud kullanıcı elkitabını göster"
-
-#: src/init.c:695
-msgid "Plugin API Manual"
-msgstr "API Eklentisi Elkitabı"
-
-#: src/init.c:696
-msgid "Display the GNOME-Mud Plugin API Manual"
-msgstr "GNOME-Mud API eklentisi için elkitabını göster"
-
-#: src/init.c:747
-msgid "Main"
-msgstr "Ana Sayfa"
-
-#: src/init.c:770
-#, c-format
-msgid "GNOME-Mud version %s (compiled %s, %s)\n"
-msgstr "GNOME-Mud sürümü %s (Derlenme %s, %s)\n"
-
-#: src/init.c:772
-#, fuzzy
-msgid "Distributed under the terms of the GNU General Public License.\n"
-msgstr "GNU(Halka Açık Lisans) lisansı altında dağıtılmaktadır. \n"
-
-#: src/keybind.c:149
-msgid "You must use capture first!"
-msgstr "Öncelikle yakalama seçeneğini kullanmalısınız."
-
-#: src/keybind.c:162
-msgid "Can't add an existing key."
-msgstr "Varolan bir veriyi eklemek mümkün olmadı"
-
-#: src/keybind.c:189
-msgid "Incomplete fields."
-msgstr "Tamamlanmamış boşluklar."
-
-#: src/keybind.c:311
-#, fuzzy
-msgid "GNOME-Mud Keybinding Center"
-msgstr "Gnome-Mud Key ayarlama Merkezi"
-
-#: src/keybind.c:328
-msgid "Key"
-msgstr "Anahtar"
-
-#: src/keybind.c:331 src/keybind.c:348 src/keybind.c:366
-msgid "Command"
-msgstr "Komut"
-
-#: src/keybind.c:344
-msgid "Bind"
-msgstr "Birleştir"
-
-#: src/keybind.c:360 src/keybind.c:381
-msgid "Capture"
-msgstr "Yakala"
-
-#: src/log.c:57
-#, c-format
-msgid "*** Already logging to %s. Close that log first.\n"
-msgstr ""
-"***. Halihazırda giriş yapılıyor %s. Öncelikle kayıt defterini kapat.\n"
-
-#: src/log.c:63
-msgid "Open log"
-msgstr "Kayıt defterini aç"
-
-#: src/log.c:76
-#, fuzzy
-msgid "*** No log to be closed is open in this window.\n"
-msgstr "***. Bu pencerede kapanmak üzere hiçbir pencere açılmadı.\n"
-
-#: src/log.c:103
-#, c-format
-msgid "*** Couldn't open %s.\n"
-msgstr "***. %s Açılamadı.\n"
-
-#: src/log.c:115
-#, c-format
-msgid "*** Logging to %s.\n"
-msgstr "*** Sistemde giriliyor %s.\n"
-
-#: src/log.c:176
-#, c-format
-msgid "*** Stopped logging to %s.\n"
-msgstr "*** Sisteme giriş durduruluyor %s.\n"
-
-#: src/log.c:201
-msgid "*** Could not open file for writing.\n"
-msgstr "*** Dosya yazılma desteği ile açılamadı.\n"
-
-#: src/log.c:215
-msgid "Please select a log file..."
-msgstr "Lütfen bir kayıt dosyası seçiniz."
-
-#. Free the create_link_data structure
-#: src/map.c:567
-msgid "Ready."
-msgstr "Hazır."
-
-#: src/map.c:568
-msgid "Canceled."
-msgstr "İptal edildi."
-
-#: src/map.c:604
-msgid "A link already exists here!"
-msgstr "Bir bağ zaten var!"
-
-#. Create the hint label
-#: src/map.c:656 src/map.c:3548 src/map.c:3551
-msgid "Ready"
-msgstr "Hazır"
-
-#: src/map.c:657
-msgid "Link created"
-msgstr "Bağ oluşturuldu"
-
-#: src/map.c:661
-msgid "Can't create a node here"
-msgstr "Bir geçit eklenemiyor."
-
-#: src/map.c:892
-msgid "New Map"
-msgstr "Yeni yol göstericisi"
-
-#. Translator: "path" means "line of travel", ie "road"
-#: src/map.c:901
-msgid "Creating a path"
-msgstr "Dizin oluşturuluyor"
-
-#. The radio button (new map)
-#: src/map.c:909
-msgid "Path lead to a new map"
-msgstr "Yeni yol göstericiye bir yol belirle"
-
-#: src/map.c:916
-msgid "New map"
-msgstr "Yeni yol gösterici"
-
-#. The radio button (default)
-#: src/map.c:933
-#, fuzzy
-msgid "Path follows an already existing path:"
-msgstr "Yol göstericiye giden yol zaten tanımlanmış:"
-
-#: src/map.c:952
-msgid "Create"
-msgstr "Oluştur"
-
-#: src/map.c:1115
-msgid "Enter in a path"
-msgstr "Bit dizine uygula"
-
-#: src/map.c:1122
-msgid "Create a new path:"
-msgstr "Yeni dizin olştur."
-
-#: src/map.c:1139
-msgid "Enter in existing path:"
-msgstr "Var olan dizin içine oluştur:"
-
-#: src/map.c:1190
-msgid ""
-"This node has already 8 links. Destroy one of these before trying to create "
-"a new one"
-msgstr ""
-"Bu geçit halihazırda 8 bağa sahip. Yenisini oluşturabilmek için birini "
-"siliniz."
-
-#. Change the automap state
-#: src/map.c:1197
-msgid "Enter to finish, Esc to quit"
-msgstr "Bitirmek için Enter'ei Çıkmak için ESC tuşuna basın"
-
-#: src/map.c:1198
-msgid "Use move buttons to build the link."
-msgstr "Bağı oluşturmak için ok tuşlarını kullanınız"
-
-#: src/map.c:1376
-msgid "Zoom In"
-msgstr "Yakınlaştır"
-
-#: src/map.c:1377
-msgid "Zoom Out"
-msgstr "Uzaklaştır"
-
-#: src/map.c:1378
-msgid "Configure Automap"
-msgstr "Automap'i ayarla"
-
-#. Teleport here
-#: src/map.c:1418
-msgid "Teleport here"
-msgstr "Buraya aktar"
-
-#.
-#. 			/* Set node properties */
-#. 	  		properties_item = gtk_menu_item_new_with_label(_("Set node properties"));
-#. 			gtk_menu_shell_append(GTK_MENU_SHELL(pop_menu), properties_item);
-#. 			gtk_signal_connect(GTK_OBJECT(properties_item), "activate", GTK_SIGNAL_FUNC(on_properties_item_activated), data);
-#. Create new link
-#: src/map.c:1428
-msgid "Create new link"
-msgstr "Yeni bağ oluştur"
-
-#. Translator: this is an action, not a key
-#: src/map.c:1435
-msgid "Enter"
-msgstr "Giriş"
-
-#. Can easily be optimised ... but why bother ?
-#. Translator: "N" means "North" here
-#: src/map.c:1736 src/map.c:3576
-msgid "N"
-msgstr "N"
-
-#. Translator: "NE" means "Northeast" here
-#: src/map.c:1738 src/map.c:3577
-msgid "NE"
-msgstr "NE"
-
-#. Translator: "E" means "East" here
-#: src/map.c:1740 src/map.c:3578
-msgid "E"
-msgstr "E"
-
-#. Translator: "SE" means "Southeast" here
-#: src/map.c:1742 src/map.c:3579
-msgid "SE"
-msgstr "SE"
-
-#. Translator: "S" means "South" here
-#: src/map.c:1744 src/map.c:3580
-msgid "S"
-msgstr "S"
-
-#. Translator: "SW" means "Southwest" here
-#: src/map.c:1746 src/map.c:3581
-msgid "SW"
-msgstr "SW"
-
-#. Translator: "W" means "West" here
-#: src/map.c:1748 src/map.c:3582
-msgid "W"
-msgstr "W"
-
-#. Translator: "NW" means "Northwest" here
-#: src/map.c:1750 src/map.c:3583
-msgid "NW"
-msgstr "NW"
-
-#: src/map.c:1751 src/map.c:3584
-msgid "Up"
-msgstr "Yukarı"
-
-#: src/map.c:1752 src/map.c:3585
-msgid "Down"
-msgstr "Aşağı"
-
-#: src/map.c:1753 src/map.c:3573
-msgid "Remove"
-msgstr "Kaldır"
-
-#. Some buttons
-#: src/map.c:1754 src/map.c:3571
-msgid "Load"
-msgstr "Yükle"
-
-#: src/map.c:1755 src/map.c:3572
-msgid "Save"
-msgstr "kaydet"
-
-#: src/map.c:2802
-msgid "Load map"
-msgstr "Yolgösterici yükle"
-
-#: src/map.c:2802
-msgid "Save map"
-msgstr "Yol göstericiyi kaydet"
-
-#: src/map.c:3051
-msgid "No link existed in that direction"
-msgstr "Bu yönde bir bağ bulunamadı"
-
-#: src/map.c:3057
-msgid "Cannot break links to a node going up or down"
-msgstr "Bağları aşağı veya yukarı giden herhangi bir geçide bölemiyorum"
-
-#. It would seem this node already has a connection to here, That's
-#. * possible so we need to inform the user that his move is illegal.
-#.
-#: src/map.c:3166
-msgid "Destination node has already a connection here"
-msgstr "Geçitte bir bağlantı oluşturulmuş."
-
-#: src/map.c:3315
-msgid "Can't create a link to another floor!"
-msgstr "Diğer güzergaha bağ oluşturulamıyor."
-
-#: src/map.c:3321
-msgid "There is already a link here!"
-msgstr "Halihazırda bir bağ var!"
-
-#. Set the title
-#. g_snprintf(name, 100, "window%d", g_list_length(AutoMapList));
-#. gtk_window_set_title(GTK_WINDOW(automap->window), name);
-#: src/map.c:3456
-msgid "GNOME-Mud AutoMapper"
-msgstr "GNOME-Mud AutoMapper"
-
-#: src/modules.c:197
-msgid "Plugin Information"
-msgstr "Eklenti bilgileri"
-
-#: src/modules.c:213
-msgid "Plugin Name:"
-msgstr "Eklenti İsmi:"
-
-#: src/modules.c:233
-msgid "Plugin Author:"
-msgstr "Eklenti yapımcısı:"
-
-#: src/modules.c:243
-msgid "Plugin Version:"
-msgstr "Eklenti sürümü:"
-
-#: src/modules.c:253
-msgid "Plugin Description:"
-msgstr "Eklenti Açıklaması:"
-
-#: src/modules.c:263
-msgid "Enable plugin"
-msgstr ""
-
-#: src/modules.c:419
-#, c-format
-msgid "Error getting plugin handle (%s): %s."
-msgstr "Eklenti'ye komut verilemiyor.(%s): %s"
-
-#: src/modules.c:424
-#, c-format
-msgid "Error, %s not an GNOME-Mud module: %s."
-msgstr "Hata, %s bir GNOME-Mud modülü değil: %s"
-
-#: src/modules.c:450
-#, c-format
-msgid "Registering plugin `%s' under the name `%s'."
-msgstr "Eklenti kayıda `%s' adıyla`%s' geçiriliyor ."
-
-#: src/modules_api.c:64
-#, fuzzy, c-format
-msgid "Error while registering the menu: %s"
-msgstr "Kayıt menüsünde hata oluştu: %s"
-
-#: src/modules_api.c:84
-#, fuzzy, c-format
-msgid "Error while registering data %s: %s"
-msgstr "Veri kaydı için hata oluştu %s: %s"
-
-#: src/modules_api.c:92
-#, fuzzy
-msgid "Error while getting plugin from handle."
-msgstr "Eklentinin çalıştırılmasında hata oluştu."
-
-#: src/mudlist.c:404
-msgid "Could not open MudList file for reading"
-msgstr "MudList dosyası okunmak için açılmadı"
-
-#: src/mudlist.c:410
-msgid "GNOME-Mud MudList"
-msgstr "GNOME-Mud MudList"
-
-#: src/mudlist.c:420
-#, fuzzy
-msgid "Mud name:"
-msgstr "Mud İsmi:"
-
-#: src/mudlist.c:434
-#, fuzzy
-msgid "Codebase:"
-msgstr "Kaynakça:"
-
-#: src/mudlist.c:448
-#, fuzzy
-msgid "Telnet address:"
-msgstr "Telnet Adresi:"
-
-#: src/mudlist.c:464
-msgid "Connect to the mud"
-msgstr "Mud'a bağlan"
-
-#: src/mudlist.c:468
-msgid "Import and close"
-msgstr "Aktar ve kapa"
-
-#: src/mudlist.c:476
-msgid "Go to webpage of the mud"
-msgstr "Mud'ın sayfasına git"
-
-#: src/mudlist.c:483
-#, fuzzy
-msgid "Description:"
-msgstr "Açıklama :"
-
-#: src/net.c:193
-msgid "*** Connection closed.\n"
-msgstr "*** Bağlantı kesildi. \n"
-
-#: src/net.c:205
-msgid "*** Can't connect - you didn't specify a host.\n"
-msgstr "*** Bağlanılamıyor - Bir sunucu belirlemediniz.\n"
-
-#: src/net.c:211
-msgid "*** No port specified - assuming port 23.\n"
-msgstr "*** Port belirtilmemiş - Port 23 atanıyor. \n"
-
-#: src/net.c:226
-#, c-format
-msgid "*** Making connection to %s, port %s.\n"
-msgstr "*** %s 'a %s portundan bağlanılıyor. \n"
-
-#: src/net.c:251
-#, c-format
-msgid "*** Trying %s port %s...\n"
-msgstr "*** %s 'a %s... portundan bağlanılmaya çalışılıyor...\n"
-
-#: src/net.c:278
-msgid "*** Connection established.\n"
-msgstr "*** Bağlantı sağlandı. \n"
-
-#: src/prefs.c:253 src/prefs.c:411
-#, fuzzy, c-format
-msgid "Palette had %d entry instead of %d\n"
-msgid_plural "Palette had %d entries instead of %d\n"
-msgstr[0] "Palet %d yerine %d 'ye sahip oldu\n"
-msgstr[1] "Palet %d yerine %d 'ye sahip oldu\n"
-
-#: src/prefs.c:354
-#, c-format
-msgid "%s already exists and is not a directory!"
-msgstr "%s zaten var ve bir dizin değil!"
-
-#: src/prefs.c:363
-#, c-format
-msgid "%s does not exist and can NOT be created: %s"
-msgstr "%s yok ve oluşturulamaz: %s"
-
-#: src/prefs.c:638
-msgid "Font:"
-msgstr "Yazı tipi:"
-
-#: src/prefs.c:646
-msgid "Main font that is used on all open connections."
-msgstr "Bütün açık bağlantılılar için kullanılacak yazı tipi."
-
-#: src/prefs.c:649
-msgid "The quick brown fox jumps over the lazy dog"
-msgstr "Hızlı kahverengi tilki tembel köpeğin üzerinden zıpladı."
-
-#: src/prefs.c:653
-#, fuzzy
-msgid "Color palette:"
-msgstr "Renk paleti"
-
-#: src/prefs.c:659
-#, fuzzy
-msgid "Background color:"
-msgstr "Arkaplan rengi"
-
-#: src/prefs.c:665
-#, fuzzy
-msgid "Foreground color:"
-msgstr "Ön panel rengi:"
-
-#: src/prefs.c:673
-#, fuzzy
-msgid ""
-"Default foreground color used when the connection doesn't request the use of "
-"a specific color."
-msgstr "Varsayılan ön panel rengi bağlantı bir renk talep etmezken kullanıldı."
-
-#: src/prefs.c:682
-#, fuzzy
-msgid ""
-"Default background color used when the connection doesn't request the use of "
-"a specific color."
-msgstr "Varsayılan arkaplan rengi bağlantı renk talep etmeziken kullanıldı."
-
-#: src/prefs.c:698
-#, fuzzy
-msgid "Change the color of a specific color that the MUD requests to use."
-msgstr "MUD'ın istediği renge düzenle."
-
-#: src/prefs.c:740
-msgid "on top"
-msgstr "Üstte"
-
-#: src/prefs.c:740
-msgid "on the right"
-msgstr "Sağda"
-
-#: src/prefs.c:740
-msgid "at the bottom"
-msgstr "Aşağıda"
-
-#: src/prefs.c:740
-msgid "on the left"
-msgstr "Solda"
-
-#: src/prefs.c:758
-msgid "GNOME-Mud Preferences"
-msgstr "GNOME-Mud Ayarları"
-
-#: src/prefs.c:772
-msgid "Functionality"
-msgstr "İşlevsellik"
-
-#: src/prefs.c:778
-msgid "_Echo the text sent"
-msgstr "_Echo Yazı yollandı"
-
-#: src/prefs.c:789
-msgid "_Keep the text entered"
-msgstr "_Yazının sürekli girilmesini sağla"
-
-#: src/prefs.c:800
-msgid "Disable _System Keys"
-msgstr "Sistem komutlarını _iptal et."
-
-#: src/prefs.c:814
-msgid "Command division character:"
-msgstr "Komut bölme  karakteri:"
-
-#: src/prefs.c:819
-msgid ""
-"The character used to divide commands sent to the mud. For example, \";\", "
-"will let the string \"w;look\" be sent to the mud as 2 separate commands."
-msgstr ""
-"Bu karakter Mud'a göderilen komutları bölmeye yarar. Örnek olarak,\";\", \"w "
-"takısını;look\" komutları 2 ayrı komut olarak göderilecektir."
-
-#: src/prefs.c:829
-msgid "Command history:"
-msgstr "Komut geçmişi:"
-
-#: src/prefs.c:835
-msgid "The number of entries to be saved in the command history."
-msgstr "Komut geçmişinde saklanacak komut sayısı."
-
-#: src/prefs.c:843
-msgid "Terminal type:"
-msgstr "Uçbirim türü:"
-
-#: src/prefs.c:858
-msgid "MudList file:"
-msgstr "MudList dosyası:"
-
-#: src/prefs.c:861
-msgid "Select a MudList File..."
-msgstr "Bir MudList dosyası seç..."
-
-#: src/prefs.c:863
-msgid "Mudlist file to be used for the mudlist functionality."
-msgstr "Mudlist işlevselliği için kullanılacak Mudlist dosyası."
-
-#: src/prefs.c:872
-#, fuzzy
-msgid "Color and Fonts"
-msgstr "Renk ve yazı tipler."
-
-#: src/prefs.c:880
-msgid "Appearance"
-msgstr "Görünüm"
-
-#: src/prefs.c:889
-msgid "Tabs are located:"
-msgstr "Konumlandırılacak sekmeler:"
-
-#: src/prefs.c:902
-#, fuzzy
-msgid ""
-"This setting defines where to place the connection tabs that are used to "
-"change active connection."
-msgstr ""
-"Bu ayarlar aktif bağlantıyı değiştirecek bağlantı sekmelerinin nereye "
-"yerleştirileceğini belirler."
-
-#: src/prefs.c:913
-msgid "Scrollback:"
-msgstr "Geri döndür."
-
-#: src/prefs.c:919
-msgid "Number of lines to save in the scrollback."
-msgstr "Geri dödürülecek satır sayısı."
-
-#: src/prefs.c:923
-msgid "lines"
-msgstr "satırlar"
-
-#: src/prefs.c:929
-msgid "S_croll on output"
-msgstr "Çıktı üzerinde kaydır."
-
-#: src/prefs.c:931
-msgid ""
-"If enabled, the terminal will scroll to the bottom if new output appears in "
-"the connection when the terminal was scrolled back."
-msgstr ""
-"Eğer aktif hale getirilirse terminal, yeni bir metin çıktığında en aşağya "
-"sürüklenecektir."
-
-#: src/prefs.c:942
-msgid "AutoMapper"
-msgstr "Otomatik yol gösterici"
-
-#: src/prefs.c:956
-msgid "Unusual movement commands:"
-msgstr "Olağan dışı haraket komutları:"
-
-#: src/prefs.c:963
-msgid ""
-"If you use the automapper, you may want to specify here some unusual "
-"movement commands. When you use one of these, the automapper will create a "
-"path to an other map. Use a semicolon to separate the different commands."
-msgstr ""
-"Eğer otomatik yol götericiyi kullanacaksanız, Bazı olağandışı, komutlar "
-"kendiniz belirleyebilirsiniz. Bunlardan birini kullanıdığız taktirde "
-"otomatik yol gösterici başka bir yol göstericiye yol açacaktır. Farklı "
-"komutları birbirinden ayırmak için semikolon kullanın."
-
-#: src/profiles.c:301
-msgid "New profile"
-msgstr "Yeni profil"
-
-#: src/profiles.c:304
-msgid "Name of new profile:"
-msgstr "Yeni profilin adı:"
-
-#: src/profiles.c:506
-msgid "GNOME-Mud: Profilelist"
-msgstr "Gnome-Mud: Profil Listesi"
-
-#: src/profiles.c:675 src/profiles.c:1047
-msgid "Default"
-msgstr "Öntanımlı"
-
-#: src/profiles.c:856 src/profiles.c:1195
-msgid "Delete"
-msgstr "Sil"
-
-#: src/profiles.c:872
-msgid "GNOME-Mud Connections"
-msgstr "GNOME-Mud Bağlantıları"
-
-#: src/profiles.c:906
-msgid "Mud"
-msgstr "Mud"
-
-#. Translators: this is the name of your player
-#: src/profiles.c:913
-msgid "Character"
-msgstr "Karakter"
-
-#: src/profiles.c:926
-#, fuzzy
-msgid "Mud information"
-msgstr " Mud Hakkında bilgi"
-
-#: src/profiles.c:942
-msgid "Title:"
-msgstr "Başlık:"
-
-#: src/profiles.c:986
-#, fuzzy
-msgid "Character information"
-msgstr " Kaakter bilgisi"
-
-#: src/profiles.c:1002
-msgid "Character:"
-msgstr "Karakter:"
-
-#: src/profiles.c:1010
-msgid "Password:"
-msgstr "Şifre:"
-
-#: src/profiles.c:1031
-#, fuzzy
-msgid "Profile information"
-msgstr " Profil Bilgisi "
-
-#: src/profiles.c:1057
-msgid "Select Profile"
-msgstr "Profil Seç"
-
-#: src/profiles.c:1073
-msgid "Fetch from mudlist"
-msgstr "Mudlist'ten yakala"
-
-#: src/profiles.c:1125
-msgid "Connect"
-msgstr "Bağlan"
-
-#: src/profiles.c:1164
-msgid "Profiles"
-msgstr "Profiller"
-
-#: src/profiles.c:1173
-msgid "GNOME-Mud Profiles"
-msgstr "GNOME-Mud Profilleri"
-
-#: src/profiles.c:1187
-msgid "New"
-msgstr "Yeni"
-
-#: src/profiles.c:1188
-msgid "Create a new profile"
-msgstr "Yeni profil oluştur"
-
-#: src/profiles.c:1195
-msgid "Delete a profile"
-msgstr "Profil sil"
-
-#: src/profiles.c:1212
-msgid "Set aliases"
-msgstr "Takma adları ayarla"
-
-#: src/profiles.c:1219
-msgid "Set variables"
-msgstr "Değişkenler ata"
-
-#: src/profiles.c:1226
-msgid "Set triggers"
-msgstr "başlangıcı ayarla"
-
-#: src/profiles.c:1243
-#, fuzzy
-msgid "Set keybindings"
-msgstr "Tuş kombinasyonlarını ayarla"
-
-#: src/profiles.c:1260
+#: src/mud-connection-view.c:1016
 msgid "Close"
 msgstr "Kapat"
 
-#: src/profiles.c:1260
-msgid "Close the window"
-msgstr "Pencereyi kapat"
+#: src/mud-connection-view.c:1036
+msgid "Change P_rofile"
+msgstr "P_rofili Değiştir"
+
+#: src/mud-connection-view.c:1738
+msgid "<password removed>"
+msgstr "<parola kaldırıldı>"
+
+#: src/mud-connection-view.c:1924
+msgid "Connecting…"
+msgstr "Bağlanıyor…"
+
+#: src/mud-connection-view.c:1933
+#, c-format
+msgid "Downloading %s…"
+msgstr "%s İndiriliyor…"
+
+#: src/mud-connection-view.c:2019
+msgid "There was an internal http connection error."
+msgstr "Dahili bir http bağlantı hatası oluştu."
+
+#: src/mud-log.c:390
+msgid "Save log as…"
+msgstr "Günlüğü farklı kaydet…"
+
+#: src/mud-log.c:724
+msgid ""
+"\n"
+"*** Log starts *** %d/%m/%Y %H∶%M∶%S\n"
+msgstr ""
+"\n"
+"*** Günlük başlatılıyor *** %d/%m/%Y %H∶%M∶%S\n"
+
+#: src/mud-log.c:810
+msgid "Log Error"
+msgstr "Günlük Hatası"
+
+#: src/mud-log.c:811
+#, c-format
+msgid "Could not open “%s” for writing."
+msgstr "“%s” yazmak için açılamadı."
+
+#: src/mud-log.c:837 src/mud-log.c:918 src/mud-log.c:934
+msgid "Could not write data to log file!"
+msgstr "Veri günlük dosyasına yazılamadı!"
+
+#: src/mud-log.c:844
+msgid ""
+"\n"
+" *** Log stops *** %d/%m/%Y %H∶%M∶%S\n"
+msgstr ""
+"\n"
+" *** Günlük sonlandırılıyor *** %d/%m/%Y %H∶%M∶%S\n"
+
+#: src/mud-profile.c:727
+#, c-format
+msgid "Palette had %u entry instead of %u\n"
+msgid_plural "Palette had %u entries instead of %u\n"
+msgstr[0] "Palet %u yerine %u girdiye sahip oldu\n"
+msgstr[1] ""
+"Palet %u yerine %u girdiye sahip oldu\n"
+"\n"
+
+#: src/mud-trigger.c:718
+msgid "#Submatch Out of Range#"
+msgstr "#Submatch Kapsama Dışı#"
+
+#: src/mud-window.c:724
+msgid "Connect to Multi-User Dungeons"
+msgstr "Multi-User Dungeons’a bağlan"
+
+#: src/mud-window.c:738
+msgid "translator-credits"
+msgstr ""
+"Sami Onur Zaim <onurzaim@hotmail.com>, 2003\n"
+"Sabri Ünal <libreajans@gmail.com>, 2019-2020"
+
+#: src/mud-window.c:841
+msgid "Error Saving Buffer"
+msgstr "Arabellek Kaydedilirken Hata"
+
+#: src/mud-window.c:1104
+msgid "_Manage Profiles…"
+msgstr "Profilleri _Yönet…"
+
+#: src/handlers/mud-telnet-mccp.c:423
+msgid ""
+"\n"
+"MCCP data corrupted. Aborting connection.\n"
+msgstr ""
+"\n"
+"MCCP verisi bozulmuş. Bağlantı sonlandırılıyor.\n"
+
+#~ msgid "gnome-mud"
+#~ msgstr "gnome-mud"
+
+#~ msgid ""
+#~ "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
+#~ msgstr ""
+#~ "Bir Pango yazı tipi ismi. Örnek olarak \"Sans 12\" veya \"Monospace Bold "
+#~ "14\"."
+
+#~ msgid "Font"
+#~ msgstr "Yazı tipi"
+
+#, fuzzy
+#~ msgid ""
+#~ "GNOME-Mud has a 16-color palette that MUDs can use. It must be specified "
+#~ "in the form of a colon-separated list of color names. Color names should "
+#~ "be in hex format e.g. \"#FF00FF\"."
+#~ msgstr ""
+#~ "GNOME-Mud Mud'ın kullanabileceği 16 renklik bir palete sahiptir. Bunlar "
+#~ "sekmelere ayrılmış olarak tanımlanmak zorundadır. Renkler Hex biçiminde "
+#~ "tanımlanmış olmalıdır. ör: \"#FF00FF\"."
+
+#~ msgid ""
+#~ "GNOME-Mud will attempt to transmit a terminal type (like ANSI or VT100) "
+#~ "if the MUD requests one. This option sets the terminal type that will be "
+#~ "sent."
+#~ msgstr ""
+#~ "Eğer GNOME-Mud talep ederse bir uçbirim türü aktarmaya çalışacak (ANSI "
+#~ "veya VT100 gibi). Bu seçenek aktarılacak uçbirim türünü ayarlamanızı "
+#~ "sağlar."
+
+#, fuzzy
+#~ msgid "How many entries to keep in the command history"
+#~ msgstr "Komut geçimişde tutulacak komut sayısı"
+
+#, fuzzy
+#~ msgid "How many entries to keep in the command history."
+#~ msgstr "Komut geçimişde tutulacak komut sayısı"
+
+#, fuzzy
+#~ msgid ""
+#~ "If enabled, GNOME-Mud will offer a few built-in keybindings. They can be "
+#~ "overridden by custom keybindings, or they can be disabled completely with "
+#~ "this option."
+#~ msgstr ""
+#~ "Etkinleştirildiğinde , GNOME-Mud size birkaç tuş kombinasyonu "
+#~ "önerecektir. Bu tuş kombinasyonlarını isteğinize göre düzenleyebilir veya "
+#~ "kullanmayabilirsiniz."
+
+#, fuzzy
+#~ msgid "Last log file"
+#~ msgstr "Son kayıt dizini"
+
+#~ msgid ""
+#~ "List of commands which will be treated as movement commands by the "
+#~ "automapper. A semicolon is used to separate each command."
+#~ msgstr ""
+#~ "Otomatik yol göstericisitarafından  haraket komutları olarak algılanacak "
+#~ "komutların listesi. Komutları ayırmak için noktalıvirgül kullanınız."
+
+#~ msgid ""
+#~ "List of connections known to GNOME-Mud. The list contains strings naming "
+#~ "subdirectories relative to /apps/gnome-mud/connections."
+#~ msgstr ""
+#~ "GNOME-Mud tarafından bilinen komutların listesi. Bu liste  /apps/gnome-"
+#~ "mud/connections dizin ve alt dizinlerinde uzantılarını içerir."
+
+#~ msgid "List of movement commands"
+#~ msgstr "Haraket komutlarının listesi"
+
+#~ msgid ""
+#~ "List of profiles known to GNOME-Mud. The list contains strings naming "
+#~ "subdirectories relative to /apps/gnome-mud/profiles."
+#~ msgstr ""
+#~ "GNOME-Mud tarafından bilinen profillerin listesi.  Bu liste  //apps/gnome-"
+#~ "mud/profiles dizin ve alt dizinlerinde uzantılarını içerir."
+
+#~ msgid "Mudlist file"
+#~ msgstr "Mudlist dosyası"
+
+#~ msgid "Tab location"
+#~ msgstr "Sekme konumu"
+
+#~ msgid ""
+#~ "The location of the connection tabs. Valid options are \"left\", \"right"
+#~ "\", \"top\" and \"bottom\"."
+#~ msgstr ""
+#~ "Bağlantı sekmelerinin yeri. Geçerli seçenekler \"sol\", \"sağ\", \"yukarı"
+#~ "\" ve \"aşağı\"."
+
+#~ msgid "Whether to enable or disable the system keys"
+#~ msgstr "Olmasa da etkinleşirilecek veya etkinleştirilmeyecek sistem tuşları"
+
+#~ msgid "No void characters allowed."
+#~ msgstr "Geçersiz karakterler kullanılamaz."
+
+#~ msgid "Actions"
+#~ msgstr "Haraketler"
+
+#~ msgid "Character '%c' not allowed."
+#~ msgstr "'%c' karakteri kullanılamaz"
+
+#~ msgid "%s too big."
+#~ msgstr "%s çok büyük"
+
+#~ msgid "Can't duplicate %s."
+#~ msgstr "'%s çoğaltılamıyor"
+
+#~ msgid "Alias"
+#~ msgstr "Takma ad"
+
+#~ msgid "Replacement"
+#~ msgstr "Yer değiştirme"
+
+#~ msgid "Values"
+#~ msgstr "Değerler"
+
+#, fuzzy
+#~ msgid "%s: trying to access to undefined data range: %d"
+#~ msgstr ""
+#~ "Pencere verisi: Tanımlanmamış veri kümesine ulaşılmaya çalışılıyor: %d"
+
+#, fuzzy
+#~ msgid "GNOME-Mud Configuration Center"
+#~ msgstr "GNOME-Mud Denetim Merkezi"
+
+#, fuzzy
+#~ msgid "There was an error accessing GConf: %s"
+#~ msgstr "Yardımı görüntülemeye çalışırken hata oluştu: %s"
+
+#~ msgid "Failed to init GConf: %s"
+#~ msgstr "Gconf Yapılandırılamadı:%s"
+
+#~ msgid "Connect..."
+#~ msgstr "Bağlan..."
+
+#~ msgid "*** Internal error: no such connection.\n"
+#~ msgstr "*** İçsel hata: Bağlantı yok.\n"
+
+#~ msgid "A Multi-User Dungeon (MUD) client for GNOME.\n"
+#~ msgstr "GNOME için çok kullanıcılı Dungeon(MUD) istemcisi. \n"
+
+#~ msgid "GNOME-Mud home page"
+#~ msgstr "GNOME-Mud ana sayfası"
+
+#~ msgid "There was an error displaying help: %s"
+#~ msgstr "Yardımı görüntülemeye çalışırken hata oluştu: %s"
+
+#~ msgid "Wizard..."
+#~ msgstr "Sihirbaz..."
+
+#, fuzzy
+#~ msgid "Open the Connection Wizard"
+#~ msgstr "Bağlantı_Sihirbazı"
+
+#~ msgid "Profiles..."
+#~ msgstr "Profiller..."
+
+#~ msgid "Exit"
+#~ msgstr "Çıkış"
+
+#, fuzzy
+#~ msgid "Quit GNOME-Mud"
+#~ msgstr "Gnome-Mud"
+
+#~ msgid "Connection _Wizard..."
+#~ msgstr "Bağlantı_Sihirbazı"
+
+#~ msgid "_MudList Listing..."
+#~ msgstr "_MudList Listeleniyor..."
+
+#~ msgid "C_onnect..."
+#~ msgstr "B_ağlan"
+
+#~ msgid "_Plugin Information..."
+#~ msgstr "_Eklenti bilgisi"
+
+#~ msgid "Auto _Mapper..."
+#~ msgstr "Otomatik _yolgösterici"
+
+#~ msgid "P_lugins"
+#~ msgstr "Eklen_tiler"
+
+#~ msgid "User Manual"
+#~ msgstr "Kullanıcı elkitabı"
+
+#~ msgid "Display the GNOME-Mud User Manual"
+#~ msgstr "GNOME-Mud kullanıcı elkitabını göster"
+
+#~ msgid "Plugin API Manual"
+#~ msgstr "API Eklentisi Elkitabı"
+
+#~ msgid "Display the GNOME-Mud Plugin API Manual"
+#~ msgstr "GNOME-Mud API eklentisi için elkitabını göster"
+
+#~ msgid "Main"
+#~ msgstr "Ana Sayfa"
+
+#~ msgid "GNOME-Mud version %s (compiled %s, %s)\n"
+#~ msgstr "GNOME-Mud sürümü %s (Derlenme %s, %s)\n"
+
+#, fuzzy
+#~ msgid "Distributed under the terms of the GNU General Public License.\n"
+#~ msgstr "GNU(Halka Açık Lisans) lisansı altında dağıtılmaktadır. \n"
+
+#~ msgid "You must use capture first!"
+#~ msgstr "Öncelikle yakalama seçeneğini kullanmalısınız."
+
+#~ msgid "Can't add an existing key."
+#~ msgstr "Varolan bir veriyi eklemek mümkün olmadı"
+
+#~ msgid "Incomplete fields."
+#~ msgstr "Tamamlanmamış boşluklar."
+
+#, fuzzy
+#~ msgid "GNOME-Mud Keybinding Center"
+#~ msgstr "Gnome-Mud Key ayarlama Merkezi"
+
+#~ msgid "Key"
+#~ msgstr "Anahtar"
+
+#~ msgid "Command"
+#~ msgstr "Komut"
+
+#~ msgid "Bind"
+#~ msgstr "Birleştir"
+
+#~ msgid "Capture"
+#~ msgstr "Yakala"
+
+#~ msgid "*** Already logging to %s. Close that log first.\n"
+#~ msgstr ""
+#~ "***. Halihazırda giriş yapılıyor %s. Öncelikle kayıt defterini kapat.\n"
+
+#~ msgid "Open log"
+#~ msgstr "Kayıt defterini aç"
+
+#, fuzzy
+#~ msgid "*** No log to be closed is open in this window.\n"
+#~ msgstr "***. Bu pencerede kapanmak üzere hiçbir pencere açılmadı.\n"
+
+#~ msgid "*** Couldn't open %s.\n"
+#~ msgstr "***. %s Açılamadı.\n"
+
+#~ msgid "*** Stopped logging to %s.\n"
+#~ msgstr "*** Sisteme giriş durduruluyor %s.\n"
+
+#~ msgid "Please select a log file..."
+#~ msgstr "Lütfen bir kayıt dosyası seçiniz."
+
+#~ msgid "Ready."
+#~ msgstr "Hazır."
+
+#~ msgid "Canceled."
+#~ msgstr "İptal edildi."
+
+#~ msgid "A link already exists here!"
+#~ msgstr "Bir bağ zaten var!"
+
+#~ msgid "Ready"
+#~ msgstr "Hazır"
+
+#~ msgid "Link created"
+#~ msgstr "Bağ oluşturuldu"
+
+#~ msgid "Can't create a node here"
+#~ msgstr "Bir geçit eklenemiyor."
+
+#~ msgid "New Map"
+#~ msgstr "Yeni yol göstericisi"
+
+#~ msgid "Creating a path"
+#~ msgstr "Dizin oluşturuluyor"
+
+#~ msgid "Path lead to a new map"
+#~ msgstr "Yeni yol göstericiye bir yol belirle"
+
+#~ msgid "New map"
+#~ msgstr "Yeni yol gösterici"
+
+#, fuzzy
+#~ msgid "Path follows an already existing path:"
+#~ msgstr "Yol göstericiye giden yol zaten tanımlanmış:"
+
+#~ msgid "Create"
+#~ msgstr "Oluştur"
+
+#~ msgid "Enter in a path"
+#~ msgstr "Bit dizine uygula"
+
+#~ msgid "Create a new path:"
+#~ msgstr "Yeni dizin olştur."
+
+#~ msgid "Enter in existing path:"
+#~ msgstr "Var olan dizin içine oluştur:"
+
+#~ msgid ""
+#~ "This node has already 8 links. Destroy one of these before trying to "
+#~ "create a new one"
+#~ msgstr ""
+#~ "Bu geçit halihazırda 8 bağa sahip. Yenisini oluşturabilmek için birini "
+#~ "siliniz."
+
+#~ msgid "Enter to finish, Esc to quit"
+#~ msgstr "Bitirmek için Enter'ei Çıkmak için ESC tuşuna basın"
+
+#~ msgid "Use move buttons to build the link."
+#~ msgstr "Bağı oluşturmak için ok tuşlarını kullanınız"
+
+#~ msgid "Zoom In"
+#~ msgstr "Yakınlaştır"
+
+#~ msgid "Zoom Out"
+#~ msgstr "Uzaklaştır"
+
+#~ msgid "Configure Automap"
+#~ msgstr "Automap'i ayarla"
+
+#~ msgid "Teleport here"
+#~ msgstr "Buraya aktar"
+
+#~ msgid "Create new link"
+#~ msgstr "Yeni bağ oluştur"
+
+#~ msgid "Enter"
+#~ msgstr "Giriş"
+
+#~ msgid "N"
+#~ msgstr "N"
+
+#~ msgid "NE"
+#~ msgstr "NE"
+
+#~ msgid "E"
+#~ msgstr "E"
+
+#~ msgid "SE"
+#~ msgstr "SE"
+
+#~ msgid "S"
+#~ msgstr "S"
+
+#~ msgid "SW"
+#~ msgstr "SW"
+
+#~ msgid "W"
+#~ msgstr "W"
+
+#~ msgid "NW"
+#~ msgstr "NW"
+
+#~ msgid "Up"
+#~ msgstr "Yukarı"
+
+#~ msgid "Down"
+#~ msgstr "Aşağı"
+
+#~ msgid "Remove"
+#~ msgstr "Kaldır"
+
+#~ msgid "Load"
+#~ msgstr "Yükle"
+
+#~ msgid "Save"
+#~ msgstr "kaydet"
+
+#~ msgid "Load map"
+#~ msgstr "Yolgösterici yükle"
+
+#~ msgid "Save map"
+#~ msgstr "Yol göstericiyi kaydet"
+
+#~ msgid "No link existed in that direction"
+#~ msgstr "Bu yönde bir bağ bulunamadı"
+
+#~ msgid "Cannot break links to a node going up or down"
+#~ msgstr "Bağları aşağı veya yukarı giden herhangi bir geçide bölemiyorum"
+
+#~ msgid "Destination node has already a connection here"
+#~ msgstr "Geçitte bir bağlantı oluşturulmuş."
+
+#~ msgid "Can't create a link to another floor!"
+#~ msgstr "Diğer güzergaha bağ oluşturulamıyor."
+
+#~ msgid "There is already a link here!"
+#~ msgstr "Halihazırda bir bağ var!"
+
+#~ msgid "GNOME-Mud AutoMapper"
+#~ msgstr "GNOME-Mud AutoMapper"
+
+#~ msgid "Plugin Information"
+#~ msgstr "Eklenti bilgileri"
+
+#~ msgid "Plugin Name:"
+#~ msgstr "Eklenti İsmi:"
+
+#~ msgid "Plugin Author:"
+#~ msgstr "Eklenti yapımcısı:"
+
+#~ msgid "Plugin Description:"
+#~ msgstr "Eklenti Açıklaması:"
+
+#~ msgid "Error getting plugin handle (%s): %s."
+#~ msgstr "Eklenti'ye komut verilemiyor.(%s): %s"
+
+#~ msgid "Error, %s not an GNOME-Mud module: %s."
+#~ msgstr "Hata, %s bir GNOME-Mud modülü değil: %s"
+
+#~ msgid "Registering plugin `%s' under the name `%s'."
+#~ msgstr "Eklenti kayıda `%s' adıyla`%s' geçiriliyor ."
+
+#, fuzzy
+#~ msgid "Error while registering the menu: %s"
+#~ msgstr "Kayıt menüsünde hata oluştu: %s"
+
+#, fuzzy
+#~ msgid "Error while registering data %s: %s"
+#~ msgstr "Veri kaydı için hata oluştu %s: %s"
+
+#, fuzzy
+#~ msgid "Error while getting plugin from handle."
+#~ msgstr "Eklentinin çalıştırılmasında hata oluştu."
+
+#~ msgid "Could not open MudList file for reading"
+#~ msgstr "MudList dosyası okunmak için açılmadı"
+
+#~ msgid "GNOME-Mud MudList"
+#~ msgstr "GNOME-Mud MudList"
+
+#, fuzzy
+#~ msgid "Mud name:"
+#~ msgstr "Mud İsmi:"
+
+#, fuzzy
+#~ msgid "Codebase:"
+#~ msgstr "Kaynakça:"
+
+#, fuzzy
+#~ msgid "Telnet address:"
+#~ msgstr "Telnet Adresi:"
+
+#~ msgid "Import and close"
+#~ msgstr "Aktar ve kapa"
+
+#~ msgid "Go to webpage of the mud"
+#~ msgstr "Mud'ın sayfasına git"
+
+#, fuzzy
+#~ msgid "Description:"
+#~ msgstr "Açıklama :"
+
+#~ msgid "*** Can't connect - you didn't specify a host.\n"
+#~ msgstr "*** Bağlanılamıyor - Bir sunucu belirlemediniz.\n"
+
+#~ msgid "*** No port specified - assuming port 23.\n"
+#~ msgstr "*** Port belirtilmemiş - Port 23 atanıyor. \n"
+
+#~ msgid "*** Trying %s port %s...\n"
+#~ msgstr "*** %s 'a %s... portundan bağlanılmaya çalışılıyor...\n"
+
+#~ msgid "%s already exists and is not a directory!"
+#~ msgstr "%s zaten var ve bir dizin değil!"
+
+#~ msgid "%s does not exist and can NOT be created: %s"
+#~ msgstr "%s yok ve oluşturulamaz: %s"
+
+#~ msgid "Font:"
+#~ msgstr "Yazı tipi:"
+
+#~ msgid "Main font that is used on all open connections."
+#~ msgstr "Bütün açık bağlantılılar için kullanılacak yazı tipi."
+
+#~ msgid "The quick brown fox jumps over the lazy dog"
+#~ msgstr "Hızlı kahverengi tilki tembel köpeğin üzerinden zıpladı."
+
+#, fuzzy
+#~ msgid ""
+#~ "Default foreground color used when the connection doesn't request the use "
+#~ "of a specific color."
+#~ msgstr ""
+#~ "Varsayılan ön panel rengi bağlantı bir renk talep etmezken kullanıldı."
+
+#, fuzzy
+#~ msgid ""
+#~ "Default background color used when the connection doesn't request the use "
+#~ "of a specific color."
+#~ msgstr "Varsayılan arkaplan rengi bağlantı renk talep etmeziken kullanıldı."
+
+#, fuzzy
+#~ msgid "Change the color of a specific color that the MUD requests to use."
+#~ msgstr "MUD'ın istediği renge düzenle."
+
+#~ msgid "on top"
+#~ msgstr "Üstte"
+
+#~ msgid "on the right"
+#~ msgstr "Sağda"
+
+#~ msgid "at the bottom"
+#~ msgstr "Aşağıda"
+
+#~ msgid "on the left"
+#~ msgstr "Solda"
+
+#~ msgid "Functionality"
+#~ msgstr "İşlevsellik"
+
+#~ msgid "Disable _System Keys"
+#~ msgstr "Sistem komutlarını _iptal et."
+
+#~ msgid ""
+#~ "The character used to divide commands sent to the mud. For example, \";"
+#~ "\", will let the string \"w;look\" be sent to the mud as 2 separate "
+#~ "commands."
+#~ msgstr ""
+#~ "Bu karakter Mud'a göderilen komutları bölmeye yarar. Örnek olarak,\";\", "
+#~ "\"w takısını;look\" komutları 2 ayrı komut olarak göderilecektir."
+
+#~ msgid "Command history:"
+#~ msgstr "Komut geçmişi:"
+
+#~ msgid "The number of entries to be saved in the command history."
+#~ msgstr "Komut geçmişinde saklanacak komut sayısı."
+
+#~ msgid "Terminal type:"
+#~ msgstr "Uçbirim türü:"
+
+#~ msgid "MudList file:"
+#~ msgstr "MudList dosyası:"
+
+#~ msgid "Select a MudList File..."
+#~ msgstr "Bir MudList dosyası seç..."
+
+#~ msgid "Mudlist file to be used for the mudlist functionality."
+#~ msgstr "Mudlist işlevselliği için kullanılacak Mudlist dosyası."
+
+#, fuzzy
+#~ msgid "Color and Fonts"
+#~ msgstr "Renk ve yazı tipler."
+
+#~ msgid "Appearance"
+#~ msgstr "Görünüm"
+
+#~ msgid "Tabs are located:"
+#~ msgstr "Konumlandırılacak sekmeler:"
+
+#, fuzzy
+#~ msgid ""
+#~ "This setting defines where to place the connection tabs that are used to "
+#~ "change active connection."
+#~ msgstr ""
+#~ "Bu ayarlar aktif bağlantıyı değiştirecek bağlantı sekmelerinin nereye "
+#~ "yerleştirileceğini belirler."
+
+#~ msgid "Scrollback:"
+#~ msgstr "Geri döndür."
+
+#~ msgid "Number of lines to save in the scrollback."
+#~ msgstr "Geri dödürülecek satır sayısı."
+
+#~ msgid "lines"
+#~ msgstr "satırlar"
+
+#~ msgid ""
+#~ "If enabled, the terminal will scroll to the bottom if new output appears "
+#~ "in the connection when the terminal was scrolled back."
+#~ msgstr ""
+#~ "Eğer aktif hale getirilirse terminal, yeni bir metin çıktığında en aşağya "
+#~ "sürüklenecektir."
+
+#~ msgid "AutoMapper"
+#~ msgstr "Otomatik yol gösterici"
+
+#~ msgid "Unusual movement commands:"
+#~ msgstr "Olağan dışı haraket komutları:"
+
+#~ msgid ""
+#~ "If you use the automapper, you may want to specify here some unusual "
+#~ "movement commands. When you use one of these, the automapper will create "
+#~ "a path to an other map. Use a semicolon to separate the different "
+#~ "commands."
+#~ msgstr ""
+#~ "Eğer otomatik yol götericiyi kullanacaksanız, Bazı olağandışı, komutlar "
+#~ "kendiniz belirleyebilirsiniz. Bunlardan birini kullanıdığız taktirde "
+#~ "otomatik yol gösterici başka bir yol göstericiye yol açacaktır. Farklı "
+#~ "komutları birbirinden ayırmak için semikolon kullanın."
+
+#~ msgid "Name of new profile:"
+#~ msgstr "Yeni profilin adı:"
+
+#~ msgid "GNOME-Mud: Profilelist"
+#~ msgstr "Gnome-Mud: Profil Listesi"
+
+#~ msgid "Default"
+#~ msgstr "Öntanımlı"
+
+#~ msgid "GNOME-Mud Connections"
+#~ msgstr "GNOME-Mud Bağlantıları"
+
+#~ msgid "Mud"
+#~ msgstr "Mud"
+
+#, fuzzy
+#~ msgid "Mud information"
+#~ msgstr " Mud Hakkında bilgi"
+
+#~ msgid "Title:"
+#~ msgstr "Başlık:"
+
+#, fuzzy
+#~ msgid "Character information"
+#~ msgstr " Kaakter bilgisi"
+
+#~ msgid "Password:"
+#~ msgstr "Şifre:"
+
+#, fuzzy
+#~ msgid "Profile information"
+#~ msgstr " Profil Bilgisi "
+
+#~ msgid "Fetch from mudlist"
+#~ msgstr "Mudlist'ten yakala"
+
+#~ msgid "GNOME-Mud Profiles"
+#~ msgstr "GNOME-Mud Profilleri"
+
+#~ msgid "New"
+#~ msgstr "Yeni"
+
+#~ msgid "Set aliases"
+#~ msgstr "Takma adları ayarla"
+
+#~ msgid "Set variables"
+#~ msgstr "Değişkenler ata"
+
+#~ msgid "Set triggers"
+#~ msgstr "başlangıcı ayarla"
+
+#~ msgid "Close the window"
+#~ msgstr "Pencereyi kapat"
 
 #~ msgid "(C) 1998, 1999, 2000, 2001, 2002, 2003 Robin Ericsson"
 #~ msgstr "(C) 1998, 1999, 2000, 2001, 2002, 2003 Robin Ericsson"
-
-#~ msgid ""
-#~ "\n"
-#~ "Python version %s\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Python sürümü %s\n"
 
 #~ msgid "Is Plugin Enabled?"
 #~ msgstr "Eklenti etkinleştirildi mi?"

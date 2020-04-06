@@ -1,1172 +1,833 @@
 # Ukrainian translation of gnome-mud.
 # Copyright (C) 2005 Free Software Foundation
 # This file is distributed under the same license as the PACKAGE package.
-# Maxim Dziumanenko <mvd@mylinux.ua>, 2005
 #
+# Maxim Dziumanenko <mvd@mylinux.ua>, 2005.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-mud\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-02 02:58+0300\n"
-"PO-Revision-Date: 2005-08-02 08:59+0300\n"
-"Last-Translator: Maxim V. Dziumanenko <mvd@mylinux.com.ua>\n"
-"Language-Team: Ukrainian <uk@li.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-mud/issues\n"
+"POT-Creation-Date: 2019-10-28 15:59+0000\n"
+"PO-Revision-Date: 2020-04-06 11:33+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-
-#: ../gnome-mud.desktop.in.h:1
-#: ../src/init.c:270
-msgid "GNOME-Mud"
-msgstr "GNOME-Mud"
-
-#: ../gnome-mud.desktop.in.h:2
-msgid "The GNOME MUD Client"
-msgstr "Клієнт GNOME MUD "
-
-#: ../gnome-mud.schemas.in.h:1
-msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
-msgstr "Назва шрифту у форматі Pango. Приклади: \"Sans 12\" або \"Monospace Bold 14\"."
-
-#: ../gnome-mud.schemas.in.h:2
-msgid "A character that is used to split commands in a string like \"w;w;w;l\", which will be sent to the MUD as 4 separate commands."
-msgstr ""
-"Символ, що використовується для розділення команд у подібному рядку \"w;w;w;l\", який буде надсилатись MUD як 4 окремі команди."
-
-#: ../gnome-mud.schemas.in.h:3
-#: ../src/profiles.c:1212
-msgid "Aliases"
-msgstr "Псевдоніми"
-
-#: ../gnome-mud.schemas.in.h:4
-msgid "Color palette"
-msgstr "Палітра кольорів"
-
-#: ../gnome-mud.schemas.in.h:5
-msgid "Command Divider"
-msgstr "Розділювач команд"
-
-#: ../gnome-mud.schemas.in.h:6
-msgid "Default color of the background"
-msgstr "Типовий колір тла"
-
-#: ../gnome-mud.schemas.in.h:7
-msgid "Default color of the background, as a color specification (can be HTML-style hex digits, or a color name such as \"red\")."
-msgstr "Типовий колір тла, у вигляді шістнадцяткових цифр (як у HTML), або назви кольору (наприклад \"red\")."
-
-#: ../gnome-mud.schemas.in.h:8
-msgid "Default color of the text"
-msgstr "Типовий колір тексту"
-
-#: ../gnome-mud.schemas.in.h:9
-msgid "Default color of the text, as a color specification (can be HTML-style hex digits, or a color name such as \"red\")."
-msgstr "Типовий колір тексту, у вигляді шістнадцяткових цифр (як у HTML), або назви кольору (наприклад \"red\")."
-
-#: ../gnome-mud.schemas.in.h:10
-msgid "File where the mud list will be read from to be used in the MudList dialog."
-msgstr "Файл, з якого читається список mud, що використовується у діалоговому вікні MudList."
-
-#: ../gnome-mud.schemas.in.h:11
-msgid "Font"
-msgstr "Шрифт"
-
-#: ../gnome-mud.schemas.in.h:12
-msgid "GNOME-Mud has a 16-color palette that MUDs can use. It must be specified in the form of a colon-separated list of color names. Color names should be in hex format e.g. \"#FF00FF\"."
-msgstr ""
-"GNOME-Mud має a 16-кольорову палітру, якою може користуватись MUD. Вона має бути списку розділених двокрапкою назв кольорів. Назви кольорів мають бути у шістнадцятковому форматі, наприклад \"#FF00FF\"."
-
-#: ../gnome-mud.schemas.in.h:13
-#: ../src/prefs.c:850
-msgid "GNOME-Mud will attempt to transmit a terminal type (like ANSI or VT100) if the MUD requests one. This option sets the terminal type that will be sent."
-msgstr ""
-"GNOME-Mud буде намагатись передавати тип терміналу (як ANSI чи VT100) на запит від MUD. Цей параметр встановлює тип терміналу, що надсилатиметься."
-
-#: ../gnome-mud.schemas.in.h:14
-msgid "How many entries to keep in the command history"
-msgstr "Скільки елементів зберігається у історії команд"
-
-#: ../gnome-mud.schemas.in.h:15
-msgid "How many entries to keep in the command history."
-msgstr "Скільки елементів зберігається у історії команд."
-
-#: ../gnome-mud.schemas.in.h:16
-msgid "How often in seconds gnome-mud should flush logfiles."
-msgstr "Частота скидання файлів журналу gnome-mud (у секундах)."
-
-#: ../gnome-mud.schemas.in.h:17
-#: ../src/prefs.c:804
-msgid "If enabled, GNOME-Mud will offer a few built-in keybindings. They can be overridden by custom keybindings, or they can be disabled completely with this option."
-msgstr ""
-"Якщо увімкнено, GNOME-Mud пропонуватиме кілька вбудованих комбінацій клавіш. Їх можна перевизначити власними комбінаціями, або зовсім вимкнути за допомогою цього параметра."
-
-#: ../gnome-mud.schemas.in.h:18
-#: ../src/prefs.c:782
-msgid "If enabled, all the text typed in will be echoed in the terminal, making it easier to control what is sent."
-msgstr ""
-"Якщо увімкнено, весь набраний текст, що вводиться буде виводитись на термінал, спрощуючи контроль за надсиланням."
-
-#: ../gnome-mud.schemas.in.h:19
-#: ../src/prefs.c:793
-msgid "If enabled, the text that is sent to the connection will be left as a selection in the entry box. Otherwise, the text entry box will be cleared after each text input."
-msgstr ""
-"Якщо увімкнено, текст, що надсилається до з'єднання залишиться виділеним у полів вводу. У іншому випадку, поле вводу очищається після кожного вводу тексту."
-
-#: ../gnome-mud.schemas.in.h:20
-msgid "If enabled, whenever there's new output the terminal will be scrolled to the bottom."
-msgstr "Якщо увімкнено, при появі нового виводу термінал буде прокручуватись вниз."
-
-#: ../gnome-mud.schemas.in.h:21
-#: ../src/profiles.c:1243
-msgid "Keybindings"
-msgstr "Комбінації клавіш"
-
-#: ../gnome-mud.schemas.in.h:22
-msgid "Last log file"
-msgstr "Файл останнього журналу"
-
-#: ../gnome-mud.schemas.in.h:23
-msgid "List of commands which will be treated as movement commands by the automapper. A semicolon is used to separate each command."
-msgstr ""
-"Список команд, які розглядатимуться automapper-ом як команди переміщення. для розділення команд використовується крапка з комою."
-
-#: ../gnome-mud.schemas.in.h:24
-msgid "List of connections"
-msgstr "Список з'єднань"
-
-#: ../gnome-mud.schemas.in.h:25
-msgid "List of connections known to GNOME-Mud. The list contains strings naming subdirectories relative to /apps/gnome-mud/connections."
-msgstr "Перелік відомих GNOME-Mud з'єднань. Список містить рядки з назвами підкаталогів відносно каталогу /apps/gnome-mud/connections."
-
-#: ../gnome-mud.schemas.in.h:26
-msgid "List of movement commands"
-msgstr "Список команд переміщення"
-
-#: ../gnome-mud.schemas.in.h:27
-msgid "List of profiles"
-msgstr "Перелік профілів"
-
-#: ../gnome-mud.schemas.in.h:28
-msgid "List of profiles known to GNOME-Mud. The list contains strings naming subdirectories relative to /apps/gnome-mud/profiles."
-msgstr "Перелік відомих GNOME-Mud профілів. Список містить рядки з назвами підкаталогів відносно каталогу /apps/gnome-mud/profiles."
-
-#: ../gnome-mud.schemas.in.h:29
-msgid "Log flush interval"
-msgstr "Інтервал запису журналу"
-
-#: ../gnome-mud.schemas.in.h:30
-msgid "Mudlist file"
-msgstr "Файл Mudlist"
-
-#: ../gnome-mud.schemas.in.h:31
-msgid "Number of lines to keep in scrollback"
-msgstr "Кількість рядків, які зберігаються для прокрутки"
-
-#: ../gnome-mud.schemas.in.h:32
-msgid "Number of scrollback lines to keep around. You can scroll back in the terminal by this number of lines; lines that don't fit in the scrollback are discarded."
-msgstr ""
-"Кількість рядків, які зберігаються для прокрутки. Ви можете прокручувати термінал назад на вказану кількість рядків. Рядки, що  не вміщуються у область прокрутки відкидаються."
-
-#: ../gnome-mud.schemas.in.h:33
-msgid "Tab location"
-msgstr "Позиція вкладок"
-
-#: ../gnome-mud.schemas.in.h:34
-msgid "Terminal type"
-msgstr "Тип терміналу"
-
-#: ../gnome-mud.schemas.in.h:35
-msgid "The file that was last used to save a mudlog in."
-msgstr "Файл, що був востаннє використаний для збереження журналу."
-
-#: ../gnome-mud.schemas.in.h:36
-msgid "The location of the connection tabs. Valid options are \"left\", \"right\", \"top\" and \"bottom\"."
-msgstr "Позиція вкладок з'єднання. Допустимі значення \"left\", \"right\", \"top\" and \"bottom\"."
-
-#: ../gnome-mud.schemas.in.h:37
-#: ../src/data.c:346
-#: ../src/profiles.c:1226
-msgid "Triggers"
-msgstr "Тригери"
-
-#. vars
-#: ../gnome-mud.schemas.in.h:38
-#: ../src/data.c:353
-#: ../src/profiles.c:1219
-msgid "Variables"
-msgstr "Змінні"
-
-#: ../gnome-mud.schemas.in.h:39
-msgid "Whether to echo sent text to the connection"
-msgstr "Чи виводити надісланий у з'єднання текст"
-
-#: ../gnome-mud.schemas.in.h:40
-msgid "Whether to enable or disable the system keys"
-msgstr "Чи вмикати системні клавіші"
-
-#: ../gnome-mud.schemas.in.h:41
-msgid "Whether to keep text sent to the connection"
-msgstr "Чи зберігати надісланий у з'єднання текст"
-
-#: ../gnome-mud.schemas.in.h:42
-msgid "Whether to scroll to the bottom when there's new output"
-msgstr "Чи прокручувати вікно донизу при виводі нової інформації"
-
-#: ../src/data.c:247
-msgid "No void characters allowed."
-msgstr "Пусті символи не дозволяються."
-
-#. actions
-#: ../src/data.c:251
-#: ../src/data.c:345
-msgid "Actions"
-msgstr "Дії"
-
-#: ../src/data.c:253
-#, c-format
-msgid "Character '%c' not allowed."
-msgstr "Символ '%c' не дозволяється."
-
-#: ../src/data.c:260
-#: ../src/data.c:267
-#, c-format
-msgid "%s too big."
-msgstr "%s занадто велике."
-
-#: ../src/data.c:274
-#, c-format
-msgid "Can't duplicate %s."
-msgstr "Не вдається продублювати %s."
-
-#. alias
-#: ../src/data.c:337
-msgid "Alias"
-msgstr "Псевдонім"
-
-#: ../src/data.c:338
-msgid "Replacement"
-msgstr "Заміна"
-
-#: ../src/data.c:354
-msgid "Values"
-msgstr "Значення"
-
-#: ../src/data.c:361
-#, c-format
-msgid "%s: trying to access to undefined data range: %d"
-msgstr "%s: спроба отримати доступ до невизначеного діапазону даних: %d"
-
-#: ../src/data.c:373
-msgid "GNOME-Mud Configuration Center"
-msgstr "Центр налаштовування GNOME-Mud"
-
-#: ../src/eggtrayicon.c:118
-msgid "Orientation"
-msgstr "Орієнтація"
-
-#: ../src/eggtrayicon.c:119
-msgid "The orientation of the tray."
-msgstr "Орієнтація лотка."
-
-#: ../src/gnome-mud.c:51
-#, c-format
-msgid "There was an error accessing GConf: %s"
-msgstr "Помилка доступу до GConf: %s"
-
-#: ../src/gnome-mud.c:64
-msgid "The default configuration values could not be retrieved correctly."
-msgstr "Не вдалось коректно отримати початкові значення параметрів."
-
-#: ../src/gnome-mud.c:65
-msgid "Please check your GConf configuration, specifically that the schemas have been installed correctly."
-msgstr "Перевірте параметри GConf, особливо коректність встановлення схем."
-
-#: ../src/gnome-mud.c:89
-#, c-format
-msgid "Failed to init GConf: %s"
-msgstr "Помилка при ініціалізації GConf: %s"
-
-#: ../src/init.c:93
-msgid "Do you really want to quit?"
-msgstr "Ви дійсно хочете вийти з програми?"
-
-#: ../src/init.c:143
-#: ../src/init.c:676
-msgid "Connect..."
-msgstr "З'єднання..."
-
-#: ../src/init.c:155
-#: ../src/profiles.c:950
-msgid "Host:"
-msgstr "Вузол:"
-
-#: ../src/init.c:161
-#: ../src/profiles.c:970
-msgid "Port:"
-msgstr "Порт:"
-
-#: ../src/init.c:215
-msgid "*** Internal error: no such connection.\n"
-msgstr "*** Внутрішня помилка: немає такого з'єднання.\n"
-
-#: ../src/init.c:256
-msgid "Artwork by:"
-msgstr "Художнє оформлення:"
-
-#. Translators: translate as your names & emails
-#: ../src/init.c:266
-msgid "translator_credits"
-msgstr "Максим Дзюманенко <mvd@mylinux.ua>"
-
-#: ../src/init.c:272
-msgid "A Multi-User Dungeon (MUD) client for GNOME.\n"
-msgstr "Клієнт Multi-User Dungeon (MUD) для GNOME.\n"
-
-#: ../src/init.c:284
-msgid "GNOME-Mud home page"
-msgstr "Домашня сторінка GNOME-Mud"
-
-#: ../src/init.c:626
-#: ../src/init.c:656
-#, c-format
-msgid "There was an error displaying help: %s"
-msgstr "Помилка відображення довідки: %s"
-
-#: ../src/init.c:672
-msgid "Wizard..."
-msgstr "Помічник..."
-
-#: ../src/init.c:672
-msgid "Open the Connection Wizard"
-msgstr "Відкрити помічник з'єднання"
-
-#: ../src/init.c:674
-msgid "Profiles..."
-msgstr "Профілі..."
-
-#: ../src/init.c:674
-msgid "Manage user profiles"
-msgstr "Керування профілями користувачів"
-
-#: ../src/init.c:676
-msgid "Connect to a mud"
-msgstr "З'єднатись з mud"
-
-#: ../src/init.c:678
-msgid "Disconnect"
-msgstr "Роз'єднати"
-
-#: ../src/init.c:678
-msgid "Disconnect from the mud"
-msgstr "Роз'єднатись з mud"
-
-#: ../src/init.c:680
-msgid "Reconnect"
-msgstr "Перез'єднатись"
-
-#: ../src/init.c:680
-msgid "Reconnect to the mud"
-msgstr "Повторно з'єднатись з mud"
-" "
-
-#: ../src/init.c:682
-msgid "Exit"
-msgstr "Вийти"
-
-#: ../src/init.c:682
-msgid "Quit GNOME-Mud"
-msgstr "Вийти з GNOME-Mud"
-
-#: ../src/init.c:687
-msgid "Connection _Wizard..."
-msgstr "_Помічник налаштовування з'єднання..."
-
-#: ../src/init.c:688
-msgid "_MudList Listing..."
-msgstr "Список _MudList..."
-
-#: ../src/init.c:690
-msgid "C_onnect..."
-msgstr "З'_єднатись..."
-
-#: ../src/init.c:691
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.07.70\n"
+
+#: data/main.ui:22
+#| msgid "S_tart Logging..."
+msgid "Start Logging…"
+msgstr "Запускаємо журнал…"
+
+#: data/main.ui:84
+msgid "_Log to File:"
+msgstr "_Файл журналу:"
+
+#: data/main.ui:155
+#| msgid "Select Profile"
+msgid "_Select File"
+msgstr "_Вибрати файл"
+
+#: data/main.ui:197
+#| msgid "*** Logging to %s.\n"
+msgid "Logging Options"
+msgstr "Параметри записування журналу"
+
+#: data/main.ui:226
+#| msgid "Number of lines to keep in scrollback"
+msgid "_Number of lines to log:"
+msgstr "_Кількість рядків у журналі:"
+
+#: data/main.ui:285
+#| msgid "Number of lines to keep in scrollback"
+msgid "Number of _previous lines to include:"
+msgstr "Кількість _попередніх рядків для включення:"
+
+#: data/main.ui:379
+msgid "_Append to file"
+msgstr "Д_описувати до файла"
+
+#: data/main.ui:420
+msgid "Log Inp_ut"
+msgstr "В_хідні дані журналу"
+
+#: data/main.ui:462
+msgid "_Include entire buffer"
+msgstr "В_ключити увесь буфер"
+
+#: data/main.ui:503
+msgid "Include C_olor"
+msgstr "Вклю_чити колір"
+
+#: data/main.ui:553
+msgid "Debug Log"
+msgstr "Журнал діагностики"
+
+#: data/main.ui:659
+msgid "Gnome-Mud"
+msgstr "Gnome-Mud"
+
+#: data/main.ui:675
+msgid "_File"
+msgstr "_Файл"
+
+#: data/main.ui:682
+#| msgid "Connect"
+msgid "C_onnection…"
+msgstr "З'_єднання…"
+
+#: data/main.ui:699
 msgid "_Disconnect"
 msgstr "_Роз'єднати"
 
-#: ../src/init.c:692
+#: data/main.ui:710
 msgid "_Reconnect"
 msgstr "_Повторне з'єднання"
 
-#: ../src/init.c:694
-msgid "S_tart Logging..."
-msgstr "З_апустити журнал..."
+#: data/main.ui:727
+#| msgid "S_tart Logging..."
+msgid "Start _Logging…"
+msgstr "З_апустити журнал…"
 
-#: ../src/init.c:695
-msgid "Sto_p Logging"
-msgstr "З_упинити журнал"
+#: data/main.ui:738
+#| msgid "Sto_p Logging"
+msgid "Stop Lo_gging"
+msgstr "З_упинити ведення журналу"
 
-#: ../src/init.c:696
-msgid "_Save Buffer..."
-msgstr "З_берегти буфер..."
+#: data/main.ui:749
+#| msgid "_Save Buffer..."
+msgid "_Save Buffer…"
+msgstr "З_берегти буфер…"
 
-#: ../src/init.c:698
-msgid "_Close Window"
+#: data/main.ui:766
+#| msgid "_Close Window"
+msgid "Close _Window"
 msgstr "_Закрити вікно"
 
-#: ../src/init.c:706
-msgid "_Plugin Information..."
-msgstr "Інформація про _модуль..."
-
-#: ../src/init.c:712
-msgid "Auto _Mapper..."
-msgstr "Авто _Mapper..."
-
-#: ../src/init.c:715
-msgid "P_lugins"
-msgstr "_Модулі"
-
-#: ../src/init.c:722
-msgid "User Manual"
-msgstr "Довідка користувача"
-
-#: ../src/init.c:723
-msgid "Display the GNOME-Mud User Manual"
-msgstr "Відкрити довідку з GNOME-Mud"
-
-#: ../src/init.c:727
-msgid "Plugin API Manual"
-msgstr "Довідка з API модулів"
-
-#: ../src/init.c:728
-msgid "Display the GNOME-Mud Plugin API Manual"
-msgstr "Відкрити довідку з API модулів до GNOME-Mud"
-
-#. Do we really need this now?
-#: ../src/init.c:784
-msgid "Main"
-msgstr "Головне"
-
-#: ../src/init.c:820
-#, c-format
-msgid "GNOME-Mud version %s (compiled %s, %s)\n"
-msgstr "GNOME-Mud версії %s (зібрано %s, %s)\n"
-
-#: ../src/init.c:822
-msgid "Distributed under the terms of the GNU General Public License.\n"
-msgstr "Розповсюджується на умовах ліцензії GNU General Public License.\n"
-
-#: ../src/keybind.c:149
-msgid "You must use capture first!"
-msgstr "Спочатку скористайтесь захопленням!"
-
-#: ../src/keybind.c:162
-msgid "Can't add an existing key."
-msgstr "Не вдається додати існуючий ключ"
-
-#: ../src/keybind.c:189
-msgid "Incomplete fields."
-msgstr "Неповні поля."
-
-#: ../src/keybind.c:311
-msgid "GNOME-Mud Keybinding Center"
-msgstr "Комбінації клавіш GNOME-Mud"
-
-#: ../src/keybind.c:328
-msgid "Key"
-msgstr "Клавіша"
-
-#: ../src/keybind.c:331
-#: ../src/keybind.c:348
-#: ../src/keybind.c:366
-msgid "Command"
-msgstr "Команда"
-
-#: ../src/keybind.c:344
-msgid "Bind"
-msgstr "Прив'язка"
-
-#: ../src/keybind.c:360
-#: ../src/keybind.c:381
-msgid "Capture"
-msgstr "Захопити"
-
-#: ../src/log.c:57
-#, c-format
-msgid "*** Already logging to %s. Close that log first.\n"
-msgstr "*** Вже записується у журнал %s. Спочатку закрийте цей журнал.\n"
-
-#: ../src/log.c:63
-msgid "Open log"
-msgstr "Відкрити журнал"
-
-#: ../src/log.c:76
-msgid "*** No log to be closed is open in this window.\n"
-msgstr "*** У цьому вікні немає відкритих журналів.\n"
-
-#: ../src/log.c:103
-#, c-format
-msgid "*** Couldn't open %s.\n"
-msgstr "***  Не вдається відкрити %s.\n"
-
-#: ../src/log.c:115
-#, c-format
-msgid "*** Logging to %s.\n"
-msgstr "*** Запис у журнал %s.\n"
-
-#: ../src/log.c:176
-#, c-format
-msgid "*** Stopped logging to %s.\n"
-msgstr "*** Зупинено запис у журнал %s.\n"
-
-#: ../src/log.c:201
-msgid "*** Could not open file for writing.\n"
-msgstr "*** Не вдається відкрити файл для запису.\n"
-
-#: ../src/log.c:215
-msgid "Please select a log file..."
-msgstr "Виберіть файл журналу..."
-
-#. Free the create_link_data structure
-#: ../src/map.c:567
-msgid "Ready."
-msgstr "Готово."
-
-#: ../src/map.c:568
-msgid "Canceled."
-msgstr "Скасовано."
-
-#: ../src/map.c:604
-msgid "A link already exists here!"
-msgstr "Посилання вже існує!"
-
-#. Create the hint label
-#: ../src/map.c:656
-#: ../src/map.c:3548
-#: ../src/map.c:3551
-msgid "Ready"
-msgstr "Готово"
-
-#: ../src/map.c:657
-msgid "Link created"
-msgstr "Посилання створено"
-
-#: ../src/map.c:661
-msgid "Can't create a node here"
-msgstr "Не вдається створити тут вузол"
-
-#: ../src/map.c:892
-msgid "New Map"
-msgstr "Нова мапа"
-
-#. Translator: "path" means "line of travel", ie "road"
-#: ../src/map.c:901
-msgid "Creating a path"
-msgstr "Створення шляху"
-
-#. The radio button (new map)
-#: ../src/map.c:909
-msgid "Path lead to a new map"
-msgstr "Шлях до нової мапи"
-
-#: ../src/map.c:916
-msgid "New map"
-msgstr "Нова мапа"
-
-#. The radio button (default)
-#: ../src/map.c:933
-msgid "Path follows an already existing path:"
-msgstr "Шлях слідує за існуючим шляхом:"
-
-#: ../src/map.c:952
-msgid "Create"
-msgstr "Створити"
-
-#: ../src/map.c:1115
-msgid "Enter in a path"
-msgstr "Введіть шлях"
-
-#: ../src/map.c:1122
-msgid "Create a new path:"
-msgstr "Створити новий шлях:"
-
-#: ../src/map.c:1139
-msgid "Enter in existing path:"
-msgstr "Введіть існуючий шлях:"
-
-#: ../src/map.c:1190
-msgid "This node has already 8 links. Destroy one of these before trying to create a new one"
-msgstr "Цей вузол вже має 8 посилань. Видалять одне з них та спробуйте створити нове"
-
-#. Change the automap state
-#: ../src/map.c:1197
-msgid "Enter to finish, Esc to quit"
-msgstr "Enter - завершити, Esc - вийти"
-
-#: ../src/map.c:1198
-msgid "Use move buttons to build the link."
-msgstr "Користуйтесь кнопками переміщення для побудови шляху."
-
-#: ../src/map.c:1376
-msgid "Zoom In"
-msgstr "Збільшити"
-
-#: ../src/map.c:1377
-msgid "Zoom Out"
-msgstr "Зменшити"
-
-#: ../src/map.c:1378
-msgid "Configure Automap"
-msgstr "Налаштувати автоматичну мапу"
-
-#. Teleport here
-#: ../src/map.c:1418
-msgid "Teleport here"
-msgstr "Телепортуватись сюди"
-
-#. /* Set node properties */
-#. gtk_menu_shell_append(GTK_MENU_SHELL(pop_menu), properties_item);
-#. Create new link
-#: ../src/map.c:1428
-msgid "Create new link"
-msgstr "Створити нове посилання"
-
-#. Translator: this is an action, not a key
-#: ../src/map.c:1435
-msgid "Enter"
-msgstr "Ввод"
-
-#. Can easily be optimised ... but why bother ?
-#. Create button directions
-#: ../src/map.c:1736
-#: ../src/map.c:3576
-msgid "N"
-msgstr "Пн"
-
-#. Translator: "NE" means "Northeast" here
-#: ../src/map.c:1738
-#: ../src/map.c:3577
-msgid "NE"
-msgstr "ПнСх"
-
-#. Translator: "E" means "East" here
-#: ../src/map.c:1740
-#: ../src/map.c:3578
-msgid "E"
-msgstr "Сх"
-
-#. Translator: "SE" means "Southeast" here
-#: ../src/map.c:1742
-#: ../src/map.c:3579
-msgid "SE"
-msgstr "ПдСх"
-
-#. Translator: "S" means "South" here
-#: ../src/map.c:1744
-#: ../src/map.c:3580
-msgid "S"
-msgstr "Пд"
-
-#. Translator: "SW" means "Southwest" here
-#: ../src/map.c:1746
-#: ../src/map.c:3581
-msgid "SW"
-msgstr "ПдЗх"
-
-#. Translator: "W" means "West" here
-#: ../src/map.c:1748
-#: ../src/map.c:3582
-msgid "W"
-msgstr "Зх"
-
-#. Translator: "NW" means "Northwest" here
-#: ../src/map.c:1750
-#: ../src/map.c:3583
-msgid "NW"
-msgstr "ПнЗх"
-
-#: ../src/map.c:1751
-#: ../src/map.c:3584
-msgid "Up"
-msgstr "Вгору"
-
-#: ../src/map.c:1752
-#: ../src/map.c:3585
-msgid "Down"
-msgstr "Вниз"
-
-#: ../src/map.c:1753
-#: ../src/map.c:3573
-msgid "Remove"
-msgstr "Видалити"
-
-#. Some buttons
-#: ../src/map.c:1754
-#: ../src/map.c:3571
-msgid "Load"
-msgstr "Завантажити"
-
-#: ../src/map.c:1755
-#: ../src/map.c:3572
-msgid "Save"
-msgstr "Зберегти"
-
-#: ../src/map.c:2802
-msgid "Load map"
-msgstr "Завантажити мапу"
-
-#: ../src/map.c:2802
-msgid "Save map"
-msgstr "Зберегти мапу"
-
-#: ../src/map.c:3051
-msgid "No link existed in that direction"
-msgstr "У цьому напрямку не існує посилань"
-
-#: ../src/map.c:3057
-msgid "Cannot break links to a node going up or down"
-msgstr "Не вдається розірвати посилання до вузла, що йде вгору або вниз"
-
-#. It would seem this node already has a connection to here, That's
-#: ../src/map.c:3166
-msgid "Destination node has already a connection here"
-msgstr "Цільовий вузол вже має тут з'єднання"
-
-#: ../src/map.c:3315
-msgid "Can't create a link to another floor!"
-msgstr "Не вдається створити посилання на інший поверх!"
-
-#: ../src/map.c:3321
-msgid "There is already a link here!"
-msgstr "Тут вже є посилання!"
-
-#. Set the title
-#. gtk_window_set_title(GTK_WINDOW(automap->window), name);
-#: ../src/map.c:3456
-msgid "GNOME-Mud AutoMapper"
-msgstr "Автоматична мапа GNOME-Mud"
-
-#: ../src/modules.c:197
-msgid "Plugin Information"
-msgstr "Інформація про модуль"
-
-#: ../src/modules.c:213
-msgid "Plugin Name:"
-msgstr "Назва модуля:"
-
-#: ../src/modules.c:233
-msgid "Plugin Author:"
-msgstr "Автор модуля:"
-
-#: ../src/modules.c:243
-msgid "Plugin Version:"
-msgstr "Версія модуля:"
-
-#: ../src/modules.c:253
-msgid "Plugin Description:"
-msgstr "Опис модуля:"
-
-#: ../src/modules.c:263
-msgid "Enable plugin"
-msgstr "Увімкнути модуль"
-
-#: ../src/modules.c:419
-#, c-format
-msgid "Error getting plugin handle (%s): %s."
-msgstr "Помилка отримання дескриптора модуля (%s): %s."
-
-#: ../src/modules.c:424
-#, c-format
-msgid "Error, %s not an GNOME-Mud module: %s."
-msgstr "Помилка, %s не є модулем GNOME-Mud: %s."
-
-#: ../src/modules.c:450
-#, c-format
-msgid "Registering plugin `%s' under the name `%s'."
-msgstr "Реєстрація модуля `%s' під назвою `%s'."
-
-#: ../src/modules_api.c:66
-#, c-format
-msgid "Error while registering the menu: %s"
-msgstr "Помилка при реєстрації меню : %s"
-
-#: ../src/modules_api.c:86
-#, c-format
-msgid "Error while registering data %s: %s"
-msgstr "Помилка при реєстрації даних %s: %s"
-
-#: ../src/modules_api.c:94
-msgid "Error while getting plugin from handle."
-msgstr "Помилка при отриманні модуля з дескриптора."
-
-#: ../src/mudlist.c:404
-msgid "Could not open MudList file for reading"
-msgstr "Не вдається відкрити файл MudList для читання"
-
-#: ../src/mudlist.c:410
-msgid "GNOME-Mud MudList"
-msgstr "GNOME-Mud MudList"
-
-#: ../src/mudlist.c:420
-msgid "Mud name:"
-msgstr "Назва Mud:"
-
-#: ../src/mudlist.c:434
-msgid "Codebase:"
-msgstr "База коду:"
-
-#: ../src/mudlist.c:448
-msgid "Telnet address:"
-msgstr "Адреса Telnet:"
-
-#: ../src/mudlist.c:464
-msgid "Connect to the mud"
-msgstr "З'єднати з mud"
-
-#: ../src/mudlist.c:468
-msgid "Import and close"
-msgstr "Імпортувати та закрити"
-
-#: ../src/mudlist.c:476
-msgid "Go to webpage of the mud"
-msgstr "Перейти до веб-сторінки mud"
-
-#: ../src/mudlist.c:483
-msgid "Description:"
-msgstr "Опис:"
-
-#: ../src/net.c:221
-msgid "*** Connection closed.\n"
-msgstr "***  З'єднання закрито.\n"
-
-#: ../src/net.c:243
-msgid "*** Can't connect - you didn't specify a host.\n"
-msgstr "*** Не вдається з'єднатись - ви не вкзали вузол.\n"
-
-#: ../src/net.c:249
-msgid "*** No port specified - assuming port 23.\n"
-msgstr "*** Не вказано порт - вважається порт 23.\n"
-
-#: ../src/net.c:264
-#, c-format
-msgid "*** Making connection to %s, port %s.\n"
-msgstr "*** Встановлюється з'єднання з %s, порт %s.\n"
-
-#: ../src/net.c:289
-#, c-format
-msgid "*** Trying %s port %s...\n"
-msgstr "*** Пробується %s порт %s...\n"
-
-#: ../src/net.c:316
-msgid "*** Connection established.\n"
-msgstr "*** З'єднання встановлено.\n"
-
-#: ../src/net.c:455
-msgid "Couldn't convert text input"
-msgstr "Не вдається перетворити текстовий ввід"
-
-#: ../src/prefs.c:253
-#: ../src/prefs.c:411
-#, c-format
-msgid "Palette had %d entry instead of %d\n"
-msgid_plural "Palette had %d entries instead of %d\n"
-msgstr[0] "Палітра має %d елемент замість %d\n"
-msgstr[1] "Палітра має %d елементи замість %d\n"
-msgstr[2] "Палітра має %d елементів замість %d\n"
-
-#: ../src/prefs.c:354
-#, c-format
-msgid "%s already exists and is not a directory!"
-msgstr "%s вже існує та не є каталогом!"
-
-#: ../src/prefs.c:363
-#, c-format
-msgid "%s does not exist and can NOT be created: %s"
-msgstr "%s не існує та НЕ може бути створено: %s"
-
-#: ../src/prefs.c:638
-msgid "Font:"
-msgstr "Шрифт:"
-
-#: ../src/prefs.c:646
-msgid "Main font that is used on all open connections."
-msgstr "Головний шрифт, що використовується в усіх відкритих з'єднаннях."
-
-#: ../src/prefs.c:649
-msgid "The quick brown fox jumps over the lazy dog"
-msgstr "Жебракують філософи при ґанку церкви в Гадячі; ще й шатро їхнє знаємо."
-
-#: ../src/prefs.c:653
-msgid "Color palette:"
-msgstr "Палітра кольорів:"
-
-#: ../src/prefs.c:659
-msgid "Background color:"
-msgstr "Колір тла:"
-
-#: ../src/prefs.c:665
-msgid "Foreground color:"
-msgstr "Колір переднього плану:"
-
-#: ../src/prefs.c:673
-msgid "Default foreground color used when the connection doesn't request the use of a specific color."
-msgstr "Типовий колір переднього плану, що використовується коли з'єднання не вимагає використання певного кольору."
-
-#: ../src/prefs.c:682
-msgid "Default background color used when the connection doesn't request the use of a specific color."
-msgstr ""
-"Типовий колір тла плану, що використовується коли з'єднання не вимагає використання певного кольору."
-
-#: ../src/prefs.c:698
-msgid "Change the color of a specific color that the MUD requests to use."
-msgstr "Змінити колір певного кольору, який MUD намагається використати."
-
-#: ../src/prefs.c:740
-msgid "on top"
-msgstr "на горі"
-
-#: ../src/prefs.c:740
-msgid "on the right"
-msgstr "праворуч"
-
-#: ../src/prefs.c:740
-msgid "at the bottom"
-msgstr "знизу"
-
-#: ../src/prefs.c:740
-msgid "on the left"
-msgstr "ліворуч"
-
-#: ../src/prefs.c:758
-msgid "GNOME-Mud Preferences"
-msgstr "Параметри GNOME-Mud"
-
-#: ../src/prefs.c:772
-msgid "Functionality"
-msgstr "Функціональність"
-
-#: ../src/prefs.c:778
-msgid "_Echo the text sent"
-msgstr "_Виводити надісланий тестк"
-
-#: ../src/prefs.c:789
-msgid "_Keep the text entered"
-msgstr "_Зберігати введений текст"
-
-#: ../src/prefs.c:800
-msgid "Disable _System Keys"
-msgstr "Вимкнути _системні клавіші"
-
-#: ../src/prefs.c:814
-msgid "Command division character:"
-msgstr "Символ розділення команд:"
-
-#: ../src/prefs.c:819
-msgid "The character used to divide commands sent to the mud. For example, \";\", will let the string \"w;look\" be sent to the mud as 2 separate commands."
-msgstr ""
-"Символ, що використовується для розділення команд, що надсилаються mud. Наприклад, \";\", дозволяє надіслати mud 2 окремі команди рядком \"w;look\""
-
-#: ../src/prefs.c:829
-msgid "Command history:"
-msgstr " Історія команд:"
-
-#: ../src/prefs.c:835
-msgid "The number of entries to be saved in the command history."
-msgstr "Кількість елементів, що зберігаються у історії команд."
-
-#: ../src/prefs.c:843
-msgid "Terminal type:"
-msgstr "Тип терміналу:"
-
-#: ../src/prefs.c:858
-msgid "MudList file:"
-msgstr "Файл MudList:"
-
-#: ../src/prefs.c:861
-msgid "Select a MudList File..."
-msgstr "Виберіть файл MudList..."
-
-#: ../src/prefs.c:863
-msgid "Mudlist file to be used for the mudlist functionality."
-msgstr "Файл MudList, який використовується для mudlist."
-
-#: ../src/prefs.c:872
-msgid "Color and Fonts"
-msgstr "Шрифти та кольори"
-
-#: ../src/prefs.c:880
-msgid "Appearance"
-msgstr "Зовнішній вигляд"
-
-#: ../src/prefs.c:889
-msgid "Tabs are located:"
-msgstr "Розташування вкладок:"
-
-#: ../src/prefs.c:902
-msgid "This setting defines where to place the connection tabs that are used to change active connection."
-msgstr "Цей параметр визначає розташування вкладок з'єднань, що використовуються для зміни активного з'єднання."
-
-#: ../src/prefs.c:913
-msgid "Scrollback:"
-msgstr "Кількість ліній прокрутки:"
-
-#: ../src/prefs.c:919
-msgid "Number of lines to save in the scrollback."
-msgstr "Кількість рядків, які зберігаються для прокрутки"
-
-#: ../src/prefs.c:923
-msgid "lines"
-msgstr "рядки"
-
-#: ../src/prefs.c:929
-msgid "S_croll on output"
-msgstr "Про_кручувати при виводі"
-
-#: ../src/prefs.c:931
-msgid "If enabled, the terminal will scroll to the bottom if new output appears in the connection when the terminal was scrolled back."
-msgstr ""
-"Якщо увімкнено, термінал буде прокручуватись вниз при виводі нових рядків з'єднання."
-
-#: ../src/prefs.c:942
-msgid "AutoMapper"
-msgstr "Автоматична мапа"
-
-#: ../src/prefs.c:956
-msgid "Unusual movement commands:"
-msgstr "Незвичайні команди переміщення:"
-
-#: ../src/prefs.c:963
-msgid "If you use the automapper, you may want to specify here some unusual movement commands. When you use one of these, the automapper will create a path to an other map. Use a semicolon to separate the different commands."
-msgstr ""
-"Якщо ви використовуєте автоматичну мапу, можете тут вказати незвичайні команди переміщення. При їх використанні автоматична мапа буде створювати шлях до іншої мапи. Для розділення команд користуйтесь крапкою з комою."
-
-#: ../src/profiles.c:301
-msgid "New profile"
-msgstr "Новий профіль"
-
-#: ../src/profiles.c:304
-msgid "Name of new profile:"
-msgstr "Назва профілю:"
-
-#: ../src/profiles.c:506
-msgid "GNOME-Mud: Profilelist"
-msgstr "GNOME-Mud: список профілів"
-
-#: ../src/profiles.c:675
-#: ../src/profiles.c:1047
-msgid "Default"
-msgstr "Типово"
-
-#: ../src/profiles.c:856
-#: ../src/profiles.c:1195
-msgid "Delete"
-msgstr "Видалити"
-
-#: ../src/profiles.c:872
-msgid "GNOME-Mud Connections"
-msgstr "З'єднання GNOME-Mud"
-
-#: ../src/profiles.c:906
-msgid "Mud"
-msgstr "Mud"
-
-#. Translators: this is the name of your player
-#: ../src/profiles.c:913
-msgid "Character"
-msgstr "Символ"
-
-#: ../src/profiles.c:926
-msgid "Mud information"
-msgstr "Інформація про Mud"
-
-#: ../src/profiles.c:942
-msgid "Title:"
-msgstr "Заголовок:"
-
-#: ../src/profiles.c:986
-msgid "Character information"
-msgstr "Інформація про символ"
-
-#: ../src/profiles.c:1002
-msgid "Character:"
-msgstr "Символ:"
-
-#: ../src/profiles.c:1010
-msgid "Password:"
-msgstr "Пароль:"
-
-#: ../src/profiles.c:1031
-msgid "Profile information"
-msgstr "Інформація про профіль"
-
-#: ../src/profiles.c:1057
-msgid "Select Profile"
-msgstr "Виберіть профіль"
-
-#: ../src/profiles.c:1073
-msgid "Fetch from mudlist"
-msgstr "Отримати з mudlist"
-
-#: ../src/profiles.c:1125
+#: data/main.ui:800
+msgid "_Settings"
+msgstr "П_араметри"
+
+#: data/main.ui:810
+#| msgid "Profiles"
+msgid "P_rofiles"
+msgstr "Про_філі"
+
+#: data/main.ui:833
+msgid "Profile Preferences…"
+msgstr "Налаштування профілю…"
+
+#: data/main.ui:849
+msgid "_Help"
+msgstr "_Довідка"
+
+#: data/main.ui:884
+#| msgid "Connect to a mud"
+msgid "Connect to MUD"
+msgstr "З'єднатися із MUD"
+
+#: data/main.ui:886 data/main.ui:891
 msgid "Connect"
 msgstr "З'єднатися"
 
-#: ../src/profiles.c:1164
+#: data/main.ui:892
+#| msgid "Connect to the mud"
+msgid "Connect to host"
+msgstr "З'єднатися з вузлом"
+
+#: data/main.ui:906
+#| msgid "Disconnect from the mud"
+msgid "Disconnect from current MUD"
+msgstr "Від'єднатися від поточного MUD"
+
+#: data/main.ui:908 data/main.ui:913
+msgid "Disconnect"
+msgstr "Роз'єднати"
+
+#: data/main.ui:914
+#| msgid "Disconnect from the mud"
+msgid "Disconnect from current host"
+msgstr "Від'єднатися від поточного вузла"
+
+#: data/main.ui:928
+#| msgid "Reconnect to the mud"
+msgid "Reconnect to current MUD"
+msgstr "Повторно з'єднатися із поточним MUD"
+
+#: data/main.ui:930
+msgid "Reconnect"
+msgstr "Перез'єднатись"
+
+#: data/main.ui:1005
+#| msgid "_Save Buffer..."
+msgid "Save buffer as…"
+msgstr "Зберегти буфер як…"
+
+#: data/muds.ui:20
+msgid "Select An Icon…"
+msgstr "Вибрати піктограму…"
+
+#: data/muds.ui:84
+#| msgid "Select Profile"
+msgid "Select A Folder"
+msgstr "Вибір теки"
+
+#: data/muds.ui:127
+msgid "Unsaved Changes"
+msgstr "Незбережені зміни"
+
+#: data/muds.ui:143
+msgid "Close _without Saving"
+msgstr "Закрити _без збереження"
+
+#: data/muds.ui:219
+msgid "You have unsaved changes. Do you want to save before closing?"
+msgstr "Зміни не збережено. Хочете зберегти зміни до закриття?"
+
+#: data/muds.ui:244
+#| msgid "Delete"
+msgid "Delete MUD?"
+msgstr "Вилучити MUD?"
+
+#: data/muds.ui:319
+msgid "Are you sure you want to delete this MUD?"
+msgstr "Ви справді хочете вилучити цей MUD?"
+
+#: data/muds.ui:343
+#| msgid "*** Connection established.\n"
+msgid "Connection Properties"
+msgstr "Властивості з'єднання"
+
+#: data/muds.ui:418 src/mud-window.c:737
+msgid "MUD"
+msgstr "MUD"
+
+#: data/muds.ui:474 data/muds.ui:805
+msgid "Name:"
+msgstr "Назва:"
+
+#: data/muds.ui:538
+msgid "Host:"
+msgstr "Вузол:"
+
+#: data/muds.ui:602
+msgid "Port:"
+msgstr "Порт:"
+
+#: data/muds.ui:652
+#| msgid "Profiles"
+msgid "Profile"
+msgstr "Профіль"
+
+#: data/muds.ui:749
+msgid "Character"
+msgstr "Символ"
+
+#: data/muds.ui:870
+msgid "Logon:"
+msgstr "Вхід:"
+
+#: data/muds.ui:989
+#| msgid "Connect"
+msgid "Connections"
+msgstr "З'єднання"
+
+#: data/muds.ui:1108
+#| msgid "Host:"
+msgid " _Host: "
+msgstr " _Вузол: "
+
+#: data/muds.ui:1138
+#| msgid "Port:"
+msgid " _Port: "
+msgstr " _Порт: "
+
+#: data/muds.ui:1201
+#| msgid "List of connections"
+msgid "Custom Connection"
+msgstr "Нетипове з'єднання"
+
+#: data/prefs.ui:15
+#| msgid "New profile"
+msgid "New Profile"
+msgstr "Новий профіль"
+
+#: data/prefs.ui:78
+#| msgid "New profile"
+msgid "New Profile Name:"
+msgstr "Назва нового профілю:"
+
+#: data/prefs.ui:120
+#| msgid "GNOME-Mud Preferences"
+msgid "Preferences"
+msgstr "Налаштування"
+
+#: data/prefs.ui:142
+msgid "Input"
+msgstr "Вхідні дані"
+
+#: data/prefs.ui:176
+#| msgid "_Echo the text sent"
+msgid "_Echo the Text Sent"
+msgstr "_Виводити надісланий текст"
+
+#: data/prefs.ui:192
+#| msgid "_Keep the text entered"
+msgid "_Keep the Text Entered"
+msgstr "З_берігати введений текст"
+
+#: data/prefs.ui:226
+#| msgid "Command division character:"
+msgid "Command _Division Character:"
+msgstr "Символ _розділення команд:"
+
+#: data/prefs.ui:291
+msgid "Encoding"
+msgstr "Кодування"
+
+#: data/prefs.ui:328
+#| msgid "Character:"
+msgid "_Character Set:"
+msgstr "_Кодування:"
+
+#: data/prefs.ui:422
+msgid "Output"
+msgstr "Виведення"
+
+#: data/prefs.ui:456
+#| msgid "S_croll on output"
+msgid "Scroll on _Output"
+msgstr "_Гортати при виведенні"
+
+#: data/prefs.ui:478
+msgid "_Number of Scrollback Lines:"
+msgstr "_Кількість рядків у буфері гортання:"
+
+#: data/prefs.ui:549
+msgid "Fon_t:"
+msgstr "_Шрифт:"
+
+#: data/prefs.ui:563
+#| msgid "Foreground color:"
+msgid "_Foreground Color:"
+msgstr "Колір _переднього плану:"
+
+#: data/prefs.ui:579
+#| msgid "Background color:"
+msgid "_Background Color:"
+msgstr "Колір _тла:"
+
+#: data/prefs.ui:595
+#| msgid "Color palette:"
+msgid "Color Palette:"
+msgstr "Палітра кольорів:"
+
+#: data/prefs.ui:952
+#| msgid "Terminal type"
+msgid "Terminal"
+msgstr "Термінал"
+
+#: data/prefs.ui:967
+msgid "Proxy"
+msgstr "Проксі"
+
+#: data/prefs.ui:1005
+msgid "_Enable Proxy"
+msgstr "_Увімкнути проксі"
+
+#: data/prefs.ui:1023
+#| msgid "Host:"
+msgid "_Host:"
+msgstr "_Вузол:"
+
+#: data/prefs.ui:1039
+#| msgid "Plugin Version:"
+msgid "_Version:"
+msgstr "В_ерсія:"
+
+#: data/prefs.ui:1153
+msgid "Telnet Options"
+msgstr "Параметри Telnet"
+
+#: data/prefs.ui:1187
+msgid "Enable Mud _Sound Protocol (MSP)"
+msgstr "Увімкнути зву_ковий протокол MUD (MSP)"
+
+#: data/prefs.ui:1203
+msgid "Enable _Character Encoding Negotiation (CHARSET)"
+msgstr "Увімкнути уз_годження кодування (CHARSET)"
+
+#: data/prefs.ui:1251
+msgid "Network"
+msgstr "Мережа"
+
+#: data/prefs.ui:1271
+msgid "Triggers"
+msgstr "Тригери"
+
+#: data/prefs.ui:1291
+msgid "Aliases"
+msgstr "Псевдоніми"
+
+#: data/prefs.ui:1311
+msgid "Variables"
+msgstr "Змінні"
+
+#: data/prefs.ui:1331
+msgid "Timers"
+msgstr "Таймери"
+
+#: data/prefs.ui:1351
+msgid "Keybindings"
+msgstr "Комбінації клавіш"
+
+#: data/prefs.ui:1379
 msgid "Profiles"
 msgstr "Профілі"
 
-#: ../src/profiles.c:1173
-msgid "GNOME-Mud Profiles"
-msgstr "Профілі GNOME-Mud"
+#: data/prefs.ui:1473
+msgid "Regex Error"
+msgstr "Помилка у формальному виразі"
 
-#: ../src/profiles.c:1187
-msgid "New"
-msgstr "Створити"
+#: data/prefs.ui:1525
+msgid "Error Code:"
+msgstr "Код помилки:"
 
-#: ../src/profiles.c:1188
-msgid "Create a new profile"
-msgstr "Створити новий профіль"
+#: data/prefs.ui:1563
+msgid "Error String:"
+msgstr "Рядок помилки:"
 
-#: ../src/profiles.c:1195
-msgid "Delete a profile"
-msgstr "Видалити профіль"
+#: data/prefs.ui:1601
+msgid "Error At:"
+msgstr "Помилка у:"
 
-#: ../src/profiles.c:1212
-msgid "Set aliases"
-msgstr "Встановити псевдоніми"
+#: data/org.gnome.MUD.gschema.xml:6
+msgid "Settings schema version"
+msgstr "Версія схеми параметрів"
 
-#: ../src/profiles.c:1219
-msgid "Set variables"
-msgstr "Встановити змінні"
+#: data/org.gnome.MUD.gschema.xml:10
+#| msgid "List of profiles"
+msgid "List of available profiles"
+msgstr "Список доступних профілів"
 
-#: ../src/profiles.c:1226
-msgid "Set triggers"
-msgstr "Встановити тригери"
+#: data/org.gnome.MUD.gschema.xml:14
+#| msgid "Delete a profile"
+msgid "Default profile"
+msgstr "Типовий профіль"
 
-#: ../src/profiles.c:1243
-msgid "Set keybindings"
-msgstr "Встановити комбінації клавіш"
+#: data/org.gnome.MUD.gschema.xml:18
+#| msgid "List of profiles"
+msgid "List of available MUDs"
+msgstr "Список доступних MUD"
 
-#: ../src/profiles.c:1260
+#: data/org.gnome.MUD.gschema.xml:22
+msgid "List of available characters"
+msgstr "Список доступних персонажів"
+
+#: data/org.gnome.MUD.gschema.xml:30
+msgid "Human-readable name of the profile"
+msgstr "Зручна для читання назва профілю"
+
+#: data/org.gnome.MUD.gschema.xml:34
+msgid "A Pango font name and size"
+msgstr "Назва і розмір шрифту Pango"
+
+#: data/org.gnome.MUD.gschema.xml:39
+msgid "Default color of the text"
+msgstr "Типовий колір тексту"
+
+#: data/org.gnome.MUD.gschema.xml:40
+#| msgid ""
+#| "Default color of the text, as a color specification (can be HTML-style "
+#| "hex digits, or a color name such as \"red\")."
+msgid ""
+"Default color of the text, as a color specification (can be HTML-style hex "
+"digits, or a color name such as “red”)."
+msgstr ""
+"Типовий колір тексту, у вигляді шістнадцяткових цифр (як у HTML), або назви "
+"кольору (наприклад «red»)."
+
+#: data/org.gnome.MUD.gschema.xml:44
+msgid "Default color of the background"
+msgstr "Типовий колір тла"
+
+#: data/org.gnome.MUD.gschema.xml:45
+#| msgid ""
+#| "Default color of the background, as a color specification (can be HTML-"
+#| "style hex digits, or a color name such as \"red\")."
+msgid ""
+"Default color of the background, as a color specification (can be HTML-style "
+"hex digits, or a color name such as “red”)."
+msgstr ""
+"Типовий колір тла, у вигляді шістнадцяткових цифр (як у HTML), або назви "
+"кольору (наприклад «red»)."
+
+#: data/org.gnome.MUD.gschema.xml:65
+msgid "Color palette"
+msgstr "Палітра кольорів"
+
+#: data/org.gnome.MUD.gschema.xml:66
+msgid "List of the 16 colors that MUDs can use with indexed ANSI color codes."
+msgstr ""
+"Список 16 кольорів, які може бути використано MUDs з індексованими кодами"
+" кольорів ANSI."
+
+#. TODO: Increase default?
+#: data/org.gnome.MUD.gschema.xml:70
+msgid "Number of lines to keep in scrollback"
+msgstr "Кількість рядків, які зберігаються для прокрутки"
+
+#: data/org.gnome.MUD.gschema.xml:71
+#| msgid ""
+#| "Number of scrollback lines to keep around. You can scroll back in the "
+#| "terminal by this number of lines; lines that don't fit in the scrollback "
+#| "are discarded."
+msgid ""
+"Number of scrollback lines to keep around. You can scroll back in the "
+"terminal by this number of lines; lines that don’t fit in the scrollback are "
+"discarded."
+msgstr ""
+"Кількість рядків, які зберігаються для прокрутки. Ви можете прокручувати "
+"термінал назад на вказану кількість рядків. Рядки, що  не вміщуються у "
+"область прокрутки відкидаються."
+
+#. TODO: Settings provides an encoding list, so we could have an enum type or choice list, instead of bare string
+#: data/org.gnome.MUD.gschema.xml:77
+msgid "The encoding for the terminal widget."
+msgstr "Кодування для віджета термінала."
+
+#. TODO: Change to true?
+#: data/org.gnome.MUD.gschema.xml:81
+#| msgid "Set keybindings"
+msgid "Remote encoding"
+msgstr "Віддалене кодування"
+
+#: data/org.gnome.MUD.gschema.xml:82
+msgid "Use Remote Encoding negotiation."
+msgstr "Скористатися узгодженням віддаленого кодування."
+
+#: data/org.gnome.MUD.gschema.xml:86
+msgid "Remote download"
+msgstr "Отримання віддалених даних"
+
+#: data/org.gnome.MUD.gschema.xml:87
+msgid "Enable sound file downloading on MSP enabled MUDs."
+msgstr "Увімкнути отримання звукових файлів для MUD з можливостями MSP."
+
+#: data/org.gnome.MUD.gschema.xml:91
+#| msgid "Command Divider"
+msgid "Command divider"
+msgstr "Розділювач команд"
+
+#: data/org.gnome.MUD.gschema.xml:92
+#| msgid ""
+#| "A character that is used to split commands in a string like \"w;w;w;l\", "
+#| "which will be sent to the MUD as 4 separate commands."
+msgid ""
+"A character that is used to split commands in a string like “w;w;w;l”, which "
+"will be sent to the MUD as 4 separate commands."
+msgstr ""
+"Символ, що використовується для розділення команд у подібному рядку"
+" «w;w;w;l», який буде надсилатись MUD як 4 окремі команди."
+
+#: data/org.gnome.MUD.gschema.xml:96
+msgid "Whether to echo sent text to the connection"
+msgstr "Чи виводити надісланий у з'єднання текст"
+
+#: data/org.gnome.MUD.gschema.xml:97
+msgid ""
+"If enabled, all the text typed in will be echoed in the terminal, making it "
+"easier to control what is sent."
+msgstr ""
+"Якщо увімкнено, весь набраний текст, що вводиться буде виводитись на "
+"термінал, спрощуючи контроль за надсиланням."
+
+#: data/org.gnome.MUD.gschema.xml:101
+msgid "Whether to keep text sent to the connection"
+msgstr "Чи зберігати надісланий у з'єднання текст"
+
+#: data/org.gnome.MUD.gschema.xml:102
+msgid ""
+"If enabled, the text that is sent to the connection will be left as a "
+"selection in the entry box. Otherwise, the text entry box will be cleared "
+"after each text input."
+msgstr ""
+"Якщо увімкнено, текст, що надсилається до з'єднання залишиться виділеним у "
+"полів вводу. У іншому випадку, поле вводу очищається після кожного вводу "
+"тексту."
+
+#: data/org.gnome.MUD.gschema.xml:106
+#| msgid "Whether to scroll to the bottom when there's new output"
+msgid "Whether to scroll to the bottom when there’s new output"
+msgstr "Чи гортати до кінця буфер, якщо виведено нові дані"
+
+#: data/org.gnome.MUD.gschema.xml:107
+#| msgid ""
+#| "If enabled, whenever there's new output the terminal will be scrolled to "
+#| "the bottom."
+msgid ""
+"If true, whenever there’s new output the terminal will scroll to the bottom."
+msgstr ""
+"Якщо встановлено «true», усі нові виведені дані у терміналі призводитимуть "
+"до пересування буфера гортання до кінця."
+
+#: data/org.gnome.MUD.gschema.xml:111
+msgid "Use proxy"
+msgstr "Використовувати проксі"
+
+#: data/org.gnome.MUD.gschema.xml:112
+#| msgid "Whether to echo sent text to the connection"
+msgid "Whether to use a proxy server to connect to the MUD."
+msgstr "Визначає, чи слід використовувати проксі-сервер для з'єднання з MUD."
+
+#: data/org.gnome.MUD.gschema.xml:120
+msgid "Proxy version"
+msgstr "Версія проксі"
+
+#: data/org.gnome.MUD.gschema.xml:121
+msgid "The SOCKS version to be used."
+msgstr "Версія SOCKS, якою слід скористатися."
+
+#: data/org.gnome.MUD.gschema.xml:125
+msgid "Proxy server hostname"
+msgstr "Назва вузла проксі-сервера"
+
+#: data/org.gnome.MUD.gschema.xml:126
+msgid "The hostname for the SOCKS proxy server."
+msgstr "Назва вузла для проксі-сервера SOCKS."
+
+#: data/org.gnome.MUD.gschema.xml:133
+msgid "Visible name of the MUD."
+msgstr "Видима назва MUD."
+
+#: data/org.gnome.MUD.gschema.xml:146
+#| msgid "Profiles"
+msgid "Profile ID"
+msgstr "Ід. профілю"
+
+#: data/org.gnome.MUD.gschema.xml:150
+msgid "MUD ID"
+msgstr "Ід. MUD"
+
+#: data/org.gnome.MUD.gschema.xml:154
+msgid "Name of the character."
+msgstr "Ім'я персонажа."
+
+#: data/org.gnome.MUD.gschema.xml:158
+#| msgid "Connect"
+msgid "Connect string"
+msgstr "Рядок з'єднання"
+
+#: data/org.gnome.MUD.gschema.xml:159
+msgid "Commands to send to MUD upon establishing connection."
+msgstr "Команди, які слід надіслати до MUD встановленим з'єднанням."
+
+#: data/org.gnome.MUD.desktop.in:3
+msgid "GNOME-Mud"
+msgstr "GNOME-Mud"
+
+#: data/org.gnome.MUD.desktop.in:4
+msgid "The GNOME MUD Client"
+msgstr "Клієнт GNOME MUD "
+
+#: src/debug-logger.c:823 src/mud-connections.c:788 src/mud-connections.c:795
+msgid "Error"
+msgstr "Помилка"
+
+#: src/debug-logger.c:826 src/debug-logger.c:909
+#, c-format
+msgid "ERROR: %s\n"
+msgstr "ПОМИЛКА: %s\n"
+
+#: src/debug-logger.c:830
+msgid "Critical"
+msgstr "Критична"
+
+#: src/debug-logger.c:837
+msgid "Warning"
+msgstr "Попередження"
+
+#: src/debug-logger.c:844 src/debug-logger.c:994
+msgid "Message"
+msgstr "Повідомлення"
+
+#: src/debug-logger.c:851
+msgid "Info"
+msgstr "Інформація"
+
+#: src/debug-logger.c:858
+msgid "Debug"
+msgstr "Діагностика"
+
+#: src/debug-logger.c:865
+msgid "Unknown"
+msgstr "Невідомо"
+
+#: src/debug-logger.c:913
+#, c-format
+msgid "CRITICAL ERROR: %s\n"
+msgstr "КРИТИЧНА ПОМИЛКА: %s\n"
+
+#: src/debug-logger.c:917
+#, c-format
+msgid "Warning: %s\n"
+msgstr "Попередження: %s\n"
+
+#: src/debug-logger.c:987
+msgid "Type"
+msgstr "Тип"
+
+#: src/mud-connections.c:541
+#, c-format
+#| msgid "Do you really want to quit?"
+msgid "Are you sure you want to delete %s?"
+msgstr "Ви справді хочете вилучити %s?"
+
+#: src/mud-connections.c:542
+#, c-format
+#| msgid "Delete"
+msgid "Delete %s?"
+msgstr "Вилучити %s?"
+
+#: src/mud-connections.c:789
+msgid "No profile specified."
+msgstr "Не вказано профілю."
+
+#: src/mud-connections.c:796
+msgid "No MUD name specified."
+msgstr "Не вказано назви MUD."
+
+#: src/mud-connection-view.c:384
+#| msgid "*** Connection closed.\n"
+msgid "*** Connected.\n"
+msgstr "*** З'єднано.\n"
+
+#: src/mud-connection-view.c:398
+#| msgid "*** Connection closed.\n"
+msgid ""
+"\n"
+"*** Connection closed.\n"
+msgstr ""
+"\n"
+"***  З'єднання розірвано.\n"
+
+#: src/mud-connection-view.c:508
+msgid "Downloading…"
+msgstr "Отримання…"
+
+#: src/mud-connection-view.c:590 src/mud-connection-view.c:1692
+#, c-format
+#| msgid "*** Making connection to %s, port %s.\n"
+msgid "*** Making connection to %s, port %d.\n"
+msgstr "*** Встановлюємо з'єднання з %s, порт %d.\n"
+
+#: src/mud-connection-view.c:1016
 msgid "Close"
 msgstr "Закрити"
 
-#: ../src/profiles.c:1260
-msgid "Close the window"
-msgstr "Закрити вікно"
+#: src/mud-connection-view.c:1036
+#| msgid "Manage user profiles"
+msgid "Change P_rofile"
+msgstr "Змінити п_рофіль"
 
-#: ../src/tray.c:101
-msgid "_Hide window"
-msgstr "С_ховати вікно"
+#: src/mud-connection-view.c:1738
+msgid "<password removed>"
+msgstr "<пароль вилучено>"
 
-#: ../src/tray.c:103
-msgid "_Show window"
-msgstr "_Показати вікно"
+#: src/mud-connection-view.c:1924
+#| msgid "Connect"
+msgid "Connecting…"
+msgstr "З'єднання…"
 
-#: ../src/tray.c:108
-msgid "_Quit"
-msgstr "Ви_йти"
+#: src/mud-connection-view.c:1933
+#, c-format
+msgid "Downloading %s…"
+msgstr "Отримуємо %s…"
 
-#: ../src/tray.c:158
-msgid "GNOME Mud"
-msgstr "GNOME Mud"
+#: src/mud-connection-view.c:2019
+msgid "There was an internal http connection error."
+msgstr "Сталася внутрішня помилка у з'єднанні http."
+
+#: src/mud-log.c:390
+msgid "Save log as…"
+msgstr "Зберегти журнал як…"
+
+#: src/mud-log.c:724
+msgid ""
+"\n"
+"*** Log starts *** %d/%m/%Y %H∶%M∶%S\n"
+msgstr ""
+"\n"
+"*** Журналювання розпочато *** %d.%m.%Y %H∶%M∶%S\n"
+
+#: src/mud-log.c:810
+msgid "Log Error"
+msgstr "Помилка журналу"
+
+#: src/mud-log.c:811
+#, c-format
+#| msgid "*** Could not open file for writing.\n"
+msgid "Could not open “%s” for writing."
+msgstr "Не вдалося відкрити файл «%s» для запису"
+
+#: src/mud-log.c:837 src/mud-log.c:918 src/mud-log.c:934
+msgid "Could not write data to log file!"
+msgstr "Не вдалося записати дані до файла журналу!"
+
+#: src/mud-log.c:844
+msgid ""
+"\n"
+" *** Log stops *** %d/%m/%Y %H∶%M∶%S\n"
+msgstr ""
+"\n"
+" *** Журналювання зупинено *** %d.%m.%Y %H∶%M∶%S\n"
+
+#: src/mud-profile.c:727
+#, c-format
+#| msgid "Palette had %d entry instead of %d\n"
+#| msgid_plural "Palette had %d entries instead of %d\n"
+msgid "Palette had %u entry instead of %u\n"
+msgid_plural "Palette had %u entries instead of %u\n"
+msgstr[0] "Палітра містить %u елемент замість %u\n"
+msgstr[1] "Палітра містить %u елементи замість %u\n"
+msgstr[2] "Палітра містить %u елементів замість %u\n"
+msgstr[3] "Палітра містить %u елемент замість %u\n"
+
+#: src/mud-trigger.c:718
+msgid "#Submatch Out of Range#"
+msgstr "#Підлегла відповідність поза діапазоном#"
+
+#: src/mud-window.c:724
+#| msgid "Connect to the mud"
+msgid "Connect to Multi-User Dungeons"
+msgstr "З'єднання із MUD"
+
+#: src/mud-window.c:738
+#| msgid "translator_credits"
+msgid "translator-credits"
+msgstr ""
+"Максим Дзюманенко <dziumanenko@gmail.com>\n"
+"Юрій Чорноіван <yurchor@ukr.net>"
+
+#: src/mud-window.c:841
+msgid "Error Saving Buffer"
+msgstr "Помилка під час спроби зберегти буфер"
+
+#: src/mud-window.c:1104
+#| msgid "Manage user profiles"
+msgid "_Manage Profiles…"
+msgstr "_Керування профілями…"
+
+#: src/handlers/mud-telnet-mccp.c:423
+msgid ""
+"\n"
+"MCCP data corrupted. Aborting connection.\n"
+msgstr ""
+"\n"
+"Дані MCCP пошкоджено. Перериваємо з'єднання.\n"

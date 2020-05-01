@@ -11,7 +11,7 @@ DOC_FIGURES = \
 	figures/preferences-window.png \
 	figures/profiles-window.png
 
-DOC_LINGUAS = cs de es
+DOC_LINGUAS = cs de es sv
 
 
 -include $(top_srcdir)/git.mk

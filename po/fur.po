@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-mud master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-mud/issues\n"
-"POT-Creation-Date: 2019-03-05 11:40+0000\n"
-"PO-Revision-Date: 2019-03-06 09:47+0100\n"
+"POT-Creation-Date: 2020-07-18 14:21+0000\n"
+"PO-Revision-Date: 2021-01-17 14:57+0100\n"
+"Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: data/main.ui:22
 msgid "Start Logging…"
@@ -244,7 +244,7 @@ msgstr "Jentrade"
 
 #: data/prefs.ui:176
 msgid "_Echo the Text Sent"
-msgstr ""
+msgstr "Fâs l'_Echo dal test inviât"
 
 #: data/prefs.ui:192
 msgid "_Keep the Text Entered"
@@ -252,7 +252,7 @@ msgstr "_Ten il test inserît"
 
 #: data/prefs.ui:226
 msgid "Command _Division Character:"
-msgstr ""
+msgstr "Caratar di _division dai comants:"
 
 #: data/prefs.ui:291
 msgid "Encoding"
@@ -312,7 +312,7 @@ msgstr "_Version:"
 
 #: data/prefs.ui:1153
 msgid "Telnet Options"
-msgstr "Opzions telnet:"
+msgstr "Opzions telnet"
 
 #: data/prefs.ui:1187
 msgid "Enable Mud _Sound Protocol (MSP)"
@@ -332,7 +332,7 @@ msgstr ""
 
 #: data/prefs.ui:1291
 msgid "Aliases"
-msgstr ""
+msgstr "Alias"
 
 #: data/prefs.ui:1311
 msgid "Variables"
@@ -368,7 +368,7 @@ msgstr "Erôr a:"
 
 #: data/org.gnome.MUD.gschema.xml:6
 msgid "Settings schema version"
-msgstr ""
+msgstr "Version scheme des impostazions"
 
 #: data/org.gnome.MUD.gschema.xml:10
 msgid "List of available profiles"
@@ -443,38 +443,40 @@ msgstr ""
 #. TODO: Settings provides an encoding list, so we could have an enum type or choice list, instead of bare string
 #: data/org.gnome.MUD.gschema.xml:77
 msgid "The encoding for the terminal widget."
-msgstr ""
+msgstr "La codifiche pal widget dal terminâl."
 
 #. TODO: Change to true?
 #: data/org.gnome.MUD.gschema.xml:81
 msgid "Remote encoding"
-msgstr "Codifiche rimote"
+msgstr "Codifiche esterne"
 
 #: data/org.gnome.MUD.gschema.xml:82
 msgid "Use Remote Encoding negotiation."
-msgstr "Dopre negoziazion de codifiche rimote."
+msgstr "Dopre negoziazion de codifiche esterne."
 
 #: data/org.gnome.MUD.gschema.xml:86
 msgid "Remote download"
-msgstr "Discjariament rimot"
+msgstr "Discjariament lontan"
 
 #: data/org.gnome.MUD.gschema.xml:87
 msgid "Enable sound file downloading on MSP enabled MUDs."
-msgstr ""
+msgstr "Abilite il discjariament dai files sunorôs sui MUDs abilitâts al MSP."
 
 #: data/org.gnome.MUD.gschema.xml:91
 msgid "Command divider"
-msgstr ""
+msgstr "Divisôr di comants"
 
 #: data/org.gnome.MUD.gschema.xml:92
 msgid ""
 "A character that is used to split commands in a string like “w;w;w;l”, which "
 "will be sent to the MUD as 4 separate commands."
 msgstr ""
+"Un caratar che al ven doprât par dividi i comants intune stringhe tant che "
+"“w;w;w;l”, che e vignarà inviade a MUD tant che 4 comants separâts."
 
 #: data/org.gnome.MUD.gschema.xml:96
 msgid "Whether to echo sent text to the connection"
-msgstr ""
+msgstr "Indiche se fâ l'echo dal test inviât ae conession"
 
 #: data/org.gnome.MUD.gschema.xml:97
 msgid ""
@@ -486,7 +488,7 @@ msgstr ""
 
 #: data/org.gnome.MUD.gschema.xml:101
 msgid "Whether to keep text sent to the connection"
-msgstr ""
+msgstr "Indiche se tignî il test inviât ae conession"
 
 #: data/org.gnome.MUD.gschema.xml:102
 msgid ""
@@ -494,15 +496,20 @@ msgid ""
 "selection in the entry box. Otherwise, the text entry box will be cleared "
 "after each text input."
 msgstr ""
+"Se abilitât, il test che al ven inviât ae conession al vignarà lassât come "
+"selezion intal ricuadri des vôs. In câs contrari, il ricuadri des vôs di "
+"test al vignarà netât dopo ogni test in jentrade."
 
 #: data/org.gnome.MUD.gschema.xml:106
 msgid "Whether to scroll to the bottom when there’s new output"
-msgstr ""
+msgstr "Indiche se fâ cori viers il bas cuant che al ven fûr gnûf output"
 
 #: data/org.gnome.MUD.gschema.xml:107
 msgid ""
 "If true, whenever there’s new output the terminal will scroll to the bottom."
 msgstr ""
+"Se true (vêr), ogni volte che al saltarà fûr un gnûf output il terminâl al "
+"scorarà viers la fin."
 
 #: data/org.gnome.MUD.gschema.xml:111
 msgid "Use proxy"
@@ -550,7 +557,7 @@ msgstr ""
 
 #: data/org.gnome.MUD.gschema.xml:159
 msgid "Commands to send to MUD upon establishing connection."
-msgstr ""
+msgstr "Comants di inviâ a MUD une volte stabilide la conession."
 
 #: data/org.gnome.MUD.desktop.in:3
 msgid "GNOME-Mud"
@@ -559,11 +566,6 @@ msgstr "GNOME-Mud"
 #: data/org.gnome.MUD.desktop.in:4
 msgid "The GNOME MUD Client"
 msgstr "Il client MUD di GNOME"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.MUD.desktop.in:7
-msgid "gnome-mud"
-msgstr "gnome-mud"
 
 #: src/debug-logger.c:823 src/mud-connections.c:788 src/mud-connections.c:795
 msgid "Error"
@@ -678,7 +680,7 @@ msgstr ""
 
 #: src/mud-log.c:390
 msgid "Save log as…"
-msgstr "salve regjistri come…"
+msgstr "Salve regjistri come…"
 
 #: src/mud-log.c:724
 msgid ""
@@ -739,3 +741,6 @@ msgid ""
 msgstr ""
 "\n"
 "dâts MCCP ruvinâts. Conession anulade.\n"
+
+#~ msgid "gnome-mud"
+#~ msgstr "gnome-mud"

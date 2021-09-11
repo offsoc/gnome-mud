@@ -1,7 +1,7 @@
 # Danish translation for gnome-mud.
 # Copyright (C) 2010 gnome-mud's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-mud package.
-# Joe Hansen (joedalton2@yahoo.dk), 2010, 2013.
+# Joe Hansen <joedalton2@yahoo.dk>, 2010, 2013.
 # Alan Mortensen <alanmortensen.am@gmail.com>, 2019.
 #
 # echo -> ekko (måske kopier)
@@ -11,16 +11,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-mud master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-mud/issues\n"
-"POT-Creation-Date: 2019-01-06 16:49+0000\n"
-"PO-Revision-Date: 2019-02-19 19:33+0100\n"
-"Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
+"POT-Creation-Date: 2020-07-18 14:21+0000\n"
+"PO-Revision-Date: 2020-11-30 00:00+0200\n"
+"Last-Translator: scootergrisen\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
 
 #: data/main.ui:22
 msgid "Start Logging…"
@@ -578,13 +577,7 @@ msgstr "GNOME-Mud"
 msgid "The GNOME MUD Client"
 msgstr "GNOME MUD-klienten"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.MUD.desktop.in:7
-#| msgid "Gnome-Mud"
-msgid "gnome-mud"
-msgstr "gnome-mud"
-
-#: src/debug-logger.c:823 src/mud-connections.c:786 src/mud-connections.c:793
+#: src/debug-logger.c:823 src/mud-connections.c:788 src/mud-connections.c:795
 msgid "Error"
 msgstr "Fejl"
 
@@ -631,21 +624,21 @@ msgstr "Advarsel %s\n"
 msgid "Type"
 msgstr "Type"
 
-#: src/mud-connections.c:539
+#: src/mud-connections.c:541
 #, c-format
 msgid "Are you sure you want to delete %s?"
 msgstr "Er du sikker på, at du ønsker at slette %s?"
 
-#: src/mud-connections.c:540
+#: src/mud-connections.c:542
 #, c-format
 msgid "Delete %s?"
 msgstr "Slet %s?"
 
-#: src/mud-connections.c:787
+#: src/mud-connections.c:789
 msgid "No profile specified."
 msgstr "Ingen profil angivet."
 
-#: src/mud-connections.c:794
+#: src/mud-connections.c:796
 msgid "No MUD name specified."
 msgstr "Intet MUD-navn angivet."
 
@@ -748,11 +741,12 @@ msgstr "Forbind til flerbruger dungeons (MUD)"
 #: src/mud-window.c:738
 msgid "translator-credits"
 msgstr ""
-"Joe Hansen, 2010, 2013.\n"
-"Alan Mortensen, 2019.\n"
+"Joe Hansen, 2010, 2013\n"
+"Alan Mortensen, 2019\n"
 "\n"
-"Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
-"Mere info: http://www.dansk-gruppen.dk"
+"Dansk-gruppen\n"
+"Websted http://dansk-gruppen.dk\n"
+"E-mail <dansk@dansk-gruppen.dk>"
 
 #: src/mud-window.c:841
 msgid "Error Saving Buffer"
@@ -769,102 +763,3 @@ msgid ""
 msgstr ""
 "\n"
 "MCCP-data korrumperet. Afbryder forbindelse.\n"
-
-#~ msgid "Font"
-#~ msgstr "Skrifttype"
-
-#~ msgid ""
-#~ "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
-#~ msgstr ""
-#~ "Et Pangoskriftnavn. Eksempler er “Sans 12” eller “Monospace Bold 14”."
-
-#~ msgid ""
-#~ "GNOME-Mud has a 16-color palette that MUDs can use. It must be specified "
-#~ "in the form of a colon-separated list of color names. Color names should "
-#~ "be in hex format e.g. \"#FF00FF\"."
-#~ msgstr ""
-#~ "GNOME-Mud har en 16-farvet palette som MUD'er kan bruge. Den skal være "
-#~ "angivet som en kolonadskilt liste over farvenavne. Farvenavne bør være i "
-#~ "heksformat f.eks. “#FF00FF”."
-
-#~ msgid "Encoding Index"
-#~ msgstr "Kodningsindeks"
-
-#~ msgid "The index of the currently selected encoding."
-#~ msgstr "Indekset på den nu valgte kodning."
-
-#~ msgid "Whether to enable or disable the system keys"
-#~ msgstr "Hvorvidt systemnøglerne skal aktiveres eller deaktiveres"
-
-#~ msgid ""
-#~ "If enabled, GNOME-Mud will offer a few built-in keybindings. They can be "
-#~ "overridden by custom keybindings, or they can be disabled completely with "
-#~ "this option."
-#~ msgstr ""
-#~ "Hvis aktiveret vil GNOME-Mud tilbyde nogle få indbyggede genvejstaster. "
-#~ "De kan overskrives af tilpassede genvejstaster, eller de kan deaktiveres "
-#~ "fuldstændigt med dette tilvalg."
-
-#~ msgid "Last log file"
-#~ msgstr "Sidste logfil"
-
-#~ msgid "The file in which a mudlog was last saved."
-#~ msgstr "Den fil som en mudlog sidst blev gemt i."
-
-#~ msgid "Log flush interval"
-#~ msgstr "Log rydningsinterval"
-
-#~ msgid "How often in seconds gnome-mud should flush logfiles."
-#~ msgstr "Hvor ofte angivet i sekunder gnome-mud bør nulstille logfiler."
-
-#~ msgid ""
-#~ "List of profiles known to GNOME-Mud. The list contains strings naming "
-#~ "subdirectories relative to /apps/gnome-mud/profiles."
-#~ msgstr ""
-#~ "Liste over profiler kendt af GNOME-Mud. Denne liste indeholder strenge "
-#~ "der navngiver undermapper relativt til /apps/gnome-mud/profiles."
-
-# Jo, Retningsbestemte genvejstaster må være fint også.  Jeg synes altid
-# keybinding er noget med genvejstaster - det kan selvfølgelig være
-# noget andet i dette specifikke tilfælde, men keybinding er ikke så
-# ualmindeligt endda.
-#~ msgid "Directional keybindings"
-#~ msgstr "Retningsbestemte genvejstaster"
-
-#~ msgid "Failed to init GConf: %s"
-#~ msgstr "Kunne ikke initialisere GConf: %s"
-
-#~ msgid "_Input Methods"
-#~ msgstr "_Inddatametoder"
-
-#~ msgid ""
-#~ "There was an error loading config value for whether to use image in "
-#~ "menus. (%s)\n"
-#~ msgstr ""
-#~ "Der opstod en fejl ved indlæsning af konfigurationsværdi for hvorvidt, "
-#~ "der skal bruges billede i menuer. (%s)\n"
-
-#~ msgid "_Hide window"
-#~ msgstr "_Skjul vindue"
-
-#~ msgid "_Show window"
-#~ msgstr "_Vis vindue"
-
-#~ msgid "_Quit"
-#~ msgstr "_Afslut"
-
-# dungeon?
-#~ msgid "A Multi-User Dungeon (MUD) client for GNOME"
-#~ msgstr "En flerbrugerdungeonklient (MUD) til GNOME"
-
-#~ msgid "C_onnection..."
-#~ msgstr "_Forbindelse …"
-
-#~ msgid "*** Could not connect.\n"
-#~ msgstr "*** Kunne ikke forbinde.\n"
-
-#~ msgid "*** Connection closed.\n"
-#~ msgstr "*** Forbindelse lukket.\n"
-
-#~ msgid "Connection timed out."
-#~ msgstr "Tidsfrist for forbindelsen løb ud."

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-mud master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-mud/issues\n"
-"POT-Creation-Date: 2020-07-18 14:21+0000\n"
-"PO-Revision-Date: 2021-01-17 14:57+0100\n"
+"POT-Creation-Date: 2021-01-17 13:58+0000\n"
+"PO-Revision-Date: 2021-11-22 14:27+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 
 #: data/main.ui:22
 msgid "Start Logging…"
@@ -553,7 +553,7 @@ msgstr "Non dal caratar."
 
 #: data/org.gnome.MUD.gschema.xml:158
 msgid "Connect string"
-msgstr ""
+msgstr "Conet la stringhe"
 
 #: data/org.gnome.MUD.gschema.xml:159
 msgid "Commands to send to MUD upon establishing connection."
@@ -699,7 +699,7 @@ msgstr "Impussibil vierzi “%s” pe scriture."
 
 #: src/mud-log.c:837 src/mud-log.c:918 src/mud-log.c:934
 msgid "Could not write data to log file!"
-msgstr ""
+msgstr "Impussibil scrivi i dâts sul file dal regjistri!"
 
 #: src/mud-log.c:844
 msgid ""
@@ -711,8 +711,8 @@ msgstr ""
 #, c-format
 msgid "Palette had %u entry instead of %u\n"
 msgid_plural "Palette had %u entries instead of %u\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "La palete e veve %u vôs invezit che %u\n"
+msgstr[1] "La palete e veve %u vôs invezit che %u\n"
 
 #: src/mud-trigger.c:718
 msgid "#Submatch Out of Range#"

@@ -8,6 +8,3 @@ StartupNotify=true
 Terminal=false
 Type=Application
 Categories=GNOME;Game;
-X-GNOME-Bugzilla-Bugzilla=GNOME
-X-GNOME-Bugzilla-Product=gnome-mud
-X-GNOME-Bugzilla-Component=general

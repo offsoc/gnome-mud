@@ -1,41 +1,47 @@
 # Swedish translation for gnome-mud.
-# Copyright © 2019, 2020 gnome-mud's COPYRIGHT HOLDER
+# Copyright © 2019-2023 gnome-mud's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-mud package.
 # Erik Sköldås <erik.skoldas@tele2.se>, 2019.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2020.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2020, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-mud master\n"
-"POT-Creation-Date: 2019-10-28 16:00+0000\n"
-"PO-Revision-Date: 2020-05-01 21:06+0200\n"
+"POT-Creation-Date: 2023-01-24 22:04+0000\n"
+"PO-Revision-Date: 2023-01-29 22:45+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
-"Language-Team: Swedish <gnome-se-list@gnome.org>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Project-Style: gnome\n"
 
-#: C/legal.xml:2(para) C/gnome-mud-manual.xml:2(para)
+#. (itstool) path: para/ulink
+#: C/legal.xml:9
+msgid "link"
+msgstr "länk"
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:2
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
 "later version published by the Free Software Foundation with no Invariant "
 "Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or "
-"in the file COPYING-DOCS distributed with this manual."
+"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"with this manual."
 msgstr ""
 "Tillstånd att kopiera, distribuera och/eller modifiera detta dokument ges "
 "under villkoren i GNU Free Documentation License (GFDL), version 1.1 eller "
 "senare, utgivet av Free Software Foundation utan standardavsnitt och "
-"omslagstexter. En kopia av GFDL finns att hämta på denna <ulink type=\"help"
-"\" url=\"ghelp:fdl\">länk</ulink> eller i filen COPYING-DOCS som medföljer "
-"denna handbok."
+"omslagstexter. En kopia av GFDL finns att hämta på denna <_:ulink-1/> eller "
+"i filen COPYING-DOCS som medföljer denna handbok."
 
-#: C/legal.xml:12(para) C/gnome-mud-manual.xml:12(para)
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:12
 msgid ""
 "This manual is part of a collection of GNOME manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
@@ -47,7 +53,8 @@ msgstr ""
 "handböcker kan du göra detta genom att lägga till en kopia av licensavtalet "
 "i handboken enligt instruktionerna i avsnitt 6 i licensavtalet."
 
-#: C/legal.xml:19(para) C/gnome-mud-manual.xml:19(para)
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:19
 msgid ""
 "Many of the names used by companies to distinguish their products and "
 "services are claimed as trademarks. Where those names appear in any GNOME "
@@ -61,7 +68,8 @@ msgstr ""
 "medvetna om dessa varumärken - är de skrivna med versaler eller med "
 "inledande versal."
 
-#: C/legal.xml:35(para) C/gnome-mud-manual.xml:35(para)
+#. (itstool) path: listitem/para
+#: C/legal.xml:35
 msgid ""
 "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
 "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
@@ -90,7 +98,8 @@ msgstr ""
 "ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT BEVILJAS ENDAST "
 "UNDER DENNA ANSVARSFRISKRIVNING; OCH"
 
-#: C/legal.xml:55(para) C/gnome-mud-manual.xml:55(para)
+#. (itstool) path: listitem/para
+#: C/legal.xml:55
 msgid ""
 "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
 "NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
@@ -116,75 +125,86 @@ msgstr ""
 "DOKUMENTET, ÄVEN OM PART SKA HA BLIVIT INFORMERAD OM MÖJLIGHETEN TILL SÅDANA "
 "SKADOR."
 
-#: C/legal.xml:28(para) C/gnome-mud-manual.xml:28(para)
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:28
 msgid ""
 "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
 "OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<placeholder-1/>"
+"<_:orderedlist-1/>"
 msgstr ""
 "DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER "
 "VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE "
-"FÖRUTSÄTTNINGAR: <placeholder-1/>"
+"FÖRUTSÄTTNINGAR: <_:orderedlist-1/>"
 
-#: C/gnome-mud-manual.xml:30(title) C/gnome-mud-manual.xml:73(revnumber)
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"Erik Sköldås <erik.skoldas@tele2.se>, 2019\n"
+"Anders Jonsson <anders.jonsson@norsjovallen.se>, 2023"
+
+#. (itstool) path: articleinfo/title
+#: C/gnome-mud-manual.xml:30
 msgid "GNOME-Mud Manual V1.1"
 msgstr "Handbok för GNOME-Mud v1.1"
 
-#: C/gnome-mud-manual.xml:32(para)
+#. (itstool) path: abstract/para
+#: C/gnome-mud-manual.xml:32
 msgid "User manual for GNOME-Mud, a MUD client for the GNOME Desktop."
 msgstr "Användarmanual för GNOME-Mud, en MUD-klient för GNOME-skrivbordet."
 
-#: C/gnome-mud-manual.xml:35(year)
-msgid "2001"
-msgstr "2001"
+#. (itstool) path: articleinfo/copyright
+#: C/gnome-mud-manual.xml:34
+msgid ""
+"<year>2001</year> <year>2002</year> <year>2005</year> <year>2006</year> "
+"<holder>Jordi Mallach</holder>"
+msgstr ""
+"<year>2001</year> <year>2002</year> <year>2005</year> <year>2006</year> "
+"<holder>Jordi Mallach</holder>"
 
-#: C/gnome-mud-manual.xml:36(year)
-msgid "2002"
-msgstr "2002"
-
-#: C/gnome-mud-manual.xml:37(year)
-msgid "2005"
-msgstr "2005"
-
-#: C/gnome-mud-manual.xml:38(year)
-msgid "2006"
-msgstr "2006"
-
-#: C/gnome-mud-manual.xml:39(holder) C/gnome-mud-manual.xml:76(para)
-#: C/gnome-mud-manual.xml:85(para)
-msgid "Jordi Mallach"
-msgstr "Jordi Mallach"
-
-#: C/gnome-mud-manual.xml:52(publishername) C/gnome-mud-manual.xml:65(orgname)
-#: C/gnome-mud-manual.xml:77(para) C/gnome-mud-manual.xml:86(para)
+#. (itstool) path: publisher/publishername
+#. (itstool) path: revdescription/para
+#: C/gnome-mud-manual.xml:52 C/gnome-mud-manual.xml:77
+#: C/gnome-mud-manual.xml:86
 msgid "GNOME Documentation Project"
 msgstr "GNOME:s dokumentationsprojekt"
 
-#: C/gnome-mud-manual.xml:62(firstname)
-msgid "Jordi"
-msgstr "Jordi"
+#. (itstool) path: authorgroup/author
+#: C/gnome-mud-manual.xml:61
+msgid ""
+"<firstname>Jordi</firstname> <surname>Mallach</surname> <affiliation> "
+"<orgname>GNOME Documentation Project</orgname> <address><email>jordim@gnome."
+"org</email></address> </affiliation>"
+msgstr ""
+"<firstname>Jordi</firstname> <surname>Mallach</surname> <affiliation> "
+"<orgname>Dokumentationsprojekt för GNOME</orgname> "
+"<address><email>jordim@gnome.org</email></address> </affiliation>"
 
-#: C/gnome-mud-manual.xml:63(surname)
-msgid "Mallach"
-msgstr "Mallach"
+#. (itstool) path: revdescription/para
+#: C/gnome-mud-manual.xml:76 C/gnome-mud-manual.xml:85
+msgid "Jordi Mallach"
+msgstr "Jordi Mallach"
 
-#: C/gnome-mud-manual.xml:66(email)
-msgid "jordim@gnome.org"
-msgstr "jordim@gnome.org"
+#. (itstool) path: revhistory/revision
+#: C/gnome-mud-manual.xml:72
+msgid ""
+"<revnumber>GNOME-Mud Manual V1.1</revnumber> <date>January 2006</date> <_:"
+"revdescription-1/>"
+msgstr ""
+"<revnumber>Handbok för GNOME-Mud v1.1</revnumber> <date>Januari 2006</date> "
+"<_:revdescription-1/>"
 
-#: C/gnome-mud-manual.xml:74(date)
-msgid "January 2006"
-msgstr "Januari 2006"
+#. (itstool) path: revhistory/revision
+#: C/gnome-mud-manual.xml:81
+msgid ""
+"<revnumber>GNOME-Mud Manual V1.0</revnumber> <date>June 2003</date> <_:"
+"revdescription-1/>"
+msgstr ""
+"<revnumber>Handbok för GNOME-Mud v1.0</revnumber> <date>Juni 2003</date> <_:"
+"revdescription-1/>"
 
-#: C/gnome-mud-manual.xml:82(revnumber)
-msgid "GNOME-Mud Manual V1.0"
-msgstr "Handbok för GNOME-Mud v1.0"
-
-#: C/gnome-mud-manual.xml:83(date)
-msgid "June 2003"
-msgstr "Juni 2003"
-
-#: C/gnome-mud-manual.xml:91(releaseinfo)
+#. (itstool) path: articleinfo/releaseinfo
+#: C/gnome-mud-manual.xml:91
 msgid ""
 "This manual describes version 0.9.1 of GNOME-Mud. It was last updated on "
 "January 2006."
@@ -192,25 +212,29 @@ msgstr ""
 "Den här handboken beskriver version 0.9.1 av GNOME-Mud. Den uppdaterades "
 "senast i januari 2006."
 
-#: C/gnome-mud-manual.xml:102(title)
+#. (itstool) path: legalnotice/title
+#: C/gnome-mud-manual.xml:102
 msgid "Feedback"
 msgstr "Återkoppling"
 
-#: C/gnome-mud-manual.xml:103(para)
+#. (itstool) path: legalnotice/para
+#: C/gnome-mud-manual.xml:103
 msgid ""
 "To report a bug or make a suggestion regarding the GNOME-Mud application or "
-"this manual, follow the directions in the <ulink url=\"ghelp:gnome-feedback"
-"\" type=\"help\">GNOME Feedback Page</ulink>."
+"this manual, follow the directions in the <ulink url=\"ghelp:gnome-"
+"feedback\" type=\"help\">GNOME Feedback Page</ulink>."
 msgstr ""
 "För att rapportera ett fel eller komma med förslag angående programmet GNOME-"
 "Mud eller den här handboken, följ anvisningarna på <ulink url=\"ghelp:gnome-"
 "feedback\" type=\"help\">GNOME:s återkopplingssida</ulink>."
 
-#: C/gnome-mud-manual.xml:114(title)
+#. (itstool) path: sect1/title
+#: C/gnome-mud-manual.xml:114
 msgid "Introduction"
 msgstr "Introduktion"
 
-#: C/gnome-mud-manual.xml:116(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:116
 msgid ""
 "<application>GNOME-Mud</application> is an specialized telnet client to play "
 "Multi-User Dungeons, or MUDs."
@@ -218,7 +242,8 @@ msgstr ""
 "<application>GNOME-Mud</application> är en specialiserad telnetklient för "
 "att spela Multi-User Dungeons, eller MUD:ar."
 
-#: C/gnome-mud-manual.xml:120(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:120
 msgid ""
 "Multi-User Dungeons are imaginary worlds and realms that exist on the "
 "Internet, where people connect and can perform a variety of actions. A MUD "
@@ -246,21 +271,23 @@ msgstr ""
 "enkel ”telnet”-anslutning. Användaren matar in order till MUD-servern, och "
 "servern svarar med resultatet av åtgärden."
 
-#: C/gnome-mud-manual.xml:135(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:135
 msgid ""
 "There are hundreds of MUDs available on the Internet, but there are some "
 "sites that classify them and provide with detailed MUD lists, often provided "
-"by the MUD maintainers. <ulink url=\"http://www.mudconnect.com/\" type=\"http"
-"\">MudConnect.com</ulink> is one of them, and GNOME-Mud has native support "
-"for their mudlist format."
+"by the MUD maintainers. <ulink url=\"http://www.mudconnect.com/\" "
+"type=\"http\">MudConnect.com</ulink> is one of them, and GNOME-Mud has "
+"native support for their mudlist format."
 msgstr ""
 "Det finns hundratals MUD:ar tillgängliga på internet, men det finns några "
 "webbplatser som klassificerar dessa och tillhandahåller detaljerade MUD-"
-"listor, oftast tillhandahållna av MUD-sidornas administratörer. <ulink url="
-"\"http://www.mudconnect.com/\" type=\"http\">MudConnect.com</ulink> är en av "
-"dem, och GNOME-Mud har inbyggt stöd för deras mudlist-format."
+"listor, oftast tillhandahållna av MUD-sidornas administratörer. <ulink "
+"url=\"http://www.mudconnect.com/\" type=\"http\">MudConnect.com</ulink> är "
+"en av dem, och GNOME-Mud har inbyggt stöd för deras mudlist-format."
 
-#: C/gnome-mud-manual.xml:142(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:142
 msgid ""
 "<application>GNOME-Mud</application> provides the user with a series of "
 "functionality that makes mudding somewhat easier. Most notably, the ability "
@@ -274,23 +301,26 @@ msgstr ""
 "utför vanliga uppgifter som att ansluta till olika MUD:ar och skriva vanliga "
 "namn eller kommandon mer effektivt och snabbt."
 
-#: C/gnome-mud-manual.xml:150(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:150
 msgid ""
-"To run <application>GNOME-Mud</application>, select "
-"<menuchoice><guisubmenu>Games</guisubmenu><guimenuitem>GNOME-Mud</"
-"guimenuitem></menuchoice> from the <guimenu>Main Menu</guimenu>, or type "
-"<command>gnome-mud</command> on the command line."
+"To run <application>GNOME-Mud</application>, select <menuchoice> "
+"<guisubmenu>Games</guisubmenu> <guimenuitem>GNOME-Mud</guimenuitem> </"
+"menuchoice> from the <guimenu>Main Menu</guimenu>, or type <command>gnome-"
+"mud</command> on the command line."
 msgstr ""
-"För att starta <application>GNOME-Mud</application>, välj "
-"<menuchoice><guisubmenu>Spel</guisubmenu><guimenuitem>GNOME-Mud</"
-"guimenuitem></menuchoice> från <guimenu>Huvudmenyn</guimenu>, eller skriv "
-"<command>gnome-mud</command> i ett terminalfönster."
+"För att starta <application>GNOME-Mud</application>, välj <menuchoice> "
+"<guisubmenu>Spel</guisubmenu> <guimenuitem>GNOME-Mud</guimenuitem> </"
+"menuchoice> från <guimenu>Huvudmenyn</guimenu>, eller skriv <command>gnome-"
+"mud</command> i ett terminalfönster."
 
-#: C/gnome-mud-manual.xml:167(title)
+#. (itstool) path: sect1/title
+#: C/gnome-mud-manual.xml:167
 msgid "Using GNOME-Mud"
 msgstr "Använda GNOME-Mud"
 
-#: C/gnome-mud-manual.xml:168(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:168
 msgid ""
 "<application>GNOME-Mud</application> can be used to play any kind of telnet-"
 "based MUDs, and should make mudding easier, both for players and coders. It "
@@ -305,170 +335,186 @@ msgstr ""
 "kodare. Den kan ansluta till olika MUD:ar i samma programfönster och läsa in "
 "olika inställningar beroende på karaktären du loggat in som. "
 "<application>GNOME-Mud</application>s mål är att vara en likvärdig klient "
-"till <ulink url=\"http://www.zuggsoft.com/zmud/zmudinfo.htm\" type=\"http"
-"\">zMUD</ulink>, en mycket sofistikerad Mud-klient för Windows-plattformen."
+"till <ulink url=\"http://www.zuggsoft.com/zmud/zmudinfo.htm\" "
+"type=\"http\">zMUD</ulink>, en mycket sofistikerad Mud-klient för Windows-"
+"plattformen."
 
-#: C/gnome-mud-manual.xml:181(title)
+#. (itstool) path: sect2/title
+#: C/gnome-mud-manual.xml:181
 msgid "Basic usage"
 msgstr "Grundläggande användning"
 
-#: C/gnome-mud-manual.xml:190(title) C/gnome-mud-manual.xml:192(screeninfo)
+#. (itstool) path: figure/title
+#. (itstool) path: screenshot/screeninfo
+#: C/gnome-mud-manual.xml:190 C/gnome-mud-manual.xml:192
 msgid "GNOME-Mud Main Window"
 msgstr "Huvudfönstret i GNOME-Mud"
 
-#: C/gnome-mud-manual.xml:182(para)
+#. (itstool) path: sect2/para
+#: C/gnome-mud-manual.xml:182
 msgid ""
 "Starting <application>GNOME-Mud</application> opens the <interface>Main "
 "window</interface>, shown in <xref linkend=\"main-window\"/>. The window is "
 "at first mostly empty, just showing some information about the "
-"<application>GNOME-Mud</application> build you're running. <placeholder-1/>"
+"<application>GNOME-Mud</application> build you're running. <_:figure-1/>"
 msgstr ""
 "När <application>GNOME-Mud</application> startas, kommer "
-"<interface>huvudfönstret</interface> att öppnas, som visas i <xref linkend="
-"\"main-window\"/>. Fönstret är ursprungligen nästan tomt, och visar bara "
-"lite information om den nuvarande versionen av <application>GNOME-Mud</"
-"application> du använder. <placeholder-1/>"
+"<interface>huvudfönstret</interface> att öppnas, som visas i <xref "
+"linkend=\"main-window\"/>. Fönstret är ursprungligen nästan tomt, och visar "
+"bara lite information om den nuvarande versionen av <application>GNOME-Mud</"
+"application> du använder. <_:figure-1/>"
 
-#: C/gnome-mud-manual.xml:207(title)
+#. (itstool) path: sect3/title
+#: C/gnome-mud-manual.xml:207
 msgid "Connecting to a MUD"
 msgstr "Ansluta till en MUD"
 
-#: C/gnome-mud-manual.xml:220(title) C/gnome-mud-manual.xml:222(screeninfo)
+#. (itstool) path: figure/title
+#. (itstool) path: screenshot/screeninfo
+#: C/gnome-mud-manual.xml:220 C/gnome-mud-manual.xml:222
 msgid "GNOME-Mud Connection Wizard"
 msgstr "Anslutningsguide för GNOME-Mud"
 
-#: C/gnome-mud-manual.xml:208(para)
+#. (itstool) path: sect3/para
+#: C/gnome-mud-manual.xml:208
 msgid ""
-"To connect to a MUD, select <menuchoice><guisubmenu>File</"
-"guisubmenu><guimenuitem>Connection Wizard…</guimenuitem></menuchoice>, which "
-"will bring up the <interface>GNOME-Mud Connections</interface> dialog box. "
-"The <interface>Connection Wizard</interface> allows you to create different "
-"connections so you can store a list of \"personalities\". <placeholder-1/> "
-"To create a connection, enter a descriptive title (normally the MUD's full "
+"To connect to a MUD, select <menuchoice> <guisubmenu>File</guisubmenu> "
+"<guimenuitem>Connection Wizard…</guimenuitem> </menuchoice>, which will "
+"bring up the <interface>GNOME-Mud Connections</interface> dialog box. The "
+"<interface>Connection Wizard</interface> allows you to create different "
+"connections so you can store a list of \"personalities\". <_:figure-1/> To "
+"create a connection, enter a descriptive title (normally the MUD's full "
 "name) in the <guilabel>Title</guilabel> field and fill in the MUD's "
 "information in the <guilabel>Host</guilabel> and <guilabel>Port</guilabel> "
 "fields (leaving <guilabel>Port</guilabel> blank will make it default to port "
-"23). You can also import those fields very easily using the <link linkend="
-"\"mudlist\"><interface>GNOME-Mud MudList</interface></link> and selecting a "
-"MUD from there. Enter the character information in the <guilabel>Character</"
-"guilabel> and <guilabel>Password</guilabel> (password is only required if "
-"you want to autolog into the MUD). If you want to bind the connection to a "
-"set of aliases, triggers, variables keybinds, click on <guibutton>Select "
-"Profile</guibutton> and select the desired one from the list. See the "
-"section on <link linkend=\"profiles\"><interface>Profiles</interface></link> "
-"for more information on them. Once you have filled all the fields, press "
-"<guibutton>Apply</guibutton> to accept the values of the new profile or to "
-"update them, in case a profile with the same <guilabel>title</guilabel> "
-"already existed, or <guibutton>Cancel </guibutton> to discard them. When a "
-"connection is created, it will show up in the left column of the dialog, "
-"showing the MUD title and character name. Select the desired connection and "
-"press <guibutton>Connect</guibutton> to start the connection. "
+"23). You can also import those fields very easily using the <link "
+"linkend=\"mudlist\"> <interface>GNOME-Mud MudList</interface></link> and "
+"selecting a MUD from there. Enter the character information in the "
+"<guilabel>Character</guilabel> and <guilabel>Password</guilabel> (password "
+"is only required if you want to autolog into the MUD). If you want to bind "
+"the connection to a set of aliases, triggers, variables keybinds, click on "
+"<guibutton>Select Profile</guibutton> and select the desired one from the "
+"list. See the section on <link linkend=\"profiles\"><interface>Profiles</"
+"interface></link> for more information on them. Once you have filled all the "
+"fields, press <guibutton>Apply</guibutton> to accept the values of the new "
+"profile or to update them, in case a profile with the same <guilabel>title</"
+"guilabel> already existed, or <guibutton>Cancel </guibutton> to discard "
+"them. When a connection is created, it will show up in the left column of "
+"the dialog, showing the MUD title and character name. Select the desired "
+"connection and press <guibutton>Connect</guibutton> to start the connection. "
 "<guibutton>Close</guibutton> will close the <interface>Connection Wizard</"
 "interface>."
 msgstr ""
-"För att ansluta till en MUD, välj <menuchoice><guisubmenu>Arkiv</"
-"guisubmenu><guimenuitem>Anslutningsguiden…</guimenuitem></menuchoice>, "
+"För att ansluta till en MUD, välj <menuchoice> <guisubmenu>Arkiv</"
+"guisubmenu> <guimenuitem>Anslutningsguiden…</guimenuitem> </menuchoice>, "
 "vilken kommer att öppna dialogrutan för <interface>GNOME-Mud-anslutningar</"
 "interface>. <interface>Anslutningsguiden</interface> låter dig skapa olika "
-"anslutningar så att du kan lagra en lista med ”personligheter”. "
-"<placeholder-1/> För att skapa en anslutning, ange en beskrivande titel "
-"(normalt MUD:ens fullständiga namn) i fältet <guilabel>Titel</guilabel> och "
-"fyll i MUD:ens informationen i fälten <guilabel>Värd</guilabel> och "
-"<guilabel>Port</guilabel> (om <guilabel>Port</guilabel> lämnas blankt kommer "
-"port 23 anges som standard). Du kan också enkelt importera dessa fält med "
-"hjälp av <link linkend=\"mudlist\"><interface>GNOME-Mud-MudList</interface></"
-"link> och välja en MUD därifrån. Ange karaktärsinformation i "
-"<guilabel>Karaktär</guilabel> och <guilabel>Lösenord</guilabel> (lösenord "
-"krävs bara om du vill logga in automatiskt i MUD:en). Om du vill binda upp "
-"anslutningen till en uppsättning alias, triggrar, variabler och "
-"snabbtangenter, klicka på <guibutton>Välj profil</guibutton> och välj den "
-"önskade från listan. Se avsnittet om <link linkend=\"profiles"
-"\"><interface>Profiler</interface></link> för mer information om dem. När du "
-"har fyllt i alla fält, klicka på <guibutton>Tillämpa</guibutton> för att "
-"acceptera värdena för den nya profilen eller för att uppdatera dem, om en "
-"profil med samma <guilabel>titel</guilabel> redan finns, eller "
-"<guibutton>Avbryt</guibutton> för att förkasta dem. När en anslutning har "
-"skapats kommer den att visas i den vänstra kolumnen i dialogrutan, med MUD-"
-"titeln och karaktärsnamnet. Välj önskad anslutning och tryck på "
-"<guibutton>Anslut</guibutton> för att starta anslutningen. <guibutton>Stäng</"
-"guibutton> kommer att stänga <interface>Anslutningsguiden</interface>."
+"anslutningar så att du kan lagra en lista med ”personligheter”. <_:figure-1/"
+"> För att skapa en anslutning, ange en beskrivande titel (normalt MUD:ens "
+"fullständiga namn) i fältet <guilabel>Titel</guilabel> och fyll i MUD:ens "
+"informationen i fälten <guilabel>Värd</guilabel> och <guilabel>Port</"
+"guilabel> (om <guilabel>Port</guilabel> lämnas blankt kommer port 23 anges "
+"som standard). Du kan också enkelt importera dessa fält med hjälp av <link "
+"linkend=\"mudlist\"> <interface>GNOME-Mud-MudList</interface></link> och "
+"välja en MUD därifrån. Ange karaktärsinformation i <guilabel>Karaktär</"
+"guilabel> och <guilabel>Lösenord</guilabel> (lösenord krävs bara om du vill "
+"logga in automatiskt i MUD:en). Om du vill binda upp anslutningen till en "
+"uppsättning alias, triggrar, variabler och snabbtangenter, klicka på "
+"<guibutton>Välj profil</guibutton> och välj den önskade från listan. Se "
+"avsnittet om <link linkend=\"profiles\"><interface>Profiler</interface></"
+"link> för mer information om dem. När du har fyllt i alla fält, klicka på "
+"<guibutton>Tillämpa</guibutton> för att acceptera värdena för den nya "
+"profilen eller för att uppdatera dem, om en profil med samma "
+"<guilabel>titel</guilabel> redan finns, eller <guibutton>Avbryt</guibutton> "
+"för att förkasta dem. När en anslutning har skapats kommer den att visas i "
+"den vänstra kolumnen i dialogrutan, med MUD-titeln och karaktärsnamnet. Välj "
+"önskad anslutning och tryck på <guibutton>Anslut</guibutton> för att starta "
+"anslutningen. <guibutton>Stäng</guibutton> kommer att stänga "
+"<interface>Anslutningsguiden</interface>."
 
-#: C/gnome-mud-manual.xml:252(para)
+#. (itstool) path: sect3/para
+#: C/gnome-mud-manual.xml:252
 msgid ""
 "Alternatively, you can quickly connect to a MUD, bypassing the connection "
-"wizard selecting <menuchoice><guisubmenu>File</"
-"guisubmenu><guimenuitem>Connect…</guimenuitem></menuchoice>, which will "
-"bring up the <interface>Quick Connect</interface> dialog. Just fill in the "
+"wizard selecting <menuchoice> <guisubmenu>File</guisubmenu> "
+"<guimenuitem>Connect…</guimenuitem> </menuchoice>, which will bring up the "
+"<interface>Quick Connect</interface> dialog. Just fill in the "
 "<guilabel>Host</guilabel> and <guilabel>Port </guilabel> fields and press "
 "<guibutton>OK</guibutton> to connect to the desired MUD."
 msgstr ""
 "Alternativt kan du snabbt ansluta till en MUD, utan att använda "
-"anslutningsguiden genom att välja <menuchoice><guisubmenu>Arkiv</"
-"guisubmenu><guimenuitem>Anslut…</guimenuitem></menuchoice>, som kommer att "
+"anslutningsguiden genom att välja <menuchoice> <guisubmenu>Arkiv</"
+"guisubmenu> <guimenuitem>Anslut…</guimenuitem> </menuchoice>, som kommer att "
 "öppna <interface>Snabbanslutning</interface>-dialogen. Fyll där bara i "
 "fälten <guilabel>Värd</guilabel> och <guilabel>Port</guilabel> och tryck "
 "<guibutton>OK</guibutton> för att ansluta till den önskade MUD:en."
 
-#: C/gnome-mud-manual.xml:264(para)
+#. (itstool) path: sect3/para
+#: C/gnome-mud-manual.xml:264
 msgid ""
 "If you open various connections simultaneously, <application> GNOME-Mud</"
 "application> will place them inside <interface>connection tabs</interface>, "
 "which will appear below the connection screen. To close a tab after "
-"disconnecting from a MUD, select <menuchoice><guisubmenu>File</"
-"guisubmenu><guimenuitem>Close Window</guimenuitem></menuchoice> and the tab "
-"will disappear."
+"disconnecting from a MUD, select <menuchoice> <guisubmenu>File</guisubmenu> "
+"<guimenuitem>Close Window</guimenuitem> </menuchoice> and the tab will "
+"disappear."
 msgstr ""
 "Om du öppnar olika anslutningar samtidigt, kommer <application>GNOME-Mud</"
-"application> att placera dem i <interface>anslutningsflikarna</interface>, "
-"som kommer att visas under anslutningsskärmen. Om du vill stänga en flik "
-"efter att du kopplat ifrån en MUD, välj <menuchoice><guisubmenu>Arkiv</"
-"guisubmenu><guimenuitem>Stäng fönstret</guimenuitem></menuchoice> så "
+"application> att placera dem i <interface>anslutningsflikar</interface>, som "
+"kommer att visas under anslutningsskärmen. Om du vill stänga en flik efter "
+"att du kopplat ifrån en MUD, välj <menuchoice> <guisubmenu>Arkiv</"
+"guisubmenu> <guimenuitem>Stäng fönster</guimenuitem> </menuchoice> så "
 "försvinner fliken."
 
-#: C/gnome-mud-manual.xml:278(title)
+#. (itstool) path: sect3/title
+#: C/gnome-mud-manual.xml:278
 msgid "MudList support"
 msgstr "MudList-stöd"
 
-#: C/gnome-mud-manual.xml:287(title) C/gnome-mud-manual.xml:289(screeninfo)
+#. (itstool) path: figure/title
+#. (itstool) path: screenshot/screeninfo
+#: C/gnome-mud-manual.xml:287 C/gnome-mud-manual.xml:289
 msgid "GNOME-Mud MudList"
 msgstr "GNOME-Mud-MudList"
 
-#: C/gnome-mud-manual.xml:279(para)
+#. (itstool) path: sect3/para
+#: C/gnome-mud-manual.xml:279
 msgid ""
 "<application>GNOME-Mud</application> can read <ulink url=\"http://www."
 "mudconnect.com/\" type=\"http\"> MudConnect.com</ulink>'s MUD list, which is "
 "an extensive list of MUDs, with information about their codebase, host, port "
 "and including a description. There are two ways to use the <interface>GNOME-"
-"Mud MudList</interface>. <placeholder-1/>"
+"Mud MudList</interface>. <_:figure-1/>"
 msgstr ""
 "<application>GNOME-Mud</application> kan läsa <ulink url=\"http://www."
 "mudconnect.com/\" type=\"http\">MudConnect.com</ulink>s MUD-lista, vilket är "
 "en omfattande lista med MUD:ar, med information om deras kodbas, värd, port "
 "och med en beskrivning. Det finns två sätt att använda <interface>GNOME-Mud-"
-"MudList</interface>. <placeholder-1/>"
+"MudList</interface>. <_:figure-1/>"
 
-#: C/gnome-mud-manual.xml:295(para)
+#. (itstool) path: sect3/para
+#: C/gnome-mud-manual.xml:295
 msgid ""
-"The most common way is probably by opening it from the <link linkend="
-"\"connecting\"><interface>Connection Wizard </interface></link>. This will "
-"open the <interface>GNOME-Mud Mudlist </interface> in \"import mode\". You "
-"will find a list of MUDs at the left column of the dialog, ordered by "
-"codebase. If you expand a codebase, you'll get a list of the MUDs in that "
-"section. Click on a MUD to see the information displayed in the right side "
-"of the <interface>MudList</interface>.<guilabel>Mud Name</guilabel> is the "
-"full name of the MUD, <guilabel>Telnet Address</guilabel> is the host and "
-"port where it is located and <guilabel>Codebase</guilabel> describes what "
-"type of MUD it is. <guilabel>Description</guilabel> shows a more or less "
-"description of the selected MUD. In \"import mode\", there will be a "
-"<guibutton>Import and close </guibutton> button, which will fetch the MUD "
-"info and fill it into a new connection in the <interface>Connection Wizard</"
-"interface>. There's also a <guibutton>Go to webpage of the MUD</guibutton> "
-"button, which will point a web browser to the webpage defined in the mud "
-"list."
+"The most common way is probably by opening it from the <link "
+"linkend=\"connecting\"><interface>Connection Wizard </interface></link>. "
+"This will open the <interface>GNOME-Mud Mudlist </interface> in \"import "
+"mode\". You will find a list of MUDs at the left column of the dialog, "
+"ordered by codebase. If you expand a codebase, you'll get a list of the MUDs "
+"in that section. Click on a MUD to see the information displayed in the "
+"right side of the <interface>MudList</interface>.<guilabel>Mud Name</"
+"guilabel> is the full name of the MUD, <guilabel>Telnet Address</guilabel> "
+"is the host and port where it is located and <guilabel>Codebase</guilabel> "
+"describes what type of MUD it is. <guilabel>Description</guilabel> shows a "
+"more or less description of the selected MUD. In \"import mode\", there will "
+"be a <guibutton>Import and close </guibutton> button, which will fetch the "
+"MUD info and fill it into a new connection in the <interface>Connection "
+"Wizard</interface>. There's also a <guibutton>Go to webpage of the MUD</"
+"guibutton> button, which will point a web browser to the webpage defined in "
+"the mud list."
 msgstr ""
-"Det vanligaste sättet är förmodligen genom att öppna den från <link linkend="
-"\"connecting\"><interface>Anslutningsguiden</interface></link>. Det kommer "
-"öppna <interface>GNOME-Mud-MudList</interface> i ”importläge”. I "
+"Det vanligaste sättet är förmodligen genom att öppna den från <link "
+"linkend=\"connecting\"><interface>Anslutningsguiden</interface></link>. Det "
+"kommer öppna <interface>GNOME-Mud-MudList</interface> i ”importläge”. I "
 "dialogrutans vänstra kolumn hittar du en lista över MUD:ar sorterade efter "
 "kodbas. Om du expanderar en kodbas, får du en lista över de MUD:ar som finns "
 "i det avsnittet. Klicka på en MUD för att se informationen. Till höger om "
@@ -483,48 +529,53 @@ msgstr ""
 "till hemsida för mud</guibutton>-knapp, vilket kommer att peka en webbläsare "
 "till den webbsida som definieras i MUD-listan."
 
-#: C/gnome-mud-manual.xml:314(para)
+#. (itstool) path: sect3/para
+#: C/gnome-mud-manual.xml:314
 msgid ""
 "Another way of using the MudList is exactly the opposite. Select "
-"<menuchoice><guisubmenu>File</guisubmenu><guimenuitem>MudList Listing…</"
-"guimenuitem></menuchoice> and you'll get the same dialog as if opened from "
+"<menuchoice> <guisubmenu>File</guisubmenu> <guimenuitem>MudList Listing…</"
+"guimenuitem> </menuchoice> and you'll get the same dialog as if opened from "
 "the <interface>Connection Wizard</interface>, only the <guibutton>Import and "
 "close</guibutton> button will be replaced by <guibutton>Connect to the mud</"
 "guibutton>."
 msgstr ""
-"Ett annat sätt att använda MudList är precis tvärtom. Välj "
-"<menuchoice><guisubmenu>Arkiv</guisubmenu><guimenuitem>MudList-lista…</"
-"guimenuitem></menuchoice> så får du samma dialog som om den hade öppnats "
-"från <interface>Anslutningsguiden</interface>, endast knappen "
+"Ett annat sätt att använda MudList är precis tvärtom. Välj <menuchoice> "
+"<guisubmenu>Arkiv</guisubmenu> <guimenuitem>MudList-lista…</guimenuitem> </"
+"menuchoice> så får du samma dialog som om den hade öppnats från "
+"<interface>Anslutningsguiden</interface>, endast knappen "
 "<guibutton>Importera och stäng</guibutton> ersätts av <guibutton>Anslut till "
 "denna MUD</guibutton>."
 
-#: C/gnome-mud-manual.xml:328(title)
+#. (itstool) path: sect3/title
+#: C/gnome-mud-manual.xml:328
 msgid "Disconnecting from MUDs"
 msgstr "Koppla ifrån MUD:ar"
 
-#: C/gnome-mud-manual.xml:329(para)
+#. (itstool) path: sect3/para
+#: C/gnome-mud-manual.xml:329
 msgid ""
 "To disconnect from a MUD, you should try to use your MUD's logout command. "
 "Normally this command is <command>quit</command> or <command>rent</command>, "
 "but it can vary across MUD flavours. <application>GNOME-Mud</application> "
-"can \"hard-disconnect\" from a mud, using <menuchoice><guisubmenu>File</"
-"guisubmenu><guimenuitem>Disconnect</guimenuitem></menuchoice>, or just "
+"can \"hard-disconnect\" from a mud, using <menuchoice> <guisubmenu>File</"
+"guisubmenu> <guimenuitem>Disconnect</guimenuitem> </menuchoice>, or just "
 "quitting from <application>GNOME-Mud</application>."
 msgstr ""
 "För att koppla från en MUD bör du försöka använda din MUD:s "
 "utloggningskommando. Normalt är det här kommandot <command>quit</command> "
 "eller <command>rent</command>, men det kan variera mellan olika MUD:ar. "
 "<application>GNOME-Mud</application> kan göra en ”hård-frånkoppling” från en "
-"MUD, genom <menuchoice><guisubmenu>Arkiv</guisubmenu><guimenuitem>Koppla "
-"från</guimenuitem></menuchoice>, eller genom att avsluta <application>GNOME-"
+"MUD, genom <menuchoice> <guisubmenu>Arkiv</guisubmenu> <guimenuitem>Koppla "
+"från</guimenuitem> </menuchoice>, eller genom att avsluta <application>GNOME-"
 "Mud</application>."
 
-#: C/gnome-mud-manual.xml:342(title)
+#. (itstool) path: warning/title
+#: C/gnome-mud-manual.xml:342
 msgid "Warning on hard-disconnects"
 msgstr "Varning vid hård-frånkoppling"
 
-#: C/gnome-mud-manual.xml:343(para)
+#. (itstool) path: warning/para
+#: C/gnome-mud-manual.xml:343
 msgid ""
 "It is very desirable that you disconnect from MUDs using the MUD's own "
 "logout procedures. Some MUDs have retarded quit commands to avoid people "
@@ -547,19 +598,24 @@ msgstr ""
 "Detta kan vara farligt eftersom andra spelare kan komma att dra fördel av "
 "detta, exempelvis genom att döda dig eller stjäla dina förvärvade ting."
 
-#: C/gnome-mud-manual.xml:359(title)
+#. (itstool) path: sect3/title
+#: C/gnome-mud-manual.xml:359
 msgid "Editing Profiles"
 msgstr "Konfigurera profiler"
 
-#: C/gnome-mud-manual.xml:369(title) C/gnome-mud-manual.xml:371(screeninfo)
+#. (itstool) path: figure/title
+#. (itstool) path: screenshot/screeninfo
+#: C/gnome-mud-manual.xml:369 C/gnome-mud-manual.xml:371
 msgid "GNOME-Mud Profiles"
 msgstr "GNOME-Mud-profiler"
 
-#: C/gnome-mud-manual.xml:378(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:378
 msgid "New"
 msgstr "Ny"
 
-#: C/gnome-mud-manual.xml:380(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:380
 msgid ""
 "Brings up the <interface>New Profile</interface> dialog. Enter the name of "
 "the new profile and it will be created with empty values."
@@ -567,19 +623,23 @@ msgstr ""
 "Tar fram dialogrutan <interface>Ny profil</interface>. Ange namnet på den "
 "nya profilen och den kommer att skapas med tomma värden."
 
-#: C/gnome-mud-manual.xml:388(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:388
 msgid "Delete"
 msgstr "Ta bort"
 
-#: C/gnome-mud-manual.xml:390(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:390
 msgid "Deletes the selected profile. The \"Default\" profile can't be deleted."
 msgstr "Tar bort den valda profilen. ”Standardprofilen” kan inte raderas."
 
-#: C/gnome-mud-manual.xml:397(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:397
 msgid "Aliases"
 msgstr "Alias"
 
-#: C/gnome-mud-manual.xml:399(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:399
 msgid ""
 "Aliases are similar to UNIX shell aliases. Pressing on the button will open "
 "an alias editor. On the top of the dialog, there is a list of defined "
@@ -588,8 +648,8 @@ msgid ""
 "the desired expanded command in the <guilabel> Replacement </guilabel> "
 "field. Clicking on <guibutton> Add</guibutton> will add or modify the edited "
 "alias and add it to the alias list. For example, filling in <guilabel>Alias</"
-"guilabel> with \"wd\" and <guilabel> Replacement</guilabel> with \"who drow"
-"\" will make <application>GNOME-Mud</application> send the \"who drow\" "
+"guilabel> with \"wd\" and <guilabel> Replacement</guilabel> with \"who "
+"drow\" will make <application>GNOME-Mud</application> send the \"who drow\" "
 "command to the MUD when the user issues a \"wd\" command in the input line. "
 "You can get rid of unwanted aliases by selecting it and clicking on "
 "<guibutton>Delete</guibutton>. Exit the alias editor with the "
@@ -609,11 +669,13 @@ msgstr ""
 "klicka på <guibutton>Ta bort</guibutton>. Avsluta aliasredigeraren med "
 "<guibutton>Stäng</guibutton>-knappen."
 
-#: C/gnome-mud-manual.xml:421(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:421
 msgid "Variables"
 msgstr "Variabler"
 
-#: C/gnome-mud-manual.xml:423(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:423
 msgid ""
 "Variables are useful to replace things within <interface> Triggers</"
 "interface> or <interface>Variables</interface>. For example, if you have "
@@ -627,7 +689,8 @@ msgstr ""
 "istället för att ange smeknamnet. Så du behöver bara ändra värdet på "
 "variabeln för att använda triggern för ett annat smeknamn."
 
-#: C/gnome-mud-manual.xml:432(para)
+#. (itstool) path: warning/para
+#: C/gnome-mud-manual.xml:432
 msgid ""
 "This feature is very limited at the moment and should be extended in future "
 "<application>GNOME-Mud</application> releases."
@@ -635,11 +698,13 @@ msgstr ""
 "Denna funktion är väldigt begränsad just nu och kommer troligen utvidgas i "
 "framtida <application>GNOME-Mud</application>-utgåvor."
 
-#: C/gnome-mud-manual.xml:441(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:441
 msgid "Triggers"
 msgstr "Triggrar"
 
-#: C/gnome-mud-manual.xml:443(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:443
 msgid ""
 "Triggers are a very useful feature. When you define an <guilabel>Action</"
 "guilabel> and bind a <guilabel>Trigger </guilabel> to it, <application>GNOME-"
@@ -661,11 +726,13 @@ msgstr ""
 "automatisering är <emphasis>fusk</emphasis>, så fråga MUD-administratörerna "
 "om detta innan du använder det."
 
-#: C/gnome-mud-manual.xml:458(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:458
 msgid "Keybinds"
 msgstr "Snabbtangenter"
 
-#: C/gnome-mud-manual.xml:460(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:460
 msgid ""
 "Keybinds perform commands when you activate a key sequence or combination. "
 "You need to insert a keybind in the <guilabel>Bind</guilabel> field and the "
@@ -686,40 +753,45 @@ msgstr ""
 "walking”. Om du kopplar \"Upp\" till kommandot \"Nord\" kan du gå norrut "
 "genom att bara trycka på tangenten ”Uppåtpil”."
 
-#: C/gnome-mud-manual.xml:476(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:476
 msgid "Close"
 msgstr "Stäng"
 
-#: C/gnome-mud-manual.xml:478(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:478
 msgid "This closes the Profiles editor."
 msgstr "Detta stänger Profilredigeraren."
 
-#: C/gnome-mud-manual.xml:360(para)
+#. (itstool) path: sect3/para
+#: C/gnome-mud-manual.xml:360
 msgid ""
 "Normally, each character class has different commands and abilities which "
 "require different configurations for the mudding session. Using "
 "<interface>Profiles</interface>, you can customize different features of "
 "<application>GNOME-Mud</application> to suit the current character's needs. "
 "To edit them, select <guibutton>Profiles</guibutton> from the toolbar, and a "
-"dialog with a list of customizable items will appear. <placeholder-1/"
-"><placeholder-2/> Use the <link linkend=\"connecting\"><interface>Connection "
+"dialog with a list of customizable items will appear. <_:figure-1/> <_:"
+"variablelist-2/> Use the <link linkend=\"connecting\"><interface>Connection "
 "Wizard </interface></link> to bind a profile to a connection."
 msgstr ""
 "Normalt har varje karaktärsklass olika kommandon och förmågor som kräver "
 "olika konfigurationer för MUD-sessionen. Med hjälp av <interface>Profiler</"
-"interface>, kan du anpassa olika funktioner i <application>GNOME-Mud</"
+"interface> kan du anpassa olika funktioner i <application>GNOME-Mud</"
 "application> för att passa den aktuella karaktärens behov. För att redigera "
 "dem, välj <guibutton>Profiler</guibutton> från verktygsfältet så visas en "
-"dialogruta med en lista över anpassningsbara objekt. <placeholder-1/"
-"><placeholder-2/> Använd <link linkend=\"connecting"
-"\"><interface>Anslutningsguiden</interface></link> för att binda en profil "
-"till en anslutning."
+"dialogruta med en lista över anpassningsbara objekt. <_:figure-1/> <_:"
+"variablelist-2/> Använd <link "
+"linkend=\"connecting\"><interface>Anslutningsguiden</interface></link> för "
+"att binda en profil till en anslutning."
 
-#: C/gnome-mud-manual.xml:490(title)
+#. (itstool) path: sect3/title
+#: C/gnome-mud-manual.xml:490
 msgid "The GNOME-Mud Auto Mapper"
 msgstr "Kartgenererare för GNOME-Mud"
 
-#: C/gnome-mud-manual.xml:491(para)
+#. (itstool) path: sect3/para
+#: C/gnome-mud-manual.xml:491
 msgid ""
 "<application>GNOME-Mud</application> has a an internal application which can "
 "be used to draw maps of dungeons, roads or other zones of a MUD. It consists "
@@ -745,27 +817,32 @@ msgstr ""
 "<guibutton>Spara</guibutton> och skriva ett filnamn, och öppna tidigare "
 "sparade kartor med <guibutton>Läs in</guibutton>."
 
-#: C/gnome-mud-manual.xml:522(title)
+#. (itstool) path: sect2/title
+#: C/gnome-mud-manual.xml:522
 msgid "Toolbar"
 msgstr "Verktygsfält"
 
-#: C/gnome-mud-manual.xml:527(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:527
 msgid "Wizard…"
 msgstr "Guide…"
 
-#: C/gnome-mud-manual.xml:529(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:529
 msgid ""
 "Brings up the <link linkend=\"connecting\"><interface> Connection Wizard</"
 "interface></link> dialog."
 msgstr ""
-"Öppnar dialogrutan <link linkend=\"connecting"
-"\"><interface>Anslutningsguiden</interface></link>."
+"Öppnar dialogrutan <link "
+"linkend=\"connecting\"><interface>Anslutningsguiden</interface></link>."
 
-#: C/gnome-mud-manual.xml:536(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:536
 msgid "Profiles"
 msgstr "Profiler"
 
-#: C/gnome-mud-manual.xml:538(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:538
 msgid ""
 "Opens the <link linkend=\"profiles\"><interface>Profiles Editor </"
 "interface></link> dialog."
@@ -773,11 +850,13 @@ msgstr ""
 "Öppnar dialogrutan <link linkend=\"profiles\"><interface>Profilredigerare</"
 "interface></link>."
 
-#: C/gnome-mud-manual.xml:545(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:545
 msgid "Connect…"
 msgstr "Anslut…"
 
-#: C/gnome-mud-manual.xml:547(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:547
 msgid ""
 "Opens the <interface>Quick Connect</interface> dialog. Use this to open a "
 "MUD connection bypassing the Connection Wizard."
@@ -785,24 +864,29 @@ msgstr ""
 "Öppnar dialogrutan <interface>Snabbanslutning</interface>. Använd den för "
 "att öppna en MUD-anslutning och förbigå anslutningsguiden."
 
-#: C/gnome-mud-manual.xml:555(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:555
 msgid "Disconnect"
 msgstr "Koppla från"
 
-#: C/gnome-mud-manual.xml:557(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:557
 msgid ""
-"Disconnects from the current connection. See the <link linkend="
-"\"disconnecting\">Disconnecting from MUDs</link> for more information about "
-"this."
+"Disconnects from the current connection. See the <link "
+"linkend=\"disconnecting\">Disconnecting from MUDs</link> for more "
+"information about this."
 msgstr ""
-"Frånkoppling av den aktuella anslutningen. Se <link linkend=\"disconnecting"
-"\">Koppla ifrån MUD:ar</link> för mer information om detta."
+"Frånkoppling av den aktuella anslutningen. Se <link "
+"linkend=\"disconnecting\">Koppla ifrån MUD:ar</link> för mer information om "
+"detta."
 
-#: C/gnome-mud-manual.xml:565(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:565
 msgid "Reconnect"
 msgstr "Återanslut"
 
-#: C/gnome-mud-manual.xml:567(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:567
 msgid ""
 "Reconnects to the current connection. If you loose the link to the MUD, you "
 "can hit this to get reconnected again. If the connection was open, it will "
@@ -812,31 +896,32 @@ msgstr ""
 "till MUD:en, kan du välja det här för att återansluta. Om anslutningen var "
 "öppen, stängs den nuvarande anslutningen och en ny startas."
 
-#: C/gnome-mud-manual.xml:576(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:576
 msgid "Exit"
 msgstr "Avsluta"
 
-#: C/gnome-mud-manual.xml:578(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:578
 msgid "Exits from <application>GNOME-Mud</application>."
 msgstr "Avslutar <application>GNOME-Mud</application>."
 
-#: C/gnome-mud-manual.xml:523(para)
+#. (itstool) path: sect2/para
+#: C/gnome-mud-manual.xml:523
 msgid ""
-"The toolbar provides access to several commonly used routines. "
-"<placeholder-1/>"
+"The toolbar provides access to several commonly used routines. <_:"
+"variablelist-1/>"
 msgstr ""
-"Verktygsfältet ger tillgång till olika ofta använda åtgärder. <placeholder-1/"
-">"
+"Verktygsfältet ger tillgång till olika ofta använda åtgärder. <_:"
+"variablelist-1/>"
 
-#. Describing the menubar ensures comprehensive feature
-#. coverage. Nest itemizedlists inside variablelists so that each
-#. menu is easily located by indexing software. Proper indentation
-#. makes it easier!
-#: C/gnome-mud-manual.xml:595(title)
+#. (itstool) path: sect2/title
+#: C/gnome-mud-manual.xml:595
 msgid "Menus"
 msgstr "Menyer"
 
-#: C/gnome-mud-manual.xml:596(para)
+#. (itstool) path: sect2/para
+#: C/gnome-mud-manual.xml:596
 msgid ""
 "The menu bar, located at the top of the <interface>Main Window</interface>, "
 "contains the following menus:"
@@ -844,139 +929,155 @@ msgstr ""
 "Menyraden, som är placerad längst upp i <interface>Huvudfönstret</"
 "interface>, innehåller följande menyer:"
 
-#: C/gnome-mud-manual.xml:602(guimenu)
-msgid "File"
-msgstr "Arkiv"
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:602
+msgid "<guimenu>File</guimenu>"
+msgstr "<guimenu>Arkiv</guimenu>"
 
-#: C/gnome-mud-manual.xml:608(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:608
 msgid ""
-"<menuchoice> • <guimenuitem>Connection Wizard…</guimenuitem></menuchoice> "
-"This starts the <link linkend=\"connecting\"><interface>Connection Wizard</"
+"<menuchoice> • <guimenuitem>Connection Wizard…</guimenuitem> </menuchoice> "
+"This starts the <link linkend=\"connecting\"> <interface>Connection Wizard</"
 "interface></link> dialog, which can be used to select to which MUD should "
 "<application>GNOME-Mud</application> connect."
 msgstr ""
-"<menuchoice> • <guimenuitem>Anslutningsguiden…</guimenuitem></menuchoice> "
-"Detta startar dialogrutan <link linkend=\"connecting"
-"\"><interface>anslutningsguiden</interface></link>, som kan användas för att "
+"<menuchoice> • <guimenuitem>Anslutningsguiden…</guimenuitem> </menuchoice> "
+"Detta startar dialogrutan <link linkend=\"connecting\"> "
+"<interface>anslutningsguiden</interface></link>, som kan användas för att "
 "välja vilken MUD som <application>GNOME-Mud</application> ska ansluta till."
 
-#: C/gnome-mud-manual.xml:619(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:619
 msgid ""
-"<menuchoice> • <guimenuitem>MudList Listing…</guimenuitem></menuchoice> This "
-"opens the <link linkend=\"mudlist\"><interface>MudList</interface> dialog</"
-"link>, which can be used to browse a list of MUDs and connect to them or add "
-"them to your MUD connections."
+"<menuchoice> • <guimenuitem>MudList Listing…</guimenuitem> </menuchoice> "
+"This opens the <link linkend=\"mudlist\"> <interface>MudList</interface> "
+"dialog</link>, which can be used to browse a list of MUDs and connect to "
+"them or add them to your MUD connections."
 msgstr ""
-"<menuchoice> • <guimenuitem>MudList-lista…</guimenuitem></menuchoice> Detta "
-"öppnar dialogrutan <link linkend=\"mudlist\"><interface>MudList</interface></"
-"link>, som kan användas för att bläddra i en lista över MUD:ar och ansluta "
-"till dem eller lägga till dem i dina MUD-anslutningar."
+"<menuchoice> • <guimenuitem>MudList-lista…</guimenuitem> </menuchoice> Detta "
+"öppnar dialogrutan <link linkend=\"mudlist\"> <interface>MudList</"
+"interface></link>, som kan användas för att bläddra i en lista över MUD:ar "
+"och ansluta till dem eller lägga till dem i dina MUD-anslutningar."
 
-#: C/gnome-mud-manual.xml:630(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:630
 msgid ""
-"<menuchoice> • <guimenuitem>Connect…</guimenuitem></menuchoice> This opens "
+"<menuchoice> • <guimenuitem>Connect…</guimenuitem> </menuchoice> This opens "
 "the <interface>Quick Connect </interface> dialog. Use this to open a MUD "
 "connection bypassing the Connection Wizard."
 msgstr ""
-"<menuchoice> • <guimenuitem>Anslut…</guimenuitem></menuchoice> Det här "
+"<menuchoice> • <guimenuitem>Anslut…</guimenuitem> </menuchoice> Det här "
 "öppnar dialogrutan <interface>Snabbanslutning</interface>. Använd den för "
 "att öppna en MUD-anslutning och kringgå Anslutningsguiden."
 
-#: C/gnome-mud-manual.xml:640(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:640
 msgid ""
-"<menuchoice> • <guimenuitem>Disconnect</guimenuitem></menuchoice> This "
-"disconnects you from the current connection. See <link linkend="
-"\"disconnecting\">Disconnecting from MUDs </link> for more info about this."
+"<menuchoice> • <guimenuitem>Disconnect</guimenuitem> </menuchoice> This "
+"disconnects you from the current connection. See <link "
+"linkend=\"disconnecting\">Disconnecting from MUDs </link> for more info "
+"about this."
 msgstr ""
-"<menuchoice> • <guimenuitem>Koppla från</guimenuitem></menuchoice> Detta "
-"kopplar bort dig från den aktuella anslutningen. Se <link linkend="
-"\"disconnecting\">Koppla ifrån MUD:ar</link> för mer information."
+"<menuchoice> • <guimenuitem>Koppla från</guimenuitem> </menuchoice> Detta "
+"kopplar bort dig från den aktuella anslutningen. Se <link "
+"linkend=\"disconnecting\">Koppla ifrån MUD:ar</link> för mer information."
 
-#: C/gnome-mud-manual.xml:650(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:650
 msgid ""
-"<menuchoice> • <guimenuitem>Reconnect</guimenuitem></menuchoice> This will "
+"<menuchoice> • <guimenuitem>Reconnect</guimenuitem> </menuchoice> This will "
 "reconnect you to the current connection. If you loose the link to the MUD, "
 "you can hit this to get reconnected again. If the connection was open, it "
 "will close the current connection and start a new one."
 msgstr ""
-"<menuchoice> • <guimenuitem>Återanslut</guimenuitem></menuchoice> Detta "
+"<menuchoice> • <guimenuitem>Återanslut</guimenuitem> </menuchoice> Detta "
 "återansluter dig till den aktuella anslutningen. Om du förlorar "
 "uppkopplingen till MUD:en, kan du använda detta för att återansluta. Om "
 "anslutningen var öppen, stängs den nuvarande anslutningen och en ny kommer "
 "att startas."
 
-#: C/gnome-mud-manual.xml:661(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:661
 msgid ""
-"<menuchoice> • <guimenuitem>Start Logging…</guimenuitem></menuchoice> This "
+"<menuchoice> • <guimenuitem>Start Logging…</guimenuitem> </menuchoice> This "
 "will enable the recording of the currently selected connection. It will "
 "write all the output of a mudding session into the selected file."
 msgstr ""
-"<menuchoice> • <guimenuitem>Starta loggning…</guimenuitem></menuchoice> "
+"<menuchoice> • <guimenuitem>Starta loggning…</guimenuitem> </menuchoice> "
 "Detta aktiverar inspelning av den valda anslutningen. Det kommer att skriva "
 "all utdata från en MUD-session till den valda filen."
 
-#: C/gnome-mud-manual.xml:671(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:671
 msgid ""
-"<menuchoice> • <guimenuitem>Stop Logging</guimenuitem></menuchoice> This "
+"<menuchoice> • <guimenuitem>Stop Logging</guimenuitem> </menuchoice> This "
 "stops the recording of a connection, if it had been previously started."
 msgstr ""
-"<menuchoice> • <guimenuitem>Stoppa loggning</guimenuitem></menuchoice> Detta "
-"stoppar inspelningen av en anslutning, om den tidigare har startats."
+"<menuchoice> • <guimenuitem>Stoppa loggning</guimenuitem> </menuchoice> "
+"Detta stoppar inspelningen av en anslutning, om den tidigare har startats."
 
-#: C/gnome-mud-manual.xml:680(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:680
 msgid ""
-"<menuchoice> • <guimenuitem>Save Buffer…</guimenuitem></menuchoice> This "
+"<menuchoice> • <guimenuitem>Save Buffer…</guimenuitem> </menuchoice> This "
 "permits you to save your current connection buffer into a file. Useful to "
 "keep deathlogs or questlogs. It will just take a 'snapshot' of past "
 "messages, writing it into the selected file. For real time logging, see "
 "'Start/Stop Logging'."
 msgstr ""
-"<menuchoice> • <guimenuitem>Spara buffert…</guimenuitem></menuchoice> Detta "
+"<menuchoice> • <guimenuitem>Spara buffert…</guimenuitem> </menuchoice> Detta "
 "gör att du kan spara din nuvarande anslutningsbuffert i en fil. Användbart "
 "för att spara dödsloggar eller uppdragsloggar. Det kommer att skapa en "
 "ögonblicksbild av tidigare meddelanden, och skriva in det i den valda filen. "
-"För loggning i realtid, se ”Starta/Avsluta loggning”."
+"För loggning i realtid, se ”Starta/Stoppa loggning”."
 
-#: C/gnome-mud-manual.xml:692(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:692
 msgid ""
-"<menuchoice> • <guimenuitem>Close Window</guimenuitem></menuchoice> This "
+"<menuchoice> • <guimenuitem>Close Window</guimenuitem> </menuchoice> This "
 "closes a connection tab, even if the connection is still open."
 msgstr ""
-"<menuchoice> • <guimenuitem>Stäng fönster</guimenuitem></menuchoice> Detta "
+"<menuchoice> • <guimenuitem>Stäng fönster</guimenuitem> </menuchoice> Detta "
 "stänger en anslutningsflik, även om anslutningen fortfarande är öppen."
 
-#: C/gnome-mud-manual.xml:701(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:701
 msgid ""
-"<menuchoice><shortcut><keycombo><keycap>Ctrl</keycap><keycap>Q</keycap></"
-"keycombo></shortcut> • <guimenuitem>Exit</guimenuitem></menuchoice> This "
+"<menuchoice> <shortcut> <keycombo><keycap>Ctrl</keycap><keycap>Q</keycap></"
+"keycombo> </shortcut> • <guimenuitem>Exit</guimenuitem> </menuchoice> This "
 "quits the application."
 msgstr ""
-"<menuchoice><shortcut><keycombo><keycap>Ctrl</keycap><keycap>Q</keycap></"
-"keycombo></shortcut> • <guimenuitem>Avsluta</guimenuitem></menuchoice> Detta "
-"avslutar programmet."
+"<menuchoice> <shortcut> <keycombo><keycap>Ctrl</keycap><keycap>Q</keycap></"
+"keycombo> </shortcut> • <guimenuitem>Avsluta</guimenuitem> </menuchoice> "
+"Detta avslutar programmet."
 
-#: C/gnome-mud-manual.xml:604(para) C/gnome-mud-manual.xml:719(para)
-#: C/gnome-mud-manual.xml:766(para)
-msgid "This menu contains: <placeholder-1/>"
-msgstr "Den här menyn innehåller: <placeholder-1/>"
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:604 C/gnome-mud-manual.xml:719
+#: C/gnome-mud-manual.xml:766
+msgid "This menu contains: <_:itemizedlist-1/>"
+msgstr "Den här menyn innehåller: <_:itemizedlist-1/>"
 
-#: C/gnome-mud-manual.xml:717(guimenu)
-msgid "Settings"
-msgstr "Inställningar"
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:717
+msgid "<guimenu>Settings</guimenu>"
+msgstr "<guimenu>Inställningar</guimenu>"
 
-#: C/gnome-mud-manual.xml:723(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:723
 msgid ""
-"<menuchoice> • <guimenuitem>Auto Mapper…</guimenuitem></menuchoice> This "
+"<menuchoice> • <guimenuitem>Auto Mapper…</guimenuitem> </menuchoice> This "
 "opens the Auto Mapper feature (see the <link linkend=\"mapping\">GNOME-Mud "
 "Auto Mapper</link> section for more information."
 msgstr ""
-"<menuchoice> • <guimenuitem>Kartgenererare…</guimenuitem></menuchoice> Detta "
-"öppnar den automatiska Kartgenererarfunktionen (se avsnittet <link linkend="
-"\"mapping\">Kartgenererare för GNOME-Mud</link> för mer information."
+"<menuchoice> • <guimenuitem>Kartgenererare…</guimenuitem> </menuchoice> "
+"Detta öppnar den automatiska Kartgenererarfunktionen (se avsnittet <link "
+"linkend=\"mapping\">Kartgenererare för GNOME-Mud</link> för mer information."
 
-#: C/gnome-mud-manual.xml:733(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:733
 msgid ""
-"<menuchoice> • <guimenuitem>Plugins</guimenuitem></menuchoice> This opens a "
+"<menuchoice> • <guimenuitem>Plugins</guimenuitem> </menuchoice> This opens a "
 "submenu with the list of available plugins for <application>GNOME-Mud</"
 "application> and the <interface>Plugin Information</interface>, which shows "
 "information about them. Currently, <application>GNOME-Mud </application> "
@@ -984,8 +1085,8 @@ msgid ""
 "An example of an useful plugin could be a graphical Health Points/Mana "
 "monitor."
 msgstr ""
-"<menuchoice> • <guimenuitem>Insticksmoduler</guimenuitem></menuchoice> Detta "
-"öppnar en undermeny med en lista över tillgängliga insticksmoduler för "
+"<menuchoice> • <guimenuitem>Insticksmoduler</guimenuitem> </menuchoice> "
+"Detta öppnar en undermeny med en lista över tillgängliga insticksmoduler för "
 "<application>GNOME-Mud</application> och "
 "<interface>Insticksmodulinformation</interface>, som visar information om "
 "dem. För närvarande innehåller <application>GNOME-Mud</application> inte "
@@ -993,71 +1094,80 @@ msgstr ""
 "ganska enkelt. Ett exempel på en användbar insticksmodul skulle kunna vara "
 "en grafisk ”övervakare av hälsopoäng/mana”."
 
-#: C/gnome-mud-manual.xml:748(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:748
 msgid ""
-"<menuchoice> • <guimenuitem>Preferences…</guimenuitem></menuchoice> This "
-"opens the <link linkend=\"prefs\"><interface>Preferences</interface></link> "
+"<menuchoice> • <guimenuitem>Preferences…</guimenuitem> </menuchoice> This "
+"opens the <link linkend=\"prefs\"> <interface>Preferences</interface></link> "
 "dialog, which is used configure different aspects of <application>GNOME-Mud</"
 "application>."
 msgstr ""
-"<menuchoice> • <guimenuitem>Inställningar…</guimenuitem></menuchoice> Det "
-"här öppnar dialogrutan <link linkend=\"prefs\"><interface>Inställningar</"
+"<menuchoice> • <guimenuitem>Inställningar…</guimenuitem> </menuchoice> Det "
+"här öppnar dialogrutan <link linkend=\"prefs\"> <interface>Inställningar</"
 "interface></link>, som används för att konfigurera olika delar av "
 "<application>GNOME-Mud</application>."
 
-#: C/gnome-mud-manual.xml:764(guimenu)
-msgid "Help"
-msgstr "Hjälp"
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:764
+msgid "<guimenu>Help</guimenu>"
+msgstr "<guimenu>Hjälp</guimenu>"
 
-#: C/gnome-mud-manual.xml:770(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:770
 msgid ""
-"<menuchoice> • <guimenuitem>Manual</guimenuitem></menuchoice> This opens the "
-"<application>GNOME Help Browser</application> and displays this manual."
+"<menuchoice> • <guimenuitem>Manual</guimenuitem> </menuchoice> This opens "
+"the <application>GNOME Help Browser</application> and displays this manual."
 msgstr ""
-"<menuchoice> • <guimenuitem>Handbok</guimenuitem></menuchoice> Det här "
-"öppnar <application>GNOME:s hjälpläsare</application> och visar den här "
+"<menuchoice> • <guimenuitem>Handbok</guimenuitem> </menuchoice> Det här "
+"öppnar <application>GNOMEs hjälpläsare</application> och visar den här "
 "handboken."
 
-#: C/gnome-mud-manual.xml:779(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:779
 msgid ""
-"<menuchoice> • <guimenuitem>About</guimenuitem></menuchoice> This opens the "
+"<menuchoice> • <guimenuitem>About</guimenuitem> </menuchoice> This opens the "
 "<interface>About</interface> dialog which shows basic information about "
 "<application>GNOME-Mud</application>, such as the author's name, the "
 "application version number, the names of several contributors to the project "
 "and a link to<application>GNOME-Mud</application>'s Homepage."
 msgstr ""
-"<menuchoice> • <guimenuitem>Om</guimenuitem></menuchoice> Detta öppnar "
+"<menuchoice> • <guimenuitem>Om</guimenuitem> </menuchoice> Detta öppnar "
 "dialogrutan <interface>Om</interface> som visar grundläggande information om "
 "<application>GNOME-Mud</application>, som författarens namn, programmets "
 "versionsnummer, namnen på flera bidragsgivare till projektet och en länk "
 "till <application>GNOME-Mud</application>s webbsida."
 
-#: C/gnome-mud-manual.xml:805(title)
+#. (itstool) path: sect1/title
+#: C/gnome-mud-manual.xml:805
 msgid "Customization"
 msgstr "Anpassning"
 
-#: C/gnome-mud-manual.xml:806(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:806
 msgid ""
-"To change the application settings, select <menuchoice><guimenu>Settings</"
-"guimenu><guimenuitem>Preferences…</guimenuitem></menuchoice>. This opens the "
-"<interface>Preferences</interface> dialog, shown in <xref linkend="
-"\"preferences-window\"/>."
+"To change the application settings, select <menuchoice> <guimenu>Settings</"
+"guimenu> <guimenuitem>Preferences…</guimenuitem> </menuchoice>. This opens "
+"the <interface>Preferences</interface> dialog, shown in <xref "
+"linkend=\"preferences-window\"/>."
 msgstr ""
-"Om du vill ändra programinställningar, välj "
-"<menuchoice><guimenu>Inställningar</guimenu><guimenuitem>Inställningar…</"
-"guimenuitem></menuchoice>. Det här öppnar dialogrutan "
-"<interface>Inställningar</interface>, vilken visas i <xref linkend="
-"\"preferences-window\"/>."
+"Om du vill ändra programinställningar, välj <menuchoice> "
+"<guimenu>Inställningar</guimenu> <guimenuitem>Inställningar…</guimenuitem> </"
+"menuchoice>. Det här öppnar dialogrutan <interface>Inställningar</"
+"interface>, vilken visas i <xref linkend=\"preferences-window\"/>."
 
-#: C/gnome-mud-manual.xml:817(title) C/gnome-mud-manual.xml:819(screeninfo)
+#. (itstool) path: figure/title
+#. (itstool) path: screenshot/screeninfo
+#: C/gnome-mud-manual.xml:817 C/gnome-mud-manual.xml:819
 msgid "Preferences Dialog"
 msgstr "Dialogrutan Inställningar"
 
-#: C/gnome-mud-manual.xml:829(guilabel)
-msgid "Echo the text sent?"
-msgstr "Upprepa skickad text?"
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:829
+msgid "<guilabel>Echo the text sent?</guilabel>"
+msgstr "<guilabel>Upprepa skickad text?</guilabel>"
 
-#: C/gnome-mud-manual.xml:831(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:831
 msgid ""
 "If this is set, all the text you type and enter will be echoed on the "
 "connection so you can control what you are sending."
@@ -1065,11 +1175,13 @@ msgstr ""
 "Om det här är aktiverat, kommer all text som du skriver att speglas på "
 "anslutningen så att du kan styra vad du skickar."
 
-#: C/gnome-mud-manual.xml:839(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:839
 msgid "Keep the text entered?"
 msgstr "Behåll inmatad text?"
 
-#: C/gnome-mud-manual.xml:841(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:841
 msgid ""
 "If this is set, the text you have entered and sent to the connection, will "
 "be left in the entry box but selected. Turn this off to remove the text "
@@ -1079,11 +1191,13 @@ msgstr ""
 "anslutningen att lämnas kvar i inmatningsrutan men markerad. Inaktivera för "
 "att ta bort texten efter det att den har skickats."
 
-#: C/gnome-mud-manual.xml:849(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:849
 msgid "Freeze/Thaw?"
 msgstr "Frys/töa?"
 
-#: C/gnome-mud-manual.xml:851(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:851
 msgid ""
 "If set, text will draw faster but it will not draw every character, only "
 "whole strings. This will probably make displays a lot faster if you are "
@@ -1093,12 +1207,14 @@ msgstr ""
 "tecken, utan bara hela strängar. Detta kommer förmodligen att göra skärmens "
 "uppdatering mycket snabbare om du spelar MUD:ar med många olika färger."
 
-#: C/gnome-mud-manual.xml:860(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:860
 msgid "Disable system keys"
 msgstr "Inaktivera systemtangenter"
 
 # TODO: overridden
-#: C/gnome-mud-manual.xml:862(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:862
 msgid ""
 "If set, <application>GNOME-Mud</application> will provide with some default "
 "keybinds, like for example direction aliases in the numeric keypad. These "
@@ -1110,11 +1226,13 @@ msgstr ""
 "tangentbordet. Du har alltid möjlighet att ändra definitionen med hjälp av "
 "anpassade snabbtangenter, eller inaktivera dem helt och hållet."
 
-#: C/gnome-mud-manual.xml:871(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:871
 msgid "Command divide char"
 msgstr "Skiljetecken för kommandon"
 
-#: C/gnome-mud-manual.xml:873(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:873
 msgid ""
 "Insert the character you want to use to separate multi-command orders "
 "entered in the command line. For example, if set to \";\", entering "
@@ -1125,11 +1243,13 @@ msgstr ""
 "kommandon i kommandoraden. Om du till exempel anger ”;”, kommer ”nord”, "
 "”öst” i kommandoraden att utföra två oberoende kommandon ”nord”, ”öst”."
 
-#: C/gnome-mud-manual.xml:882(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:882
 msgid "Command history"
 msgstr "Kommandohistorik"
 
-#: C/gnome-mud-manual.xml:884(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:884
 msgid ""
 "This is the number of commands that <application>GNOME-Mud </application> "
 "will store in it's command history."
@@ -1137,19 +1257,22 @@ msgstr ""
 "Det här är antalet kommandon som <application>GNOME-Mud</application> kommer "
 "att lagra i kommandohistoriken."
 
-#: C/gnome-mud-manual.xml:825(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:825
 msgid ""
-"The properties in the <guilabel>Functionality</guilabel> tab are: "
-"<placeholder-1/>"
+"The properties in the <guilabel>Functionality</guilabel> tab are: <_:"
+"variablelist-1/>"
 msgstr ""
-"Egenskaperna i fliken <guilabel>Funktionalitet</guilabel> är: <placeholder-1/"
-">"
+"Egenskaperna i fliken <guilabel>Funktionalitet</guilabel> är: <_:"
+"variablelist-1/>"
 
-#: C/gnome-mud-manual.xml:897(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:897
 msgid "Font"
 msgstr "Typsnitt"
 
-#: C/gnome-mud-manual.xml:899(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:899
 msgid ""
 "Click here to open a font selection window to select the desired font to be "
 "used in the connection window."
@@ -1157,11 +1280,13 @@ msgstr ""
 "Klicka för att öppna fönstret för val av typsnitt för att välja önskat "
 "typsnitt som ska användas i anslutningsfönstret."
 
-#: C/gnome-mud-manual.xml:906(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:906
 msgid "Foreground color"
 msgstr "Förgrundsfärg"
 
-#: C/gnome-mud-manual.xml:908(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:908
 msgid ""
 "This will open a color chooser dialog that you can use to select the font "
 "color you want to use."
@@ -1169,11 +1294,13 @@ msgstr ""
 "Detta öppnar en dialogruta för färgväljare som du kan använda för att välja "
 "den typsnittsfärg du vill använda."
 
-#: C/gnome-mud-manual.xml:915(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:915
 msgid "Bold foreground color"
 msgstr "Fet förgrundsfärg"
 
-#: C/gnome-mud-manual.xml:917(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:917
 msgid ""
 "This will open a color chooser dialog that you can use to select the bold "
 "font color you want to use."
@@ -1181,11 +1308,13 @@ msgstr ""
 "Detta öppnar en dialogruta för färgväljare som du kan använda för att välja "
 "den typsnittsfärg du vill använda för fetstil."
 
-#: C/gnome-mud-manual.xml:924(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:924
 msgid "Background color"
 msgstr "Bakgrundsfärg"
 
-#: C/gnome-mud-manual.xml:926(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:926
 msgid ""
 "This will open the same dialog as before, but will select the foreground "
 "color of your font."
@@ -1193,11 +1322,13 @@ msgstr ""
 "Detta öppnar samma dialog som tidigare men väljer förgrundsfärgen på "
 "typsnittet."
 
-#: C/gnome-mud-manual.xml:933(term)
+#. (itstool) path: varlistentry/term
+#: C/gnome-mud-manual.xml:933
 msgid "Color Palette"
 msgstr "Färgpalett"
 
-#: C/gnome-mud-manual.xml:935(para)
+#. (itstool) path: listitem/para
+#: C/gnome-mud-manual.xml:935
 msgid ""
 "This is a series of buttons which lets you define your own colors for ANSI. "
 "Each color represents one ANSI color which you can redefine."
@@ -1205,15 +1336,17 @@ msgstr ""
 "Detta är en serie knappar som låter dig definiera dina egna färger för ANSI. "
 "Varje färg representerar en ANSI-färg som du kan omdefiniera."
 
-#: C/gnome-mud-manual.xml:893(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:893
 msgid ""
-"The properties in the <guilabel>Colors and Fonts</guilabel> tab are: "
-"<placeholder-1/>"
+"The properties in the <guilabel>Colors and Fonts</guilabel> tab are: <_:"
+"variablelist-1/>"
 msgstr ""
-"Egenskaperna på fliken <guilabel>Färger och typsnitt</guilabel> är: "
-"<placeholder-1/>"
+"Egenskaperna i fliken <guilabel>Färger och typsnitt</guilabel> är: <_:"
+"variablelist-1/>"
 
-#: C/gnome-mud-manual.xml:945(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:945
 msgid ""
 "After you have made all the changes you want, click on <guibutton>OK</"
 "guibutton> to apply the changes and close the <interface>Preferences</"
@@ -1225,11 +1358,13 @@ msgstr ""
 "<interface>Inställningar</interface>. För att avbryta ändringarna och återgå "
 "till tidigare värden klickar du på knappen <guibutton>Stäng</guibutton>."
 
-#: C/gnome-mud-manual.xml:969(title)
+#. (itstool) path: sect1/title
+#: C/gnome-mud-manual.xml:969
 msgid "Known Bugs and Limitations"
 msgstr "Kända fel och begränsningar"
 
-#: C/gnome-mud-manual.xml:970(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:970
 msgid ""
 "Command history search won't show the last command when you press the up-"
 "arrow key, but the command before the last."
@@ -1237,7 +1372,8 @@ msgstr ""
 "Sökning i kommandohistoriken visar inte det sista kommandot när du trycker "
 "på uppåtpilknappen, utan det näst sista kommandot."
 
-#: C/gnome-mud-manual.xml:974(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:974
 msgid ""
 "The mapping support is still limited and must be used manually (you can't "
 "map as you walk through the MUD)."
@@ -1245,15 +1381,18 @@ msgstr ""
 "Kartläggningsstödet är fortfarande begränsat och måste användas manuellt "
 "(det är inte möjligt att kartlägga under förflyttning genom MUD:en)."
 
-#: C/gnome-mud-manual.xml:978(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:978
 msgid "And of course, there are no plugins available yet!"
 msgstr "Och naturligtvis finns det inga insticksmoduler tillgängliga ännu!"
 
-#: C/gnome-mud-manual.xml:987(title)
+#. (itstool) path: sect1/title
+#: C/gnome-mud-manual.xml:987
 msgid "Authors"
 msgstr "Upphovsmän"
 
-#: C/gnome-mud-manual.xml:988(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:988
 msgid ""
 "<application>GNOME-Mud</application> was written by Robin Ericsson "
 "(<email>lobbin@localhost.nu</email>). To find more information about "
@@ -1267,41 +1406,45 @@ msgstr ""
 "sourceforge.net/\" type=\"http\">GNOME-Muds webbsida</ulink>. Denna handbok "
 "är skriven av Jordi Mallach (<email>jordi@sindominio.net</email>)."
 
-#: C/gnome-mud-manual.xml:996(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:996
 msgid ""
 "If you have some comments or suggestions regarding this application, need "
 "help, or want to report a bug, plese contact us! Instructions for doing so "
-"are given in <ulink type=\"help\" url=\"gnome-help:gnome-feedback"
-"\"><citetitle>Reporting GNOME bugs and other feedback</citetitle></ulink> "
-"document, which you can find in the <guilabel>Help</guilabel> tab of "
+"are given in <ulink type=\"help\" url=\"gnome-help:gnome-"
+"feedback\"><citetitle>Reporting GNOME bugs and other feedback</citetitle></"
+"ulink> document, which you can find in the <guilabel>Help</guilabel> tab of "
 "<application>Nautilus</application> file manager."
 msgstr ""
 "Om du har kommentarer eller förslag angående om det här programmet, behöver "
 "hjälp, eller vill rapportera ett fel, kontakta oss! Instruktioner för detta "
-"ges i dokumentet <ulink type=\"help\" url=\"gnome-help:gnome-feedback"
-"\"><citetitle>Rapportering av GNOME-fel och annan återkoppling</citetitle></"
-"ulink>, som du hittar under fliken <guilabel>Hjälp</guilabel> i "
+"ges i dokumentet <ulink type=\"help\" url=\"gnome-help:gnome-"
+"feedback\"><citetitle>Rapportering av GNOME-fel och annan återkoppling</"
+"citetitle></ulink>, som du hittar under fliken <guilabel>Hjälp</guilabel> i "
 "filhanteraren <application>Nautilus</application>."
 
-#: C/gnome-mud-manual.xml:1022(title)
+#. (itstool) path: sect1/title
+#: C/gnome-mud-manual.xml:1022
 msgid "License"
 msgstr "Licens"
 
-#: C/gnome-mud-manual.xml:1023(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:1023
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
-"under the terms of the <ulink type=\"help\" url=\"gnome-help:gpl"
-"\"><citetitle>GNU General Public License</citetitle></ulink> as published by "
+"under the terms of the <ulink type=\"help\" url=\"gnome-help:gpl\"> "
+"<citetitle>GNU General Public License</citetitle></ulink> as published by "
 "the Free Software Foundation; either version 2 of the License, or (at your "
 "option) any later version."
 msgstr ""
 "Detta program är fri programvara. Du kan distribuera det och/eller modifiera "
-"det under villkoren i <ulink type=\"help\" url=\"gnome-help:gpl"
-"\"><citetitle>GNU General Public License</citetitle></ulink>, publicerad av "
+"det under villkoren i <ulink type=\"help\" url=\"gnome-help:gpl\"> "
+"<citetitle>GNU General Public License</citetitle></ulink>, publicerad av "
 "Free Software Foundation, antingen version 2 eller (om du så vill) någon "
 "senare version."
 
-#: C/gnome-mud-manual.xml:1031(para)
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:1031
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1313,27 +1456,35 @@ msgstr ""
 "LÄMPLIGHET FÖR NÅGOT SPECIELLT ÄNDAMÅL. Se <citetitle>GNU General Public "
 "License</citetitle> för ytterligare information."
 
-#: C/gnome-mud-manual.xml:1037(para)
+#. (itstool) path: para/address
+#: C/gnome-mud-manual.xml:1044
+#, no-wrap
+msgid ""
+"\n"
+"    Free Software Foundation, Inc.\n"
+"    <street>59 Temple Place</street> - Suite 330\n"
+"    <city>Boston</city>, <state>MA</state> <postcode>02111-1307</postcode>\n"
+"    <country>USA</country>\n"
+"   "
+msgstr ""
+"\n"
+"    Free Software Foundation, Inc.\n"
+"    <street>59 Temple Place</street> - Suite 330\n"
+"    <city>Boston</city>, <state>MA</state> <postcode>02111-1307</postcode>\n"
+"    <country>USA</country>\n"
+"   "
+
+#. (itstool) path: sect1/para
+#: C/gnome-mud-manual.xml:1037
 msgid ""
 "A copy of the <citetitle>GNU General Public License</citetitle> is included "
 "as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
 "obtain a copy of the <citetitle>GNU General Public License</citetitle> from "
 "the Free Software Foundation by visiting <ulink type=\"http\" url=\"http://"
-"www.fsf.org\">their Web site</ulink> or by writing to <address> Free "
-"Software Foundation, Inc. <street>59 Temple Place</street> - Suite 330 "
-"<city>Boston</city>, <state>MA</state><postcode>02111-1307</"
-"postcode><country>USA</country></address>"
+"www.fsf.org\">their Web site</ulink> or by writing to <_:address-1/>"
 msgstr ""
 "En kopia av <citetitle>GNU General Public License</citetitle> ingår som en "
 "bilaga till <citetitle>Användarguide för GNOME</citetitle>. Du kan också få "
 "en kopia av <citetitle>GNU General Public License</citetitle> från Free "
 "Software Foundation genom att besöka <ulink type=\"http\" url=\"http://www."
-"fsf.org\">deras webbplats</ulink> eller genom att skriva till <address> Free "
-"Software Foundation, Inc. <street>59 Temple Place</street> - Suite 330 "
-"<city>Boston</city>, <state>MA</state><postcode>02111-1307</"
-"postcode><country>USA</country></address>"
-
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
-#: C/gnome-mud-manual.xml:0(None)
-msgid "translator-credits"
-msgstr "Erik Sköldås <erik.skoldas@tele2.se>, 2019"
+"fsf.org\">deras webbplats</ulink> eller genom att skriva till <_:address-1/>"

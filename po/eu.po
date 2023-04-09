@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2011.
-# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2021.
+# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2021, 2023.
 #
 msgid ""
 msgstr "Project-Id-Version: gnome-mud.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-mud/issues\n"
-"POT-Creation-Date: 2020-07-18 14:21+0000\n"
-"PO-Revision-Date: 2021-05-06 10:00+0100\n"
+"POT-Creation-Date: 2023-01-24 22:04+0000\n"
+"PO-Revision-Date: 2023-04-06 10:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -322,7 +322,7 @@ msgstr "Gaitu Mud _soinu-protokoloa (MSP)"
 
 #: data/prefs.ui:1203
 msgid "Enable _Character Encoding Negotiation (CHARSET)"
-msgstr ""
+msgstr "Gaitu _karaktere-kodeketaren negoziazioa (CHARSET)"
 
 #: data/prefs.ui:1251
 msgid "Network"
@@ -434,7 +434,7 @@ msgid ""
 "Number of scrollback lines to keep around. You can scroll back in the "
 "terminal by this number of lines; lines that don’t fit in the scrollback are "
 "discarded."
-msgstr ""
+msgstr "Korritze-barran zenbat lerro mantendu. Lerro horiek izango dituzu atzera korritu ahal izateko; kopuru hori gainditu ahala, lerroak galduz joango dira."
 
 #. TODO: Settings provides an encoding list, so we could have an enum type or choice list, instead of bare string
 #: data/org.gnome.MUD.gschema.xml:77
@@ -708,7 +708,7 @@ msgstr "#Azpitaldea barrutitik kanpo#"
 
 #: src/mud-window.c:724
 msgid "Connect to Multi-User Dungeons"
-msgstr ""
+msgstr "Konektatu erabiltzaile anitzeko ziegekin"
 
 #: src/mud-window.c:738
 msgid "translator-credits"

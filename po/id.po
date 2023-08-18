@@ -1,166 +1,489 @@
 # Indonesian translation for gnome-mud.
 # Copyright (C) 2017 gnome-mud's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-mud package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-mud master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"mud&keywords=I18N+L10N&component=i18n\n"
-"POT-Creation-Date: 2017-04-30 22:15+0000\n"
-"PO-Revision-Date: 2017-05-10 14:51+0700\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-mud/issues\n"
+"POT-Creation-Date: 2023-01-24 22:04+0000\n"
+"PO-Revision-Date: 2023-08-18 22:01+0700\n"
+"Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
-"X-Generator: Poedit 1.8.11\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.3.1\n"
 
-#: ../gnome-mud.desktop.in.h:1
-msgid "GNOME-Mud"
-msgstr "GNOME-Mud"
+#: data/main.ui:22
+msgid "Start Logging…"
+msgstr "Mulai Logging…"
 
-#: ../gnome-mud.desktop.in.h:2
-msgid "The GNOME MUD Client"
-msgstr "Klien GNOME MUD"
+#: data/main.ui:84
+msgid "_Log to File:"
+msgstr "_Log ke Berkas:"
 
-#: ../gnome-mud.schemas.in.h:1
-msgid "Font"
-msgstr "Fonta"
+#: data/main.ui:155
+msgid "_Select File"
+msgstr "_Pilih Berkas"
 
-#: ../gnome-mud.schemas.in.h:2
-msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
+#: data/main.ui:197
+msgid "Logging Options"
+msgstr "Opsi Logging"
+
+#: data/main.ui:226
+msgid "_Number of lines to log:"
+msgstr "Jumlah baris u_ntuk log:"
+
+#: data/main.ui:285
+msgid "Number of _previous lines to include:"
+msgstr "Jumlah baris _sebelumnya yang termasuk:"
+
+#: data/main.ui:379
+msgid "_Append to file"
+msgstr "T_ambahkan ke file"
+
+#: data/main.ui:420
+msgid "Log Inp_ut"
+msgstr "Mas_ukan Log"
+
+#: data/main.ui:462
+msgid "_Include entire buffer"
+msgstr "_Sertakan seluruh buffer"
+
+#: data/main.ui:503
+msgid "Include C_olor"
+msgstr "S_ertakan Warna"
+
+#: data/main.ui:553
+msgid "Debug Log"
+msgstr "Log Awakutu"
+
+#: data/main.ui:659
+msgid "Gnome-Mud"
+msgstr "Gnome-Mud"
+
+#: data/main.ui:675
+msgid "_File"
+msgstr "_Berkas"
+
+#: data/main.ui:682
+msgid "C_onnection…"
+msgstr "K_oneksi…"
+
+#: data/main.ui:699
+msgid "_Disconnect"
+msgstr "_Putus"
+
+#: data/main.ui:710
+msgid "_Reconnect"
+msgstr "_Sambung Ulang"
+
+#: data/main.ui:727
+msgid "Start _Logging…"
+msgstr "Mulai _Logging…"
+
+#: data/main.ui:738
+msgid "Stop Lo_gging"
+msgstr "Berhenti _Logging"
+
+#: data/main.ui:749
+msgid "_Save Buffer…"
+msgstr "_Simpan Buffer…"
+
+#: data/main.ui:766
+msgid "Close _Window"
+msgstr "Tutup _Jendela"
+
+#: data/main.ui:800
+msgid "_Settings"
+msgstr "_Pengaturan"
+
+#: data/main.ui:810
+msgid "P_rofiles"
+msgstr "P_rofil"
+
+#: data/main.ui:833
+msgid "Profile Preferences…"
+msgstr "Preferensi Profil…"
+
+#: data/main.ui:849
+msgid "_Help"
+msgstr "_Bantuan"
+
+#: data/main.ui:884
+msgid "Connect to MUD"
+msgstr "Sambungkan ke MUD"
+
+#: data/main.ui:886 data/main.ui:891
+msgid "Connect"
+msgstr "Sambung"
+
+#: data/main.ui:892
+msgid "Connect to host"
+msgstr "Sambungkan ke host"
+
+#: data/main.ui:906
+msgid "Disconnect from current MUD"
+msgstr "Putus dari MUD saat ini"
+
+#: data/main.ui:908 data/main.ui:913
+msgid "Disconnect"
+msgstr "Putus"
+
+#: data/main.ui:914
+msgid "Disconnect from current host"
+msgstr "Putus dari host saat ini"
+
+#: data/main.ui:928
+msgid "Reconnect to current MUD"
+msgstr "Sambung ulang ke MUD saat ini"
+
+#: data/main.ui:930
+msgid "Reconnect"
+msgstr "Sambung ulang"
+
+#: data/main.ui:1005
+msgid "Save buffer as…"
+msgstr "Simpan buffer sebagai…"
+
+#: data/muds.ui:20
+msgid "Select An Icon…"
+msgstr "Pilih Ikon…"
+
+#: data/muds.ui:84
+msgid "Select A Folder"
+msgstr "Pilih Folder"
+
+#: data/muds.ui:127
+msgid "Unsaved Changes"
+msgstr "Perubahan yang Belum Disimpan"
+
+#: data/muds.ui:143
+msgid "Close _without Saving"
+msgstr "Tutup _tanpa Menyimpan"
+
+#: data/muds.ui:219
+msgid "You have unsaved changes. Do you want to save before closing?"
 msgstr ""
-"Sebuah nama fonta Pango. Contohnya adalah \"Sans 12\" atau \"Monospace Bold "
-"14\"."
+"Anda memiliki perubahan yang belum disimpan. Apakah Anda ingin menyimpan "
+"sebelum menutup?"
 
-#: ../gnome-mud.schemas.in.h:3
-msgid "Default color of the background"
-msgstr "Warna latar belakang bawaan"
+#: data/muds.ui:244
+msgid "Delete MUD?"
+msgstr "Hapus MUD?"
 
-#: ../gnome-mud.schemas.in.h:4
-msgid ""
-"Default color of the background, as a color specification (can be HTML-style "
-"hex digits, or a color name such as \"red\")."
-msgstr ""
-"Warna latar belakang bawaan, sebagai spesifikasi warna (bisa berupa digit "
-"hex bergaya HTML, atau nama warna seperti \"red\")."
+#: data/muds.ui:319
+msgid "Are you sure you want to delete this MUD?"
+msgstr "Apakah Anda yakin ingin menghapus MUD ini?"
 
-#: ../gnome-mud.schemas.in.h:5
+#: data/muds.ui:343
+msgid "Connection Properties"
+msgstr "Properti Koneksi"
+
+#: data/muds.ui:418 src/mud-window.c:737
+msgid "MUD"
+msgstr "MUD"
+
+#: data/muds.ui:474 data/muds.ui:805
+msgid "Name:"
+msgstr "Nama:"
+
+#: data/muds.ui:538
+msgid "Host:"
+msgstr "Host:"
+
+#: data/muds.ui:602
+msgid "Port:"
+msgstr "Port:"
+
+#: data/muds.ui:652
+msgid "Profile"
+msgstr "Profil"
+
+#: data/muds.ui:749
+msgid "Character"
+msgstr "Karakter"
+
+#: data/muds.ui:870
+msgid "Logon:"
+msgstr "Logon:"
+
+#: data/muds.ui:989
+msgid "Connections"
+msgstr "Koneksi"
+
+#: data/muds.ui:1108
+msgid " _Host: "
+msgstr "_Host: "
+
+#: data/muds.ui:1138
+msgid " _Port: "
+msgstr "_Port: "
+
+#: data/muds.ui:1201
+msgid "Custom Connection"
+msgstr "Koneksi Tersuai"
+
+#: data/prefs.ui:15
+msgid "New Profile"
+msgstr "Profil Baru"
+
+#: data/prefs.ui:78
+msgid "New Profile Name:"
+msgstr "Nama Profil Baru:"
+
+#: data/prefs.ui:120
+msgid "Preferences"
+msgstr "Preferensi"
+
+#: data/prefs.ui:142
+msgid "Input"
+msgstr "Masukan"
+
+#: data/prefs.ui:176
+msgid "_Echo the Text Sent"
+msgstr "G_emakan Teks Terkirim"
+
+#: data/prefs.ui:192
+msgid "_Keep the Text Entered"
+msgstr "_Jaga Teks yang Dimasukkan"
+
+#: data/prefs.ui:226
+msgid "Command _Division Character:"
+msgstr "Karakter Perintah _Divisi:"
+
+#: data/prefs.ui:291
+msgid "Encoding"
+msgstr "Enkoding"
+
+#: data/prefs.ui:328
+msgid "_Character Set:"
+msgstr "Set _Karakter:"
+
+#: data/prefs.ui:422
+msgid "Output"
+msgstr "Keluaran"
+
+#: data/prefs.ui:456
+msgid "Scroll on _Output"
+msgstr "Gulir pada _Keluaran"
+
+#: data/prefs.ui:478
+msgid "_Number of Scrollback Lines:"
+msgstr "Ju_mlah Baris Gulir Kembali:"
+
+#: data/prefs.ui:549
+msgid "Fon_t:"
+msgstr "Fon_ta:"
+
+#: data/prefs.ui:563
+msgid "_Foreground Color:"
+msgstr "Warna L_atar Depan:"
+
+#: data/prefs.ui:579
+msgid "_Background Color:"
+msgstr "Warna Latar _Belakang:"
+
+#: data/prefs.ui:595
+msgid "Color Palette:"
+msgstr "Palet Warna:"
+
+#: data/prefs.ui:952
+msgid "Terminal"
+msgstr "Terminal"
+
+#: data/prefs.ui:967
+msgid "Proxy"
+msgstr "Proksi"
+
+#: data/prefs.ui:1005
+msgid "_Enable Proxy"
+msgstr "_Aktifkan Proksi"
+
+#: data/prefs.ui:1023
+msgid "_Host:"
+msgstr "_Host:"
+
+#: data/prefs.ui:1039
+msgid "_Version:"
+msgstr "_Versi:"
+
+#: data/prefs.ui:1153
+msgid "Telnet Options"
+msgstr "Opsi Telnet"
+
+#: data/prefs.ui:1187
+msgid "Enable Mud _Sound Protocol (MSP)"
+msgstr "Aktifkan Protokol _Suara Mud (MSP)"
+
+#: data/prefs.ui:1203
+msgid "Enable _Character Encoding Negotiation (CHARSET)"
+msgstr "Aktifkan Negoisasi Enkoding _Karakter (CHARSET)"
+
+#: data/prefs.ui:1251
+msgid "Network"
+msgstr "Jaringan"
+
+#: data/prefs.ui:1271
+msgid "Triggers"
+msgstr "Pemicu"
+
+#: data/prefs.ui:1291
+msgid "Aliases"
+msgstr "Alias"
+
+#: data/prefs.ui:1311
+msgid "Variables"
+msgstr "Variabel"
+
+#: data/prefs.ui:1331
+msgid "Timers"
+msgstr "Pengukur Waktu"
+
+#: data/prefs.ui:1351
+msgid "Keybindings"
+msgstr "Keybinding"
+
+#: data/prefs.ui:1379
+msgid "Profiles"
+msgstr "Profil"
+
+#: data/prefs.ui:1473
+msgid "Regex Error"
+msgstr "Kesalahan Regex"
+
+#: data/prefs.ui:1525
+msgid "Error Code:"
+msgstr "Kesalahan Kode:"
+
+#: data/prefs.ui:1563
+msgid "Error String:"
+msgstr "Kesalahan String:"
+
+#: data/prefs.ui:1601
+msgid "Error At:"
+msgstr "Kesalahan Pada:"
+
+#: data/org.gnome.MUD.gschema.xml:6
+msgid "Settings schema version"
+msgstr "Versi skema pengaturan"
+
+#: data/org.gnome.MUD.gschema.xml:10
+msgid "List of available profiles"
+msgstr "Daftar profil yang tersedia"
+
+#: data/org.gnome.MUD.gschema.xml:14
+msgid "Default profile"
+msgstr "Profil bawaan"
+
+#: data/org.gnome.MUD.gschema.xml:18
+msgid "List of available MUDs"
+msgstr "Daftar MUD yang tersedia"
+
+#: data/org.gnome.MUD.gschema.xml:22
+msgid "List of available characters"
+msgstr "Daftar karakter yang tersedia"
+
+#: data/org.gnome.MUD.gschema.xml:30
+msgid "Human-readable name of the profile"
+msgstr "Nama profil yang dapat dibaca manusia"
+
+#: data/org.gnome.MUD.gschema.xml:34
+msgid "A Pango font name and size"
+msgstr "Nama dan ukuran fonta Pango"
+
+#: data/org.gnome.MUD.gschema.xml:39
 msgid "Default color of the text"
 msgstr "Warna bawaan dari teks"
 
-#: ../gnome-mud.schemas.in.h:6
+#: data/org.gnome.MUD.gschema.xml:40
 msgid ""
 "Default color of the text, as a color specification (can be HTML-style hex "
-"digits, or a color name such as \"red\")."
+"digits, or a color name such as “red”)."
 msgstr ""
-"Warna bawaan dari teks, sebagai spesifikasi warna (bisa berupa digit hex "
-"bergaya HTML, atau nama warna seperti \"red\")."
+"Warna bawaan teks, sebagai spesifikasi warna (dapat berupa digit hex bergaya "
+"HTML, atau nama warna seperti \"red\")."
 
-#: ../gnome-mud.schemas.in.h:7
+#: data/org.gnome.MUD.gschema.xml:44
+msgid "Default color of the background"
+msgstr "Warna latar belakang bawaan"
+
+#: data/org.gnome.MUD.gschema.xml:45
+msgid ""
+"Default color of the background, as a color specification (can be HTML-style "
+"hex digits, or a color name such as “red”)."
+msgstr ""
+"Warna latar belakang bawaan, sebagai spesifikasi warna (dapat berupa digit "
+"hex bergaya HTML, atau nama warna seperti \"red\")."
+
+#: data/org.gnome.MUD.gschema.xml:65
 msgid "Color palette"
 msgstr "Palet warna"
 
-#: ../gnome-mud.schemas.in.h:8
-msgid ""
-"GNOME-Mud has a 16-color palette that MUDs can use. It must be specified in "
-"the form of a colon-separated list of color names. Color names should be in "
-"hex format e.g. \"#FF00FF\"."
+#: data/org.gnome.MUD.gschema.xml:66
+msgid "List of the 16 colors that MUDs can use with indexed ANSI color codes."
 msgstr ""
-"GNOME-Mud memiliki palet 16 warna yang bisa digunakan MUD. Ini harus "
-"ditentukan dalam bentuk daftar nama warna yang dipisahkan oleh tanda titik "
-"dua. Nama warna harus dalam format hex mis. \"# FF00FF\"."
+"Daftar 16 warna yang dapat digunakan MUD dengan kode warna ANSI yang "
+"diindeks."
 
-#: ../gnome-mud.schemas.in.h:9
+#. TODO: Increase default?
+#: data/org.gnome.MUD.gschema.xml:70
 msgid "Number of lines to keep in scrollback"
 msgstr "Jumlah baris untuk tetap digulir kembali"
 
-#: ../gnome-mud.schemas.in.h:10
+#: data/org.gnome.MUD.gschema.xml:71
 msgid ""
 "Number of scrollback lines to keep around. You can scroll back in the "
-"terminal by this number of lines; lines that don't fit in the scrollback are "
+"terminal by this number of lines; lines that don’t fit in the scrollback are "
 "discarded."
 msgstr ""
 "Jumlah baris untuk tetap digulir kembali. Anda dapat menggulir kembali ke "
 "terminal dengan jumlah baris ini; baris yang tidak pas digulir kembali akan "
 "dibuang."
 
-#: ../gnome-mud.schemas.in.h:11 ../ui/prefs.glade.h:13
-msgid "Encoding"
-msgstr "Enkoding"
-
-#: ../gnome-mud.schemas.in.h:12
+#. TODO: Settings provides an encoding list, so we could have an enum type or choice list, instead of bare string
+#: data/org.gnome.MUD.gschema.xml:77
 msgid "The encoding for the terminal widget."
 msgstr "Enkoding untuk widget terminal."
 
-#: ../gnome-mud.schemas.in.h:13
-msgid "Encoding Index"
-msgstr "Index Enkoding"
+#. TODO: Change to true?
+#: data/org.gnome.MUD.gschema.xml:81
+msgid "Remote encoding"
+msgstr "Enkoding jauh"
 
-#: ../gnome-mud.schemas.in.h:14
-msgid "The index of the currently selected encoding."
-msgstr "Indeks enkoding yang saat ini dipilih."
-
-#: ../gnome-mud.schemas.in.h:15
-msgid "Proxy Hostname"
-msgstr "Nama Host Proksi"
-
-#: ../gnome-mud.schemas.in.h:16
-msgid "The hostname for the SOCKS proxy server."
-msgstr "Nama host untuk peladen proxy SOCKS."
-
-#: ../gnome-mud.schemas.in.h:17
-msgid "Proxy Version"
-msgstr "Versi Proksi"
-
-#: ../gnome-mud.schemas.in.h:18
-msgid "The SOCKS Version to be used."
-msgstr "Versi SOCKS yang akan digunakan"
-
-#: ../gnome-mud.schemas.in.h:19
-msgid "Remote Encoding"
-msgstr "Enkoding Jauh"
-
-#: ../gnome-mud.schemas.in.h:20
+#: data/org.gnome.MUD.gschema.xml:82
 msgid "Use Remote Encoding negotiation."
 msgstr "Gunakan negosiasi Encoding Jauh."
 
-#: ../gnome-mud.schemas.in.h:21
-msgid "Use Proxy"
-msgstr "Gunakan Proksi"
+#: data/org.gnome.MUD.gschema.xml:86
+msgid "Remote download"
+msgstr "Unduh jauh"
 
-#: ../gnome-mud.schemas.in.h:22
-msgid "Use a proxy server to connect to the MUD."
-msgstr "Gunakan peladen proksi untuk terhubung ke MUD."
+#: data/org.gnome.MUD.gschema.xml:87
+msgid "Enable sound file downloading on MSP enabled MUDs."
+msgstr "Aktifkan pengunduhan berkas suara pada MUD yang mendukung MSP."
 
-#: ../gnome-mud.schemas.in.h:23
-msgid "Remote Download"
-msgstr "Unduh Jauh"
+#: data/org.gnome.MUD.gschema.xml:91
+msgid "Command divider"
+msgstr "Pembatas perintah"
 
-#: ../gnome-mud.schemas.in.h:24
-msgid "Enable sound file downloading on MSP enabled MUDs"
-msgstr "Aktifkan unduh berkas suara pada MSUD yang diaktifkan MSP"
-
-#: ../gnome-mud.schemas.in.h:25
-msgid "Command Divider"
-msgstr "Pembatas Perintah"
-
-#: ../gnome-mud.schemas.in.h:26
+#: data/org.gnome.MUD.gschema.xml:92
 msgid ""
-"A character that is used to split commands in a string like \"w;w;w;l\", "
-"which will be sent to the MUD as 4 separate commands."
+"A character that is used to split commands in a string like “w;w;w;l”, which "
+"will be sent to the MUD as 4 separate commands."
 msgstr ""
-"Karakter yang digunakan untuk membagi perintah dalam string seperti \"w; w; "
-"w; l\", yang akan dikirim ke MUD sebagai 4 perintah terpisah."
+"Karakter yang digunakan untuk membagi perintah dalam string seperti \"w;w;w;"
+"l\", yang akan dikirim ke MUD sebagai 4 perintah terpisah."
 
-#: ../gnome-mud.schemas.in.h:27
+#: data/org.gnome.MUD.gschema.xml:96
 msgid "Whether to echo sent text to the connection"
 msgstr "Apakah menggemakan teks terkirim ke koneksi"
 
-#: ../gnome-mud.schemas.in.h:28
+#: data/org.gnome.MUD.gschema.xml:97
 msgid ""
 "If enabled, all the text typed in will be echoed in the terminal, making it "
 "easier to control what is sent."
@@ -168,11 +491,11 @@ msgstr ""
 "Jika diaktifkan, semua teks yang diketik akan bergema di terminal, sehingga "
 "memudahkan untuk mengontrol apa yang dikirim."
 
-#: ../gnome-mud.schemas.in.h:29
+#: data/org.gnome.MUD.gschema.xml:101
 msgid "Whether to keep text sent to the connection"
 msgstr "Apakah menyimpan teks yang dikirim ke koneksi"
 
-#: ../gnome-mud.schemas.in.h:30
+#: data/org.gnome.MUD.gschema.xml:102
 msgid ""
 "If enabled, the text that is sent to the connection will be left as a "
 "selection in the entry box. Otherwise, the text entry box will be cleared "
@@ -182,184 +505,141 @@ msgstr ""
 "di kotak masuk. Jika tidak, kotak entri teks akan dihapus setelah setiap "
 "input teks."
 
-#: ../gnome-mud.schemas.in.h:31
-msgid "Whether to enable or disable the system keys"
-msgstr "Apakah mengaktifkan atau menonaktifkan tombol sistem"
-
-#: ../gnome-mud.schemas.in.h:32
-msgid ""
-"If enabled, GNOME-Mud will offer a few built-in keybindings. They can be "
-"overridden by custom keybindings, or they can be disabled completely with "
-"this option."
-msgstr ""
-"Jika diaktifkan, GNOME-Mud akan menawarkan beberapa keybinding bawaan. "
-"Mereka dapat diganti dengan tombol binding khusus, atau bisa dinonaktifkan "
-"sama sekali dengan opsi ini."
-
-#: ../gnome-mud.schemas.in.h:33
-msgid "Whether to scroll to the bottom when there's new output"
+#: data/org.gnome.MUD.gschema.xml:106
+msgid "Whether to scroll to the bottom when there’s new output"
 msgstr "Apakah akan menggulir ke bawah bila ada keluaran baru"
 
-#: ../gnome-mud.schemas.in.h:34
+#: data/org.gnome.MUD.gschema.xml:107
 msgid ""
-"If enabled, whenever there's new output the terminal will be scrolled to the "
-"bottom."
-msgstr ""
-"Jika diaktifkan, kapanpun ada keluaran baru, terminal akan digulir ke bawah."
+"If true, whenever there’s new output the terminal will scroll to the bottom."
+msgstr "Jika true, kapanpun ada keluaran baru terminal akan digulir ke bawah."
 
-#: ../gnome-mud.schemas.in.h:35
-msgid "Last log file"
-msgstr "Berkas log terakhir"
+#: data/org.gnome.MUD.gschema.xml:111
+msgid "Use proxy"
+msgstr "Gunakan proksi"
 
-#: ../gnome-mud.schemas.in.h:36
-msgid "The file in which a mudlog was last saved."
-msgstr "Berkas mudlog terakhir disimpan."
+#: data/org.gnome.MUD.gschema.xml:112
+msgid "Whether to use a proxy server to connect to the MUD."
+msgstr "Apakah akan menggunakan peladen proksi untuk terhubung ke MUD."
 
-#: ../gnome-mud.schemas.in.h:37
-msgid "Log flush interval"
-msgstr "Log flush interval"
+#: data/org.gnome.MUD.gschema.xml:120
+msgid "Proxy version"
+msgstr "Versi proksi"
 
-#: ../gnome-mud.schemas.in.h:38
-msgid "How often in seconds gnome-mud should flush logfiles."
-msgstr "Seberapa sering dalam detik gnome-mud harus flush berkas log."
+#: data/org.gnome.MUD.gschema.xml:121
+msgid "The SOCKS version to be used."
+msgstr "Versi SOCKS yang akan digunakan."
 
-#: ../gnome-mud.schemas.in.h:39
-msgid "List of profiles"
-msgstr "Daftar profil"
+#: data/org.gnome.MUD.gschema.xml:125
+msgid "Proxy server hostname"
+msgstr "Nama host peladen proksi"
 
-#: ../gnome-mud.schemas.in.h:40
-msgid ""
-"List of profiles known to GNOME-Mud. The list contains strings naming "
-"subdirectories relative to /apps/gnome-mud/profiles."
-msgstr ""
-"Daftar profil yang dikenal dengan GNOME-Mud. Daftar ini berisi string "
-"penamaan subdirektori relatif terhadap /apps/gnome-mud/profiles."
+#: data/org.gnome.MUD.gschema.xml:126
+msgid "The hostname for the SOCKS proxy server."
+msgstr "Nama host untuk peladen proxy SOCKS."
 
-#: ../gnome-mud.schemas.in.h:41 ../ui/prefs.glade.h:32
-msgid "Aliases"
-msgstr "Alias"
+#: data/org.gnome.MUD.gschema.xml:133
+msgid "Visible name of the MUD."
+msgstr "Nama MUD yang terlihat."
 
-#: ../gnome-mud.schemas.in.h:42 ../ui/prefs.glade.h:33
-msgid "Variables"
-msgstr "Variabel"
+#: data/org.gnome.MUD.gschema.xml:146
+msgid "Profile ID"
+msgstr "ID Profil"
 
-#: ../gnome-mud.schemas.in.h:43 ../ui/prefs.glade.h:31
-msgid "Triggers"
-msgstr "Pemicu"
+#: data/org.gnome.MUD.gschema.xml:150
+msgid "MUD ID"
+msgstr "ID MUD"
 
-#: ../gnome-mud.schemas.in.h:44 ../ui/prefs.glade.h:35
-msgid "Keybindings"
-msgstr "Keybinding"
+#: data/org.gnome.MUD.gschema.xml:154
+msgid "Name of the character."
+msgstr "Nama karakter."
 
-#: ../gnome-mud.schemas.in.h:45
-msgid "Directional keybindings"
-msgstr "Directional keybinding"
+#: data/org.gnome.MUD.gschema.xml:158
+msgid "Connect string"
+msgstr "Hubungkan string"
 
-#: ../src/debug-logger.c:827 ../src/mud-connections.c:1272
+#: data/org.gnome.MUD.gschema.xml:159
+msgid "Commands to send to MUD upon establishing connection."
+msgstr "Perintah untuk mengirim ke MUD saat membuat koneksi."
+
+#: data/org.gnome.MUD.desktop.in:3
+msgid "GNOME-Mud"
+msgstr "GNOME-Mud"
+
+#: data/org.gnome.MUD.desktop.in:4
+msgid "The GNOME MUD Client"
+msgstr "Klien GNOME MUD"
+
+#: src/debug-logger.c:823 src/mud-connections.c:788 src/mud-connections.c:795
 msgid "Error"
 msgstr "Kesalahan"
 
-#: ../src/debug-logger.c:830 ../src/debug-logger.c:913
+#: src/debug-logger.c:826 src/debug-logger.c:909
 #, c-format
 msgid "ERROR: %s\n"
 msgstr "KESALAHAN: %s\n"
 
-#: ../src/debug-logger.c:834
+#: src/debug-logger.c:830
 msgid "Critical"
 msgstr "Kritis"
 
-#: ../src/debug-logger.c:841
+#: src/debug-logger.c:837
 msgid "Warning"
 msgstr "Peringatan"
 
-#: ../src/debug-logger.c:848 ../src/debug-logger.c:998
+#: src/debug-logger.c:844 src/debug-logger.c:994
 msgid "Message"
 msgstr "Pesan"
 
-#: ../src/debug-logger.c:855
+#: src/debug-logger.c:851
 msgid "Info"
 msgstr "Info"
 
-#: ../src/debug-logger.c:862
+#: src/debug-logger.c:858
 msgid "Debug"
 msgstr "Awakutu"
 
-#: ../src/debug-logger.c:869
+#: src/debug-logger.c:865
 msgid "Unknown"
 msgstr "Tidak Diketahui"
 
-#: ../src/debug-logger.c:917
+#: src/debug-logger.c:913
 #, c-format
 msgid "CRITICAL ERROR: %s\n"
 msgstr "KESALAHAN KRITIS: %s\n"
 
-#: ../src/debug-logger.c:921
+#: src/debug-logger.c:917
 #, c-format
 msgid "Warning: %s\n"
 msgstr "Peringatan: %s\n"
 
-#: ../src/debug-logger.c:991
+#: src/debug-logger.c:987
 msgid "Type"
 msgstr "Tipe"
 
-#: ../src/gnome-mud.c:62
-#, c-format
-msgid "Failed to init GConf: %s"
-msgstr "Gagal init GConf: %s"
-
-#: ../src/mud-connections.c:933
+#: src/mud-connections.c:541
 #, c-format
 msgid "Are you sure you want to delete %s?"
 msgstr "Apakah Anda yakin ingin menghapus %s?"
 
-#: ../src/mud-connections.c:934
+#: src/mud-connections.c:542
 #, c-format
 msgid "Delete %s?"
 msgstr "Hapus %s?"
 
-#: ../src/mud-connections.c:1273
+#: src/mud-connections.c:789
+msgid "No profile specified."
+msgstr "Tidak ada profil yang ditentukan."
+
+#: src/mud-connections.c:796
 msgid "No MUD name specified."
 msgstr "Tidak ada nama MUD yang ditentukan."
 
-#: ../src/mud-connection-view.c:575 ../src/mud-connection-view.c:1975
-#, c-format
-msgid "*** Making connection to %s, port %d.\n"
-msgstr "*** Membuat koneksi ke %s, port %d.\n"
-
-#: ../src/mud-connection-view.c:1054
-msgid "Close"
-msgstr "Tutup"
-
-#: ../src/mud-connection-view.c:1074
-msgid "Change P_rofile"
-msgstr "Ubah P_rofil"
-
-#: ../src/mud-connection-view.c:1113
-msgid "_Input Methods"
-msgstr "_Metode Masukan"
-
-#: ../src/mud-connection-view.c:1142
-msgid "*** Could not connect.\n"
-msgstr "*** Tidak dapat tersambung.\n"
-
-#: ../src/mud-connection-view.c:1147
+#: src/mud-connection-view.c:384
 msgid "*** Connected.\n"
 msgstr "*** Tersambung.\n"
 
-#: ../src/mud-connection-view.c:1175
-msgid "*** Connection closed.\n"
-msgstr "*** Koneksi ditutup.\n"
-
-#: ../src/mud-connection-view.c:1405
-#, c-format
-msgid ""
-"There was an error loading config value for whether to use image in menus. "
-"(%s)\n"
-msgstr ""
-"Terjadi kesalahan saat memuat nilai konfigurasi apakah akan menggunakan "
-"gambar dalam menu. (%s)\n"
-
-#: ../src/mud-connection-view.c:1878 ../src/mud-connection-view.c:1922
+#: src/mud-connection-view.c:398
 msgid ""
 "\n"
 "*** Connection closed.\n"
@@ -367,93 +647,100 @@ msgstr ""
 "\n"
 "*** Koneksi ditutup.\n"
 
-#: ../src/mud-connection-view.c:2025
+#: src/mud-connection-view.c:508
+msgid "Downloading…"
+msgstr "Mengunduh…"
+
+#: src/mud-connection-view.c:590 src/mud-connection-view.c:1692
+#, c-format
+msgid "*** Making connection to %s, port %d.\n"
+msgstr "*** Membuat koneksi ke %s, port %d.\n"
+
+#: src/mud-connection-view.c:1016
+msgid "Close"
+msgstr "Tutup"
+
+#: src/mud-connection-view.c:1036
+msgid "Change P_rofile"
+msgstr "Ubah P_rofil"
+
+#: src/mud-connection-view.c:1738
 msgid "<password removed>"
 msgstr "<Kata sandi dihapus>"
 
-#: ../src/mud-connection-view.c:2221
-msgid "Connecting..."
-msgstr "Menyambung..."
+#: src/mud-connection-view.c:1924
+msgid "Connecting…"
+msgstr "Menyambung…"
 
-#: ../src/mud-connection-view.c:2344
-msgid "Connection timed out."
-msgstr "Waktu koneksi berakhir."
+#: src/mud-connection-view.c:1933
+#, c-format
+msgid "Downloading %s…"
+msgstr "Mengunduh %s…"
 
-#: ../src/mud-connection-view.c:2360
+#: src/mud-connection-view.c:2019
 msgid "There was an internal http connection error."
 msgstr "Ada kesalahan koneksi http internal."
 
-#: ../src/mud-connection-view.c:2382
-msgid "Downloading"
-msgstr "Mengunduh"
+#: src/mud-log.c:390
+msgid "Save log as…"
+msgstr "Simpan log sebagai…"
 
-#: ../src/mud-log.c:395
-msgid "Save log as..."
-msgstr "Simpan log sebagai..."
-
-#: ../src/mud-log.c:727
+#: src/mud-log.c:724
 msgid ""
 "\n"
-"*** Log starts *** %d/%m/%Y %H:%M:%S\n"
+"*** Log starts *** %d/%m/%Y %H∶%M∶%S\n"
 msgstr ""
 "\n"
 "*** Log mulai *** %d/%m/%Y %H:%M:%S\n"
-"\n"
 
-#: ../src/mud-log.c:811
+#: src/mud-log.c:810
 msgid "Log Error"
 msgstr "Log Kesalahan"
 
-#: ../src/mud-log.c:812
+#: src/mud-log.c:811
 #, c-format
-msgid "Could not open \"%s\" for writing."
-msgstr "Tidak dapat membuka \"% s\" untuk menulis."
+msgid "Could not open “%s” for writing."
+msgstr "Tidak dapat membuka \"%s\" untuk menulis."
 
-#: ../src/mud-log.c:838 ../src/mud-log.c:919 ../src/mud-log.c:935
+#: src/mud-log.c:837 src/mud-log.c:918 src/mud-log.c:934
 msgid "Could not write data to log file!"
 msgstr "Tidak bisa menulis data ke berkas log!"
 
-#: ../src/mud-log.c:845
+#: src/mud-log.c:844
 msgid ""
 "\n"
-" *** Log stops *** %d/%m/%Y %H:%M:%S\n"
+" *** Log stops *** %d/%m/%Y %H∶%M∶%S\n"
 msgstr ""
 "\n"
 " *** Log berhenti *** %d/%m/%Y %H:%M:%S\n"
 
-#: ../src/mud-tray.c:271
-msgid "_Hide window"
-msgstr "_Sembunyikan jendela"
+#: src/mud-profile.c:727
+#, c-format
+msgid "Palette had %u entry instead of %u\n"
+msgid_plural "Palette had %u entries instead of %u\n"
+msgstr[0] "Palet memiliki entri %u, bukan %u\n"
 
-#: ../src/mud-tray.c:273
-msgid "_Show window"
-msgstr "_Tampilkan jendela"
-
-#: ../src/mud-tray.c:279
-msgid "_Quit"
-msgstr "_Keluar"
-
-#: ../src/mud-trigger.c:724
+#: src/mud-trigger.c:718
 msgid "#Submatch Out of Range#"
 msgstr "#Submatch Diluar Jangkauan#"
 
-#: ../src/mud-window.c:842
-msgid "A Multi-User Dungeon (MUD) client for GNOME"
-msgstr "Klien Multi-User Dungeon (MUD) untuk GNOME"
+#: src/mud-window.c:724
+msgid "Connect to Multi-User Dungeons"
+msgstr "Sambungkan ke Multi-User Dungeons"
 
-#: ../src/mud-window.c:854
+#: src/mud-window.c:738
 msgid "translator-credits"
-msgstr "Kukuh Syafaat <syafaatkukuh@gmail.com>, 2017."
+msgstr "Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2023."
 
-#: ../src/mud-window.c:963
+#: src/mud-window.c:841
 msgid "Error Saving Buffer"
 msgstr "Kesalahan Menyimpan Buffer"
 
-#: ../src/mud-window.c:1274
-msgid "_Manage Profiles..."
-msgstr "_Kelola Profil..."
+#: src/mud-window.c:1104
+msgid "_Manage Profiles…"
+msgstr "_Kelola Profil…"
 
-#: ../src/handlers/mud-telnet-mccp.c:429
+#: src/handlers/mud-telnet-mccp.c:423
 msgid ""
 "\n"
 "MCCP data corrupted. Aborting connection.\n"
@@ -462,328 +749,99 @@ msgstr ""
 "Data MCCP rusak Membatalkan koneksi\n"
 "\n"
 
-#: ../ui/main.glade.h:1
-msgid "Gnome-Mud"
-msgstr "Gnome-Mud"
-
-#: ../ui/main.glade.h:2
-msgid "_File"
-msgstr "_Berkas"
-
-#: ../ui/main.glade.h:3
-msgid "C_onnection..."
-msgstr "K_oneksi..."
-
-#: ../ui/main.glade.h:4
-msgid "_Disconnect"
-msgstr "_Putus"
-
-#: ../ui/main.glade.h:5
-msgid "_Reconnect"
-msgstr "_Sambung Ulang"
-
-#: ../ui/main.glade.h:6
-msgid "Start _Logging..."
-msgstr "Mulai _Logging..."
-
-#: ../ui/main.glade.h:7
-msgid "Stop Lo_gging"
-msgstr "Berhenti _Logging..."
-
-#: ../ui/main.glade.h:8
-msgid "_Save Buffer..."
-msgstr "_Simpan Buffer..."
-
-#: ../ui/main.glade.h:9
-msgid "Close _Window"
-msgstr "Tutup _Jendela"
-
-#: ../ui/main.glade.h:10
-msgid "_Settings"
-msgstr "_Pengaturan"
-
-#: ../ui/main.glade.h:11
-msgid "P_rofiles"
-msgstr "P_rofil"
-
-#: ../ui/main.glade.h:12
-msgid "_Help"
-msgstr "_Bantuan"
-
-#: ../ui/main.glade.h:13
-msgid "Connect to MUD"
-msgstr "Sambungkan ke MUD"
-
-#: ../ui/main.glade.h:14
-msgid "Connect"
-msgstr "Sambung"
-
-#: ../ui/main.glade.h:15
-msgid "Connect to host"
-msgstr "Sambungkan ke host"
-
-#: ../ui/main.glade.h:16
-msgid "Disconnect from current MUD"
-msgstr "Putus dari MUD saat ini"
-
-#: ../ui/main.glade.h:17
-msgid "Disconnect"
-msgstr "Putus"
-
-#: ../ui/main.glade.h:18
-msgid "Disconnect from current host"
-msgstr "Putus dari host saat ini"
-
-#: ../ui/main.glade.h:19
-msgid "Reconnect to current MUD"
-msgstr "Sambung ulang ke MUD saat ini"
-
-#: ../ui/main.glade.h:20
-msgid "Reconnect"
-msgstr "Sambung ulang"
-
-#: ../ui/main.glade.h:21
-msgid "Save buffer as..."
-msgstr "Simpan buffer sebagai..."
-
-#: ../ui/main.glade.h:22
-msgid "Debug Log"
-msgstr "Log Awakutu"
-
-#: ../ui/main.glade.h:23
-msgid "Start Logging..."
-msgstr "Mulai Logging..."
-
-#: ../ui/main.glade.h:24
-msgid "_Log to File:"
-msgstr "_Log ke Berkas:"
-
-#: ../ui/main.glade.h:25
-msgid "_Select File"
-msgstr "_Pilih Berkas"
-
-#: ../ui/main.glade.h:26
-msgid "Logging Options"
-msgstr "Opsi Logging"
-
-#: ../ui/main.glade.h:27
-msgid "_Number of lines to log:"
-msgstr "Jumlah baris u_ntuk log:"
-
-#: ../ui/main.glade.h:28
-msgid "Number of _previous lines to include:"
-msgstr "Jumlah baris _sebelumnya yang termasuk:"
-
-#: ../ui/main.glade.h:29
-msgid "_Append to file"
-msgstr "T_ambahkan ke file"
-
-#: ../ui/main.glade.h:30
-msgid "Log Inp_ut"
-msgstr "Mas_ukan Log"
-
-#: ../ui/main.glade.h:31
-msgid "_Include entire buffer"
-msgstr "_Sertakan seluruh buffer"
-
-#: ../ui/main.glade.h:32
-msgid "Include C_olor"
-msgstr "S_ertakan Warna"
-
-#: ../ui/muds.glade.h:1
-msgid "Connections"
-msgstr "Koneksi"
-
-#: ../ui/muds.glade.h:2
-msgid " _Host: "
-msgstr "_Host:"
-
-#: ../ui/muds.glade.h:3
-msgid " _Port: "
-msgstr "_Port:"
-
-#: ../ui/muds.glade.h:4
-msgid "Custom Connection"
-msgstr "Koneksi Tersuai"
-
-#: ../ui/muds.glade.h:5
-msgid "Connection Properties"
-msgstr "Properti Koneksi"
-
-#: ../ui/muds.glade.h:6
-msgid "MUD"
-msgstr "MUD"
-
-#: ../ui/muds.glade.h:7
-msgid "Name:"
-msgstr "Nama:"
-
-#: ../ui/muds.glade.h:8
-msgid "Host:"
-msgstr "Host:"
-
-#: ../ui/muds.glade.h:9
-msgid "Port:"
-msgstr "Port:"
-
-#: ../ui/muds.glade.h:10
-msgid "Profile"
-msgstr "Profil"
-
-#: ../ui/muds.glade.h:11
-msgid "Character"
-msgstr "Karakter"
-
-#: ../ui/muds.glade.h:12
-msgid "Logon:"
-msgstr "Logon:"
-
-#: ../ui/muds.glade.h:13
-msgid "Unsaved Changes"
-msgstr "Perubahan yang Belum Disimpan"
-
-#: ../ui/muds.glade.h:14
-msgid "You have unsaved changes. Do you want to save before closing?"
-msgstr ""
-"Anda memiliki perubahan yang belum disimpan. Apakah Anda ingin menyimpan "
-"sebelum menutup?"
-
-#: ../ui/muds.glade.h:15
-msgid "Close _without Saving"
-msgstr "Tutup _tanpa Menyimpan"
-
-#: ../ui/muds.glade.h:16
-msgid "Delete MUD?"
-msgstr "Hapus MUD?"
-
-#: ../ui/muds.glade.h:17
-msgid "Are you sure you want to delete this MUD?"
-msgstr "Apakah Anda yakin ingin menghapus MUD ini?"
-
-#: ../ui/muds.glade.h:18
-msgid "Select An Icon..."
-msgstr "Pilih Ikon..."
-
-#: ../ui/muds.glade.h:19
-msgid "Select A Folder"
-msgstr "Pilih Folder"
-
-#: ../ui/prefs.glade.h:1
-msgid "New Profile"
-msgstr "Profil Baru"
-
-#: ../ui/prefs.glade.h:2
-msgid "New Profile Name:"
-msgstr "Nama Profil Baru:"
-
-#: ../ui/prefs.glade.h:3
-msgid "Regex Error"
-msgstr "Kesalahan Regex"
-
-#: ../ui/prefs.glade.h:4
-msgid "Error Code:"
-msgstr "Kesalahan Kode:"
-
-#: ../ui/prefs.glade.h:5
-msgid "Error String:"
-msgstr "Kesalahan String:"
-
-#: ../ui/prefs.glade.h:6
-msgid "Error At:"
-msgstr "Kesalahan Pada:"
-
-#: ../ui/prefs.glade.h:7
-msgid "Profiles"
-msgstr "Profil"
-
-#: ../ui/prefs.glade.h:8
-msgid "Preferences"
-msgstr "Preferensi"
-
-#: ../ui/prefs.glade.h:9
-msgid "Input"
-msgstr "Masukan"
-
-#: ../ui/prefs.glade.h:10
-msgid "_Echo the Text Sent"
-msgstr "G_emakan Teks Terkirim"
-
-#: ../ui/prefs.glade.h:11
-msgid "_Keep the Text Entered"
-msgstr "_Jaga Teks yang Dimasukkan"
-
-#: ../ui/prefs.glade.h:12
-msgid "Command _Division Character:"
-msgstr "Karakter Perintah _Divisi:"
-
-#: ../ui/prefs.glade.h:14
-msgid "_Character Set:"
-msgstr "Set _Karakter:"
-
-#: ../ui/prefs.glade.h:15
-msgid "Output"
-msgstr "Keluaran"
-
-#: ../ui/prefs.glade.h:16
-msgid "Scroll on _Output"
-msgstr "Gulir pada _Keluaran"
-
-#: ../ui/prefs.glade.h:17
-msgid "_Number of Scrollback Lines:"
-msgstr "Ju_mlah Baris Gulir Kembali:"
-
-#: ../ui/prefs.glade.h:18
-msgid "Fon_t:"
-msgstr "Fon_ta:"
-
-#: ../ui/prefs.glade.h:19
-msgid "_Foreground Color:"
-msgstr "Warna L_atar Depan:"
-
-#: ../ui/prefs.glade.h:20
-msgid "_Background Color:"
-msgstr "Warna Latar _Belakang:"
-
-#: ../ui/prefs.glade.h:21
-msgid "Color Palette:"
-msgstr "Palet Warna:"
-
-#: ../ui/prefs.glade.h:22
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../ui/prefs.glade.h:23
-msgid "Proxy"
-msgstr "Proksi"
-
-#: ../ui/prefs.glade.h:24
-msgid "_Enable Proxy"
-msgstr "_Aktifkan Proksi"
-
-#: ../ui/prefs.glade.h:25
-msgid "_Host:"
-msgstr "_Host:"
-
-#: ../ui/prefs.glade.h:26
-msgid "_Version:"
-msgstr "_Versi:"
-
-#: ../ui/prefs.glade.h:27
-msgid "Telnet Options"
-msgstr "Opsi Telnet"
-
-#: ../ui/prefs.glade.h:28
-msgid "Enable Mud _Sound Protocol (MSP)"
-msgstr "Aktifkan Protokol _Suara Mud (MSP)"
-
-#: ../ui/prefs.glade.h:29
-msgid "Enable _Character Encoding Negotiation (CHARSET)"
-msgstr "Aktifkan Negoisasi Enkoding _Karakter (CHARSET)"
-
-#: ../ui/prefs.glade.h:30
-msgid "Network"
-msgstr "Jaringan"
-
-#: ../ui/prefs.glade.h:34
-msgid "Timers"
-msgstr "Pengukur Waktu"
+#~ msgid "Font"
+#~ msgstr "Fonta"
+
+#~ msgid ""
+#~ "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
+#~ msgstr ""
+#~ "Sebuah nama fonta Pango. Contohnya adalah \"Sans 12\" atau \"Monospace "
+#~ "Bold 14\"."
+
+#~ msgid ""
+#~ "GNOME-Mud has a 16-color palette that MUDs can use. It must be specified "
+#~ "in the form of a colon-separated list of color names. Color names should "
+#~ "be in hex format e.g. \"#FF00FF\"."
+#~ msgstr ""
+#~ "GNOME-Mud memiliki palet 16 warna yang bisa digunakan MUD. Ini harus "
+#~ "ditentukan dalam bentuk daftar nama warna yang dipisahkan oleh tanda "
+#~ "titik dua. Nama warna harus dalam format hex mis. \"# FF00FF\"."
+
+#~ msgid "Encoding Index"
+#~ msgstr "Index Enkoding"
+
+#~ msgid "The index of the currently selected encoding."
+#~ msgstr "Indeks enkoding yang saat ini dipilih."
+
+#~ msgid "Whether to enable or disable the system keys"
+#~ msgstr "Apakah mengaktifkan atau menonaktifkan tombol sistem"
+
+#~ msgid ""
+#~ "If enabled, GNOME-Mud will offer a few built-in keybindings. They can be "
+#~ "overridden by custom keybindings, or they can be disabled completely with "
+#~ "this option."
+#~ msgstr ""
+#~ "Jika diaktifkan, GNOME-Mud akan menawarkan beberapa keybinding bawaan. "
+#~ "Mereka dapat diganti dengan tombol binding khusus, atau bisa "
+#~ "dinonaktifkan sama sekali dengan opsi ini."
+
+#~ msgid "Last log file"
+#~ msgstr "Berkas log terakhir"
+
+#~ msgid "The file in which a mudlog was last saved."
+#~ msgstr "Berkas mudlog terakhir disimpan."
+
+#~ msgid "Log flush interval"
+#~ msgstr "Log flush interval"
+
+#~ msgid "How often in seconds gnome-mud should flush logfiles."
+#~ msgstr "Seberapa sering dalam detik gnome-mud harus flush berkas log."
+
+#~ msgid ""
+#~ "List of profiles known to GNOME-Mud. The list contains strings naming "
+#~ "subdirectories relative to /apps/gnome-mud/profiles."
+#~ msgstr ""
+#~ "Daftar profil yang dikenal dengan GNOME-Mud. Daftar ini berisi string "
+#~ "penamaan subdirektori relatif terhadap /apps/gnome-mud/profiles."
+
+#~ msgid "Directional keybindings"
+#~ msgstr "Directional keybinding"
+
+#, c-format
+#~ msgid "Failed to init GConf: %s"
+#~ msgstr "Gagal init GConf: %s"
+
+#~ msgid "_Input Methods"
+#~ msgstr "_Metode Masukan"
+
+#~ msgid "*** Could not connect.\n"
+#~ msgstr "*** Tidak dapat tersambung.\n"
+
+#~ msgid "*** Connection closed.\n"
+#~ msgstr "*** Koneksi ditutup.\n"
+
+#, c-format
+#~ msgid ""
+#~ "There was an error loading config value for whether to use image in "
+#~ "menus. (%s)\n"
+#~ msgstr ""
+#~ "Terjadi kesalahan saat memuat nilai konfigurasi apakah akan menggunakan "
+#~ "gambar dalam menu. (%s)\n"
+
+#~ msgid "Connection timed out."
+#~ msgstr "Waktu koneksi berakhir."
+
+#~ msgid "_Hide window"
+#~ msgstr "_Sembunyikan jendela"
+
+#~ msgid "_Show window"
+#~ msgstr "_Tampilkan jendela"
+
+#~ msgid "_Quit"
+#~ msgstr "_Keluar"
+
+#~ msgid "A Multi-User Dungeon (MUD) client for GNOME"
+#~ msgstr "Klien Multi-User Dungeon (MUD) untuk GNOME"
+
+#~ msgid "C_onnection..."
+#~ msgstr "K_oneksi..."

@@ -8,7 +8,7 @@ This program is under GPL. See file COPYING for details.
     code used from Bezerk, Xwhois.
 
     Latest version of GNOME-Mud can always be found at
-    <URL:http://download.gnome.org/sources/gnome-mud/>
+    <URL:https://download.gnome.org/sources/gnome-mud/>
 
 
 2. Requirements.
@@ -40,14 +40,7 @@ This program is under GPL. See file COPYING for details.
     ninja install
 
 
-4. Mailing-list.
-
-    General discussion mailing-list: gnome-mud-list@gnome.org
-     - Discussions about development, user questions and anything
-       related to gnome-mud.
-
-
-5. Contributing.
+4. Contributing.
 
     Please do! :)
 
@@ -63,16 +56,16 @@ This program is under GPL. See file COPYING for details.
     * ... what would you like?
 
 
-6. Reporting bugs.
+5. Reporting bugs.
 
    GNOME-Mud uses the GNOME Gitlab at <https://gitlab.gnome.org/GNOME/gnome-mud>. Please
    submit any errors you find there.
 
 
-7. Contacting.
+6. Contacting.
 
-    GNOME-Mud mailing list
-    gnome-mud-list@gnome.org
+    GNOME support forum
+    https://discourse.gnome.org/c/applications/7
 
     IRC channel
     #gnome-mud at GIMPnet (irc.gimp.org)

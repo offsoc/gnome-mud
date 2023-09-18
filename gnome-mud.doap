@@ -7,7 +7,7 @@
   <name xml:lang="en">Gnome-MUD</name>
   <shortdesc xml:lang="en">A mud client for GNOME.</shortdesc>
   <homepage rdf:resource="https://wiki.gnome.org/Apps/MUD" />
-  <mailing-list rdf:resource="http://mail.gnome.org/mailman/listinfo/gnome-mud-list" />
+  <support-forum rdf:resource="https://discourse.gnome.org/c/applications/7" />
   <bug-database rdf:resource="https://gitlab.gnome.org/GNOME/gnome-mud/issues/" />
 
   <maintainer>
@@ -17,7 +17,7 @@
       <gnome:userid>mraudsepp</gnome:userid>
     </foaf:Person>
   </maintainer>
-
+<!--
   <maintainer>
     <foaf:Person>
       <foaf:name>Jordi Mallach</foaf:name>
@@ -25,5 +25,5 @@
       <gnome:userid>jordi</gnome:userid>
     </foaf:Person>
   </maintainer>
-
+-->
 </Project>

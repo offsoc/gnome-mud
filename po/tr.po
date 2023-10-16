@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-mud\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-mud/issues\n"
-"POT-Creation-Date: 2023-01-24 22:04+0000\n"
-"PO-Revision-Date: 2023-03-08 00:31+0300\n"
+"POT-Creation-Date: 2023-03-12 05:24+0000\n"
+"PO-Revision-Date: 2023-10-16 12:43+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.4\n"
 
 #: data/main.ui:22
 msgid "Start Logging…"
@@ -275,7 +275,7 @@ msgstr "Çıktı Ü_zerinde Kaydır"
 
 #: data/prefs.ui:478
 msgid "_Number of Scrollback Lines:"
-msgstr "_Geri Sürüklenecek Satırların Sayısı:"
+msgstr "_Geri Sürükleme Satır Sayısı:"
 
 #: data/prefs.ui:549
 msgid "Fon_t:"
@@ -433,7 +433,7 @@ msgstr ""
 #. TODO: Increase default?
 #: data/org.gnome.MUD.gschema.xml:70
 msgid "Number of lines to keep in scrollback"
-msgstr "Geri sürüklemek için kullanılacak satır sayısı"
+msgstr "Geri sürükleme için tutulacak satır sayısı"
 
 #: data/org.gnome.MUD.gschema.xml:71
 msgid ""
@@ -441,8 +441,9 @@ msgid ""
 "terminal by this number of lines; lines that don’t fit in the scrollback are "
 "discarded."
 msgstr ""
-"Satırları geri sürüklemek için gereken sayı. Bu geri sürükleme sayısı ile uç "
-"birim ekranında tuş ile ne kadar satır sürükleneceğini ayarlayabilirsiniz."
+"Tutulacak geri sürükleme satır sayısı. Uçbirimde bu satır sayısı kadar geri "
+"sürükleme yapabilirsiniz; geri sürüklemeye sığmayan satırlar gözden "
+"çıkarılır."
 
 #. TODO: Settings provides an encoding list, so we could have an enum type or choice list, instead of bare string
 #: data/org.gnome.MUD.gschema.xml:77

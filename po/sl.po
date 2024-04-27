@@ -8,18 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-mud master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-mud/issues\n"
-"POT-Creation-Date: 2023-01-24 22:04+0000\n"
-"PO-Revision-Date: 2023-02-18 20:28+0100\n"
+"POT-Creation-Date: 2023-02-18 19:29+0000\n"
+"PO-Revision-Date: 2024-04-27 19:02+0200\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
-"n%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: data/main.ui:22
 msgid "Start Logging…"
@@ -370,7 +370,6 @@ msgid "Error At:"
 msgstr "Napaka na:"
 
 #: data/org.gnome.MUD.gschema.xml:6
-#, fuzzy
 msgid "Settings schema version"
 msgstr "Različica sheme nastavitev"
 
@@ -383,17 +382,14 @@ msgid "Default profile"
 msgstr "Privzeti profil"
 
 #: data/org.gnome.MUD.gschema.xml:18
-#, fuzzy
 msgid "List of available MUDs"
 msgstr "Seznam razpoložljivih MUD-ov"
 
 #: data/org.gnome.MUD.gschema.xml:22
-#, fuzzy
 msgid "List of available characters"
 msgstr "Seznam razpoložljivih likov"
 
 #: data/org.gnome.MUD.gschema.xml:30
-#, fuzzy
 msgid "Human-readable name of the profile"
 msgstr "Berljivo ime profila"
 
@@ -406,7 +402,6 @@ msgid "Default color of the text"
 msgstr "Privzeta barva besedila"
 
 #: data/org.gnome.MUD.gschema.xml:40
-#, fuzzy
 msgid ""
 "Default color of the text, as a color specification (can be HTML-style hex "
 "digits, or a color name such as “red”)."
@@ -419,7 +414,6 @@ msgid "Default color of the background"
 msgstr "Privzeta barva ozadja"
 
 #: data/org.gnome.MUD.gschema.xml:45
-#, fuzzy
 msgid ""
 "Default color of the background, as a color specification (can be HTML-style "
 "hex digits, or a color name such as “red”)."
@@ -432,7 +426,6 @@ msgid "Color palette"
 msgstr "Barvna paleta"
 
 #: data/org.gnome.MUD.gschema.xml:66
-#, fuzzy
 msgid "List of the 16 colors that MUDs can use with indexed ANSI color codes."
 msgstr ""
 "Seznam 16 barv, ki jih lahko MUD uporabi z indeksiranimi kodami barv ANSI."
@@ -443,14 +436,13 @@ msgid "Number of lines to keep in scrollback"
 msgstr "Število vrstic v pomnilniku vrstic"
 
 #: data/org.gnome.MUD.gschema.xml:71
-#, fuzzy
 msgid ""
 "Number of scrollback lines to keep around. You can scroll back in the "
 "terminal by this number of lines; lines that don’t fit in the scrollback are "
 "discarded."
 msgstr ""
-"Število obdržanih vrstic pri drsenju. V terminalu je mogoče drsati nazaj to "
-"število vrstic. Ostale vrstice so zavržene."
+"Število obdržanih vrstic pri drsenju. V terminalu je mogoče drsati nazaj za "
+"takšno število vrstic. Ostale vrstice so zavržene."
 
 #. TODO: Settings provides an encoding list, so we could have an enum type or choice list, instead of bare string
 #: data/org.gnome.MUD.gschema.xml:77
@@ -471,16 +463,14 @@ msgid "Remote download"
 msgstr "Oddaljen prejem"
 
 #: data/org.gnome.MUD.gschema.xml:87
-#, fuzzy
 msgid "Enable sound file downloading on MSP enabled MUDs."
-msgstr "Omogoči prenos zvočne datoteke preko strežnika MUD z omogočenim MSP."
+msgstr "Omogoči prenos zvočne datoteke preko strežnikov MUD z omogočenim MSP."
 
 #: data/org.gnome.MUD.gschema.xml:91
 msgid "Command divider"
 msgstr "Ločilo ukazov"
 
 #: data/org.gnome.MUD.gschema.xml:92
-#, fuzzy
 msgid ""
 "A character that is used to split commands in a string like “w;w;w;l”, which "
 "will be sent to the MUD as 4 separate commands."
@@ -515,45 +505,31 @@ msgstr ""
 "besedila."
 
 #: data/org.gnome.MUD.gschema.xml:106
-#, fuzzy
-#| msgid "Whether to scroll to the bottom when there's new output"
 msgid "Whether to scroll to the bottom when there’s new output"
 msgstr "Ali naj se ob novem izpisu drsnik premakne na dno"
 
 #: data/org.gnome.MUD.gschema.xml:107
-#, fuzzy
-#| msgid ""
-#| "If enabled, whenever there's new output the terminal will be scrolled to "
-#| "the bottom."
 msgid ""
 "If true, whenever there’s new output the terminal will scroll to the bottom."
 msgstr "Izbrana možnost omogoči drsanje novega odvoda terminala na dno."
 
 #: data/org.gnome.MUD.gschema.xml:111
-#, fuzzy
 msgid "Use proxy"
 msgstr "Uporabi posredniški strežnik"
 
 #: data/org.gnome.MUD.gschema.xml:112
-#, fuzzy
-#| msgid "Use a proxy server to connect to the MUD."
 msgid "Whether to use a proxy server to connect to the MUD."
 msgstr "Uporabi posredniški strežnik za povezavo s strežnikom MUD."
 
 #: data/org.gnome.MUD.gschema.xml:120
-#, fuzzy
-#| msgid "Proxy Version"
 msgid "Proxy version"
 msgstr "Različica posredniškega strežnika"
 
 #: data/org.gnome.MUD.gschema.xml:121
-#, fuzzy
 msgid "The SOCKS version to be used."
 msgstr "Različica SOCKS, ki bo uporabljena."
 
 #: data/org.gnome.MUD.gschema.xml:125
-#, fuzzy
-#| msgid "Proxy Hostname"
 msgid "Proxy server hostname"
 msgstr "Ime gostitelja posredniškega strežnika"
 
@@ -562,7 +538,6 @@ msgid "The hostname for the SOCKS proxy server."
 msgstr "Ime gostitelja za gostiteljski strežnik SOCKS."
 
 #: data/org.gnome.MUD.gschema.xml:133
-#, fuzzy
 msgid "Visible name of the MUD."
 msgstr "Vidno ime MUD."
 
@@ -571,12 +546,10 @@ msgid "Profile ID"
 msgstr "ID profila"
 
 #: data/org.gnome.MUD.gschema.xml:150
-#, fuzzy
 msgid "MUD ID"
 msgstr "ID MUD-a"
 
 #: data/org.gnome.MUD.gschema.xml:154
-#, fuzzy
 msgid "Name of the character."
 msgstr "Ime lika."
 
@@ -585,7 +558,6 @@ msgid "Connect string"
 msgstr "Povezovalni niz"
 
 #: data/org.gnome.MUD.gschema.xml:159
-#, fuzzy
 msgid "Commands to send to MUD upon establishing connection."
 msgstr "Ukazi, ki bodo po vzpostavitvi povezave poslani MUD-u."
 
@@ -755,9 +727,8 @@ msgid "#Submatch Out of Range#"
 msgstr "Številka je izven območja!"
 
 #: src/mud-window.c:724
-#, fuzzy
 msgid "Connect to Multi-User Dungeons"
-msgstr "Poveži s strežnikom Mud"
+msgstr "Poveži z večuporabniškimi ječami (MUD-i)"
 
 #: src/mud-window.c:738
 msgid "translator-credits"
